@@ -44,4 +44,8 @@ public class Supplier {
 		return EmailAddress;
 	}
 	
+	/**
+	 * Add code to pull from database
+	 */
+	
 }
