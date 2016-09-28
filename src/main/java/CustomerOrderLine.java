@@ -5,27 +5,28 @@
 public class CustomerOrderLine 
 {
 	private int id;
-	private int customerOrderID;
-	private int productID;
+	private int fk_CustomerOrderID;
+	private int fk_ProductID;
 	private int quantity;
 	private double price;
+
 	
-	public int getCustomerOrderID() 
+	public int getFk_CustomerOrderID() 
 	{
-		return customerOrderID;
+		return fk_CustomerOrderID;
 	}
-	public void setCustomerOrderID(int customerOrderID) 
+	public void setFk_CustomerOrderID(int fk_CustomerOrderID) 
 	{
-		this.customerOrderID = customerOrderID;
+		this.fk_CustomerOrderID = fk_CustomerOrderID;
 	}
 	
-	public int getProductID() 
+	public int getFk_ProductID() 
 	{
-		return productID;
+		return fk_ProductID;
 	}
-	public void setProductID(int productID) 
+	public void setFk_ProductID(int fk_ProductID) 
 	{
-		this.productID = productID;
+		this.fk_ProductID = fk_ProductID;
 	}
 	
 	public int getQuantity() 
@@ -55,6 +56,4 @@ public class CustomerOrderLine
 		this.id = id;
 	}
 	
-	
-
 }
