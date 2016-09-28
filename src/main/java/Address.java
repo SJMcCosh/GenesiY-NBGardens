@@ -1,15 +1,19 @@
-
+/**
+ * Basic outline for Address class
+ * Contains getters and setter for variables
+ * @author Samuel McCosh
+ */
 public class Address {
 
-	private int ID;
+	private int AddressID;
 	private String HouseNmNo;
 	private String Street;
 	private String TownCity;
 	private String County;
 	private String Postcode;
 
-	public void getID(int ID){
-		this.ID = ID;
+	public void getAddressID(int AddressID){
+		this.AddressID = AddressID;
 	}
 	
 	public void getHouse(String HouseNmNo) {
@@ -32,8 +36,8 @@ public class Address {
 		this.Postcode = Postcode;
 	}
 	
-	public int ID() {
-		return ID;
+	public int AddressID() {
+		return AddressID;
 	}
 	
 	public String getHouse() {
@@ -55,5 +59,7 @@ public class Address {
 	public String getPostcode() {
 		return Postcode;
 	}
-	
+	/**
+	 * Add code to pull from database
+	 */
 }
