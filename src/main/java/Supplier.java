@@ -1,3 +1,6 @@
+import javax.persistence.*;
+import javax.validation.constraints.Size;
+
 /**
  * Basic outline for Supplier class
  * Contains getters and setter for variables
@@ -5,10 +8,23 @@
  */
 public class Supplier {
 
+	@Id
+	@Column (name = "aid")
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int supplierID;
-	private String name;
+	
+	@Column (name = "supplierName", nullable = false, length = 200)
+	@Size (min = 1, max = 200)
+	private String supplierName;
+	
+	@Column (name = "telNo", nullable = false, length = 11)
+	@Size (min = 7, max = 11)
 	private String telephoneNumber;
+	
+	@Column (name = "emailAddr", nullable = false, length = 200)
+	@Size (min = 7, max = 200)
 	private String emailAddress;
+	
 	public int getSupplierID() {
 		return supplierID;
 		
@@ -16,11 +32,11 @@ public class Supplier {
 	public void setSupplierID(int supplierID) {
 		this.supplierID = supplierID;
 	}
-	public String getName() {
-		return name;
+	public String getSupplierName() {
+		return supplierName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setSupplierName(String name) {
+		this.supplierName = name;
 	}
 	public String getTelephoneNumber() {
 		return telephoneNumber;
