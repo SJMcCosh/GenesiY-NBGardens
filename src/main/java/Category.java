@@ -1,4 +1,7 @@
-
+/*
+ * Category outline
+ * @author Brian McLaughlin
+ */
 public class Category 
 {
 	private String name;

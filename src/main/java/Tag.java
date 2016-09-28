@@ -1,4 +1,7 @@
-
+/*
+ * Tag outline
+ * @author Brian McLaughlin
+ */
 public class Tag 
 {
 	private String name;
