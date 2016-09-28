@@ -1,16 +1,40 @@
+import javax.persistence.*;
+import javax.validation.constraints.Size;
+
 /**
  * Basic outline for Address class
  * Contains getters and setter for variables
  * @author Samuel McCosh
  */
+@Entity
+@Table (name = "address")
 public class Address {
-
+	
+	@Id
+	@Column (name = "aid")
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int addressID;
+	
+	@Column (name = "houseNmNo", nullable = false, length = 120)
+	@Size (min = 1, max = 120)
 	private String houseNmNo;
+	
+	@Column (name = "street", nullable = false, length = 70)
+	@Size (min = 5, max = 70)
 	private String street;
+	
+	@Column (name = "townCity", nullable = false, length = 58)
+	@Size (min = 2, max = 58)
 	private String townCity;
+	
+	@Column (name = "county", nullable = false, length = 35)
+	@Size (min = 4, max = 35)
 	private String county;
+	
+	@Column (name = "postcode", nullable = false, length = 9)
+	@Size (min = 7, max = 9)
 	private String postcode;
+	
 	public int getAddressID() {
 		return addressID;
 	}
