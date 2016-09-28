@@ -2,16 +2,12 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 
-
 /**
- * 
- */
-
-/**
- * @author Administrator
+ * customer class, setting/getting customer passwords and usernames
+ * @author Karrus
  *
  */
-// Karrus  - customer class, setting/getting customer passwords and usernames
+
 @Entity
 @Table (name = "customer")
 public class Customer {
