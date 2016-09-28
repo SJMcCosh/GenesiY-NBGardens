@@ -4,7 +4,6 @@
  */
 public class Category 
 {
-	private int id;
 	private String name;
 	
 	public String getName()
@@ -16,15 +15,4 @@ public class Category
 	{
 		this.name = vName;
 	}
-
-	public int getId() 
-	{
-		return id;
-	}
-
-	public void setId(int id) 
-	{
-		this.id = id;
-	}
-
 }

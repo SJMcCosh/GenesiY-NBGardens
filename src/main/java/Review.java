@@ -5,8 +5,8 @@
 public class Review 
 {
 	private int id;
-	private double rating;
-	private String reviewtext;
+	private int rating;
+	private String reviewText;
 	
 	public int getId() 
 	{
@@ -17,22 +17,22 @@ public class Review
 		this.id = id;
 	}
 	
-	public double getRating() 
+	public int getRating() 
 	{
 		return rating;
 	}
-	public void setRating(double rating) 
+	public void setRating(int rating) 
 	{
 		this.rating = rating;
 	}
 	
 	public String getReviewtext() 
 	{
-		return reviewtext;
+		return reviewText;
 	}
 	public void setReviewtext(String reviewtext) 
 	{
-		this.reviewtext = reviewtext;
+		this.reviewText = reviewtext;
 	}
 	
 	

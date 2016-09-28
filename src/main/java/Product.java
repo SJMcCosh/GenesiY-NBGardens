@@ -6,7 +6,7 @@
 public class Product {
 	
 	private String name;
-	private int averageRating;
+	private double averageRating;
 	private String description;
 	private String size;
 	private double weight;
@@ -18,10 +18,10 @@ public class Product {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getAverageRating() {
+	public double getAverageRating() {
 		return averageRating;
 	}
-	public void setAverageRating(int averageRating) {
+	public void setAverageRating(double averageRating) {
 		this.averageRating = averageRating;
 	}
 	public String getDescription() {
