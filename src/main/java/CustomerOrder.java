@@ -1,12 +1,33 @@
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
 /**
  * This is the outline for the Customer Order class
  * @Aiesha 
- *
  */
+
+@Entity
+@Table (name = "customer_order")
 public class CustomerOrder {
 	
+	@Id
+	@Column (name = "customerOrderId")
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int customerOrderID;
+	
+	@OneToMany
+	@Column (name = "customerid_fk", nullable = false)
+	@NotNull
 	private int fk_customerID;
+	
+	@Column (name = "total_price", nullable = false)
+	@NotNull
 	private double totalPrice;
 	
 	public int getCustomerOrderID() {
