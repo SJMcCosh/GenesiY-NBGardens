@@ -2,7 +2,11 @@
 public class Address {
 
 	private int ID;
-	private String HouseNmNo, Street, TownCity, County, Postcode;
+	private String HouseNmNo;
+	private String Street;
+	private String TownCity;
+	private String County;
+	private String Postcode;
 
 	public void getID(int ID){
 		this.ID = ID;
