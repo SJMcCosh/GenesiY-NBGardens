@@ -1,3 +1,12 @@
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.NotNull;
+import javax.persistence.Size;
+
+
+
 /**
  * 
  */
@@ -7,9 +16,19 @@
  *
  */
 // Karrus  - customer class, setting/getting customer passwords and usernames
+@Entity
+@Table (name = "customer")
 public class Customer {
-
+	@Id
+	@Column (name = "username")
+	@NotNull
+	@Size (min = 5, max = 225)
 	private String Username; 
+	
+	
+	@Column (name = "password")
+	@NotNull
+	@Size (min = 5, max = 225)
 	private String Password; 
 	
 	public String getUsername (){
