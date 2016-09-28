@@ -1,15 +1,15 @@
+import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-
-/**
- * 
- */
-
+import javax.persistence.Table;
 /**
  * Karrus 28/09/2016
  *
  */
+
+@Entity
+@Table (name = "productTagLine")
 public class ProductTagLine {
 	
 	@ManyToOne
