@@ -1,13 +1,42 @@
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
 /*
  * Customer Order Line outline
  * @author Brian McLaughlin
  */
+@Entity
+@Table (name = "customerorderline")
 public class CustomerOrderLine 
 {
+	@Id
+	@Column (name = "id")
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
+	
+	@ManyToOne
+	@JoinColumn (name = "customerorderid_fk", nullable = false)
+	@NotNull
 	private int fk_CustomerOrderID;
+	
+	@ManyToOne
+	@JoinColumn (name = "productid_fk", nullable = false)
+	@NotNull
 	private int fk_ProductID;
+	
+	@Column (name = "quantity", nullable = false)
+	@NotNull
 	private int quantity;
+	
+	@Column (name = "price", nullable = false)
+	@NotNull
 	private double price;
 
 	
