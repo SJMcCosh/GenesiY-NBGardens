@@ -1,65 +1,79 @@
+import javax.persistence.*;
+import javax.validation.constraints.Size;
+
 /**
  * Basic outline for Address class
  * Contains getters and setter for variables
  * @author Samuel McCosh
  */
+@Entity
+@Table (name = "address")
 public class Address {
-
-	private int AddressID;
-	private String HouseNmNo;
-	private String Street;
-	private String TownCity;
-	private String County;
-	private String Postcode;
-
-	public void getAddressID(int AddressID){
-		this.AddressID = AddressID;
-	}
 	
-	public void getHouse(String HouseNmNo) {
-		this.HouseNmNo = HouseNmNo;
-	}
+	@Id
+	@Column (name = "aid")
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	private int addressID;
 	
-	public void getStreet(String Street) {
-		this.Street = Street;
-	}
+	@Column (name = "houseNmNo", nullable = false, length = 120)
+	@Size (min = 1, max = 120)
+	private String houseNmNo;
 	
-	public void getTownCity(String TownCity) {
-		this.TownCity = TownCity;
-	}
+	@Column (name = "street", nullable = false, length = 70)
+	@Size (min = 5, max = 70)
+	private String street;
 	
-	public void getCounty(String County) {
-		this.County = County;
-	}
+	@Column (name = "townCity", nullable = false, length = 58)
+	@Size (min = 2, max = 58)
+	private String townCity;
 	
-	public void getPostcode(String Postcode) {
-		this.Postcode = Postcode;
-	}
+	@Column (name = "county", nullable = false, length = 35)
+	@Size (min = 4, max = 35)
+	private String county;
 	
-	public int AddressID() {
-		return AddressID;
-	}
+	@Column (name = "postcode", nullable = false, length = 9)
+	@Size (min = 7, max = 9)
+	private String postcode;
 	
-	public String getHouse() {
-		return HouseNmNo;
+	public int getAddressID() {
+		return addressID;
 	}
-	
+	public void setAddressID(int addressID) {
+		this.addressID = addressID;
+	}
+	public String getHouseNmNo() {
+		return houseNmNo;
+	}
+	public void setHouseNmNo(String houseNmNo) {
+		this.houseNmNo = houseNmNo;
+	}
 	public String getStreet() {
-		return Street;
+		return street;
 	}
-	
+	public void setStreet(String street) {
+		this.street = street;
+	}
 	public String getTownCity() {
-		return TownCity;
+		return townCity;
 	}
-	
+	public void setTownCity(String townCity) {
+		this.townCity = townCity;
+	}
 	public String getCounty() {
-		return County;
+		return county;
+	}
+	public void setCounty(String county) {
+		this.county = county;
+	}
+	public String getPostcode() {
+		return postcode;
+	}
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
 	}
 	
-	public String getPostcode() {
-		return Postcode;
-	}
 	/**
 	 * Add code to pull from database
 	 */
+	
 }

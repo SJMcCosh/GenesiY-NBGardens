@@ -1,3 +1,6 @@
+import javax.persistence.*;
+import javax.validation.constraints.Size;
+
 /**
  * Basic outline for Supplier class
  * Contains getters and setter for variables
@@ -5,43 +8,47 @@
  */
 public class Supplier {
 
-	private int SupplierID;
-	private String Name;
-	private String TelephoneNumber;
-	private String EmailAddress;
+	@Id
+	@Column (name = "aid")
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	private int supplierID;
 	
-
-	public void getSupplierID(int SupplierID){
-		this.SupplierID = SupplierID;
+	@Column (name = "supplierName", nullable = false, length = 200)
+	@Size (min = 1, max = 200)
+	private String supplierName;
+	
+	@Column (name = "telNo", nullable = false, length = 11)
+	@Size (min = 7, max = 11)
+	private String telephoneNumber;
+	
+	@Column (name = "emailAddr", nullable = false, length = 200)
+	@Size (min = 7, max = 200)
+	private String emailAddress;
+	
+	public int getSupplierID() {
+		return supplierID;
+		
 	}
-	
-	public void getName(String Name) {
-		this.Name = Name;
+	public void setSupplierID(int supplierID) {
+		this.supplierID = supplierID;
 	}
-	
-	public void getTelephoneNumber(String TelephoneNumber) {
-		this.TelephoneNumber = TelephoneNumber;
+	public String getSupplierName() {
+		return supplierName;
 	}
-	
-	public void getEmailAddress(String EmailAddress) {
-		this.EmailAddress = EmailAddress;
+	public void setSupplierName(String name) {
+		this.supplierName = name;
 	}
-	
-	
-	public int SupplierID() {
-		return SupplierID;
-	}
-	
-	public String getName() {
-		return Name;
-	}
-	
 	public String getTelephoneNumber() {
-		return TelephoneNumber;
+		return telephoneNumber;
 	}
-	
+	public void setTelephoneNumber(String telephoneNumber) {
+		this.telephoneNumber = telephoneNumber;
+	}
 	public String getEmailAddress() {
-		return EmailAddress;
+		return emailAddress;
+	}
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
 	}
 	
 	/**

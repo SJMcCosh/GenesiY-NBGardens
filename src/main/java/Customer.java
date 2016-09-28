@@ -8,8 +8,10 @@ import javax.persistence.Size;
 
 
 /**
- * 
+ * customer class, setting/getting customer passwords and usernames
+ * @author Karrus
  */
+<<<<<<< HEAD
 
 /**
  * @author Administrator
@@ -34,27 +36,25 @@ public class Customer {
 	public String getUsername (){
 		return Username;
 		
-	}
-	
-	public String getPassword (){
-		return Password;
-		
-	}
-	
-	public void setUsername (String vUsername) {
-		this.Username = vUsername;   
-	}
-	
-	public void setPassword (String vPassword) {
-		this.Password = vPassword;   
-	}
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+=======
+public class Customer {
 
+	private String username; 
+	private String password;
+	public String getUsername() {
+		return username;
+>>>>>>> e5a3b367b1b0e6163385a168cc80f62e68ca7c20
 	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	} 
+	
 	
 	
 
