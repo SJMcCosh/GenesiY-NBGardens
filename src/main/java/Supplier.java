@@ -5,43 +5,34 @@
  */
 public class Supplier {
 
-	private int SupplierID;
-	private String Name;
-	private String TelephoneNumber;
-	private String EmailAddress;
-	
-
-	public void getSupplierID(int SupplierID){
-		this.SupplierID = SupplierID;
+	private int supplierID;
+	private String name;
+	private String telephoneNumber;
+	private String emailAddress;
+	public int getSupplierID() {
+		return supplierID;
+		
 	}
-	
-	public void getName(String Name) {
-		this.Name = Name;
+	public void setSupplierID(int supplierID) {
+		this.supplierID = supplierID;
 	}
-	
-	public void getTelephoneNumber(String TelephoneNumber) {
-		this.TelephoneNumber = TelephoneNumber;
-	}
-	
-	public void getEmailAddress(String EmailAddress) {
-		this.EmailAddress = EmailAddress;
-	}
-	
-	
-	public int SupplierID() {
-		return SupplierID;
-	}
-	
 	public String getName() {
-		return Name;
+		return name;
 	}
-	
+	public void setName(String name) {
+		this.name = name;
+	}
 	public String getTelephoneNumber() {
-		return TelephoneNumber;
+		return telephoneNumber;
 	}
-	
+	public void setTelephoneNumber(String telephoneNumber) {
+		this.telephoneNumber = telephoneNumber;
+	}
 	public String getEmailAddress() {
-		return EmailAddress;
+		return emailAddress;
+	}
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
 	}
 	
 	/**
