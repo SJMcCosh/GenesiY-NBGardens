@@ -6,6 +6,9 @@ import javax.validation.constraints.Size;
  * Contains getters and setter for variables
  * @author Samuel McCosh
  */
+
+@Entity
+@Table (name = "supplier")
 public class Supplier {
 
 	@Id

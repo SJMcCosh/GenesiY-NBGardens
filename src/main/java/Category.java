@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
  * @author Brian McLaughlin
  */
 @Entity
-@Table (name = "Category")
+@Table (name = "category")
 public class Category 
 {
 	@Id

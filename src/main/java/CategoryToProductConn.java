@@ -6,6 +6,9 @@ import javax.validation.constraints.NotNull;
  * @author Thomas Chatterjee
  *
  */
+
+@Entity
+@Table (name = "categoty_to_product_conn")
 public class CategoryToProductConn {
 	@ManyToOne
 	@JoinColumn (name = "productID", nullable = false)
