@@ -37,4 +37,16 @@ public class PurchaseOrder {
 	public void setTotalPrice(double totalPrice) {
 		this.totalPrice = totalPrice;
 	}
+	public Supplier getSupplier(){
+		return supplier;
+	}
+	public void setSupplier(Supplier supplier){
+		this.supplier = supplier;
+	}
+	public EmployeeLogin getEmployee(){
+		return employee;
+	}
+	public void setEmployee(EmployeeLogin employee){
+		this.employee = employee;
+	}
 }
