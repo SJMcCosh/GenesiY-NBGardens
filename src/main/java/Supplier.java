@@ -1,5 +1,5 @@
 import javax.persistence.*;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 /**
  * Basic outline for Supplier class
