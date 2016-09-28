@@ -1,33 +1,35 @@
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
 /**
  * Purchase Order Line Outline
  * @author Thomas Chatterjee
  *
  */
+@Entity
+@Table (name = "PurchaseOrderLine")
 public class PurchaseOrderLine {
-	private int lineID;
-	private int purchaseOrderID;
-	private int productID;
+	
+	@ManyToOne
+	@Id
+	@JoinColumn(name = "purchaseOrderID_fk", nullable = false)
+	@NotNull
+	private PurchaseOrder purchaseOrder;
+	
+	@ManyToOne
+	@Id
+	@JoinColumn(name = "productID_fk", nullable = false)
+	@NotNull
+	private Product product;
+	
+	@Column (name = "quantity", nullable = false)
+	@NotNull
 	private int quantity;
+	@Column (name = "price", nullable = false)
+	@NotNull
 	private double price;
 	
-	public int getLineID() {
-		return lineID;
-	}
-	public void setLineID(int lineID) {
-		this.lineID = lineID;
-	}
-	public int getPurchaseOrderID() {
-		return purchaseOrderID;
-	}
-	public void setPurchaseOrderID(int purchaseOrderID) {
-		this.purchaseOrderID = purchaseOrderID;
-	}
-	public int getProductID() {
-		return productID;
-	}
-	public void setProductID(int productID) {
-		this.productID = productID;
-	}
+
 	public int getQuantity() {
 		return quantity;
 	}
