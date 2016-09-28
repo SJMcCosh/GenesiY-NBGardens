@@ -1,41 +1,24 @@
 /**
- * 
+ * customer class, setting/getting customer passwords and usernames
+ * @author Karrus
  */
-
-/**
- * @author Administrator
- *
- */
-// Karrus  - customer class, setting/getting customer passwords and usernames
 public class Customer {
 
-	private String Username; 
-	private String Password; 
+	private String username; 
+	private String password;
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	} 
 	
-	public String getUsername (){
-		return Username;
-		
-	}
-	
-	public String getPassword (){
-		return Password;
-		
-	}
-	
-	public void setUsername (String vUsername) {
-		this.Username = vUsername;   
-	}
-	
-	public void setPassword (String vPassword) {
-		this.Password = vPassword;   
-	}
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 	
 	
 
