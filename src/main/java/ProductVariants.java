@@ -1,3 +1,7 @@
+import javax.persistence.*;
+import javax.validation.constraints.*;
+
+
 /**
  * 
  */
@@ -7,13 +11,35 @@
  * Created by Callum Holden 28/09/2016
  *
  */
+@Entity
+@Table (name = "ProductVariants")
 public class ProductVariants {
 	
+	@Id
+	@Column (name = "prodVarId")
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@NotNull
+	private long prodVarId;
 	
+	@Column (name="stock_levels", nullable = false)	
+	@NotNull
 	private int stockLevel;
+	
+	@Column (name="stock_levels", nullable = false)	
+	@NotNull
 	private double price;
+	
+	@Column (name="porous", nullable = false)	
+	@NotNull
 	private boolean porous;
+	
+	@Column (name="status", nullable = false, length = 225)
+	@NotNull
+	@Size (min = 5, max = 225)
 	private String status;
+	
+	@OneToOne
+	@JoinColumn(name = "productID", nullable = false)
 	private long fk_ProductID;
 	
 	
