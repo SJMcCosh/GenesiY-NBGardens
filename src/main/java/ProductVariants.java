@@ -4,10 +4,12 @@
 
 /**
  * @author Administrator 
- * Created by Callum Talks Out of His Arse DeLacey Holden 28/09/2016
+ * Created by Callum Holden 28/09/2016
  *
  */
 public class ProductVariants {
+	
+	
 	private int stockLevel;
 	private double price;
 	private boolean porous;
