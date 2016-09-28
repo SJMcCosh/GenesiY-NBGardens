@@ -1,3 +1,7 @@
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
 /**
  * 
  */
@@ -8,7 +12,12 @@
  */
 public class ProductTagLine {
 	
+	@ManyToOne
+	@JoinColumn (name = "productID_fk", nullable = false)
 	private long productId;
+	
+	@OneToOne
+	@JoinColumn (name = "productID_fk", nullable = false)
 	private long tagId;
 	
 	
