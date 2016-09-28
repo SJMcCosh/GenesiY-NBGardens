@@ -1,5 +1,5 @@
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 
 /**
  * Purchase Order Line Outline
@@ -25,7 +25,8 @@ public class PurchaseOrderLine {
 	@Column (name = "quantity", nullable = false)
 	@NotNull
 	private int quantity;
-	@Column (name = "price", nullable = false)
+	@Column (name = "price", nullable = false, length = 8)
+	@Size (min = 1, max = 8)
 	@NotNull
 	private double price;
 	
