@@ -18,11 +18,13 @@ public class Customer {
 	@Id
 	@Column (name = "username", nullable = false)
 	@Size (min = 5, max = 225)
+	@NotNull
 	private String Username; 
 	
 	
 	@Column (name = "password", nullable = false)
 	@Size (min = 5, max = 225)
+	@NotNull
 	private String Password; 
 	
 	public String getUsername (){
