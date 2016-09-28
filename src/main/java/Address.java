@@ -1,4 +1,5 @@
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
@@ -34,6 +35,11 @@ public class Address {
 	@Column (name = "postcode", nullable = false, length = 9)
 	@Size (min = 7, max = 9)
 	private String postcode;
+	
+	@OneToMany
+	@JoinColumn (name = "customer_fk", nullable = false)
+	@NotNull
+	private Customer customer;
 	
 	public int getAddressID() {
 		return addressID;
