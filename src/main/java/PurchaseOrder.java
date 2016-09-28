@@ -1,13 +1,29 @@
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
 /**
  * Purchase Order Outline
  * @author Thomas Chatterjee
  *
  */
+@Entity
+@Table (name = "PurchaseOrder")
 public class PurchaseOrder {
+	@Id
+	@Column (name = "purchaseID")
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int purchaseID;
+	@Column (name = "totalPrice", nullable = false)
+	@NotNull
 	private double totalPrice;
-	private int supplierID;
-	private String imUsername;
+	@OneToOne
+	@JoinColumn (name = "supplierID_fk", nullable = false)
+	@NotNull
+	private Supplier supplier;
+	@OneToOne
+	@JoinColumn (name = "login_fk", nullable = false)
+	@NotNull
+	private EmployeeLogin employee;
 	
 	public int getPurchaseID() {
 		return purchaseID;
@@ -20,17 +36,5 @@ public class PurchaseOrder {
 	}
 	public void setTotalPrice(double totalPrice) {
 		this.totalPrice = totalPrice;
-	}
-	public int getSupplierID() {
-		return supplierID;
-	}
-	public void setSupplierID(int supplierID) {
-		this.supplierID = supplierID;
-	}
-	public String getIMUsername() {
-		return imUsername;
-	}
-	public void setIMUsername(String imUsername) {
-		this.imUsername = imUsername;
 	}
 }
