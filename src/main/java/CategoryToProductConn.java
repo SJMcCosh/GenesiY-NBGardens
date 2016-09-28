@@ -1,22 +1,20 @@
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
 /**
  * Outline class connecting Categories and Products
  * @author Thomas Chatterjee
  *
  */
 public class CategoryToProductConn {
-	private int productID;
-	private int tagID;
-	
-	public int getProductID() {
-		return productID;
-	}
-	public void setProductID(int productID) {
-		this.productID = productID;
-	}
-	public int getTagID() {
-		return tagID;
-	}
-	public void setTagID(int tagID) {
-		this.tagID = tagID;
-	}
+	@ManyToOne
+	@Id
+	@JoinColumn (name = "productID", nullable = false)
+	@NotNull
+	private Product product;
+	@ManyToOne
+	@Id
+	@JoinColumn (name = "category", nullable = false)
+	@NotNull
+	private Category category;
 }
