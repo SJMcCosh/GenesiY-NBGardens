@@ -10,6 +10,8 @@ public class Product {
 	private String description;
 	private String size;
 	private double weight;
+	
+	
 	public String getName() {
 		return name;
 	}
