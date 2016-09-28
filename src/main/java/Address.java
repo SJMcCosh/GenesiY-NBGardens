@@ -59,5 +59,7 @@ public class Address {
 	public String getPostcode() {
 		return Postcode;
 	}
-	
+	/**
+	 * Add code to pull from database
+	 */
 }
