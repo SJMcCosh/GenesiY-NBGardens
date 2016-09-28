@@ -1,17 +1,57 @@
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 /**
  * Product outline
  * @author Sam Precious
  *
  */
+
+@Entity
+@Table (name = "products")
 public class Product {
 	
+	@Id
+	@Column (name = "productID")
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	private int id;
+	
+	@Column (name = "productName", nullable = false, length = 255)
+	@NotNull
+	@Size (min = 2, max = 255)
 	private String name;
+	
+	@Column (name = "averageRating", nullable = false)
+	@NotNull
 	private double averageRating;
+	
+	@Column (name = "productName", nullable = false, length = 1000)
+	@NotNull
+	@Size (min = 2, max = 1000)
 	private String description;
+	
+	@Column (name = "productName", nullable = false, length = 255)
+	@NotNull
+	@Size (min = 2, max = 255)
 	private String size;
+	
+	@Column (name = "averageRating", nullable = false)
+	@NotNull
 	private double weight;
 	
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getName() {
 		return name;
 	}
@@ -42,4 +82,6 @@ public class Product {
 	public void setWeight(double weight) {
 		this.weight = weight;
 	}
+	
+	
 }
