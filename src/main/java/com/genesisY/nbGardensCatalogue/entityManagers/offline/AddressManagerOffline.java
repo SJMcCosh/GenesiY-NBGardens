@@ -1,3 +1,8 @@
+/**
+ * Class that is a allows the Address Entities to be created, read or updated
+ * @author Samuel McCosh
+ */
+
 package com.genesisY.nbGardensCatalogue.entityManagers.offline;
 
 import javax.ejb.Stateless;
