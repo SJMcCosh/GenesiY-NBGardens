@@ -1,4 +1,4 @@
-package com.genesisY.nbGardensCatalogue.entityManagers;
+package com.genesisY.nbGardensCatalogue.entityManagers.repositories;
 
 import java.util.ArrayList;
 
@@ -31,10 +31,4 @@ public interface PurchaseOrderRepository {
 	 * Updates a purchase order
 	 */
 	public void updatePurchaseOrder(PurchaseOrder po);
-	/**
-	 * 
-	 * @param Purchase Order
-	 * Removes a purchase order - archives it
-	 */
-	public void removePurchaseOrder(PurchaseOrder po);
 }
