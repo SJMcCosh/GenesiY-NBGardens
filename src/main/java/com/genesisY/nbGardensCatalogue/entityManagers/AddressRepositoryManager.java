@@ -4,6 +4,9 @@
  */
 package com.genesisY.nbGardensCatalogue.entityManagers;
 
-public interface AddressRepositoryManager{
+import javax.ejb.Stateless;
+
+@Stateless
+public interface AddressRepositoryManager {
 
 }

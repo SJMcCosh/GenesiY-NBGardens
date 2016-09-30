@@ -45,6 +45,7 @@ public class InitialData {
 	private ArrayList<Tag> tagList = new ArrayList<Tag>();
 	
 	public InitialData(){
+		addressList.add(new Address());
 		
 	}
 	
