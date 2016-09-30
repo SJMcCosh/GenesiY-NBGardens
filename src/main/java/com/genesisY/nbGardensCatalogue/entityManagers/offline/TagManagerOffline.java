@@ -1,3 +1,8 @@
+/**
+ * TagManagerOffline class
+ * Implements TagRepository interface
+ * @author Brian McLaughlin
+ */
 package com.genesisY.nbGardensCatalogue.entityManagers.offline;
 
 import com.genesisY.nbGardensCatalogue.entities.Product;
