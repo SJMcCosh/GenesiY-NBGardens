@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 /**
  * This is the outline for the Customer Order class
  * 
- * @Aiesha
+ * @author Aiesha Jules
  */
 
 @Entity
@@ -20,7 +20,7 @@ import javax.validation.constraints.NotNull;
 public class CustomerOrder {
 
 	@Id
-	@Column(name = "customerOrderId")
+	@Column(name = "customerOrderID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int customerOrderID;
 
