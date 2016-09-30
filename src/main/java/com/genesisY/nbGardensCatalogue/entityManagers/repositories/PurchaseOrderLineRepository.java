@@ -1,4 +1,4 @@
-package com.genesisY.nbGardensCatalogue.entityManagers;
+package com.genesisY.nbGardensCatalogue.entityManagers.repositories;
 
 import java.util.ArrayList;
 import java.util.List;
