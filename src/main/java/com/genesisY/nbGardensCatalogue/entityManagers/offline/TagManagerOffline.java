@@ -5,26 +5,25 @@
  */
 package com.genesisY.nbGardensCatalogue.entityManagers.offline;
 
+import javax.ejb.Stateless;
+
 import com.genesisY.nbGardensCatalogue.entities.Product;
 import com.genesisY.nbGardensCatalogue.entities.Tag;
 import com.genesisY.nbGardensCatalogue.entityManagers.repositories.TagRepository;
 
-public class TagManagerOffline implements TagRepository 
-{
-	
-	public void createTag(Tag a)
-	{
-		
+@Stateless
+public class TagManagerOffline implements TagRepository {
+
+	public void createTag(Tag a) {
+
 	}
-	
-	public void readTagByProductID(Product id)
-	{
-		
+
+	public void readTagByProductID(Product id) {
+
 	}
-	
-	public void updateTagWithProduct(Tag a, Product id)
-	{
-		
+
+	public void updateTagWithProduct(Tag a, Product id) {
+
 	}
 
 }

@@ -4,12 +4,16 @@
  */
 package com.genesisY.nbGardensCatalogue.entityManagers.repositories;
 
+import javax.ejb.Stateless;
+
 import com.genesisY.nbGardensCatalogue.entities.Product;
 import com.genesisY.nbGardensCatalogue.entities.Tag;
 
-public interface TagRepository 
-{
+@Stateless
+public interface TagRepository {
 	public void createTag(Tag a);
+
 	public void readTagByProductID(Product id);
+
 	public void updateTagWithProduct(Tag a, Product id);
 }
