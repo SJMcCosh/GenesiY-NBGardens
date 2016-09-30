@@ -31,6 +31,21 @@ public class PurchaseOrderLine {
 	@NotNull
 	private double price;
 	
+	
+	
+	/**
+	 * @param purchaseOrder
+	 * @param product
+	 * @param quantity
+	 * @param price
+	 */
+	public PurchaseOrderLine(PurchaseOrder purchaseOrder, Product product, int quantity, double price) {
+		this.purchaseOrder = purchaseOrder;
+		this.product = product;
+		this.quantity = quantity;
+		this.price = price;
+	}
+	
 	public Product getProduct(){
 		return product;
 	}

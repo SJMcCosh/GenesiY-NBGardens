@@ -1,4 +1,5 @@
 package com.genesisY.nbGardensCatalogue.entities;
+
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,6 +22,19 @@ public class ProductTagLine {
 	@OneToOne
 	@JoinColumn(name = "productID_fk", nullable = false)
 	private long tagId;
+
+	public ProductTagLine() {
+
+	}
+
+	/**
+	 * @param productId
+	 * @param tagId
+	 */
+	public ProductTagLine(long productId, long tagId) {
+		this.productId = productId;
+		this.tagId = tagId;
+	}
 
 	public void setProductId(long vproductId) {
 		this.productId = vproductId;
