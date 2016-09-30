@@ -1,3 +1,7 @@
+/**
+ * Interface to be implemented in online + offline TagManager classes
+ * @author Brian McLaughlin
+ */
 package com.genesisY.nbGardensCatalogue.entityManagers.repositories;
 
 import com.genesisY.nbGardensCatalogue.entities.Product;
