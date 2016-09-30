@@ -1,4 +1,4 @@
-package com.genesisY.nbGardensCatalogue.entityManagers;
+package com.genesisY.nbGardensCatalogue.entityManagers.repositories;
 
 import com.genesisY.nbGardensCatalogue.entities.Product;
 import com.genesisY.nbGardensCatalogue.entities.Tag;

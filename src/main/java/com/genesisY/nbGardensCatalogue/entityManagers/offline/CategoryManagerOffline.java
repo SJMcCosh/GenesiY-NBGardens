@@ -1,6 +1,7 @@
-package com.genesisY.nbGardensCatalogue.entityManagers;
+package com.genesisY.nbGardensCatalogue.entityManagers.offline;
 
 import com.genesisY.nbGardensCatalogue.entities.Category;
+import com.genesisY.nbGardensCatalogue.entityManagers.repositories.CategoryRepository;
 
 public class CategoryManagerOffline implements CategoryRepository {
 
