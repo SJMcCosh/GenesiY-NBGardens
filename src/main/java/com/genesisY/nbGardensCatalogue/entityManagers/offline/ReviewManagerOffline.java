@@ -2,9 +2,10 @@
  * Class that is a allows the Reviews Entities to be created, read or updated
  * @author Samuel McCosh
  */
-package com.genesisY.nbGardensCatalogue.entityManagers;
+package com.genesisY.nbGardensCatalogue.entityManagers.offline;
 
 import com.genesisY.nbGardensCatalogue.entities.Review;
+import com.genesisY.nbGardensCatalogue.entityManagers.ReviewRepository;
 
 public class ReviewManagerOffline implements ReviewRepository {
 
