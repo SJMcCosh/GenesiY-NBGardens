@@ -46,7 +46,18 @@ public class InitialData {
 	
 	public InitialData(){
 		addressList.add(new Address());
-		
+		addressList.add(new Address());
+		addressList.add(new Address());
+		categoryList.add(new Category());
+		categoryList.add(new Category());
+		categoryList.add(new Category());
+		ctpcList.add(new CategoryToProductConn());
+		ctpcList.add(new CategoryToProductConn());
+		ctpcList.add(new CategoryToProductConn());
+		customerList.add(new Customer());
+		customerList.add(new Customer());
+		customerList.add(new Customer());
+		colList.add(new CustomerOrderLine());
 	}
 	
 	public ArrayList<Address> getAddressList() {
