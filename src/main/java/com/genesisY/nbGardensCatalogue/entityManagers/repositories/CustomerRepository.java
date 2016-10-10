@@ -16,5 +16,7 @@ public interface CustomerRepository
 	public void readCustomerDetails(Customer c);
 	
 	//Update
+	public void updateAddressDetails(Customer c);
+	public void updateTelephoneNumber(Customer c);
 	
 }

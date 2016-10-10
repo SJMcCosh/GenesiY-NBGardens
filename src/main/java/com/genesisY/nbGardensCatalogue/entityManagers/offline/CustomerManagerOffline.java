@@ -11,7 +11,7 @@ import javax.ejb.Stateless;
 import com.genesisY.nbGardensCatalogue.entities.Customer;
 
 @Stateless
-public class CustomerManagerOffline 
+public class CustomerManagerOffline implements CustomerRepository
 {
 	//Read
 	public void readCustomerDetails(Customer c)
