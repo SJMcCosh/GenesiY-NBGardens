@@ -19,14 +19,15 @@ public class CustomerManagerOffline implements CustomerRepository
 	{
 		
 	}
-
-	public void updateAddressDetails(Customer c) {
-		// TODO Auto-generated method stub
+	@Override
+	public void updateAddressDetails(Customer c) 
+	{
 		
 	}
 
-	public void updateTelephoneNumber(Customer c) {
-		// TODO Auto-generated method stub
+	@Override
+	public void updateTelephoneNumber(Customer c) 
+	{
 		
 	}
 }
