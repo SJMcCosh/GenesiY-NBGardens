@@ -19,7 +19,6 @@ public class CustomerManagerOffline implements CustomerRepository
 	{
 		
 	}
-
 	@Override
 	public void updateAddressDetails(Customer c) 
 	{
