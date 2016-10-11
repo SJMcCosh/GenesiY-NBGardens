@@ -11,6 +11,18 @@ body{
 	text-align: center;
 }
 
+.header{
+	color: #143516;
+}
+
+.navigation{
+	background-color: #bcf9a6;
+}
+
+.faq{
+	background-color: #bcf9a6;
+}
+
 .extras  h1, h2, h3{
 	color: #143516;
 }
