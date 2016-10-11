@@ -1,0 +1,132 @@
+
+
+
+#index_top_promo_section{
+	
+	width:60%;
+	height:374px;
+	background-color:red;
+	position:relative;
+	
+}
+
+#index_bottom_porous_section{
+	
+	width:60%;
+	height:374px;
+	background-color:red;
+	position:relative;
+	
+}
+
+.index_sections_bottom_banner{
+	
+	width:100%;
+	height:75px;
+	background-color:black;
+	position:absolute;
+	bottom:0;
+	
+}
+
+.index_sections_bottom_banner > p{
+
+	color:white;
+	font-size:30px;
+	text-align:center;		
+	
+}
+		
+		
+#index_gnome_new_section{
+	width: 25%;
+	height: 500px;
+	background-color: blue;
+	position:relative;
+	
+}
+
+#index_gnome_popular_section{
+	width: 25%;
+	height: 500px;
+	background-color: blue;
+	position:relative;
+	
+}
+
+#index_gnome_sales_section{
+	width: 25%;
+	height: 500px;
+	background-color: blue;
+	position:relative;
+	
+}
+
+#index_featured_products_wrapper {
+	
+	background-color: black;
+	height: 374px;
+	width:  60%;
+		
+}
+#featured_products_list{
+	list-style:none;
+	margin:0;
+	padding:0;
+	
+}
+	.index_featured_products_product_container{
+
+		background-color: yellow;
+		height: 374px;
+		width:20%;
+		display:inline-block;
+		float:left;
+		margin-left:20px;
+	}
+	
+	.index_featured_products_list_products_image{
+		
+		background-color: purple;
+		width: 100%; 
+		height: 250px; 
+		
+		
+	}
+	
+	.index_featured_products_list_products_image_information>a{
+		
+		font-size: 20px;
+		
+		
+	}
+		.index_featured_products_list_products_image_information_starating_wrapper{
+		width: 100%;
+		height:40px;
+		background-color: green;
+		
+		}
+		
+		.index_featured_products_list_products_image_information_starating_wrapper >ul{
+			list-style: none;
+			margin: 0; 
+			padding: 0; 
+			
+		}
+	
+	
+		.index_featured_products_list_products_image_information_starating_wrapper >ul > li{
+			background-color: purple;
+			height:100%;
+			width:32px;
+			margin-left: 5px; 
+			display:inline-block;
+			float:left;
+			
+		}
+	
+	
+	
+	
+	
+	

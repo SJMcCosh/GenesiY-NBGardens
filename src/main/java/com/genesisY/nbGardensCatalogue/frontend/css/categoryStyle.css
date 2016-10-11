@@ -1,0 +1,60 @@
+@CHARSET "ISO-8859-1";
+
+div#header {
+	position: absolute;
+	width: 100%;
+	top: 0; /* stick to top */
+}
+
+div#sidebar {
+	left: 0; /* stick to left */
+	width: 15%;
+	background-color: green;
+}
+
+div#featuredSubCategory {
+	text-align: center;
+	background-color: #003300;
+}
+
+.subCategoriesGrid .column {
+	width: 500px;
+	margin-left: 10%;
+}
+
+.columnFirst {
+	background: #AAEEAA;
+	color: #335500;
+	float: left;
+	margin-left: 20%;
+}
+
+.columnSecond {
+	background: #AAEEAA;
+	color: #005511;
+	float: left;
+	margin-left: 20%;
+}
+
+.columnThird {
+	background: #AAEEAA;
+	color: #005522;
+	float: left;
+	margin-left: 20%;
+}
+
+div#footer {
+	position: absolute;
+	width: 100%;
+	bottom: 0; /* stick to bottom */
+}
+
+h1 {
+	text-align: center;
+	color: #005500;
+}
+
+h3, h4 {
+	text-align: center;
+	color: #ffffff;
+}
