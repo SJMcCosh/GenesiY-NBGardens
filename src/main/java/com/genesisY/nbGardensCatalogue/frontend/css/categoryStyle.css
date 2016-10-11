@@ -1,22 +1,137 @@
 @CHARSET "ISO-8859-1";
 
-div#header {
-	position: absolute;
-	z-index: 1; /* Stay on top */
-	width: 100%;
-	top: 0; /* stick to top */
-	overflow-x: hidden; /*Disable horizontal scroll */
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
-.link {
-	text-align: right;
+ul.topnav {
+	list-style-type: none;
+	border-width: 1px 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	overflow: hidden;
+	background-color: #143516;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+ul.topnav li {
+	display: inline-block;
+}
+
+ul.topnav li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+ul.topnav li a:hover {
+	background-color: #62c945;
+}
+
+@media screen and (max-width: 600px) {
+	ul.topnav li.right, ul.topnav li {
+		float: none;
+	}
+}
+
+#header {
+	background-color: #143516;
+}
+
+#searchandlogo {
+	postion: relative;
+	display: inline-block;
+}
+
+#tfnewsearch {
+	position: relative;
+	float: center;
+	float: right;
+	padding: 20px;
+}
+
+.tftextinput {
+	margin: 0;
+	padding: 5px 15px;
+	font-size: 14px;
+	border-right: 0px;
+	border-top-left-radius: 5px 5px;
+	border-bottom-left-radius: 5px 5px;
+	text-align: left;
+}
+
+.tfbutton {
+	margin: 0;
+	padding: 5px 15px;
+	font-size: 14px;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	border-right: 0px;
+	background: #704e2e;
+	background: -webkit-gradient(linear, left top, left bottom, from(#704e2e),
+		to(#704e2e));
+	background: -moz-linear-gradient(top, #704e2e, #704e2e);
+	border-top-right-radius: 5px 5px;
+	border-bottom-right-radius: 5px 5px;
+}
+
+.tfbutton:hover {
+	text-decoration: none;
+	background: #007ead;
+	background: -webkit-gradient(linear, left top, left bottom, from(#0095cc),
+		to(#00678e));
+	background: -moz-linear-gradient(top, #0095cc, #00678e);
+}
+
+Fixes submit button height problem in Firefox
+	.tfbutton::-moz-focus-inner {
+	border: 0;
+}
+
+ul.breadcrumb {
+	padding: 8px 16px;
+	list-style: none;
+}
+
+ul.breadcrumb li {
+	display: inline-block;
+}
+
+ul.breadcrumb li+li:before {
+	padding: 8px;
+	color: white;
+	content: "/\00a0";
+}
+
+ul.breadcrumb li a {
+	color: #62c945;
+}
+
+ul,li{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
 }
 
 div#sidebar {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
 	left: 0; /* stick to left */
 	width: 15%;
 	background-color: #008040;
-	position: fixed;
+	position: absolute;
 	z-index: 1; /*Stay on top */
 	overflow-x: hidden; /*Disable horizontal scroll */
 	padding-top: 10%;
@@ -46,40 +161,58 @@ div#featuredSubCategory {
 }
 
 .columnFirst {
-	background: #AAEEAA;
+	background: #FFFFFF;
 	color: #005522;
 	float: left;
 	margin-left: 20%;
 }
 
 .columnSecond {
-	background: #AAEEAA;
+	background: #FFFFF;
 	color: #005522;
 	float: left;
 	margin-left: 20%;
 }
 
 .columnThird {
-	background: #AAEEAA;
+	background: #FFFFFF;
 	color: #005522;
 	float: left;
 	margin-left: 20%;
 }
 
-div#footer {
-	position: absolute;
-	z-index: 1; /* Stay on top */
-	width: 100%;
-	bottom: 0; /* stick to bottom */
-	overflow-x: hidden; /*Disable horizontal scroll */
+#logo {
+	display: inline;
 }
 
-h1 {
-	text-align: center;
-	color: #005500;
+#footer {
+	background-color: #143516;
 }
 
-h3 {
+ul.botnav {
+	list-style-type: none;
+	border-width: 1px 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	overflow: hidden;
+	background-color: #143516;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 	text-align: center;
-	color: #ffffff;
+	float: right;
+}
+
+ul.botnav li {
+	display: inline-block;
+}
+
+ul.botnav li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
 }
