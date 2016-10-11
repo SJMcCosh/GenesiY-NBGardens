@@ -1,50 +1,97 @@
 <!DOCTYPE html>
 <html>
 <head>
-<p id="links";><a href="#">Cart</a> <a href="#">Login</a> <a href="#">Contact Us</a></p>
-<i>header goes here</i>
-<link rel="stylesheet" type="text/css" href="../css/categoryStyle.css">
-<title>NB Gardens Category Page</title>
-</head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css"
+	href="../css/TemplateStyleSheet.css" />
+<title>NB Gardens</title>
+</head>
 <body>
-	<h1>Category: Gnomes</h1>
-	<div id="logo"><img src="nblogo.png" alt="NB Gardens Logo" style="width:102px;height:132px;"></div>
-	<div id="featuredSubCategory">
-		<h3>Main Picture</h3>
+	<!-- This is the header -->
+	<div id="header">
+		<div id="searchandlogo">
+			<form id="tfnewsearch" method="get" action="http://www.google.com">
+				<input type="text" class="tftextinput" name="q" size="21"
+					maxlength="120"> <input type="submit" value="search"
+					class="tfbutton">
+			</form>
+			<div id="logo">
+				<a href="index.html"> <img src="nblogo.png">
+				</a>
+			</div>
+		</div>
+		<nav>
+			<ul class="topnav">
+				<li><a href="categoryOutdoor.html"> Outdoor Living </a></li>
+				<li><a href="categoryTools.html"> Tools and Equipment </a></li>
+				<li><a href="categoryGnome.html"> Gnomes and Accessories</a></li>
+				<li><a href="categoryBuildings.html"> Outdoor Buildings</a></li>
+				<li><a href="categorySeasonal.html"> Seasonal Products </a></li>
+				<li><a href="categoryHome.html"> Home Life </a></li>
+			</ul>
+		</nav>
+		<!-- This is the breadcrumb -->
+		<ul class="breadcrumb">
+			<li><a href="index.html">Home</a> > <a href="department.html">Department</a> > <a href="categoryGnome.html">Category: Gnome</a></li>
+		</ul>
 	</div>
 	<div id="sidebar" align="center">
-		<a href="#">Valentine's day</a> <br/>
-		<a href="#">St. Patrick's Day</a> <br/>
-		<a href="#">Easter</a> <br/>
-		<a href="#">Halloween</a> <br/>
-		<a href="#">Christmas</a> <br/>
-		<a href="#">New Year</a> <br/>
-		<a href="#">Birthday</a> <br/>
-		<a href="#">Wedding</a> <br/>
-		<a href="#">New Job</a>
+		<ul>
+		<li><a href="valDayGnomes.html">Valentine's day</a></li>
+		<br/>
+		<li><a href="sPDGnomes.html">St. Patrick's Day</a></li>
+		<br/>
+		<li><a href="easterGnomes.html">Easter</a></li>
+		<br/>
+		<li><a href="sumerGnomes.html">Summer Holiday</a></li>
+		<br/>
+		<li><a href="spookGnomes.html">Halloween</a></li>
+		<br/>
+		<li><a href="xmasGnomes.html">Christmas</a></li>
+		<br/>
+		<li><a href="royalGnomes.html">Royal Events</a></li>
+		<br/>
+		<li><a href="weddingGnomes.html">Wedding</a></li>
+		<br/>
+		<li><a href="jobGnomes.html">New Job</a></li>
+		</ul>
 	</div>
-	<div id="subCategoriesGrid" align="centre">
+<div id="featuredSubCategory">
+		<br/>
+		<h3><a href="#"><img src="./CategoryPictures/olympicGnomes.jpg" alt="Olympics Gnomes" height="180" width="600"></a></h3>
+		<br/>
+	</div>
+	<br/>
+<div id="subCategoriesGrid" align="centre">
 		<div class="columnFirst">
-			<div class="SubCategory">Valentine's Day</div>
-			<div class="SubCategory">Halloween</div>
-			<div class="SubCategory">Birthday</div>
+			<div class="SubCategory"><a href="valDayGnomes.html"><img src="./CategoryPictures/valentineGnome.jpg" alt="Cupid Gnome" height="200" width="200"></a></div>
+			<div class="SubCategory"><a href="sumerGnomes.html"><img src="./CategoryPictures/summerGnome.jpg" alt="Summer Holiday" height="200" width="200"></a></div>			
+			<div class="SubCategory"><a href="royalGnomes.html"><img src="./CategoryPictures/royalGnome.jpg" alt="Royal Gnome" height="200" width="200"></a></div>
 		</div>
 		<div class="columnSecond">
-			<div class="SubCategory">St. Patrick's Day</div>
-			<div class="SubCategory">Christmas</div>
-			<div class="SubCategory">Wedding</div>
+			<div class="SubCategory"><a href="sPDGnomes.html"><img src="./CategoryPictures/stPatrickGnome.jpg" alt="St Patrick Gnome" height="200" width="200"></a></div>
+			<div class="SubCategory"><a href="spookGnomes.html"><img src="./CategoryPictures/zombieGnome.jpeg" alt="Spooky Gnome" height="200" width="200"></a></div>
+			<div class="SubCategory"><a href="weddingGnomes.html"><img src="./CategoryPictures/weddingGnome.jpg" alt="Wedding Gnome" height="200" width="200"></a></div>
 		</div>
 		<div class="columnThird">
-			<div class="SubCategory">Easter</div>
-			<div class="SubCategory">New Year</div>
-			<div class="SubCategory">New Job</div>
+			<div class="SubCategory"><a href="easterGnomes.html"><img src="./CategoryPictures/easterGnome.png" alt="Easter Gnome" height="200" width="200"></a></div>
+			<div class="SubCategory"><a href="xmasGnomes.html"><img src="./CategoryPictures/xmasGnome.jpg" alt="Christmas Gnome" height="200" width="200"></a></div>
+			<div class="SubCategory"><a href="jobGnomes.html"><img src="./CategoryPictures/newJobGnome.jpg" alt="New Job Gnome" height="200" width="200"></a></div>
+		</div>
+	</div>
+	<!-- This is the footer -->
+	<div id="footer">
+		<div>
+			<div id="footerlogo">
+				<a href="index.html"> <img src="nblogo.png">
+				</a>
+				<ul class="botnav">
+					<li><a href="#">Contact Us</a></li>
+					<li><a href="#">Information</a></li>
+					<li><a href="#">About Us</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </body>
-<div id="footer">
-	<footer>
-		<i>footer goes here</i>
-	</footer>
-</div>
 </html>
