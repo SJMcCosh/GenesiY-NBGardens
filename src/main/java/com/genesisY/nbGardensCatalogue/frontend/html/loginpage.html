@@ -7,45 +7,43 @@
 </head>
 <body>
 	<header id = "heading">
-		<div>
-			<div id = "logohead">
-				<a href = "index.html"><img src="nblogo.png"></a>
+		<div id="searchandlogo">
+
+
+			<form id="tfnewsearch" method="get" action="http://www.google.com">
+				<input type="text" class="tftextinput" name="q" size="21"
+					maxlength="120"> <input type="submit" value="search"
+					class="tfbutton">
+			</form>
+
+			<div id="logo">
+				<a href="#index"> <img src="nblogo.png">
+				</a>
 			</div>
-			<div id = "searchbar">
-				<form>
-					<input type = "text" size = "70" maxlength = "120">
-					<input type = "submit" name = "Search" value = "Search">
-				</form>
-			</div>
-			<div id = cart>
-			</div>
-			<div>
-				<ul class = "extralinks">
-					<li><a>Login</a></li>
-					<li><a href="help.html">Help</a></li>
-				</ul>
-			</div>
+
+
 		</div>
-		<div>
-			<ul class = "navbar">
-				<li><a href="index.html">Home</a></li>
-				<li><a>Outdoor Living</a></li>
-				<li><a>Tools</a></li>
-				<li><a>Gnomes</a></li>
-				<li><a>Buildings</a></li>
-				<li><a>Seasonal</a></li>
+		<nav>
+			<ul class="topnav">
+				<li><a href="#index"> Outdoor Livin' </a></li>
+				<li><a href="#index"> Tools 'n Stuff </a></li>
+				<li><a href="#index"> Gnomes 'n Dat</a></li>
+				<li><a href="#index"> Outdoor Buildins</a></li>
+				<li><a href="#index"> Seasonal Crap </a></li>
+				<li><a href="#index"> You Goin' Home Fam </a></li>
 			</ul>
-		</div>
-		<div id = "breadcrumbs">
-			<p><a href="index.html">Home</a> > Login</p>
-		</div>
+		</nav>
+		<!-- This is the breadcrumb -->
+		<ul class="breadcrumb">
+			<li><a href="#">Home</a></li>
+		</ul>
 	</header>
 	
 	<article id="wholebody">
 		<br />
 		<br />
 		<div id = "leftpic">
-			<canvas id="leftimage" width = "250px" height = "400px" style = "border: 1px solid #000000;"></canvas>
+			<img src = "zombiefeast.jpg">
 			<p><a href="https://google.co.uk">Terms of agreement</a></p>
 		</div>
 		
@@ -54,24 +52,23 @@
 			<form>
 				<p>Username</p>
 				<input type = "text">
+				<p><a href = https://google.co.uk>Forgotten your username?</a></p>
 				<p>Password</p>
 				<input type = "text">
+				<p><a href = https://google.co.uk>Forgotten your password?</a></p>
 				<br />
 				<input type = "checkbox"> Remember me
 				<br />
-				<br />
 				<input type = "submit" name = "loginbtn" value = "Login">
-				<p><a href = https://google.co.uk>Have you forgotten your username?</a>
 				<br />
-				<a href = https://google.co.uk>Have you forgotten your password?</a></p>
-				
+				<br />
 				<p>Are you a new user?</p>
-				<input type = "submit" name = "newuserbtn" value = "New User">
+				<input type = "submit" name = "newuserbtn" value = "Sign-up">
 			</form>
 		</div>
 		
 		<div id = "rightpic">
-			<canvas id="rightimage" width = "250px" height = "400px" style = "border: 1px solid #000000;"></canvas>
+			<img src = "zombie_gnome_fishing.jpg">
 			<p><a href="https://google.co.uk">Contact NB Gardens</a></p>
 		</div>
 		<div>
@@ -83,15 +80,16 @@
 	</article>
 	
 	<footer id = "footing">
-		<div id = "logofoot">
-			<img src="nblogo.png">
-		</div>
 		<div>
-			<ul class = "footernav">
-				<li><a>Contact Us</a></li>
-				<li><a href = "help.html">Help</a></li>
-				<li><a>About Us</a></li>
-			</ul>
+			<div id="footerlogo">
+				<a href="#index"> <img src="nblogo.png">
+				</a>
+				<ul class="botnav">
+					<li><a href="#">Contact Us</a></li>
+					<li><a href="#">Information</a></li>
+					<li><a href="#">About Us</a></li>
+				</ul>
+			</div>
 		</div>
 	</footer>
 </body>
