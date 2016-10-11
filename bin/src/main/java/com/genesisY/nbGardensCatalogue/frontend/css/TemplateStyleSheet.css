@@ -43,8 +43,15 @@ ul.topnav li a:hover {
 	background-color: #143516;
 }
 
+#searchandlogo{
+	postion: relative;
+	display: inline-block;
+}
+
 #tfnewsearch {
-	float: right;
+	position: relative;
+	float: center;
+	float:right;
 	padding: 20px;
 }
 
@@ -89,17 +96,13 @@ Fixes submit button height problem in Firefox
 	border: 0;
 }
 
-.tfclear {
-	clear: both;
-}
-
 ul.breadcrumb {
 	padding: 8px 16px;
 	list-style: none;
 }
 
 ul.breadcrumb li {
-	display: inline;
+	display: inline-block;
 }
 
 ul.breadcrumb li+li:before {
@@ -130,6 +133,7 @@ ul.botnav {
 	margin: 0;
 	padding: 0;
 	text-align: center;
+	float: right;
 }
 
 ul.botnav li {
