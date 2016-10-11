@@ -39,14 +39,38 @@ body{
 	text-align: center;
 }
 
+@media only screen and (min-width: 768px) {
+	.navigation{
+		text-align: center;
+		background-color: #bcf9a6;
+		position: fixed;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	.navigation{
+		text-align: center;
+		background-color: #bcf9a6;
+		position: fixed;
+	}
+}
+
 .navigation{
-	text-align: center;
-	background-color: #bcf9a6;
+		text-align: center;
+		background-color: #bcf9a6;
+}
+
+@media only screen and (min-width: 768px) {
+	.rightBox{
+		text-align: center;
+		background-color: #bcf9a6;
+		position: fixed;
+	}
 }
 
 .rightBox{
-	text-align: center;
-	background-color: #bcf9a6;
+		text-align: center;
+		background-color: #bcf9a6;
 }
 
 .faq{
