@@ -2,56 +2,239 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href = "../css/subCategoryStyle.css" rel = "stylesheet" type ="text/css">
+<link rel="stylesheet" type="text/css"
+	href="../css/TemplateStyleSheet.css" />
+<link href="../css/subCategoryStyle.css" rel="stylesheet"
+	type="text/css">
+<link rel="stylesheet" type="text/css" href="../css/index_style.css">
 <title>SubCategory</title>
 </head>
 <body>
+	<!-- This is the header -->
+	<div id="header">
+		<div id="searchandlogo">
 
-	<h3 style="text-align: right">Sort By</h3>
 
-	<div>
-		<h2>Outdoor Living</h2>
-		<ul id="outdoor_living">
-			<li><a> Tables </a></li>
-			<li><a> Seating </a></li>
-			<li><a> Jacuzzis </a></li>
+			<form id="tfnewsearch" method="get" action="http://www.google.com">
+				<input type="text" class="tftextinput" name="q" size="21"
+					maxlength="120"> <input type="submit" value="search"
+					class="tfbutton">
+			</form>
+
+			<div id="logo">
+				<a href="#index"> <img src="nblogo.png">
+				</a>
+			</div>
+
+
+		</div>
+		<nav>
+			<ul class="topnav">
+				<li><a href="#index"> Outdoor Livin' </a></li>
+				<li><a href="#index"> Tools 'n Stuff </a></li>
+				<li><a href="#index"> Gnomes 'n Dat</a></li>
+				<li><a href="#index"> Outdoor Buildins</a></li>
+				<li><a href="#index"> Seasonal Crap </a></li>
+				<li><a href="#index"> You Goin' Home Fam </a></li>
+			</ul>
+		</nav>
+		<!-- This is the breadcrumb -->
+		<ul class="breadcrumb">
+			<li><a href="#">Home</a></li>
 		</ul>
 	</div>
 
-	<div>
-		<h2>Garden Tools</h2>
-		<ul id ="garden_tools">
-			<li><a> Lawnmowers </a></li>
-			<li><a> Cutting </a></li>
-			<li><a> Digging </a></li>
-			<li><a>Weeding/Planting</a></li>
-		</ul>
+	<div id="sorter">
+		<select>
+			<option value="volvo">Volvo</option>
+			<option value="saab">Saab</option>
+			<option value="mercedes">Mercedes</option>
+			<option value="audi">Audi</option>
+		</select>
+	</div>
+	<div id="maincontent">
+		<div id="tag_bar">
+			<div id="outdoor">
+				<h2>Outdoor Living</h2>
+				<ul id="outdoor_living">
+					<li><a> Tables </a></li>
+					<li><a> Seating </a></li>
+					<li><a> Jacuzzis </a></li>
+				</ul>
+			</div>
+
+			<div>
+				<h2>Garden Tools</h2>
+				<ul id="garden_tools">
+					<li><a> Lawnmowers </a></li>
+					<li><a> Cutting </a></li>
+					<li><a> Digging </a></li>
+					<li><a>Weeding/Planting</a></li>
+				</ul>
+			</div>
+
+			<div>
+				<h2>Gnomes</h2>
+				<ul id="gnomes">
+					<li><a> Sport </a></li>
+					<li><a> Traditional </a></li>
+					<li><a> Seasonal </a></li>
+					<li><a> Pop Culture </a></li>
+				</ul>
+			</div>
+
+			<div>
+				<h2>Outdoor Buildings</h2>
+				<ul id="outdoor_buildings">
+					<li><a> Sheds </a></li>
+					<li><a> Playhouse </a></li>
+				</ul>
+			</div>
+
+			<div>
+				<h2>Seasonal</h2>
+				<ul id="seasonal">
+					<li><a> Gnomes </a></li>
+					<li><a> Furniture </a></li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div id="grid_view">
+			<div id="index_featured_products_wrapper">
+
+				<ul id="featured_products_list">
+					<!-- replace with image -->
+					<li style="margin-left: 0px;"
+						class="index_featured_products_product_container">
+						<div class="index_featured_products_list_products_image"></div>
+						<div
+							class="index_featured_products_list_products_image_information">
+							<a href="google.com"> Standing outdoor gnome </a>
+							<div
+								class="index_featured_products_list_products_image_information_starating_wrapper">
+								<ul>
+									<li style="margin-left: 0px">f</li>
+
+									<li>f</li>
+									<li>f</li>
+									<li>f</li>
+									<li>f</li>
+								</ul>
+							</div>
+
+
+						</div>
+
+					</li>
+					<li class="index_featured_products_product_container">
+						<div></div>
+					</li>
+					<li class="index_featured_products_product_container">
+						<div></div>
+					</li>
+					<li class="index_featured_products_product_container">
+						<div></div>
+					</li>
+
+				</ul>
+
+			</div>
+			<div id="index_featured_products_wrapper">
+
+				<ul id="featured_products_list">
+					<!-- replace with image -->
+					<li style="margin-left: 0px;"
+						class="index_featured_products_product_container">
+						<div class="index_featured_products_list_products_image"></div>
+						<div
+							class="index_featured_products_list_products_image_information">
+							<a href="google.com"> Standing outdoor gnome </a>
+							<div
+								class="index_featured_products_list_products_image_information_starating_wrapper">
+								<ul>
+									<li style="margin-left: 0px">f</li>
+
+									<li>f</li>
+									<li>f</li>
+									<li>f</li>
+									<li>f</li>
+								</ul>
+							</div>
+
+
+						</div>
+
+					</li>
+					<li class="index_featured_products_product_container">
+						<div></div>
+					</li>
+					<li class="index_featured_products_product_container">
+						<div></div>
+					</li>
+					<li class="index_featured_products_product_container">
+						<div></div>
+					</li>
+
+				</ul>
+
+			</div>
+			<div id="index_featured_products_wrapper">
+
+				<ul id="featured_products_list">
+					<!-- replace with image -->
+					<li style="margin-left: 0px;"
+						class="index_featured_products_product_container">
+						<div class="index_featured_products_list_products_image"></div>
+						<div
+							class="index_featured_products_list_products_image_information">
+							<a href="google.com"> Standing outdoor gnome </a>
+							<div
+								class="index_featured_products_list_products_image_information_starating_wrapper">
+								<ul>
+									<li style="margin-left: 0px">f</li>
+
+									<li>f</li>
+									<li>f</li>
+									<li>f</li>
+									<li>f</li>
+								</ul>
+							</div>
+
+
+						</div>
+
+					</li>
+					<li class="index_featured_products_product_container">
+						<div></div>
+					</li>
+					<li class="index_featured_products_product_container">
+						<div></div>
+					</li>
+					<li class="index_featured_products_product_container">
+						<div></div>
+					</li>
+
+				</ul>
+
+			</div>
+		</div>
 	</div>
 
-	<div>
-		<h2>Gnomes</h2>
-		<ul id="gnomes">
-			<li><a> Sport </a></li>
-			<li><a> Traditional </a></li>
-			<li><a> Seasonal </a></li>
-			<li><a> Pop Culture </a></li>
-		</ul>
-	</div>
-
-	<div>
-		<h2>Outdoor Buildings</h2>
-		<ul id="outdoor_buildings">
-			<li><a> Sheds </a></li>
-			<li><a> Playhouse </a></li>
-		</ul>
-	</div>
-
+	<!-- This is the footer -->
+	<div id="footer">
 		<div>
-		<h2>Seasonal</h2>
-		<ul id="seasonal">
-			<li><a> Gnomes </a></li>
-			<li><a> Furniture </a></li>
-		</ul>
+			<div id="footerlogo">
+				<a href="#index"> <img src="nblogo.png">
+				</a>
+				<ul class="botnav">
+					<li><a href="#">Contact Us</a></li>
+					<li><a href="#">Information</a></li>
+					<li><a href="#">About Us</a></li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

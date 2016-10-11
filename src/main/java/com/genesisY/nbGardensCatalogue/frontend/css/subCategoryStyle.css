@@ -7,3 +7,25 @@ body{
 ul{
 	list-style: none;
 }
+
+#maincontent{
+	display: inline-block;
+    position: relative;
+	
+}
+
+#tag_bar{
+	display: inline-block;
+	border-style: solid;
+	width: 35%;
+}
+
+#grid_view{
+	border-style: dotted;
+	float: right;
+}
+
+#sorter{
+	float: right;
+}
+
