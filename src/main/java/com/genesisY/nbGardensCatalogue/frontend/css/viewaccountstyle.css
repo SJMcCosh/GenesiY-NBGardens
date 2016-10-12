@@ -12,66 +12,33 @@
 }
 
 .viewaccount {
-	width: 350px;
 	text-align: center;
-	border: solid;
-	background-color: #d6d6b1;
 	float: center;
-	padding-bottom: 20px;
 	margin: 0 auto;
 	left: 0;
 	right: 0;
 }
 
-ul.detaillist {
-	list-style: none;
+.billingadd{
+	border-style: solid;
+	width: 300px;
+	float: left;
+	margin-left: 8%;
+	background-color: #d6d6b1;
 }
 
-#details {
+.details{
+	border-style:solid;
 	width: 300px;
 	margin: 0 auto;
 	left: 0;
-	right: 0;
+	background-color: #d6d6b1;
 }
 
-#address {
+.editing{
+	border-style: solid;
 	width: 300px;
-	margin: 0 auto;
-	left: 0;
-	right: 0;
-}
-
-@media only screen and (min-width: 768px) {
-	.wholebody {
-		text-align: center;
-		padding-bottom: 20px;
-	}
-	.loginform {
-		width: auto;
-		border: none;
-		background-color: #ffffff;
-		float: center;
-		padding-bottom: 350px;
-	}
-	#details {
-		border: solid;
-		position: absolute;
-		margin: 0 auto;
-		left: 0;
-		right: 40%;
-		background-color: #d6d6b1;
-		padding-bottom: 20px;
-	}
-	#address {
-		border: solid;
-		background-color: #d6d6b1;
-		height: 395px;
-		position: absolute;
-		margin: 0 auto;
-		left: 40%;
-		right: 0;
-	}
-	#addresstext {
-		padding-top: 41px;
-	}
+	float: right;
+	margin-right: 8%;
+	background-color: #d6d6b1;
 }
