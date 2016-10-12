@@ -7,8 +7,11 @@ body {
 
 ul.topnav {
 	list-style-type: none;
-	border-width: 1px 0; list-style : none; margin : 0; padding : 0;
-	text-align : center;
+	border-width: 1px 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
 	overflow: hidden;
 	background-color: #143516;
 	list-style: none;
@@ -19,7 +22,7 @@ ul.topnav {
 
 ul.topnav li {
 	display: inline-block;
-	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 ul.topnav li a {
@@ -27,7 +30,6 @@ ul.topnav li a {
 	color: white;
 	text-align: center;
 	padding: 14px 16px;
-	
 }
 
 ul.topnav li a:hover {
@@ -38,7 +40,7 @@ ul.topnav li a:hover {
 	background-color: #143516;
 }
 
-.searchandlogo{
+.searchandlogo {
 	postion: relative;
 	display: inline-block;
 }
@@ -46,7 +48,7 @@ ul.topnav li a:hover {
 .tfnewsearch {
 	position: relative;
 	float: center;
-	float:right;
+	float: right;
 	padding: 20px;
 }
 
@@ -110,7 +112,7 @@ ul.breadcrumb li a {
 	color: #62c945;
 }
 
-.logo{
+.logo {
 	display: inline;
 }
 
@@ -120,8 +122,11 @@ ul.breadcrumb li a {
 
 ul.botnav {
 	list-style-type: none;
-	border-width: 1px 0; list-style : none; margin : 0; padding : 0;
-	text-align : left;
+	border-width: 1px 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
 	overflow: hidden;
 	background-color: #143516;
 	list-style: none;
@@ -147,5 +152,4 @@ ul.botnav li a {
 	ul.topnav li.right, ul.topnav li {
 		float: none;
 	}
-	
 }
