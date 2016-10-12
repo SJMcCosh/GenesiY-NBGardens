@@ -10,107 +10,64 @@
 	text-align: center;
 	padding-bottom: 20px;
 }
+
 .loginform {
-	float: center;
-	padding-bottom: 20px;
-}
-
-#details {
-	float: left;
-	border: solid;
-	background-color: #d6d6b1;
-	width: 15%;
-	margin-right: 5%;
-	margin-left: 30%;
-	padding-bottom: 20px;
-}
-
-#address {
-	float: left;
-	border: solid;
-	background-color: #d6d6b1;
-	width: 15%;
-	margin-left: 5%;
-}
-
-.footing {
-	background-color: #143516;
-	width: 100%;
-	bottom: 0;
-	position: fixed;
-	clear: both;
-}
-
-@media only screen and (min-width: 600px){
-.wholebody {
+	width: 350px;
 	text-align: center;
-	padding-bottom: 20px;
-}
-.loginform {
+	border: solid;
+	background-color: #d6d6b1;
 	float: center;
 	padding-bottom: 20px;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
 }
 
 #details {
-	float: left;
-	border: solid;
-	background-color: #d6d6b1;
-	width: 15%;
-	margin-right: 5%;
-	margin-left: 30%;
-	padding-bottom: 20px;
+	width: 300px;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
 }
 
 #address {
-	float: left;
-	border: solid;
-	background-color: #d6d6b1;
-	width: 15%;
-	margin-left: 5%;
+	width: 300px;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
 }
 
-.footing {
-	background-color: #143516;
-	width: 100%;
-	bottom: 0;
-	position: fixed;
-	clear: both;
-}
-}
-
-@media only screen and (min-width: 768px){
-.wholebody {
-	text-align: center;
-	padding-bottom: 20px;
-}
-.loginform {
-	float: center;
-	padding-bottom: 20px;
-}
-
-#details {
-	float: left;
-	border: solid;
-	background-color: #d6d6b1;
-	width: 15%;
-	margin-right: 5%;
-	margin-left: 30%;
-	padding-bottom: 20px;
-}
-
-#address {
-	float: left;
-	border: solid;
-	background-color: #d6d6b1;
-	width: 15%;
-	margin-left: 5%;
-}
-
-.footing {
-	background-color: #143516;
-	width: 100%;
-	bottom: 0;
-	position: fixed;
-	clear: both;
-}
+@media only screen and (min-width: 768px) {
+	.wholebody {
+		text-align: center;
+		padding-bottom: 20px;
+	}
+	.loginform {
+		width: auto;
+		border: none;
+		background-color: #ffffff;
+		float: center;
+		padding-bottom: 350px;
+	}
+	#details {
+		border: solid;
+		position: absolute;
+		margin: 0 auto;
+		left: 0;
+		right: 40%;
+		background-color: #d6d6b1;
+		padding-bottom: 20px;
+	}
+	#address {
+		border: solid;
+		background-color: #d6d6b1;
+		height: 395px;
+		position: absolute;
+		margin: 0 auto;
+		left: 40%;
+		right: 0;
+	}
+	#addresstext {
+		padding-top: 41px;
+	}
 }
