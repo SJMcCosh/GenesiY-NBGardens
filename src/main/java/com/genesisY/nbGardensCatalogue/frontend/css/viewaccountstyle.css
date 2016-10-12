@@ -11,7 +11,7 @@
 	padding-bottom: 20px;
 }
 
-.loginform {
+.viewaccount {
 	width: 350px;
 	text-align: center;
 	border: solid;
@@ -21,6 +21,10 @@
 	margin: 0 auto;
 	left: 0;
 	right: 0;
+}
+
+ul.detaillist {
+	list-style: none;
 }
 
 #details {
@@ -40,19 +44,14 @@
 @media only screen and (min-width: 768px) {
 	.wholebody {
 		text-align: center;
+		padding-bottom: 20px;
 	}
 	.loginform {
 		width: auto;
 		border: none;
 		background-color: #ffffff;
 		float: center;
-		height: 600px;
-		padding: 1px;
-	}
-	.tandc{
-		position: absolute;
-		left: 0;
-		right: 0;
+		padding-bottom: 350px;
 	}
 	#details {
 		border: solid;
@@ -61,16 +60,18 @@
 		left: 0;
 		right: 40%;
 		background-color: #d6d6b1;
-		height: 515px;
+		padding-bottom: 20px;
 	}
 	#address {
 		border: solid;
 		background-color: #d6d6b1;
+		height: 395px;
 		position: absolute;
 		margin: 0 auto;
 		left: 40%;
 		right: 0;
 	}
 	#addresstext {
+		padding-top: 41px;
 	}
 }
