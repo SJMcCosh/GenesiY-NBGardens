@@ -1,0 +1,88 @@
+@CHARSET "ISO-8859-1";
+
+.dropbtn {
+	background-color: #143516;
+	color: white;
+	padding: 16px;
+}
+
+#dropdownProducts {
+	position: relative;
+	display: inline-block;
+}
+
+#dropdownSuppliers {
+	position: relative;
+	display: inline-block;
+}
+
+#dropdownPurchaseOrders {
+	position: relative;
+	display: inline-block;
+}
+
+#dropdownStats {
+	position: relative;
+	display: inline-block;
+}
+
+#dropdownStockAlerts {
+	position: relative;
+	display: inline-block;
+}
+
+#dropdownHome {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #143516;
+	min-width: 160px;
+}
+
+.dropdown-content a {
+	color: white;
+	padding: 12px 16px;
+	display: block;
+}
+
+.dropdown-content a:hover {background-color: #62c945;}
+
+#dropdownProducts:hover .dropdown-content {
+	display: block;
+}
+
+#dropdownSuppliers:hover .dropdown-content {
+	display: block;
+}
+
+#dropdownPurchaseOrders:hover .dropdown-content {
+	display: block;
+}
+
+#dropdownProducts:hover .dropbtn {
+	background-color: #62c945;
+}
+
+#dropdownSuppliers:hover .dropbtn {
+	background-color: #62c945;
+}
+
+#dropdownPurchaseOrders:hover .dropbtn {
+	background-color: #62c945;
+}
+
+#dropdownStats:hover .dropbtn {
+	background-color: #62c945;
+}
+
+#dropdownStockAlerts:hover .dropbtn {
+	background-color: #62c945;
+}
+
+#dropdownHome:hover .dropbtn {
+	background-color: #62c945;
+}

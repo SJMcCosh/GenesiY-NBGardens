@@ -32,29 +32,47 @@ body {
 #alertBox {
 	width: 300px;
 	height: 300px;
-	background-color: red;
+	overflow: scroll;
+	background-color: white;
+	border: 5px solid red;
 	display:inline-block;
 	text-align:center;
 }
 
-#alertText {
+
+#alertHeader {
 	background-color: black;
 	color: white;
 	text-align: center;
+	margin: 0 auto;
 	margin-top:-20px;
+}
+
+#alertText {
+	text-align: left;
+	background-color: white;
+	color: black;
 }
 
 #notificationBox {
 	width: 300px;
 	height: 300px;
-	background-color: blue;
+	overflow: scroll;
+	background-color: white;
+	border: 5px solid blue;
 	display:inline-block;	
 	text-align:center;
 }	
 
-#notificationText {
+#notificationHeader {
 	background-color: black;
 	color: white;
 	text-align: center;
 	margin-top: -20px;
+}
+
+#notificationText {
+	text-align: left;
+	background-color: white;
+	color: black;
 }
