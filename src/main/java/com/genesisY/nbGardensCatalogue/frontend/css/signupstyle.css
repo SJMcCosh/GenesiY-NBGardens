@@ -1,0 +1,116 @@
+@CHARSET "ISO-8859-1";
+
+.wholebody::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.wholebody {
+	text-align: center;
+	padding-bottom: 20px;
+}
+.loginform {
+	float: center;
+	padding-bottom: 20px;
+}
+
+#details {
+	float: left;
+	border: solid;
+	background-color: #d6d6b1;
+	width: 15%;
+	margin-right: 5%;
+	margin-left: 30%;
+	padding-bottom: 20px;
+}
+
+#address {
+	float: left;
+	border: solid;
+	background-color: #d6d6b1;
+	width: 15%;
+	margin-left: 5%;
+}
+
+.footing {
+	background-color: #143516;
+	width: 100%;
+	bottom: 0;
+	position: fixed;
+	clear: both;
+}
+
+@media only screen and (min-width: 600px){
+.wholebody {
+	text-align: center;
+	padding-bottom: 20px;
+}
+.loginform {
+	float: center;
+	padding-bottom: 20px;
+}
+
+#details {
+	float: left;
+	border: solid;
+	background-color: #d6d6b1;
+	width: 15%;
+	margin-right: 5%;
+	margin-left: 30%;
+	padding-bottom: 20px;
+}
+
+#address {
+	float: left;
+	border: solid;
+	background-color: #d6d6b1;
+	width: 15%;
+	margin-left: 5%;
+}
+
+.footing {
+	background-color: #143516;
+	width: 100%;
+	bottom: 0;
+	position: fixed;
+	clear: both;
+}
+}
+
+@media only screen and (min-width: 768px){
+.wholebody {
+	text-align: center;
+	padding-bottom: 20px;
+}
+.loginform {
+	float: center;
+	padding-bottom: 20px;
+}
+
+#details {
+	float: left;
+	border: solid;
+	background-color: #d6d6b1;
+	width: 15%;
+	margin-right: 5%;
+	margin-left: 30%;
+	padding-bottom: 20px;
+}
+
+#address {
+	float: left;
+	border: solid;
+	background-color: #d6d6b1;
+	width: 15%;
+	margin-left: 5%;
+}
+
+.footing {
+	background-color: #143516;
+	width: 100%;
+	bottom: 0;
+	position: fixed;
+	clear: both;
+}
+}
