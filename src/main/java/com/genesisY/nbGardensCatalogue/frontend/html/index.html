@@ -51,9 +51,7 @@
 			<br><br>
 			<!-- The promotional image at the top of the screen (50% width) -->
 			<div id="index_top_promo_section">
-			<div class="index_content_boxes_overlay">
-			
-			</div>
+			<div class="index_content_boxes_overlay"></div>
 				<!-- The black banner at the bottom of the promotional image -->
 				<div class="index_sections_bottom_banner">
 					<p>Buy one get one free on all wood coatings</p>
@@ -71,8 +69,9 @@
 			
 				
 					<!-- The 'New' section towards the left of the page -->
-					<div id="index_center_content_left_column">
+					<div id="index_center_content_left_column">					
 						<div id="index_content_boxes_new" class="index_center_content_boxes">
+						<div class="index_content_boxes_overlay"></div>
 							<div class="index_sections_bottom_banner"> 
 								<p> New </p>
 							</div>
@@ -80,8 +79,10 @@
 					</div>
 				
 					<!-- The 'Popular' section towards the right of the page (50% height of 'New section' - above the Sales section)-->
-					<div id="index_center_content_right_column"> 
+					<div id="index_center_content_right_column">
+						
 						<div id="index_center_content_boxes_popular" class="index_center_content_boxes">
+							<div class="index_content_boxes_overlay"></div> 
 							<div class="index_sections_bottom_banner"> 
 								<p> Popular </p>
 							</div>
@@ -93,6 +94,7 @@
 						
 						<!-- The 'Sales' section towards the right of the page (50% height of 'New section' - below the Popular section)-->
 						<div id="index_center_content_boxes_sales" class="index_center_content_boxes">
+						<div class="index_content_boxes_overlay"></div>
 							<div class="index_sections_bottom_banner"> 
 								<p> Sales </p>
 							</div>
@@ -107,8 +109,9 @@
 			
 			<!-- The 'Porous' FAQ link at the bottom -->
 			<div id="index_bottom_porous_section">			
+				<div class="index_content_boxes_overlay"></div> 
 				<div class="index_sections_bottom_banner">
-					<p>Buy one get one free on all wood coatings</p>
+					<p>What is porous?</p>
 				</div>			
 			</div>
 			
@@ -123,6 +126,21 @@
 				
 				<div id="index_featured_products_wrapper_outer"> 			
 					<div id="index_featured_products_wrapper_inner">
+						
+						
+						<!-- THE JSF VERSION OF THE FEATURED PRODUCTS -->
+						
+							<!-- <ui:repeat var="product" value="#{products.dataModel}">
+								<h:Link outcome="www.google.co.uk">
+									<div class="index_featured_products_product">									
+										<h:graphicImage class="index_featured_products_product_image" value="../../../../../../../../images/IndexImages/gnome_new.jpg"/>																	
+										<h:outputText class="index_featured_products_product_title" value="#{product.title}" />
+										<h:outputText class="index_featured_products_product_price" value="#{product.price}" />
+									</div>
+								</h>
+							</ui:repeat> -->
+						
+						
 						
 						<a href="www.google.co.uk">
 							<div class="index_featured_products_product">
