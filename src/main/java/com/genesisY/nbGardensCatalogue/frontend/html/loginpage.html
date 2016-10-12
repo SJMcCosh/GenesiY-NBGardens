@@ -3,25 +3,23 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<title>NB Gardens Catalogue - Login</title>
+	<link href="../css/templatestyle.css" rel="stylesheet" type="text/css" />
 	<link href="../css/loginpagestyle.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<header id = "heading">
-		<div id="searchandlogo">
-
-
-			<form id="tfnewsearch" method="get" action="http://www.google.com">
+	<!-- This is the header -->
+	<div class="header">
+		<div class="searchandlogo">
+			<form class="tfnewsearch" >
 				<input type="text" class="tftextinput" name="q" size="21"
 					maxlength="120"> <input type="submit" value="search"
 					class="tfbutton">
 			</form>
 
-			<div id="logo">
-				<a href="#index"> <img src="../../../../../../../../images/nblogo.png">
+			<div class="logo">
+				<a href="index.html"> <img src="../../../../../../../../images/nblogo.png">
 				</a>
 			</div>
-
-
 		</div>
 		<nav>
 			<ul class="topnav">
@@ -30,29 +28,33 @@
 				<li><a href="#index"> Gnomes 'n Dat</a></li>
 				<li><a href="#index"> Outdoor Buildins</a></li>
 				<li><a href="#index"> Seasonal Crap </a></li>
-				<li><a href="#index"> You Goin' Home Fam </a></li>
+				<li><a href="index.html"> You Goin' Home Fam </a></li>
 			</ul>
 		</nav>
 		<!-- This is the breadcrumb -->
 		<ul class="breadcrumb">
-			<li><a href="#">Home</a></li>
+			<li><a href="index.html">Home</a> > Login</li>
 		</ul>
-	</header>
+	</div>
 	
-	<article id="wholebody">
+	<article class="wholebody">
+	<div class = "row">
 		<br />
 		<br />
-		<div id = "leftpic">
+		<div class = "leftpic">
+		<div class = "col-3 col-m-3">
 			<picture>
 				<source srcset="../../../../../../../../images/gnome-06.jpg" media = "(max-width: 500px)">
 				<source srcset="../../../../../../../../images/zombiefeast.jpg">
 				<img src="../../../../../../../../images/zombiefeast.jpg" style = "width:auto">
 			</picture>
 
-			<p><a href="https://google.co.uk">Terms of agreement</a></p>
+			<p><a href="https://google.co.uk">Contact NB Gardens</a></p>
+		</div>
 		</div>
 		
-		<div id = "loginform">
+		<div class = "loginform">
+		<div class = "col-6 col-m-9">
 			<h4>Login</h4>
 			<form>
 				<p>Username</p>
@@ -67,32 +69,38 @@
 				<input type = "submit" name = "loginbtn" value = "Login">
 				<br />
 				<br />
+			</form>
+			<form action = "signuppage.html">
 				<hr />
 				<p>Are you a new user?</p>
-				<input type = "submit" name = "newuserbtn" value = "Sign-up">
+				<input type = "submit" name = "signup" value = Sign-Up>
 			</form>
 		</div>
+		</div>
 		
-		<div id = "rightpic">
+		<div class = "rightpic">
+		<div class = "col-3 col-m-12">
 			<picture>
 				<source srcset="../../../../../../../../images/gnome-07.jpg" media = "(max-width: 500px)">
 				<source srcset="../../../../../../../../images/zombie_gnome_fishing.jpg">
 				<img src="../../../../../../../../images/zombie_gnome_fishing.jpg" style = "width:auto">
 			</picture>
-			<p><a href="https://google.co.uk">Contact NB Gardens</a></p>
+			<p><a href="https://google.co.uk">Terms of Agreement</a></p>
 		</div>
 		<div>
 			<br />
 			<br />
 			<br />
 			<br />
+		</div>
+		</div>
 		</div>
 	</article>
 	
-	<footer id = "footing">
+	<footer class = "footing">
 		<div>
-			<div id="footerlogo">
-				<a href="#index"> <img src="../../../../../../../../images/nblogo.png">
+			<div class="footerlogo">
+				<a href="index.html"> <img src="../../../../../../../../images/nblogo.png">
 				</a>
 				<ul class="botnav">
 					<li><a href="#">Contact Us</a></li>
