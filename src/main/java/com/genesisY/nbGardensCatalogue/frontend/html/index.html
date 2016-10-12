@@ -3,93 +3,211 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>Homepage</title>
-		<link rel="stylesheet" type="text/css" href="index_style.css">		
+		<link rel="stylesheet" type="text/css" href="../css/index_style.css">		
+		<link rel="stylesheet" type="text/css" href="TemplateStyleSheet.css">	
+		<link rel="stylesheet" type="text/css"	href="../css/templatestyle.css" />
 	</head>
 	<body>
-		
-		<!-- The promotional image at the top of the screen (50% width) -->
-		<div id="index_top_promo_section">
-			<!-- The black banner at the bottom of the promotional image -->
-			<div class="index_sections_bottom_banner">
-				<p>Buy one get one free on all wood coatings</p>
+	
+	
+		<!-- This is the header -->
+		<div class="header">
+			<div class="searchandlogo">
+				<form class="tfnewsearch" method="get" action="http://www.google.com">
+					<input type="text" class="tftextinput" name="q" size="21"
+						maxlength="120"> <input type="submit" value="search"
+						class="tfbutton">
+				</form>
+	
+				<div class="logo">
+					<a href="#index"> <img src="../../../../../../../../images/nblogo.png">
+					</a>
+				</div>
 			</div>
-			
+			<nav>
+				<ul class="topnav">
+					<li><a href="#index"> Outdoor Livin' </a></li>
+					<li><a href="#index"> Tools 'n Stuff </a></li>
+					<li><a href="#index"> Gnomes 'n Dat</a></li>
+					<li><a href="#index"> Outdoor Buildins</a></li>
+					<li><a href="#index"> Seasonal Crap </a></li>
+					<li><a href="#index"> You Goin' Home Fam </a></li>
+				</ul>
+			</nav>
+			<!-- This is the breadcrumb -->
+			<ul class="breadcrumb">
+				<li><a href="#">Home</a></li>
+			</ul>
 		</div>
 		
-		<!-- Add some white lines in (temporary) -->
-		<br />
-		<br />
-		
-		<div id="index_center_content_wrapper">
-		
+		<div class = "maincontent">
 			
-				<!-- The 'New' section towards the left of the page -->
-				<div id="index_center_content_left_column">
-					<div class="index_center_content_boxes">
-						<div class="index_sections_bottom_banner"> 
-							<p> New </p>
-						</div>
-					</div>	
-				</div>
+		</div>
+	
+		
+	
+	
+		<div id="index_content_wrapper">
+			<br><br>
+			<!-- The promotional image at the top of the screen (50% width) -->
+			<div id="index_top_promo_section">
+			<div class="index_content_boxes_overlay"></div>
+				<!-- The black banner at the bottom of the promotional image -->
+				<div class="index_sections_bottom_banner">
+					<p>Buy one get one free on all wood coatings</p>
+				</div>		
 			
-				<!-- The 'Popular' section towards the right of the page (50% height of 'New section' - above the Sales section)-->
-				<div id="index_center_content_right_column"> 
-					<div id="index_center_content_boxes_popular" class="index_center_content_boxes">
-						<div class="index_sections_bottom_banner"> 
-							<p> Popular </p>
-						</div>
+			</div>
+			
+			<!-- Add some white lines in (temporary) -->
+			<br />
+			<br />
+
+
+			
+			<div id="index_center_content_wrapper">
+			
+				
+					<!-- The 'New' section towards the left of the page -->
+					<div id="index_center_content_left_column">					
+						<div id="index_content_boxes_new" class="index_center_content_boxes">
+						<div class="index_content_boxes_overlay"></div>
+							<div class="index_sections_bottom_banner"> 
+								<p> New </p>
+							</div>
+						</div>	
 					</div>
-					<div style="height:6px"></div>
-					
-					
-					
-					
-					<!-- The 'Sales' section towards the right of the page (50% height of 'New section' - below the Popular section)-->
-					<div id="index_center_content_boxes_sales" class="index_center_content_boxes">
-						<div class="index_sections_bottom_banner"> 
-							<p> Sales </p>
+				
+					<!-- The 'Popular' section towards the right of the page (50% height of 'New section' - above the Sales section)-->
+					<div id="index_center_content_right_column">
+						
+						<div id="index_center_content_boxes_popular" class="index_center_content_boxes">
+							<div class="index_content_boxes_overlay"></div> 
+							<div class="index_sections_bottom_banner"> 
+								<p> Popular </p>
+							</div>
 						</div>
-					</div>		
+						<div style="height:6px">
+					</div>				
+						
+						
+						
+						<!-- The 'Sales' section towards the right of the page (50% height of 'New section' - below the Popular section)-->
+						<div id="index_center_content_boxes_sales" class="index_center_content_boxes">
+						<div class="index_content_boxes_overlay"></div>
+							<div class="index_sections_bottom_banner"> 
+								<p> Sales </p>
+							</div>
+						</div>		
+					</div>
+				
+				
+			</div>
+			
+			<br />
+			<br />
+			
+			<!-- The 'Porous' FAQ link at the bottom -->
+			<div id="index_bottom_porous_section">			
+				<div class="index_content_boxes_overlay"></div> 
+				<div class="index_sections_bottom_banner">
+					<p>What is porous?</p>
+				</div>			
+			</div>
+			
+			
+			<br />
+			<br />
+			
+			<p id="index_featured_products_section_header">We thought you might like...</p>		
+			
+			
+			<div id="index_lower_content_master_wrapper">
+				
+				<div id="index_featured_products_wrapper_outer"> 			
+					<div id="index_featured_products_wrapper_inner">
+						
+						
+						<!-- THE JSF VERSION OF THE FEATURED PRODUCTS -->
+						
+							<!-- <ui:repeat var="product" value="#{products.dataModel}">
+								<h:Link outcome="www.google.co.uk">
+									<div class="index_featured_products_product">									
+										<h:graphicImage class="index_featured_products_product_image" value="../../../../../../../../images/IndexImages/gnome_new.jpg"/>																	
+										<h:outputText class="index_featured_products_product_title" value="#{product.title}" />
+										<h:outputText class="index_featured_products_product_price" value="#{product.price}" />
+									</div>
+								</h>
+							</ui:repeat> -->
+						
+						
+						
+						<a href="www.google.co.uk">
+							<div class="index_featured_products_product">
+								<img class="index_featured_products_product_image" src="../../../../../../../../images/IndexImages/gnome_new.jpg">
+								<p class="index_featured_products_product_title">A gnome oh a gnome!</p>
+								<p class="index_featured_products_product_price">&pound10.00</p>
+							</div>
+						</a>
+						<a href="www.google.co.uk">
+							<div class="index_featured_products_product">
+								<img class="index_featured_products_product_image" src="../../../../../../../../images/IndexImages/gnome_new.jpg">
+								<p class="index_featured_products_product_title">A gnome oh a gnome!</p>
+								<p class="index_featured_products_product_price">&pound10.00</p>
+							</div>
+						</a>
+						<a href="www.google.co.uk">
+							<div class="index_featured_products_product">
+								<img class="index_featured_products_product_image" src="../../../../../../../../images/IndexImages/gnome_new.jpg">
+								<p class="index_featured_products_product_title">A gnome oh a gnome!</p>
+								<p class="index_featured_products_product_price">&pound10.00</p>
+							</div>
+						</a>
+						<a href="www.google.co.uk">
+							<div class="index_featured_products_product">
+								<img class="index_featured_products_product_image" src="../../../../../../../../images/IndexImages/gnome_new.jpg">
+								<p class="index_featured_products_product_title">A gnome oh a gnome!</p>
+								<p class="index_featured_products_product_price">&pound10.00</p>
+							</div>
+						</a>
+						<a href="www.google.co.uk">
+							<div class="index_featured_products_product">
+								<img class="index_featured_products_product_image" src="../../../../../../../../images/IndexImages/gnome_new.jpg">
+								<p class="index_featured_products_product_title">A gnome oh a gnome!</p>
+								<p class="index_featured_products_product_price">&pound10.00</p>
+							</div>
+						</a>
+						<a href="www.google.co.uk">
+							<div class="index_featured_products_product">
+								<img class="index_featured_products_product_image" src="../../../../../../../../images/IndexImages/gnome_new.jpg">
+								<p class="index_featured_products_product_title">A gnome oh a gnome!</p>
+								<p class="index_featured_products_product_price">&pound10.00</p>
+							</div>
+						</a>
+					</div>
 				</div>
-			
-			
-		</div>
-		
-		<br />
-		<br />
-		
-		<!-- The 'Porous' FAQ link at the bottom -->
-		<div id="index_bottom_porous_section">			
-			<div class="index_sections_bottom_banner">
-				<p>Buy one get one free on all wood coatings</p>
-			</div>			
-		</div>
-		
-		
-		<br />
-		<br />
-		
-		
-		
-		
-		
-		<p id="index_featured_products_section_header">We thought you might like...</p>
-		<div id="index_featured_products_wrapper_outer"> 
-			
-			<div id="index_featured_products_wrapper_inner">
-				<div class="index_featured_products_product"></div>
-				<div class="index_featured_products_product"></div>
-				<div class="index_featured_products_product"></div>
-				<div class="index_featured_products_product"></div>
-				<div class="index_featured_products_product"></div>
-				<div class="index_featured_products_product"></div>
 			</div>
 		
 		
+		</div>
 		
+		<br>
+		<br>
+		<br>
 		
-		
-		
+		<!-- This is the footer -->
+		<div class="footer">
+			<div>
+				<div class="footerlogo">
+					<a href="#index"> <img src="../../../../../../../../images/nblogo.png">
+					</a>
+					<ul class="botnav">
+						<li><a href="#">Contact Us</a></li>
+						<li><a href="#">Information</a></li>
+						<li><a href="#">About Us</a></li>
+					</ul>
+				</div>
+			</div>
 		</div>
 		
 		

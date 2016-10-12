@@ -1,0 +1,76 @@
+@CHARSET "ISO-8859-1";
+
+.wholebody::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.wholebody {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.loginform {
+	width: 350px;
+	text-align: center;
+	border: solid;
+	background-color: #d6d6b1;
+	float: center;
+	padding-bottom: 20px;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+}
+
+#details {
+	width: 300px;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+}
+
+#address {
+	width: 300px;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+}
+
+@media only screen and (min-width: 768px) {
+	.wholebody {
+		text-align: center;
+	}
+	.loginform {
+		width: auto;
+		border: none;
+		background-color: #ffffff;
+		float: center;
+		height: 600px;
+		padding: 1px;
+	}
+	.tandc{
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+	#details {
+		border: solid;
+		position: absolute;
+		margin: 0 auto;
+		left: 0;
+		right: 40%;
+		background-color: #d6d6b1;
+		height: 515px;
+	}
+	#address {
+		border: solid;
+		background-color: #d6d6b1;
+		position: absolute;
+		margin: 0 auto;
+		left: 40%;
+		right: 0;
+	}
+	#addresstext {
+	}
+}
