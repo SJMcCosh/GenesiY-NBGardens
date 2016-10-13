@@ -1,0 +1,87 @@
+@CHARSET "ISO-8859-1";
+
+* {
+	box-sizing: border-box;
+}
+
+.wholebody {
+	text-align: center;
+	padding-bottom: 20px
+}
+
+.wholebody::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.leftpic {
+	margin:10px auto 0;
+}
+
+.loginform {
+	border: solid;
+	background-color: #d6d6b1;
+	width: 275px;
+	margin:10px auto 0;
+}
+
+.rightpic {
+	margin:10px auto 0;
+}
+
+.footing {
+	background-color: #143516;
+	width: 100%;
+	bottom: 0;
+}
+
+
+
+@media only screen and (min-width:768px) {
+	.wholebody {
+		text-align: center;
+	}
+	.leftpic {
+		float: left;
+		margin-left: 8%;
+	}
+	.loginform {
+		margin-left: 8%;
+		float: left;
+	}
+	.rightpic {
+		margin:10px auto 0;
+	}
+	.footing {
+		background-color: #143516;
+		width: 100%;
+		bottom: 0;
+	}
+}
+
+@media only screen and (min-width:1300px) {
+	.wholebody {
+		text-align: center;
+		padding-bottom: 40px;
+	}
+	.leftpic {
+		float: left;
+		margin-left: 8%;
+	}
+	.loginform {
+		position: absolute;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+	}
+	.rightpic {
+		float: right;
+		margin-right: 8%;
+	}
+	.footing {
+		background-color: #143516;
+		width: 100%;
+		bottom: 0;
+	}
+}
