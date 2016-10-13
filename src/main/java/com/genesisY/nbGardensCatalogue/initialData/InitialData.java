@@ -27,7 +27,7 @@ import antlr.collections.List;
  *
  */
 @Singleton
-public class InitialData {
+public class InitialData implements ProductManager{
 	private ArrayList<Address> addressList = new ArrayList<Address>();
 	private ArrayList<Category> categoryList = new ArrayList<Category>();
 	private ArrayList<CategoryToProductConn> ctpcList = new ArrayList<CategoryToProductConn>();
