@@ -4,57 +4,58 @@
 	<meta charset="ISO-8859-1">
 	<title>NB Gardens Catalogue - Login</title>
 	<link href="../css/templatestyle.css" rel="stylesheet" type="text/css" />
-	<link href="../css/loginpagestyle.css" rel="stylesheet" type="text/css" />
+	<link href="../css/accountstyle.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<!-- This is the header -->
-	<div class="header">
+<div class="header">
 		<div class="searchandlogo">
-			<form class="tfnewsearch" >
+			<form class="tfnewsearch" method="get" action="http://www.google.com">
 				<input type="text" class="tftextinput" name="q" size="21"
 					maxlength="120"> <input type="submit" value="search"
 					class="tfbutton">
 			</form>
 
 			<div class="logo">
-				<a href="index.html"> <img src="../../../../../../../../images/nblogo.png">
+				<a href="index.html"> <img
+					src="../../../../../../../../images/nblogo.png">
 				</a>
 			</div>
 		</div>
 		<nav>
 			<ul class="topnav">
-				<li><a href="#index"> Outdoor Livin' </a></li>
+				<li><a href="index.html"> Outdoor Livin' </a></li>
 				<li><a href="#index"> Tools 'n Stuff </a></li>
 				<li><a href="#index"> Gnomes 'n Dat</a></li>
 				<li><a href="#index"> Outdoor Buildins</a></li>
 				<li><a href="#index"> Seasonal Crap </a></li>
-				<li><a href="index.html"> You Goin' Home Fam </a></li>
+				<li><a href="#index"> You Goin' Home Fam </a></li>
 			</ul>
 		</nav>
 		<!-- This is the breadcrumb -->
 		<ul class="breadcrumb">
-			<li><a href="index.html">Home</a> > Login</li>
+			<li><a href="index.html">Home</a></li>
 		</ul>
 	</div>
+
+	<div class="maincontent"></div>
 	
 	<article class="wholebody">
-	<div class = "row">
 		<br />
 		<br />
-		<div class = "leftpic">
-		<div class = "col-3 col-m-3">
+		<div class = "col-3 col-m-3 leftpic">
 			<picture>
-				<source srcset="../../../../../../../../images/gnome-06.jpg" media = "(max-width: 500px)">
+				<source srcset="../../../../../../../../images/gnome-06.jpg" media = "(max-width: 720px)">
+				<source srcset="../../../../../../../../images/zombiefeast.jpg" media = "(max-width: 767px)">
+				<source srcset="../../../../../../../../images/gnome-06.jpg" media = "(max-width: 920px)">
 				<source srcset="../../../../../../../../images/zombiefeast.jpg">
 				<img src="../../../../../../../../images/zombiefeast.jpg" style = "width:auto">
 			</picture>
 
 			<p><a href="https://google.co.uk">Contact NB Gardens</a></p>
 		</div>
-		</div>
 		
-		<div class = "loginform">
 		<div class = "col-6 col-m-9">
+			<div class = "loginform">
 			<h4>Login</h4>
 			<form>
 				<p>Username</p>
@@ -75,32 +76,27 @@
 				<p>Are you a new user?</p>
 				<input type = "submit" name = "signup" value = Sign-Up>
 			</form>
+			</div>
 		</div>
-		</div>
+
 		
-		<div class = "rightpic">
-		<div class = "col-3 col-m-12">
+		<div class = "col-3 col-m-12 rightpic">
 			<picture>
-				<source srcset="../../../../../../../../images/gnome-07.jpg" media = "(max-width: 500px)">
+				<source srcset="../../../../../../../../images/gnome-07.jpg" media = "(max-width: 720px)">
+				<source srcset="../../../../../../../../images/zombie_gnome_fishing.jpg" media = "(max-width: 767px)">
+				<source srcset="../../../../../../../../images/gnome-07.jpg" media = "(max-width: 920px)">
 				<source srcset="../../../../../../../../images/zombie_gnome_fishing.jpg">
 				<img src="../../../../../../../../images/zombie_gnome_fishing.jpg" style = "width:auto">
 			</picture>
 			<p><a href="https://google.co.uk">Terms of Agreement</a></p>
 		</div>
-		<div>
-			<br />
-			<br />
-			<br />
-			<br />
-		</div>
-		</div>
-		</div>
 	</article>
 	
-	<footer class = "footing">
+	<div class="footer">
 		<div>
 			<div class="footerlogo">
-				<a href="index.html"> <img src="../../../../../../../../images/nblogo.png">
+				<a href="index.html"> <img
+					src="../../../../../../../../images/nblogo.png">
 				</a>
 				<ul class="botnav">
 					<li><a href="#">Contact Us</a></li>
@@ -109,6 +105,6 @@
 				</ul>
 			</div>
 		</div>
-	</footer>
+	</div>
 </body>
 </html>
