@@ -18,11 +18,17 @@ body {
 	float: top;
 }
 
-.boxes {
-	margin: 0 auto;
+#box_products_lists {
+	
 	height: 300px;
 	width: 83.33%;
 	text-align: center;
+	top:150px; 
+	right:0; 
+	margin:auto; 
+	position: absolute; 
+	
+	
 }
 
 .productBox {
@@ -131,4 +137,23 @@ body {
 	text-align: center;
 	display: block;
 	font-size: 1em;
+}
+
+
+#tab_container{ 
+	bottom:0; 
+	height: 300px; 
+	background-color: #00F6FA; 
+	position: absolute; 
+	top:900px;
+	left:0; 
+	bottom:0; 
+	right: 0; 
+	margin: auto;
+	width: 610px; 
+	
+	
+
+
+
 }
