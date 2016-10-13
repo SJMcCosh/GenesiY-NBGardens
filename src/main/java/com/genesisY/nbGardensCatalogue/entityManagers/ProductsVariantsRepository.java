@@ -7,8 +7,11 @@
 package com.genesisY.nbGardensCatalogue.entityManagers;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.ejb.Stateless;
+
+import com.genesisY.nbGardensCatalogue.entities.ProductVariants;
 
 @Stateless
 public interface ProductsVariantsRepository {
@@ -81,7 +84,7 @@ public interface ProductsVariantsRepository {
 	 * @param prodVarId
 	 * @return
 	 */
-	public ArrayList readProductVariant(int prodVarId);
+	public List<ProductVariants> readProductVariant(int prodVarId);
 	
 	//create product variant
 	/**
