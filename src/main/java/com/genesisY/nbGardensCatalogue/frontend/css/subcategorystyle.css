@@ -12,9 +12,16 @@ ul{
     clear: both;
     display: block;
 }
+
+img{
+	max-width: 50%;
+	max-height: 50%;
+	padding-right: 10px;
+	
+}
+
 [class*="col-"] {
     float: left;
-    padding: 15px;
 }
 /* For mobile phones: */
 [class*="col-"] {
