@@ -13,7 +13,7 @@ import com.genesisY.nbGardensCatalogue.entities.Customer;
 @SessionScoped
 public class CustomerController implements Serializable{
 
-	@Inject
+
 	private Customer customer;
 	
 

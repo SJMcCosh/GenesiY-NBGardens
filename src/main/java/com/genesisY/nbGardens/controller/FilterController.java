@@ -11,7 +11,6 @@ import javax.inject.Named;
 
 public class FilterController implements Serializable{
 	
-	@Inject
 	
 	public String filter(String filter) {
 	

@@ -2,23 +2,27 @@ package com.genesisY.nbGardensCatalogue.entityManagers.offline;
 
 import java.util.List;
 
-import javax.ejb.Singleton;
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import com.genesisY.nbGardensCatalogue.entities.Product;
 import com.genesisY.nbGardensCatalogue.entityManagers.ProductManager;
 import com.genesisY.nbGardensCatalogue.initialData.InitialData;
 
-@Singleton
+@Stateless
+@Default
 public class ProductsManager implements ProductManager {
 
 	@Inject
 	private InitialData initialData;
 
+	@Override
 	public List<Product> getProducts() {
 		return initialData.getProductList();
 	}
 
+	@Override
 	public Product getProduct(long id) {
 
 		for (Product p : initialData.getProductList()) {
@@ -34,6 +38,7 @@ public class ProductsManager implements ProductManager {
 		return null;
 	}
 
+	@Override
 	public List<Product> getProduct() {
 		return initialData.getProductList();
 	}
