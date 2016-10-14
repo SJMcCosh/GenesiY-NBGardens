@@ -1,11 +1,13 @@
 @CHARSET "ISO-8859-1";
 
+* {
+	box-sizing: border-box;
+}
+
 body {
 	margin: 0;
 	font-family: Arial, Helvetica, sans-serif;
 }
-
-@CHARSET "ISO-8859-1";
 
 a {
 	list-style-type: none;
@@ -18,53 +20,26 @@ a:hover {
 	background: #62c945;
 }
 
-.featuredSubCategory {
-	text-align: center;
-	background-color: grey;
+.contentBoxes {
+	margin: 0 auto;
+	height: auto;
 }
 
-.subCategoriesGrid .column {
-	margin-left: 10%;
-}
-
-.SubCategory {
-	height: 205px;
-	border-color: grey;
+.alertBox {
+	height: 300px;
+	overflow: scroll;
+	background-color: white;
 	border-style: solid;
-	border-weight: medium;
-}
-
-.SubCategory:hover {
+	border-width: medium;
 	border-color: #143516;
-	border-style: solid;
-	border-weight: medium;
 }
 
-.columnFirst {
-	background: #FFFFFF;
-	color: #143516;
-	float: left;
-	margin-left: 20%;
-}
-
-.columnSecond {
-	background: #FFFFFF;
-	color: #143516;
-	float: left;
-	margin-left: 20%;
-}
-
-.columnThird {
-	background: #FFFFFF;
-	color: #143516;
-	float: left;
-	margin-left: 20%;
-}
-
-.row::after {
-	content: "";
-	clear: both;
-	display: block;
+#alertHeader {
+	background-color: black;
+	color: white;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: -20px; 
 }
 
 .footer {
@@ -82,8 +57,20 @@ ul.botnav {
 	float: none;
 }
 
-[class*="col-"] {
-	float: left;
+.notificationBox {
+	height: 300px;
+	overflow: scroll;
+	background-color: white;
+	border-style: solid;
+	border-width: medium;
+	border-color: #143516;
+	[
+	class
+	*="col-"]
+	{
+	float
+	:
+	left;
 }
 
 /* For mobile phones: */
