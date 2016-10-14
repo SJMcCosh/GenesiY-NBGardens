@@ -14,19 +14,23 @@
 						<h:div class="newaddress">
 							<h:div id="addresstext">
 								<p>Address line 1</p>
-								<h:inputText id="addressline1" title="Address Line 1" ></h:inputText>
-								<input type="text">
+								<h:inputText value="#{address.line1}" id="addressline1"
+									title="Address Line 1"></h:inputText>
 								<p>Address line 2</p>
-								<input type="text">
+								<h:inputText value="#{address.line2}"></h:inputText>
 								<p>Address line 3</p>
-								<input type="text">
+								<h:inputText value="#{address.line3}"></h:inputText>
 								<p>Town/City</p>
-								<input type="text">
+								<h:inputText value="#{address.towncity}"></h:inputText>
 								<p>County</p>
-								<input type="text">
+								<h:inputText value="#{address.county}"></h:inputText>
 								<p>Postcode</p>
-								<input type="text"><br /> <br /> <input type="submit"
-									name="new address" value="Add Address"><br /> <br />
+								<h:inputText value="#{address.postcode}"></h:inputText>
+								<br />
+								<br />
+								<input type="submit" name="new address" value="Add Address">
+								<br />
+								<br />
 							</h:div>
 						</h:div>
 					</h:div>
