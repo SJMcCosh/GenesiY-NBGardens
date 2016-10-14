@@ -27,7 +27,7 @@ a:hover {
 
 .contentBoxes {
 	margin: 0 auto;
-	height: auto;
+	height: 700px;
 }
 
 .alertBox {
@@ -68,18 +68,6 @@ a:hover {
 	background-color: #d3d3d3;
 	bottom: 0;
 	width: 100%;
-	position: fixed;
-}
-
-ul.botnav {
-	list-style-type: none;
-	border-width: 1px 0;
-	list-style: none;
-	text-align: left;
-	overflow: hidden;
-	list-style: none;
-	text-align: center;
-	float: none;
 }
 
 .notificationBox {
