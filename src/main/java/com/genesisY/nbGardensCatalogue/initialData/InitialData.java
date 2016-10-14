@@ -2,6 +2,7 @@ package com.genesisY.nbGardensCatalogue.initialData;
 
 import java.util.ArrayList;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 
 import com.genesisY.nbGardensCatalogue.entities.Address;
@@ -19,15 +20,13 @@ import com.genesisY.nbGardensCatalogue.entities.PurchaseOrderLine;
 import com.genesisY.nbGardensCatalogue.entities.Review;
 import com.genesisY.nbGardensCatalogue.entities.Supplier;
 import com.genesisY.nbGardensCatalogue.entities.Tag;
-
-import antlr.collections.List;
 /**
  * Class that creates dummy data for testing purposes
  * @author Sam Precious
  *
  */
 @Singleton
-public class InitialData implements ProductManager{
+public class InitialData{
 	private ArrayList<Address> addressList = new ArrayList<Address>();
 	private ArrayList<Category> categoryList = new ArrayList<Category>();
 	private ArrayList<CategoryToProductConn> ctpcList = new ArrayList<CategoryToProductConn>();
@@ -44,7 +43,8 @@ public class InitialData implements ProductManager{
 	private ArrayList<Supplier> supplierList = new ArrayList<Supplier>();
 	private ArrayList<Tag> tagList = new ArrayList<Tag>();
 	
-	public InitialData(){
+	@PostConstruct
+	public void setupData(){
 		addressList.add(new Address());
 		addressList.add(new Address());
 		addressList.add(new Address());
