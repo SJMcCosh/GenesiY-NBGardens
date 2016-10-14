@@ -20,6 +20,11 @@ a:hover {
 	background: #62c945;
 }
 
+.empty {
+	border-style: solid;
+	border-color: #FFFFFF;
+}
+
 .contentBoxes {
 	margin: 0 auto;
 	height: auto;
@@ -28,22 +33,42 @@ a:hover {
 .alertBox {
 	height: 300px;
 	overflow: scroll;
-	background-color: white;
+	background-color: #FFFFFF;
+	border-style: solid;
+	border-width: medium;
+	border-color: #143516;
+}
+
+#notificationHeader {
+	background-color: #000000;
+	color: #FFFFFF;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: -20px;
+}
+
+.notificationBox {
+	height: 300px;
+	overflow: scroll;
+	background-color: #FFFFFF;
 	border-style: solid;
 	border-width: medium;
 	border-color: #143516;
 }
 
 #alertHeader {
-	background-color: black;
-	color: white;
+	background-color: #000000;
+	color: #FFFFFF;
 	text-align: center;
 	margin: 0 auto;
-	margin-top: -20px; 
+	margin-top: -20px;
 }
 
 .footer {
-	background-color: grey;
+	background-color: #d3d3d3;
+	bottom: 0;
+	width: 100%;
+	position: fixed;
 }
 
 ul.botnav {
@@ -60,7 +85,7 @@ ul.botnav {
 .notificationBox {
 	height: 300px;
 	overflow: scroll;
-	background-color: white;
+	background-color: #FFFFFF;
 	border-style: solid;
 	border-width: medium;
 	border-color: #143516;
