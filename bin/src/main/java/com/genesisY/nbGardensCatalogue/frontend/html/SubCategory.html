@@ -2,31 +2,26 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="../css/templatestyle.css" />
 <link rel="stylesheet" type="text/css"
-	href="../css/TemplateStyleSheet.css" />
-<link href="../css/subCategoryStyle.css" rel="stylesheet"
-	type="text/css">
-<link rel="stylesheet" type="text/css" href="../css/index_style.css">
-<title>SubCategory</title>
+	href="../css/subcategorystyle.css" />
+<title>NB Gardens</title>
 </head>
 <body>
 	<!-- This is the header -->
-	<div id="header">
-		<div id="searchandlogo">
-
-
-			<form id="tfnewsearch" method="get" action="http://www.google.com">
+	<div class="header">
+		<div class="searchandlogo">
+			<form class="tfnewsearch" method="get" action="http://www.google.com">
 				<input type="text" class="tftextinput" name="q" size="21"
 					maxlength="120"> <input type="submit" value="search"
 					class="tfbutton">
 			</form>
 
-			<div id="logo">
-				<a href="#index"> <img src="nblogo.png">
+			<div class="logo">
+				<a href="#index"> <img
+					src="../../../../../../../../images/nblogo.png">
 				</a>
 			</div>
-
-
 		</div>
 		<nav>
 			<ul class="topnav">
@@ -43,29 +38,23 @@
 			<li><a href="#">Home</a></li>
 		</ul>
 	</div>
-
-	<div id="sorter">
-		<select>
-			<option value="volvo">Volvo</option>
-			<option value="saab">Saab</option>
-			<option value="mercedes">Mercedes</option>
-			<option value="audi">Audi</option>
-		</select>
-	</div>
-	<div id="maincontent">
-		<div id="tag_bar">
-			<div id="outdoor">
+	<div class="row">
+		<!-- Main content for the page -->
+		<div class="col-3 col-m-6 tagbar">
+		<h2>Filter the products</h2>
+			<div class="outdoor">
 				<h2>Outdoor Living</h2>
-				<ul id="outdoor_living">
+				<ul class="outdoor_living">
 					<li><a> Tables </a></li>
 					<li><a> Seating </a></li>
 					<li><a> Jacuzzis </a></li>
 				</ul>
 			</div>
 
-			<div>
+
+			<div class="gardentools">
 				<h2>Garden Tools</h2>
-				<ul id="garden_tools">
+				<ul class="garden_tools">
 					<li><a> Lawnmowers </a></li>
 					<li><a> Cutting </a></li>
 					<li><a> Digging </a></li>
@@ -73,9 +62,9 @@
 				</ul>
 			</div>
 
-			<div>
+			<div class="gnomes">
 				<h2>Gnomes</h2>
-				<ul id="gnomes">
+				<ul class="gnomes">
 					<li><a> Sport </a></li>
 					<li><a> Traditional </a></li>
 					<li><a> Seasonal </a></li>
@@ -83,17 +72,17 @@
 				</ul>
 			</div>
 
-			<div>
+			<div class="outdoorbuildings">
 				<h2>Outdoor Buildings</h2>
-				<ul id="outdoor_buildings">
+				<ul class="outdoor_buildings">
 					<li><a> Sheds </a></li>
 					<li><a> Playhouse </a></li>
 				</ul>
 			</div>
 
-			<div>
+			<div class="seasonal">
 				<h2>Seasonal</h2>
-				<ul id="seasonal">
+				<ul class="seasonal">
 					<li><a> Gnomes </a></li>
 					<li><a> Furniture </a></li>
 				</ul>
@@ -101,132 +90,65 @@
 
 		</div>
 
-		<div id="grid_view">
-			<div id="index_featured_products_wrapper">
+		<div class="col-9 col-m-6">
+			<select>
+				<option value="Related">Related</option>
+				<option value="Most Popular">Most Popular</option>
+				<option value="Price Low to High">Price Low to High</option>
+				<option value="Price High to Low">Price High to Low</option>
+			</select>
+		</div>
 
-				<ul id="featured_products_list">
-					<!-- replace with image -->
-					<li style="margin-left: 0px;"
-						class="index_featured_products_product_container">
-						<div class="index_featured_products_list_products_image"></div>
-						<div
-							class="index_featured_products_list_products_image_information">
-							<a href="google.com"> Standing outdoor gnome </a>
-							<div
-								class="index_featured_products_list_products_image_information_starating_wrapper">
-								<ul>
-									<li style="margin-left: 0px">f</li>
+		<!-- This is the product grid -->
 
-									<li>f</li>
-									<li>f</li>
-									<li>f</li>
-									<li>f</li>
-								</ul>
-							</div>
-
-
-						</div>
-
-					</li>
-					<li class="index_featured_products_product_container">
-						<div></div>
-					</li>
-					<li class="index_featured_products_product_container">
-						<div></div>
-					</li>
-					<li class="index_featured_products_product_container">
-						<div></div>
-					</li>
-
-				</ul>
-
-			</div>
-			<div id="index_featured_products_wrapper">
-
-				<ul id="featured_products_list">
-					<!-- replace with image -->
-					<li style="margin-left: 0px;"
-						class="index_featured_products_product_container">
-						<div class="index_featured_products_list_products_image"></div>
-						<div
-							class="index_featured_products_list_products_image_information">
-							<a href="google.com"> Standing outdoor gnome </a>
-							<div
-								class="index_featured_products_list_products_image_information_starating_wrapper">
-								<ul>
-									<li style="margin-left: 0px">f</li>
-
-									<li>f</li>
-									<li>f</li>
-									<li>f</li>
-									<li>f</li>
-								</ul>
-							</div>
-
-
-						</div>
-
-					</li>
-					<li class="index_featured_products_product_container">
-						<div></div>
-					</li>
-					<li class="index_featured_products_product_container">
-						<div></div>
-					</li>
-					<li class="index_featured_products_product_container">
-						<div></div>
-					</li>
-
-				</ul>
-
-			</div>
-			<div id="index_featured_products_wrapper">
-
-				<ul id="featured_products_list">
-					<!-- replace with image -->
-					<li style="margin-left: 0px;"
-						class="index_featured_products_product_container">
-						<div class="index_featured_products_list_products_image"></div>
-						<div
-							class="index_featured_products_list_products_image_information">
-							<a href="google.com"> Standing outdoor gnome </a>
-							<div
-								class="index_featured_products_list_products_image_information_starating_wrapper">
-								<ul>
-									<li style="margin-left: 0px">f</li>
-
-									<li>f</li>
-									<li>f</li>
-									<li>f</li>
-									<li>f</li>
-								</ul>
-							</div>
-
-
-						</div>
-
-					</li>
-					<li class="index_featured_products_product_container">
-						<div></div>
-					</li>
-					<li class="index_featured_products_product_container">
-						<div></div>
-					</li>
-					<li class="index_featured_products_product_container">
-						<div></div>
-					</li>
-
-				</ul>
-
-			</div>
+		<div class="col-9 col-m-6" align="centre">
+			<a class="col-3 col-m-6 prodimg" href="www.google.co.uk">
+				<div class="index_featured_products_product">
+					<img class="index_featured_products_product_image"
+						src="../../../../../../../../images/IndexImages/gnome_new.jpg" >
+					<p class="index_featured_products_product_title">A gnome oh a
+						gnome!</p>
+					<p class="index_featured_products_product_price">&pound10.00</p>
+				</div>
+			</a>
+			<a class="col-3 col-m-6 prodimg" href="www.google.co.uk">
+				<div class="index_featured_products_product">
+					<img class="index_featured_products_product_image"
+						src="../../../../../../../../images/IndexImages/gnome_new.jpg">
+					<p class="index_featured_products_product_title">A gnome oh a
+						gnome!</p>
+					<p class="index_featured_products_product_price">&pound10.00</p>
+				</div>
+			</a>
+			<a class="col-3 col-m-6 prodimg" href="www.google.co.uk">
+				<div class="index_featured_products_product">
+					<img class="index_featured_products_product_image"
+						src="../../../../../../../../images/IndexImages/gnome_new.jpg">
+					<p class="index_featured_products_product_title">A gnome oh a
+						gnome!</p>
+					<p class="index_featured_products_product_price">&pound10.00</p>
+				</div>
+			</a>
+			<a class="col-3 col-m-6 prodimg" href="www.google.co.uk">
+				<div class="index_featured_products_product">
+					<img class="index_featured_products_product_image"
+						src="../../../../../../../../images/IndexImages/gnome_new.jpg">
+					<p class="index_featured_products_product_title">A gnome oh a
+						gnome!</p>
+					<p class="index_featured_products_product_price">&pound10.00</p>
+				</div>
+			</a>
 		</div>
 	</div>
 
+
+
 	<!-- This is the footer -->
-	<div id="footer">
+	<div class="footer">
 		<div>
-			<div id="footerlogo">
-				<a href="#index"> <img src="nblogo.png">
+			<div class="footerlogo">
+				<a href="#index"> <img
+					src="../../../../../../../../images/nblogo.png">
 				</a>
 				<ul class="botnav">
 					<li><a href="#">Contact Us</a></li>
@@ -236,5 +158,7 @@
 			</div>
 		</div>
 	</div>
+
+
 </body>
 </html>

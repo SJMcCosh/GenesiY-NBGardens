@@ -13,45 +13,35 @@ body {
 }
 
 #pageTitle {
+	width: 100%;
+	margin: 0 auto;
 	text-align: center;
 	color: #143516;
-	float: top;
 }
 
 #box_products_lists {
 	
 	height: 300px;
-	width: 83.33%;
+	width: 100%;
 	text-align: center;
-	top:150px; 
 	right:0; 
-	margin:auto; 
-	position: absolute; 
-	
-	
+	margin:auto;  
 }
 
 .productBox {
-		width: 100%;
-		height: 100%;
-		overflow: scroll;
-		background-color: blue;
+	width: 100%;
+	height: 300px;
+	overflow: scroll;
+	background-color: blue;
 }
 
 @media only screen and (min-width: 600px) {
 	.productBox {
 		width: 40%;
-		height: 100%;
+		height: 300px;
 		overflow: scroll;
 		background-color: red;
 	}
-}
-
-#purchaseOrderTab {
-	background-color: green;
-	height: 50%;
-	width: 100%;
-	
 }
 
 .empty {
@@ -61,58 +51,53 @@ body {
 .empty1 {
 	border: solid white;
 	float: right;
-	top: 0;
+}
+
+#tab_container{ 
+	position: relative;
+	left:0;
+	width: 100%;
 }
 
 section {
 	position: relative;
-	width: 606px;
+	width: 80%;
 	margin: 0 auto;
-	z-index: 0;
 	color: white;
 }
 
 section:after {
-	content: 'Click on a tab above!';
+	content: 'Please choose a saved Purchase Order';
 	position: absolute;
 	left: 0;
-	top: 38px;
+	top: 100%;
 	width: 100%;
-	text-align: center;
 	background-color: #5E6B7F;
-	padding: 40px 0;
 }
 
 button {
 	cursor: pointer;
-	width: 199px;
+	width: 100%;
 	display: inline-block;
 	background-color: #5E6B7F;
 	color: white;
 	text-align: center;
-	transition: .25s ease;
 	border: none;
-	padding: 10px;
-	border-radius: 12px 12px 0 0;
 }
 
 div:focus button, button:focus {
 	background-color: #8DA1BF;
-	outline: none;
 }
 
 button:focus + p, div:focus P {
 	display: block;
 	position: absolute;
 	background-color: #8DA1BF;
-	height: 120px;
+	height: 3000%;
 	width: 100%;
 	left: 0;
-	z-index: 2;
-	outline: none;
 	top: 0px;
 	text-align: center;
-	padding-top: 48px;
 }
 
 p {
@@ -128,32 +113,9 @@ div:focus {
 	outline: none;
 }
 
-body {
-	padding: 3em;
-}
-
 .p {
 	margin-top: 300px;
 	text-align: center;
 	display: block;
 	font-size: 1em;
-}
-
-
-#tab_container{ 
-	bottom:0; 
-	height: 300px; 
-	background-color: #00F6FA; 
-	position: absolute; 
-	top:900px;
-	left:0; 
-	bottom:0; 
-	right: 0; 
-	margin: auto;
-	width: 610px; 
-	
-	
-
-
-
 }
