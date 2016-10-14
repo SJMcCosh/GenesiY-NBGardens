@@ -10,4 +10,6 @@ import com.genesisY.nbGardensCatalogue.entities.Product;
 public interface ProductManager {
 
 	public List<Product> getProducts();
+	
+	public Product getProduct(long id);
 }
