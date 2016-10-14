@@ -2,6 +2,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://java.sun.com/jsf/passthrough"
 	template="templates/template.xhtml">
 	<meta charset="ISO-8859-1" />
 	<ui:define name="maincontent">
@@ -32,29 +33,26 @@
 					<h4>Login</h4>
 					<h:form>
 						<p>Username</p>
-						<h:inputText></h:inputText>
+						<h:inputText value="#{customer.username}"></h:inputText>
 						<p>
 							<a href="#forgottenusername">Forgotten your username?</a>
 						</p>
 						<p>Password</p>
-						<h:inputSecret>
+						<h:inputSecret value="#{customer.password}">
 							<f:validateLength minimum="8" maximum="35" />
 						</h:inputSecret>
 						<p>
 							<a href="forgottenpassword">Forgotten your password?</a>
 						</p>
 						<br />
-						<input type="checkbox">
-						<p>Remember me</p>
-						<br />
-						<input type="submit" name="loginbtn" value="Login">
+						<h:commandButton type="submit" name="loginbtn" value="Login" action="#{customer.login()}" />
 						<br />
 						<br />
 					</h:form>
 					<h:form action="signup.xhtml">
 						<hr />
 						<p>Are you a new user?</p>
-						<input type="submit" name="signup" value=Sign-Up>
+						<h:commandButton type="submit" name="signup" value="Sign-Up" action="#{customer.gotosignup()}" />
 					</h:form>
 				</h:div>
 			</h:div>
