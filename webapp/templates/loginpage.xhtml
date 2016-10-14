@@ -27,12 +27,14 @@
 					<h4>Login</h4>
 					<h:form>
 						<p>Username</p>
-						<input type="text">
+						<h:inputText></h:inputText>
 						<p>
 							<a href="#forgottenusername">Forgotten your username?</a>
 						</p>
 						<p>Password</p>
-						<input type="password" maxlength="45">
+						<h:inputSecret>
+							<f:validateLength minimum="8" maximum="35" />
+						</h:inputSecret>
 						<p>
 							<a href="forgottenpassword">Forgotten your password?</a>
 						</p>
