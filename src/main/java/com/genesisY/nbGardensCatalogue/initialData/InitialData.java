@@ -3,7 +3,8 @@ package com.genesisY.nbGardensCatalogue.initialData;
 import java.util.ArrayList;
 
 import javax.annotation.PostConstruct;
-import javax.ejb.Singleton;
+import javax.inject.Singleton;
+import javax.ejb.Startup;
 
 import com.genesisY.nbGardensCatalogue.entities.Address;
 import com.genesisY.nbGardensCatalogue.entities.Category;
@@ -25,6 +26,7 @@ import com.genesisY.nbGardensCatalogue.entities.Tag;
  * @author Sam Precious
  *
  */
+@Startup
 @Singleton
 public class InitialData{
 	private ArrayList<Address> addressList = new ArrayList<Address>();

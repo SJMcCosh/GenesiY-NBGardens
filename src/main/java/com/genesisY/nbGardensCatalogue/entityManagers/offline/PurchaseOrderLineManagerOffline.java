@@ -3,11 +3,8 @@ package com.genesisY.nbGardensCatalogue.entityManagers.offline;
 import java.util.ArrayList;
 import java.util.List;
 
-
-import javax.inject.Inject;
-
 import javax.ejb.Stateless;
-
+import javax.inject.Inject;
 
 import com.genesisY.nbGardensCatalogue.entities.PurchaseOrderLine;
 import com.genesisY.nbGardensCatalogue.entityManagers.repositories.PurchaseOrderLineRepository;

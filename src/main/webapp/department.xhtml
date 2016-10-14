@@ -1,0 +1,100 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/template.xhtml">
+	<meta charset="ISO-8859-1" />
+	<ui:define name="maincontent">
+		<div class="row">
+			<!-- This is the sidebar -->
+			<div class="sidebar col-2">
+				<ul>
+					<li><a href="categoryoutlive.html">Outdoor Living</a></li>
+					<li><a href="categorygardtool.html">Garden Tools</a></li>
+					<li><a href="categorygnome.html">Gnomes</a></li>
+					<li><a href="categoryoutbuild.html">Outdoor Buildings</a></li>
+					<li><a href="categoryseasonal.html">Seasonal</a></li>
+				</ul>
+			</div>
+			<!-- This is the featured subclass -->
+			<div class="featuredSubCategory col-10 col-m-12">
+				<br />
+				<h3>
+					<a href="summerGnomes.html"> <img
+						src="../../../../../../../../images/CategoryPictures/olympicGnomes.jpg"
+						height="180" width="600"
+						onmouseover='this.src="../../../../../../../../images/CategoryPictures/starTrekGnome.jpg"'
+						onmouseout='this.src="../../../../../../../../images/CategoryPictures/olympicGnomes.jpg"'
+						border="0" alt="Featured Gnome Sub Category" /></a>
+				</h3>
+				<br />
+			</div>
+			<br />
+			<!-- This is the grid of subclass -->
+			<div class="subCategoriesGrid col-10 col-m-12">
+				<br />
+				<div class="columnFirst ">
+					<div class="SubCategory" align="center">
+						<a href="categoryoutlive.html"><img
+							src="../../../../../../../../images/CategoryPictures/outdoorLiving.jpg"
+							alt="Outdoor Living" height="200" width="200"></img></a>
+					</div>
+					<br />
+					<div class="SubCategoryBlank" align="center">
+						<img
+							src="../../../../../../../../images/CategoryPictures/empty.png"
+							height="50" width="200"></img>
+					</div>
+					<br />
+					<div class="SubCategory" align="center">
+						<a href="categorygardtools.html"><img
+							src="../../../../../../../../images/CategoryPictures/gardenTools.jpg"
+							alt="Garden Tools" height="200" width="200"></img></a>
+					</div>
+					<br />
+				</div>
+				<div class="columnSecond ">
+					<div class="SubCategoryBlank" align="center">
+						<img
+							src="../../../../../../../../images/CategoryPictures/empty.png"
+							height="75" width="200"></img>
+					</div>
+					<br />
+					<div class="SubCategory" align="center">
+						<a href="categorygnome.html"><img
+							src="../../../../../../../../images/CategoryPictures/gnome.png"
+							alt="Gnome Products" height="200" width="200"></img></a>
+					</div>
+					<br />
+					<div class="SubCategoryBlank" align="center">
+						<img
+							src="../../../../../../../../images/CategoryPictures/empty.png"
+							height="75" width="200"></img>
+					</div>
+					<br />
+				</div>
+				<div class="columnThird">
+					<div class="SubCategory" align="center">
+						<a href="categoryoutbuild.html"><img
+							src="../../../../../../../../images/CategoryPictures/outdoorBuilding.jpg"
+							alt="Outdoor Buildings" height="200" width="200"></img></a>
+					</div>
+					<br />
+					<div class="SubCategoryBlank" align="center">
+						<img
+							src="../../../../../../../../images/CategoryPictures/empty.png"
+							height="50" width="200"></img>
+					</div>
+					<br />
+					<div class="SubCategory" align="center">
+						<a href="categoryseasonal.html"><img
+							src="../../../../../../../../images/CategoryPictures/season.jpg"
+							alt="Seasonal Products" height="200" width="200"></img></a>
+					</div>
+					<br />
+				</div>
+				<br />
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

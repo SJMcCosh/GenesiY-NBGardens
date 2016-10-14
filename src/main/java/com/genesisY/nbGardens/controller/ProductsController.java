@@ -7,28 +7,53 @@ import javax.faces.model.DataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.genesisY.nbGardens.businessLogic.ProductsBean;
+
 import com.genesisY.nbGardensCatalogue.entities.Product;
 
 @Named("products")
 @SessionScoped
 
+public class ProductsController implements Serializable{
 
-public class Products implements Serializable{
-
-	@Inject
-	ProductsBean pb;
 	private Product product;
-	private DataModel<Product> productData = null;
+	private String price;
+	private String name;
+	private DataModel<Product> dataModel = null;
 	
+	
+	
+	public DataModel<Product> getDataModel() {
+		return dataModel;
+	}
+
+	public void setDataModel(DataModel<Product> dataModel) {
+		this.dataModel = dataModel;
+	}
+
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	@SuppressWarnings("unchecked")
 	public String view(){	
-		productData = (DataModel<Product>) pb.getProducts();
+
 		return "productpage";
 	}
 	
 	public String view(long id){	
-		product = pb.getProduct(id);	
+	
 		return "productpage";
 	}
 
