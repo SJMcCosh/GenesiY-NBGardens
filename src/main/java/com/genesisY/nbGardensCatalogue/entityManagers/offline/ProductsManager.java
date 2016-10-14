@@ -34,4 +34,8 @@ public class ProductsManager implements ProductManager {
 		return null;
 	}
 
+	public List<Product> getProduct() {
+		return initialData.getProductList();
+	}
+
 }

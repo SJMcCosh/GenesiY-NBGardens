@@ -1,5 +1,7 @@
 package com.genesisY.nbGardensCatalogue.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -47,6 +49,9 @@ public class Product {
 	@Column(name = "averageRating", nullable = false)
 	@NotNull
 	private double weight;
+	@Column(name = "tagID", nullable = false)
+	@NotNull
+	private List<Tag> tags;
 
 	public Product() {
 
@@ -106,6 +111,14 @@ public class Product {
 
 	public void setWeight(double weight) {
 		this.weight = weight;
+	}
+	
+	public List<Tag> getTags(){
+		return tags;
+	}
+	
+	public void setTags(List<Tag> tags){
+		this.tags = tags;
 	}
 
 }

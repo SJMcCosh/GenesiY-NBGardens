@@ -12,4 +12,5 @@ public interface ProductManager {
 	public List<Product> getProducts();
 	
 	public Product getProduct(long id);
+	public List<Product> getProduct();
 }

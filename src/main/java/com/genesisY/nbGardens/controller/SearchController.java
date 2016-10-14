@@ -3,9 +3,11 @@ package com.genesisY.nbGardens.controller;
 import java.io.Serializable;
 
 import javax.enterprise.context.SessionScoped;
-
 import javax.inject.Inject;
 import javax.inject.Named;
+
+import com.genesisY.nbGardens.businessLogic.SearchBean;
+import com.genesisY.nbGardensCatalogue.entities.Product;
 
 
 @Named("search")
@@ -13,11 +15,23 @@ import javax.inject.Named;
 public class SearchController implements Serializable{
 
 	@Inject
-	//TODO: inject in the search service layer bean
+	private SearchBean sb;
+	private Product product;
 	 
-	public String search(String product){
+	public String search(String term){
 		//TODO: get the serch result into the service layer bean
+		product = sb.searchProduct(term);
 		return "subcategory";
 	}
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+	
+	
 	
 }
