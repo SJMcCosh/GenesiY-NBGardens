@@ -1,0 +1,175 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/template.xhtml">
+	<meta charset="ISO-8859-1">
+	<ui:define name="maincontent">
+		<div class="maincontent">
+			<div class="productcontent">
+
+
+				<!-- Images for the content -->
+				<div class=" productimages col-4 col-m-4">
+					<picture>
+					<source srcset="../../../../../../../../images/gnome.jpg"
+						media="(max-width: 600px)">
+					<img src="../../../../../../../../images/gnome.jpg"
+						alt="Chania City" style="width: auto;"></picture>
+				</div>
+				<div class="productinformation col-8 col-m-8">
+					<div>
+						<h2>Name</h2>
+					</div>
+					<!-- Description for the product -->
+					<div>
+						<p>Description</p>
+					</div>
+
+
+					<!-- Star Rating -->
+					<div>
+						<form action="">
+							<input class="star star-5" id="star-5" type="radio" name="star" />
+							<label class="star star-5" for="star-5"></label> <input
+								class="star star-4" id="star-4" type="radio" name="star" /> <label
+								class="star star-4" for="star-4"></label> <input
+								class="star star-3" id="star-3" type="radio" name="star" /> <label
+								class="star star-3" for="star-3"></label> <input
+								class="star star-2" id="star-2" type="radio" name="star" /> <label
+								class="star star-2" for="star-2"></label> <input
+								class="star star-1" id="star-1" type="radio" name="star" /> <label
+								class="star star-1" for="star-1"></label>
+						</form>
+					</div>
+
+					<!-- Price -->
+					<div>
+						<p>Price</p>
+					</div>
+
+					<!-- Amount -->
+					<div>
+						<label>Input amount : </label><input id="productamount"
+							type="number" value="0" />
+					</div>
+
+					<!-- Porous check box -->
+					<div>
+						<form>
+							<input type="checkbox" name="porous" value="Porous"><a
+								href="help.html"> What is porous?</a>
+						</form>
+					</div>
+
+					<!-- Stock -->
+					<div>
+						<p>Stock alert</p>
+					</div>
+
+					<!-- Cart button -->
+					<div>
+						<input type="submit" value="Add to cart">
+					</div>
+
+				</div>
+			</div>
+			<hr />
+			<!-- Related Products -->
+			<div class="related-products ">
+				<h2>Related Products</h2>
+
+				<div id="index_lower_content_master_wrapper">
+
+					<div id="index_featured_products_wrapper_outer">
+						<div id="index_featured_products_wrapper_inner">
+
+							<a href="www.google.co.uk">
+								<div class="index_featured_products_product">
+									<img class="index_featured_products_product_image"
+										src="../../../../../../../../images/IndexImages/gnome_new.jpg">
+									<p class="index_featured_products_product_title">A gnome oh
+										a gnome!</p>
+									<p class="index_featured_products_product_price">&pound10.00</p>
+								</div>
+							</a> <a href="www.google.co.uk">
+								<div class="index_featured_products_product">
+									<img class="index_featured_products_product_image"
+										src="../../../../../../../../images/IndexImages/gnome_new.jpg">
+									<p class="index_featured_products_product_title">A gnome oh
+										a gnome!</p>
+									<p class="index_featured_products_product_price">&pound10.00</p>
+								</div>
+							</a> <a href="www.google.co.uk">
+								<div class="index_featured_products_product">
+									<img class="index_featured_products_product_image"
+										src="../../../../../../../../images/IndexImages/gnome_new.jpg">
+									<p class="index_featured_products_product_title">A gnome oh
+										a gnome!</p>
+									<p class="index_featured_products_product_price">&pound10.00</p>
+								</div>
+							</a> <a href="www.google.co.uk">
+								<div class="index_featured_products_product">
+									<img class="index_featured_products_product_image"
+										src="../../../../../../../../images/IndexImages/gnome_new.jpg">
+									<p class="index_featured_products_product_title">A gnome oh
+										a gnome!</p>
+									<p class="index_featured_products_product_price">&pound10.00</p>
+								</div>
+							</a> <a href="www.google.co.uk">
+								<div class="index_featured_products_product">
+									<img class="index_featured_products_product_image"
+										src="../../../../../../../../images/IndexImages/gnome_new.jpg">
+									<p class="index_featured_products_product_title">A gnome oh
+										a gnome!</p>
+									<p class="index_featured_products_product_price">&pound10.00</p>
+								</div>
+							</a> <a href="www.google.co.uk">
+								<div class="index_featured_products_product">
+									<img class="index_featured_products_product_image"
+										src="../../../../../../../../images/IndexImages/gnome_new.jpg">
+									<p class="index_featured_products_product_title">A gnome oh
+										a gnome!</p>
+									<p class="index_featured_products_product_price">&pound10.00</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<hr />
+			<!-- Reviews -->
+			<div class="reviews col-12 col-m-12">
+
+				<ul>
+					<li>
+						<div class="review">
+							<h3 class="col-10 col-m-10">Person</h3>
+							<!-- Star Rating -->
+							<div class="col-2 col-m-2">
+								<form action="">
+									<input class="star star-5" id="star-5" type="radio" name="star" />
+									<label class="star star-5" for="star-5"></label> <input
+										class="star star-4" id="star-4" type="radio" name="star" /> <label
+										class="star star-4" for="star-4"></label> <input
+										class="star star-3" id="star-3" type="radio" name="star" /> <label
+										class="star star-3" for="star-3"></label> <input
+										class="star star-2" id="star-2" type="radio" name="star" /> <label
+										class="star star-2" for="star-2"></label> <input
+										class="star star-1" id="star-1" type="radio" name="star" /> <label
+										class="star star-1" for="star-1"></label>
+								</form>
+							</div>
+
+							<p class="col-12 col-m-12">The review</p>
+
+						</div>
+					</li>
+				</ul>
+			</div>
+			<hr />
+		</div>
+
+	</ui:define>
+</ui:composition>
