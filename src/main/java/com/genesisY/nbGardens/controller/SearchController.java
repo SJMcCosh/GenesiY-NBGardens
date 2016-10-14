@@ -10,6 +10,7 @@ import com.genesisY.nbGardens.businessLogic.SearchBean;
 import com.genesisY.nbGardensCatalogue.entities.Product;
 
 
+@SuppressWarnings("serial")
 @Named("search")
 @SessionScoped
 public class SearchController implements Serializable{
