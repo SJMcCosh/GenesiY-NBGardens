@@ -32,8 +32,8 @@
 				<h:div class="loginform">
 					<h4>Login</h4>
 					<h:form>
-						<p>Email Address</p>
-						<h:inputText value="#{customer.email}" p:type="email"></h:inputText>
+						<p>Username</p>
+						<h:inputText value="#{customer.username}"></h:inputText>
 						<p>
 							<a href="#forgottenusername">Forgotten your username?</a>
 						</p>
@@ -45,17 +45,14 @@
 							<a href="forgottenpassword">Forgotten your password?</a>
 						</p>
 						<br />
-						<input type="checkbox">
-						<p>Remember me</p>
-						<br />
-						<h:commandButton type="submit" name="loginbtn" value="Login" action="#{customer.login()}">
+						<h:commandButton type="submit" name="loginbtn" value="Login" action="#{customer.login()}" />
 						<br />
 						<br />
 					</h:form>
 					<h:form action="signup.xhtml">
 						<hr />
 						<p>Are you a new user?</p>
-						<h:commandButton type="submit" name="signup" value="Sign-Up" action="#{customer.signup()}" />
+						<h:commandButton type="submit" name="signup" value="Sign-Up" action="#{customer.gotosignup()}" />
 					</h:form>
 				</h:div>
 			</h:div>
