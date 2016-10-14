@@ -1,11 +1,7 @@
 @CHARSET "ISO-8859-1";
 
-*{
+* {
 	box-sizing: border-box;
-}
-
-html {
-	
 }
 
 body {
@@ -17,27 +13,26 @@ body {
 	color: #143516;
 }
 
-.contentBoxes{
+.contentBoxes {
 	margin: 0 auto;
-	/*width: 600px;*/
-	height:auto;	
+	height: auto;
 }
 
 .alertBox {
-	/*width: 300px;*/
 	height: 300px;
 	overflow: scroll;
 	background-color: white;
-	border: solid red;
+	border-style: solid;
+	border-width: medium;
+	border-color: #143516;
 }
-
 
 #alertHeader {
 	background-color: black;
 	color: white;
 	text-align: center;
 	margin: 0 auto;
-	margin-top:-20px;
+	margin-top: -20px;
 }
 
 #alertText {
@@ -47,12 +42,13 @@ body {
 }
 
 .notificationBox {
-	/*width: 300px;*/
 	height: 300px;
 	overflow: scroll;
 	background-color: white;
-	border: solid blue;
-}	
+	border-style: solid;
+	border-width: medium;
+	border-color: #143516;
+}
 
 #notificationHeader {
 	background-color: black;
