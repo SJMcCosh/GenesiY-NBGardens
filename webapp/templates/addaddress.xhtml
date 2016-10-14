@@ -3,17 +3,18 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/template.xhtml">
-	<meta charset="ISO-8859-1">
+	<meta charset="ISO-8859-1" />
 	<ui:define name="maincontent">
-		<article class="wholebody">
+		<h:article class="wholebody">
 
-			<div class="addanaddress">
+			<h:div class="addanaddress">
 				<h4>Add an Address</h4>
-				<form>
-					<div class="col-12 col-m-9">
-						<div class="newaddress">
-							<div id="addresstext">
+				<h:form>
+					<h:div class="col-12 col-m-9">
+						<h:div class="newaddress">
+							<h:div id="addresstext">
 								<p>Address line 1</p>
+								<h:inputText id="addressline1" title="Address Line 1" ></h:inputText>
 								<input type="text">
 								<p>Address line 2</p>
 								<input type="text">
@@ -26,12 +27,12 @@
 								<p>Postcode</p>
 								<input type="text"><br /> <br /> <input type="submit"
 									name="new address" value="Add Address"><br /> <br />
-							</div>
-						</div>
-					</div>
-				</form>
-			</div>
-		</article>
+							</h:div>
+						</h:div>
+					</h:div>
+				</h:form>
+			</h:div>
+		</h:article>
 
 	</ui:define>
 </ui:composition>

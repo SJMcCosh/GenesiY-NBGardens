@@ -3,66 +3,66 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/template.xhtml">
-	<meta charset="ISO-8859-1">
+	<meta charset="ISO-8859-1" />
 	<ui:define name="maincontent">
-		<article class="wholebody">
-			<div>
+		<h:article class="wholebody">
+			<h:div>
 				<h3>Account Details</h3>
-			</div>
-			<div class="viewaccount">
-				<div class="col-4 col-m-4">
-					<div class="billingadd">
+			</h:div>
+			<h:div class="viewaccount">
+				<h:div class="col-4 col-m-4">
+					<h:div class="billingadd">
 						<p>
 							<a><b>Billing Address</b></a>
 						</p>
-						<p>Address Line 1</p>
-						<p>Address Line 2</p>
-						<p>Address Line 3</p>
-						<p>Town/City</p>
-						<p>County</p>
-						<p>Postcode</p>
-					</div>
-				</div>
-				<div class="col-4 col-m-4">
-					<div class="details">
+						<h:outputText value="#{customer.address.get(0).addressline1}" />
+						<p>#{customer.address.get(0).addressline2}</p>
+						<p>#{customer.address.get(0).addressline3}</p>
+						<p>#{customer.address.get(0).towncity}</p>
+						<p>#{customer.address.get(0).county}</p>
+						<p>#{customer.address.get(0).postcode}</p>
+					</h:div>
+				</h:div>
+				<h:div class="col-4 col-m-4">
+					<h:div class="details">
 						<p>
-							<a><b>Username:</b> Placeholder</a>
+							<a><b>Username:</b> #{customer.username}</a>
 						</p>
 						<p>
-							<a><b>Name:</b> Placeholder</a>
+							<a><b>Name:</b> #{customer.name}</a>
 						</p>
 						<p>
-							<a><b>Phone Number:</b> Placeholder</a>
+							<a><b>Phone Number:</b> #{customer.phonenum}</a>
 						</p>
 						<p>
-							<a><b>Email:</b> Placeholder</a>
+							<a><b>Email:</b> #{customer.email}</a>
 						</p>
-					</div>
-				</div>
-				<div class="col-4 col-m-4">
-					<div class="editing">
+					</h:div>
+				</h:div>
+				<h:div class="col-4 col-m-4">
+					<h:div class="editing">
 						<p>
-							<a href="viewaddresses.html">Addresses</a>
+							<a href="viewaddresses.xhtml">Addresses</a>
 						</p>
 						<p>
 							<a href="#trackorder">Track Order</a>
 						</p>
 						<p>
-							<a href="vieworders.html">View Previous Orders</a>
+							<a href="vieworders.xhtml">View Previous Orders</a>
 						</p>
 						<p>
-							<a href="editdetails.html">Edit Account Details</a>
+							<a href="editdetails.xhtml">Edit Account Details</a>
 						</p>
 						<p>
-							<a href="changepassword.html">Change Your Password</a>
+							<a href="changepassword.xhtml">Change Your Password</a>
 						</p>
 						<p>
-							<a href="addaddress.html">Add Address</a>
+							<a href="addaddress.xhtml">Add Address</a>
 						</p>
-					</div>
-				</div>
-			</div>
-		</article>
+					</h:div>
+				</h:div>
+			</h:div>
+		</h:article>
 
 	</ui:define>
 </ui:composition>

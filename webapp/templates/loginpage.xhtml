@@ -3,73 +3,66 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/template.xhtml">
-	<meta charset="ISO-8859-1">
+	<meta charset="ISO-8859-1" />
 	<ui:define name="maincontent">
-		<div class="maincontent"></div>
 
-		<article class="wholebody">
+		<h:article class="wholebody">
 			<br /> <br />
-			<div class="col-3 col-m-3 leftpic">
-				<picture>
-				<source srcset="../../../../../../../../images/gnome-06.jpg"
-					media="(max-width: 720px)">
-				<source srcset="../../../../../../../../images/zombiefeast.jpg"
-					media="(max-width: 767px)">
-				<source srcset="../../../../../../../../images/gnome-06.jpg"
-					media="(max-width: 920px)">
-				<source srcset="../../../../../../../../images/zombiefeast.jpg">
-				<img src="../../../../../../../../images/zombiefeast.jpg"
-					style="width: auto"></picture>
+			<h:div class="col-3 col-m-3 leftpic">
+				<h:picture>
+					<h:graphicImage library="images" name="wavinggnome.jpg" media="(max-width: 720px)" />
+					<h:graphicImage library="images" name="zombiefeast.jpg" media="(max-width: 767px)" />
+					<h:graphicImage library="images" name="wavinggnome.jpg" media="(max-width: 920px)" />
+					<h:graphicImage library="images" name="zombiefeast.jpg" />
+					<h:graphicImage library="images" name="zombiefeast.jpg" style= "width: auto" />
+				</h:picture>
 
 				<p>
-					<a href="https://google.co.uk">Contact NB Gardens</a>
+					<a href="help.xhtml">Contact NB Gardens</a>
 				</p>
-			</div>
+			</h:div>
 
-			<div class="col-6 col-m-9">
-				<div class="loginform">
+			<h:div class="col-6 col-m-9">
+				<h:div class="loginform">
 					<h4>Login</h4>
-					<form>
+					<h:form>
 						<p>Username</p>
 						<input type="text">
 						<p>
-							<a href=https://google.co.uk>Forgotten your username?</a>
+							<a href="#forgottenusername">Forgotten your username?</a>
 						</p>
 						<p>Password</p>
 						<input type="password" maxlength="45">
 						<p>
-							<a href=https://google.co.uk>Forgotten your password?</a>
+							<a href="forgottenpassword">Forgotten your password?</a>
 						</p>
-						<br /> <input type="checkbox"> <p>Remember me</p> <br /> <input
-							type="submit" name="loginbtn" value="Login"><br /> <br />
-					</form>
-					<form action="signup.html">
+						<br /> <input type="checkbox">
+						<p>Remember me</p>
+						<br /> <input type="submit" name="loginbtn" value="Login"><br />
+						<br />
+					</h:form>
+					<h:form action="signup.xhtml">
 						<hr />
 						<p>Are you a new user?</p>
 						<input type="submit" name="signup" value=Sign-Up>
-					</form>
-				</div>
-			</div>
+					</h:form>
+				</h:div>
+			</h:div>
 
 
-			<div class="col-3 col-m-12 rightpic">
-				<picture>
-				<source srcset="../../../../../../../../images/gnome-07.jpg"
-					media="(max-width: 720px)">
-				<source
-					srcset="../../../../../../../../images/zombie_gnome_fishing.jpg"
-					media="(max-width: 767px)">
-				<source srcset="../../../../../../../../images/gnome-07.jpg"
-					media="(max-width: 920px)">
-				<source
-					srcset="../../../../../../../../images/zombie_gnome_fishing.jpg">
-				<img src="../../../../../../../../images/zombie_gnome_fishing.jpg"
-					style="width: auto"></picture>
+			<h:div class="col-3 col-m-12 rightpic">
+				<h:picture>
+					<h:graphicImage library="images" name="readinggnome.jpg" media="(max-width: 720px)" />
+					<h:graphicImage library="images" name="zombie_gnome_fishing.jpg" media="(max-width: 767px)" />
+					<h:graphicImage library="images" name="readinggnome.jpg" media="(max-width: 920px)" />
+					<h:graphicImage library="images" name="zombie_gnome_fishing.jpg" />
+					<h:graphicImage library="images" name="zombie_gnome_fishing.jpg" style= "width: auto" />
+				</h:picture>
 				<p>
-					<a href="https://google.co.uk">Terms of Agreement</a>
+					<a href="help.xhtml">Terms of Agreement</a>
 				</p>
-			</div>
-		</article>
+			</h:div>
+		</h:article>
 
 	</ui:define>
 </ui:composition>

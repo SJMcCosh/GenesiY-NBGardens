@@ -3,15 +3,15 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/template.xhtml">
-	<meta charset="ISO-8859-1">
+	<meta charset="ISO-8859-1" />
 	<ui:define name="maincontent">
-		<article class="wholebody">
+		<h:article class="wholebody">
 
-			<div class="editdetails">
+			<h:div class="editdetails">
 				<h4>Edit Your Details</h4>
-				<form>
-					<div class="col-12 col-m-9">
-						<div class="changedetails">
+				<h:form>
+					<h:div class="col-12 col-m-9">
+						<h:div class="changedetails">
 							<p>Username</p>
 							<input type="text">
 							<p>First Name</p>
@@ -26,11 +26,11 @@
 							<input type="password" maxlength="45"><br /> <br /> <input
 								type="submit" name="changedetails" value="Submit"><br />
 							<br />
-						</div>
-					</div>
-				</form>
-			</div>
-		</article>
+						</h:div>
+					</h:div>
+				</h:form>
+			</h:div>
+		</h:article>
 
 	</ui:define>
 </ui:composition>

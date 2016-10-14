@@ -3,15 +3,15 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/template.xhtml">
-	<meta charset="ISO-8859-1">
+	<meta charset="ISO-8859-1" />
 	<ui:define name="maincontent">
-		<article class="wholebody">
+		<h:article class="wholebody">
 
-			<div class="signupform">
+			<h:div class="signupform">
 				<h4>Sign Up</h4>
-				<form>
-					<div class="col-6 col-m-9">
-						<div class="signupdetails">
+				<h:form>
+					<h:div class="col-6 col-m-9">
+						<h:div class="signupdetails">
 							<p>Username</p>
 							<input type="text">
 							<p>Password</p>
@@ -26,11 +26,11 @@
 							<input type="text">
 							<p>Email Address</p>
 							<input type="text">
-						</div>
-					</div>
-					<div class="col-6 col-m-9">
-						<div class="signupaddress">
-							<div id="signupaddresstext">
+						</h:div>
+					</h:div>
+					<h:div class="col-6 col-m-9">
+						<h:div class="signupaddress">
+							<h:div id="signupaddresstext">
 								<p>Address line 1</p>
 								<input type="text">
 								<p>Address line 2</p>
@@ -44,18 +44,18 @@
 								<p>Postcode</p>
 								<input type="text"><br /> <br /> <input type="submit"
 									name="signup" value="Sign Up"><br /> <br />
-							</div>
-						</div>
-					</div>
-				</form>
-				<div class="col-12 tandc">
+							</h:div>
+						</h:div>
+					</h:div>
+				</h:form>
+				<h:div class="col-12 tandc">
 					<p>
 						<a href="#T&Cs">Please read our terms and conditions before
 							signing up</a>
 					</p>
-				</div>
-			</div>
-		</article>
+				</h:div>
+			</h:div>
+		</h:article>
 
 	</ui:define>
 </ui:composition>
