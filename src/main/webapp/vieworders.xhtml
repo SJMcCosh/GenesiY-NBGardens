@@ -11,78 +11,71 @@
 			</h:div>
 			<h:div>
 				<h:div class="singleorder">
-					<h:div class="col-4 col-m-4">
-						<h:div class="resizingorders">
-							<h:div class="orderdetails">
-								<p>
-									<b>Date Placed:</b> Placeholder
-								</p>
-								<p>
-									<b>Total: </b> Placeholder
-								</p>
-								<p>
-									<b>Order Number:</b> Placeholder
-								</p>
+					<ui:repeat var="address" value="#{address.dataModel}">
+						<h:div class="col-4 col-m-4">
+							<h:div class="resizingorders">
+								<h:div class="orderdetails">
+									<p>
+										<b>Date Placed:</b>
+										<h:outputText value="#{customerorder.orderDate}" />
+									</p>
+									<p>
+										<b>Total: </b>
+										<h:outputText value="#{customerorder.orderTotal}" />
+									</p>
+									<p>
+										<b>Order Number:</b>
+										<h:outputText value="#{customerorder.orderID}" />
+									</p>
+								</h:div>
 							</h:div>
 						</h:div>
-					</h:div>
-					<h:div class="col-4 col-m-4">
-						<h:div class="resizingorders">
-							<h:div class="orderproducts">
-								<p>Product 1 Name: Placeholder Product 1 Price: Placeholder
-									Product 1 Quantity: Placeholder</p>
+						<h:div class="col-4 col-m-4">
+							<h:div class="resizingorders">
+								<h:div class="orderproducts">
+									<ui:repeat var="product" value="#{products.dataModel}">
+										<h:div class="vieworderproducts">
+											<h:div class="address">
+												<p>
+													<h:outputText value="#{customerorderline.name}" />
+													<h:outputText value="#{customerorderline.price}" />
+													<h:outputText value="#{customerorderline.quantity}" />
+												</p>
+											</h:div>
+										</h:div>
+									</ui:repeat>
+								</h:div>
 							</h:div>
 						</h:div>
-					</h:div>
-					<h:div class="col-4 col-m-4">
-						<h:div class="resizingorders">
-							<h:div class="orderaddress">
-								<p>
-									<a><b>Delivery Address</b></a>
-								</p>
-								<p>Address Line 1</p>
-								<p>Address Line 2</p>
-								<p>Address Line 3</p>
-								<p>Town/City</p>
-								<p>County</p>
-								<p>Postcode</p>
+						<h:div class="col-4 col-m-4">
+							<h:div class="resizingorders">
+								<h:div class="orderaddress">
+									<p>
+										<a><b>Delivery Address</b></a>
+									</p>
+									<p>
+										<h:outputText value="#{address.line1}" />
+									</p>
+									<p>
+										<h:outputText value="#{address.line2}" />
+									</p>
+									<p>
+										<h:outputText value="#{address.line3}" />
+									</p>
+									<p>
+										<h:outputText value="#{address.towncity}" />
+									</p>
+									<p>
+										<h:outputText value="#{address.county}" />
+									</p>
+									<p>
+										<h:outputText value="#{address.postcode}" />
+									</p>
+								</h:div>
 							</h:div>
 						</h:div>
-					</h:div>
-				</h:div>
-				<h:div class="singleorder">
-					<h:div class="col-4 col-m-4">
-						<h:div class="orderdetails">
-							<p>
-								<b>Date Placed:</b> Placeholder
-							</p>
-							<p>
-								<b>Total: </b> Placeholder
-							</p>
-							<p>
-								<b>Order Number:</b> Placeholder
-							</p>
-						</h:div>
-					</h:div>
-					<h:div class="col-4 col-m-4">
-						<h:div class="orderproducts">
-							<p>Product 1 Name: Placeholder Product 1 Price: Placeholder
-								Product 1 Quantity: Placeholder</p>
-						</h:div>
-					</h:div>
-					<h:div class="col-4 col-m-4">
-						<h:div class="orderaddress">
-							<p>
-								<a><b>Delivery Address</b></a>
-							</p>
-							<p>Address Line 1</p>
-							<p>Address Line 2</p>
-							<p>Address Line 3</p>
-							<p>Town/City</p>
-							<p>County</p>
-							<p>Postcode</p>
-						</h:div>
-					</h:div>
+
+					</ui:repeat>
 				</h:div>
 			</h:div>
 		</h:article>

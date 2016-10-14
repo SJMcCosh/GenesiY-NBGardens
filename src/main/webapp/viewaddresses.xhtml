@@ -9,37 +9,36 @@
 			<h:div>
 				<h3>View Your Addresses</h3>
 			</h:div>
-
-			<h:div>
+			<ui:repeat var="address" value="#{address.dataModel}">
 				<h:div class="col-4 col-m-4">
 					<h:div class="resizingaddress">
 						<h:div class="address">
 							<p>
-								<h:outputText value="#{customer.address.get(0).line1}" />
+								<h:outputText value="#{address.line1}" />
 							</p>
 							<p>
-								<h:outputText value="#{customer.address.get(0).line2}" />
+								<h:outputText value="#{address.line2}" />
 							</p>
 							<p>
-								<h:outputText value="#{customer.address.get(0).line3}" />
+								<h:outputText value="#{address.line3}" />
 							</p>
 							<p>
-								<h:outputText value="#{customer.address.get(0).towncity}" />
+								<h:outputText value="#{address.towncity}" />
 							</p>
 							<p>
-								<h:outputText value="#{customer.address.get(0).county}" />
+								<h:outputText value="#{address.county}" />
 							</p>
 							<p>
-								<h:outputText value="#{customer.address.get(0).postcode}" />
+								<h:outputText value="#{address.postcode}" />
 							</p>
 							<p>
-								<h:commandLink value = "Remove Address" action = "#{address.removeaddress()}"></h:commandLink>
-								<a href="#actiontoremoveaddress">Remove Address</a>
+								<h:commandLink value="Remove Address"
+									action="#{address.removeaddress()}"></h:commandLink>
 							</p>
 						</h:div>
 					</h:div>
 				</h:div>
-			</h:div>
+			</ui:repeat>
 		</h:article>
 
 	</ui:define>
