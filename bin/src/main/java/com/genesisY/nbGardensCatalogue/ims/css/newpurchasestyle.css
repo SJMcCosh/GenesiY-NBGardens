@@ -1,0 +1,121 @@
+@CHARSET "ISO-8859-1";
+
+*{
+	box-sizing: border-box;
+}
+
+html {
+	
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#pageTitle {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	color: #143516;
+}
+
+#box_products_lists {
+	
+	height: 300px;
+	width: 100%;
+	text-align: center;
+	right:0; 
+	margin:auto;  
+}
+
+.productBox {
+	width: 100%;
+	height: 300px;
+	overflow: scroll;
+	background-color: blue;
+}
+
+@media only screen and (min-width: 600px) {
+	.productBox {
+		width: 40%;
+		height: 300px;
+		overflow: scroll;
+		background-color: red;
+	}
+}
+
+.empty {
+	border: solid white;
+}
+
+.empty1 {
+	border: solid white;
+	float: right;
+}
+
+#tab_container{ 
+	position: relative;
+	left:0;
+	width: 100%;
+}
+
+section {
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+	color: white;
+}
+
+section:after {
+	content: 'Please choose a saved Purchase Order';
+	position: absolute;
+	left: 0;
+	top: 100%;
+	width: 100%;
+	background-color: #5E6B7F;
+}
+
+button {
+	cursor: pointer;
+	width: 100%;
+	display: inline-block;
+	background-color: #5E6B7F;
+	color: white;
+	text-align: center;
+	border: none;
+}
+
+div:focus button, button:focus {
+	background-color: #8DA1BF;
+}
+
+button:focus + p, div:focus P {
+	display: block;
+	position: absolute;
+	background-color: #8DA1BF;
+	height: 3000%;
+	width: 100%;
+	left: 0;
+	top: 0px;
+	text-align: center;
+}
+
+p {
+	display: none;
+	font-size: 2em;
+}
+
+div {
+	display: inline-block;
+}
+
+div:focus {
+	outline: none;
+}
+
+.p {
+	margin-top: 300px;
+	text-align: center;
+	display: block;
+	font-size: 1em;
+}
