@@ -21,14 +21,16 @@ import com.genesisY.nbGardensCatalogue.entities.PurchaseOrderLine;
 import com.genesisY.nbGardensCatalogue.entities.Review;
 import com.genesisY.nbGardensCatalogue.entities.Supplier;
 import com.genesisY.nbGardensCatalogue.entities.Tag;
+
 /**
  * Class that creates dummy data for testing purposes
+ * 
  * @author Sam Precious
  *
  */
 @Startup
 @Singleton
-public class InitialData{
+public class InitialData {
 	private ArrayList<Address> addressList = new ArrayList<Address>();
 	private ArrayList<Category> categoryList = new ArrayList<Category>();
 	private ArrayList<CategoryToProductConn> ctpcList = new ArrayList<CategoryToProductConn>();
@@ -44,9 +46,9 @@ public class InitialData{
 	private ArrayList<Review> reviewList = new ArrayList<Review>();
 	private ArrayList<Supplier> supplierList = new ArrayList<Supplier>();
 	private ArrayList<Tag> tagList = new ArrayList<Tag>();
-	
+
 	@PostConstruct
-	public void setupData(){
+	public void setupData() {
 		addressList.add(new Address());
 		addressList.add(new Address());
 		addressList.add(new Address());
@@ -56,209 +58,190 @@ public class InitialData{
 		ctpcList.add(new CategoryToProductConn());
 		ctpcList.add(new CategoryToProductConn());
 		ctpcList.add(new CategoryToProductConn());
-		customerList.add(new Customer("Dave", "Smith", "dave@smith.com", "davesmith", "1234", "01478523698"));
-		customerList.add(new Customer("Jane", "Smith", "jane@smith.com", "janesmith", "1234", "01478523698"));
-		customerList.add(new Customer("Will", "Smith", "will@smith.com", "willsmith", "1234", "01478523698"));
+		customerList.add(new Customer("Dave", "Smith", "dave@smith.com", "davesmith", "0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e", "01478523698")); //Password = password1
+		customerList.add(new Customer("Jane", "Smith", "jane@smith.com", "janesmith", "6cf615d5bcaac778352a8f1f3360d23f02f34ec182e259897fd6ce485d7870d4", "01478523698"));//Password = password2
+		customerList.add(new Customer("Will", "Smith", "will@smith.com", "willsmith", "5906ac361a137e2d286465cd6588ebb5ac3f5ae955001100bc41577c3d751764", "01478523698"));//Password = password3
 		colList.add(new CustomerOrderLine());
 	}
-	
+
 	public ArrayList<Address> getAddressList() {
 		return addressList;
 	}
-	
-	
+
 	public void setAddressList(ArrayList<Address> addressList) {
 		this.addressList = addressList;
 	}
-	
-	public void addAddress(Address address){
+
+	public void addAddress(Address address) {
 		addressList.add(address);
 	}
-	
-	
+
 	public ArrayList<Category> getCategoryList() {
 		return categoryList;
 	}
-	
-	
+
 	public void setCategoryList(ArrayList<Category> categoryList) {
 		this.categoryList = categoryList;
 	}
-	
-	public void addCategory(Category category){
+
+	public void addCategory(Category category) {
 		categoryList.add(category);
 	}
-	
-	
+
 	public ArrayList<CategoryToProductConn> getCtpcList() {
 		return ctpcList;
 	}
-	
-	
+
 	public void setCtpcList(ArrayList<CategoryToProductConn> ctpcList) {
 		this.ctpcList = ctpcList;
 	}
-	
-	public void addCategoryToProduction(CategoryToProductConn ctp){
+
+	public void addCategoryToProduction(CategoryToProductConn ctp) {
 		ctpcList.add(ctp);
 	}
-	
-	
+
 	public ArrayList<Customer> getCustomerList() {
 		return customerList;
 	}
-	
-	
+
 	public void setCustomerList(ArrayList<Customer> customerList) {
 		this.customerList = customerList;
 	}
-	
-	public void addCustomer(Customer customer){
+
+	public void addCustomer(Customer customer) {
 		customerList.add(customer);
 	}
-	
+
 	public ArrayList<CustomerOrder> getCustomerOrderList() {
 		return customerOrderList;
 	}
-	
-	
+
 	public void setCustomerOrderList(ArrayList<CustomerOrder> customerOrderList) {
 		this.customerOrderList = customerOrderList;
 	}
-	
-	public void addCustomerOrder(CustomerOrder customerOrder){
+
+	public void addCustomerOrder(CustomerOrder customerOrder) {
 		customerOrderList.add(customerOrder);
 	}
-	
+
 	public ArrayList<CustomerOrderLine> getColList() {
 		return colList;
 	}
-	
-	
+
 	public void setColList(ArrayList<CustomerOrderLine> colList) {
 		this.colList = colList;
 	}
-	
-	public void addCustomerOrderLine(CustomerOrderLine customerOrderLine){
+
+	public void addCustomerOrderLine(CustomerOrderLine customerOrderLine) {
 		colList.add(customerOrderLine);
 	}
-	
+
 	public ArrayList<EmployeeLogin> getEmployeeLoginList() {
 		return employeeLoginList;
 	}
-	
-	
+
 	public void setEmployeeLoginList(ArrayList<EmployeeLogin> employeeLoginList) {
 		this.employeeLoginList = employeeLoginList;
 	}
-	
-	public void addEmployeeLogin(EmployeeLogin employeeLogin){
+
+	public void addEmployeeLogin(EmployeeLogin employeeLogin) {
 		employeeLoginList.add(employeeLogin);
 	}
-	
-	
+
 	public ArrayList<Product> getProductList() {
 		return productList;
 	}
-	
-	
+
 	public void setProductList(ArrayList<Product> productList) {
 		this.productList = productList;
 	}
-	
-	public void addProduct(Product product){
+
+	public void addProduct(Product product) {
 		productList.add(product);
 	}
-	
+
 	public ArrayList<ProductTagLine> getPtlList() {
 		return ptlList;
 	}
-	
-	
+
 	public void setPtlList(ArrayList<ProductTagLine> ptlList) {
 		this.ptlList = ptlList;
 	}
-	
-	public void addProductTagLine(ProductTagLine ptl){
+
+	public void addProductTagLine(ProductTagLine ptl) {
 		ptlList.add(ptl);
 	}
-	
+
 	public ArrayList<ProductVariants> getProductVariantsList() {
 		return productVariantsList;
 	}
-	
-	
+
 	public void setProductVariantsList(ArrayList<ProductVariants> productVariantsList) {
 		this.productVariantsList = productVariantsList;
 	}
-	
-	public void addProductVariants(ProductVariants productVariants){
+
+	public void addProductVariants(ProductVariants productVariants) {
 		productVariantsList.add(productVariants);
 	}
-	
+
 	public ArrayList<PurchaseOrder> getPurchaseOrderList() {
 		return purchaseOrderList;
 	}
-	
-	
+
 	public void setPurchaseOrderList(ArrayList<PurchaseOrder> purchaseOrderList) {
 		this.purchaseOrderList = purchaseOrderList;
 	}
-	
-	public void addProductOrder(PurchaseOrder purchaseOrder){
+
+	public void addProductOrder(PurchaseOrder purchaseOrder) {
 		purchaseOrderList.add(purchaseOrder);
 	}
-	
+
 	public ArrayList<PurchaseOrderLine> getPolList() {
 		return polList;
 	}
-	
-	
+
 	public void setPolList(ArrayList<PurchaseOrderLine> polList) {
 		this.polList = polList;
 	}
-	
-	public void addPurchaseOrderLine(PurchaseOrderLine purchaseOrderLine){
+
+	public void addPurchaseOrderLine(PurchaseOrderLine purchaseOrderLine) {
 		polList.add(purchaseOrderLine);
 	}
-	
+
 	public ArrayList<Review> getReviewList() {
 		return reviewList;
 	}
-	
-	
+
 	public void setReviewList(ArrayList<Review> reviewList) {
 		this.reviewList = reviewList;
 	}
-	
-	public void addReview(Review review){
+
+	public void addReview(Review review) {
 		reviewList.add(review);
 	}
-	
+
 	public ArrayList<Supplier> getSupplierList() {
 		return supplierList;
 	}
-	
-	
+
 	public void setSupplierList(ArrayList<Supplier> supplierList) {
 		this.supplierList = supplierList;
 	}
-	
-	public void addSupplier(Supplier supplier){
+
+	public void addSupplier(Supplier supplier) {
 		supplierList.add(supplier);
 	}
-	
+
 	public ArrayList<Tag> getTagList() {
 		return tagList;
 	}
-	
-	
+
 	public void setTagList(ArrayList<Tag> tagList) {
 		this.tagList = tagList;
 	}
-	
-	public void addTag(Tag tag){
+
+	public void addTag(Tag tag) {
 		tagList.add(tag);
 	}
-	
+
 }
