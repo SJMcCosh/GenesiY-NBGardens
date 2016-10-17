@@ -1,22 +1,12 @@
-<!DOCTYPE html>
-
-<html>
-
-	<head>
-		<meta charset="ISO-8859-1">
-		
-		<link href="../css/templatestyle.css" 
-		rel="stylesheet"type="text/css" />
-		<link href="../css/newpurchasestyle.css" 
-		rel="stylesheet"type="text/css" />
-		
-		<title>New Purchase Order</title>
-		
-	</head>
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"	template="templates/template.xhtml">
+	<meta charset="ISO-8859-1" title="IMS"/>
 	
-	<body>
+	<ui:define name="content">
 	
-		<div id="pageTitle">
+	<div id="pageTitle">
 			
 			<div class="col-12 col-m-12">
 				<h1>Create New Purchase Order</h1>
@@ -47,12 +37,11 @@
 					   <f:selectItem itemValue="2" itemLabel="Item 2" />	   							
 					</h:selectOneMenu>	
 				</div>
-				<br>
+				
+				
+				
 				<div class="columns_add_button">
-					<h:selectOneMenu value="#{userData.data}">
-					   <f:selectItem itemValue="1" itemLabel="Item 1" />
-					   <f:selectItem itemValue="2" itemLabel="Item 2" />	   							
-					</h:selectOneMenu>	
+					<h:commandButton value="poop" onclick="alert('clicked');"/>
 				</div>
 				
 			</div>
@@ -62,19 +51,16 @@
 			<div id="savedProducts">
 				<p>Saved products list</p>
 				
-				<br><br><br>
+				
 				<div class="columns_dropdowns">
 					<h:selectOneMenu value="#{userData.data}">
 					   <f:selectItem itemValue="1" itemLabel="Item 1" />
 					   <f:selectItem itemValue="2" itemLabel="Item 2" />	   							
 					</h:selectOneMenu>	
 				</div>
-				<br>
+				
 				<div class="columns_add_button">
-					<h:selectOneMenu value="#{userData.data}">
-					   <f:selectItem itemValue="1" itemLabel="Item 1" />
-					   <f:selectItem itemValue="2" itemLabel="Item 2" />	   							
-					</h:selectOneMenu>	
+					<h:commandButton value="poop" onclick="alert('clicked');"/>
 				</div>
 				
 				
@@ -109,6 +95,15 @@
 		<div>
 			<h:commandButton value="Click Me!" onclick="alert('Hello World!');" />
 		</div>
+	
 		
-	</body>
-</html>
+	
+	
+	
+	</ui:define>
+	
+	
+	
+	
+	
+</ui:composition>
