@@ -7,12 +7,12 @@ import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import com.genesisY.nbGardensCatalogue.entities.Product;
-import com.genesisY.nbGardensCatalogue.entityManagers.ProductManager;
+import com.genesisY.nbGardensCatalogue.entityManagers.ProductManagerInterface;
 import com.genesisY.nbGardensCatalogue.initialData.InitialData;
 
 @Stateless
 @Default
-public class ProductsManager implements ProductManager {
+public class ProductsManager implements ProductManagerInterface {
 
 	@Inject
 	private InitialData initialData;

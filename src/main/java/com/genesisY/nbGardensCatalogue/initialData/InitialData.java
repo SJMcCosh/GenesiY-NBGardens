@@ -60,6 +60,9 @@ public class InitialData{
 		customerList.add(new Customer("Jane", "Smith", "jane@smith.com", "janesmith", "1234", "01478523698"));
 		customerList.add(new Customer("Will", "Smith", "will@smith.com", "willsmith", "1234", "01478523698"));
 		colList.add(new CustomerOrderLine());
+		productList.add(new Product("Game of Gnomes", 4.5, "Gnome based on the GOT Seriese", "Dont care", 15.0, 150.50));
+		productList.add(new Product("Game of Gnomes", 4.5, "Gnome based on the GOT Seriese", "Dont care", 15.0, 150.50));
+		productList.add(new Product("Game of Gnomes", 4.5, "Gnome based on the GOT Seriese", "Dont care", 15.0, 150.50));
 	}
 	
 	public ArrayList<Address> getAddressList() {

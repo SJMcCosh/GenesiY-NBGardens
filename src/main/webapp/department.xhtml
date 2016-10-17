@@ -7,15 +7,21 @@
 	<ui:define name="maincontent">
 		<div class="row">
 			<!-- This is the sidebar -->
-			<div class="sidebar col-2">
-				<ul>
-					<li><a href="categoryoutlive.html">Outdoor Living</a></li>
-					<li><a href="categorygardtool.html">Garden Tools</a></li>
-					<li><a href="categorygnome.html">Gnomes</a></li>
-					<li><a href="categoryoutbuild.html">Outdoor Buildings</a></li>
-					<li><a href="categoryseasonal.html">Seasonal</a></li>
-				</ul>
-			</div>
+			<h:form>
+				<div class="sidebar col-2">
+					<ul>
+						<h:commandLink action="#{products.allProducts}"
+							value="Outdoor Living" />
+
+
+						<li><a href="categorygardtool.html">Garden Tools</a></li>
+						<li><a href="categorygnome.html">Gnomes</a></li>
+						<li><a href="categoryoutbuild.html">Outdoor Buildings</a></li>
+						<li><a href="categoryseasonal.html">Seasonal</a></li>
+					</ul>
+				</div>
+			</h:form>
+
 			<!-- This is the featured subclass -->
 			<div class="featuredSubCategory col-10 col-m-12">
 				<br />
