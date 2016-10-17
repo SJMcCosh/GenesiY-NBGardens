@@ -6,6 +6,8 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.genesisY.nbGardens.businessLogic.AccountDetailsService;
+import com.genesisY.nbGardensCatalogue.entities.Address;
 import com.genesisY.nbGardensCatalogue.entities.Customer;
 
 @SuppressWarnings("serial")
@@ -13,9 +15,20 @@ import com.genesisY.nbGardensCatalogue.entities.Customer;
 @SessionScoped
 public class CustomerController implements Serializable{
 
-
+	@Inject private AccountDetailsService accountDetailsService;
 	private Customer customer;
+	private Address address;
 	
+	
+	
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 
 	public Customer getCustomer() {
 		return customer;
@@ -23,6 +36,13 @@ public class CustomerController implements Serializable{
 
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
+	}
+	
+	
+	public String viewDetails( String username){
+		username = "davesmith";
+		customer = accountDetailsService.getCustomerByUsername(username);
+		return "viewaccount";
 	}
 	
 	public String login(){

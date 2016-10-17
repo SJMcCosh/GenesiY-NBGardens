@@ -6,13 +6,13 @@
 	template="templates/template.xhtml">
 	<meta charset="ISO-8859-1" />
 	<ui:define name="maincontent">
-		<h:article class="wholebody">
+		<article class="wholebody">
 
-			<h:div class="editdetails">
+			<div class="editdetails">
 				<h4>Edit Your Details</h4>
-				<h:form>
-					<h:div class="col-12 col-m-9">
-						<h:div class="changedetails">
+				<form>
+					<div class="col-12 col-m-9">
+						<div class="changedetails">
 							<p>Username</p>
 							<h:inputText value="#{customer.username}"></h:inputText>
 							<p>First Name</p>
@@ -27,11 +27,11 @@
 							<input type="password" maxlength="45"><br /> <br /> <input
 								type="submit" name="changedetails" value="Submit"><br />
 							<br />
-						</h:div>
-					</h:div>
-				</h:form>
-			</h:div>
-		</h:article>
+						</div>
+					</div>
+				</form>
+			</div>
+		</article>
 
 	</ui:define>
 </ui:composition>

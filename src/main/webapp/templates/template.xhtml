@@ -14,12 +14,15 @@
 		<!-- This is the header -->
 		<div class="header">
 			<div class="searchandlogo">
-				<form class="tfnewsearch" method="get">
+				<h:form class="tfnewsearch" method="get">
 					<h:inputText class="tftextinput" value="#{search.term}"
 						onchange="#{search.search()}" />
 					<h:commandButton class="tfbutton" type="submit"
 						action="#{search.search()}" value="Search" />
-				</form>
+					<h:commandLink action="#{customer.viewDetails(param)}" value = "View Account">
+						<f:param name = "username" value="davesmith"/>
+					</h:commandLink>
+				</h:form>
 
 				<div class="logo">
 					<a href="index.xhtml"> <img src="img/nblogo.png" /></a>

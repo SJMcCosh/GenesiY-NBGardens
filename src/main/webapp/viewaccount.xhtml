@@ -5,42 +5,42 @@
 	template="templates/template.xhtml">
 	<meta charset="ISO-8859-1" />
 	<ui:define name="maincontent">
-		<h:article class="wholebody">
-			<h:div>
+		<article class="wholebody">
+			<div>
 				<h3>Account Details</h3>
-			</h:div>
-			<h:div class="viewaccount">
-				<h:div class="col-4 col-m-4">
-					<h:div class="billingadd">
+			</div>
+			<div class="viewaccount">
+				<div class="col-4 col-m-4">
+					<div class="billingadd">
 						<p>
 							<a><b>Billing Address</b></a>
 						</p>
-						<p><h:outputText value="#{customer.address.get(0).line1}" /></p>
-						<p><h:outputText value="#{customer.address.get(0).line2}" /></p>
-						<p><h:outputText value="#{customer.address.get(0).line3}" /></p>
-						<p><h:outputText value="#{customer.address.get(0).towncity}" /></p>
-						<p><h:outputText value="#{customer.address.get(0).county}" /></p>
-						<p><h:outputText value="#{customer.address.get(0).postcode}" /></p>
-					</h:div>
-				</h:div>
-				<h:div class="col-4 col-m-4">
-					<h:div class="details">
+						<p><h:outputText value="#{customer.address.line1}" /></p>
+						<p><h:outputText value="#{customer.address.line2}" /></p>
+						<p><h:outputText value="#{customer.address.line3}" /></p>
+						<p><h:outputText value="#{customer.address.towncity}" /></p>
+						<p><h:outputText value="#{customer.address.county}" /></p>
+						<p><h:outputText value="#{customer.address.postcode}" /></p>
+					</div>
+				</div>
+				<div class="col-4 col-m-4">
+					<div class="details">
 						<p>
-							<a><b>Username:</b> <h:outputText value="#{customer.username}" /></a>
+							<a><b>Username:</b> <h:outputText value="#{customer.customer.username}" /></a>
 						</p>
 						<p>
-							<a><b>Name:</b> <h:outputText value="#{customer.name}" /></a>
+							<a><b>Name:</b> <h:outputText value="#{customer.customer.firstName}" /></a>
 						</p>
 						<p>
-							<a><b>Phone Number:</b> <h:outputText value="#{customer.phonenumber}" /></a>
+							<a><b>Phone Number:</b> <h:outputText value="#{customer.customer.phoneNumber}" /></a>
 						</p>
 						<p>
-							<a><b>Email:</b> <h:outputText value="#{customer.email}" /></a>
+							<a><b>Email:</b> <h:outputText value="#{customer.customer.email}" /></a>
 						</p>
-					</h:div>
-				</h:div>
-				<h:div class="col-4 col-m-4">
-					<h:div class="editing">
+					</div>
+				</div>
+				<div class="col-4 col-m-4">
+					<h:form class="editing">
 						<p>
 							<h:commandLink value = "View Addresses" action = "viewaddresses" />
 						</p>
@@ -56,10 +56,10 @@
 						<p>
 							<h:commandLink value = "Add Address" action = "addaddress" />
 						</p>
-					</h:div>
-				</h:div>
-			</h:div>
-		</h:article>
+					</h:form>
+				</div>
+			</div>
+		</article>
 
 	</ui:define>
 </ui:composition>

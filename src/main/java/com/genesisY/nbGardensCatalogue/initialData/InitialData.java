@@ -56,9 +56,9 @@ public class InitialData{
 		ctpcList.add(new CategoryToProductConn());
 		ctpcList.add(new CategoryToProductConn());
 		ctpcList.add(new CategoryToProductConn());
-		customerList.add(new Customer());
-		customerList.add(new Customer());
-		customerList.add(new Customer());
+		customerList.add(new Customer("Dave", "Smith", "dave@smith.com", "davesmith", "1234", "01478523698"));
+		customerList.add(new Customer("Jane", "Smith", "jane@smith.com", "janesmith", "1234", "01478523698"));
+		customerList.add(new Customer("Will", "Smith", "will@smith.com", "willsmith", "1234", "01478523698"));
 		colList.add(new CustomerOrderLine());
 	}
 	
