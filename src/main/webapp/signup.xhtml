@@ -14,19 +14,19 @@
 					<h:div class="col-6 col-m-9">
 						<h:div class="signupdetails">
 							<p>Username</p>
-							<h:inputText values="#{customer.username}"></h:inputText>
+							<h:inputText value="#{customer.username}"></h:inputText>
 							<p>Password</p>
-							<input type="password" maxlength="45">
+							<h:inputType type="password" maxlength="45">
 							<p>Please Verify your Password</p>
 							<input type="password" maxlength="45"><br />
 							<p>First Name</p>
-							<input type="text">
+							<h:inputText value="#{customer.firstname}"></h:inputText>
 							<p>Surname</p>
-							<input type="text">
+							<h:inputText value="#{customer.surname}"></h:inputText>
 							<p>Phone Number</p>
-							<input type="text">
+							<h:inputText value="#{customer.phonenumber}"></h:inputText>
 							<p>Email Address</p>
-							<input type="text">
+							<h:inputText value="#{customer.email}" p: type="email"></h:inputText>
 						</h:div>
 					</h:div>
 					<h:div class="col-6 col-m-9">

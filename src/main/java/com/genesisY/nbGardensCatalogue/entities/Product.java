@@ -52,17 +52,33 @@ public class Product {
 	@Column(name = "tagID", nullable = false)
 	@NotNull
 	private List<Tag> tags;
+	
+	@Column(name = "price", nullable = false)
+	@NotNull
+	private double price;
+	
 
 	public Product() {
 
 	}
 
-	public Product(String name, double averageRating, String description, String size, double weight) {
+	public Product(String name, double averageRating, String description, String size, double weight, double price) {
 		this.name = name;
 		this.averageRating = averageRating;
 		this.description = description;
 		this.size = size;
 		this.weight = weight;
+		this.price = price;
+	}
+
+	
+	
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
 	}
 
 	public int getId() {
