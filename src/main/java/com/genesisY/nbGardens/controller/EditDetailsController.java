@@ -6,7 +6,6 @@ import javax.inject.Named;
 
 import com.genesisY.nbGardens.businessLogic.AccountDetailsService;
 import com.genesisY.nbGardens.businessLogic.EditDetailsService;
-import com.genesisY.nbGardensCatalogue.entities.Address;
 import com.genesisY.nbGardensCatalogue.entities.Customer;
 
 @Named("editdetails")
@@ -86,7 +85,7 @@ public class EditDetailsController {
 		if (bool) {
 			System.out.println(">>>DETAILS CHANGED<<<");
 			Customer person = ads.getCustomerByUsername(username);
-			System.out.println(person.getUsername() + person.getFirstName() + person.getSurname());
+			System.out.println(">>>>>"+person.getUsername() + person.getFirstName() + person.getSurname());
 			return "viewaccount";
 		} else {
 			return "index";
