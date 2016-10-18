@@ -15,19 +15,20 @@ public class ProductService {
 
 	@Inject
 	private ProductManagerInterface productInt;
-	
+
 	@SuppressWarnings("unchecked")
 	public List<Product> getAllProducts(String category) {
 		try {
 			if (category != null) {
-				return  productInt.getProduct();
+				return productInt.getProduct();
+			}else{
+				return null;
 			}
 		} catch (NullPointerException npe) {
-			
+
 		}
-		
-		
 		return null;
+
 	}
-	
+
 }
