@@ -62,9 +62,9 @@ public class InitialData {
 		customerList.add(new Customer("Jane", "Smith", "jane@smith.com", "janesmith", "password2", "01478523698"));//Password = password2
 		customerList.add(new Customer("Will", "Smith", "will@smith.com", "willsmith", "password3", "01478523698"));//Password = password3
 		colList.add(new CustomerOrderLine());
-		productList.add(new Product("Game of Gnomes", 4.5, "Gnome based on the GOT Seriese", "Dont care", 15.0, 150.50));
-		productList.add(new Product("Gnomme2", 4.5, "Gnome based on the GOT Seriese", "Dont care", 15.0, 150.50));
-		productList.add(new Product("Game of Gnomes", 4.5, "Gnome based on the GOT Seriese", "Dont care", 15.0, 150.50));
+		productList.add(new Product("Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50));
+		productList.add(new Product("Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0, 97.99));
+		productList.add(new Product("Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29));
 		tagList.add(new Tag("Tag1"));
 		tagList.add(new Tag("Tag2"));
 		tagList.add(new Tag("Tag3"));
