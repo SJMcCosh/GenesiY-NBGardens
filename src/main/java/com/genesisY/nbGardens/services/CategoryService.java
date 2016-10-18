@@ -2,8 +2,6 @@ package com.genesisY.nbGardens.services;
 
 import java.util.List;
 
-import java.util.List;
-
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
@@ -23,7 +21,6 @@ public class CategoryService {
 		} else {
 			return null;
 		}
-
 	}
 
 }
