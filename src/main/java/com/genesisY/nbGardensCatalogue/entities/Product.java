@@ -54,7 +54,7 @@ public class Product {
 	private List<Tag> tags;
 
 	public Product() {
-
+		
 	}
 
 	public Product(String name, double averageRating, String description, String size, double weight) {
