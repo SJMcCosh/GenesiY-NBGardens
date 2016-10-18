@@ -4,7 +4,7 @@ import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.genesisY.nbGardens.businessLogic.AccountDetailsService;
+import com.genesisY.nbGardens.services.AccountDetailsService;
 import com.genesisY.nbGardens.businessLogic.EditDetailsService;
 import com.genesisY.nbGardensCatalogue.entities.Customer;
 
