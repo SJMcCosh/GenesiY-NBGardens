@@ -8,12 +8,18 @@
 
 		<div class="row">
 			<!-- Main content for the page -->
-			<div class="col-3 col-m-6 tagbar">
-				<h:dataTable layout="unorderdList" value="#{filter.filters}"
-					var="item">
-					<h:link value="#{item}" />
-				</h:dataTable>
-			</div>
+			<h:form>
+				<ul class="col-3 col-m-6 tagbar">
+
+					<ui:repeat var="tag" value="#{products.tagModel}">
+						<h:link value="#{tag.name}" />
+					</ui:repeat>
+
+				</ul>
+
+
+			</h:form>
+
 
 			<div class="col-9 col-m-6">
 				<select>
@@ -29,7 +35,8 @@
 			<h:form>
 				<div class="col-9 col-m-6" align="centre">
 					<ul>
-						<ui:repeat var = "product" value="#{products.dataModel}">
+						<ui:repeat var="product" value="#{products.dataModel}">
+
 							<h:commandLink action="productpage" class="col-3 col-m-6 prodimg">
 								<div class="index_featured_products_product">
 									<img class="index_featured_products_product_image"
