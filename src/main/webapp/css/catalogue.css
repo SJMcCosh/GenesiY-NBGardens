@@ -4,6 +4,15 @@
 	box-sizing: border-box;
 }
 
+[class*="col-"] {
+	float: left;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+	width: 100%;
+}
+
 .wholebody::after {
 	content: "";
 	clear: both;
@@ -13,6 +22,10 @@
 .wholebody {
 	text-align: center;
 	padding-bottom: 20px;
+}
+
+.tagbar{
+	float:none;
 }
 
 .viewaccount {
@@ -646,15 +659,6 @@ ul.botnav li a {
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-}
-
-[class*="col-"] {
-	float: left;
-}
-
-/* For mobile phones: */
-[class*="col-"] {
-	width: 100%;
 }
 
 @media only screen and (min-width: 600px) {

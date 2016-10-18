@@ -1,4 +1,4 @@
-package com.genesisY.nbGardens.businessLogic;
+package com.genesisY.nbGardens.services;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;

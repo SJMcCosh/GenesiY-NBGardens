@@ -1,4 +1,4 @@
-package com.genesisY.nbGardens.businessLogic;
+package com.genesisY.nbGardens.services;
 
 import java.util.ArrayList;
 import java.util.List;

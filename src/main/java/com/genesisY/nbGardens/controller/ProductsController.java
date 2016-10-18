@@ -8,8 +8,8 @@ import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.genesisY.nbGardens.businessLogic.ProductService;
-import com.genesisY.nbGardens.businessLogic.TagService;
+import com.genesisY.nbGardens.services.ProductService;
+import com.genesisY.nbGardens.services.TagService;
 import com.genesisY.nbGardensCatalogue.entities.Product;
 import com.genesisY.nbGardensCatalogue.entities.Tag;
 

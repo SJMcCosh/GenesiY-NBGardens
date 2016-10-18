@@ -70,6 +70,12 @@ public class InitialData {
 		tagList.add(new Tag("Tag3"));
 		tagList.add(new Tag("Tag4"));
 		tagList.add(new Tag("Tag5"));
+		categoryList.add(new Category("cat1"));
+		categoryList.add(new Category("cat1"));
+		categoryList.add(new Category("cat1"));
+		categoryList.add(new Category("cat1"));
+		categoryList.add(new Category("cat1"));
+		categoryList.add(new Category("cat1"));
 	}
 
 	public ArrayList<Address> getAddressList() {

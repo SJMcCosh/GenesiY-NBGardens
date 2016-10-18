@@ -1,4 +1,6 @@
-package com.genesisY.nbGardens.businessLogic;
+package com.genesisY.nbGardens.services;
+
+import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -6,14 +8,20 @@ import javax.inject.Inject;
 import com.genesisY.nbGardensCatalogue.entities.Category;
 import com.genesisY.nbGardensCatalogue.entityManagers.CategoryManager;
 
-import antlr.collections.List;
 
 @RequestScoped
 public class CategoryService {
 	
-	@Inject private CategoryManager catRepo;
+	@Inject private CategoryManager catManager;
 	
 	public List<Category> getAllCategories(){
+		
+		if(catManager.getAllCategories() != null){
+			return catManager.getAllCategories();	
+		}
+		else{
+			return null;
+		}
 		
 	}
 

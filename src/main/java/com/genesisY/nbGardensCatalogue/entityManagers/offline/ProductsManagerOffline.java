@@ -12,7 +12,7 @@ import com.genesisY.nbGardensCatalogue.initialData.InitialData;
 
 @Stateless
 @Default
-public class ProductsManager implements ProductManager {
+public class ProductsManagerOffline implements ProductManager {
 
 	@Inject
 	private InitialData initialData;
