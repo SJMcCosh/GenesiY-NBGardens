@@ -8,7 +8,7 @@ import javax.inject.Named;
 
 import com.genesisY.nbGardensCatalogue.entities.Category;
 
-@Named("customer")
+@Named("category")
 @SessionScoped
 public class CategoryController implements Serializable{
 	
