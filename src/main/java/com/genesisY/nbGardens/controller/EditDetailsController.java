@@ -4,8 +4,11 @@ import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+
+import com.genesisY.nbGardens.services.EditDetailsService;
 import com.genesisY.nbGardens.services.AccountDetailsService;
-import com.genesisY.nbGardens.businessLogic.EditDetailsService;
+
+
 import com.genesisY.nbGardensCatalogue.entities.Customer;
 
 @Named("editdetails")
@@ -82,6 +85,7 @@ public class EditDetailsController {
 
 	public String changeDetails() {
 		boolean bool = detailEditor.editing(firstName, surname, phoneNumber, email, username, password);
+		System.out.println(bool);
 		if (bool) {
 			System.out.println(">>>DETAILS CHANGED<<<");
 			Customer person = ads.getCustomerByUsername(username);

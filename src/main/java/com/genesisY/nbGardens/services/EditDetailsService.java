@@ -1,4 +1,4 @@
-package com.genesisY.nbGardens.businessLogic;
+package com.genesisY.nbGardens.services;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -18,6 +18,7 @@ public class EditDetailsService {
 	public boolean editing(String firstName, String surname, String phoneNumber, String email, String username, String password) {
 //		Return a boolean and when authenticate = true;
 		boolean auth = passing.passCheck(username, password);
+		System.out.println("Deets" + auth);
 		if (auth){
 			ami.updateFirstName(firstName, username);
 			ami.updateLastName(surname, username);
