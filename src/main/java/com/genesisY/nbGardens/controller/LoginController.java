@@ -1,17 +1,14 @@
 package com.genesisY.nbGardens.controller;
 
-import java.io.Serializable;
-
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.genesisY.nbGardens.businessLogic.LoginService;
 
-@SuppressWarnings("serial")
 @Named("login")
-@SessionScoped
-public class LoginController implements Serializable {
+@RequestScoped
+public class LoginController{
 
 	@Inject
 	private LoginService passcheck;
@@ -36,6 +33,7 @@ public class LoginController implements Serializable {
 	}
 
 	public String login() {
+		boolean bool = passcheck.passCheck(username, password);
 		if (username.equals("")) {
 			error = "Please enter a username";
 			password = "";
@@ -46,9 +44,11 @@ public class LoginController implements Serializable {
 			username = "";
 			return "loginpage";
 		}
-		if (passcheck.passCheck(username, password)) {
+		if (bool == true) {
 			return "index";
 		} else {
+			username = "";
+			password = "";
 			return "loginpage";
 		}
 	}
