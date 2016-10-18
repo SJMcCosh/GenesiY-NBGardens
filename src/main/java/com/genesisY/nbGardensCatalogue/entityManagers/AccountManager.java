@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.genesisY.nbGardensCatalogue.entities.Customer;
 
-public interface AccountManagerInterface {
+public interface AccountManager {
 
 	public void persistAccount(Customer customer);
 

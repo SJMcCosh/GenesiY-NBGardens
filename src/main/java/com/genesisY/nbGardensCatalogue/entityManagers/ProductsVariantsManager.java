@@ -14,7 +14,7 @@ import javax.ejb.Stateless;
 import com.genesisY.nbGardensCatalogue.entities.ProductVariants;
 
 @Stateless
-public interface ProductsVariantsRepository {
+public interface ProductsVariantsManager {
 	
 		
 	

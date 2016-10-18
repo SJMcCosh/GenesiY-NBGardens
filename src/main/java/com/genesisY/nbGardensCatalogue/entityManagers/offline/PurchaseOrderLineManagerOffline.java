@@ -7,11 +7,11 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import com.genesisY.nbGardensCatalogue.entities.PurchaseOrderLine;
-import com.genesisY.nbGardensCatalogue.entityManagers.repositories.PurchaseOrderLineRepository;
+import com.genesisY.nbGardensCatalogue.entityManagers.PurchaseOrderLineManager;
 import com.genesisY.nbGardensCatalogue.initialData.InitialData;
 
 @Stateless
-public class PurchaseOrderLineManagerOffline implements PurchaseOrderLineRepository{
+public class PurchaseOrderLineManagerOffline implements PurchaseOrderLineManager{
 	@Inject
 	private InitialData initialData;
 	

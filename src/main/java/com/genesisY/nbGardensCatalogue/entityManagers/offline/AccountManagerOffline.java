@@ -8,12 +8,12 @@ import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import com.genesisY.nbGardensCatalogue.entities.Customer;
-import com.genesisY.nbGardensCatalogue.entityManagers.AccountManagerInterface;
+import com.genesisY.nbGardensCatalogue.entityManagers.AccountManager;
 import com.genesisY.nbGardensCatalogue.initialData.InitialData;
 
 @Stateless
 @Default
-public class AccountManagerOffline implements AccountManagerInterface{
+public class AccountManagerOffline implements AccountManager{
 	
 	@Inject
 	private InitialData initialData;

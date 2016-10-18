@@ -2,7 +2,7 @@
  * Interface to be implemented in online + offline TagManager classes
  * @author Brian McLaughlin
  */
-package com.genesisY.nbGardensCatalogue.entityManagers.repositories;
+package com.genesisY.nbGardensCatalogue.entityManagers;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import com.genesisY.nbGardensCatalogue.entities.Product;
 import com.genesisY.nbGardensCatalogue.entities.Tag;
 
 @Stateless
-public interface TagRepository {
+public interface TagManager {
 	public void createTag(Tag a);
 
 	public void readTagByProductID(Product id);

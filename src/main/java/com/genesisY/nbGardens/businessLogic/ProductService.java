@@ -8,13 +8,13 @@ import javax.faces.model.DataModel;
 import javax.inject.Inject;
 
 import com.genesisY.nbGardensCatalogue.entities.Product;
-import com.genesisY.nbGardensCatalogue.entityManagers.ProductManagerInterface;
+import com.genesisY.nbGardensCatalogue.entityManagers.ProductManager;
 
 @RequestScoped
 public class ProductService {
 
 	@Inject
-	private ProductManagerInterface productInt;
+	private ProductManager productInt;
 
 	@SuppressWarnings("unchecked")
 	public List<Product> getAllProducts(String category) {
