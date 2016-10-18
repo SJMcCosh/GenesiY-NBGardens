@@ -2,12 +2,12 @@ package com.genesisY.nbGardensCatalogue.entityManagers.offline;
 
 import java.util.ArrayList;
 
-import com.genesisY.nbGardensCatalogue.entityManagers.ProductsVariantsRepository;
+import com.genesisY.nbGardensCatalogue.entityManagers.ProductsVariantsManager;
 
 import javax.ejb.Stateless;
 
 @Stateless
-public class ProductsVariantsManagerOffline implements ProductsVariantsRepository{
+public class ProductsVariantsManagerOffline implements ProductsVariantsManager{
 
 	public double readStockLevels(int prodVarId) {
 		// TODO Auto-generated method stub

@@ -3,10 +3,10 @@ package com.genesisY.nbGardensCatalogue.entityManagers.offline;
 import javax.ejb.Stateless;
 
 import com.genesisY.nbGardensCatalogue.entities.Category;
-import com.genesisY.nbGardensCatalogue.entityManagers.repositories.CategoryRepository;
+import com.genesisY.nbGardensCatalogue.entityManagers.CategoryManager;
 
 @Stateless
-public class CategoryManagerOffline implements CategoryRepository {
+public class CategoryManagerOffline implements CategoryManager {
 
 	public void createCategory(Category x) {
 		// add category to database

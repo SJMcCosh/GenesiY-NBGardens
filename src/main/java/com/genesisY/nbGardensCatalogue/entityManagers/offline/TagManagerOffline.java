@@ -13,12 +13,12 @@ import javax.inject.Inject;
 
 import com.genesisY.nbGardensCatalogue.entities.Product;
 import com.genesisY.nbGardensCatalogue.entities.Tag;
-import com.genesisY.nbGardensCatalogue.entityManagers.repositories.TagRepository;
+import com.genesisY.nbGardensCatalogue.entityManagers.TagManager;
 import com.genesisY.nbGardensCatalogue.initialData.InitialData;
 
 @Stateless
 @Default
-public class TagManagerOffline implements TagRepository {
+public class TagManagerOffline implements TagManager {
 	
 	@Inject
 	private InitialData initialData;

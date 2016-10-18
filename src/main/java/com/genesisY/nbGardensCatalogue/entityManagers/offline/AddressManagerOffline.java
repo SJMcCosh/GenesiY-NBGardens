@@ -8,10 +8,10 @@ package com.genesisY.nbGardensCatalogue.entityManagers.offline;
 import javax.ejb.Stateless;
 
 import com.genesisY.nbGardensCatalogue.entities.Address;
-import com.genesisY.nbGardensCatalogue.entityManagers.repositories.AddressRepository;
+import com.genesisY.nbGardensCatalogue.entityManagers.AddressManager;
 
 @Stateless
-public class AddressManagerOffline implements AddressRepository {
+public class AddressManagerOffline implements AddressManager {
 
 	public void createAddress(Address a) {
 

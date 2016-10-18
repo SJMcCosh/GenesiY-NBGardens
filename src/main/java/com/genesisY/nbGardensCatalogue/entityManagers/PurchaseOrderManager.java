@@ -1,4 +1,4 @@
-package com.genesisY.nbGardensCatalogue.entityManagers.repositories;
+package com.genesisY.nbGardensCatalogue.entityManagers;
 
 import java.util.ArrayList;
 
@@ -14,7 +14,7 @@ import com.genesisY.nbGardensCatalogue.entities.Supplier;
  *
  */
 @Stateless
-public interface PurchaseOrderRepository {
+public interface PurchaseOrderManager {
 	/**
 	 * 
 	 * @param Purchase
