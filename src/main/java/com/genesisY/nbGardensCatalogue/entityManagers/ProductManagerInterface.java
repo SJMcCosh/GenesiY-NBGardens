@@ -7,7 +7,7 @@ import javax.ejb.Singleton;
 import com.genesisY.nbGardensCatalogue.entities.Product;
 
 @Singleton
-public interface ProductManager {
+public interface ProductManagerInterface {
 
 	public List<Product> getProducts();
 	

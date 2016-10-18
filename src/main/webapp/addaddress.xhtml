@@ -5,14 +5,14 @@
 	template="templates/template.xhtml">
 	<meta charset="ISO-8859-1" />
 	<ui:define name="maincontent">
-		<h:article class="wholebody">
+		<article class="wholebody">
 
-			<h:div class="addanaddress">
+			<div class="addanaddress">
 				<h4>Add an Address</h4>
 				<h:form>
-					<h:div class="col-12 col-m-9">
-						<h:div class="newaddress">
-							<h:div id="addresstext">
+					<div class="col-12 col-m-9">
+						<div class="newaddress">
+							<div id="addresstext">
 								<p>Address line 1</p>
 								<h:inputText value="#{address.line1}" id="addressline1"
 									title="Address Line 1"></h:inputText>
@@ -31,12 +31,12 @@
 								<h:commandButton  id="addaddress" value="Add Address" action="#{customer.addaddress(address)}"/>
 								<br />
 								<br />
-							</h:div>
-						</h:div>
-					</h:div>
+							</div>
+						</div>
+					</div>
 				</h:form>
-			</h:div>
-		</h:article>
+			</div>
+		</article>
 
 	</ui:define>
 </ui:composition>

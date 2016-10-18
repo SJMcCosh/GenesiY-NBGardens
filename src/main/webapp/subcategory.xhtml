@@ -3,14 +3,15 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/template.xhtml">
-	<meta charset="ISO-8859-1">
+	<meta charset="ISO-8859-1" />
 	<ui:define name="maincontent">
 
 		<div class="row">
 			<!-- Main content for the page -->
 			<div class="col-3 col-m-6 tagbar">
-				<h:dataTable layout = "unorderdList" value = "#{filter.filters}" var="item">
-					<h:link value = "#{item}"/>
+				<h:dataTable layout="unorderdList" value="#{filter.filters}"
+					var="item">
+					<h:link value="#{item}" />
 				</h:dataTable>
 			</div>
 
@@ -25,41 +26,27 @@
 
 			<!-- This is the product grid -->
 
-			<div class="col-9 col-m-6" align="centre">
-				<a class="col-3 col-m-6 prodimg" href="www.google.co.uk">
-					<div class="index_featured_products_product">
-						<img class="index_featured_products_product_image"
-							src="../../../../../../../../images/IndexImages/gnome_new.jpg">
-						<p class="index_featured_products_product_title">A gnome oh a
-							gnome!</p>
-						<p class="index_featured_products_product_price">&pound10.00</p>
-					</div>
-				</a> <a class="col-3 col-m-6 prodimg" href="www.google.co.uk">
-					<div class="index_featured_products_product">
-						<img class="index_featured_products_product_image"
-							src="../../../../../../../../images/IndexImages/gnome_new.jpg">
-						<p class="index_featured_products_product_title">A gnome oh a
-							gnome!</p>
-						<p class="index_featured_products_product_price">&pound10.00</p>
-					</div>
-				</a> <a class="col-3 col-m-6 prodimg" href="www.google.co.uk">
-					<div class="index_featured_products_product">
-						<img class="index_featured_products_product_image"
-							src="../../../../../../../../images/IndexImages/gnome_new.jpg">
-						<p class="index_featured_products_product_title">A gnome oh a
-							gnome!</p>
-						<p class="index_featured_products_product_price">&pound10.00</p>
-					</div>
-				</a> <a class="col-3 col-m-6 prodimg" href="www.google.co.uk">
-					<div class="index_featured_products_product">
-						<img class="index_featured_products_product_image"
-							src="../../../../../../../../images/IndexImages/gnome_new.jpg">
-						<p class="index_featured_products_product_title">A gnome oh a
-							gnome!</p>
-						<p class="index_featured_products_product_price">&pound10.00</p>
-					</div>
-				</a>
-			</div>
+			<h:form>
+				<div class="col-9 col-m-6" align="centre">
+					<ul>
+						<ui:repeat var = "product" value="#{products.dataModel}">
+							<h:commandLink action="productpage" class="col-3 col-m-6 prodimg">
+								<div class="index_featured_products_product">
+									<img class="index_featured_products_product_image"
+										src="../../../../../../../../images/IndexImages/gnome_new.jpg" />
+									<h:outputText value="#{product.name}"
+										class="index_featured_products_product_title" />
+									<h:outputText value="#{product.price}"
+										class="index_featured_products_product_price" />
+								</div>
+							</h:commandLink>
+						</ui:repeat>
+
+					</ul>
+
+				</div>
+
+			</h:form>
 		</div>
 	</ui:define>
 </ui:composition>

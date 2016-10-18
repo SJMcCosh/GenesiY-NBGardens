@@ -4,10 +4,11 @@ import java.io.Serializable;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.model.DataModel;
+import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-
+import com.genesisY.nbGardens.businessLogic.ProductService;
 import com.genesisY.nbGardensCatalogue.entities.Product;
 
 @Named("products")
@@ -16,11 +17,17 @@ import com.genesisY.nbGardensCatalogue.entities.Product;
 public class ProductsController implements Serializable{
 
 	private Product product;
-	private String price;
-	private String name;
 	private DataModel<Product> dataModel = null;
 	
+	@Inject
+	private ProductService productService;
 	
+	@SuppressWarnings("unchecked")
+	public String allProducts() {
+		String category = "all";
+		dataModel = new ListDataModel(productService.getAllProducts(category).subList(0, productService.getAllProducts(category).size())) ;
+		return "subcategory";
+	}
 	
 	public DataModel<Product> getDataModel() {
 		return dataModel;
@@ -28,22 +35,6 @@ public class ProductsController implements Serializable{
 
 	public void setDataModel(DataModel<Product> dataModel) {
 		this.dataModel = dataModel;
-	}
-
-	public String getPrice() {
-		return price;
-	}
-
-	public void setPrice(String price) {
-		this.price = price;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	@SuppressWarnings("unchecked")
