@@ -13,14 +13,12 @@ import com.genesisY.nbGardensCatalogue.entities.Customer;
 @SuppressWarnings("serial")
 @Named("customer")
 @SessionScoped
-public class CustomerController implements Serializable{
+public class CustomerController implements Serializable {
 
-	@Inject private AccountDetailsService accountDetailsService;
+	@Inject
+	private AccountDetailsService accountDetailsService;
 	private Customer customer;
 	private Address address;
-	
-	
-	
 
 	public Address getAddress() {
 		return address;
@@ -37,21 +35,20 @@ public class CustomerController implements Serializable{
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-	
-	
-	public String viewDetails( String username){
+
+	public String viewDetails(String username) {
 		username = "davesmith";
 		customer = accountDetailsService.getCustomerByUsername(username);
 		return "viewaccount";
 	}
-	
-	public String login(){
-		//TODO: use beans or whatever to login
-		return "index";
-	}
-	
-	public String gotoSignUp(){
+
+	public String gotoSignUp() {
 		return "signup";
 	}
-	
+
+	public String changeDetails() {
+		System.out.println(">>>DETAILS CHANGED<<<");
+		return "index";
+	}
+
 }

@@ -10,26 +10,41 @@
 
 			<div class="editdetails">
 				<h4>Edit Your Details</h4>
-				<form>
+				<h:form>
 					<div class="col-12 col-m-9">
 						<div class="changedetails">
-							<p>Username</p>
-							<h:inputText value="#{customer.username}"></h:inputText>
 							<p>First Name</p>
-							<h:inputText value="#{customer.firstname}"></h:inputText>
+							<h:inputText value="#{editdetails.firstName}" />
 							<p>Surname</p>
-							<h:inputText value="#{customer.surname}"></h:inputText>
+							<h:inputText value="#{editdetails.surname}" />
 							<p>Phone Number</p>
-							<h:inputText value="#{customer.phonenumber}"></h:inputText>
+							<h:inputText value="#{editdetails.phoneNumber}" minimum="11"
+								maximum="11" />
 							<p>Email Address</p>
-							<h:inputText value="#{customer.email}" p: type="email"></h:inputText>
-							<p>Please enter your password to confirm changes</p>
-							<input type="password" maxlength="45"><br /> <br /> <input
-								type="submit" name="changedetails" value="Submit"><br />
-							<br />
+							<h:inputText value="#{editdetails.email}" p:type="email"
+								validatorMessage="Invalid email format">
+								<f:validateRegex
+									pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+							</h:inputText>
+								<p>Please enter your username and password to confirm
+									changes</p>
+								<p>Username</p>
+								<h:inputText value="#{editdetails.username}" required="true"
+									requiredMessage="Enter Username" />
+								<p>Password</p>
+								<h:inputSecret value="#{editdetails.password}" required="true"
+									requiredMessage="Enter Password">
+									<f:validateLength minimum="8" maximum="35" />
+								</h:inputSecret>
+								<br />
+								<br />
+								<h:commandButton type="submit" name="loginbtn" value="Submit"
+									action="#{editdetails.changeDetails()}" />
+								<br />
+								<br />
 						</div>
 					</div>
-				</form>
+				</h:form>
 			</div>
 		</article>
 
