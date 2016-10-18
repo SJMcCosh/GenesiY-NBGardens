@@ -1,4 +1,4 @@
-package com.genesisY.nbGardens.businessLogic;
+package com.genesisY.nbGardens.services;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;

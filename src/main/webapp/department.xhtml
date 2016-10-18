@@ -8,16 +8,12 @@
 		<div class="row">
 			<!-- This is the sidebar -->
 			<h:form>
-				<div class="sidebar col-2">
-					<ul>
-						<h:commandLink action="#{products.allProducts}"
-							value="Outdoor Living" />
-
-
-						<li><a href="categorygardtool.html">Garden Tools</a></li>
-						<li><a href="categorygnome.html">Gnomes</a></li>
-						<li><a href="categoryoutbuild.html">Outdoor Buildings</a></li>
-						<li><a href="categoryseasonal.html">Seasonal</a></li>
+				<div class="col-3 col-m-6 tagbar">
+					<ul class="col-3 col-m-6 tagbar">
+						<ui:repeat var="categorys" value="#{category.catModel}">
+							<h:commandLink action="#{products.allProducts}"
+								value="#{categorys.name}" />
+						</ui:repeat>
 					</ul>
 				</div>
 			</h:form>

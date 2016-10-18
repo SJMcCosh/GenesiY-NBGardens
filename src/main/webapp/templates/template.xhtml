@@ -5,8 +5,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<meta charset="ISO-8859-1" />
-	<link rel="stylesheet" type="text/css"
-		href="css/catalogue.css" />
+	<link rel="stylesheet" type="text/css" href="css/catalogue.css" />
 	<title>NB Gardens</title>
 </h:head>
 <f:view>
@@ -19,23 +18,33 @@
 						onchange="#{search.search()}" />
 					<h:commandButton class="tfbutton" type="submit"
 						action="#{search.search()}" value="Search" />
+<<<<<<< HEAD
+					<h:commandLink action="loginpage" value="Log In">
+						<f:param name="username" value="davesmith" />
+					</h:commandLink>
+=======
 					<h:commandLink action="loginpage" value = "Log In"/>
+>>>>>>> 693fb77a68a2e9fb34b91909595ae8884cd1d842
 				</h:form>
 
 				<div class="logo">
 					<a href="index.xhtml"> <img src="img/nblogo.png" /></a>
 				</div>
 			</div>
-			<nav>
-				<ul class="topnav">
-					<li><a href="department.xhtml"> Outdoor Livin' </a></li>
-					<li><a href="department.xhtml"> Tools 'n Stuff </a></li>
-					<li><a href="department.xhtml"> Gnomes 'n Dat</a></li>
-					<li><a href="department.xhtml"> Outdoor Buildins</a></li>
-					<li><a href="department.xhtml"> Seasonal Crap </a></li>
-					<li><a href="index.xhtml"> You Goin' Home Fam </a></li>
-				</ul>
-			</nav>
+			<h:form>
+				<nav>
+					<ul class="topnav">
+						<li><h:commandLink action="#{category.getAllCategories}"
+								value="Outdoor Living" /></li>
+						<li><a href="department.xhtml"> Tools 'n Stuff </a></li>
+						<li><a href="department.xhtml"> Gnomes 'n Dat</a></li>
+						<li><a href="department.xhtml"> Outdoor Buildins</a></li>
+						<li><a href="department.xhtml"> Seasonal Crap </a></li>
+						<li><a href="index.xhtml"> You Goin' Home Fam </a></li>
+					</ul>
+				</nav>
+			</h:form>
+
 			<!-- This is the breadcrumb -->
 			<ul class="breadcrumb">
 				<li><a href="index.xhtml">Home</a></li>
@@ -43,15 +52,14 @@
 		</div>
 
 		<div class="maincontent">
-			<ui:insert name = "maincontent"/>
+			<ui:insert name="maincontent" />
 		</div>
 
 		<!-- This is the footer -->
 		<div class="footer">
 			<div>
 				<div class="footerlogo">
-					<a href="index.xhtml"> <img
-						src="img/nblogo.png" /></a>
+					<a href="index.xhtml"> <img src="img/nblogo.png" /></a>
 					<ul class="botnav">
 						<li><a href="#">Contact Us</a></li>
 						<li><a href="#">Information</a></li>

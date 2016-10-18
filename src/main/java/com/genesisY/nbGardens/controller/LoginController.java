@@ -4,7 +4,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.genesisY.nbGardens.businessLogic.LoginService;
+import com.genesisY.nbGardens.services.LoginService;
 
 @Named("login")
 @RequestScoped
