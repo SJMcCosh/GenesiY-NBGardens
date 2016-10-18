@@ -20,7 +20,7 @@ public class ProductService {
 	{
 		try
 		{
-			
+			return productInt.getProduct();
 		}
 		catch(NullPointerException npr)
 		{

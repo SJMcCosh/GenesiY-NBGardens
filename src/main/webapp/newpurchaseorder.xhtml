@@ -19,7 +19,7 @@
 		
 		<div class="productBox col-5 col-m-10">
 			<div id="allProducts">
-				<p>All products list</p>
+				<!-- <p>All products list</p>
 				<ul>
 					<li>Notification</li>
 					<li>Notification</li>
@@ -29,7 +29,11 @@
 					<li>Notification</li>
 					<li>Notification</li>
 					<li>Notification</li>
-				</ul>
+				</ul> -->
+				
+				<ui: repeat var="product" value="#{products.dataModel}">
+					<h: outputText value="#{product.name}">
+				</ui:repeat>
 				
 				<div class="columns_dropdowns">
 					<h:selectOneMenu value="#{userData.data}">
