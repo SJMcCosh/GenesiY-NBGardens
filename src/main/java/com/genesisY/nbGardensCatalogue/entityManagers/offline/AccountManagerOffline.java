@@ -46,5 +46,39 @@ public class AccountManagerOffline implements AccountManagerInterface{
 		
 		return null;
 	}
+
+	@Override
+	public void updateFirstName(String fname, String username) {
+		Customer c = findByUsername(username);
+		c.setFirstName(fname);
+	}
+
+	@Override
+	public void updateLastName(String lname, String username) {
+		Customer c = findByUsername(username);
+		c.setSurname(lname);
+		
+	}
+
+	@Override
+	public void updateEmail(String email, String username) {
+		Customer c = findByUsername(username);
+		c.setEmail(email);
+		
+	}
+
+	@Override
+	public void updatePassword(String password, String username) {
+		Customer c = findByUsername(username);
+		c.setPassword(password);
+		
+	}
+
+	@Override
+	public void updatePhoneNum(String phonenum, String username) {
+		Customer c = findByUsername(username);
+		c.setPhoneNumber(phonenum);
+		
+	}
 	
 }
