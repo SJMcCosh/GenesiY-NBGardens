@@ -63,6 +63,11 @@ public class InitialData{
 		productList.add(new Product("Game of Gnomes", 4.5, "Gnome based on the GOT Seriese", "Dont care", 15.0, 150.50));
 		productList.add(new Product("Game of Gnomes", 4.5, "Gnome based on the GOT Seriese", "Dont care", 15.0, 150.50));
 		productList.add(new Product("Game of Gnomes", 4.5, "Gnome based on the GOT Seriese", "Dont care", 15.0, 150.50));
+		tagList.add(new Tag("Tag1"));
+		tagList.add(new Tag("Tag2"));
+		tagList.add(new Tag("Tag3"));
+		tagList.add(new Tag("Tag4"));
+		tagList.add(new Tag("Tag5"));
 	}
 	
 	public ArrayList<Address> getAddressList() {
