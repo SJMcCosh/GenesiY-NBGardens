@@ -58,9 +58,9 @@ public class InitialData {
 		ctpcList.add(new CategoryToProductConn());
 		ctpcList.add(new CategoryToProductConn());
 		ctpcList.add(new CategoryToProductConn());
-		customerList.add(new Customer("Dave", "Smith", "dave@smith.com", "davesmith", "0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e", "01478523698")); //Password = password1
-		customerList.add(new Customer("Jane", "Smith", "jane@smith.com", "janesmith", "6cf615d5bcaac778352a8f1f3360d23f02f34ec182e259897fd6ce485d7870d4", "01478523698"));//Password = password2
-		customerList.add(new Customer("Will", "Smith", "will@smith.com", "willsmith", "5906ac361a137e2d286465cd6588ebb5ac3f5ae955001100bc41577c3d751764", "01478523698"));//Password = password3
+		customerList.add(new Customer("Dave", "Smith", "dave@smith.com", "davesmith", "password1", "01478523698")); //Password = password1
+		customerList.add(new Customer("Jane", "Smith", "jane@smith.com", "janesmith", "password2", "01478523698"));//Password = password2
+		customerList.add(new Customer("Will", "Smith", "will@smith.com", "willsmith", "password3", "01478523698"));//Password = password3
 		colList.add(new CustomerOrderLine());
 		productList.add(new Product("Game of Gnomes", 4.5, "Gnome based on the GOT Seriese", "Dont care", 15.0, 150.50));
 		productList.add(new Product("Gnomme2", 4.5, "Gnome based on the GOT Seriese", "Dont care", 15.0, 150.50));
