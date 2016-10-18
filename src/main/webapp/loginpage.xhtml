@@ -36,7 +36,7 @@
 						</p>
 						<p>Password</p>
 						<h:inputSecret value="#{login.password}" required="true"
-							requiredMessage="Enter Password">
+							requiredMessage="Enter Password" validatorMessage="Please enter a password">
 							<f:validateLength minimum="8" maximum="35" />
 						</h:inputSecret>
 						<p>
