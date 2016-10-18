@@ -8,10 +8,10 @@ package com.genesisY.nbGardensCatalogue.entityManagers.offline;
 import javax.ejb.Stateless;
 
 import com.genesisY.nbGardensCatalogue.entities.Review;
-import com.genesisY.nbGardensCatalogue.entityManagers.ReviewRepository;
+import com.genesisY.nbGardensCatalogue.entityManagers.ReviewManager;
 
 @Stateless
-public class ReviewManagerOffline implements ReviewRepository {
+public class ReviewManagerOffline implements ReviewManager {
 
 	public void createReview(Review x) {
 		// add Review to database

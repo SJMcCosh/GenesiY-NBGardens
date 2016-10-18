@@ -9,10 +9,10 @@ package com.genesisY.nbGardensCatalogue.entityManagers.offline;
 import javax.ejb.Stateless;
 
 import com.genesisY.nbGardensCatalogue.entities.Customer;
-import com.genesisY.nbGardensCatalogue.entityManagers.repositories.CustomerRepository;
+import com.genesisY.nbGardensCatalogue.entityManagers.CustomerManager;
 
 @Stateless
-public class CustomerManagerOffline implements CustomerRepository
+public class CustomerManagerOffline implements CustomerManager
 {
 	//Read
 	public void readCustomerDetails(Customer c)

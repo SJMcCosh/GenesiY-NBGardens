@@ -6,13 +6,13 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
 import com.genesisY.nbGardensCatalogue.entities.Tag;
-import com.genesisY.nbGardensCatalogue.entityManagers.repositories.TagRepository;
+import com.genesisY.nbGardensCatalogue.entityManagers.TagManager;
 
 @RequestScoped
 public class TagService {
 
 	@Inject
-	private TagRepository tmo;
+	private TagManager tmo;
 	
 	public List<Tag> getAllTags() {
 	

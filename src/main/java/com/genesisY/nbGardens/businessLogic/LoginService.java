@@ -8,13 +8,13 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
 import com.genesisY.nbGardensCatalogue.entities.Customer;
-import com.genesisY.nbGardensCatalogue.entityManagers.AccountManagerInterface;
+import com.genesisY.nbGardensCatalogue.entityManagers.AccountManager;
 
 @RequestScoped
 public class LoginService {
 
 	@Inject
-	private AccountManagerInterface ami;
+	private AccountManager ami;
 
 	private Customer getCustomerByUsername(String username) {
 		try {

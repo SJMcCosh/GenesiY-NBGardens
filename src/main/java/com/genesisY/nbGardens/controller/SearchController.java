@@ -9,7 +9,7 @@ import javax.inject.Named;
 
 import com.genesisY.nbGardensCatalogue.entities.Product;
 import com.genesisY.nbGardensCatalogue.entities.Tag;
-import com.genesisY.nbGardensCatalogue.entityManagers.ProductManagerInterface;
+import com.genesisY.nbGardensCatalogue.entityManagers.ProductManager;
 import com.genesisY.nbGardensCatalogue.entityManagers.offline.ProductsManager;
 
 
@@ -19,7 +19,7 @@ import com.genesisY.nbGardensCatalogue.entityManagers.offline.ProductsManager;
 public class SearchController implements Serializable{
 
 	@Inject
-	private ProductManagerInterface pm;
+	private ProductManager pm;
 	
 	
 	private Product product;
