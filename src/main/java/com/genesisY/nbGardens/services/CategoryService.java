@@ -24,7 +24,6 @@ public class CategoryService {
 			return null;
 		}
 
-		return null;
 	}
 
 }
