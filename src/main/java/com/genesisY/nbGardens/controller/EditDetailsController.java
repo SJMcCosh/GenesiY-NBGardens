@@ -9,19 +9,19 @@ import com.genesisY.nbGardens.services.AccountDetailsService;
 
 import com.genesisY.nbGardensCatalogue.entities.Customer;
 
-@Named("editdetails")
+@Named("detaileditor")
 @RequestScoped
 public class EditDetailsController {
 
 	@Inject
 	private EditDetailsService detailEditor;
 	@Inject
-	private AccountDetailsService ads;
-	private String username = "";
+	private AccountDetailsService accountDetailService;
 	private String firstName = "";
 	private String surname = "";
 	private String phoneNumber = "";
 	private String email = "";
+	private String username = "";
 	private String password = "";
 
 
@@ -74,12 +74,12 @@ public class EditDetailsController {
 	}
 
 	public String changeDetails() {
-		System.out.println(">>>>> "+username);
+		System.out.println(">>>>> "+firstName+" "+ surname+" "+ phoneNumber+" "+ email+" "+ username+" "+ password);
 		boolean bool = detailEditor.editing(firstName, surname, phoneNumber, email, username, password);
 		System.out.println(bool);
 		if (bool) {
 			System.out.println(">>>DETAILS CHANGED<<<");
-			Customer person = ads.getCustomerByUsername(username);
+			Customer person = accountDetailService.getCustomerByUsername(username);
 			System.out.println(">>>>> " + person.getUsername() + person.getFirstName() + person.getSurname());
 			return "viewaccount";
 		} else {

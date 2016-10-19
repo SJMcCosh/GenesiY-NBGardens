@@ -10,7 +10,7 @@ import com.genesisY.nbGardensCatalogue.entityManagers.AccountManager;
 public class EditDetailsService {
 
 	@Inject
-	private AccountManager ami;
+	private AccountManager accountManager;
 	@Inject
 	private LoginService passing;
 
@@ -20,10 +20,10 @@ public class EditDetailsService {
 		boolean auth = passing.passCheck(username, password);
 		System.out.println("Deets " + auth);
 		if (auth){
-			ami.updateFirstName(firstName, username);
-			ami.updateLastName(surname, username);
-			ami.updatePhoneNum(phoneNumber, username);
-			ami.updateEmail(email, username);
+			accountManager.updateFirstName(firstName, username);
+			accountManager.updateLastName(surname, username);
+			accountManager.updatePhoneNum(phoneNumber, username);
+			accountManager.updateEmail(email, username);
 			return true;
 		}
 		else{

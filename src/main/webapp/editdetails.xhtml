@@ -10,39 +10,43 @@
 
 			<div class="editdetails">
 				<h4>Edit Your Details</h4>
-				<h:form>
-					<div class="col-12 col-m-9">
-						<div class="changedetails">
+
+				<div class="col-12 col-m-9">
+					<div class="changedetails">
+						<h:form>
 							<p>First Name</p>
-							<h:inputText value="#{editdetails.firstName}"></h:inputText>
+							<h:inputText value="#{detaileditor.firstName}" />
 							<p>Surname</p>
-							<h:inputText value="#{editdetails.surname}"></h:inputText>
+							<h:inputText value="#{detaileditor.surname}" />
 							<p>Phone Number</p>
-							<h:inputText value="#{editdetails.phoneNumber}">
+							<h:inputText value="#{detaileditor.phoneNumber}">
 								<f:validateLength minimum="10" maximum="12" />
 							</h:inputText>
 							<p>Email Address</p>
-							<h:inputText value="#{editdetails.email}" p:type="email"
+							<h:inputText value="#{detaileditor.email}" p:type="email"
 								validatorMessage="Invalid email format">
 								<f:validateRegex
 									pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
 							</h:inputText>
 							<p>Please enter your username and password to confirm changes</p>
 							<p>Username</p>
-							<h:inputText value="#{editdetails.username}" required="true"
-								requiredMessage="Enter Username"></h:inputText>
+							<h:inputText value="#{detaileditor.username}" required="true"
+								requiredMessage="Enter Username" />
 							<p>Password</p>
-							<h:inputSecret value="#{editdetails.password}" required="true"
+							<h:inputSecret value="#{detaileditor.password}" required="true"
 								requiredMessage="Enter Password">
 								<f:validateLength minimum="8" maximum="35" />
 							</h:inputSecret>
-							<br /> <br />
-							<h:commandButton type="submit" name="loginbtn" value="Submit"
-								action="#{editdetails.changeDetails()}" />
-							<br /> <br />
-						</div>
+							<br />
+							<br />
+							<h:commandButton type="submit" name="editdetails" value="Submit"
+								action="#{detaileditor.changeDetails()}" />
+							<br />
+							<br />
+						</h:form>
 					</div>
-				</h:form>
+				</div>
+
 			</div>
 		</article>
 
