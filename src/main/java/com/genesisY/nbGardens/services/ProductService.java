@@ -1,8 +1,9 @@
-package com.genesisY.nbGardens.businessLogic;
+package com.genesisY.nbGardens.services;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import com.genesisY.nbGardensCatalogue.entities.Product;
 import com.genesisY.nbGardensCatalogue.entityManagers.ProductManagerInterface;
@@ -20,14 +21,14 @@ public class ProductService {
 	{
 		try
 		{
-			return productInt.getProduct();
+			return productInt.getProducts();
 		}
 		catch(NullPointerException npr)
 		{
-			
+			return null; 
 		}
 		
-		return null; 
+		
 	}
 	
 	

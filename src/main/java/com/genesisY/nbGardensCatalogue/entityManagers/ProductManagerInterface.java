@@ -9,7 +9,7 @@ import javax.ejb.Singleton;
 public interface ProductManagerInterface {
 
 	
-	public List<Product> getproducts();
+	public List<Product> getProducts();
 	
 	public Product getProduct(long id);
 	public List<Product> getProduct();

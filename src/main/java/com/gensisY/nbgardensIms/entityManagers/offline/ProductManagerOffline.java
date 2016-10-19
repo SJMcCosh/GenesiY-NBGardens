@@ -20,9 +20,9 @@ public class ProductManagerOffline implements ProductManagerInterface{
 	private ImsInitialData initialData;
 	
 	@Override
-	public List<Product> getproducts() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Product> getProducts() {
+		
+		return initialData.getProdList();
 	}
 
 	@Override
