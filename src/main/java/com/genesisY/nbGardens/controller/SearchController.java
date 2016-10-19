@@ -7,11 +7,9 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.genesisY.nbGardensCatalogue.entities.Product;
-import com.genesisY.nbGardensCatalogue.entities.Tag;
-import com.genesisY.nbGardensCatalogue.entityManagers.ProductManager;
-import com.genesisY.nbGardensCatalogue.entityManagers.offline.ProductsManager;
-
+import com.genesisY.nbGardens.entities.Product;
+import com.genesisY.nbGardens.entities.Tag;
+import com.genesisY.nbGardens.entityManagers.ProductManager;
 
 @SuppressWarnings("serial")
 @Named("search")

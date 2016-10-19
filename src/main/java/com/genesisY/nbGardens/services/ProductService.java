@@ -3,17 +3,16 @@ import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import javax.inject.Named;
 
-import com.genesisY.nbGardensCatalogue.entities.Product;
-import com.genesisY.nbGardensCatalogue.entityManagers.ProductManagerInterface;
+import com.genesisY.nbGardens.entities.Product;
+import com.genesisY.nbGardens.entityManagers.ProductManager;
 
 
 @RequestScoped
 public class ProductService {
 	
 	@Inject
-	private ProductManagerInterface productInt;
+	private ProductManager productInt;
 	
 	
 	@SuppressWarnings("unchecked")
