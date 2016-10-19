@@ -18,7 +18,7 @@ public class EditDetailsService {
 	public boolean editing(String firstName, String surname, String phoneNumber, String email, String username, String password) {
 //		Return a boolean and when authenticate = true;
 		boolean auth = passing.passCheck(username, password);
-		System.out.println("Deets" + auth);
+		System.out.println("Deets " + auth);
 		if (auth){
 			ami.updateFirstName(firstName, username);
 			ami.updateLastName(surname, username);
