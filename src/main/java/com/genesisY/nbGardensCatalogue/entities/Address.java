@@ -17,13 +17,17 @@ public class Address {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int addressID;
 
-	@Column(name = "houseNmNo", nullable = false, length = 120)
+	@Column(name = "addressLine1", nullable = false, length = 120)
 	@Size(min = 1, max = 120)
-	private String houseNmNo;
+	private String addressLine1;
 
-	@Column(name = "street", nullable = false, length = 70)
+	@Column(name = "addressLine2", nullable = false, length = 70)
 	@Size(min = 5, max = 70)
-	private String street;
+	private String addressLine2;
+	
+	@Column(name = "addressLine3", nullable = false, length = 70)
+	@Size(min = 5, max = 70)
+	private String addressLine3;
 
 	@Column(name = "townCity", nullable = false, length = 58)
 	@Size(min = 2, max = 58)
@@ -46,9 +50,10 @@ public class Address {
 
 	}
 
-	public Address(String houseNmNo, String street, String townCity, String county, String postcode, Customer customer) {
-		this.houseNmNo = houseNmNo;
-		this.street = street;
+	public Address(String addressLine1, String addressLine2, String addressLine3, String townCity, String county, String postcode, Customer customer) {
+		this.addressLine1 = addressLine1;
+		this.addressLine2 = addressLine2;
+		this.addressLine3 = addressLine3;
 		this.townCity = townCity;
 		this.county = county;
 		this.postcode = postcode;
@@ -63,20 +68,27 @@ public class Address {
 		this.addressID = addressID;
 	}
 
-	public String getHouseNmNo() {
-		return houseNmNo;
+	public String getAddressLine1() {
+		return addressLine1;
 	}
 
-	public void setHouseNmNo(String houseNmNo) {
-		this.houseNmNo = houseNmNo;
+	public void getAddressLine1(String addressLine1) {
+		this.addressLine1 = addressLine1;
 	}
 
-	public String getStreet() {
-		return street;
+	public String getAddressLine2() {
+		return addressLine2;
 	}
 
-	public void setStreet(String street) {
-		this.street = street;
+	public void setAddressLine2(String addressLine2) {
+		this.addressLine2 = addressLine2;
+	}
+	
+	public String getAddressLine3() {
+		return this.addressLine3;
+	}
+	public void setAddressLine3(String addressLine3) {
+		this.addressLine3 = addressLine3;
 	}
 
 	public String getTownCity() {
