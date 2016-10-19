@@ -1,28 +1,25 @@
 package com.genesisY.nbGardens.controller;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 import javax.enterprise.context.SessionScoped;
+import javax.faces.model.DataModel;
+import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.genesisY.nbGardens.services.SearchService;
 import com.genesisY.nbGardensCatalogue.entities.Product;
-import com.genesisY.nbGardensCatalogue.entities.Tag;
-import com.genesisY.nbGardensCatalogue.entityManagers.ProductManager;
-import com.genesisY.nbGardensCatalogue.entityManagers.offline.ProductsManagerOffline;
-
 
 @SuppressWarnings("serial")
 @Named("search")
 @SessionScoped
-public class SearchController implements Serializable{
+public class SearchController implements Serializable {
 
 	@Inject
-	private ProductManager pm;
-	
-	
-	private Product product;
+	private SearchService searchService;
+
+	private DataModel<Product> searchedProducts = null;
 	private String term;
 
 	public String getTerm() {
@@ -33,31 +30,27 @@ public class SearchController implements Serializable{
 		this.term = term;
 	}
 
-	public Product getProduct() {
-		return product;
+	public DataModel<Product> getSearchedProducts() {
+		return searchedProducts;
 	}
 
-	public void setProduct(Product product) {
-		this.product = product;
+	public void setSearchedProducts(DataModel<Product> searchedProducts) {
+		this.searchedProducts = searchedProducts;
 	}
-	
+
 	public String search() {
-		return "index";
-	}
-	
-	public Product searchProduct(String term){
-		
-		
-		for (Product p : pm.getProducts()){
-			ArrayList<Tag> tags = (ArrayList<Tag>) p.getTags();
-			for(Tag t : tags){
-				if (term.equals(t)){
-					return p;
-				}
+
+		if (term != null) {
+			if (searchService.getSearchedProducts(term) == null) {
+				
+				searchedProducts = new ListDataModel<Product>(searchService.getSearchedProducts(term));
+				
+				return "index";
+			} else {
+				return "subcategory";
 			}
+		} else {
+			return "index";
 		}
-		return null;
 	}
-	
-	
 }

@@ -14,8 +14,7 @@
 		<div class="header">
 			<div class="searchandlogo">
 				<h:form class="tfnewsearch" method="get">
-					<h:inputText class="tftextinput" value="#{search.term}"
-						onchange="#{search.search()}" />
+					<h:inputText class="tftextinput" value="#{search.term}"/>
 					<h:commandButton class="tfbutton" type="submit"
 						action="#{search.search()}" value="Search" />
 					<h:commandLink action="loginpage" value="Log In" />
