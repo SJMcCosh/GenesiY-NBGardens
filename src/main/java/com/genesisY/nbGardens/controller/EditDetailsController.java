@@ -1,5 +1,6 @@
 package com.genesisY.nbGardens.controller;
 
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -10,6 +11,7 @@ import com.genesisY.nbGardens.services.AccountDetailsService;
 import com.genesisY.nbGardensCatalogue.entities.Customer;
 
 @Named("detaileditor")
+@ManagedBean
 @RequestScoped
 public class EditDetailsController {
 
@@ -72,6 +74,7 @@ public class EditDetailsController {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 
 	public String changeDetails() {
 		System.out.println(">>>>> "+firstName+" "+ surname+" "+ phoneNumber+" "+ email+" "+ username+" "+ password);

@@ -15,9 +15,9 @@
 					<div class="changedetails">
 						<h:form>
 							<p>First Name</p>
-							<h:inputText value="#{detaileditor.firstName}" />
+							<h:inputText value="#{detaileditor.firstName}"/>
 							<p>Surname</p>
-							<h:inputText value="#{detaileditor.surname}" />
+							<h:inputText value="#{detaileditor.surname}"/>
 							<p>Phone Number</p>
 							<h:inputText value="#{detaileditor.phoneNumber}">
 								<f:validateLength minimum="10" maximum="12" />
@@ -30,8 +30,7 @@
 							</h:inputText>
 							<p>Please enter your username and password to confirm changes</p>
 							<p>Username</p>
-							<h:inputText value="#{detaileditor.username}" required="true"
-								requiredMessage="Enter Username" />
+							<h:inputText value="#{detaileditor.username}" required="true" requiredMessage="Enter Username"/>
 							<p>Password</p>
 							<h:inputSecret value="#{detaileditor.password}" required="true"
 								requiredMessage="Enter Password">
@@ -41,12 +40,10 @@
 							<br />
 							<h:commandButton type="submit" name="editdetails" value="Submit"
 								action="#{detaileditor.changeDetails()}" />
-							<br />
-							<br />
+
 						</h:form>
 					</div>
 				</div>
-
 			</div>
 		</article>
 
