@@ -40,13 +40,47 @@
 					<li>Notification</li>
 					<li>Notification</li>
 				</ul>
+				
+				<div class="columns_dropdowns">
+					<h:selectOneMenu value="#{userData.data}">
+					   <f:selectItem itemValue="1" itemLabel="Item 1" />
+					   <f:selectItem itemValue="2" itemLabel="Item 2" />	   							
+					</h:selectOneMenu>	
+				</div>
+				<br>
+				<div class="columns_add_button">
+					<h:selectOneMenu value="#{userData.data}">
+					   <f:selectItem itemValue="1" itemLabel="Item 1" />
+					   <f:selectItem itemValue="2" itemLabel="Item 2" />	   							
+					</h:selectOneMenu>	
+				</div>
+				
 			</div>
 		</div>
 		
 		<div class="productBox col-5 col-m-10">
 			<div id="savedProducts">
 				<p>Saved products list</p>
+				
+				<br><br><br>
+				<div class="columns_dropdowns">
+					<h:selectOneMenu value="#{userData.data}">
+					   <f:selectItem itemValue="1" itemLabel="Item 1" />
+					   <f:selectItem itemValue="2" itemLabel="Item 2" />	   							
+					</h:selectOneMenu>	
+				</div>
+				<br>
+				<div class="columns_add_button">
+					<h:selectOneMenu value="#{userData.data}">
+					   <f:selectItem itemValue="1" itemLabel="Item 1" />
+					   <f:selectItem itemValue="2" itemLabel="Item 2" />	   							
+					</h:selectOneMenu>	
+				</div>
+				
+				
+				
 			</div>
+						
 		</div>
 		
 		<div class="empty col-1 col-m-1">
@@ -70,6 +104,11 @@
 				</section>
 			</div>
 		</div> 
+		
+		
+		<div>
+			<h:commandButton value="Click Me!" onclick="alert('Hello World!');" />
+		</div>
 		
 	</body>
 </html>
