@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.genesisY.nbGardens.services.AccountDetailsService;
+import com.genesisY.nbGardens.services.AddressService;
 import com.genesisY.nbGardensCatalogue.entities.Address;
 import com.genesisY.nbGardensCatalogue.entities.Customer;
 
@@ -16,6 +17,8 @@ public class ViewAddressController {
 
 	@Inject
 	private AccountDetailsService accountDetailsService;
+	@Inject
+	private AddressService addressService;
 	private Customer customer;
 	private Address address;
 	private DataModel<Address> dataModel = null;
@@ -45,7 +48,8 @@ public class ViewAddressController {
 	}
 	
 	public void viewAddress(){
-		
+		String username = "davesmith";
+		dataModel = new ListDataModel(addressService.getAllAddresses(username));
 	}
 	
 	public String removeAddress(){

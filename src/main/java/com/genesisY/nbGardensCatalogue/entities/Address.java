@@ -114,6 +114,14 @@ public class Address {
 	public void setPostcode(String postcode) {
 		this.postcode = postcode;
 	}
+	
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void getPostcode(Customer customer) {
+		this.customer = customer;
+	}
 
 	/**
 	 * Add code to pull from database

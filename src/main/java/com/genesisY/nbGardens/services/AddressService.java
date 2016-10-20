@@ -1,5 +1,6 @@
 package com.genesisY.nbGardens.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
@@ -15,6 +16,7 @@ public class AddressService {
 	private AddressManager addressManager;
 	
 	public List<Address> getAllAddresses(String username){
-		return null;
+		List<Address> addresses = addressManager.getAddressByUsername(username);
+		return addresses;
 	}
 }
