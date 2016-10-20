@@ -21,6 +21,7 @@
 		<div class="productBox col-5 col-m-10">
 			<div id="allProducts">
 				<p>All products list</p>
+
 				<ul>
 					<ui:repeat onload="#{products.getAllProducts}" var="product" value="#{products.dataModel}">
 						<li><h:outputText value="#{product.name}"></h:outputText></li>
