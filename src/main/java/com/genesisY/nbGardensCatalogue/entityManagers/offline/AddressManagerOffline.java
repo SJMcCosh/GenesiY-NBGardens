@@ -29,12 +29,6 @@ public class AddressManagerOffline implements AddressManager {
 	}
 
 	@Override
-	public List<Address> getAddress() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public List<Address> getAddresses() {
 		return initialData.getAddressList();
 	}
@@ -45,14 +39,15 @@ public class AddressManagerOffline implements AddressManager {
 		return null;
 	}
 
+
 	@Override
-	public void editAddress(Address a) {
+	public void deleteAddress(Address a) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void deleteAddress(Address a) {
+	public void editAddress(Address a) {
 		// TODO Auto-generated method stub
 		
 	}

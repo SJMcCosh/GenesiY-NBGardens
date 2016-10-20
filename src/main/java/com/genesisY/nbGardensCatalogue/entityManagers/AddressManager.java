@@ -13,8 +13,6 @@ import com.genesisY.nbGardensCatalogue.entities.Product;
 public interface AddressManager {
 	
 	public void addAddress(Address a);
-
-	public List<Address> getAddress();
 	
 	public List<Address> getAddresses();
 	

@@ -38,9 +38,4 @@ public class ProductsManagerOffline implements ProductManager {
 		return null;
 	}
 
-	@Override
-	public List<Product> getProduct() {
-		return initialData.getProductList();
-	}
-
 }
