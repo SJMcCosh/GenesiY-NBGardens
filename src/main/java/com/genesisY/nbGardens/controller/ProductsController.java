@@ -10,10 +10,9 @@ import javax.inject.Named;
 
 import com.genesisY.nbGardens.entities.Product;
 import com.genesisY.nbGardens.services.ProductService;
-
+                                
 @Named("products")
 @SessionScoped
-
 public class ProductsController implements Serializable{
 
 	private Product product;
@@ -26,6 +25,8 @@ public class ProductsController implements Serializable{
 	
 	public String getAllProducts()
 	{
+		
+			
 		dataModel = new ListDataModel<Product>(prodService.getAllProducts());
 		return "newpurchaseorder";
 	}
