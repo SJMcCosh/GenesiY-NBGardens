@@ -1,8 +1,8 @@
 package com.genesisY.nbGardens.controller;
 
-import java.io.Serializable;
-
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
+import javax.faces.model.DataModel;
+import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -10,15 +10,15 @@ import com.genesisY.nbGardens.services.AccountDetailsService;
 import com.genesisY.nbGardensCatalogue.entities.Address;
 import com.genesisY.nbGardensCatalogue.entities.Customer;
 
-@SuppressWarnings("serial")
-@Named("customer")
-@SessionScoped
-public class CustomerController implements Serializable {
+@Named("address")
+@RequestScoped
+public class ViewAddressController {
 
 	@Inject
 	private AccountDetailsService accountDetailsService;
 	private Customer customer;
 	private Address address;
+	private DataModel<Address> dataModel = null;
 
 	public Address getAddress() {
 		return address;
@@ -35,13 +35,21 @@ public class CustomerController implements Serializable {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-
-	public String viewDetails(String username) {
-		username = "davesmith";
-		customer = accountDetailsService.getCustomerByUsername(username);
-		return "viewaccount";
+	
+	public DataModel<Address> getDataModel() {
+		return dataModel;
 	}
 
-
-
+	public void setDataModel(DataModel<Address> dataModel) {
+		this.dataModel = dataModel;
+	}
+	
+	public void viewAddress(){
+		
+	}
+	
+	public String removeAddress(){
+		return "index";
+	}
+	
 }

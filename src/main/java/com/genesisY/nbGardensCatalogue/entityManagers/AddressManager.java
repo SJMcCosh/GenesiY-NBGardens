@@ -4,9 +4,23 @@
  */
 package com.genesisY.nbGardensCatalogue.entityManagers;
 
-import javax.ejb.Stateless;
+import java.util.List;
 
-@Stateless
+import com.genesisY.nbGardensCatalogue.entities.Address;
+import com.genesisY.nbGardensCatalogue.entities.Product;
+
+
 public interface AddressManager {
+	
+	public void addAddress(Address a);
 
+	public List<Address> getAddress();
+	
+	public List<Address> getAddresses();
+	
+	public Address getAddress(long id);
+
+	public void editAddress(Address a);
+	
+	public void deleteAddress(Address a);
 }

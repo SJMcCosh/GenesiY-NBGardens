@@ -32,6 +32,10 @@ public class LoginController{
 		this.password = password;
 	}
 
+	public String gotoSignUp() {
+		return "signup";
+	}
+	
 	public String login() {
 		boolean bool = passcheck.passCheck(username, password);
 		if (username.equals("")) {
