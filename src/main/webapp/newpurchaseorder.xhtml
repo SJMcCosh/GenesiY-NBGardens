@@ -20,15 +20,11 @@
 		
 		<div class="productBox col-5 col-m-10">
 			<div id="allProducts">
-			<div>
-		
-		</div>
-			 <p>All products list</p>
+				<p>All products list</p>
 				<ul>
-				<ui:repeat var="product" value="#{products.dataModel}">
-				<li><h:outputText value="#{product.name}"></h:outputText></li>
-			</ui:repeat>
-					
+					<ui:repeat var="product" value="#{products.dataModel}">
+						<li><h:outputText value="#{product.name}"></h:outputText></li>
+					</ui:repeat>
 				</ul>
 				
 				<div class="columns_dropdowns">
@@ -92,7 +88,17 @@
 		</div> -->
 		
 		
+		<div>
+		<h:form>
+			<h:commandButton value="Click Me!" action="#{products.getAllProducts}" />
+			<h:outputText value="here"></h:outputText>
 		
+			<ui:repeat var="product" value="#{products.dataModel}">
+				<h:outputText value="#{product.name}"></h:outputText>
+			</ui:repeat>
+				
+		</h:form>
+		</div>
 	
 		
 		
