@@ -18,8 +18,10 @@ public class SearchController implements Serializable {
 
 	@Inject
 	private SearchService searchService;
+	
+	@Inject
+	private ProductsController prodController;
 
-	private DataModel<Product> searchedProducts = null;
 	private String term;
 
 	public String getTerm() {
@@ -30,24 +32,16 @@ public class SearchController implements Serializable {
 		this.term = term;
 	}
 
-	public DataModel<Product> getSearchedProducts() {
-		return searchedProducts;
-	}
-
-	public void setSearchedProducts(DataModel<Product> searchedProducts) {
-		this.searchedProducts = searchedProducts;
-	}
-
 	public String search() {
 
 		if (term != null) {
-			if (searchService.getSearchedProducts(term) == null) {
+			if (searchService.getSearchedProducts(term) != null) {
+				System.out.println(">>>>>>>>>>>>>>>>>>>" );
+				prodController.setDataModel(new ListDataModel<Product>(searchService.getSearchedProducts(term)));
 				
-				searchedProducts = new ListDataModel<Product>(searchService.getSearchedProducts(term));
-				
-				return "index";
-			} else {
 				return "subcategory";
+			} else {
+				return "index";
 			}
 		} else {
 			return "index";
