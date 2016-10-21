@@ -503,10 +503,6 @@ ul {
 	list-style-type: none;
 }
 
-.maincontent {
-	border-style: solid;
-}
-
 .row::after {
 	content: "";
 	clear: both;

@@ -21,7 +21,7 @@ public class SearchController implements Serializable {
 	@Inject
 	private ProductsController prodController;
 
-	private String term;
+	private String term = "";
 
 	public String getTerm() {
 		return term;
@@ -33,9 +33,8 @@ public class SearchController implements Serializable {
 
 	public String search() {
 
-		if (term != null) {
+		if (term != "") {
 			if (searchService.getSearchedProducts(term) != null) {
-				System.out.println(">>>>>>>>>>>>>>>>>>>" );
 				prodController.setDataModel(new ListDataModel<Product>(searchService.getSearchedProducts(term)));
 				
 				return "subcategory";
