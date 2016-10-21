@@ -11,7 +11,7 @@ import javax.ejb.Stateless;
 import com.genesisY.nbGardensCatalogue.entities.Product;
 import com.genesisY.nbGardensCatalogue.entities.Tag;
 
-@Stateless
+
 public interface TagManager {
 	public void createTag(Tag a);
 

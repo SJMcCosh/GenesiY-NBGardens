@@ -6,7 +6,7 @@ import javax.ejb.Stateless;
 
 import com.genesisY.nbGardensCatalogue.entities.Category;
 
-@Stateless
+
 public interface CategoryManager {
 
 	public void createCategory(Category x);

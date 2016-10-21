@@ -13,7 +13,7 @@ import javax.ejb.Stateless;
 
 import com.genesisY.nbGardensCatalogue.entities.ProductVariants;
 
-@Stateless
+
 public interface ProductsVariantsManager {
 	
 		

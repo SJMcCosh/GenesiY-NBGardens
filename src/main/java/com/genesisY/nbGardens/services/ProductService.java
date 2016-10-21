@@ -27,9 +27,9 @@ public class ProductService {
 				return null;
 			}
 		} catch (NullPointerException npe) {
-
+			return null;
 		}
-		return null;
+		
 
 	}
 

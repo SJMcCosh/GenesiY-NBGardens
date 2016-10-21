@@ -13,7 +13,7 @@ import com.genesisY.nbGardensCatalogue.entities.PurchaseOrderLine;
  *         outlines for Purchase Order Lines
  *
  */
-@Stateless
+
 public interface PurchaseOrderLineManager {
 	/**
 	 * 

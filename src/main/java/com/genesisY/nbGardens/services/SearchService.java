@@ -23,8 +23,6 @@ public class SearchService {
 			try{
 				ArrayList<Product> tempList = new ArrayList<Product>();
 				for(Product p : productManager.getProducts()){
-					System.out.println(">>>>>>>>>>>>>>>>>> " + p.getName());
-					System.out.println(">>>>>>>>>>>>>>>>>> " + term);
 					if(p.getName().equals(term)){
 						System.out.println(">>>>>>>>>>>>>>>>>> check is valid");
 						tempList.add(p);
@@ -32,14 +30,13 @@ public class SearchService {
 				}
 				return tempList;
 			} catch(NullPointerException npe){
-				System.out.println(">>>>>>>>>>>>>>>>>> Dumbass");
+				return null;
 			}
 
 		} else {
 
 			return null;
 		}
-		return null;
 
 	}
 

@@ -18,7 +18,7 @@ import com.genesisY.nbGardensCatalogue.entities.Tag;
 
 public class ProductsController implements Serializable {
 
-	private Product product;
+	private Product product = null;
 	private DataModel<Product> dataModel = null;
 
 	private DataModel<Tag> tagModel = null;
@@ -37,13 +37,17 @@ public class ProductsController implements Serializable {
 	public void setTagModel(DataModel<Tag> tagModel) {
 		this.tagModel = tagModel;
 	}
+	
+	public String viewProduct(){
+		return "productpage";
+	}
 
 	@SuppressWarnings("unchecked")
 	public String allProducts() {
 		String category = "all";
 		dataModel = new ListDataModel(
-				productService.getAllProducts(category).subList(0, productService.getAllProducts(category).size()));
-		tagModel = new ListDataModel(tagService.getAllTags().subList(0, tagService.getAllTags().size()));
+				productService.getAllProducts(category));
+		tagModel = new ListDataModel(tagService.getAllTags());
 		return "subcategory";
 	}
 

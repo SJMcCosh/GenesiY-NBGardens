@@ -9,7 +9,7 @@ import javax.ejb.Stateless;
 
 import com.genesisY.nbGardensCatalogue.entities.Customer;
 
-@Stateless
+
 public interface CustomerManager 
 {
 	//Read
