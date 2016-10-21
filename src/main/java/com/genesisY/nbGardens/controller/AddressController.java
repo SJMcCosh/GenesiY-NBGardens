@@ -20,8 +20,6 @@ public class AddressController {
 	private UserCredentials userCredentials;
 	@Inject
 	private CustomerController customerController;
-	@Inject
-	private AddressController addressController;
 	private Customer customer;
 	private Address address;
 	private DataModel<Address> dataModel = null;
@@ -60,21 +58,21 @@ public class AddressController {
 	
 	public String viewAddress(){
 		String username = userCredentials.getUsername();
+		System.out.println(username);
 		dataModel = new ListDataModel(addressService.getAllAddresses(username));
 		return "viewaddresses";
 	}
 	
 	public String removeAddress(){
-		return addressController.viewAddress();
+		return viewAddress();
 	}
 	
 	public String editAddress(){
-		return addressController.viewAddress();
+		return viewAddress();
 	}
 	
 	public String reassignBillingAddress(){
-		String username = userCredentials.getUsername();
-		return customerController.viewDetails(username);
+		return customerController.viewDetails();
 	}
 	
 }

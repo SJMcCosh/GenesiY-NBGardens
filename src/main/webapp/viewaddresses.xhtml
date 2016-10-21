@@ -15,23 +15,30 @@
 						<div class="address">
 							<h:form>
 								<p>
-									<h:outputText value="#{address.dataModel.getRowData().addressLine1}" />
+									<h:outputText
+										value="#{address.dataModel.getRowData().addressLine1}" />
 								</p>
 								<p>
-									<h:outputText value="#{address.dataModel.getRowData().addressLine2}" />
+									<h:outputText
+										value="#{address.dataModel.getRowData().addressLine2}" />
 								</p>
 								<p>
-									<h:outputText value="#{address.dataModel.getRowData().addressLine3}" />
+									<h:outputText
+										value="#{address.dataModel.getRowData().addressLine3}" />
 								</p>
 								<p>
-									<h:outputText value="#{address.dataModel.getRowData().townCity}" />
+									<h:outputText
+										value="#{address.dataModel.getRowData().townCity}" />
 								</p>
 								<p>
 									<h:outputText value="#{address.dataModel.getRowData().county}" />
 								</p>
 								<p>
-									<h:outputText value="#{address.dataModel.getRowData().postcode}" />
+									<h:outputText
+										value="#{address.dataModel.getRowData().postcode}" />
 								</p>
+							</h:form>
+							<h:form>
 								<p>
 									<h:commandLink value="Remove Address"
 										action="#{address.removeAddress()}"></h:commandLink>
