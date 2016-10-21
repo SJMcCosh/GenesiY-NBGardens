@@ -12,6 +12,8 @@ public class LoginController{
 
 	@Inject
 	private LoginService passcheck;
+	@Inject
+	private UserCredentials userCredentials;
 	private String username = "";
 	private String password = "";
 	private String error = "";
@@ -49,7 +51,9 @@ public class LoginController{
 			return "loginpage";
 		}
 		else if (passcheck.passCheck(username, password) == true) {
-			return "index";
+			userCredentials.setUsername(username);
+			userCredentials.setLoggedin(passcheck.passCheck(username, password));
+			return "viewaccount";
 		} else {
 			error = "Invalid username and password";
 			username = "";

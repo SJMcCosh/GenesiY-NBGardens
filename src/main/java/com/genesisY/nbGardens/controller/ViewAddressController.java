@@ -19,6 +19,8 @@ public class ViewAddressController {
 	private AccountDetailsService accountDetailsService;
 	@Inject
 	private AddressService addressService;
+	@Inject
+	private UserCredentials userCredentials;
 	private Customer customer;
 	private Address address;
 	private DataModel<Address> dataModel = null;
@@ -56,7 +58,7 @@ public class ViewAddressController {
 	}
 	
 	public String viewAddress(){
-		String username = "davesmith";
+		String username = userCredentials.getUsername();
 		System.out.println(">>>>>" + username);
 		dataModel = new ListDataModel(addressService.getAllAddresses(username));
 		return "viewaddresses";

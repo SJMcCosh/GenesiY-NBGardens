@@ -22,6 +22,8 @@ public class CustomerController implements Serializable {
 	private AccountDetailsService accountDetailsService;
 	@Inject
 	private AddressService addressService;
+	@Inject
+	private UserCredentials userCredentials;
 	private Customer customer;
 	private Address address;
 	private DataModel<Address> dataModel = null;
@@ -43,7 +45,8 @@ public class CustomerController implements Serializable {
 	}
 
 	public String viewDetails() {
-		String username = "davesmith";
+		String username = userCredentials.getUsername();
+		System.out.println(username);
 		customer = accountDetailsService.getCustomerByUsername(username);
 		dataModel = new ListDataModel(addressService.getAllAddresses(username));
 		for (Address a:dataModel){
