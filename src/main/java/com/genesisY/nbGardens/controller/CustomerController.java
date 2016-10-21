@@ -42,13 +42,6 @@ public class CustomerController implements Serializable {
 		return "viewaccount";
 	}
 
-	public String gotoSignUp() {
-		return "signup";
-	}
 
-	public String changeDetails() {
-		System.out.println(">>>DETAILS CHANGED<<<");
-		return "index";
-	}
 
 }

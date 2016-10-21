@@ -16,12 +16,12 @@ import com.genesisY.nbGardensCatalogue.entityManagers.AccountManager;
 public class LoginService {
 
 	@Inject
-	private AccountManager ami;
+	private AccountManager accountManager;
 
 	private Customer getCustomerByUsername(String username) {
 		try {
 			if (username != null) {
-				return ami.findByUsername(username);
+				return accountManager.findByUsername(username);
 			}
 		} catch (NullPointerException npe) {
 
