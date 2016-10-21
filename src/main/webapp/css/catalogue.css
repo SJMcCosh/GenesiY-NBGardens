@@ -25,7 +25,7 @@
 }
 
 .tagbar{
-	float:none;
+	display:inline-block;
 }
 
 .viewaccount {

@@ -11,8 +11,8 @@
 				<div class="col-3 col-m-6 tagbar">
 					<ul class="col-3 col-m-6 tagbar">
 						<ui:repeat var="categorys" value="#{category.catModel}">
-							<h:commandLink action="#{products.allProducts}"
-								value="#{categorys.name}" />
+							<li><h:commandLink action="#{products.allProducts}"
+								value="#{categorys.name}" /></li>
 							
 						</ui:repeat>
 					</ul>
@@ -23,7 +23,7 @@
 			</h:form>
 
 			<!-- This is the featured subclass -->
-			<div class="featuredSubCategory col-10 col-m-12">
+			<div class="featuredSubCategory col-9 col-m-12">
 				<br />
 				<h3>
 					<a href="summerGnomes.html"> <img

@@ -3,6 +3,7 @@ package com.genesisY.nbGardens.services;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.model.DataModel;
 import javax.inject.Inject;
@@ -10,7 +11,8 @@ import javax.inject.Inject;
 import com.genesisY.nbGardensCatalogue.entities.Product;
 import com.genesisY.nbGardensCatalogue.entityManagers.ProductManager;
 
-@RequestScoped
+@Stateless
+
 public class ProductService {
 
 	@Inject

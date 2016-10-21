@@ -52,9 +52,6 @@ public class InitialData {
 		addressList.add(new Address());
 		addressList.add(new Address());
 		addressList.add(new Address());
-		categoryList.add(new Category());
-		categoryList.add(new Category());
-		categoryList.add(new Category());
 		ctpcList.add(new CategoryToProductConn());
 		ctpcList.add(new CategoryToProductConn());
 		ctpcList.add(new CategoryToProductConn());
