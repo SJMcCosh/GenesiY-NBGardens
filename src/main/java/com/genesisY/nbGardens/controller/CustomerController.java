@@ -58,6 +58,16 @@ public class CustomerController implements Serializable {
 		return "viewaccount";
 	}
 
-
+	protected String viewDetails(String username) {
+		customer = accountDetailsService.getCustomerByUsername(username);
+		dataModel = new ListDataModel(addressService.getAllAddresses(username));
+		for (Address a:dataModel){
+			if (a.isBillingAddress()){
+				address = a;
+				break;
+			}
+		}
+		return "viewaccount";
+	}
 
 }

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
-import javax.enterprise.context.RequestScoped;
 import javax.faces.model.DataModel;
 import javax.inject.Inject;
 

@@ -5,7 +5,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 import javax.ejb.Stateless;
-import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
 import com.genesisY.nbGardensCatalogue.entities.Customer;

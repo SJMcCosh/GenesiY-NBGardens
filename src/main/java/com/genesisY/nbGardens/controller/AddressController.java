@@ -6,7 +6,6 @@ import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.genesisY.nbGardens.services.AccountDetailsService;
 import com.genesisY.nbGardens.services.AddressService;
 import com.genesisY.nbGardensCatalogue.entities.Address;
 import com.genesisY.nbGardensCatalogue.entities.Customer;
@@ -16,11 +15,13 @@ import com.genesisY.nbGardensCatalogue.entities.Customer;
 public class AddressController {
 
 	@Inject
-	private AccountDetailsService accountDetailsService;
-	@Inject
 	private AddressService addressService;
 	@Inject
 	private UserCredentials userCredentials;
+	@Inject
+	private CustomerController customerController;
+	@Inject
+	private AddressController addressController;
 	private Customer customer;
 	private Address address;
 	private DataModel<Address> dataModel = null;
@@ -59,13 +60,21 @@ public class AddressController {
 	
 	public String viewAddress(){
 		String username = userCredentials.getUsername();
-		System.out.println(">>>>>" + username);
 		dataModel = new ListDataModel(addressService.getAllAddresses(username));
 		return "viewaddresses";
 	}
 	
 	public String removeAddress(){
-		return "index";
+		return addressController.viewAddress();
+	}
+	
+	public String editAddress(){
+		return addressController.viewAddress();
+	}
+	
+	public String reassignBillingAddress(){
+		String username = userCredentials.getUsername();
+		return customerController.viewDetails(username);
 	}
 	
 }
