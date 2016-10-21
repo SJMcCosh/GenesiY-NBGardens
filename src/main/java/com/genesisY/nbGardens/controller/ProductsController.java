@@ -18,7 +18,7 @@ import com.genesisY.nbGardensCatalogue.entities.Tag;
 
 public class ProductsController implements Serializable {
 
-	private Product product = null;
+	private Product product;
 	private DataModel<Product> dataModel = null;
 
 	private DataModel<Tag> tagModel = null;
@@ -39,6 +39,9 @@ public class ProductsController implements Serializable {
 	}
 	
 	public String viewProduct(){
+		String name = "Gnome Trek";
+		product = productService.getProduct(name);
+		System.out.println(">>>>>>>>>>>>>>>>>>> Product Name = " +product.getName());
 		return "productpage";
 	}
 

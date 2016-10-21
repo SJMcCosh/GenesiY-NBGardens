@@ -14,7 +14,7 @@
 		<div class="header">
 			<div class="searchandlogo">
 				<h:form class="tfnewsearch" method="get">
-					<h:inputText class="tftextinput" value="#{search.term}"/>
+					<h:inputText class="tftextinput" value="#{search.term}" />
 					<h:commandButton class="tfbutton" type="submit"
 						action="#{search.search()}" value="Search" />
 					<h:commandLink action="loginpage" value="Log In" />
@@ -28,11 +28,16 @@
 					<ul class="topnav">
 						<li><h:commandLink action="#{category.getAllCategories}"
 								value="Outdoor Living" /></li>
-						<li><a href="department.xhtml"> Tools 'n Stuff </a></li>
-						<li><a href="department.xhtml"> Gnomes 'n Dat</a></li>
-						<li><a href="department.xhtml"> Outdoor Buildins</a></li>
-						<li><a href="department.xhtml"> Seasonal Crap </a></li>
-						<li><a href="index.xhtml"> You Goin' Home Fam </a></li>
+						<li><h:commandLink action="#{category.getAllCategories}"
+								value="Garden Tools" /></li>
+						<li><h:commandLink action="#{category.getAllCategories}"
+								value="Gnomes" /></li>
+						<li><h:commandLink action="#{category.getAllCategories}"
+								value="Outdoor Buildings" /></li>
+						<li><h:commandLink action="#{category.getAllCategories}"
+								value="Seasonal Items" /></li>
+						<li><h:commandLink action="#{category.getAllCategories}"
+								value="Home" /></li>
 					</ul>
 				</nav>
 			</h:form>

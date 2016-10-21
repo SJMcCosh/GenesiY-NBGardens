@@ -23,18 +23,21 @@ public class ProductsManagerOffline implements ProductManager {
 	}
 
 	@Override
-	public Product getProduct(long id) {
-
-		for (Product p : initialData.getProductList()) {
-			try {
-				if (p.getId() == id) {
-					return p;
+	public Product getProduct(String id) {
+		try {
+			for (Product p : initialData.getProductList()) {
+				try {
+					if (p.getName() == id) {
+						System.out.println(">>>>>>>>>>>>>>>>> ProductName = " + p.getName());
+						return p;
+					}
+				} catch (ArrayIndexOutOfBoundsException aiobe) {
+					return null;
 				}
-			} catch (ArrayIndexOutOfBoundsException aiobe) {
-
 			}
+		} catch (NullPointerException npe) {
+			return null;
 		}
-
 		return null;
 	}
 

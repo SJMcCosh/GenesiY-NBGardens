@@ -16,13 +16,13 @@ import com.genesisY.nbGardensCatalogue.entityManagers.ProductManager;
 public class ProductService {
 
 	@Inject
-	private ProductManager productInt;
+	private ProductManager productManager;
 
 	@SuppressWarnings("unchecked")
 	public List<Product> getAllProducts(String category) {
 		try {
 			if (category != null) {
-				return productInt.getProducts();
+				return productManager.getProducts();
 			}else{
 				return null;
 			}
@@ -30,7 +30,10 @@ public class ProductService {
 			return null;
 		}
 		
-
+	}
+	
+	public Product getProduct(String id){
+		return productManager.getProduct(id);
 	}
 
 }
