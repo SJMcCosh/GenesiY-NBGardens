@@ -40,7 +40,7 @@ public class ProductsController implements Serializable {
 	
 	public String viewProduct(){
 		String name = "Gnome Trek";
-		product = productService.getProduct(name);
+		product = productService.getProductByName(name);
 		System.out.println(">>>>>>>>>>>>>>>>>>> Product Name = " +product.getName());
 		return "productpage";
 	}

@@ -31,8 +31,8 @@ public class ProductService {
 		
 	}
 	
-	public Product getProduct(String id){
-		return productManager.getProduct(id);
+	public Product getProductByName(String name){
+		return productManager.getProductByName(name);
 	}
 
 }

@@ -20,5 +20,5 @@ public interface ProductManager {
 	 * @param id of the product
 	 * @return the product with the id
 	 */
-	public Product getProduct(String id);
+	public Product getProductByName(String name);
 }
