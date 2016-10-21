@@ -43,10 +43,10 @@
 				<div class="col-4 col-m-4">
 					<h:form class="editing">
 						<p>
-							<h:commandLink value = "View Addresses" action = "viewaddresses" />
+							<h:commandLink value = "View Addresses" action = "#{address.viewAddress()}" />
 						</p>
 						<p>
-							<h:commandLink value = "View Account Details" action = "viewaccount" />
+							<h:commandLink value = "View Account Details" action = "#{customer.viewDetails()}" />
 						</p>
 						<p>
 							<h:commandLink value = "Edit Account Details" action = "editdetails" />

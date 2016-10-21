@@ -37,20 +37,21 @@ public class LoginController{
 	}
 	
 	public String login() {
-		boolean bool = passcheck.passCheck(username, password);
+		
 		if (username.equals("")) {
 			error = "Please enter a username";
 			password = "";
 			return "loginpage";
 		}
-		if (password.equals("")) {
+		else if (password.equals("")) {
 			error = "Please enter a password";
-			username = "";
+			password = "";
 			return "loginpage";
 		}
-		if (bool == true) {
+		else if (passcheck.passCheck(username, password) == true) {
 			return "index";
 		} else {
+			error = "Invalid username and password";
 			username = "";
 			password = "";
 			return "loginpage";
