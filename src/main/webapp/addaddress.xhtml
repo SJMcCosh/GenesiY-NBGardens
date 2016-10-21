@@ -9,10 +9,10 @@
 
 			<div class="addanaddress">
 				<h4>Add an Address</h4>
-				<h:form>
-					<div class="col-12 col-m-9">
-						<div class="newaddress">
-							<div id="addresstext">
+				<div class="col-12 col-m-9">
+					<div class="newaddress">
+						<div id="addresstext">
+							<h:form>
 								<p>Address line 1</p>
 								<h:inputText value="#{address.line1}" id="addressline1"
 									title="Address Line 1"></h:inputText>
@@ -28,13 +28,15 @@
 								<h:inputText value="#{address.postcode}"></h:inputText>
 								<br />
 								<br />
-								<h:commandButton  id="addaddress" value="Add Address" action="#{customer.addaddress(address)}"/>
+								<h:commandButton id="addaddress" value="Add Address"
+									action="#{customer.addaddress(address)}" />
 								<br />
 								<br />
-							</div>
+							</h:form>
 						</div>
 					</div>
-				</h:form>
+				</div>
+
 			</div>
 		</article>
 

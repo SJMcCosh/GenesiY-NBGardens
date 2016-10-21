@@ -13,7 +13,7 @@ import com.genesisY.nbGardensCatalogue.entities.Customer;
 
 @Named("address")
 @RequestScoped
-public class ViewAddressController {
+public class AddressController {
 
 	@Inject
 	private AccountDetailsService accountDetailsService;
