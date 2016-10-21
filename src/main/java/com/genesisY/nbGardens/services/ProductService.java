@@ -20,7 +20,7 @@ public class ProductService {
 	public List<Product> getAllProducts(String category) {
 		try {
 			if (category != null) {
-				return productInt.getProduct();
+				return productInt.getProducts();
 			}else{
 				return null;
 			}
