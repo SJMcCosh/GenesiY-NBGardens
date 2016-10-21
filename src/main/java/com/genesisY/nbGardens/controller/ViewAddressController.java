@@ -23,6 +23,14 @@ public class ViewAddressController {
 	private Address address;
 	private DataModel<Address> dataModel = null;
 
+	public AddressService getAddressService() {
+		return addressService;
+	}
+
+	public void setAddressService(AddressService addressService) {
+		this.addressService = addressService;
+	}
+
 	public Address getAddress() {
 		return address;
 	}
@@ -47,9 +55,11 @@ public class ViewAddressController {
 		this.dataModel = dataModel;
 	}
 	
-	public void viewAddress(){
+	public String viewAddress(){
 		String username = "davesmith";
+		System.out.println(">>>>>" + username);
 		dataModel = new ListDataModel(addressService.getAllAddresses(username));
+		return "viewaddresses";
 	}
 	
 	public String removeAddress(){

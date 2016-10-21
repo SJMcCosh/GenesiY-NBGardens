@@ -19,6 +19,7 @@ public class Address {
 
 	@Column(name = "addressLine1", nullable = false, length = 120)
 	@Size(min = 1, max = 120)
+	@NotNull
 	private String addressLine1;
 
 	@Column(name = "addressLine2", nullable = false, length = 70)
@@ -31,6 +32,7 @@ public class Address {
 
 	@Column(name = "townCity", nullable = false, length = 58)
 	@Size(min = 2, max = 58)
+	@NotNull
 	private String townCity;
 
 	@Column(name = "county", nullable = false, length = 35)
@@ -39,7 +41,12 @@ public class Address {
 
 	@Column(name = "postcode", nullable = false, length = 9)
 	@Size(min = 7, max = 9)
+	@NotNull
 	private String postcode;
+	
+	@Column(name = "billingAddress", nullable = false)
+	@NotNull
+	private boolean billingAddress;
 
 	@OneToMany
 	@JoinColumn(name = "customer_fk", nullable = false)
@@ -50,13 +57,14 @@ public class Address {
 
 	}
 
-	public Address(String addressLine1, String addressLine2, String addressLine3, String townCity, String county, String postcode, Customer customer) {
+	public Address(String addressLine1, String addressLine2, String addressLine3, String townCity, String county, String postcode, boolean billingAddress, Customer customer) {
 		this.addressLine1 = addressLine1;
 		this.addressLine2 = addressLine2;
 		this.addressLine3 = addressLine3;
 		this.townCity = townCity;
 		this.county = county;
 		this.postcode = postcode;
+		this.billingAddress = billingAddress;
 		this.customer = customer;
 	}
 
@@ -119,8 +127,16 @@ public class Address {
 		return customer;
 	}
 
-	public void getPostcode(Customer customer) {
+	public void setCustomer(Customer customer) {
 		this.customer = customer;
+	}
+	
+	public boolean isBillingAddress(){
+		return this.billingAddress;
+	}
+	
+	public void setBillingAddress(boolean billingAddress){
+		this.billingAddress = billingAddress;
 	}
 
 	/**

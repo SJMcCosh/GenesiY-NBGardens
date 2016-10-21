@@ -13,28 +13,30 @@
 				<div class="col-4 col-m-4">
 					<div class="resizingaddress">
 						<div class="address">
-							<p>
-								<h:outputText value="#{address.address.addressLine1}" />
-							</p>
-							<p>
-								<h:outputText value="#{address.address.addressLine2}" />
-							</p>
-							<p>
-								<h:outputText value="#{address.address.addressLine3}" />
-							</p>
-							<p>
-								<h:outputText value="#{address.address.townCity}" />
-							</p>
-							<p>
-								<h:outputText value="#{address.address.county}" />
-							</p>
-							<p>
-								<h:outputText value="#{address.address.postcode}" />
-							</p>
-							<p>
-								<h:commandLink value="Remove Address"
-									action="#{address.removeAddress()}"></h:commandLink>
-							</p>
+							<h:form>
+								<p>
+									<h:outputText value="#{address.dataModel.getRowData().addressLine1}" />
+								</p>
+								<p>
+									<h:outputText value="#{address.dataModel.getRowData().addressLine2}" />
+								</p>
+								<p>
+									<h:outputText value="#{address.dataModel.getRowData().addressLine3}" />
+								</p>
+								<p>
+									<h:outputText value="#{address.dataModel.getRowData().townCity}" />
+								</p>
+								<p>
+									<h:outputText value="#{address.dataModel.getRowData().county}" />
+								</p>
+								<p>
+									<h:outputText value="#{address.dataModel.getRowData().postcode}" />
+								</p>
+								<p>
+									<h:commandLink value="Remove Address"
+										action="#{address.removeAddress()}"></h:commandLink>
+								</p>
+							</h:form>
 						</div>
 					</div>
 				</div>
