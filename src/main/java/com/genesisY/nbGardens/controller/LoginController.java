@@ -37,6 +37,8 @@ public class LoginController {
 	}
 
 	public String login() {
+		
+		System.out.println(">>>> "+username+", "+password+" <<<<");
 
 		if (username.equals("")) {
 			error = "Please enter a username";

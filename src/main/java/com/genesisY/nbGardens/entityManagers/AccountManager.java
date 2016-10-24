@@ -1,9 +1,9 @@
-package com.genesisY.nbGardensCatalogue.entityManagers;
+package com.genesisY.nbGardens.entityManagers;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.genesisY.nbGardensCatalogue.entities.Employee;
+import com.genesisY.nbGardens.entities.Employee;
 
 public interface AccountManager {
 
@@ -14,4 +14,6 @@ public interface AccountManager {
 	public ArrayList<Employee> customerList();
 
 	public Employee findByUsername(String username);
+
+	public void updatePassword(String password, String username);
 }

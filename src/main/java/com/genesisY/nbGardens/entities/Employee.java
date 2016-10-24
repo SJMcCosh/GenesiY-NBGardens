@@ -1,12 +1,12 @@
-package com.genesisY.nbGardensCatalogue.entities;
+package com.genesisY.nbGardens.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
 /**
- * Employee class, setting/getting Employee passwords and usernames
+ * Employee class, setting/getting employee passwords and usernames
  * 
- * @author Karrus
+ * @author Samuel McCosh
  *
  */
 

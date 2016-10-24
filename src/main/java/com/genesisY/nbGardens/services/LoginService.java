@@ -7,8 +7,8 @@ import java.security.NoSuchAlgorithmException;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
-import com.genesisY.nbGardensCatalogue.entities.Employee;
-import com.genesisY.nbGardensCatalogue.entityManagers.AccountManager;
+import com.genesisY.nbGardens.entities.Employee;
+import com.genesisY.nbGardens.entityManagers.AccountManager;
 
 @Stateless
 
@@ -56,6 +56,7 @@ public class LoginService {
 
 	public boolean passCheck(String username, String password) {
 		Employee gnome = getEmployeeByUsername(username);
+		System.out.println(">>>> " + username +", "+ password + " <<<<");
 		if (gnome != null) {
 			String pass = hash(password);
 			if (password.equals(gnome.getPassword())) {

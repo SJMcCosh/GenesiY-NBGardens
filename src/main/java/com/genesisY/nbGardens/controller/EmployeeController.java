@@ -6,7 +6,7 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.genesisY.nbGardensCatalogue.entities.Employee;
+import com.genesisY.nbGardens.entities.Employee;
 
 @SuppressWarnings("serial")
 @Named("employee")
