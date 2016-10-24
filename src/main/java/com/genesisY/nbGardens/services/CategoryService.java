@@ -4,9 +4,11 @@ import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import com.genesisY.nbGardensCatalogue.entities.Category;
 import com.genesisY.nbGardensCatalogue.entityManagers.CategoryManager;
+
 
 @RequestScoped
 public class CategoryService {

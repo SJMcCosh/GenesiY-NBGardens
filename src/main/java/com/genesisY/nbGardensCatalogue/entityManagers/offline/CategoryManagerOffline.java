@@ -12,7 +12,8 @@ import com.genesisY.nbGardensCatalogue.initialData.InitialData;
 @Stateless
 public class CategoryManagerOffline implements CategoryManager {
 
-	@Inject private InitialData initialData;
+	@Inject 
+	private InitialData initialData;
 	
 	public void createCategory(Category x) {
 		// add category to database
@@ -41,6 +42,7 @@ public class CategoryManagerOffline implements CategoryManager {
 	@Override
 	public List<Category> getAllCategories() {
 		// TODO Auto-generated method stub
+		System.out.println("Fourth layer");
 		return initialData.getCategoryList();
 	}
 

@@ -43,10 +43,10 @@ public class Category {
 	}
 
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
-	public void setName(String vName) {
-		this.name = vName;
+	public void setName(String name) {
+		this.name = name;
 	}
 }

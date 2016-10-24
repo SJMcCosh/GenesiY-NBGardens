@@ -30,6 +30,7 @@
 
 .viewaccount {
 	text-align: center;
+	
 }
 
 .billingadd {
@@ -877,4 +878,28 @@ ul.botnav li a {
 		padding-bottom: 500px;
 		padding-right: 50px;
 	}
-}
+
+	
+	
+   /* Added on the 20/10/2016 by Callum Holden */
+	#departments_grid{	
+		width:40%;
+		background-color:red;
+		height:500px;
+		margin:0 auto;
+		text-align:center;	
+	}
+		.departments_grid_department{
+		
+			width:200px;
+			min-width:200px;
+			height:200px;
+			background-color:blue;
+			display:inline-block;
+			
+		
+		}
+	
+	
+	
+	

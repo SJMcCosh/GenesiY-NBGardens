@@ -52,9 +52,9 @@ public class InitialData {
 		addressList.add(new Address());
 		addressList.add(new Address());
 		addressList.add(new Address());
-		categoryList.add(new Category());
-		categoryList.add(new Category());
-		categoryList.add(new Category());
+//		categoryList.add(new Category());
+//		categoryList.add(new Category());
+//		categoryList.add(new Category());
 		ctpcList.add(new CategoryToProductConn());
 		ctpcList.add(new CategoryToProductConn());
 		ctpcList.add(new CategoryToProductConn());
@@ -71,11 +71,11 @@ public class InitialData {
 		tagList.add(new Tag("Tag4"));
 		tagList.add(new Tag("Tag5"));
 		categoryList.add(new Category("cat1"));
-		categoryList.add(new Category("cat1"));
-		categoryList.add(new Category("cat1"));
-		categoryList.add(new Category("cat1"));
-		categoryList.add(new Category("cat1"));
-		categoryList.add(new Category("cat1"));
+		categoryList.add(new Category("cat2"));
+		categoryList.add(new Category("cat3"));
+		categoryList.add(new Category("cat4"));
+		categoryList.add(new Category("cat5"));
+		categoryList.add(new Category("cat6"));
 	}
 
 	public ArrayList<Address> getAddressList() {
