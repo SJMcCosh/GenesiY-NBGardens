@@ -3,32 +3,36 @@ package com.genesisY.nbGardens.services;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.enterprise.context.RequestScoped;
+import javax.ejb.Stateless;
 import javax.faces.model.DataModel;
 import javax.inject.Inject;
 
 import com.genesisY.nbGardensCatalogue.entities.Product;
 import com.genesisY.nbGardensCatalogue.entityManagers.ProductManager;
 
-@RequestScoped
+@Stateless
+
 public class ProductService {
 
 	@Inject
-	private ProductManager productInt;
+	private ProductManager productManager;
 
 	@SuppressWarnings("unchecked")
 	public List<Product> getAllProducts(String category) {
 		try {
 			if (category != null) {
-				return productInt.getProduct();
+				return productManager.getProducts();
 			}else{
 				return null;
 			}
 		} catch (NullPointerException npe) {
-
+			return null;
 		}
-		return null;
-
+		
+	}
+	
+	public Product getProductByName(String name){
+		return productManager.getProductByName(name);
 	}
 
 }

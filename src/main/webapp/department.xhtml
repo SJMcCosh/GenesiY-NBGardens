@@ -11,16 +11,26 @@
 				<div class="col-3 col-m-6 tagbar">
 				
 					<ul class="col-3 col-m-6 tagbar">
+<<<<<<< HEAD
 						<ui:repeat var="cat" value="#{category.allCategories}">
 						<h:outputText value="#{cat.name}"></h:outputText>
 							<h:commandLink action="#{products.allProducts}" value="#{cat.id}" />
+=======
+						<ui:repeat var="categorys" value="#{category.catModel}">
+							<li><h:commandLink action="#{products.allProducts}"
+								value="#{categorys.name}" /></li>
+							
+>>>>>>> f6d3949320476b77c76c8af00f28bb985152f6c2
 						</ui:repeat>
 					</ul>
+
+
+
 				</div>
 			</h:form>
 
 			<!-- This is the featured subclass -->
-			<div class="featuredSubCategory col-10 col-m-12">
+			<div class="featuredSubCategory col-9 col-m-12">
 				<br />
 				<!-- <h3>
 					<a href="summerGnomes.html"> <img

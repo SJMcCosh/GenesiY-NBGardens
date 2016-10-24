@@ -13,7 +13,7 @@ import com.genesisY.nbGardensCatalogue.entities.Supplier;
  *         outline for CRUD methods for Purchase Orders
  *
  */
-@Stateless
+
 public interface PurchaseOrderManager {
 	/**
 	 * 

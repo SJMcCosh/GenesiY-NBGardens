@@ -1,12 +1,12 @@
 package com.genesisY.nbGardens.services;
 
-import javax.enterprise.context.RequestScoped;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import com.genesisY.nbGardensCatalogue.entities.Customer;
 import com.genesisY.nbGardensCatalogue.entityManagers.AccountManager;
 
-@RequestScoped
+@Stateless
 public class AccountDetailsService {
 
 	@Inject

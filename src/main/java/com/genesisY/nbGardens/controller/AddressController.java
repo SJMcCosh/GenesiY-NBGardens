@@ -1,32 +1,36 @@
 package com.genesisY.nbGardens.controller;
 
-import java.io.Serializable;
-
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.genesisY.nbGardens.services.AccountDetailsService;
 import com.genesisY.nbGardens.services.AddressService;
 import com.genesisY.nbGardensCatalogue.entities.Address;
 import com.genesisY.nbGardensCatalogue.entities.Customer;
 
-@SuppressWarnings("serial")
-@Named("customer")
-@SessionScoped
-public class CustomerController implements Serializable {
+@Named("address")
+@RequestScoped
+public class AddressController {
 
-	@Inject
-	private AccountDetailsService accountDetailsService;
 	@Inject
 	private AddressService addressService;
 	@Inject
 	private UserCredentials userCredentials;
+	@Inject
+	private CustomerController customerController;
 	private Customer customer;
 	private Address address;
 	private DataModel<Address> dataModel = null;
+
+	public AddressService getAddressService() {
+		return addressService;
+	}
+
+	public void setAddressService(AddressService addressService) {
+		this.addressService = addressService;
+	}
 
 	public Address getAddress() {
 		return address;
@@ -43,19 +47,32 @@ public class CustomerController implements Serializable {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-
-	public String viewDetails() {
-		String username = userCredentials.getUsername();
-		System.out.println(username);
-		customer = accountDetailsService.getCustomerByUsername(username);
-		dataModel = new ListDataModel(addressService.getAllAddresses(username));
-		for (Address a:dataModel){
-			if (a.isBillingAddress()){
-				address = a;
-				break;
-			}
-		}
-		return "viewaccount";
+	
+	public DataModel<Address> getDataModel() {
+		return dataModel;
 	}
 
+	public void setDataModel(DataModel<Address> dataModel) {
+		this.dataModel = dataModel;
+	}
+	
+	public String viewAddress(){
+		String username = userCredentials.getUsername();
+		System.out.println(username);
+		dataModel = new ListDataModel(addressService.getAllAddresses(username));
+		return "viewaddresses";
+	}
+	
+	public String removeAddress(){
+		return viewAddress();
+	}
+	
+	public String editAddress(){
+		return viewAddress();
+	}
+	
+	public String reassignBillingAddress(){
+		return customerController.viewDetails();
+	}
+	
 }

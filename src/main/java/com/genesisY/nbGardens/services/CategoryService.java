@@ -2,15 +2,15 @@ package com.genesisY.nbGardens.services;
 
 import java.util.List;
 
-import javax.enterprise.context.RequestScoped;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.genesisY.nbGardensCatalogue.entities.Category;
 import com.genesisY.nbGardensCatalogue.entityManagers.CategoryManager;
 
+@Stateless
 
-@RequestScoped
 public class CategoryService {
 
 	@Inject

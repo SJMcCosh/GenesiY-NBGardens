@@ -4,13 +4,14 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import javax.enterprise.context.RequestScoped;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import com.genesisY.nbGardensCatalogue.entities.Customer;
 import com.genesisY.nbGardensCatalogue.entityManagers.AccountManager;
 
-@RequestScoped
+@Stateless
+
 public class LoginService {
 
 	@Inject

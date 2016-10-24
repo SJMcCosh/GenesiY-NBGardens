@@ -2,13 +2,14 @@ package com.genesisY.nbGardens.services;
 
 import java.util.List;
 
-import javax.enterprise.context.RequestScoped;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import com.genesisY.nbGardensCatalogue.entities.Tag;
 import com.genesisY.nbGardensCatalogue.entityManagers.TagManager;
 
-@RequestScoped
+@Stateless
+
 public class TagService {
 
 	@Inject

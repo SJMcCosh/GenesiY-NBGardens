@@ -49,18 +49,24 @@ public class InitialData {
 
 	@PostConstruct
 	public void setupData() {
-		addressList.add(new Address());
-		addressList.add(new Address());
-		addressList.add(new Address());
-//		categoryList.add(new Category());
-//		categoryList.add(new Category());
-//		categoryList.add(new Category());
+		Customer daveSmith = new Customer("Dave", "Smith", "dave@smith.com", "davesmith", "password1", "01478523698");
+		Customer janeSmith = new Customer("Jane", "Smith", "jane@smith.com", "janesmith", "password2", "01478523698");
+		Customer willSmith = new Customer("Will", "Smith", "will@smith.com", "willsmith", "password3", "01478523698");
+		addressList.add(new Address("d1addressLine1", "d1addressLine2", "d1addressLine3", "d1townCity", "d1county", "d1postcode", true, daveSmith));
+		addressList.add(new Address("d2addressLine1", "d2addressLine2", "d2addressLine3", "d2townCity", "d2county", "d2postcode", false, daveSmith));
+		addressList.add(new Address("d3addressLine1", "d3addressLine2", "d3addressLine3", "d3townCity", "d3county", "d3postcode", false, daveSmith));
+		addressList.add(new Address("j1addressLine1", "j1addressLine2", "j1addressLine3", "j1townCity", "j1county", "j1postcode", false, janeSmith));
+		addressList.add(new Address("j2addressLine1", "j2addressLine2", "j2addressLine3", "j2townCity", "j2county", "j2postcode", true, janeSmith));
+		addressList.add(new Address("j3addressLine1", "j3addressLine2", "j3addressLine3", "j3townCity", "j3county", "j3postcode", false, janeSmith));
+		addressList.add(new Address("w1addressLine1", "w1addressLine2", "w1addressLine3", "w1townCity", "w1county", "w1postcode", false, willSmith));
+		addressList.add(new Address("w2addressLine1", "w2addressLine2", "w2addressLine3", "w2townCity", "w2county", "w2postcode", false, willSmith));
+		addressList.add(new Address("w3addressLine1", "w3addressLine2", "w3addressLine3", "w3townCity", "w3county", "w3postcode", true, willSmith));
 		ctpcList.add(new CategoryToProductConn());
 		ctpcList.add(new CategoryToProductConn());
 		ctpcList.add(new CategoryToProductConn());
-		customerList.add(new Customer("Dave", "Smith", "dave@smith.com", "davesmith", "password1", "01478523698")); //Password = password1
-		customerList.add(new Customer("Jane", "Smith", "jane@smith.com", "janesmith", "password2", "01478523698"));//Password = password2
-		customerList.add(new Customer("Will", "Smith", "will@smith.com", "willsmith", "password3", "01478523698"));//Password = password3
+		customerList.add(daveSmith); //Password = password1
+		customerList.add(janeSmith);//Password = password2
+		customerList.add(willSmith);//Password = password3
 		colList.add(new CustomerOrderLine());
 		productList.add(new Product("Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50));
 		productList.add(new Product("Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0, 97.99));

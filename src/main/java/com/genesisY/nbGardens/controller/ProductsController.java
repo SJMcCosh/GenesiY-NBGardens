@@ -37,13 +37,20 @@ public class ProductsController implements Serializable {
 	public void setTagModel(DataModel<Tag> tagModel) {
 		this.tagModel = tagModel;
 	}
+	
+	public String viewProduct(){
+		String name = "Gnome Trek";
+		product = productService.getProductByName(name);
+		System.out.println(">>>>>>>>>>>>>>>>>>> Product Name = " +product.getName());
+		return "productpage";
+	}
 
 	@SuppressWarnings("unchecked")
 	public String allProducts() {
 		String category = "all";
 		dataModel = new ListDataModel(
-				productService.getAllProducts(category).subList(0, productService.getAllProducts(category).size()));
-		tagModel = new ListDataModel(tagService.getAllTags().subList(0, tagService.getAllTags().size()));
+				productService.getAllProducts(category));
+		tagModel = new ListDataModel(tagService.getAllTags());
 		return "subcategory";
 	}
 

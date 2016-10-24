@@ -25,7 +25,7 @@
 }
 
 .tagbar{
-	float:none;
+	display:inline-block;
 }
 
 .viewaccount {
@@ -502,10 +502,6 @@ ul li {
 
 ul {
 	list-style-type: none;
-}
-
-.maincontent {
-	border-style: solid;
 }
 
 .row::after {

@@ -12,6 +12,10 @@ public class LoginController{
 
 	@Inject
 	private LoginService passcheck;
+	@Inject
+	private UserCredentials userCredentials;
+	@Inject
+	private CustomerController customerController;
 	private String username = "";
 	private String password = "";
 	private String error = "";
@@ -32,21 +36,28 @@ public class LoginController{
 		this.password = password;
 	}
 
+	public String gotoSignUp() {
+		return "signup";
+	}
+	
 	public String login() {
-		boolean bool = passcheck.passCheck(username, password);
+		
 		if (username.equals("")) {
 			error = "Please enter a username";
 			password = "";
 			return "loginpage";
 		}
-		if (password.equals("")) {
+		else if (password.equals("")) {
 			error = "Please enter a password";
-			username = "";
+			password = "";
 			return "loginpage";
 		}
-		if (bool == true) {
-			return "index";
+		else if (passcheck.passCheck(username, password) == true) {
+			userCredentials.setUsername(username);
+			userCredentials.setLoggedin(passcheck.passCheck(username, password));
+			return customerController.viewDetails();
 		} else {
+			error = "Invalid username and password";
 			username = "";
 			password = "";
 			return "loginpage";
