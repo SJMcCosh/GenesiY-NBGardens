@@ -138,6 +138,14 @@ ul.breadcrumb li a {
 	background: #d3d3d3;
 }
 
+.loginform {
+	border: solid;
+	background-color: #d6d6b1;
+	width: 275px;
+	margin: 10px auto 0;
+	height: 470px;
+}
+
 [class*="col-"] {
     float: left;
 }
