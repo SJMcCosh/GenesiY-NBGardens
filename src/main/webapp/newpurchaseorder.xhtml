@@ -4,20 +4,13 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/template.xhtml">
 	<meta charset="ISO-8859-1" title="IMS" />
-
 	<ui:define name="content">
-
 		<div id="pageTitle">
-
-
 			<div class="col-12 col-m-12">
 				<h1>Create New Purchase Order</h1>
 			</div>
-
 		</div>
-
 		<div class="empty col-1 col-m-1"></div>
-
 		<div class="productBox col-5 col-m-10">
 			<div id="allProducts">
 				<p>All products list</p>
@@ -27,7 +20,6 @@
 						<li><h:outputText value="#{product.name}"></h:outputText></li>
 					</ui:repeat>
 				</ul>
-
 				<div class="columns_dropdowns">
 					<h:selectOneMenu>
 						<f:selectItem itemValue="1" itemLabel="Item 1" />
@@ -35,39 +27,26 @@
 					</h:selectOneMenu>
 				</div>
 
-
-
 				<div class="columns_add_button">
-					<h:commandButton value="poop" onclick="alert('clicked');" />
+					<h:commandButton value="click" onclick="alert('clicked');" />
 				</div>
-
 			</div>
 		</div>
-
 		<div class="productBox col-5 col-m-10">
 			<div id="savedProducts">
 				<p>Saved products list</p>
-
-
 				<div class="columns_dropdowns">
 					<h:selectOneMenu>
 						<f:selectItem itemValue="1" itemLabel="Item 1" />
 						<f:selectItem itemValue="2" itemLabel="Item 2" />
 					</h:selectOneMenu>
 				</div>
-
 				<div class="columns_add_button">
-					<h:commandButton value="poop" onclick="alert('clicked');" />
+					<h:commandButton value="click" onclick="alert('clicked');" />
 				</div>
-
-
-
 			</div>
-
 		</div>
-
 		<div class="empty col-1 col-m-1"></div>
-
 		<!-- <div id="tab_container">
 			<div class="col-12 col-m-12">
 				<section>
@@ -86,6 +65,5 @@
 				</section>
 			</div>
 		</div> -->
-
 	</ui:define>
 </ui:composition>
