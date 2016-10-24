@@ -5,38 +5,38 @@
 	xmlns:p="http://java.sun.com/jsf/passthrough"
 	template="templates/loginTemplate.xhtml">
 	<meta charset="ISO-8859-1" />
-	<body>
-		<ui:define name="maincontent">
-			<article class="wholebody">
-				<br /> <br />
-				<div class="col-12 col-m-12">
-					<div class="loginform">
-						<h4>Login</h4>
-						<h:form>
-							<p>Username</p>
-							<h:inputText value="#{login.username}" required="true"
-								requiredMessage="Enter Username"></h:inputText>
-							<p>
-								<a href="#forgottenusername">Forgotten your username?</a>
-							</p>
-							<p>Password</p>
-							<h:inputSecret value="#{login.password}" required="true"
-								requiredMessage="Enter Password"
-								validatorMessage="Please enter a password">
-								<f:validateLength minimum="8" maximum="35" />
-							</h:inputSecret>
-							<p>
-								<a href="forgottenpassword">Forgotten your password?</a>
-							</p>
-							<br />
-							<h:commandButton type="submit" name="loginbtn" value="Sign In"
-								action="#{login.login()}" />
-							<br />
-							<br />
-						</h:form>
-					</div>
-				</div>
-			</article>
-		</ui:define>
-	</body>
+<!-- 	<body> -->
+<!-- 		<ui:define name="maincontent"> -->
+<!-- 			<article class="wholebody"> -->
+<!-- 				<br /> <br /> -->
+<!-- 				<div class="col-12 col-m-12"> -->
+<!-- 					<div class="loginform"> -->
+<!-- 						<h4>Login</h4> -->
+<!-- 						<h:form> -->
+<!-- 							<p>Username</p> -->
+<!-- 							<h:inputText value="#{login.username}" required="true" -->
+<!-- 								requiredMessage="Enter Username"></h:inputText> -->
+<!-- 							<p> -->
+<!-- 								<a href="#forgottenusername">Forgotten your username?</a> -->
+<!-- 							</p> -->
+<!-- 							<p>Password</p> -->
+<!-- 							<h:inputSecret value="#{login.password}" required="true" -->
+<!-- 								requiredMessage="Enter Password" -->
+<!-- 								validatorMessage="Please enter a password"> -->
+<!-- 								<f:validateLength minimum="8" maximum="35" /> -->
+<!-- 							</h:inputSecret> -->
+<!-- 							<p> -->
+<!-- 								<a href="forgottenpassword">Forgotten your password?</a> -->
+<!-- 							</p> -->
+<!-- 							<br /> -->
+<!-- 							<h:commandButton type="submit" name="loginbtn" value="Sign In" -->
+<!-- 								action="#{login.login()}" /> -->
+<!-- 							<br /> -->
+<!-- 							<br /> -->
+<!-- 						</h:form> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</article> -->
+<!-- 		</ui:define> -->
+<!-- 	</body> -->
 </ui:composition>
