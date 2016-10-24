@@ -8,7 +8,7 @@ import com.genesisY.nbGardens.services.LoginService;
 
 @Named("login")
 @RequestScoped
-public class LoginController{
+public class LoginController {
 
 	@Inject
 	private LoginService passcheck;
@@ -35,20 +35,18 @@ public class LoginController{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 	public String login() {
-		
+
 		if (username.equals("")) {
 			error = "Please enter a username";
 			password = "";
 			return "loginpage";
-		}
-		else if (password.equals("")) {
+		} else if (password.equals("")) {
 			error = "Please enter a password";
 			password = "";
 			return "loginpage";
-		}
-		else if (passcheck.passCheck(username, password) == true) {
+		} else if (passcheck.passCheck(username, password) == true) {
 			userCredentials.setUsername(username);
 			userCredentials.setLoggedin(passcheck.passCheck(username, password));
 			return "home";

@@ -16,7 +16,6 @@ public class EmployeeController implements Serializable {
 	@Inject
 	private Employee employee;
 
-
 	public Employee getEmployee() {
 		return employee;
 	}
