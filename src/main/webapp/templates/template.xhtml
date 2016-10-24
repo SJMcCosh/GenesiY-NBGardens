@@ -31,7 +31,11 @@
 			<div id="dropdownSuppliers">
 				<button class="dropbtn">Suppliers</button>
 				<div class="dropdown-content">
-					<a href="#">View Suppliers</a> <a href="#">Add New Supplier</a>
+					<h:form>
+						<h:commandLink value="View Suppliers"
+							action="#{suppliers.viewSuppliers()}" />
+						<h:commandLink value="Add New Supplier" action="loginpage" />
+					</h:form>
 				</div>
 			</div>
 
