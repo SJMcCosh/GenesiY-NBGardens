@@ -3,24 +3,41 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-
 	<meta charset="ISO-8859-1" />
-
-	<!-- <link href="/css/templatestyle.css" rel="stylesheet" type="text/css" />
-		<link href="/css/homeStyle.css" rel="stylesheet" type="text/css" />-->
 	<link rel="stylesheet" href="css/ims_style.css" type="text/css" />
-
 </h:head>
-
 <body>
 	<div class="nblogo col-12 col-m-12">
-		<img src="img/nblogo.png"/>
+		<img src="img/nblogo.png" />
 	</div>
-
-	<ui:insert name="content">
-
-	</ui:insert>
-
+	<br />
+	<br />
+	<div class="col-12 col-m-12">
+		<div class="loginform">
+			<h4>Login</h4>
+			<h:form>
+				<p>Username</p>
+				<h:inputText value="#{login.username}" required="true"
+					requiredMessage="Enter Username"></h:inputText>
+				<p>
+					<a href="#forgottenusername">Forgotten your username?</a>
+				</p>
+				<p>Password</p>
+				<h:inputSecret value="#{login.password}" required="true"
+					requiredMessage="Enter Password"
+					validatorMessage="Please enter a password">
+					<f:validateLength minimum="8" maximum="35" />
+				</h:inputSecret>
+				<p>
+					<a href="forgottenpassword">Forgotten your password?</a>
+				</p>
+				<br />
+				<h:commandButton type="submit" name="loginbtn" value="Sign In"
+					action="#{login.login()}" />
+				<br />
+				<br />
+			</h:form>
+		</div>
+	</div>
 </body>
-
 </html>

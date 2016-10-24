@@ -130,6 +130,16 @@ ul.breadcrumb li a {
 	background-color: #62c945;
 }
 
+.maincontent {
+	background-color: #ffffff;
+}
+
+.maincontent::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
 .login{
 	border: solid;
 	margin-left: 0 auto;
