@@ -3,11 +3,15 @@ package com.genesisY.nbGardens.initialData;
 import java.util.ArrayList;
 
 import javax.annotation.*;
+import javax.ejb.Startup;
+import javax.inject.Singleton;
 
 import com.genesisY.nbGardens.entities.Address;
 import com.genesisY.nbGardens.entities.Product;
 import com.genesisY.nbGardens.entities.Supplier;
 
+@Startup
+@Singleton
 public class ImsInitialData {
 	
 	private ArrayList<Product> prodList = new ArrayList<Product>();
