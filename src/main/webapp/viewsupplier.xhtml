@@ -1,0 +1,38 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/template.xhtml">
+	<meta charset="ISO-8859-1" title="IMS" />
+	<ui:define name="content">
+		<div id="pageTitle">
+			<div class="col-12 col-m-12">
+				<h1>Suppliers</h1>
+			</div>
+		</div>
+		<div class="productBox col-5 col-m-10">
+			<div id="viewsuppliers">
+				<p>All products list</p>
+				<ul>
+					<ui:repeat onload="#{suppliers.getSuppliers}" var="suppliers"
+						value="#{suppliers.dataModel}">
+						<li>ID: <h:outputText value="#{suppliers.id}"></h:outputText></li>
+						<li>Name: <h:outputText value="#{suppliers.name}"></h:outputText></li>
+						<li>Phone Number: <h:outputText
+								value="#{suppliers.phoneNumber}"></h:outputText></li>
+						<li>Email: <h:outputText value="#{suppliers.email}"></h:outputText></li>
+						<li>Address Line 1: <h:outputText
+								value="#{suppliers.addressLine1}"></h:outputText></li>
+						<li>Address Line 2: <h:outputText
+								value="#{suppliers.addressLine2}"></h:outputText></li>
+						<li>Address Line 3:<h:outputText
+								value="#{suppliers.addressLine3}"></h:outputText></li>
+						<li>Town/City: <h:outputText value="#{suppliers.townCity}"></h:outputText></li>
+						<li>Country: <h:outputText value="#{suppliers.country}"></h:outputText></li>
+						<li>Postcode: <h:outputText value="#{suppliers.postcode}"></h:outputText></li>
+					</ui:repeat>
+				</ul>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
