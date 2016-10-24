@@ -11,12 +11,13 @@
 			<div class="col-4 col-m-4">
 				<h:form class="login">
 					<p>Username</p>
-					<h:inputText></h:inputText>
+					<h:inputText value = "#{login.username}"></h:inputText>
+					<b />
 					<p>Password</p>
-					<h:inputSecret></h:inputSecret>
+					<h:inputSecret value = "#{login.password}"></h:inputSecret>
 					<b />
 					<b />
-					<h:commandButton value = "Login" />
+					<h:commandButton value = "Login" action = "#{login.login()}" />
 				</h:form>
 			</div>
 

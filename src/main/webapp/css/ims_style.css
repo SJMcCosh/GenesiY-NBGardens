@@ -130,6 +130,14 @@ ul.breadcrumb li a {
 	background-color: #62c945;
 }
 
+.login{
+	border: solid;
+	margin-left: 0 auto;
+	width: 300px;
+	text-align: center;
+	background: #d3d3d3;
+}
+
 [class*="col-"] {
     float: left;
 }
@@ -315,8 +323,6 @@ body {
 				background-color:yellow;
 			}
 /* 													END IMS CSS						*/
-
-
 
 
 
