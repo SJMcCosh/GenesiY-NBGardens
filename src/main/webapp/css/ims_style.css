@@ -12,6 +12,12 @@
 	height: 85px;
 }
 
+.navbar{
+	margin: auto 0;
+	margin-left: 0;
+	margin-righ: 0;
+}
+
 ul.breadcrumb {
 	padding: 8px 16px;
 	list-style: none;
