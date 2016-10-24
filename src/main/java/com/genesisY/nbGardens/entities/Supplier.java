@@ -29,13 +29,18 @@ public class Supplier {
 	@Column(name = "emailAddr", nullable = false, length = 200)
 	@Size(min = 7, max = 200)
 	private String emailAddress;
+	
+	@Column(name = "address")
+	@OneToOne
+	@NotNull
+	private Address address;
 
 	/**
 	 * @param supplierName
 	 * @param telephoneNumber
 	 * @param emailAddress
 	 */
-	public Supplier(String supplierName, String telephoneNumber, String emailAddress) {
+	public Supplier(String supplierName, String telephoneNumber, String emailAddress, Address address) {
 		this.supplierName = supplierName;
 		this.telephoneNumber = telephoneNumber;
 		this.emailAddress = emailAddress;
