@@ -12,26 +12,34 @@
 		</div>
 		<div class="empty col-1 col-m-1"></div>
 		<div class="addproduct col-10 col-m-10">
-			<h:outputText>Item Name</h:outputText>
-			<h:inputText>Item Name</h:inputText>
-			<br/><br/>
-			<h:outputText>Price</h:outputText>
-			<h:inputText>£££.pp</h:inputText>
-			<br/><br/>
-			<h:outputText>Description</h:outputText>
-			<h:inputText>Item Description</h:inputText>
-			<br/><br/>
-			<h:outputText>Item Category</h:outputText>
-			<h:inputText>Category ID</h:inputText>
-			<br/><br/>
-			<h:outputText>Item Tags</h:outputText>
-			<h:inputText>Tag ID</h:inputText>
-			<br/><br/>
-			<h:outputText>Initial Stock</h:outputText>
-			<h:inputText>Stock Level</h:inputText>
-			<br/><br/>
-			<h:outputText>Item Supplier</h:outputText>
-			<h:inputText>Supplier ID</h:inputText>
+			<h:form>
+				<p>Item Name</p>
+				<h:inputText required="true" requiredMessage="Item Name"></h:inputText>
+				<br />
+				<br />
+				<p>Price</p>
+				<h:inputText required="true" requiredMessage="£££.pp"></h:inputText>
+				<br />
+				<br />
+				<p>Description</p>
+				<h:inputText required="true" requiredMessage="Item Description"></h:inputText>
+				<br />
+				<br />
+				<p>Item Category</p>
+				<h:inputText required="true" requiredMessage="Category ID"></h:inputText>
+				<br />
+				<br />
+				<p>Item Tags</p>
+				<h:inputText required="true" requiredMessage="Tag ID"></h:inputText>
+				<br />
+				<br />
+				<p>Initial Stock</p>
+				<h:inputText required="true" requiredMessage="Stock Level"></h:inputText>
+				<br />
+				<br />
+				<p>Item Supplier</p>
+				<h:inputText required="true" requiredMessage="Supplier ID"></h:inputText>
+			</h:form>
 		</div>
 		<div class="empty col-1 col-m-1"></div>
 	</ui:define>
