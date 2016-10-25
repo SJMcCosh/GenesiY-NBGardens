@@ -14,10 +14,24 @@ body {
 	border-color: #FFFFFF;
 }
 
+.editBtn {
+	color: white;
+	background-color: #143516;
+}
+
+.editBtn:hover {
+	background-color: #62c945;
+}
+
 #pageContent {
 	text-align: center;
 }
 
-#poAddMenu {
+.poAddMenu {
 	text-align: center;
+}
+
+#poMenuHeader {
+	background-color: black;
+	color: white;
 }
