@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="ISO-8859-1" />
+		<link href="../css/templatestyle.css" rel="stylesheet" type="text/css" />
+		<link href="../css/productStyle.css" rel="stylesheet" type="text/css" />
+		
+		<title>IMS Product Page</title>
+	
+	</head>
+	
+	<body>
+		<div class="header">
+			<div class="logo">
+				<div class="col-3 col-m-3">
+					<a href="#">
+						<img src="../img/nblogo.png" />
+					</a>
+				</div>
+			</div>
+			
+			<div id="navButtons">
+				<div class="col-6 col-m-9">	
+					<div id="dropdownHome">
+						<a href="#"><button class="dropbtn">Home</button></a>
+					</div>
+				
+					<div id="dropdownProducts">
+						<button class="dropbtn">Products</button>
+						<div class="dropdown-content">
+							<a href="products.html">View Products</a> <a
+								href="addProduct.html">Add New Product</a>
+						</div>
+					</div>
+					
+					<div id="dropdownSuppliers">
+						<button class="dropbtn">Suppliers</button>
+						<div class="dropdown-content">
+							<a href="suppliers.html">View Suppliers</a> <a
+								href="addSuppliers.html#">Add New Supplier</a>
+						</div>
+					</div>
+					
+					<div id="dropdownPurchaseOrders">
+						<button class="dropbtn">Purchase Orders</button>
+						<div class="dropdown-content">
+							<a href="#">All Purchase Orders</a> <a href="#">Completed
+								Purchase Orders</a> <a href="#">Approved Purchase Orders</a> <a
+								href="#">Rejected Purchase Orders</a> <a href="#">Create New
+								Purchase Order</a> <a href="#">Pending Purchase Orders</a>
+						</div>
+					</div>
+					
+					<div id="dropdownStats">
+						<a href="#"><button class="dropbtn">Statistics/Trends</button></a>
+					</div>
+					
+					<div id="dropdownStockAlerts">
+						<a href="#"><button class="dropbtn">Stock Alerts</button></a>
+					</div>
+				</div>
+			</div>
+			
+			<ul class="breadcrumb">
+				<div class="col-3 col-m-3">
+					<li><a href="#">Home</a></li>
+				</div>
+			</ul>
+		</div>
+		
+		<div id="pageContent">
+			<div class="col-12 col-m-12">
+			
+				<div class="empty col-3 col-m-12">
+				</div>
+				
+<!-- -------------------Main content of page goes here--------------------------- -->
+
+				<div id="mainContent">
+					<div class="col-6 col-m-12">
+						<h1>IMS Product Page</h1>
+							<div class="col-3 col-m-3">
+								<p>Product Name</p>
+								<input type = text></input>
+							</div>
+							<div class="col-3 col-m-3">
+								<p>Product ID</p>
+								<input type = text></input>
+							</div>
+							<div class="col-3 col-m-3">
+								<p>Price</p>
+								<input type = text></input>
+							</div>
+							<div class="col-3 col-m-3">
+								<p>Stock</p>
+								<input type = text></input>
+							</div>
+					</div>
+				</div>
+
+<!-- ----------------------Add to PO menu goes here------------------------------ -->
+				
+				<div id="poAddMenu">
+					<div class="col-3 col-m-12">
+						<p>Add to Purchase order</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+			
+	
+	</body>
+
+</html>
