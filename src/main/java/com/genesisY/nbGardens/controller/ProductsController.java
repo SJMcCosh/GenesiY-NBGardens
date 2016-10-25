@@ -1,36 +1,30 @@
 package com.genesisY.nbGardens.controller;
 
-import java.io.Serializable;
-
 import javax.enterprise.context.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
-import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.genesisY.nbGardens.entities.Product;
 import com.genesisY.nbGardens.services.ProductService;
-                                
+
 @Named("products")
 @SessionScoped
-public class ProductsController implements Serializable{
+public class ProductsController {
 
 	private Product product;
 	private String price;
 	private String name;
 	private DataModel<Product> dataModel = null;
-	
-	@Inject
+
 	private ProductService prodService;
-	
-	public String getAllProducts()
-	{
-		
-			
+
+	public String getAllProducts() {
+
 		dataModel = new ListDataModel<Product>(prodService.getAllProducts());
 		return "newpurchaseorder";
 	}
-	
+
 	public DataModel<Product> getDataModel() {
 		return dataModel;
 	}
@@ -56,13 +50,13 @@ public class ProductsController implements Serializable{
 	}
 
 	@SuppressWarnings("unchecked")
-	public String view(){	
+	public String view() {
 
 		return "productpage";
 	}
-	
-	public String view(long id){	
-	
+
+	public String view(long id) {
+
 		return "productpage";
 	}
 
@@ -73,6 +67,5 @@ public class ProductsController implements Serializable{
 	public void setProduct(Product product) {
 		this.product = product;
 	}
-	
-	
+
 }
