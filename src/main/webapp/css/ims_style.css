@@ -1,6 +1,6 @@
 @CHARSET "ISO-8859-1";
 
-*{
+* {
 	box-sizing: border-box;
 }
 
@@ -12,7 +12,7 @@
 	height: 85px;
 }
 
-.navbar{
+.navbar {
 	margin: auto 0;
 	margin-left: 0;
 	margin-righ: 0;
@@ -92,7 +92,9 @@ ul.breadcrumb li a {
 	display: block;
 }
 
-.dropdown-content a:hover {background-color: #62c945;}
+.dropdown-content a:hover {
+	background-color: #62c945;
+}
 
 #dropdownProducts:hover .dropdown-content {
 	display: block;
@@ -140,7 +142,7 @@ ul.breadcrumb li a {
 	display: block;
 }
 
-.login{
+.login {
 	border: solid;
 	margin-left: 0 auto;
 	width: 300px;
@@ -157,50 +159,94 @@ ul.breadcrumb li a {
 }
 
 [class*="col-"] {
-    float: left;
+	float: left;
 }
 /* For mobile phones: */
 [class*="col-"] {
-    width: 100%;
+	width: 100%;
 }
+
 @media only screen and (min-width: 600px) {
 	/* For tablets: */
-	.col-m-1 {width: 8.33%;}
-	.col-m-2 {width: 16.66%;}
-	.col-m-3 {width: 25%;}
-	.col-m-4 {width: 33.33%;}
-	.col-m-5 {width: 41.66%;}
-	.col-m-6 {width: 50%;}
-	.col-m-7 {width: 58.33%;}
-	.col-m-8 {width: 66.66%;}
-	.col-m-9 {width: 75%;}
-	.col-m-10 {width: 83.33%;}
-	.col-m-11 {width: 91.66%;}
-	.col-m-12 {width: 100%;}
+	.col-m-1 {
+		width: 8.33%;
+	}
+	.col-m-2 {
+		width: 16.66%;
+	}
+	.col-m-3 {
+		width: 25%;
+	}
+	.col-m-4 {
+		width: 33.33%;
+	}
+	.col-m-5 {
+		width: 41.66%;
+	}
+	.col-m-6 {
+		width: 50%;
+	}
+	.col-m-7 {
+		width: 58.33%;
+	}
+	.col-m-8 {
+		width: 66.66%;
+	}
+	.col-m-9 {
+		width: 75%;
+	}
+	.col-m-10 {
+		width: 83.33%;
+	}
+	.col-m-11 {
+		width: 91.66%;
+	}
+	.col-m-12 {
+		width: 100%;
+	}
 }
+
 @media only screen and (min-width: 768px) {
-    /* For desktop: */
-	.col-1 {width: 8.33%;}
-	.col-2 {width: 16.66%;}
-	.col-3 {width: 25%;}
-	.col-4 {width: 33.33%;}
-	.col-5 {width: 41.66%;}
-	.col-6 {width: 50%;}
-	.col-7 {width: 58.33%;}
-	.col-8 {width: 66.66%;}
-	.col-9 {width: 75%;}
-	.col-10 {width: 83.33%;}
-	.col-11 {width: 91.66%;}
-	.col-12 {width: 100%;}
+	/* For desktop: */
+	.col-1 {
+		width: 8.33%;
+	}
+	.col-2 {
+		width: 16.66%;
+	}
+	.col-3 {
+		width: 25%;
+	}
+	.col-4 {
+		width: 33.33%;
+	}
+	.col-5 {
+		width: 41.66%;
+	}
+	.col-6 {
+		width: 50%;
+	}
+	.col-7 {
+		width: 58.33%;
+	}
+	.col-8 {
+		width: 66.66%;
+	}
+	.col-9 {
+		width: 75%;
+	}
+	.col-10 {
+		width: 83.33%;
+	}
+	.col-11 {
+		width: 91.66%;
+	}
+	.col-12 {
+		width: 100%;
+	}
 }
 
-
-
-
-
-
-
-*{
+* {
 	box-sizing: border-box;
 }
 
@@ -212,142 +258,133 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+/* 													IMS CSS						*/
+#pageTitle {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	color: #143516;
+}
 
-/* 													IMS CSS						*/ 
-			#pageTitle {
-				width: 100%;
-				margin: 0 auto;
-				text-align: center;
-				color: #143516;
-			}
-			
-			#box_products_lists {
-				
-				height: 300px;
-				width: 100%;
-				text-align: center;
-				right:0; 
-				margin:auto;  
-			}
-			
-			.productBox {
-				width: 100%;
-				height: 300px;
-				overflow: scroll;
-				background-color: blue;
-			}
-			
-			@media only screen and (min-width: 600px) {
-				.productBox {
-					width: 40%;
-					height: 300px;
-					overflow: scroll;
-					background-color: #008040;
-				}
-			}
-			
-			.empty {
-				border: solid white;
-			}
-			
-			.empty1 {
-				border: solid white;
-				float: right;
-			}
-			
-			#tab_container{ 
-				position: relative;
-				left:0;
-				width: 100%;
-			}
-			
-			section {
-				position: relative;
-				width: 80%;
-				margin: 0 auto;
-				color: white;
-			}
-			
-			section:after {
-				content: 'Please choose a saved Purchase Order';
-				position: absolute;
-				left: 0;
-				top: 100%;
-				width: 100%;
-				background-color: #5E6B7F;
-			}
-			
-			button {
-				cursor: pointer;
-				width: 100%;
-				display: inline-block;
-				background-color: #008040;
-				color: white;
-				text-align: center;
-				border: none;
-			}
-			
-			div:focus button, button:focus {
-				background-color: #8DA1BF;
-			}
-			
-			button:focus + p, div:focus P {
-				display: block;
-				position: absolute;
-				background-color: #8DA1BF;
-				height: 3000%;
-				width: 100%;
-				left: 0;
-				top: 0px;
-				text-align: center;
-			}
-			
-			p {
-				display: none;
-				font-size: 2em;
-			}
-			
-			div {
-				display: inline-block;
-			}
-			
-			div:focus {
-				outline: none;
-			}
-			
-			.p {
-				margin-top: 300px;
-				text-align: center;
-				display: block;
-				font-size: 1em;
-			}
-			
-			
-			
-			.columns_dropdowns{
-				bottom:0;
-				right:0;
-				width:150px;
-				height:50px;
-				background-color:yellow;
-				
-			}
-			
-			.columns_add_button{
-				bottom:0;
-				right:0;
-				width:150px;
-				height:50px;
-				background-color:yellow;
-			}
+#box_products_lists {
+	height: 300px;
+	width: 100%;
+	text-align: center;
+	right: 0;
+	margin: auto;
+}
+
+.productBox {
+	width: 100%;
+	height: 300px;
+	overflow: scroll;
+	background-color: blue;
+}
+
+@media only screen and (min-width: 600px) {
+	.productBox {
+		width: 40%;
+		height: 300px;
+		overflow: scroll;
+		background-color: #008040;
+	}
+}
+
+.empty {
+	border: solid white;
+}
+
+.addproduct{
+	border: solid;
+	text-align: center;
+	background: #d3d3d3;
+}
+
+.empty1 {
+	border: solid white;
+	float: right;
+}
+
+#tab_container {
+	position: relative;
+	left: 0;
+	width: 100%;
+}
+
+section {
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+	color: white;
+}
+
+section:after {
+	content: 'Please choose a saved Purchase Order';
+	position: absolute;
+	left: 0;
+	top: 100%;
+	width: 100%;
+	background-color: #5E6B7F;
+}
+
+button {
+	cursor: pointer;
+	width: 100%;
+	display: inline-block;
+	background-color: #008040;
+	color: white;
+	text-align: center;
+	border: none;
+}
+
+div:focus button, button:focus {
+	background-color: #8DA1BF;
+}
+
+button:focus+p, div:focus P {
+	display: block;
+	position: absolute;
+	background-color: #8DA1BF;
+	height: 3000%;
+	width: 100%;
+	left: 0;
+	top: 0px;
+	text-align: center;
+}
+
+p {
+	display: none;
+	font-size: 2em;
+}
+
+div {
+	display: inline-block;
+}
+
+div:focus {
+	outline: none;
+}
+
+.p {
+	margin-top: 300px;
+	text-align: center;
+	display: block;
+	font-size: 1em;
+}
+
+.columns_dropdowns {
+	bottom: 0;
+	right: 0;
+	width: 150px;
+	height: 50px;
+	background-color: yellow;
+}
+
+.columns_add_button {
+	bottom: 0;
+	right: 0;
+	width: 150px;
+	height: 50px;
+	background-color: yellow;
+}
 /* 													END IMS CSS						*/
-
-
-
-
-
-
-
-
-
-
