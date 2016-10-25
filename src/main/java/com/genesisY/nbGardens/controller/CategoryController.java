@@ -14,13 +14,14 @@ import com.genesisY.nbGardensCatalogue.entityManagers.CategoryManager;
 
 @Named("category")
 @SessionScoped
-public class CategoryController implements Serializable{
-	
+public class CategoryController implements Serializable {
+
 	private DataModel<Category> catModel;
-	
-	@Inject 
+	@Inject
 	private CategoryService catService;
-	
+	@Inject
+	private CategoryService catManager;
+
 	public DataModel<Category> getCatModel() {
 		return catModel;
 	}
@@ -29,10 +30,9 @@ public class CategoryController implements Serializable{
 		this.catModel = catModel;
 	}
 
-	public DataModel<Category> getAllCategories(){
-		catModel = new ListDataModel<>(catService.getAllCategories());
-		return catModel;
+	public String getAllCategories() {
+		catModel = new ListDataModel<>(catManager.getAllCategories());
+		return "department";
 	}
-	
 
 }

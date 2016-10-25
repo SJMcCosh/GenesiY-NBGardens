@@ -2,11 +2,13 @@ package com.genesisY.nbGardensCatalogue.entities;
 
 import java.util.List;
 
+import javax.jws.Oneway;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -20,7 +22,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "products")
-public class Product {
+public class Product implements Comparable<Product> {
 
 	@Id
 	@Column(name = "productID")
@@ -57,6 +59,11 @@ public class Product {
 	@NotNull
 	private double price;
 	
+	@OneToMany
+	private List<Category> categories;
+	
+	@OneToMany
+	private List<Tag> tagList;
 
 	public Product() {
 
@@ -136,5 +143,29 @@ public class Product {
 	public void setTags(List<Tag> tags){
 		this.tags = tags;
 	}
+
+	public List<Category> getCategories() {
+		return categories;
+	}
+
+	public void setCategories(List<Category> categories) {
+		this.categories = categories;
+	}
+
+	public List<Tag> getTagList() {
+		return tagList;
+	}
+
+	public void setTagList(List<Tag> tagList) {
+		this.tagList = tagList;
+	}
+
+	@Override
+	public int compareTo(Product o) {
+		
+		return ((Double)this.getPrice()).compareTo(o.getPrice());
+	}
+	
+	
 
 }

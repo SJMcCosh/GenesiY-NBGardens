@@ -1,6 +1,8 @@
 package com.genesisY.nbGardens.controller;
 
 import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.model.DataModel;
@@ -48,9 +50,13 @@ public class ProductsController implements Serializable {
 	@SuppressWarnings("unchecked")
 	public String allProducts() {
 		String category = "all";
-		dataModel = new ListDataModel(
+		dataModel = new ListDataModel<Product>(
 				productService.getAllProducts(category));
-		tagModel = new ListDataModel(tagService.getAllTags());
+		tagModel = new ListDataModel<Tag>(tagService.getAllTags());
+		List<Product> dataModelAsList = (List<Product>) dataModel;
+		
+		Collections.sort(dataModelAsList);
+		
 		return "subcategory";
 	}
 
