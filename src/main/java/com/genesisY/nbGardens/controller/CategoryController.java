@@ -18,7 +18,6 @@ public class CategoryController implements Serializable{
 	
 	private DataModel<Category> catModel;
 	
-	//@Inject private CategoryManager catManager;
 	@Inject 
 	private CategoryService catService;
 	
@@ -29,16 +28,8 @@ public class CategoryController implements Serializable{
 	public void setCatModel(DataModel<Category> catModel) {
 		this.catModel = catModel;
 	}
-	
-	
-//	public String getAllCategories(){
-//		System.out.println("---------------------------------	Controller");
-//		catModel = new ListDataModel<>(catManager.getAllCategories());
-//		return "department";
-//	}
-//	
+
 	public DataModel<Category> getAllCategories(){
-		System.out.println("---------------------------------	Controller");
 		catModel = new ListDataModel<>(catService.getAllCategories());
 		return catModel;
 	}

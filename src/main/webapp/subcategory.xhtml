@@ -20,15 +20,17 @@
 
 
 
-
+			<h:form>
 			<div class="col-9 col-m-6">
-				<select>
-					<option value="Related">Related</option>
-					<option value="Most Popular">Most Popular</option>
-					<option value="Price Low to High">Price Low to High</option>
-					<option value="Price High to Low">Price High to Low</option>
-				</select>
+				<h:selectOneMenu>
+					<f:selectItem itemValue="Price Low to High"/>
+					<f:selectItem itemLabel="Price High to Low"/>
+				</h:selectOneMenu>
 			</div>
+			<h:commandButton value="change" action="#{sort.sortByLowToHigh}"/>
+			
+			
+			</h:form>
 
 			<!-- This is the product grid -->
 

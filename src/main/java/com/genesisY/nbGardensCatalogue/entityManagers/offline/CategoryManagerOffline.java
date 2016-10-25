@@ -41,8 +41,6 @@ public class CategoryManagerOffline implements CategoryManager {
 
 	@Override
 	public List<Category> getAllCategories() {
-		// TODO Auto-generated method stub
-		System.out.println("Fourth layer");
 		return initialData.getCategoryList();
 	}
 
