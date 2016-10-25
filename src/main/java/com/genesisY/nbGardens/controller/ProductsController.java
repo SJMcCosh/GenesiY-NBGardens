@@ -48,9 +48,10 @@ public class ProductsController implements Serializable {
 	@SuppressWarnings("unchecked")
 	public String allProducts() {
 		String category = "all";
-		dataModel = new ListDataModel(
+		dataModel = new ListDataModel<Product>(
 				productService.getAllProducts(category));
-		tagModel = new ListDataModel(tagService.getAllTags());
+		tagModel = new ListDataModel<Tag>(tagService.getAllTags());
+		
 		return "subcategory";
 	}
 

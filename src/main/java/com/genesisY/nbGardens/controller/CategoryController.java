@@ -8,6 +8,7 @@ import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.genesisY.nbGardens.services.CategoryService;
 import com.genesisY.nbGardensCatalogue.entities.Category;
 import com.genesisY.nbGardensCatalogue.entityManagers.CategoryManager;
 
@@ -17,7 +18,7 @@ public class CategoryController implements Serializable{
 	
 	private DataModel<Category> catModel;
 	
-	@Inject private CategoryManager catManager;
+	@Inject private CategoryService catManager;
 
 	public DataModel<Category> getCatModel() {
 		return catModel;
@@ -29,7 +30,7 @@ public class CategoryController implements Serializable{
 	
 	
 	public String getAllCategories(){
-		catModel = new ListDataModel<>(catManager.getAllCategories().subList(0, catManager.getAllCategories().size()));
+		catModel = new ListDataModel<>(catManager.getAllCategories());
 		return "department";
 	}
 	

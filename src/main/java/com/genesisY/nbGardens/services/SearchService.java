@@ -23,7 +23,6 @@ public class SearchService {
 				ArrayList<Product> tempList = new ArrayList<Product>();
 				for(Product p : productManager.getProducts()){
 					if(p.getName().toLowerCase().contains(term.toLowerCase())){
-						System.out.println(">>>>>>>>>>>>>>>>>> check is valid");
 						tempList.add(p);
 					}
 				}

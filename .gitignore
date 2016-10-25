@@ -3,7 +3,7 @@
 .classpath
 .project
 target/
-bin/
+bin/n
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
