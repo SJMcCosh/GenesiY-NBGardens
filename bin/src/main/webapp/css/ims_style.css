@@ -12,6 +12,12 @@
 	height: 85px;
 }
 
+.navbar{
+	margin: auto 0;
+	margin-left: 0;
+	margin-righ: 0;
+}
+
 ul.breadcrumb {
 	padding: 8px 16px;
 	list-style: none;
@@ -124,6 +130,32 @@ ul.breadcrumb li a {
 	background-color: #62c945;
 }
 
+.maincontent {
+	background-color: #ffffff;
+}
+
+.maincontent::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.login{
+	border: solid;
+	margin-left: 0 auto;
+	width: 300px;
+	text-align: center;
+	background: #d3d3d3;
+}
+
+.loginform {
+	border: solid;
+	background-color: #d6d6b1;
+	width: 275px;
+	margin: 10px auto 0;
+	height: 470px;
+}
+
 [class*="col-"] {
     float: left;
 }
@@ -210,7 +242,7 @@ body {
 					width: 40%;
 					height: 300px;
 					overflow: scroll;
-					background-color: red;
+					background-color: #008040;
 				}
 			}
 			
@@ -249,7 +281,7 @@ body {
 				cursor: pointer;
 				width: 100%;
 				display: inline-block;
-				background-color: #5E6B7F;
+				background-color: #008040;
 				color: white;
 				text-align: center;
 				border: none;
@@ -309,8 +341,6 @@ body {
 				background-color:yellow;
 			}
 /* 													END IMS CSS						*/
-
-
 
 
 

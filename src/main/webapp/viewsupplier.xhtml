@@ -14,22 +14,27 @@
 			<div id="viewsuppliers">
 				<p>All products list</p>
 				<ul>
-					<ui:repeat onload="#{suppliers.getSuppliers}" var="suppliers"
-						value="#{suppliers.dataModel}">
-						<li>ID: <h:outputText value="#{suppliers.id}"></h:outputText></li>
-						<li>Name: <h:outputText value="#{suppliers.name}"></h:outputText></li>
+					<ui:repeat var="suppliers" value="#{suppliers.dataModel}">
+						<li>ID: <h:outputText
+								value="#{suppliers.dataModel.getRowData().supplierID}"></h:outputText></li>
+						<li>Name: <h:outputText
+								value="#{suppliers.dataModel.getRowData().supplierName}"></h:outputText></li>
 						<li>Phone Number: <h:outputText
-								value="#{suppliers.phoneNumber}"></h:outputText></li>
-						<li>Email: <h:outputText value="#{suppliers.email}"></h:outputText></li>
+								value="#{suppliers.dataModel.getRowData().telephoneNumber}"></h:outputText></li>
+						<li>Email: <h:outputText
+								value="#{suppliers.dataModel.getRowData().emailAddress}"></h:outputText></li>
 						<li>Address Line 1: <h:outputText
-								value="#{suppliers.addressLine1}"></h:outputText></li>
+								value="#{suppliers.dataModel.getRowData().getAddress().addressLine1}"></h:outputText></li>
 						<li>Address Line 2: <h:outputText
-								value="#{suppliers.addressLine2}"></h:outputText></li>
+								value="#{suppliers.dataModel.getRowData().getAddress().addressLine2}"></h:outputText></li>
 						<li>Address Line 3:<h:outputText
-								value="#{suppliers.addressLine3}"></h:outputText></li>
-						<li>Town/City: <h:outputText value="#{suppliers.townCity}"></h:outputText></li>
-						<li>Country: <h:outputText value="#{suppliers.country}"></h:outputText></li>
-						<li>Postcode: <h:outputText value="#{suppliers.postcode}"></h:outputText></li>
+								value="#{suppliers.dataModel.getRowData().getAddress().addressLine3}"></h:outputText></li>
+						<li>Town/City: <h:outputText
+								value="#{suppliers.dataModel.getRowData().getAddress().townCity}"></h:outputText></li>
+						<li>Country: <h:outputText
+								value="#{suppliers.dataModel.getRowData().getAddress().country}"></h:outputText></li>
+						<li>Postcode: <h:outputText
+								value="#{suppliers.dataModel.getRowData().getAddress().postcode}"></h:outputText></li>
 					</ui:repeat>
 				</ul>
 			</div>

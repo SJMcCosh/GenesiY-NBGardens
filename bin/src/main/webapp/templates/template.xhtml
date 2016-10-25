@@ -1,72 +1,68 @@
-
-
-
 <html lang="en" xmlns="https://www.w3.org/1999/xhtml"
- xmlns:f="http://java.sun.com/jsf/core"
- xmlns:h="http://java.sun.com/jsf/html"
- xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-	
-		<meta charset="ISO-8859-1"/>
-		
-		<!-- <link href="/css/templatestyle.css" rel="stylesheet" type="text/css" />
+
+	<meta charset="ISO-8859-1" />
+
+	<!-- <link href="/css/templatestyle.css" rel="stylesheet" type="text/css" />
 		<link href="/css/homeStyle.css" rel="stylesheet" type="text/css" />-->
-		<link rel="stylesheet" href="css/ims_style.css" type="text/css" />
-		
-		<title>IMS Hopepage</title>
-		
-	</h:head>
-	
-	<body>
-	
-		<div id="dropdownProducts">
-			<button class="dropbtn">Products</button>
-			<div class="dropdown-content">
-				<a href="#">View Products</a>
-				<a href="#">Add New Product</a>
+	<link rel="stylesheet" href="css/ims_style.css" type="text/css" />
+
+	<title>Inventory Management System</title>
+
+</h:head>
+
+<body>
+	<div class="header col-12 col-m-12">
+		<a href="index.xhtml"><img src="img/nblogo.png" /></a>
+		<div class="navbar">
+			<div id="dropdownHome">
+				<a href="#"><button class="dropbtn">Home</button></a>
+			</div>
+			<div id="dropdownProducts">
+				<button class="dropbtn">Products</button>
+				<div class="dropdown-content">
+					<a href="#">View Products</a> <a href="#">Add New Product</a>
+				</div>
+			</div>
+
+			<div id="dropdownSuppliers">
+				<button class="dropbtn">Suppliers</button>
+				<div class="dropdown-content">
+					<h:form>
+						<h:commandLink value="View Suppliers"
+							action="#{suppliers.viewSuppliers()}" />
+						<h:commandLink value="Add New Supplier" action="loginpage" />
+					</h:form>
+				</div>
+			</div>
+
+			<div id="dropdownPurchaseOrders">
+				<button class="dropbtn">Purchase Orders</button>
+				<div class="dropdown-content">
+					<a href="#">All Purchase Orders</a> <a href="#">Completed
+						Purchase Orders</a> <a href="#">Approved Purchase Orders</a> <a
+						href="#">Rejected Purchase Orders</a> <a href="#">Create New
+						Purchase Order</a> <a href="#">Pending Purchase Orders</a>
+				</div>
+			</div>
+
+			<div id="dropdownStats">
+				<a href="#"><button class="dropbtn">Stats/Trends</button></a>
+			</div>
+
+			<div id="dropdownStockAlerts">
+				<a href="#"><button class="dropbtn">Stock Alerts</button></a>
 			</div>
 		</div>
-		
-		<div id="dropdownSuppliers">
-			<button class="dropbtn">Suppliers</button>
-			<div class="dropdown-content">
-				<a href="#">View Suppliers</a>
-				<a href="#">Add New Supplier</a>
-			</div>
-		</div>
-		
-		<div id="dropdownPurchaseOrders">
-			<button class="dropbtn">Purchase Orders</button>
-			<div class="dropdown-content">
-				<a href="#">All Purchase Orders</a>
-				<a href="#">Completed Purchase Orders</a>
-				<a href="#">Approved Purchase Orders</a>
-				<a href="#">Rejected Purchase Orders</a>
-				<a href="#">Create New Purchase Order</a>
-				<a href="#">Pending Purchase Orders</a>
-			</div>
-		</div>
-		
-		<div id="dropdownStats">
-			<a href="#"><button class="dropbtn">Stats/Trends</button></a>
-		</div>
-		
-		<div id="dropdownStockAlerts">
-			<a href="#"><button class="dropbtn">Stock Alerts</button></a>
-		</div>
-		
-		<div id="dropdownHome">
-			<a href="#"><button class="dropbtn">Home</button></a>
-		</div>
-		
-		
-		<ui:insert name="content">
-		  
-		</ui:insert>
-		
-		
-		
-						
-	</body>
-	
+	</div>
+
+	<ui:insert name="content">
+
+	</ui:insert>
+
+</body>
+
 </html>
