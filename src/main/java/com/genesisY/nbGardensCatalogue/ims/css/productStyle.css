@@ -1,0 +1,23 @@
+@CHARSET "ISO-8859-1"
+
+*{
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.empty {
+	border-style: solid;
+	border-color: #FFFFFF;
+}
+
+#pageContent {
+	text-align: center;
+}
+
+#poAddMenu {
+	text-align: center;
+}
