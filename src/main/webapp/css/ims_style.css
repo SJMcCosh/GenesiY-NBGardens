@@ -142,13 +142,6 @@ ul.breadcrumb li a {
 	display: block;
 }
 
-.login {
-	border: solid;
-	margin-left: 0 auto;
-	width: 300px;
-	text-align: center;
-	background: #d3d3d3;
-}
 
 .loginform {
 	border: solid;
@@ -156,6 +149,19 @@ ul.breadcrumb li a {
 	width: 275px;
 	margin: 10px auto 0;
 	height: 470px;
+}
+.supplierall{
+	width:100%;
+	margin: 10px auto;
+}
+
+.supplierlist{
+	width: 350px;
+	border-style: solid;
+	border-width: thin;
+	text-align: centre;
+	list-style: none;
+	background-color: #d3d3d3;
 }
 
 [class*="col-"] {
@@ -327,6 +333,8 @@ section:after {
 	background-color: #5E6B7F;
 }
 
+<<<<<<< HEAD
+=======
 button {
 	cursor: pointer;
 	width: 100%;
@@ -388,3 +396,4 @@ div:focus {
 	background-color: yellow;
 }
 /* 													END IMS CSS						*/
+>>>>>>> 41fef9fe67f7d77cc76c1b3ab304cd2ddb7885bc
