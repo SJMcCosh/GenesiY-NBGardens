@@ -49,7 +49,6 @@ public class Address {
 
 	@OneToMany
 	@JoinColumn(name = "customer_fk", nullable = false)
-	@NotNull
 	private Customer customer;
 
 	public Address() {

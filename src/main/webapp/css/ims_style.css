@@ -140,20 +140,25 @@ ul.breadcrumb li a {
 	display: block;
 }
 
-.login{
-	border: solid;
-	margin-left: 0 auto;
-	width: 300px;
-	text-align: center;
-	background: #d3d3d3;
-}
-
 .loginform {
 	border: solid;
 	background-color: #d6d6b1;
 	width: 275px;
 	margin: 10px auto 0;
 	height: 470px;
+}
+.supplierall{
+	width:100%;
+}
+
+.supplierlist{
+	width: 350px;
+	border-style: solid;
+	border-width: thin;
+	text-align: centre;
+	list-style: none;
+	background-color: #d3d3d3;
+	margin:10px auto;
 }
 
 [class*="col-"] {
@@ -341,13 +346,5 @@ body {
 				background-color:yellow;
 			}
 /* 													END IMS CSS						*/
-
-
-
-
-
-
-
-
 
 
