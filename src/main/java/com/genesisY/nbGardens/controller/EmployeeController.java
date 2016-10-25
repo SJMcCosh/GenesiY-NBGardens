@@ -13,7 +13,6 @@ import com.genesisY.nbGardens.entities.Employee;
 @SessionScoped
 public class EmployeeController implements Serializable {
 
-	@Inject
 	private Employee employee;
 
 	public Employee getEmployee() {

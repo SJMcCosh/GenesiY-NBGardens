@@ -15,11 +15,18 @@ public class SupplierController {
 
 	@Inject 
 	private SupplierService supplierService; 
-	private DataModel<Supplier> datamodel; 
+	private DataModel<Supplier> dataModel; 
 	
+	public DataModel<Supplier> getDataModel() {
+		return dataModel;
+	}
+
+	public void setDataModel(DataModel<Supplier> dataModel) {
+		this.dataModel = dataModel;
+	}
+
 	public String viewSuppliers(){
-		System.out.println(">>>>>>>>>");
-		datamodel = new ListDataModel<Supplier>(supplierService.viewSuppliers());
+		dataModel = new ListDataModel<Supplier>(supplierService.viewSuppliers());
 		return "viewsupplier"; 	
 	}
 }
