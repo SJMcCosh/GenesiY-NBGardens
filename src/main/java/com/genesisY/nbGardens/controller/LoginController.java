@@ -1,7 +1,6 @@
 package com.genesisY.nbGardens.controller;
 
 import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.genesisY.nbGardens.services.LoginService;
@@ -10,11 +9,8 @@ import com.genesisY.nbGardens.services.LoginService;
 @RequestScoped
 public class LoginController {
 
-	@Inject
 	private LoginService passcheck;
-	@Inject
 	private UserCredentials userCredentials;
-	@Inject
 	private EmployeeController employeeController;
 	private String username = "";
 	private String password = "";
@@ -37,7 +33,7 @@ public class LoginController {
 	}
 
 	public String login() {
-		
+
 		if (username.equals("")) {
 			error = "Please enter a username";
 			password = "";

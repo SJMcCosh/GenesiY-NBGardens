@@ -1,12 +1,9 @@
 package com.genesisY.nbGardens.controller;
 
-import java.io.Serializable;
-
 import javax.enterprise.context.SessionScoped;
 
-@SuppressWarnings("serial")
 @SessionScoped
-public class UserCredentials implements Serializable {
+public class UserCredentials {
 	
 	private String username;
 	private boolean loggedin;

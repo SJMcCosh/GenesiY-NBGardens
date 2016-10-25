@@ -1,25 +1,20 @@
 package com.genesisY.nbGardens.controller;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.enterprise.context.SessionScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.genesisY.nbGardens.entities.Product;
 import com.genesisY.nbGardens.entities.Tag;
 import com.genesisY.nbGardens.entityManagers.ProductManager;
 
-@SuppressWarnings("serial")
 @Named("search")
 @SessionScoped
-public class SearchController implements Serializable{
+public class SearchController {
 
-	@Inject
 	private ProductManager pm;
-	
-	
+
 	private Product product;
 	private String term;
 
@@ -38,24 +33,22 @@ public class SearchController implements Serializable{
 	public void setProduct(Product product) {
 		this.product = product;
 	}
-	
+
 	public String search() {
 		return "index";
 	}
-	
-	public Product searchProduct(String term){
-		
-		
-		for (Product p : pm.getProducts()){
+
+	public Product searchProduct(String term) {
+
+		for (Product p : pm.getProducts()) {
 			ArrayList<Tag> tags = (ArrayList<Tag>) p.getTags();
-			for(Tag t : tags){
-				if (term.equals(t)){
+			for (Tag t : tags) {
+				if (term.equals(t)) {
 					return p;
 				}
 			}
 		}
 		return null;
 	}
-	
-	
+
 }
