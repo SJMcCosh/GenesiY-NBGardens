@@ -7,6 +7,13 @@
 	margin:0 auto;
 }
 
+.login{
+	border: solid;
+	margin: 0 auto;
+	width: 300px;
+	text-align: center;
+}
+
 	#department_page_header{
 		
 	}
