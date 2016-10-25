@@ -29,7 +29,7 @@ public class ImsInitialData {
 		Supplier supplier1 = new Supplier("Gnomes4U", "05853123673", "gnomes4u@gnomes4u.com", address1);
 		Supplier supplier2 = new Supplier("Gnomeo's Gnomes", "12354234723", "gnomeo@gnomeosgnomes.com", address2);
 		Supplier supplier3 = new Supplier("Gnome Adventures", "34252824665", "gnomes@gnomeadventures.com", address3);
-		Employee employee1 = new Employee("Al Stock", "Password1");
+		Employee employee1 = new Employee("AlStock", "Password1");
 		prodList.add(product1);
 		prodList.add(product2);
 		supplierList.add(supplier1);

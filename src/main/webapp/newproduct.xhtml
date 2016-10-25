@@ -3,44 +3,46 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/template.xhtml">
-	<meta charset="ISO-8859-1" title="IMS" />
-	<ui:define name="content">
-		<div id="pageTitle">
-			<div class="col-12 col-m-12">
-				<h1>Add new Product to IMS.</h1>
+	<meta charset="ISO-8859-1" title="New Product" />
+	<ui:define name="maincontent">
+		<article class="wholebody">
+			<div id="pageTitle">
+				<div class="col-12 col-m-12">
+					<h1>Add new Product to IMS.</h1>
+				</div>
 			</div>
-		</div>
-		<div class="empty col-1 col-m-1"></div>
-		<div class="addproduct col-10 col-m-10">
-			<h:form>
-				<p>Item Name</p>
-				<h:inputText required="true" requiredMessage="Item Name"></h:inputText>
-				<br />
-				<br />
-				<p>Price</p>
-				<h:inputText required="true" requiredMessage="£££.pp"></h:inputText>
-				<br />
-				<br />
-				<p>Description</p>
-				<h:inputText required="true" requiredMessage="Item Description"></h:inputText>
-				<br />
-				<br />
-				<p>Item Category</p>
-				<h:inputText required="true" requiredMessage="Category ID"></h:inputText>
-				<br />
-				<br />
-				<p>Item Tags</p>
-				<h:inputText required="true" requiredMessage="Tag ID"></h:inputText>
-				<br />
-				<br />
-				<p>Initial Stock</p>
-				<h:inputText required="true" requiredMessage="Stock Level"></h:inputText>
-				<br />
-				<br />
-				<p>Item Supplier</p>
-				<h:inputText required="true" requiredMessage="Supplier ID"></h:inputText>
-			</h:form>
-		</div>
-		<div class="empty col-1 col-m-1"></div>
+			<div class="empty col-1 col-m-1"></div>
+			<div class="addproduct col-10 col-m-10">
+				<h:form>
+					<p>Item Name</p>
+					<h:inputText value="#{login.username}" required="true" requiredMessage="Item Name"></h:inputText>
+					<br />
+					<br />
+					<p>Price</p>
+					<h:inputText value="#{login.username}" required="true" requiredMessage="£££.pp"></h:inputText>
+					<br />
+					<br />
+					<p>Description</p>
+					<h:inputText value="#{login.username}" required="true" requiredMessage="Item Description"></h:inputText>
+					<br />
+					<br />
+					<p>Item Category</p>
+					<h:inputText value="#{login.username}" required="true" requiredMessage="Category ID"></h:inputText>
+					<br />
+					<br />
+					<p>Item Tags</p>
+					<h:inputText value="#{login.username}" required="true" requiredMessage="Tag ID"></h:inputText>
+					<br />
+					<br />
+					<p>Initial Stock</p>
+					<h:inputText value="#{login.username}" required="true" requiredMessage="Stock Level"></h:inputText>
+					<br />
+					<br />
+					<p>Item Supplier</p>
+					<h:inputText value="#{login.username}" required="true" requiredMessage="Supplier ID"></h:inputText>
+				</h:form>
+			</div>
+			<div class="empty col-1 col-m-1"></div>
+		</article>
 	</ui:define>
 </ui:composition>
