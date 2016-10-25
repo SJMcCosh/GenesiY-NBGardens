@@ -24,9 +24,17 @@ public class SupplierController implements Serializable {
 	
 	public String viewSuppliers(){
 		System.out.println(">>>>>>>>>");
-		datamodel = new ListDataModel<Supplier>(supplierService.viewSuppliers());
+		setDatamodel(new ListDataModel<Supplier>(supplierService.viewSuppliers()));
 		return "viewsupplier"; 
 		
+	}
+
+	public DataModel<Supplier> getDatamodel() {
+		return datamodel;
+	}
+
+	public void setDatamodel(DataModel<Supplier> datamodel) {
+		this.datamodel = datamodel;
 	}
 	
 	
