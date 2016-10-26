@@ -23,5 +23,20 @@ public class ProductService {
 		}
 
 	}
+	
+	public Product getProductByName(String name) {
+		try {
+			for (Product a:productInt.getProducts())
+			{
+				if (name.equals(a.getName()))
+				{
+					return a;
+				}
+			}
+		} catch (NullPointerException npr) {
+			return null;
+		}
+		return null;
+	}
 
 }

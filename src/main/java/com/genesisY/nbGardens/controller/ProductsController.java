@@ -29,6 +29,18 @@ public class ProductsController implements Serializable {
 		dataModel = new ListDataModel<Product>(prodService.getAllProducts());
 		return "newpurchaseorder";
 	}
+	
+	public String viewProduct(Product p){ 
+		product = prodService.getProductByName(p.getName()); 
+		System.out.println(">>>>>>>>>>>>>>>>>>> Product Name = " +product.getName()); 
+		return "product"; 
+	} 
+	
+	public void onLoad()
+	{
+		dataModel = new ListDataModel<Product>(prodService.getAllProducts());
+	}
+
 
 	public DataModel<Product> getDataModel() {
 		return dataModel;

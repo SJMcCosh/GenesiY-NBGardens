@@ -17,7 +17,7 @@
 			<div class="productMainContent">
 				<h:form>
 					<li>Product</li>
-					<li><h:inputText value="product name"></h:inputText></li>
+					<li><h:inputText value="#{products.product.name}"></h:inputText></li>
 					<li><h:commandButton value="Edit" onclick="alert('Product Name Changed!');" /></li>
 				</h:form>
 			</div>
@@ -33,7 +33,7 @@
 			<div class="productMainContent">
 				<h:form>
 					<li>Product Price</li>
-					<li><h:inputText value="£price"></h:inputText></li>
+					<li><h:inputText value="#{products.product.price}"></h:inputText></li>
 					<li><h:commandButton value="Edit" onclick="alert('Product Price Changed!');" /></li>
 				</h:form>
 			</div>
@@ -52,7 +52,7 @@
 			<div class="productMainContent">
 				<h:form>
 					<li>Description</li>
-					<li><h:inputText value="product description"></h:inputText></li>
+					<li><h:inputText value="#{products.product.description}"></h:inputText></li>
 					<li><h:commandButton value="Edit" onclick="alert('Product Description Changed!');" /></li>
 				</h:form>
 			</div>

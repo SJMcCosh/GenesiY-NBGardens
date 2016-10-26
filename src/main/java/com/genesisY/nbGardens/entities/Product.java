@@ -52,17 +52,23 @@ public class Product {
 	@Column(name = "tagID", nullable = false)
 	@NotNull
 	private List<Tag> tags;
+	
+	private String imageLocation;
+	
+	private double price;
 
 	public Product() {
 		
 	}
 
-	public Product(String name, double averageRating, String description, String size, double weight) {
+	public Product(String name, double averageRating, String description, String size, double weight, String imageLocation, double price) {
 		this.name = name;
 		this.averageRating = averageRating;
 		this.description = description;
 		this.size = size;
 		this.weight = weight;
+		this.imageLocation = imageLocation;
+		this.price = price;
 	}
 
 	public int getId() {
@@ -119,6 +125,22 @@ public class Product {
 	
 	public void setTags(List<Tag> tags){
 		this.tags = tags;
+	}
+
+	public String getImageLocation() {
+		return imageLocation;
+	}
+
+	public void setImageLocation(String imageLocation) {
+		this.imageLocation = imageLocation;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
 	}
 
 }
