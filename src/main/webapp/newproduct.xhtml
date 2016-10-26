@@ -20,9 +20,9 @@
 					requiredMessage="Item Name"></h:inputText>
 				<br />
 				<br />
-				<h:outputText value="Price: " />
+				<h:outputText value="Price (GBP): " />
 				<br />
-				<h:inputText type="number" value="#{newproduct.price}" required="true"
+				<h:inputText type="double" value="#{newproduct.price}" required="true"
 					requiredMessage="Item Price"></h:inputText>
 				<br />
 				<br />
@@ -50,15 +50,15 @@
 					requiredMessage="Stock Level"></h:inputText>
 				<br />
 				<br />
-				<h:outputText value="Product Size: " />
+				<h:outputText value="Product Size (m's): " />
 				<br />
 				<h:inputText value="#{newproduct.size}" required="true"
 					requiredMessage="Stock Level"></h:inputText>
 				<br />
 				<br />
-				<h:outputText value="Product Weight: " />
+				<h:outputText value="Product Weight (kgs): " />
 				<br />
-				<h:inputText type="number" value="#{newproduct.weight}" required="true"
+				<h:inputText type="double" value="#{newproduct.weight}" required="true"
 					requiredMessage="Stock Level"></h:inputText>
 				<br />
 				<br />
@@ -68,7 +68,7 @@
 					requiredMessage="Supplier ID"></h:inputText>
 				<br />
 				<br />
-				<h:commandButton value="Add to IMS"
+				<h:commandButton value="Added to IMS"
 					onclick="alert('Product Added');" />
 				<br />
 				<br />

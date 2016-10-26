@@ -1,9 +1,8 @@
 package com.genesisY.nbGardens.entities;
 
-import java.io.Serializable;
-import java.math.BigDecimal;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -16,47 +15,71 @@ import javax.validation.constraints.Size;
  */
 
 @ManagedBean(name = "newproduct")
-@SessionScoped
-public class AddNewProduct implements Serializable {
+@RequestScoped
+public class AddNewProduct {
 
 	@GeneratedValue
+	@Column(name = "productID", nullable = false, length = 5)
 	private String productID;
+	
 	@NotNull
 	@Size(min = 2, max = 255)
+	@Column(name = "name", nullable = false)
 	private String name;
+	
 	@NotNull
 	@Size(min = 2, max = 8)
-	private BigDecimal price;
-	private String desc;
-	@NotNull
-	@Size(min = 2, max = 255)
-	private String category;
-	@NotNull
-	@Size(min = 2, max = 255)
-	private String tags;
-	@NotNull
-	private int stock;
-	@NotNull
-	@Size(min = 2, max = 255)
-	private String supplier;
-	@NotNull
-	private int size;
-	@NotNull
-	private Double weight;
-	@NotNull
-	private Double averageRating;
-
-	 public AddNewProduct(String productID, String name, String desc, String category, int stock, String supplier, int size, double weight, double averageRating) {
-	 
-     this.productID = productID;
-	 this.name = name;
-
-	 this.desc = desc;
-	 this.size = size;
-	 this.weight = weight;
-	 this.averageRating = averageRating;
-	 }
+	@Column(name = "price", nullable = false)
+	private double price;
 	
+	@Column(name = "desc")
+	private String desc;
+	
+	@NotNull
+	@Size(min = 2, max = 255)
+	@Column(name = "category", nullable = false)
+	private String category;
+	
+	@NotNull
+	@Size(min = 2, max = 255)
+	@Column(name = "tag", nullable = false)
+	private String tags;
+	
+	@NotNull
+	@Column(name = "stock", nullable = false, length = 10)
+	private int stock;
+	
+	@NotNull
+	@Size(min = 2, max = 255)
+	@Column(name = "supplier", nullable = false)
+	private String supplier;
+	
+	@NotNull
+	@Column(name = "size", nullable = false, length = 20)
+	private int size;
+	
+	@NotNull
+	@Column(name = "weight", nullable = false, length = 20)
+	private double weight;
+	
+	@NotNull
+	@Column(name = "avgRate", nullable = false, length = 20)
+	private double averageRating;
+
+	public AddNewProduct(){
+		
+	}
+	
+	public AddNewProduct(String productID, String name, String desc, String category, int stock, String supplier,
+			int size, double weight, double averageRating) {
+		this.productID = productID;
+		this.name = name;
+		this.desc = desc;
+		this.size = size;
+		this.weight = weight;
+		this.averageRating = averageRating;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -65,11 +88,11 @@ public class AddNewProduct implements Serializable {
 		this.name = name;
 	}
 
-	public BigDecimal getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(BigDecimal price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
