@@ -16,28 +16,28 @@
 					<div class="col-m-6 col-6">
 						<div class="addsuppdetails">
 							<li><h:outputText value="Supplier Name: " /></li>
-							<li><h:inputText value="#{supplier.name}" /></li>
+							<li><h:inputText value="#{suppliers.name}" /></li>
 							<li><h:outputText value="Supplier Phone Number: " /></li>
-							<li><h:inputText value="#{supplier.phoneNumber}" /></li>
+							<li><h:inputText value="#{suppliers.phone}" /></li>
 							<li><h:outputText value="Supplier Email Address: " /></li>
-							<li><h:inputText value="#{supplier.email}" /></li>
+							<li><h:inputText value="#{suppliers.email}" /></li>
 							<h:commandButton value = "Add Supplier" action = "viewsupplier" />
 						</div>
 					</div>
 					<div class="col-m-6 col-6">
 						<div class="addsuppaddr">
 							<li><h:outputText value="Supplier Address Line 1: " /></li>
-							<li><h:inputText value="#{supplier.getAddress().addressLine1}" /></li>
+							<li><h:inputText value="#{suppliers.setAddress().addressLine1}" /></li>
 							<li><h:outputText value="Supplier Address Line 2: " /></li>
-							<li><h:inputText value="#{supplier.getAddress().addressLine2}" /></li>
+							<li><h:inputText value="#{suppliers.setAddress().addressLine2}" /></li>
 							<li><h:outputText value="Supplier Address Line 3 " /></li>
-							<li><h:inputText value="#{supplier.getAddress().addressLine3}" /></li>
+							<li><h:inputText value="#{suppliers.setAddress().addressLine3}" /></li>
 							<li><h:outputText value="Supplier Town/City: " /></li>
-							<li><h:inputText value="#{supplier.getAddress().townCity}" /></li>
+							<li><h:inputText value="#{suppliers.setAddress().townCity}" /></li>
 							<li><h:outputText value="Supplier Country: " /></li>
-							<li><h:inputText value="#{supplier.getAddress().country}" /></li>
+							<li><h:inputText value="#{suppliers.setAddress().country}" /></li>
 							<li><h:outputText value="Supplier Postcode: " /></li>
-							<li><h:inputText value="#{supplier.getAddress().postcode}" /></li>
+							<li><h:inputText value="#{suppliers.setAddress().postcode}" /></li>
 						</div>
 					</div>
 				</h:form>
