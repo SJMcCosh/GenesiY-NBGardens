@@ -176,6 +176,12 @@ ul.breadcrumb li a {
 	background-color: #d3d3d3;
 	border-bottom-style: none;
 }
+.productMainContent {
+	border-style: solid;
+	text-align: center;
+	border-width: thin;
+	list-style: none;
+}
 
 .addsupplink{
 	float: right;
