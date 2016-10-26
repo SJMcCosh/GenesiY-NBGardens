@@ -30,16 +30,21 @@ public class SupplierController implements Serializable {
 	private String email; 
 	private Address address; 
 	
+	
 	/*
 	 * setters and getters for adding supplier 
 	 */
 	public String getName() {
+		
 		return name;
 	}
 
 
 	public void setName(String name) {
+		
 		this.name = name;
+		
+		
 	}
 
 
