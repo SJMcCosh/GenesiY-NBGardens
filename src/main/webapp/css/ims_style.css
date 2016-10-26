@@ -134,6 +134,9 @@ ul.breadcrumb li a {
 
 .maincontent {
 	background-color: #ffffff;
+	border-style: solid;
+	border-width: thin;
+	text-align: centre;
 }
 
 .maincontent::after {
@@ -300,12 +303,6 @@ body {
 	border: solid white;
 }
 
-.addproduct{
-	border: solid;
-	text-align: center;
-	background: #d3d3d3;
-}
-
 .empty1 {
 	border: solid white;
 	float: right;
@@ -333,8 +330,6 @@ section:after {
 	background-color: #5E6B7F;
 }
 
-<<<<<<< HEAD
-=======
 button {
 	cursor: pointer;
 	width: 100%;
@@ -380,6 +375,12 @@ div:focus {
 	font-size: 1em;
 }
 
+addproduct{
+	border: solid;
+	text-align: center;
+	background: #d3d3d3;
+}
+
 .columns_dropdowns {
 	bottom: 0;
 	right: 0;
@@ -396,4 +397,3 @@ div:focus {
 	background-color: yellow;
 }
 /* 													END IMS CSS						*/
->>>>>>> 41fef9fe67f7d77cc76c1b3ab304cd2ddb7885bc

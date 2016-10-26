@@ -45,7 +45,7 @@ public class LoginController {
 		} else if (passcheck.passCheck(username, password) == true) {
 			userCredentials.setUsername(username);
 			userCredentials.setLoggedin(passcheck.passCheck(username, password));
-			return "home";
+			return "newproduct";
 		} else {
 			error = "Invalid username and password";
 			username = "";
