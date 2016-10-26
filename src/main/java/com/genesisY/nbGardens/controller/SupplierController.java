@@ -8,6 +8,7 @@ import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.genesisY.nbGardens.entities.Address;
 import com.genesisY.nbGardens.entities.PaginationHelper;
 import com.genesisY.nbGardens.entities.Supplier;
 import com.genesisY.nbGardens.entityManagers.SupplierManager;
@@ -24,6 +25,52 @@ public class SupplierController implements Serializable {
 	private DataModel<Supplier> dataModel = null;
 	private PaginationHelper pagination;
 	private int selected;
+	private String name; 
+	private String phone; 
+	private String email; 
+	private Address address; 
+	
+	/*
+	 * setters and getters for adding supplier 
+	 */
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public String getPhone() {
+		return phone;
+	}
+
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+
+	public Address getAddress() {
+		return address;
+	}
+
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 
 	/*
 	 * public DataModel<Supplier> getDataModel() { return dataModel; }
@@ -32,6 +79,7 @@ public class SupplierController implements Serializable {
 	public void setDataModel(DataModel<Supplier> dataModel) {
 		this.dataModel = dataModel;
 	}
+
 
 	public Supplier getSupplier() {
 		return supplier;
@@ -108,4 +156,5 @@ public class SupplierController implements Serializable {
 	private void recreateModel() {
 		dataModel = null;
 	}
+	
 }
