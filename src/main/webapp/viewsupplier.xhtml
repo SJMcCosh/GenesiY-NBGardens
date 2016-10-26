@@ -10,41 +10,48 @@
 				<h1>Suppliers</h1>
 			</div>
 		</div>
-			<div id="viewsuppliers">
+		<div id="viewsuppliers">
+			<ui:repeat var="suppliers" value="#{suppliers.dataModel}">
+
+				<div class="supplierall">
 				<ul>
-					<ui:repeat var="suppliers" value="#{suppliers.dataModel}">
-						<div class="supplierall">
-							<div class="col-6 col-m-6">
-								<div class="supplierlist">
-										<li>ID: <h:outputText
-												value="#{suppliers.dataModel.getRowData().supplierID}"></h:outputText></li>
-										<li>Name: <h:outputText
-												value="#{suppliers.dataModel.getRowData().supplierName}"></h:outputText></li>
-										<li>Phone Number: <h:outputText
-												value="#{suppliers.dataModel.getRowData().telephoneNumber}"></h:outputText></li>
-										<li>Email: <h:outputText
-												value="#{suppliers.dataModel.getRowData().emailAddress}"></h:outputText></li>
-								</div>
+					<div class="col-6 col-m-6">
+
+							<div class="suppliername">
+								<li><b>ID:</b> <h:outputText
+										value="#{suppliers.dataModel.getRowData().supplierID}"></h:outputText></li>
+								<li><b>Name:</b> <h:outputText
+										value="#{suppliers.dataModel.getRowData().supplierName}"></h:outputText></li>
+								<li><b>Phone Number:</b> <h:outputText
+										value="#{suppliers.dataModel.getRowData().telephoneNumber}"></h:outputText></li>
+								<li><b>Email:</b> <h:outputText
+										value="#{suppliers.dataModel.getRowData().emailAddress}"></h:outputText></li>
 							</div>
-							<div class="col-6 col-m-6">
-								<div class="supplierlist">
-										<li>Address Line 1: <h:outputText
-												value="#{suppliers.dataModel.getRowData().getAddress().addressLine1}"></h:outputText></li>
-										<li>Address Line 2: <h:outputText
-												value="#{suppliers.dataModel.getRowData().getAddress().addressLine2}"></h:outputText></li>
-										<li>Address Line 3:<h:outputText
-												value="#{suppliers.dataModel.getRowData().getAddress().addressLine3}"></h:outputText></li>
-										<li>Town/City: <h:outputText
-												value="#{suppliers.dataModel.getRowData().getAddress().townCity}"></h:outputText></li>
-										<li>Country: <h:outputText
-												value="#{suppliers.dataModel.getRowData().getAddress().country}"></h:outputText></li>
-										<li>Postcode: <h:outputText
-												value="#{suppliers.dataModel.getRowData().getAddress().postcode}"></h:outputText></li>
-									</div>
-								</div>
+
+					</div>
+					<div class="col-6 col-m-6">
+
+							<div class="supplieraddress">
+								<li><b>Address</b></li>
+								<li><h:outputText
+										value="#{suppliers.dataModel.getRowData().getAddress().addressLine1}"></h:outputText></li>
+								<li><h:outputText
+										value="#{suppliers.dataModel.getRowData().getAddress().addressLine2}"></h:outputText></li>
+								<li><h:outputText
+										value="#{suppliers.dataModel.getRowData().getAddress().addressLine3}"></h:outputText></li>
+								<li><h:outputText
+										value="#{suppliers.dataModel.getRowData().getAddress().townCity}"></h:outputText></li>
+								<li><h:outputText
+										value="#{suppliers.dataModel.getRowData().getAddress().country}"></h:outputText></li>
+								<li><h:outputText
+										value="#{suppliers.dataModel.getRowData().getAddress().postcode}"></h:outputText></li>
 							</div>
-					</ui:repeat>
-				</ul>
-			</div>
+
+					</div>
+					</ul>
+				</div>
+
+			</ui:repeat>
+		</div>
 	</ui:define>
 </ui:composition>

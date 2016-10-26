@@ -60,7 +60,7 @@ public class Address {
 		this.addressLine2 = addressLine2;
 		this.addressLine3 = addressLine3;
 		this.townCity = townCity;
-		this.county = country;
+		this.country = country;
 		this.postcode = postcode;
 	}
 

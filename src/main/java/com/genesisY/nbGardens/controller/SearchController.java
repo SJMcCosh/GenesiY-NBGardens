@@ -1,5 +1,6 @@
 package com.genesisY.nbGardens.controller;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.enterprise.context.SessionScoped;
@@ -9,9 +10,10 @@ import com.genesisY.nbGardens.entities.Product;
 import com.genesisY.nbGardens.entities.Tag;
 import com.genesisY.nbGardens.entityManagers.ProductManager;
 
+@SuppressWarnings("serial")
 @Named("search")
 @SessionScoped
-public class SearchController {
+public class SearchController implements Serializable {
 
 	private ProductManager pm;
 
