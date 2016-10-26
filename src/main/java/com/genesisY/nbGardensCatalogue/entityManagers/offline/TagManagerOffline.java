@@ -38,7 +38,7 @@ public class TagManagerOffline implements TagManager {
 	@Override
 	public List<Tag> getAllTags() {
 		
-		return initialData.getTagList();
+		return null;
 	}
 
 }

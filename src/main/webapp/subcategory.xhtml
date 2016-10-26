@@ -6,41 +6,49 @@
 	<meta charset="ISO-8859-1" />
 	<ui:define name="maincontent">
 
-		<div  class="row">
+		<f:metadata>
+			<f:event type="preRenderView" listener="#{filter.load}" />
+		</f:metadata>
+
+		<div class="row">
 			<!-- Main content for the page -->
 
 
 			<h:form class="col-3 col-m-6 tagbar">
-				<ul class="col-3 col-m-6 tagbar">
-					<ui:repeat var="tag" value="#{products.tagModel}">
-						<li><h:link value="#{tag.name}" /></li>
-					</ui:repeat>
-				</ul>
+				<h:selectManyCheckbox layout="pageDirection"
+					value="#{filter.filter}">
+					<f:selectItems value="#{products.tagModel}" var="tag"
+						itemLabel="#{tag.name}" itemValue="#{tag.name}" />
+					<f:ajax listener="#{filter.filterProducts}" render="@all" />
+				</h:selectManyCheckbox>
+
 			</h:form>
 
 
 
 			<h:form>
-			<div class="col-9 col-m-6">
-				<h:selectOneMenu>
-					<f:selectItem itemValue="Price Low to High"/>
-					<f:selectItem itemLabel="Price High to Low"/>
-					<h:commandLink value = "Test"/>
-				</h:selectOneMenu>
-			</div>
-			<h:commandButton value="change" action="#{sort.sortByLowToHigh}"/>
-			
-			
+				<div class="col-9 col-m-6">
+					<h:selectOneMenu value="#{sort.sorter}">
+						<f:selectItem itemLabel="Price Low to High"
+							itemValue="Price Low to High" />
+						<f:selectItem itemLabel="Price High to Low"
+							itemValue="Price High to Low" />
+						<f:ajax listener="#{sort.sort}" render="@all" />
+					</h:selectOneMenu>
+				</div>
+
+
 			</h:form>
 
 			<!-- This is the product grid -->
 
 			<h:form>
-				<div class="col-9 col-m-6" >
+				<div class="col-9 col-m-6">
 					<ul>
 						<ui:repeat var="product" value="#{products.dataModel}">
 
-							<h:commandLink action="#{products.viewProduct}" class="col-3 col-m-6 prodimg">
+							<h:commandLink action="#{products.viewProduct}"
+								class="col-3 col-m-6 prodimg">
 								<div class="index_featured_products_product">
 									<img class="index_featured_products_product_image"
 										src="../../../../../../../../images/IndexImages/gnome_new.jpg" />

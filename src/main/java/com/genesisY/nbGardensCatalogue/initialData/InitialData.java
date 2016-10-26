@@ -1,10 +1,11 @@
 package com.genesisY.nbGardensCatalogue.initialData;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.inject.Singleton;
 import javax.ejb.Startup;
+import javax.inject.Singleton;
 
 import com.genesisY.nbGardensCatalogue.entities.Address;
 import com.genesisY.nbGardensCatalogue.entities.Category;
@@ -45,13 +46,30 @@ public class InitialData {
 	private ArrayList<PurchaseOrderLine> polList = new ArrayList<PurchaseOrderLine>();
 	private ArrayList<Review> reviewList = new ArrayList<Review>();
 	private ArrayList<Supplier> supplierList = new ArrayList<Supplier>();
-	private ArrayList<Tag> tagList = new ArrayList<Tag>();
 
 	@PostConstruct
 	public void setupData() {
 		Customer daveSmith = new Customer("Dave", "Smith", "dave@smith.com", "davesmith", "password1", "01478523698");
 		Customer janeSmith = new Customer("Jane", "Smith", "jane@smith.com", "janesmith", "password2", "01478523698");
 		Customer willSmith = new Customer("Will", "Smith", "will@smith.com", "willsmith", "password3", "01478523698");
+		Tag t1 = new Tag("Gnome");
+		Tag t2 = new Tag("Outdoor");
+		Tag t3 = new Tag("Special");
+		Tag t4 = new Tag("Cult");
+		Tag t5 = new Tag("Tag5");
+		
+		List<Tag> list1 = new ArrayList<Tag>();
+		list1.add(t1);
+		list1.add(t3);
+		list1.add(t5);
+		List<Tag> list2 = new ArrayList<Tag>();
+		list2.add(t2);
+		list2.add(t4);
+		list2.add(t1);
+		List<Tag> list3 = new ArrayList<Tag>();
+		list3.add(t3);
+		list3.add(t4);
+		list3.add(t1);
 		addressList.add(new Address("d1addressLine1", "d1addressLine2", "d1addressLine3", "d1townCity", "d1county", "d1postcode", true, daveSmith));
 		addressList.add(new Address("d2addressLine1", "d2addressLine2", "d2addressLine3", "d2townCity", "d2county", "d2postcode", false, daveSmith));
 		addressList.add(new Address("d3addressLine1", "d3addressLine2", "d3addressLine3", "d3townCity", "d3county", "d3postcode", false, daveSmith));
@@ -68,14 +86,9 @@ public class InitialData {
 		customerList.add(janeSmith);//Password = password2
 		customerList.add(willSmith);//Password = password3
 		colList.add(new CustomerOrderLine());
-		productList.add(new Product("Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50));
-		productList.add(new Product("Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0, 97.99));
-		productList.add(new Product("Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29));
-		tagList.add(new Tag("Tag1"));
-		tagList.add(new Tag("Tag2"));
-		tagList.add(new Tag("Tag3"));
-		tagList.add(new Tag("Tag4"));
-		tagList.add(new Tag("Tag5"));
+		productList.add(new Product("Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50, list1));
+		productList.add(new Product("Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0, 97.99, list2));
+		productList.add(new Product("Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29, list3));	
 		categoryList.add(new Category("cat1"));
 		categoryList.add(new Category("cat2"));
 		categoryList.add(new Category("cat3"));
@@ -250,18 +263,6 @@ public class InitialData {
 
 	public void addSupplier(Supplier supplier) {
 		supplierList.add(supplier);
-	}
-
-	public ArrayList<Tag> getTagList() {
-		return tagList;
-	}
-
-	public void setTagList(ArrayList<Tag> tagList) {
-		this.tagList = tagList;
-	}
-
-	public void addTag(Tag tag) {
-		tagList.add(tag);
 	}
 
 }

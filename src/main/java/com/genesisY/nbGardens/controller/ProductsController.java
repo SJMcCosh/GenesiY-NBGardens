@@ -52,7 +52,7 @@ public class ProductsController implements Serializable {
 		String category = "all";
 		dataModel = new ListDataModel<Product>(
 				productService.getAllProducts(category));
-		tagModel = new ListDataModel<Tag>(tagService.getAllTags());
+		
 		
 		return "subcategory";
 	}

@@ -69,13 +69,14 @@ public class Product implements Comparable<Product> {
 
 	}
 
-	public Product(String name, double averageRating, String description, String size, double weight, double price) {
+	public Product(String name, double averageRating, String description, String size, double weight, double price, List<Tag> tagList) {
 		this.name = name;
 		this.averageRating = averageRating;
 		this.description = description;
 		this.size = size;
 		this.weight = weight;
 		this.price = price;
+		this.tagList = tagList;
 	}
 
 	

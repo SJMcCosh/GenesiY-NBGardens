@@ -1,41 +1,39 @@
 package com.genesisY.nbGardens.controller;
 
-import java.io.Serializable;
-
-import javax.enterprise.context.SessionScoped;
-import javax.faces.model.DataModel;
+import javax.enterprise.context.RequestScoped;
+import javax.faces.event.AjaxBehaviorEvent;
+import javax.faces.model.ListDataModel;
+import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.genesisY.nbGardens.services.TagService;
 import com.genesisY.nbGardensCatalogue.entities.Tag;
 
+
 @Named ("filter")
-@SessionScoped 
+@RequestScoped
+public class FilterController{
+	
+	String filter;
+	@Inject private ProductsController pController;
+	@Inject private TagService tagService;
 
-public class FilterController implements Serializable{
-	
-	
-	private DataModel<Tag> filters;
-	
-	
-	
-	public DataModel<Tag> getFilters() {
-		return filters;
+	public String getFilter() {
+		return filter;
 	}
 
-
-
-	public void setFilters(DataModel<Tag> filters) {
-		this.filters = filters;
+	public void setFilter(String filter) {
+		this.filter = filter;
 	}
-
-
-
-	public String filter(String filter) {
 	
-		//TODO link service layer
+	public void filterProducts(AjaxBehaviorEvent abe) {
 		
-		return "subCategory";
-
+	}
+	
+	public void load(){
+		
+		pController.setTagModel( new ListDataModel<Tag>(tagService.getAllTags()));
+		
 	}
 
 }
