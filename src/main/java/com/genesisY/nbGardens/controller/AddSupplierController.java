@@ -1,3 +1,5 @@
+package com.genesisY.nbGardens.controller;
+
 import java.io.Serializable;
 
 import javax.enterprise.context.SessionScoped;
@@ -26,39 +28,17 @@ public class AddSupplierController implements Serializable {
 	private String phone; 
 	private String email; 
 	private Address address; 
-	public Supplier getSupplier() {
-		return supplier;
-	}
 	public void setSupplier(Supplier supplier) {
 		this.supplier = supplier;
+	
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getPhone() {
-		return phone;
-	}
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public Address getAddress() {
-		return address;
-	}
-	public void setAddress(Address address) {
-		this.address = address;
+	
+	public void setAddress(Address address){
+		
+		this.address = address; 
 	}
 	
 	
 	
-
 	
 }
