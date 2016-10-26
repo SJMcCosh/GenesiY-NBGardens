@@ -136,7 +136,7 @@ ul.breadcrumb li a {
 	background-color: #ffffff;
 	border-style: solid;
 	border-width: thin;
-	text-align: centre;
+	align: centre;
 }
 
 .maincontent::after {
@@ -482,10 +482,14 @@ div:focus {
 }
 
 addproduct{
-	border: solid;
+	width: 350px;
+	border-style: solid;
+	border-width: thin;
 	text-align: center;
-	background: #d3d3d3;
-}
+	list-style: none;
+	background-color: #d3d3d3;
+	border-bottom-style: none;
+	}
 
 .columns_dropdowns {
 	bottom: 0;
