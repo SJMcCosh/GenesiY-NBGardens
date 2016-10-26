@@ -656,6 +656,16 @@ ul.botnav li a {
 	padding: 14px 16px;
 	text-decoration: none;
 }
+.subcat_images {
+	width: 161px;
+	height: 161px;
+	/*background-color:blue;*/
+	display: inline-block;
+}
+.paginatorbutton{
+	text-align: right;
+}
+
 
 @media only screen and (min-width: 600px) {
 	/* For tablets: */
@@ -711,6 +721,13 @@ ul.botnav li a {
 	#index_bottom_porous_section {
 		width: 100%;
 	}
+	.subcat_images {
+	width: 100px;
+	height: 100px;
+	/*background-color:blue;*/
+	display: inline-block;
+	text-align:center;
+}
 }
 
 @media only screen and (min-width: 768px) {
@@ -873,6 +890,12 @@ ul.botnav li a {
 		padding-bottom: 500px;
 		padding-right: 50px;
 	}
+	.subcat_images {
+	width: 161px;
+	height: 161px;
+	/*background-color:blue;*/
+	display: inline-block;
+}
 }
 
 

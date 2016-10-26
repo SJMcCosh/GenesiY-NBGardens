@@ -3,6 +3,7 @@ package com.genesisY.nbGardens.controller;
 import java.io.Serializable;
 
 import javax.enterprise.context.SessionScoped;
+import javax.faces.event.AjaxBehaviorEvent;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
@@ -22,10 +23,20 @@ public class ProductsController implements Serializable {
 	private ProductService productService;
 	private Product product;
 	private DataModel<Product> dataModel = null;
+	private DataModel<Product> dataPagModel = null;
 	private DataModel<Tag> tagModel = null;
 	private PaginationHelper pagination;
 	private int selected;
 	private String category = "all";
+	private int numProds;
+
+	public DataModel<Product> getDataModel() {
+		return dataModel;
+	}
+
+	public void setDataPagModel(DataModel<Product> dataPagModel) {
+		this.dataPagModel = dataPagModel;
+	}
 
 	public int getSelected() {
 		return selected;
@@ -58,15 +69,16 @@ public class ProductsController implements Serializable {
 	}
 
 	public String allProducts() {
-		dataModel = getDataModel();
+		setNumProds(12);
+		dataPagModel = getDataPagModel();
 		return "subcategory";
 	}
 
-	public DataModel<Product> getDataModel() {
-		if (dataModel == null){
-			dataModel = getPagination().createPageDataModel();
+	public DataModel<Product> getDataPagModel() {
+		if (dataPagModel == null){
+			dataPagModel = getPagination().createPageDataModel();
 		}
-		return dataModel;
+		return dataPagModel;
 	}
 
 	public void setDataModel(DataModel<Product> dataModel) {
@@ -82,6 +94,10 @@ public class ProductsController implements Serializable {
 		return "productpage";
 	}
 
+	public void setPagination(PaginationHelper pagination) {
+		this.pagination = pagination;
+	}
+
 	public Product getProduct() {
 		return product;
 	}
@@ -91,17 +107,17 @@ public class ProductsController implements Serializable {
 	}
 
 	private void recreateModel(){
-		dataModel = null;
+		dataPagModel = null;
 	}
 	
 	public String previous(){
-		getPagination().nextPage();
+		getPagination().previousPage();
 		recreateModel();
 		return "subcategory";
 	}
 	
 	public String next(){
-		getPagination().previousPage();
+		getPagination().nextPage();
 		recreateModel();
 		return "subcategory";
 	}
@@ -125,7 +141,7 @@ public class ProductsController implements Serializable {
 	
 	public PaginationHelper getPagination(){
 		if (pagination == null){
-			pagination = new PaginationHelper(15){
+			pagination = new PaginationHelper(numProds){
 				@Override
 				public int getItemsCount(){
 					return productService.getAllProducts(category).size();
@@ -142,5 +158,38 @@ public class ProductsController implements Serializable {
 			};
 		}
 		return pagination;
+	}
+
+	public int getNumProds() {
+		return numProds;
+	}
+
+	public void setNumProds(int numProds) {
+		this.numProds = numProds;
+	}
+	
+	public String difNumProducts(int numProds) {
+		dataPagModel = getDataPagModel();
+		return "subcategory";
+	}
+	
+	public void updateNumber(AjaxBehaviorEvent abe) {
+		int numProds = getNumProds();
+		System.out.println(">>>>>>>>>>> " + numProds);
+		switch(numProds){
+		case 12 :
+			recreateModel();
+			difNumProducts(12);
+			break;
+		case 24 :
+			recreateModel();
+			System.out.println(">>>>>>");
+			difNumProducts(24);
+			break;
+		case 36 :
+			recreateModel();
+			difNumProducts(36);
+			break;
+		}
 	}
 }
