@@ -20,31 +20,42 @@
 		</div>
 		<hr/>
 		<h:form>
-			<ui:repeat var="basketItem" value="#{basket.dataModel}">				
+			<ui:repeat var="basketItem" value="#{basket.dataModel}">	
+			<div id="basket_item_container">	
+				<div id="basket_items_container_left_column">		
+					<img class="index_featured_products_product_image" id="index_featured_products_product_image_basket_page" src="#{basketItem.product.imageLocation}" />
+				</div>		
 				
-				<h2><h:outputText value="#{basketItem.product.name}"/></h2>				
-				<h:outputText class="basket_page_price" value="#{basketItem.product.description}"/>				
-				<div id="basket_contents_container_right_column">
-				<h:outputText class="basket_page_price_priceInfo" value="#{basketItem.product.price}">
-					<f:convertNumber type="currency" currencyCode="GBP" />
-				</h:outputText>				
-					<h:selectOneMenu value="#{basketItem.quantity}"  onchange="submit()" valueChangeListener="#{basket.itemQuantityChanged}" >
-					   <f:selectItem itemValue="1" itemLabel="1" />
-					   <f:selectItem itemValue="2" itemLabel="2" />
-					   <f:selectItem itemValue="3" itemLabel="3" />		
-					   <f:selectItem itemValue="4" itemLabel="4" />
-					   <f:selectItem itemValue="5" itemLabel="5" />
-					   <f:selectItem itemValue="6" itemLabel="6" />	
-					   <f:selectItem itemValue="7" itemLabel="7" />
-					   <f:selectItem itemValue="8" itemLabel="8" />
-					   <f:selectItem itemValue="9" itemLabel="9" />
-					   <f:selectItem itemValue="10" itemLabel="10" />		   	
-					</h:selectOneMenu>					
+				<div id="basket_items_container_middle_column">					
+					<h2 id="basket_items_container_middle_column_item_title"><h:outputText value="#{basketItem.product.name}"/></h2>
+					<br/>												
+					<h:outputText id="basket_items_container_middle_column_item_description" value="#{basketItem.product.description}"/>					
 				</div>
 				
+				<div id="basket_items_container_right_column">	
+					<div style="float:right">	
+						<h:outputText class="basket_page_price_priceInfo" value="#{basketItem.product.price}">
+							<f:convertNumber type="currency" currencyCode="GBP" />
+						</h:outputText>				
+						<h:selectOneMenu value="#{basketItem.quantity}"  onchange="submit()" valueChangeListener="#{basket.itemQuantityChanged}" >
+						   <f:selectItem itemValue="1" itemLabel="1" />
+						   <f:selectItem itemValue="2" itemLabel="2" />
+						   <f:selectItem itemValue="3" itemLabel="3" />		
+						   <f:selectItem itemValue="4" itemLabel="4" />
+						   <f:selectItem itemValue="5" itemLabel="5" />
+						   <f:selectItem itemValue="6" itemLabel="6" />	
+						   <f:selectItem itemValue="7" itemLabel="7" />
+						   <f:selectItem itemValue="8" itemLabel="8" />
+						   <f:selectItem itemValue="9" itemLabel="9" />
+						   <f:selectItem itemValue="10" itemLabel="10" />		   	
+						</h:selectOneMenu>	
+					</div>			
+				</div>
+				<hr/>
+			</div>
 			</ui:repeat>	
 			</h:form>
-			<hr/>
+			
 			
 			<div id="basket_page_totals_container">
 			
