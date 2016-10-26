@@ -42,13 +42,13 @@ public class SupplierController implements Serializable {
 	}
 
 	public String viewSuppliers() {
-		dataModel = new ListDataModel<Supplier>(supplierService.viewSuppliers());
+		dataModel = getDataModel();
 		return "viewsupplier";
 	}
 
 	public PaginationHelper getPagination() {
 		if (pagination == null) {
-			pagination = new PaginationHelper(10) {
+			pagination = new PaginationHelper(15) {
 				@Override
 				public int getItemsCount() {
 					return supplierService.viewSuppliers().size();
@@ -96,13 +96,13 @@ public class SupplierController implements Serializable {
 	public String next() {
 		getPagination().nextPage();
 		recreateModel();
-		return "browse";
+		return "viewsupplier";
 	}
 
 	public String previous() {
 		getPagination().previousPage();
 		recreateModel();
-		return "browse";
+		return "viewsupplier";
 	}
 
 	private void recreateModel() {

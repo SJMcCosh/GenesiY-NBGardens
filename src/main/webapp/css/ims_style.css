@@ -177,6 +177,10 @@ ul.breadcrumb li a {
 	border-bottom-style: none;
 }
 
+.addsupplink{
+	float: right;
+}
+
 [class*="col-"] {
 	float: left;
 }
