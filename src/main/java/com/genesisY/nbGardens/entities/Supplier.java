@@ -52,6 +52,7 @@ public class Supplier {
 		this.supplierName = supplierName;
 		this.telephoneNumber = telephoneNumber;
 		this.emailAddress = emailAddress;
+		this.address = address;
 	}
 
 	public int getSupplierID() {

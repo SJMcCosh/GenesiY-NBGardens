@@ -142,7 +142,6 @@ ul.breadcrumb li a {
 	display: block;
 }
 
-
 .loginform {
 	border: solid;
 	background-color: #d6d6b1;
@@ -150,18 +149,29 @@ ul.breadcrumb li a {
 	margin: 10px auto 0;
 	height: 470px;
 }
-.supplierall{
-	width:100%;
-	margin: 10px auto;
+
+.supplierall {
+	width: 100%;
 }
 
-.supplierlist{
+.supplieraddress {
 	width: 350px;
 	border-style: solid;
 	border-width: thin;
-	text-align: centre;
+	text-align: center;
 	list-style: none;
 	background-color: #d3d3d3;
+	border-top-style: none;
+}
+
+.suppliername {
+	width: 350px;
+	border-style: solid;
+	border-width: thin;
+	text-align: center;
+	list-style: none;
+	background-color: #d3d3d3;
+	border-bottom-style: none;
 }
 
 [class*="col-"] {
@@ -210,6 +220,28 @@ ul.breadcrumb li a {
 	.col-m-12 {
 		width: 100%;
 	}
+	.supplieraddress {
+		width: 300px;
+		border-style: solid;
+		border-width: thin;
+		text-align: center;
+		list-style: none;
+		background-color: #d3d3d3;
+		float: left;
+		border-left-style: none;
+		height: 145px
+	}
+	.suppliername {
+		width: 300px;
+		border-style: solid;
+		border-width: thin;
+		text-align: center;
+		list-style: none;
+		background-color: #d3d3d3;
+		float: right;
+		height: 145px;
+		border-right-style: none;
+	}
 }
 
 @media only screen and (min-width: 768px) {
@@ -249,6 +281,28 @@ ul.breadcrumb li a {
 	}
 	.col-12 {
 		width: 100%;
+	}
+	.supplieraddress {
+		width: 300px;
+		border-style: solid;
+		border-width: thin;
+		text-align: center;
+		list-style: none;
+		background-color: #d3d3d3;
+		float: left;
+		border-left-style: none;
+		height: 145px
+	}
+	.suppliername {
+		width: 300px;
+		border-style: solid;
+		border-width: thin;
+		text-align: center;
+		list-style: none;
+		background-color: #d3d3d3;
+		float: right;
+		height: 145px;
+		border-right-style: none;
 	}
 }
 
@@ -300,7 +354,7 @@ body {
 	border: solid white;
 }
 
-.addproduct{
+.addproduct {
 	border: solid;
 	text-align: center;
 	background: #d3d3d3;
@@ -333,8 +387,6 @@ section:after {
 	background-color: #5E6B7F;
 }
 
-<<<<<<< HEAD
-=======
 button {
 	cursor: pointer;
 	width: 100%;
@@ -396,4 +448,3 @@ div:focus {
 	background-color: yellow;
 }
 /* 													END IMS CSS						*/
->>>>>>> 41fef9fe67f7d77cc76c1b3ab304cd2ddb7885bc

@@ -24,8 +24,8 @@ public class ImsInitialData {
 		Product product1 = new Product("Game of Gnomes", 4.5, "A GOT gnome", "No idea", 15.0);
 		Product product2 = new Product("random gnome", 2.5, "lelelelel", "woah a second gnome", 10.0);
 		Address address1 = new Address("32 Fine Strasse", "", "", "Berlin", "Germany", "54624");
-		Address address2 = new Address("2546 New Road", "", "", "Paris", "France", "75003");
-		Address address3 = new Address("21 Gnome Street", "", "", "Saariselka", "Finland", "99830 Saariselka");
+		Address address2 = new Address("2546 New Road", "Lowry Quay", "Salford Quays", "Paris", "France", "75003");
+		Address address3 = new Address("21 Gnome Street", "", "", "Saariselka", "Finland", "99830");
 		Supplier supplier1 = new Supplier("Gnomes4U", "05853123673", "gnomes4u@gnomes4u.com", address1);
 		Supplier supplier2 = new Supplier("Gnomeo's Gnomes", "12354234723", "gnomeo@gnomeosgnomes.com", address2);
 		Supplier supplier3 = new Supplier("Gnome Adventures", "34252824665", "gnomes@gnomeadventures.com", address3);
@@ -43,7 +43,8 @@ public class ImsInitialData {
 	}
 
 	public ArrayList<Employee> getEmployeeList() {
-		return this.employeeList;
+		ArrayList<Employee> employees = this.employeeList;
+		return employees;
 	}
 
 	public void setProdList(ArrayList<Product> v_prodList) {
@@ -51,7 +52,8 @@ public class ImsInitialData {
 	}
 
 	public ArrayList<Product> getProdList() {
-		return this.prodList;
+		ArrayList<Product> products = this.prodList;
+		return products;
 	}
 
 	public void setSupplierList(ArrayList<Supplier> supplierList) {
@@ -59,7 +61,8 @@ public class ImsInitialData {
 	}
 
 	public ArrayList<Supplier> getSupplierList() {
-		return this.supplierList;
+		ArrayList<Supplier> suppliers = this.supplierList;
+		return suppliers;
 	}
 
 	public void addProduct(Product product) {
