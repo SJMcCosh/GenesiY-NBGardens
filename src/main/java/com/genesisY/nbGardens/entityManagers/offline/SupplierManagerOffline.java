@@ -22,7 +22,13 @@ public class SupplierManagerOffline implements SupplierManager {
 	@Override
 	public void addSupplier(Supplier supplier) {
 		
-		
+		for (Supplier supplier1 : initialData.getSupplierList()){
+			if(supplier1.getSupplierName().equals(supplier.getSupplierName())){
+				
+				
+			}
+			
+		}
 		
 		// TODO Auto-generated method stub
 		
