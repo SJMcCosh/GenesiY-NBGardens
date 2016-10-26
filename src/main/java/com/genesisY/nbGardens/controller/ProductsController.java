@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.genesisY.nbGardens.entities.Product;
@@ -20,6 +21,7 @@ public class ProductsController implements Serializable {
 	private String name;
 	private DataModel<Product> dataModel = null;
 
+	@Inject
 	private ProductService prodService;
 
 	public String getAllProducts() {
