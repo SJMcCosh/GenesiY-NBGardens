@@ -21,8 +21,6 @@ public class AddSupplierController implements Serializable {
 	@Inject
 	private SupplierService supplierService;
 	private DataModel<Supplier> dataModel = null;
-	private PaginationHelper pagination;
-	private int selected;
 	private String name; 
 	private String phone; 
 	private String email; 
@@ -92,10 +90,13 @@ public class AddSupplierController implements Serializable {
 
 	
 	
-	public Supplier createNewSupplier()
+	public void createNewSupplier()
 	{
-		Supplier s = new Supplier(name, phone, email, new Address(addressLine1, addressLine2, addressLine3, townCity, country, postcode));
-			return s; 
+		 SupplierService s = new SupplierService(); 
+		 
+		 
+		 s.addSupplier(name, phone, email, addressLine1, addressLine2, addressLine3, townCity, country, postcode);
+	
 	}
 	
 	

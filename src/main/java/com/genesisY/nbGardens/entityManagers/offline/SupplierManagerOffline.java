@@ -21,6 +21,9 @@ public class SupplierManagerOffline implements SupplierManager {
 	
 	@Override
 	public void addSupplier(Supplier supplier) {
+		
+		
+		
 		// TODO Auto-generated method stub
 		
 	}
