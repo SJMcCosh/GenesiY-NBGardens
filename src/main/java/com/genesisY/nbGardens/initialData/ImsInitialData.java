@@ -35,6 +35,21 @@ public class ImsInitialData {
 		supplierList.add(supplier1);
 		supplierList.add(supplier2);
 		supplierList.add(supplier3);
+		supplierList.add(supplier1);
+		supplierList.add(supplier2);
+		supplierList.add(supplier3);
+		supplierList.add(supplier1);
+		supplierList.add(supplier2);
+		supplierList.add(supplier3);
+		supplierList.add(supplier1);
+		supplierList.add(supplier2);
+		supplierList.add(supplier3);
+		supplierList.add(supplier1);
+		supplierList.add(supplier2);
+		supplierList.add(supplier3);
+		supplierList.add(supplier1);
+		supplierList.add(supplier2);
+		supplierList.add(supplier3);
 		employeeList.add(employee1);
 	}
 
