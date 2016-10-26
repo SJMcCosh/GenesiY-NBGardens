@@ -2,6 +2,7 @@ package com.genesisY.nbGardens.controller;
 
 import java.io.Serializable;
 
+import javax.faces.event.ValueChangeEvent;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
@@ -63,6 +64,13 @@ public class BasketController implements Serializable{
 		return basketService.getBasketItems().size();
 	}
 		
+	
+	public void itemQuantityChanged(ValueChangeEvent e)
+	{
+		String selectedQuantity = e.getNewValue().toString();
+		
+		System.out.println("SELECTED QUANTITY>>>>>>>>>>>>>>>>: " + selectedQuantity);
+	}
 	
 	
 //	public Basket getProduct() {
