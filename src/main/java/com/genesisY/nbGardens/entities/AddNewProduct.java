@@ -1,13 +1,10 @@
 package com.genesisY.nbGardens.entities;
 
-import java.util.List;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import java.io.Serializable;
+import java.math.BigDecimal;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -18,67 +15,118 @@ import javax.validation.constraints.Size;
  *
  */
 
-@Entity
-@Table(name = "products")
-public class AddNewProduct {
+@ManagedBean(name = "newproduct")
+@SessionScoped
+public class AddNewProduct implements Serializable {
 
-	@Id
-	@Column(name = "productID")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-
-	@Column(name = "productName", nullable = false, length = 255)
+	@GeneratedValue
+	private String productID;
 	@NotNull
 	@Size(min = 2, max = 255)
 	private String name;
-
-	@Column(name = "averageRating", nullable = false)
 	@NotNull
-	private double averageRating;
-
-	@Column(name = "productName", nullable = false, length = 1000)
-	@NotNull
-	@Size(min = 2, max = 1000)
-	private String description;
-
-	@Column(name = "productName", nullable = false, length = 255)
+	@Size(min = 2, max = 8)
+	private BigDecimal price;
+	private String desc;
 	@NotNull
 	@Size(min = 2, max = 255)
-	private String size;
-
-	@Column(name = "averageRating", nullable = false)
+	private String category;
 	@NotNull
-	private double weight;
-	@Column(name = "tagID", nullable = false)
+	@Size(min = 2, max = 255)
+	private String tags;
 	@NotNull
-	private List<Tag> tags;
+	private int stock;
+	@NotNull
+	@Size(min = 2, max = 255)
+	private String supplier;
+	@NotNull
+	private int size;
+	@NotNull
+	private Double weight;
+	@NotNull
+	private Double averageRating;
 
-	public AddNewProduct() {
-		
-	}
+	 public AddNewProduct(String productID, String name, String desc, String category, int stock, String supplier, int size, double weight, double averageRating) {
+	 
+     this.productID = productID;
+	 this.name = name;
 
-	public AddNewProduct(String name, double averageRating, String description, String size, double weight) {
-		this.name = name;
-		this.averageRating = averageRating;
-		this.description = description;
-		this.size = size;
-		this.weight = weight;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
+	 this.desc = desc;
+	 this.size = size;
+	 this.weight = weight;
+	 this.averageRating = averageRating;
+	 }
+	
 	public String getName() {
 		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public BigDecimal getPrice() {
+		return price;
+	}
+
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+	}
+
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public String getTags() {
+		return tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+	}
+
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+
+	public String getSupplier() {
+		return supplier;
+	}
+
+	public void setSupplier(String supplier) {
+		this.supplier = supplier;
+	}
+
+	public int getSize() {
+		return size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+	public Double getWeight() {
+		return weight;
+	}
+
+	public void setWeight(Double weight) {
+		this.weight = weight;
 	}
 
 	public double getAverageRating() {
@@ -88,37 +136,4 @@ public class AddNewProduct {
 	public void setAverageRating(double averageRating) {
 		this.averageRating = averageRating;
 	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getSize() {
-		return size;
-	}
-
-	public void setSize(String size) {
-		this.size = size;
-	}
-
-	public double getWeight() {
-		return weight;
-	}
-
-	public void setWeight(double weight) {
-		this.weight = weight;
-	}
-	
-	public List<Tag> getTags(){
-		return tags;
-	}
-	
-	public void setTags(List<Tag> tags){
-		this.tags = tags;
-	}
-
 }

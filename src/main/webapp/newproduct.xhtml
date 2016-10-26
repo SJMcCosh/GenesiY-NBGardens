@@ -12,46 +12,68 @@
 		</div>
 		<div class="empty col-1 col-m-1"></div>
 		<div class="addproduct col-10 col-m-10">
-			<br />
-			<h:outputText value="Item Name: " />
-			<br />
-			<h:inputText value="#{login.username}" required="true"
-				requiredMessage="Item Name"></h:inputText>
-			<br /> <br />
-			<h:outputText value="Price: " />
-			<br />
-			<h:inputText value="#{login.username}" required="true"
-				requiredMessage="Item Price"></h:inputText>
-			<br /> <br />
-			<h:outputText value="Description: " />
-			<br />
-			<h:inputText value="#{login.username}" required="true"
-				requiredMessage="Item Description"></h:inputText>
-			<br /> <br />
-			<h:outputText value="Item Category: " />
-			<br />
-			<h:inputText value="#{login.username}" required="true"
-				requiredMessage="Category ID"></h:inputText>
-			<br /> <br />
-			<h:outputText value="Item Tags: " />
-			<br />
-			<h:inputText value="#{login.username}" required="true"
-				requiredMessage="Tag ID"></h:inputText>
-			<br /> <br />
-			<h:outputText value="Initial Stock: " />
-			<br />
-			<h:inputText value="#{login.username}" required="true"
-				requiredMessage="Stock Level"></h:inputText>
-			<br /> <br />
-			<h:outputText value="Item Supplier: " />
-			<br />
-			<h:inputText value="#{login.username}" required="true"
-				requiredMessage="Supplier ID"></h:inputText>
-			<br /> <br />
-			<h:commandButton value="Add to IMS" onclick="alert('Product Added');" />
-			<br /> <br />
+			<h:form>
+				<br />
+				<h:outputText value="Item Name: " />
+				<br />
+				<h:inputText value="#{newproduct.name}" required="true"
+					requiredMessage="Item Name"></h:inputText>
+				<br />
+				<br />
+				<h:outputText value="Price: " />
+				<br />
+				<h:inputText type="number" value="#{newproduct.price}" required="true"
+					requiredMessage="Item Price"></h:inputText>
+				<br />
+				<br />
+				<h:outputText value="Description: " />
+				<br />
+				<h:inputText value="#{newproduct.desc}" required="true"
+					requiredMessage="Item Description"></h:inputText>
+				<br />
+				<br />
+				<h:outputText value="Item Category: " />
+				<br />
+				<h:inputText value="#{newproduct.category}" required="true"
+					requiredMessage="Category ID"></h:inputText>
+				<br />
+				<br />
+				<h:outputText value="Item Tags: " />
+				<br />
+				<h:inputText value="#{newproduct.tags}" required="true"
+					requiredMessage="Tag ID"></h:inputText>
+				<br />
+				<br />
+				<h:outputText value="Initial Stock: " />
+				<br />
+				<h:inputText type="number" value="#{newproduct.stock}" required="true"
+					requiredMessage="Stock Level"></h:inputText>
+				<br />
+				<br />
+				<h:outputText value="Product Size: " />
+				<br />
+				<h:inputText value="#{newproduct.size}" required="true"
+					requiredMessage="Stock Level"></h:inputText>
+				<br />
+				<br />
+				<h:outputText value="Product Weight: " />
+				<br />
+				<h:inputText type="number" value="#{newproduct.weight}" required="true"
+					requiredMessage="Stock Level"></h:inputText>
+				<br />
+				<br />
+				<h:outputText value="Item Supplier: " />
+				<br />
+				<h:inputText value="#{newproduct.supplier}" required="true"
+					requiredMessage="Supplier ID"></h:inputText>
+				<br />
+				<br />
+				<h:commandButton value="Add to IMS"
+					onclick="alert('Product Added');" />
+				<br />
+				<br />
+			</h:form>
 		</div>
-
 		<div class="empty col-1 col-m-1"></div>
 	</ui:define>
 </ui:composition>
