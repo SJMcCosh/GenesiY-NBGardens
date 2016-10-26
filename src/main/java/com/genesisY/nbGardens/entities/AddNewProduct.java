@@ -19,7 +19,8 @@ import javax.validation.constraints.Size;
 public class AddNewProduct {
 
 	@GeneratedValue
-	@Column(name = "productID", nullable = false, length = 5)
+	@NotNull
+	@Column(name = "productID", nullable = false)
 	private String productID;
 	
 	@NotNull
@@ -28,9 +29,8 @@ public class AddNewProduct {
 	private String name;
 	
 	@NotNull
-	@Size(min = 2, max = 8)
 	@Column(name = "price", nullable = false)
-	private double price;
+	private Double price;
 	
 	@Column(name = "desc")
 	private String desc;
@@ -46,8 +46,8 @@ public class AddNewProduct {
 	private String tags;
 	
 	@NotNull
-	@Column(name = "stock", nullable = false, length = 10)
-	private int stock;
+	@Column(name = "stock", nullable = false)
+	private Integer stock;
 	
 	@NotNull
 	@Size(min = 2, max = 255)
@@ -55,23 +55,23 @@ public class AddNewProduct {
 	private String supplier;
 	
 	@NotNull
-	@Column(name = "size", nullable = false, length = 20)
-	private int size;
+	@Column(name = "size", nullable = false)
+	private Double size;
 	
 	@NotNull
-	@Column(name = "weight", nullable = false, length = 20)
-	private double weight;
+	@Column(name = "weight", nullable = false)
+	private Double weight;
 	
 	@NotNull
-	@Column(name = "avgRate", nullable = false, length = 20)
-	private double averageRating;
+	@Column(name = "avgRate", nullable = false)
+	private Double averageRating;
 
 	public AddNewProduct(){
 		
 	}
 	
-	public AddNewProduct(String productID, String name, String desc, String category, int stock, String supplier,
-			int size, double weight, double averageRating) {
+	public AddNewProduct(String productID, String name, Double price, String desc, String category, Integer stock, String supplier,
+			Double size, Double weight, Double averageRating) {
 		this.productID = productID;
 		this.name = name;
 		this.desc = desc;
@@ -88,11 +88,11 @@ public class AddNewProduct {
 		this.name = name;
 	}
 
-	public double getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 
@@ -120,11 +120,11 @@ public class AddNewProduct {
 		this.tags = tags;
 	}
 
-	public int getStock() {
+	public Integer getStock() {
 		return stock;
 	}
 
-	public void setStock(int stock) {
+	public void setStock(Integer stock) {
 		this.stock = stock;
 	}
 
@@ -136,11 +136,11 @@ public class AddNewProduct {
 		this.supplier = supplier;
 	}
 
-	public int getSize() {
+	public Double getSize() {
 		return size;
 	}
 
-	public void setSize(int size) {
+	public void setSize(Double size) {
 		this.size = size;
 	}
 
@@ -152,11 +152,11 @@ public class AddNewProduct {
 		this.weight = weight;
 	}
 
-	public double getAverageRating() {
+	public Double getAverageRating() {
 		return averageRating;
 	}
 
-	public void setAverageRating(double averageRating) {
+	public void setAverageRating(Double averageRating) {
 		this.averageRating = averageRating;
 	}
 }
