@@ -8,6 +8,8 @@ import javax.ejb.Startup;
 import javax.inject.Singleton;
 
 import com.genesisY.nbGardensCatalogue.entities.Address;
+import com.genesisY.nbGardensCatalogue.entities.Basket;
+import com.genesisY.nbGardensCatalogue.entities.BasketItem;
 import com.genesisY.nbGardensCatalogue.entities.Category;
 import com.genesisY.nbGardensCatalogue.entities.CategoryToProductConn;
 import com.genesisY.nbGardensCatalogue.entities.Customer;
@@ -46,6 +48,9 @@ public class InitialData {
 	private ArrayList<PurchaseOrderLine> polList = new ArrayList<PurchaseOrderLine>();
 	private ArrayList<Review> reviewList = new ArrayList<Review>();
 	private ArrayList<Supplier> supplierList = new ArrayList<Supplier>();
+	private ArrayList<Tag> tagList = new ArrayList<Tag>();
+	private ArrayList<BasketItem> basketItems = new ArrayList<BasketItem>();
+	
 
 	@PostConstruct
 	public void setupData() {
@@ -57,7 +62,6 @@ public class InitialData {
 		Tag t3 = new Tag("Special");
 		Tag t4 = new Tag("Cult");
 		Tag t5 = new Tag("Tag5");
-		
 		List<Tag> list1 = new ArrayList<Tag>();
 		list1.add(t1);
 		list1.add(t3);
@@ -125,174 +129,201 @@ public class InitialData {
 		categoryList.add(new Category("cat4"));
 		categoryList.add(new Category("cat5"));
 		categoryList.add(new Category("cat6"));
+		
+		//Basket List
+		Product prod1= new Product("Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0, 97.99, list2, "img/zombiefeast.jpg");
+		BasketItem basketItem1 = new BasketItem(prod1, 1);
+		basketItems.add(basketItem1);
+		
+		Product prod2= new Product("Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29, list3, "img/IndexImages/gnome_new.jpg");
+		BasketItem basketItem2 = new BasketItem(prod2, 3);
+		basketItems.add(basketItem2);
+		
+		Product prod3= new Product("Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50, list1, "img/zombie_gnome_fishing.jpg");
+		BasketItem basketItem3 = new BasketItem(prod3, 2);
+		basketItems.add(basketItem3);
+		//basketList.add(new Basket(3, "Gnome 3", "This is a test gnome 3", 20, 100.00));
 	}
 
 	public ArrayList<Address> getAddressList() {
 		return addressList;
-	}
+		}
 
-	public void setAddressList(ArrayList<Address> addressList) {
+		public void setAddressList(ArrayList<Address> addressList) {
 		this.addressList = addressList;
-	}
+		}
 
-	public void addAddress(Address address) {
+		public void addAddress(Address address) {
 		addressList.add(address);
-	}
+		}
 
-	public ArrayList<Category> getCategoryList() {
+		public ArrayList<Category> getCategoryList() {
 		return categoryList;
-	}
+		}
 
-	public void setCategoryList(ArrayList<Category> categoryList) {
+		public void setCategoryList(ArrayList<Category> categoryList) {
 		this.categoryList = categoryList;
-	}
+		}
 
-	public void addCategory(Category category) {
+		public void addCategory(Category category) {
 		categoryList.add(category);
-	}
+		}
 
-	public ArrayList<CategoryToProductConn> getCtpcList() {
+		public ArrayList<CategoryToProductConn> getCtpcList() {
 		return ctpcList;
-	}
+		}
 
-	public void setCtpcList(ArrayList<CategoryToProductConn> ctpcList) {
+		public void setCtpcList(ArrayList<CategoryToProductConn> ctpcList) {
 		this.ctpcList = ctpcList;
-	}
+		}
 
-	public void addCategoryToProduction(CategoryToProductConn ctp) {
+		public void addCategoryToProduction(CategoryToProductConn ctp) {
 		ctpcList.add(ctp);
-	}
+		}
 
-	public ArrayList<Customer> getCustomerList() {
+		public ArrayList<Customer> getCustomerList() {
 		return customerList;
-	}
+		}
 
-	public void setCustomerList(ArrayList<Customer> customerList) {
+		public void setCustomerList(ArrayList<Customer> customerList) {
 		this.customerList = customerList;
-	}
+		}
 
-	public void addCustomer(Customer customer) {
+		public void addCustomer(Customer customer) {
 		customerList.add(customer);
-	}
+		}
 
-	public ArrayList<CustomerOrder> getCustomerOrderList() {
+		public ArrayList<CustomerOrder> getCustomerOrderList() {
 		return customerOrderList;
-	}
+		}
 
-	public void setCustomerOrderList(ArrayList<CustomerOrder> customerOrderList) {
+		public void setCustomerOrderList(ArrayList<CustomerOrder> customerOrderList) {
 		this.customerOrderList = customerOrderList;
-	}
+		}
 
-	public void addCustomerOrder(CustomerOrder customerOrder) {
+		public void addCustomerOrder(CustomerOrder customerOrder) {
 		customerOrderList.add(customerOrder);
-	}
+		}
 
-	public ArrayList<CustomerOrderLine> getColList() {
+		public ArrayList<CustomerOrderLine> getColList() {
 		return colList;
-	}
+		}
 
-	public void setColList(ArrayList<CustomerOrderLine> colList) {
+		public void setColList(ArrayList<CustomerOrderLine> colList) {
 		this.colList = colList;
-	}
+		}
 
-	public void addCustomerOrderLine(CustomerOrderLine customerOrderLine) {
+		public void addCustomerOrderLine(CustomerOrderLine customerOrderLine) {
 		colList.add(customerOrderLine);
-	}
+		}
 
-	public ArrayList<EmployeeLogin> getEmployeeLoginList() {
+		public ArrayList<EmployeeLogin> getEmployeeLoginList() {
 		return employeeLoginList;
-	}
+		}
 
-	public void setEmployeeLoginList(ArrayList<EmployeeLogin> employeeLoginList) {
+		public void setEmployeeLoginList(ArrayList<EmployeeLogin> employeeLoginList) {
 		this.employeeLoginList = employeeLoginList;
-	}
+		}
 
-	public void addEmployeeLogin(EmployeeLogin employeeLogin) {
+		public void addEmployeeLogin(EmployeeLogin employeeLogin) {
 		employeeLoginList.add(employeeLogin);
-	}
+		}
 
-	public ArrayList<Product> getProductList() {
+		public ArrayList<Product> getProductList() {
 		return productList;
-	}
+		}
 
-	public void setProductList(ArrayList<Product> productList) {
+		public void setProductList(ArrayList<Product> productList) {
 		this.productList = productList;
-	}
+		}
 
-	public void addProduct(Product product) {
+		public void addProduct(Product product) {
 		productList.add(product);
-	}
+		}
 
-	public ArrayList<ProductTagLine> getPtlList() {
+		public ArrayList<ProductTagLine> getPtlList() {
 		return ptlList;
-	}
+		}
 
-	public void setPtlList(ArrayList<ProductTagLine> ptlList) {
+		public void setPtlList(ArrayList<ProductTagLine> ptlList) {
 		this.ptlList = ptlList;
-	}
+		}
 
-	public void addProductTagLine(ProductTagLine ptl) {
+		public void addProductTagLine(ProductTagLine ptl) {
 		ptlList.add(ptl);
-	}
+		}
 
-	public ArrayList<ProductVariants> getProductVariantsList() {
+		public ArrayList<ProductVariants> getProductVariantsList() {
 		return productVariantsList;
-	}
+		}
 
-	public void setProductVariantsList(ArrayList<ProductVariants> productVariantsList) {
+		public void setProductVariantsList(ArrayList<ProductVariants> productVariantsList) {
 		this.productVariantsList = productVariantsList;
-	}
+		}
 
-	public void addProductVariants(ProductVariants productVariants) {
+		public void addProductVariants(ProductVariants productVariants) {
 		productVariantsList.add(productVariants);
-	}
+		}
 
-	public ArrayList<PurchaseOrder> getPurchaseOrderList() {
+		public ArrayList<PurchaseOrder> getPurchaseOrderList() {
 		return purchaseOrderList;
-	}
+		}
 
-	public void setPurchaseOrderList(ArrayList<PurchaseOrder> purchaseOrderList) {
+		public void setPurchaseOrderList(ArrayList<PurchaseOrder> purchaseOrderList) {
 		this.purchaseOrderList = purchaseOrderList;
-	}
+		}
 
-	public void addProductOrder(PurchaseOrder purchaseOrder) {
+		public void addProductOrder(PurchaseOrder purchaseOrder) {
 		purchaseOrderList.add(purchaseOrder);
-	}
+		}
 
-	public ArrayList<PurchaseOrderLine> getPolList() {
+		public ArrayList<PurchaseOrderLine> getPolList() {
 		return polList;
-	}
+		}
 
-	public void setPolList(ArrayList<PurchaseOrderLine> polList) {
+		public void setPolList(ArrayList<PurchaseOrderLine> polList) {
 		this.polList = polList;
-	}
+		}
 
-	public void addPurchaseOrderLine(PurchaseOrderLine purchaseOrderLine) {
+		public void addPurchaseOrderLine(PurchaseOrderLine purchaseOrderLine) {
 		polList.add(purchaseOrderLine);
-	}
+		}
 
-	public ArrayList<Review> getReviewList() {
+		public ArrayList<Review> getReviewList() {
 		return reviewList;
-	}
+		}
 
-	public void setReviewList(ArrayList<Review> reviewList) {
+		public void setReviewList(ArrayList<Review> reviewList) {
 		this.reviewList = reviewList;
-	}
+		}
 
-	public void addReview(Review review) {
+		public void addReview(Review review) {
 		reviewList.add(review);
-	}
+		}
 
-	public ArrayList<Supplier> getSupplierList() {
+		public ArrayList<Supplier> getSupplierList() {
 		return supplierList;
-	}
+		}
 
-	public void setSupplierList(ArrayList<Supplier> supplierList) {
+		public void setSupplierList(ArrayList<Supplier> supplierList) {
 		this.supplierList = supplierList;
+		}
+
+		public void addSupplier(Supplier supplier) {
+			supplierList.add(supplier);
+		}	
+	
+	
+
+	public ArrayList<BasketItem> getBasketList() {
+		return basketItems;
 	}
 
-	public void addSupplier(Supplier supplier) {
-		supplierList.add(supplier);
-	}
+//	public void setBasketList(ArrayList<Basket> basketList) {
+//		this.basketList = basketList;
+//	}
 
+	
+	
+	
 }

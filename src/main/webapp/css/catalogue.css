@@ -30,7 +30,6 @@
 
 .viewaccount {
 	text-align: center;
-	
 }
 
 .billingadd {
@@ -874,28 +873,46 @@ ul.botnav li a {
 		padding-bottom: 500px;
 		padding-right: 50px;
 	}
+}
 
-	
-	
-   /* Added on the 20/10/2016 by Callum Holden */
-	#departments_grid{	
-		width:40%;
-		background-color:red;
-		height:500px;
-		margin:0 auto;
-		text-align:center;	
+
+
+
+
+/* 				CSS FOR BASKET				 */
+#basket_contents_container{
+	width:700px;
+	margin:0 auto;	
+	padding-bottom:50px;
+}
+#basket_contents_container_right_column{
+	float:right;
+}
+#basket_header_title{
+	margin:0;
+	padding:0;
+	display:inline-block;
+}
+
+#basket_header_right_column{
+	display:inline-block;
+	float:right;
+	margin-top:25px;
+}
+	#basket_header_right_column > p{
+		display:inline-block;		
 	}
-		.departments_grid_department{
-		
-			width:200px;
-			min-width:200px;
-			height:200px;
-			background-color:blue;
-			display:inline-block;
-			
-		
-		}
 	
+	.basket_page_price{
+		padding-right:20px;
+	}
 	
-	
-	
+	.basket_page_price_priceInfo{
+		padding-right:23px;		
+	}
+
+#basket_page_totals_container{
+	float:right;
+}
+
+
