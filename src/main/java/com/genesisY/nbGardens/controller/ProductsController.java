@@ -53,9 +53,6 @@ public class ProductsController implements Serializable {
 		dataModel = new ListDataModel<Product>(
 				productService.getAllProducts(category));
 		tagModel = new ListDataModel<Tag>(tagService.getAllTags());
-		List<Product> dataModelAsList = (List<Product>) dataModel;
-		
-		Collections.sort(dataModelAsList);
 		
 		return "subcategory";
 	}
