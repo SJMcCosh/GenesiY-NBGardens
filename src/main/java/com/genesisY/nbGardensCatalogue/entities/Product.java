@@ -64,12 +64,17 @@ public class Product implements Comparable<Product> {
 	
 	@OneToMany
 	private List<Tag> tagList;
+	
+	@Column(name = "imageLocation", nullable = false, length = 1000)
+	@NotNull
+	@Size(min = 2, max = 1000)
+	private String imageLocation;
 
 	public Product() {
 
 	}
 
-	public Product(String name, double averageRating, String description, String size, double weight, double price, List<Tag> tagList) {
+	public Product(String name, double averageRating, String description, String size, double weight, double price, List<Tag> tagList, String imageLocation) {
 		this.name = name;
 		this.averageRating = averageRating;
 		this.description = description;
@@ -77,6 +82,7 @@ public class Product implements Comparable<Product> {
 		this.weight = weight;
 		this.price = price;
 		this.tagList = tagList;
+		this.imageLocation = imageLocation;
 	}
 
 	
@@ -159,6 +165,14 @@ public class Product implements Comparable<Product> {
 
 	public void setTagList(List<Tag> tagList) {
 		this.tagList = tagList;
+	}
+
+	public String getImageLocation() {
+		return imageLocation;
+	}
+
+	public void setImageLocation(String imageLocation) {
+		this.imageLocation = imageLocation;
 	}
 
 	@Override

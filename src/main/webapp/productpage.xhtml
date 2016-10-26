@@ -3,7 +3,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/template.xhtml">
-	<meta charset="ISO-8859-1"/>
+	<meta charset="ISO-8859-1" />
 	<ui:define name="maincontent">
 		<div class="maincontent">
 			<div class="productcontent">
@@ -12,10 +12,8 @@
 				<!-- Images for the content -->
 				<div class=" productimages col-4 col-m-4">
 					<picture>
-					<source srcset="img/gnome.jpg"
-						media="(max-width: 600px)" />
-					<img src="../../../../../../../../images/gnome.jpg"
-						alt="Chania City" style="width: auto;" /></picture>
+					<source srcset="img/gnome.jpg" media="(max-width: 600px)" />
+					<img src="#{products.product.imageLocation}" style="width: auto;" /></picture>
 				</div>
 
 				<div class="productinformation col-8 col-m-8">
@@ -25,9 +23,12 @@
 						</div>
 						<!-- Description for the product -->
 						<div>
-							<h:outputText value="#{products.product.description}"/>
-							<h:outputText value="#{products.product.weight}"/>
-							<h:outputText value="#{products.product.size}"/>
+							<ul>
+								<li><h:outputText value="#{products.product.description}" /></li>
+								<li><h:outputText value="#{products.product.weight}" /></li>
+								<li><h:outputText value="#{products.product.size}" /></li>
+
+							</ul>
 						</div>
 
 
@@ -74,8 +75,8 @@
 
 						<!-- Cart button -->
 
-						<h:commandButton type="submit" name="addtocart" value="Add To Cart"
-							action="#{login.login()}" />
+						<h:commandButton type="submit" name="addtocart"
+							value="Add To Cart" action="#{login.login()}" />
 					</h:form>
 				</div>
 			</div>
@@ -87,10 +88,7 @@
 				<div id="index_lower_content_master_wrapper">
 
 					<div id="index_featured_products_wrapper_outer">
-						<div id="index_featured_products_wrapper_inner">
-
-							
-						</div>
+						<div id="index_featured_products_wrapper_inner"></div>
 					</div>
 				</div>
 			</div>

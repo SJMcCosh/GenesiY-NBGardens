@@ -29,6 +29,7 @@
 			<h:form>
 				<div class="col-9 col-m-6">
 					<h:selectOneMenu value="#{sort.sorter}">
+						<f:selectItem itemLabel="Rating" itemValue="Rating" />
 						<f:selectItem itemLabel="Price Low to High"
 							itemValue="Price Low to High" />
 						<f:selectItem itemLabel="Price High to Low"
@@ -47,15 +48,20 @@
 					<ul>
 						<ui:repeat var="product" value="#{products.dataModel}">
 
-							<h:commandLink action="#{products.viewProduct}"
+							<h:commandLink action="#{products.viewProduct(product)}"
 								class="col-3 col-m-6 prodimg">
 								<div class="index_featured_products_product">
 									<img class="index_featured_products_product_image"
-										src="../../../../../../../../images/IndexImages/gnome_new.jpg" />
-									<h:outputText value="#{product.name}"
-										class="index_featured_products_product_title" />
-									<h:outputText value="#{product.price}"
-										class="index_featured_products_product_price" />
+										src="#{product.imageLocation}" />
+									<ul>
+										<li><h:outputText value="#{product.name}"
+												class="index_featured_products_product_title" /></li>
+										<li><h:outputText value="#{product.price}"
+												class="index_featured_products_product_price" /></li>
+										<li><h:outputText value="#{product.averageRating}"
+												class="index_featured_products_product_price" /></li>
+									</ul>
+
 								</div>
 							</h:commandLink>
 						</ui:repeat>

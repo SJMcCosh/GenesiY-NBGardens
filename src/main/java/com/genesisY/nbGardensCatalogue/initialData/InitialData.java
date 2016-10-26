@@ -86,9 +86,9 @@ public class InitialData {
 		customerList.add(janeSmith);//Password = password2
 		customerList.add(willSmith);//Password = password3
 		colList.add(new CustomerOrderLine());
-		productList.add(new Product("Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50, list1));
-		productList.add(new Product("Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0, 97.99, list2));
-		productList.add(new Product("Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29, list3));	
+		productList.add(new Product("Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50, list1, "img/zombie_gnome_fishing.jpg"));
+		productList.add(new Product("Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0, 97.99, list2, "img/zombiefeast.jpg"));
+		productList.add(new Product("Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29, list3, "img/IndexImages/gnome_new.jpg"));	
 		categoryList.add(new Category("cat1"));
 		categoryList.add(new Category("cat2"));
 		categoryList.add(new Category("cat3"));

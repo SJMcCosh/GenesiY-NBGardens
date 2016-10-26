@@ -28,8 +28,6 @@ public class ProductsController implements Serializable {
 	@Inject
 	private ProductService productService;
 	
-	@Inject private TagService tagService;
-	
 	
 
 	public DataModel<Tag> getTagModel() {
@@ -40,9 +38,8 @@ public class ProductsController implements Serializable {
 		this.tagModel = tagModel;
 	}
 	
-	public String viewProduct(){
-		String name = "Gnome Trek";
-		product = productService.getProductByName(name);
+	public String viewProduct(Product p){
+		product = productService.getProductByName(p.getName());
 		System.out.println(">>>>>>>>>>>>>>>>>>> Product Name = " +product.getName());
 		return "productpage";
 	}
