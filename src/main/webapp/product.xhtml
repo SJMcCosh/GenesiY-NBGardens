@@ -41,7 +41,7 @@
 			<div class="productMainContent">
 				<h:form>
 					<li>Stock</li>
-					<li><h:inputText value="1000?"></h:inputText></li>
+					<li><h:inputText value="#{products.product.stockLevel}"></h:inputText></li>
 					<br />
 				</h:form>
 			</div>
@@ -62,7 +62,7 @@
 			<div class="productMainContent">
 				<h:form>
 					<li>Specifications</li>
-					<li><h:inputText value="product specs"></h:inputText></li>
+					<li><h:inputText value="#{products.product.specification}"></h:inputText></li>
 					<li><h:commandButton value="Edit" onclick="alert('Product Specification Changed!');" /></li>
 				</h:form>
 			</div>

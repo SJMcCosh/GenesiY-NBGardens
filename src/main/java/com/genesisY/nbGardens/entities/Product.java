@@ -32,23 +32,11 @@ public class Product {
 	@Size(min = 2, max = 255)
 	private String name;
 
-	@Column(name = "averageRating", nullable = false)
-	@NotNull
-	private double averageRating;
-
 	@Column(name = "productName", nullable = false, length = 1000)
 	@NotNull
 	@Size(min = 2, max = 1000)
 	private String description;
-
-	@Column(name = "productName", nullable = false, length = 255)
-	@NotNull
-	@Size(min = 2, max = 255)
-	private String size;
-
-	@Column(name = "averageRating", nullable = false)
-	@NotNull
-	private double weight;
+	
 	@Column(name = "tagID", nullable = false)
 	@NotNull
 	private List<Tag> tags;
@@ -56,19 +44,22 @@ public class Product {
 	private String imageLocation;
 	
 	private double price;
+	
+	private String specification;
+	
+	private int stockLevel;
 
 	public Product() {
 		
 	}
 
-	public Product(String name, double averageRating, String description, String size, double weight, String imageLocation, double price) {
+	public Product(String name, String description, String imageLocation, double price, String specification, int stockLevel) {
 		this.name = name;
-		this.averageRating = averageRating;
 		this.description = description;
-		this.size = size;
-		this.weight = weight;
 		this.imageLocation = imageLocation;
 		this.price = price;
+		this.specification = specification;
+		this.stockLevel = stockLevel;
 	}
 
 	public int getId() {
@@ -87,36 +78,12 @@ public class Product {
 		this.name = name;
 	}
 
-	public double getAverageRating() {
-		return averageRating;
-	}
-
-	public void setAverageRating(double averageRating) {
-		this.averageRating = averageRating;
-	}
-
 	public String getDescription() {
 		return description;
 	}
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	public String getSize() {
-		return size;
-	}
-
-	public void setSize(String size) {
-		this.size = size;
-	}
-
-	public double getWeight() {
-		return weight;
-	}
-
-	public void setWeight(double weight) {
-		this.weight = weight;
 	}
 	
 	public List<Tag> getTags(){
@@ -141,6 +108,22 @@ public class Product {
 
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	public String getSpecification() {
+		return specification;
+	}
+
+	public void setSpecification(String specification) {
+		this.specification = specification;
+	}
+
+	public int getStockLevel() {
+		return stockLevel;
+	}
+
+	public void setStockLevel(int stockLevel) {
+		this.stockLevel = stockLevel;
 	}
 
 }
