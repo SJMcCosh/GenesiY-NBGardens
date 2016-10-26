@@ -1,8 +1,6 @@
 package com.genesisY.nbGardens.controller;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.model.DataModel;
@@ -11,24 +9,39 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.genesisY.nbGardens.services.ProductService;
-import com.genesisY.nbGardens.services.TagService;
+import com.genesisY.nbGardensCatalogue.entities.PaginationHelper;
 import com.genesisY.nbGardensCatalogue.entities.Product;
 import com.genesisY.nbGardensCatalogue.entities.Tag;
 
+@SuppressWarnings("serial")
 @Named("products")
 @SessionScoped
-
 public class ProductsController implements Serializable {
-
-	private Product product;
-	private DataModel<Product> dataModel = null;
-
-	private DataModel<Tag> tagModel = null;
 
 	@Inject
 	private ProductService productService;
-	
-	
+	private Product product;
+	private DataModel<Product> dataModel = null;
+	private DataModel<Tag> tagModel = null;
+	private PaginationHelper pagination;
+	private int selected;
+	private String category = "all";
+
+	public int getSelected() {
+		return selected;
+	}
+
+	public void setSelected(int selected) {
+		this.selected = selected;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
 
 	public DataModel<Tag> getTagModel() {
 		return tagModel;
@@ -37,24 +50,22 @@ public class ProductsController implements Serializable {
 	public void setTagModel(DataModel<Tag> tagModel) {
 		this.tagModel = tagModel;
 	}
-	
-	public String viewProduct(Product p){
+
+	public String viewProduct(Product p) {
 		product = productService.getProductByName(p.getName());
-		System.out.println(">>>>>>>>>>>>>>>>>>> Product Name = " +product.getName());
+		System.out.println(">>>>>>>>>>>>>>>>>>> Product Name = " + product.getName());
 		return "productpage";
 	}
 
-	@SuppressWarnings("unchecked")
 	public String allProducts() {
-		String category = "all";
-		dataModel = new ListDataModel<Product>(
-				productService.getAllProducts(category));
-		
-		
+		dataModel = getDataModel();
 		return "subcategory";
 	}
 
 	public DataModel<Product> getDataModel() {
+		if (dataModel == null){
+			dataModel = getPagination().createPageDataModel();
+		}
 		return dataModel;
 	}
 
@@ -62,9 +73,7 @@ public class ProductsController implements Serializable {
 		this.dataModel = dataModel;
 	}
 
-	@SuppressWarnings("unchecked")
 	public String view() {
-
 		return "productpage";
 	}
 
@@ -81,4 +90,57 @@ public class ProductsController implements Serializable {
 		this.product = product;
 	}
 
+	private void recreateModel(){
+		dataModel = null;
+	}
+	
+	public String previous(){
+		getPagination().nextPage();
+		recreateModel();
+		return "subcategory";
+	}
+	
+	public String next(){
+		getPagination().previousPage();
+		recreateModel();
+		return "subcategory";
+	}
+	
+	private void updateCurrentItem(){
+		int count = productService.getAllProducts(category).size();
+		if (selected >= count){
+			selected = count - 1;
+			if (pagination.getPageFirstItem() >= count){
+				pagination.previousPage();
+			}
+		}
+		if (selected >= 0){
+			try{
+				setProduct(productService.getAllProducts(category).subList(selected, count).get(0));
+			} catch (Exception e){
+				setProduct(productService.getAllProducts(category).subList(selected, count).get(0));
+			}
+		}
+	}
+	
+	public PaginationHelper getPagination(){
+		if (pagination == null){
+			pagination = new PaginationHelper(15){
+				@Override
+				public int getItemsCount(){
+					return productService.getAllProducts(category).size();
+				}
+				
+				@Override
+				public DataModel<Product> createPageDataModel(){
+					try{
+						return new ListDataModel<Product>(productService.getAllProducts(category).subList(getPageFirstItem(), getPageFirstItem()+ getPageSize()));
+					} catch(Exception e){
+						return new ListDataModel<Product>(productService.getAllProducts(category).subList(getPageFirstItem(), getItemsCount()));
+					}
+				}
+			};
+		}
+		return pagination;
+	}
 }
