@@ -14,13 +14,13 @@
 						<h4>Login</h4>
 						<h:form>
 							<p>Username</p>
-							<h:inputText value="#{login.username}" required="true"
+							<h:inputText value="#{employee_login.username}" required="true"
 								requiredMessage="Enter Username"></h:inputText>
 							<p>
 								<a href="#forgottenusername">Forgotten your username?</a>
 							</p>
 							<p>Password</p>
-							<h:inputSecret value="#{login.password}" required="true"
+							<h:inputSecret value="#{employee_login.password}" required="true"
 								requiredMessage="Enter Password"
 								validatorMessage="Please enter a password">
 								<f:validateLength minimum="8" maximum="35" />
@@ -30,7 +30,7 @@
 							</p>
 							<br />
 							<h:commandButton type="submit" name="loginbtn" value="Sign In"
-								action="#{login.login()}" />
+								action="#{employee_login.login()}" />
 							<br />
 							<br />
 						</h:form>

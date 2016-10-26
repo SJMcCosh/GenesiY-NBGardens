@@ -187,6 +187,26 @@ ul.breadcrumb li a {
 	float: right;
 }
 
+.addsuppdetails{
+	width: 350px;
+	border-style: solid;
+	border-width: thin;
+	text-align: center;
+	list-style: none;
+	background-color: #d3d3d3;
+	border-bottom-style: none;
+}
+
+.addsuppaddr{
+	width: 350px;
+	border-style: solid;
+	border-width: thin;
+	text-align: center;
+	list-style: none;
+	background-color: #d3d3d3;
+	border-top-style: none;
+}
+
 [class*="col-"] {
 	float: left;
 }
@@ -253,6 +273,28 @@ ul.breadcrumb li a {
 		background-color: #d3d3d3;
 		float: right;
 		height: 145px;
+		border-right-style: none;
+	}
+	.addsuppaddr {
+		width: 300px;
+		border-style: solid;
+		border-width: thin;
+		text-align: center;
+		list-style: none;
+		background-color: #d3d3d3;
+		float: left;
+		border-left-style: none;
+		height: 270px
+	}
+	.addsuppdetails {
+		width: 300px;
+		border-style: solid;
+		border-width: thin;
+		text-align: center;
+		list-style: none;
+		background-color: #d3d3d3;
+		float: right;
+		height: 270px;
 		border-right-style: none;
 	}
 }
