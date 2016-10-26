@@ -1,0 +1,72 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/template.xhtml">
+	<meta charset="ISO-8859-1" title="IMS" />
+
+	<ui:define name="content">
+		<div id="pageTitle">
+			<div class="col-12 col-m-12">
+				<h1>Product</h1>
+			</div>
+		</div>
+
+		<div class="col-12 col-m-12" align="center">
+		
+			<div class="productMainContent">
+				<h:form>
+					<li>Product</li>
+					<li><h:inputText></h:inputText></li>
+					<li><h:commandButton value="Edit" onclick="alert('Product Name Changed!');" /></li>
+				</h:form>
+			</div>
+			
+			<div class="productMainContent">
+				<h:form>
+					<li>Product ID</li>
+					<li><h:inputText></h:inputText></li>
+					<li><h:commandButton value="Get Details" onclick="alert('Product Details Retrieved');" /></li>
+				</h:form>
+			</div>
+			
+			<div class="productMainContent">
+				<h:form>
+					<li>Product Price</li>
+					<li><h:inputText></h:inputText></li>
+					<li><h:commandButton value="Edit" onclick="alert('Product Price Changed!');" /></li>
+				</h:form>
+			</div>
+			
+			<div class="productMainContent">
+				<h:form>
+					<li> Stock</li>
+					<li><h:inputText></h:inputText></li>
+					<br />
+				</h:form>
+			</div>
+		
+		</div>
+		
+		<div class="col-12 col-m-12" align="center">
+			<div class="productMainContent">
+				<h:form>
+					<li>Description</li>
+					<li><h:inputText></h:inputText></li>
+					<li><h:commandButton value="Edit" onclick="alert('Product Description Changed!');" /></li>
+				</h:form>
+			</div>
+		</div>
+		
+		<div class="col-12 col-m-12" align="center">
+			<div class="productMainContent">
+				<h:form>
+					<li>Specifications</li>
+					<li><h:inputText></h:inputText></li>
+					<li><h:commandButton value="Edit" onclick="alert('Product Specification Changed!');" /></li>
+				</h:form>
+			</div>
+		</div>
+
+	</ui:define>
+</ui:composition>
