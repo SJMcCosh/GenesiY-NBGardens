@@ -13,7 +13,7 @@
 					<ul class="col-3 col-m-6 tagbar">
 
 						<ui:repeat var="categorys" value="#{category.catModel}">
-							<li><h:commandLink action="#{products.allProducts}"
+							<li><h:commandLink action="#{products.allProducts()}"
 								value="#{categorys.name}" /></li>
 							
 						</ui:repeat>
