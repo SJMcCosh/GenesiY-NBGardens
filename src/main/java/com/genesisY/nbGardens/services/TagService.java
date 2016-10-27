@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.faces.model.DataModel;
+import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 
 import com.genesisY.nbGardensCatalogue.entities.Product;
@@ -38,8 +40,19 @@ public class TagService {
 
 			return null;
 		}
-
-		
+	}
+	
+	public DataModel<Product> filterProducts(DataModel<Product> dataModel, String tag) {
+		List<Product> list = new ArrayList<Product>();
+		for (Product p: dataModel){
+			for(Tag filters: p.getTagList()){
+				if(tag.equals(filters.getName())){
+					list.add(p);
+				}
+			}
+		}
+		dataModel = new ListDataModel<Product>(list);
+		return dataModel;
 	}
 
 }

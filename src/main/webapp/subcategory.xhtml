@@ -16,7 +16,7 @@
 
 			<h:form class="col-3 col-m-6 tagbar">
 				<h:selectManyCheckbox layout="pageDirection"
-					value="#{filter.filter}">
+					value="#{products.tagNameArray}">
 					<f:selectItems value="#{products.tagModel}" var="tag"
 						itemLabel="#{tag.name}" itemValue="#{tag.name}" />
 					<f:ajax listener="#{filter.filterProducts}" render="@all" />
@@ -34,7 +34,7 @@
 							itemValue="Price Low to High" />
 						<f:selectItem itemLabel="Price High to Low"
 							itemValue="Price High to Low" />
-						<f:ajax listener="#{sort.sort}" render="@all" />
+						<f:ajax listener="#{sort.sort}" render="@form" />
 					</h:selectOneMenu>
 				</div>
 

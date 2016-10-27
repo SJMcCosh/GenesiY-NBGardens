@@ -15,8 +15,7 @@ import com.genesisY.nbGardensCatalogue.entities.Product;
 @RequestScoped
 
 public class SortController {
-	
-	String sorter;
+	private String sorter;
 	@Inject
 	private ProductsController productsController;
 
