@@ -72,6 +72,18 @@ public class BasketController implements Serializable{
 		System.out.println("SELECTED QUANTITY>>>>>>>>>>>>>>>>: " + selectedQuantity);
 	}
 	
+	public void removeBasketItem(String itemName) 
+	{
+		System.out.println(">>>>>>>>>>>>>> Item clicked: " + itemName);
+		
+		for(int i = 0; i<basketService.getBasketItems().size(); i++)
+		{
+			//check for each item name = name passed.
+		}
+		
+		
+		
+	}
 	
 //	public Basket getProduct() {
 //		return basket;

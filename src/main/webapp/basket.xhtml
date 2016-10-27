@@ -34,7 +34,8 @@
 				
 				<div id="basket_items_container_right_column">	
 					<div style="float:right">
-					<img id="basket_page_remove_item_button" src="img/BasketImages/removeitembutton.png" />	
+					<!--<img id="basket_page_remove_item_button" src="img/BasketImages/removeitembutton.png" />-->	
+						<div id="basket_page_remove_item_button"><h:commandButton id="basket_page_remove_item_button" action="#{basket.removeBasketItem(basketItem.product.name)}" image="img/BasketImages/removeitembutton.png" /></div>
 						<h:outputText class="basket_page_price_priceInfo" value="#{basketItem.product.price}">
 							<f:convertNumber type="currency" currencyCode="GBP" />
 						</h:outputText>				
