@@ -16,7 +16,7 @@ import com.genesisY.nbGardensCatalogue.entities.Product;
 
 public class SortController {
 	
-	String sorter;
+	private String sorter;
 	@Inject
 	private ProductsController productsController;
 
@@ -41,6 +41,7 @@ public class SortController {
 	}
 
 	public String sortByHighToLow() {
+		StringBuilder builder = new StringBuilder();
 		return "subcategory";
 	}
 

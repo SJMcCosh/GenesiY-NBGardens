@@ -39,6 +39,10 @@ public class SortingService {
 		return dataModel;
 	}
 
+	
+	
+	
+	
 	public DataModel<Product> sortHighToLow(DataModel<Product> dataModel) {
 		List<Product> list = new ArrayList<Product>();
 		for (Product p: dataModel){
@@ -56,6 +60,13 @@ public class SortingService {
 		dataModel = new ListDataModel<>(list);
 		return dataModel;
 	}
+	
+	
+	
+	
+	
+	
+	
 	
 	public DataModel<Product> sortByRating(DataModel<Product> dataModel){
 		List<Product> list = new ArrayList<Product>();
