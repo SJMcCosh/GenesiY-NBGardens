@@ -49,11 +49,12 @@ public class Product {
 	
 	private int stockLevel;
 
-	public Product() {
+	public Product(String productID, String name, Double price, String desc, String category, Integer stock, String supplier, Double size, Double weight, Double averageRating) {
 		
 	}
 
-	public Product(String name, String description, String imageLocation, double price, String specification, int stockLevel) {
+	public Product(int id, String name, String description, String imageLocation, double price, String specification, int stockLevel) {
+		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.imageLocation = imageLocation;

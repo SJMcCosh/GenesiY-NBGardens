@@ -16,7 +16,7 @@ import com.genesisY.nbGardens.initialData.ImsInitialData;
 public class SupplierManagerOffline implements SupplierManager {
 	
 	@Inject
-	ImsInitialData initialData;
+	private ImsInitialData initialData;
 	
 	
 	@Override

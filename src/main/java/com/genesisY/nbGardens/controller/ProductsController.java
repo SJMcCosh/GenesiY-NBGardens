@@ -17,8 +17,10 @@ import com.genesisY.nbGardens.services.ProductService;
 public class ProductsController implements Serializable {
 
 	private Product product;
-	private String price;
-	private String name;
+	private String price = "";
+	private String name = "";
+	private String description = "";
+	private String specification = "";
 	private DataModel<Product> dataModel = null;
 
 	@Inject
@@ -31,14 +33,31 @@ public class ProductsController implements Serializable {
 	}
 	
 	public String viewProduct(Product p){ 
-		product = prodService.getProductByName(p.getName()); 
+		product = prodService.getProductByName(p.getName());
 		System.out.println(">>>>>>>>>>>>>>>>>>> Product Name = " +product.getName()); 
+		setName(product.getName());
+		setPrice(Double.toString(product.getPrice()));
+		setDescription(product.getDescription());
+		setSpecification(product.getSpecification());
 		return "product"; 
 	} 
 	
 	public void onLoad()
 	{
 		dataModel = new ListDataModel<Product>(prodService.getAllProducts());
+	}
+	
+	public String updateProduct()
+	{
+		
+		product.setName(name);
+		//product.setPrice(Double.parseDouble(price));
+		product.setDescription(description);
+		product.setSpecification(specification);
+		System.out.println(">>>>>>>>>>>>" + getPrice());
+		prodService.updateProduct(product);
+		
+		return "product";
 	}
 
 
@@ -55,6 +74,7 @@ public class ProductsController implements Serializable {
 	}
 
 	public void setPrice(String price) {
+		product.setPrice(Double.parseDouble(price));
 		this.price = price;
 	}
 
@@ -63,6 +83,7 @@ public class ProductsController implements Serializable {
 	}
 
 	public void setName(String name) {
+		
 		this.name = name;
 	}
 
@@ -83,6 +104,22 @@ public class ProductsController implements Serializable {
 
 	public void setProduct(Product product) {
 		this.product = product;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getSpecification() {
+		return specification;
+	}
+
+	public void setSpecification(String specification) {
+		this.specification = specification;
 	}
 
 }

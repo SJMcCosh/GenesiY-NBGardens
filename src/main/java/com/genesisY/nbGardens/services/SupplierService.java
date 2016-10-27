@@ -20,6 +20,7 @@ public class SupplierService {
 	private Address address; 
 	@Inject
 	private SupplierManager supplierManager; 
+
 	
 	public List<Supplier> viewSuppliers(){
 		List<Supplier> suppliers = supplierManager.getAllSuppliers();

@@ -14,7 +14,6 @@ public class ProductService {
 	@Inject
 	private ProductManager productInt;
 
-	@SuppressWarnings("unchecked")
 	public List<Product> getAllProducts() {
 		try {
 			return productInt.getProducts();
@@ -37,6 +36,21 @@ public class ProductService {
 			return null;
 		}
 		return null;
+	}
+	
+	public void updateProduct(Product product)
+	{
+		if (product != null)
+		{
+			System.out.println("<<<<<<<<<<<<<<<<" + product.getPrice());
+			productInt.updateProduct(product);
+		}
+	}
+
+	public void addProduct(Integer productID, String name, Double price, String desc, String category, Integer stock,
+			String product, Double size, Double weight, Double averageRating) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
