@@ -19,9 +19,8 @@ public class SupplierService {
 	private String email; 
 	private Address address; 
 	@Inject
-	private SupplierManager supplierManager;
-	@Inject 
-	private SupplierManagerOffline sM; 
+	private SupplierManager supplierManager; 
+
 	
 	public List<Supplier> viewSuppliers(){
 		List<Supplier> suppliers = supplierManager.getAllSuppliers();
@@ -35,7 +34,7 @@ public class SupplierService {
 		
 		if (s != null){
 			
-			sM.addSupplier(s);
+			supplierManager.addSupplier(s);
 			
 			}
 	}

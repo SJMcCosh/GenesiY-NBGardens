@@ -6,67 +6,66 @@
 	<meta charset="ISO-8859-1" title="IMS" />
 
 	<ui:define name="content">
-		<div id="pageTitle">
-			<div class="col-12 col-m-12">
-				<h1>Product</h1>
+		<h:form>
+			<div id="pageTitle">
+				<div class="col-12 col-m-12">
+					<h1>Product</h1>
+				</div>
 			</div>
-		</div>
 
-		<div class="col-12 col-m-12" align="center">
-		
-			<div class="productMainContent">
-				<h:form>
-					<li>Product</li>
-					<li><h:inputText value="#{products.product.name}"></h:inputText></li>
-					<li><h:commandButton value="Edit" onclick="alert('Product Name Changed!');" /></li>
-				</h:form>
-			</div>
-			
-			<div class="productMainContent">
-				<h:form>
-					<li>Product ID</li>
-					<li><h:inputText value="id"></h:inputText></li>
-					<li><h:commandButton value="Get Details" onclick="alert('Product Details Retrieved');" /></li>
-				</h:form>
-			</div>
-			
-			<div class="productMainContent">
-				<h:form>
-					<li>Product Price</li>
-					<li><h:inputText value="#{products.product.price}"></h:inputText></li>
-					<li><h:commandButton value="Edit" onclick="alert('Product Price Changed!');" /></li>
-				</h:form>
-			</div>
-			
-			<div class="productMainContent">
-				<h:form>
-					<li>Stock</li>
-					<li><h:inputText value="#{products.product.stockLevel}"></h:inputText></li>
-					<br />
-				</h:form>
-			</div>
-		
-		</div>
-		
-		<div class="col-12 col-m-12" align="center">
-			<div class="productMainContent">
-				<h:form>
-					<li>Description</li>
-					<li><h:inputText value="#{products.product.description}"></h:inputText></li>
-					<li><h:commandButton value="Edit" onclick="alert('Product Description Changed!');" /></li>
-				</h:form>
-			</div>
-		</div>
-		
-		<div class="col-12 col-m-12" align="center">
-			<div class="productMainContent">
-				<h:form>
-					<li>Specifications</li>
-					<li><h:inputText value="#{products.product.specification}"></h:inputText></li>
-					<li><h:commandButton value="Edit" onclick="alert('Product Specification Changed!');" /></li>
-				</h:form>
-			</div>
-		</div>
+			<div class="col-12 col-m-12" align="center">
 
+				<div class="productMainContent">
+
+					Product
+					<h:inputText value="#{products.name}"/>
+
+				</div>
+
+				<div class="productMainContent">
+
+					Product ID
+					<h:inputText value="#{products.product.id}"
+							readonly="true"/>
+
+				</div>
+
+				<div class="productMainContent">
+
+					Product Price
+					<h:inputText value="#{products.price}" />
+
+				</div>
+
+				<div class="productMainContent">
+
+					Stock
+					<h:inputText value="#{products.product.stockLevel}"
+							readonly="true"/> <br />
+
+				</div>
+
+			</div>
+
+			<div class="col-12 col-m-12" align="center">
+				<div class="productMainContent">
+					
+						Description
+						<h:inputText value="#{products.description}"/>
+					
+				</div>
+			</div>
+
+			<div class="col-12 col-m-12" align="center">
+				<div class="productMainContent">
+
+					Specifications
+					<h:inputText value="#{products.specification}"/>
+
+				</div>
+			</div>
+
+			<h:commandButton value="Update" action="#{products.updateProduct}" />
+		</h:form>
 	</ui:define>
 </ui:composition>

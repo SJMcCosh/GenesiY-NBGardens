@@ -22,10 +22,6 @@ public class ProductManagerOffline implements ProductManager {
 		initialData.addProduct(product);	
 	}
 
-	public void updateProduct(Product product) {
-		
-	}
-
 	public void deleteProduct(Product product) {
 		
 	}
@@ -56,4 +52,22 @@ public class ProductManagerOffline implements ProductManager {
 		return null;
 	}
 
+	@Override
+	public void updateProduct(Product product) 
+	{
+		for (Product p:initialData.getProdList())
+		{
+			if (p.getId() == product.getId())
+			{
+				p.setName(product.getName());
+				System.out.println(">>>>>>>>" + product.getName());
+				p.setPrice(product.getPrice());
+				System.out.println(">>>>>>>>>>>>>>" + product.getPrice());
+				p.setDescription(product.getDescription());
+				System.out.println(">>>>>>>>" + product.getDescription());
+				p.setSpecification(product.getSpecification());
+				System.out.println(">>>>>>>>" + product.getSpecification());
+			}
+		}
+	}
 }

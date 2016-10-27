@@ -37,6 +37,15 @@ public class ProductService {
 		}
 		return null;
 	}
+	
+	public void updateProduct(Product product)
+	{
+		if (product != null)
+		{
+			System.out.println("<<<<<<<<<<<<<<<<" + product.getPrice());
+			productInt.updateProduct(product);
+		}
+	}
 
 	public void addProduct(Product product) {
 		if(product != null){

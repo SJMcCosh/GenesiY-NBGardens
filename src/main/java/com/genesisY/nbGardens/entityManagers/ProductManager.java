@@ -9,6 +9,8 @@ public interface ProductManager {
 	public List<Product> getProducts();
 	
 	public Product getProduct(long id);
+	
+	public void updateProduct(Product product);
 
 	public List<Product> getAllProducts();
 	
