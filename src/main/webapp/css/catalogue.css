@@ -989,7 +989,11 @@ ul.botnav li a {
 
 #basket_page_totals_container{
 	float:right;
+	padding-bottom:50px;
 }
+	#basket_page_totals_container > img{
+		float:right;
+	}
 
 #basket_items_prodInfo{
 	margin-right:300px;
