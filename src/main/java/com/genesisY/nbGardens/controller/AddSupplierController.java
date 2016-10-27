@@ -13,29 +13,72 @@ import com.genesisY.nbGardens.entities.PaginationHelper;
 import com.genesisY.nbGardens.entities.Supplier;
 import com.genesisY.nbGardens.services.SupplierService;
 
+@Named("addSupplierCont")
 @SuppressWarnings("serial")
-@Named("supplierAdd")
 @SessionScoped
 public class AddSupplierController implements Serializable {
 
 	@Inject
 	private SupplierService supplierService;
 	private DataModel<Supplier> dataModel = null;
-	private String name; 
-	private String phone; 
-	private String email; 
-	private String addressLine1;
-	private String addressLine2;
-	private String addressLine3;
-	private String townCity;
-	private String country; 
-	private String postcode; 
+	private String name = "s"; 
+	private String phone= "s"; 
+	private String email= "s"; 
+	private String addressLine1= "s";
+	private String addressLine2= "s";
+	private String addressLine3= "s";
+	private String townCity= "s";
+	private String country= "s";
+	private String postcode= "s"; 
+	private Supplier supplier; 
+	private Address address; 
 	
 	
-	
-	
-	
-	
+
+	public String getName() {
+		return name;
+	}
+
+
+	public String getPhone() {
+		return phone;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public String getAddressLine1() {
+		return addressLine1;
+	}
+
+
+	public String getAddressLine2() {
+		return addressLine2;
+	}
+
+
+	public String getTownCity() {
+		return townCity;
+	}
+
+
+	public String getCountry() {
+		return country;
+	}
+
+
+	public String getPostcode() {
+		return postcode;
+	}
+
+
+	public void setAddressLine3(String addressLine3) {
+		this.addressLine3 = addressLine3;
+	}
+
 
 	public void setAddressLine1(String addressLine1) {
 		this.addressLine1 = addressLine1;
@@ -90,13 +133,10 @@ public class AddSupplierController implements Serializable {
 
 	
 	
-	public void createNewSupplier()
+	public String createNewSupplier()
 	{
-		 SupplierService s = new SupplierService(); 
-		 
-		 
-		 s.addSupplier(name, phone, email, addressLine1, addressLine2, addressLine3, townCity, country, postcode);
-	
+		 supplierService.addSupplier(name, phone, email, addressLine1, addressLine2, addressLine3, townCity, country, postcode);
+	return "viewsupplier";
 	}
 	
 	
