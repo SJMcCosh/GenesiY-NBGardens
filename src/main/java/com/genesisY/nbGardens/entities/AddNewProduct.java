@@ -2,10 +2,15 @@ package com.genesisY.nbGardens.entities;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.model.DataModel;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.genesisY.nbGardens.services.AddProductService;
+import com.genesisY.nbGardens.entities.Product;
+
 
 /**
  * Product outline
@@ -22,49 +27,42 @@ public class AddNewProduct {
 	@NotNull
 	@Column(name = "productID", nullable = false)
 	private String productID;
-	
 	@NotNull
 	@Size(min = 2, max = 255)
 	@Column(name = "name", nullable = false)
 	private String name;
-	
 	@NotNull
 	@Column(name = "price", nullable = false)
 	private Double price;
-	
 	@Column(name = "desc")
 	private String desc;
-	
 	@NotNull
 	@Size(min = 2, max = 255)
 	@Column(name = "category", nullable = false)
 	private String category;
-	
 	@NotNull
 	@Size(min = 2, max = 255)
 	@Column(name = "tag", nullable = false)
 	private String tags;
-	
 	@NotNull
 	@Column(name = "stock", nullable = false)
 	private Integer stock;
-	
 	@NotNull
 	@Size(min = 2, max = 255)
 	@Column(name = "supplier", nullable = false)
 	private String supplier;
-	
 	@NotNull
 	@Column(name = "size", nullable = false)
 	private Double size;
-	
 	@NotNull
 	@Column(name = "weight", nullable = false)
 	private Double weight;
-	
 	@NotNull
 	@Column(name = "avgRate", nullable = false)
 	private Double averageRating;
+	private AddProductService addProductService;
+	private DataModel<Product> dataModel = null;	
+	private Product newProduct;
 
 	public AddNewProduct(){
 		

@@ -77,7 +77,12 @@ public class ImsInitialData {
 
 	public ArrayList<Supplier> getSupplierList() {
 		ArrayList<Supplier> suppliers = this.supplierList;
+		System.out.println(suppliers);
 		return suppliers;
+		
+	}
+	public void addSupplier(Supplier supplier) {
+		this.supplierList.add(supplier);
 	}
 
 	public void addProduct(Product product) {

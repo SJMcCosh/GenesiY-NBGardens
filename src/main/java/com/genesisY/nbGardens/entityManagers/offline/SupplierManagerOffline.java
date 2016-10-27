@@ -28,6 +28,7 @@ public class SupplierManagerOffline implements SupplierManager {
 				
 			}
 			
+		initialData.addSupplier(supplier);	
 		}
 		
 		// TODO Auto-generated method stub

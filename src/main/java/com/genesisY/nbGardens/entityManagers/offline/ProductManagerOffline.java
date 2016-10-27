@@ -10,25 +10,55 @@ import com.genesisY.nbGardens.entities.Product;
 import com.genesisY.nbGardens.entityManagers.ProductManager;
 import com.genesisY.nbGardens.initialData.ImsInitialData;
 
-
-
-@Stateless
 @Default
-public class ProductManagerOffline implements ProductManager{
-	
+@Stateless
+public class ProductManagerOffline implements ProductManager {
 	
 	@Inject
-	private ImsInitialData initialData;
+	ImsInitialData initialData;
 	
-	@Override
-	public List<Product> getProducts() {
+	
+	public void addProduct(Product product) {
 		
-		return initialData.getProdList();
+		for (Product product1 : initialData.getProdList()){
+			if(product1.getName().equals(product.getName())){
+				
+				
+			}
+			
+		initialData.addProduct(product);	
+		}
+		
+		
 	}
 
-	@Override
+	public void deleteProduct(Product product) {
+		
+	}
+
+	public List<Product> getAllProducts() {
+		List<Product> products = initialData.getProdList();
+		return products; 
+	}
+
+	public Product getProductByName(String name) {
+		for (Product product: initialData.getProdList()){
+			if (name.equals(product.getName())){
+				return product;
+			}
+		}
+		return null;
+	}
+
+	public List<Product> getProductByProduct(Product product) {
+		return null;
+	}
+
+	public List<Product> getProducts() {
+		return null;
+	}
+
 	public Product getProduct(long id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
