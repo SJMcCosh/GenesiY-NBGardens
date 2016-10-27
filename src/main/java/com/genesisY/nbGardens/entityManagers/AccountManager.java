@@ -7,13 +7,11 @@ import com.genesisY.nbGardens.entities.Employee;
 
 public interface AccountManager {
 
-	public void persistAccount(Employee customer);
+	public void persistAccount(Employee employee);
 
-	public void persistAccount(List<Employee> customerList);
+	public void persistAccount(List<Employee> employeeList);
 
-	public ArrayList<Employee> customerList();
+	public ArrayList<Employee> employeeList();
 
 	public Employee findByUsername(String username);
-
-	public void updatePassword(String password, String username);
 }

@@ -36,18 +36,14 @@ public class Product {
 	@NotNull
 	@Size(min = 2, max = 1000)
 	private String desc;
-		
+
 	@Column(name = "price", nullable = false, length = 255)
 	@NotNull
 	private double price;
 	
 	private List<Category> catList;
 
-	@Column(name = "supplier", nullable = false, length = 255)
-	@NotNull
-	@Size(min = 2, max = 255)
-	private String supplier;
-	
+
 	@Column(name = "imgLoc", nullable = false, length = 255)
 	@NotNull
 	@Size(min = 2, max = 255)
@@ -76,8 +72,6 @@ public class Product {
 		this.catList = catList;
 	}
 
-	
-	
 	public int getProductID() {
 		return productID;
 	}
@@ -116,14 +110,6 @@ public class Product {
 
 	public void setStockLevel(int stockLevel) {
 		this.stockLevel = stockLevel;
-	}
-
-	public String getSupplier() {
-		return supplier;
-	}
-
-	public void setSupplier(String supplier) {
-		this.supplier = supplier;
 	}
 
 	public String getImageLocation() {

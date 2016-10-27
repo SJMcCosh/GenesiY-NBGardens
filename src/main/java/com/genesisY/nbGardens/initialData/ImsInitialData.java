@@ -26,6 +26,7 @@ public class ImsInitialData {
 
 	@PostConstruct
 	public void setupData() {
+
 		Category c1 = new Category("Pop culture");
 		Category c2 = new Category("Seasonal");
 		Category c3 = new Category("Classic");

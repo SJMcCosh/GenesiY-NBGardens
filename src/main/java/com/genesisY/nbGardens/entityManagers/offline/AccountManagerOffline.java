@@ -19,35 +19,24 @@ public class AccountManagerOffline implements AccountManager{
 	private ImsInitialData ImsInitialData;
 
 	@Override
-	public void persistAccount(Employee customer) {
+	public void persistAccount(Employee employee) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
-	public void persistAccount(List<Employee> customerList) {
-		// TODO Auto-generated method stub
-		
+	public void persistAccount(List<Employee> employeerList) {
+		// TODO Auto-generated method stub	
 	}
+	
 	@Override
-	public ArrayList<Employee> customerList() {
+	public ArrayList<Employee> employeeList() {
 		// TODO Auto-generated method stub
 		return ImsInitialData.getEmployeeList();
 	}
+
 	@Override
 	public Employee findByUsername(String username) {
-		for (Employee e : ImsInitialData.getEmployeeList()){
-			if (e.getUsername().equals(username)){
-				return e;
-			}
-		}
-		
+		// TODO Auto-generated method stub
 		return null;
-	}
-	@Override
-	public void updatePassword(String password, String username) {
-		Employee e = findByUsername(username);
-		e.setPassword(password);
-		
 	}
 }

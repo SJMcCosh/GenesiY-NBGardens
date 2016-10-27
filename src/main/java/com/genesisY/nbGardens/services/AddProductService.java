@@ -15,7 +15,6 @@ public class AddProductService {
 	private String name;
 	private Double price;
 	private String desc;
-	private String supplier;
 	private String imageLocation;
 	private String specification;
 	private Integer stock;
