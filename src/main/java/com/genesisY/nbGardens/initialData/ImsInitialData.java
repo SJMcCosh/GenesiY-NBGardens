@@ -1,12 +1,14 @@
 package com.genesisY.nbGardens.initialData;
 
 import java.util.ArrayList;
+import java.util.List;
 
-import javax.annotation.*;
+import javax.annotation.PostConstruct;
 import javax.ejb.Startup;
 import javax.inject.Singleton;
 
 import com.genesisY.nbGardens.entities.Address;
+import com.genesisY.nbGardens.entities.Category;
 import com.genesisY.nbGardens.entities.Employee;
 import com.genesisY.nbGardens.entities.Product;
 import com.genesisY.nbGardens.entities.Supplier;
@@ -21,8 +23,43 @@ public class ImsInitialData {
 
 	@PostConstruct
 	public void setupData() {
-		Product product1 = new Product(1, "Game of Gnomes", 9.99, "A GOT gnome", "img/gnome.jpg", "Made in China", 500, 4.7);
-		Product product2 = new Product(2, "random gnome", 8.59, "lelelelel", "img/gnome.jpg", "Made in China", 180, 3.5);
+
+		Category c1 = new Category("Pop culture");
+		Category c2 = new Category("Seasonal");
+		Category c3 = new Category("Classic");
+		Category c4 = new Category("PFFFfff");
+		Category c5 = new Category("What other kinds of gnomes are there!");
+		Category c6 = new Category("Pop culture");
+		
+		List<Category> cl1 = new ArrayList<Category>();
+		cl1.add(c1);
+		cl1.add(c3);
+		List<Category> cl2 = new ArrayList<Category>();
+		cl2.add(c2);
+		cl2.add(c4);
+		List<Category> cl3 = new ArrayList<Category>();
+		cl3.add(c6);
+		cl3.add(c5);
+		List<Category> cl4 = new ArrayList<Category>();
+		cl4.add(c2);
+		cl4.add(c3);
+		List<Category> cl5 = new ArrayList<Category>();
+		cl5.add(c1);
+		cl5.add(c4);
+		List<Category> cl6 = new ArrayList<Category>();
+		cl6.add(c6);
+		cl6.add(c3);
+		
+		
+		Product product1 = new Product(1, "Game of Gnomes", "A GOT gnome", "img/gnome.jpg", 9.99, "Made in China", 12, cl1);
+		Product product2 = new Product(2, "random gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0, cl2);
+		Product product3 = new Product(3, "random gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0, cl3);
+		Product product4 = new Product(4, "random gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0, cl4);
+		Product product5 = new Product(5, "random gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0, cl5);
+		Product product6 = new Product(6, "random gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0, cl6);
+		
+		//Product product1 = new Product(1, "Game of Gnomes", 9.99, "A GOT gnome", "GnomesWarehouse", "img/gnome.jpg", "Made in China", 500, 4.7);
+		//Product product2 = new Product(2, "random gnome", 8.59, "lelelelel", "GnomesWarehouse", "img/gnome.jpg", "Made in China", 180, 3.5);
 		Address address1 = new Address("32 Fine Strasse", "", "", "Berlin", "Germany", "54624");
 		Address address2 = new Address("2546 New Road", "Lowry Quay", "Salford Quays", "Paris", "France", "75003");
 		Address address3 = new Address("21 Gnome Street", "", "", "Saariselka", "Finland", "99830");
@@ -32,6 +69,10 @@ public class ImsInitialData {
 		Employee employee1 = new Employee("AlStock", "Password1");
 		prodList.add(product1);
 		prodList.add(product2);
+		prodList.add(product3);
+		prodList.add(product4);
+		prodList.add(product5);
+		prodList.add(product6);
 		supplierList.add(supplier1);
 		supplierList.add(supplier2);
 		supplierList.add(supplier3);

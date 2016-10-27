@@ -23,8 +23,7 @@
 					<ul>
 						<ui:repeat var="product" value="#{products.dataModel}">
 
-							<h:commandLink action="#{products.viewProduct(product)}"
-								class="col-6 col-m-12 prodimg">
+							<h:commandLink action="#{products.viewProduct(product)}">
 								<div class="index_featured_products_product">
 									<img class="index_featured_products_product_image"
 										src="#{product.imageLocation}" />

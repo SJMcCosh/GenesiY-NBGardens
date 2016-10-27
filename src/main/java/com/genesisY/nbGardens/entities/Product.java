@@ -1,5 +1,7 @@
 package com.genesisY.nbGardens.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -38,6 +40,8 @@ public class Product {
 	@Column(name = "price", nullable = false, length = 255)
 	@NotNull
 	private double price;
+	
+	private List<Category> catList;
 
 
 	@Column(name = "imgLoc", nullable = false, length = 255)
@@ -48,14 +52,25 @@ public class Product {
 	@Column(name = "spec", nullable = false, length = 255)
 	@NotNull
 	private String specification;
-
-	@Column(name = "stock", nullable = false)
+	
+	@Column(name = "stockLevel", nullable = false)
 	@NotNull
-	private int stock;
+	private int stockLevel;
 
 	@Column(name = "averageRating", nullable = false)
 	@NotNull
 	private Double averageRating;
+
+	public Product(int id, String name, String description, String imageLocation, double price, String specification, int stockLevel, List<Category> catList) {
+		this.productID = id;
+		this.name = name;
+		this.desc = description;
+		this.imageLocation = imageLocation;
+		this.price = price;
+		this.specification = specification;
+		this.stockLevel = stockLevel;
+		this.catList = catList;
+	}
 
 	public int getProductID() {
 		return productID;
@@ -89,12 +104,12 @@ public class Product {
 		this.price = price;
 	}
 
-	public int getStock() {
-		return stock;
+	public int getStockLevel() {
+		return stockLevel;
 	}
 
-	public void setStock(int stock) {
-		this.stock = stock;
+	public void setStockLevel(int stockLevel) {
+		this.stockLevel = stockLevel;
 	}
 
 	public String getImageLocation() {
@@ -121,15 +136,12 @@ public class Product {
 		this.averageRating = averageRating;
 	}
 
-	public Product(int productID, String name, Double price, String desc, String imageLocation,	String specification, int stock, Double averageRating) {
-		this.productID = productID;
-		this.name = name;
-		this.price = price;
-		this.desc = desc;
-		this.imageLocation = imageLocation;
-		this.specification = specification;
-		this.stock = stock;
-		this.averageRating = averageRating;
+	public List<Category> getCatList() {
+		return catList;
+	}
+
+	public void setCatList(List<Category> catList) {
+		this.catList = catList;
 	}
 
 }

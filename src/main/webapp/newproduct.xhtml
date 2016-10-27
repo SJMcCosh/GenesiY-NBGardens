@@ -51,8 +51,8 @@
 					required="true" requiredMessage="Stock Level"></h:inputText>
 				<br />
 				<br />
-				<h:commandButton value="Added to IMS"
-					alert="alert('Product Added');" />
+				<h:commandButton value="Add Product to IMS"
+					onclick="alert('Product Added');" action = "#{productAdd.createNewProduct}"/>
 				<br />
 				<br />
 			</h:form>

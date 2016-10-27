@@ -22,8 +22,6 @@ public class AddProductService {
 
 	@Inject
 	private ProductManager productManager;
-	@Inject
-	private ProductManagerOffline pM;
 
 	public List<Product> viewProducts() {
 		List<Product> product = productManager.getAllProducts();
@@ -31,15 +29,16 @@ public class AddProductService {
 
 	}
 
-	public void addProduct(int productID, String name, Double price, String desc, String imageLocation, String specification, int stock, Double averageRating){
-		
-	Product p = new Product(productID, name, price, desc, imageLocation, specification, stock, averageRating); 	
-		
-		if (p != null){
-			
-			pM.addProduct(p);
-			
-			}
+	public void addProduct(int productID, String name, Double price, String desc, String supplier, String imageLocation,
+			String specification, int stock, Double averageRating) {
+
+		Product p = new Product(productID, name, desc, null, price, specification, stock, null);
+
+		if (p != null) {
+
+			productManager.addProduct(p);
+
+		}
 	}
 
 }

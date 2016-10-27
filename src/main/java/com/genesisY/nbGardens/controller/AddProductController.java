@@ -17,7 +17,6 @@ public class AddProductController implements Serializable {
 
 	@Inject
 	private ProductService productService;
-	private DataModel<Product> dataModel = null;
 	private Product product;
 	private int productID;
 	private String name;
@@ -26,15 +25,8 @@ public class AddProductController implements Serializable {
 	private Integer stock;
 	private String imageLocation;
 	private String specification;
-	private Double averageRating;
 
-	public DataModel<Product> getDataModel() {
-		return dataModel;
-	}
-
-	public void setDataModel(DataModel<Product> dataModel) {
-		this.dataModel = dataModel;
-	}
+	
 
 	public int getProductID() {
 		return productID;
@@ -92,24 +84,15 @@ public class AddProductController implements Serializable {
 		this.stock = stock;
 	}
 
-	public Double getAverageRating() {
-		return averageRating;
-	}
-
-	public void setAverageRating(Double averageRating) {
-		this.averageRating = averageRating;
-	}
-
 	public void createNewProduct() {
-		product = new Product(productID, name, price, desc, imageLocation, specification, stock, averageRating);
-		productService.addProduct(product);
-		System.out.println(">>>> " + this.productID);
-		System.out.println(">>>> " + this.name);
-		System.out.println(">>>> " + this.price);
-		System.out.println(">>>> " + this.desc);
-		System.out.println(">>>> " + this.imageLocation);
-		System.out.println(">>>> " + this.specification);
-		System.out.println(">>>> " + this.stock);
-		System.out.println(">>>> " + this.averageRating);
+		product = new Product(productID, name, desc, imageLocation, price, specification, stock, null);
+		System.out.println(">>>> " + productID);
+		System.out.println(">>>> " + name);
+		System.out.println(">>>> " + price);
+		System.out.println(">>>> " + desc);
+		System.out.println(">>>> " + imageLocation);
+		System.out.println(">>>> " + specification);
+		System.out.println(">>>> " + stock);
+		productService.addProduct(product);	
 	}
 }

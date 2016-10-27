@@ -43,7 +43,7 @@ public class ProductManagerOffline implements ProductManager {
 	}
 
 	public List<Product> getProducts() {
-		return null;
+		return initialData.getProdList();
 	}
 
 	public Product getProduct(long id) {

@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.genesisY.nbGardens.services.AddProductService;
 import com.genesisY.nbGardens.entities.Product;
 
 /**
@@ -61,7 +60,6 @@ public class AddNewProduct {
 	@NotNull
 	@Column(name = "avgRate", nullable = false)
 	private Double averageRating;
-	private AddProductService addProductService;
 	private DataModel<Product> dataModel = null;	
 	private Product newProduct;
 
