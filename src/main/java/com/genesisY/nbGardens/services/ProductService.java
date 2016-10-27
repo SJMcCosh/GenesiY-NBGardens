@@ -22,13 +22,11 @@ public class ProductService {
 		}
 
 	}
-	
+
 	public Product getProductByName(String name) {
 		try {
-			for (Product a:productInt.getProducts())
-			{
-				if (name.equals(a.getName()))
-				{
+			for (Product a : productInt.getProducts()) {
+				if (name.equals(a.getName())) {
 					return a;
 				}
 			}
@@ -37,23 +35,19 @@ public class ProductService {
 		}
 		return null;
 	}
-	
-	public void updateProduct(Product product)
-	{
-		if (product != null)
-		{
+
+	public void updateProduct(Product product) {
+		if (product != null) {
 			System.out.println("<<<<<<<<<<<<<<<<" + product.getPrice());
 			productInt.updateProduct(product);
 		}
 	}
 
 	public void addProduct(Product product) {
-		if(product != null){
+		if (product != null) {
 			productInt.addProduct(product);
 		}
-		
-		
-		
+
 	}
 
 }

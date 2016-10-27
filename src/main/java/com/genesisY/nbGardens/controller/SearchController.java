@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.genesisY.nbGardens.entities.Product;
@@ -15,6 +16,7 @@ import com.genesisY.nbGardens.entityManagers.ProductManager;
 @SessionScoped
 public class SearchController implements Serializable {
 
+	@Inject
 	private ProductManager pm;
 
 	private Product product;
@@ -39,18 +41,5 @@ public class SearchController implements Serializable {
 	public String search() {
 		return "index";
 	}
-
-//	public Product searchProduct(String term) {
-//
-//		for (Product p : pm.getProducts()) {
-//			ArrayList<Tag> tags = (ArrayList<Tag>) p.getTags();
-//			for (Tag t : tags) {
-//				if (term.equals(t)) {
-//					return p;
-//				}
-//			}
-//		}
-//		return null;
-//	}
 
 }
