@@ -1011,3 +1011,20 @@ ul.botnav li a {
 	margin-right:300px;
 }
 
+#basket_item_removed_popup_container{
+	width:200px;
+	height:100px;
+	
+}
+	#basket_item_removed_popup{
+		width:100%;
+		height:40px;
+		background-color:#41A042;
+		position:fixed;
+		right:0;
+		bottom: 0px;	    
+	    right: 0;
+	    text-align:center;
+	    color:white;
+		
+	}
