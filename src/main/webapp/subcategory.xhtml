@@ -41,17 +41,38 @@
 
 			</h:form>
 
+			<!-- Pagination bit -->
+
+			<!-- This is the product grid -->
+
+					<h:form>
+						<h:outputText escape="false" value="No Products Found"
+							rendered="#{products.dataModel.rowCount == 0}" />
+						<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
+							<h:outputText
+								value="Displaying products #{products.pagination.pageFirstItem + 1} to #{products.pagination.pageLastItem + 1} of #{products.pagination.itemsCount}" />
+							<h:commandButton value="Previous #{products.pagination.pageSize}"
+								action="#{products.previous}"
+								rendered="#{products.pagination.hasPreviousPage}" />
+							<h:commandButton value="Next #{products.pagination.pageSize}"
+								action="#{products.next}"
+								rendered="#{products.pagination.hasNextPage}" />
+						</h:panelGroup>
+					</h:form>
+
+
 			<!-- This is the product grid -->
 
 			<h:form>
+
 				<div class="col-9 col-m-6">
 					<ul>
 						<ui:repeat var="product" value="#{products.dataModel}">
 
 							<h:commandLink action="#{products.viewProduct(product)}"
-								class="col-3 col-m-6 prodimg">
-								<div class="index_featured_products_product">
-									<img class="index_featured_products_product_image"
+								class="col-3 col-m-6">
+								<div class="listofproducts">
+									<img class="subcat_images"
 										src="#{product.imageLocation}" />
 									<ul>
 										<li><h:outputText value="#{product.name}"
@@ -71,6 +92,16 @@
 				</div>
 
 			</h:form>
+			<div class = "paginatorbutton">
+			<h:form>
+				<h:outputText escape="false" value="No Products Found" rendered="#{products.dataModel.rowCount == 0}" />
+				<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
+					<h:outputText value="Displaying products #{products.pagination.pageFirstItem + 1} to #{products.pagination.pageLastItem + 1} of #{products.pagination.itemsCount}" />
+					<h:commandButton value="Previous #{products.pagination.pageSize}" action="#{products.previous}" rendered="#{products.pagination.hasPreviousPage}" />
+					<h:commandButton value="Next #{products.pagination.pageSize}" action="#{products.next}" rendered="#{products.pagination.hasNextPage}" />
+				</h:panelGroup>
+			</h:form>
+			</div>
 		</div>
 	</ui:define>
 </ui:composition>
