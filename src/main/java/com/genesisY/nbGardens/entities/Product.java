@@ -25,17 +25,17 @@ public class Product {
 	@Id
 	@Column(name = "productID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int productID;
 
 	@Column(name = "productName", nullable = false, length = 255)
 	@NotNull
 	@Size(min = 2, max = 255)
 	private String name;
 
-	@Column(name = "productName", nullable = false, length = 1000)
+	@Column(name = "productDescription", nullable = false, length = 1000)
 	@NotNull
 	@Size(min = 2, max = 1000)
-	private String description;
+	private String desc;
 	
 	@Column(name = "tagID", nullable = false)
 	@NotNull
@@ -43,32 +43,68 @@ public class Product {
 	
 	private String imageLocation;
 	
+	@Column(name = "price", nullable = false, length = 255)
+	@NotNull
 	private double price;
+	
 	
 	private String specification;
 	
-	private int stockLevel;
+	@Column(name = "stock", nullable = false)
+	@NotNull
+	private int stock;
+
+	@Column(name = "category", nullable = false, length = 255)
+	@NotNull
+	@Size(min = 2, max = 255)
+	private String category;
+
+	@Column(name = "supplier", nullable = false, length = 255)
+	@NotNull
+	@Size(min = 2, max = 255)
+	private String supplier;
+
+	@Column(name = "size", nullable = false)
+	@NotNull
+	private Double size;
+
+	@Column(name = "weight", nullable = false)
+	@NotNull
+	private Double weight;
+
+	@Column(name = "averageRating", nullable = false)
+	@NotNull
+	private Double averageRating;
 
 	public Product(int productID, String name, Double price, String desc, String category, Integer stock, String supplier, Double size, Double weight, Double averageRating) {
-		
+		this.productID = productID;
+		this.name = name;
+		this.price = price;
+		this.desc = desc;
+		this.category = category;
+		this.stock = stock;
+		this.supplier = supplier;
+		this.size = size;
+		this.weight = weight;
+		this.averageRating = averageRating;
 	}
 
 	public Product(int id, String name, String description, String imageLocation, double price, String specification, int stockLevel) {
-		this.id = id;
+		this.productID = id;
 		this.name = name;
-		this.description = description;
+		this.desc = description;
 		this.imageLocation = imageLocation;
 		this.price = price;
 		this.specification = specification;
-		this.stockLevel = stockLevel;
+		this.stock = stockLevel;
 	}
 
 	public int getId() {
-		return id;
+		return productID;
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		this.productID = id;
 	}
 
 	public String getName() {
@@ -80,11 +116,11 @@ public class Product {
 	}
 
 	public String getDescription() {
-		return description;
+		return desc;
 	}
 
 	public void setDescription(String description) {
-		this.description = description;
+		this.desc = description;
 	}
 	
 	public List<Tag> getTags(){
@@ -120,11 +156,11 @@ public class Product {
 	}
 
 	public int getStockLevel() {
-		return stockLevel;
+		return stock;
 	}
 
 	public void setStockLevel(int stockLevel) {
-		this.stockLevel = stockLevel;
+		this.stock = stockLevel;
 	}
 
 }

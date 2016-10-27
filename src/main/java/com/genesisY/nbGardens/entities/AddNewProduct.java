@@ -5,12 +5,13 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.model.DataModel;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.genesisY.nbGardens.services.AddProductService;
 import com.genesisY.nbGardens.entities.Product;
-
 
 /**
  * Product outline
@@ -23,8 +24,8 @@ import com.genesisY.nbGardens.entities.Product;
 @RequestScoped
 public class AddNewProduct {
 
-	@GeneratedValue
-	@NotNull
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "productID", nullable = false)
 	private String productID;
 	@NotNull
