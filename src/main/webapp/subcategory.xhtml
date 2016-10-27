@@ -42,14 +42,20 @@
 			</h:form>
 			<!-- Pagination bit -->
 			<div>
-			<h:form>
-			<h:outputText escape="false" value="No Products Found" rendered = "#{products.dataModel.rowCount > 0}" />
-			<h:panelGroup rendered = "#{products.dataModel.rowCount > 0}">
-			<h:outputText value = "#{products.pagination.pageFirstItem + 1} to #{products.pagination.pageLastItem + 1} of #{products.pagination.itemsCount}" />
-			<h:commandButton value = "Previous #{products.pagination.pageSize}" action = "#{products.previous}" rendered = "#{products.pagination.hasPreviousPage}" />
-			<h:commandButton value = "Next #{products.pagination.pageSize}" action = "#{products.next}" rendered = "#{products.pagination.hasNextPage}" />
-			</h:panelGroup>
-			</h:form>
+				<h:form>
+					<h:outputText escape="false" value="No Products Found"
+						rendered="#{products.dataModel.rowCount > 0}" />
+					<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
+						<h:outputText
+							value="#{products.pagination.pageFirstItem + 1} to #{products.pagination.pageLastItem + 1} of #{products.pagination.itemsCount}" />
+						<h:commandButton value="Previous #{products.pagination.pageSize}"
+							action="#{products.previous}"
+							rendered="#{products.pagination.hasPreviousPage}" />
+						<h:commandButton value="Next #{products.pagination.pageSize}"
+							action="#{products.next}"
+							rendered="#{products.pagination.hasNextPage}" />
+					</h:panelGroup>
+				</h:form>
 			</div>
 			<!-- This is the product grid -->
 			<h:form>
