@@ -33,7 +33,8 @@
 				</div>
 				
 				<div id="basket_items_container_right_column">	
-					<div style="float:right">	
+					<div style="float:right">
+					<img id="basket_page_remove_item_button" src="img/BasketImages/removeitembutton.png" />	
 						<h:outputText class="basket_page_price_priceInfo" value="#{basketItem.product.price}">
 							<f:convertNumber type="currency" currencyCode="GBP" />
 						</h:outputText>				
@@ -48,9 +49,12 @@
 						   <f:selectItem itemValue="8" itemLabel="8" />
 						   <f:selectItem itemValue="9" itemLabel="9" />
 						   <f:selectItem itemValue="10" itemLabel="10" />		   	
-						</h:selectOneMenu>	
-					</div>			
+						</h:selectOneMenu>
+									
+					</div>
+												
 				</div>
+					
 				<hr/>
 			</div>
 			</ui:repeat>	
