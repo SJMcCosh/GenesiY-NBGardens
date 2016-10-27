@@ -53,7 +53,8 @@ public class Product {
 		
 	}
 
-	public Product(String name, String description, String imageLocation, double price, String specification, int stockLevel) {
+	public Product(int id, String name, String description, String imageLocation, double price, String specification, int stockLevel) {
+		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.imageLocation = imageLocation;
