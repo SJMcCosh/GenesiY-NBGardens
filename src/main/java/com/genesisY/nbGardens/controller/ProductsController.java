@@ -51,7 +51,6 @@ public class ProductsController implements Serializable {
 	{
 		
 		product.setName(name);
-		//product.setPrice(Double.parseDouble(price));
 		product.setDescription(description);
 		product.setSpecification(specification);
 		System.out.println(">>>>>>>>>>>>" + getPrice());

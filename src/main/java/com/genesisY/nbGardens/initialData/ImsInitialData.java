@@ -23,6 +23,10 @@ public class ImsInitialData {
 	public void setupData() {
 		Product product1 = new Product(1, "Game of Gnomes", "A GOT gnome", "img/gnome.jpg", 9.99, "Made in China", 12);
 		Product product2 = new Product(2, "random gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0);
+		Product product3 = new Product(3, "random gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0);
+		Product product4 = new Product(4, "random gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0);
+		Product product5 = new Product(5, "random gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0);
+		Product product6 = new Product(6, "random gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0);
 		Address address1 = new Address("32 Fine Strasse", "", "", "Berlin", "Germany", "54624");
 		Address address2 = new Address("2546 New Road", "Lowry Quay", "Salford Quays", "Paris", "France", "75003");
 		Address address3 = new Address("21 Gnome Street", "", "", "Saariselka", "Finland", "99830");
@@ -32,6 +36,10 @@ public class ImsInitialData {
 		Employee employee1 = new Employee("AlStock", "Password1");
 		prodList.add(product1);
 		prodList.add(product2);
+		prodList.add(product3);
+		prodList.add(product4);
+		prodList.add(product5);
+		prodList.add(product6);
 		supplierList.add(supplier1);
 		supplierList.add(supplier2);
 		supplierList.add(supplier3);

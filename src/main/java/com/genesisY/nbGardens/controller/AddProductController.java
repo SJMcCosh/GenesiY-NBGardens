@@ -118,9 +118,7 @@ public class AddProductController implements Serializable {
 	}
 
 	public void createNewProduct() {
-		ProductService p = new ProductService();
-
-		p.addProduct(productID, name, price, desc, category, stock, product, size, weight, averageRating);
+		productService.addProduct(productID, name, price, desc, category, stock, product, size, weight, averageRating);
 
 	}
 
