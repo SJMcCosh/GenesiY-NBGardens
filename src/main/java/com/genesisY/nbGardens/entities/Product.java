@@ -32,66 +32,38 @@ public class Product {
 	@Size(min = 2, max = 255)
 	private String name;
 
-	@Column(name = "productDescription", nullable = false, length = 1000)
+	@Column(name = "desc", nullable = false, length = 1000)
 	@NotNull
 	@Size(min = 2, max = 1000)
 	private String desc;
-	
-	@Column(name = "tagID", nullable = false)
-	@NotNull
-	private List<Tag> tags;
-	
-	private String imageLocation;
-	
+		
 	@Column(name = "price", nullable = false, length = 255)
 	@NotNull
 	private double price;
 	
-	
-	private String specification;
-	
-	private int stockLevel;
-	
 	private List<Category> catList;
-
-	@Column(name = "stock", nullable = false)
-	@NotNull
-	private int stock;
-
-	@Column(name = "category", nullable = false, length = 255)
-	@NotNull
-	@Size(min = 2, max = 255)
-	private String category;
 
 	@Column(name = "supplier", nullable = false, length = 255)
 	@NotNull
 	@Size(min = 2, max = 255)
 	private String supplier;
-
-	@Column(name = "size", nullable = false)
+	
+	@Column(name = "imgLoc", nullable = false, length = 255)
 	@NotNull
-	private Double size;
+	@Size(min = 2, max = 255)
+	private String imageLocation;
 
-	@Column(name = "weight", nullable = false)
+	@Column(name = "spec", nullable = false, length = 255)
 	@NotNull
-	private Double weight;
+	private String specification;
+	
+	@Column(name = "stockLevel", nullable = false)
+	@NotNull
+	private int stockLevel;
 
 	@Column(name = "averageRating", nullable = false)
 	@NotNull
 	private Double averageRating;
-
-	public Product(int productID, String name, Double price, String desc, String category, Integer stock, String supplier, Double size, Double weight, Double averageRating) {
-		this.productID = productID;
-		this.name = name;
-		this.price = price;
-		this.desc = desc;
-		this.category = category;
-		this.stock = stock;
-		this.supplier = supplier;
-		this.size = size;
-		this.weight = weight;
-		this.averageRating = averageRating;
-	}
 
 	public Product(int id, String name, String description, String imageLocation, double price, String specification, int stockLevel, List<Category> catList) {
 		this.productID = id;
@@ -104,12 +76,14 @@ public class Product {
 		this.catList = catList;
 	}
 
-	public int getId() {
+	
+	
+	public int getProductID() {
 		return productID;
 	}
 
-	public void setId(int id) {
-		this.productID = id;
+	public void setProductID(int productID) {
+		this.productID = productID;
 	}
 
 	public String getName() {
@@ -120,28 +94,12 @@ public class Product {
 		this.name = name;
 	}
 
-	public String getDescription() {
+	public String getDesc() {
 		return desc;
 	}
 
-	public void setDescription(String description) {
-		this.desc = description;
-	}
-	
-	public List<Tag> getTags(){
-		return tags;
-	}
-	
-	public void setTags(List<Tag> tags){
-		this.tags = tags;
-	}
-
-	public String getImageLocation() {
-		return imageLocation;
-	}
-
-	public void setImageLocation(String imageLocation) {
-		this.imageLocation = imageLocation;
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
 
 	public double getPrice() {
@@ -152,6 +110,30 @@ public class Product {
 		this.price = price;
 	}
 
+	public int getStockLevel() {
+		return stockLevel;
+	}
+
+	public void setStockLevel(int stockLevel) {
+		this.stockLevel = stockLevel;
+	}
+
+	public String getSupplier() {
+		return supplier;
+	}
+
+	public void setSupplier(String supplier) {
+		this.supplier = supplier;
+	}
+
+	public String getImageLocation() {
+		return imageLocation;
+	}
+
+	public void setImageLocation(String imageLocation) {
+		this.imageLocation = imageLocation;
+	}
+
 	public String getSpecification() {
 		return specification;
 	}
@@ -160,12 +142,12 @@ public class Product {
 		this.specification = specification;
 	}
 
-	public int getStockLevel() {
-		return stock;
+	public Double getAverageRating() {
+		return averageRating;
 	}
 
-	public void setStockLevel(int stockLevel) {
-		this.stock = stockLevel;
+	public void setAverageRating(Double averageRating) {
+		this.averageRating = averageRating;
 	}
 
 	public List<Category> getCatList() {

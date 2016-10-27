@@ -17,25 +17,23 @@ public class AddProductController implements Serializable {
 
 	@Inject
 	private ProductService productService;
-	private DataModel<Product> dataModel = null;
 	private Product product;
 	private int productID;
 	private String name;
 	private Double price;
 	private String desc;
-	private String category;
 	private Integer stock;
-	private String supplier;
-	private Double weight;
-	private Double size;
-	private Double averageRating;
+	private String imageLocation;
+	private String specification;
 
-	public DataModel<Product> getDataModel() {
-		return dataModel;
+	
+
+	public int getProductID() {
+		return productID;
 	}
 
-	public void setDataModel(DataModel<Product> dataModel) {
-		this.dataModel = dataModel;
+	public void setProductID(int productID) {
+		this.productID = productID;
 	}
 
 	public String getName() {
@@ -62,12 +60,20 @@ public class AddProductController implements Serializable {
 		this.desc = desc;
 	}
 
-	public String getCategory() {
-		return category;
+	public String getImageLocation() {
+		return imageLocation;
 	}
 
-	public void setCategory(String category) {
-		this.category = category;
+	public void setImageLocation(String imageLocation) {
+		this.imageLocation = imageLocation;
+	}
+
+	public String getSpecification() {
+		return specification;
+	}
+
+	public void setSpecification(String specification) {
+		this.specification = specification;
 	}
 
 	public Integer getStock() {
@@ -78,54 +84,17 @@ public class AddProductController implements Serializable {
 		this.stock = stock;
 	}
 
-	public String getSupplier() {
-		return supplier;
-	}
-
-	public void setSupplier(String supplier) {
-		this.supplier = supplier;
-	}
-
-	public Double getWeight() {
-		return weight;
-	}
-
-	public void setWeight(Double weight) {
-		this.weight = weight;
-	}
-
-	public Double getSize() {
-		return size;
-	}
-
-	public void setSize(Double size) {
-		this.size = size;
-	}
-
-	public Double getAverageRating() {
-		return averageRating;
-	}
-
-	public void setAverageRating(Double averageRating) {
-		this.averageRating = averageRating;
-	}
-
 	public void createNewProduct() {
 
-		product  = new Product(productID, name, price, desc, category, stock, supplier, size, weight, averageRating);
-		productService.addProduct(product);
+		product = new Product(productID, name, desc, imageLocation, price, specification, stock, null);
 		System.out.println(">>>> " + productID);
 		System.out.println(">>>> " + name);
 		System.out.println(">>>> " + price);
 		System.out.println(">>>> " + desc);
-		System.out.println(">>>> " + category);
+		System.out.println(">>>> " + imageLocation);
+		System.out.println(">>>> " + specification);
 		System.out.println(">>>> " + stock);
-		System.out.println(">>>> " + supplier);
-		System.out.println(">>>> " + size);
-		System.out.println(">>>> " + weight);
-		System.out.println(">>>> " + averageRating);
+		productService.addProduct(product);
+		
 	}
-	
-	
-
 }

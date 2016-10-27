@@ -40,17 +40,17 @@ public class SearchController implements Serializable {
 		return "index";
 	}
 
-	public Product searchProduct(String term) {
-
-		for (Product p : pm.getProducts()) {
-			ArrayList<Tag> tags = (ArrayList<Tag>) p.getTags();
-			for (Tag t : tags) {
-				if (term.equals(t)) {
-					return p;
-				}
-			}
-		}
-		return null;
-	}
+//	public Product searchProduct(String term) {
+//
+//		for (Product p : pm.getProducts()) {
+//			ArrayList<Tag> tags = (ArrayList<Tag>) p.getTags();
+//			for (Tag t : tags) {
+//				if (term.equals(t)) {
+//					return p;
+//				}
+//			}
+//		}
+//		return null;
+//	}
 
 }
