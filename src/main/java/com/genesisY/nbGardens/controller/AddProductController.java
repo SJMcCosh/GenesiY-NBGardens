@@ -23,7 +23,6 @@ public class AddProductController implements Serializable {
 	private String name;
 	private Double price;
 	private String desc;
-	private String supplier;
 	private Integer stock;
 	private String imageLocation;
 	private String specification;
@@ -69,14 +68,6 @@ public class AddProductController implements Serializable {
 		this.desc = desc;
 	}
 
-	public String getSupplier() {
-		return supplier;
-	}
-
-	public void setSupplier(String supplier) {
-		this.supplier = supplier;
-	}
-
 	public String getImageLocation() {
 		return imageLocation;
 	}
@@ -110,17 +101,15 @@ public class AddProductController implements Serializable {
 	}
 
 	public void createNewProduct() {
-		product = new Product(productID, name, price, desc, supplier, imageLocation, specification, stock,
-				averageRating);
+		product = new Product(productID, name, price, desc, imageLocation, specification, stock, averageRating);
 		productService.addProduct(product);
-		System.out.println(">>>> " + productID);
-		System.out.println(">>>> " + name);
-		System.out.println(">>>> " + price);
-		System.out.println(">>>> " + desc);
-		System.out.println(">>>> " + supplier);
-		System.out.println(">>>> " + imageLocation);
-		System.out.println(">>>> " + specification);
-		System.out.println(">>>> " + stock);
-		System.out.println(">>>> " + averageRating);
+		System.out.println(">>>> " + this.productID);
+		System.out.println(">>>> " + this.name);
+		System.out.println(">>>> " + this.price);
+		System.out.println(">>>> " + this.desc);
+		System.out.println(">>>> " + this.imageLocation);
+		System.out.println(">>>> " + this.specification);
+		System.out.println(">>>> " + this.stock);
+		System.out.println(">>>> " + this.averageRating);
 	}
 }

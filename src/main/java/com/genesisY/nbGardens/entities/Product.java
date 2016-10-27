@@ -34,16 +34,12 @@ public class Product {
 	@NotNull
 	@Size(min = 2, max = 1000)
 	private String desc;
-		
+
 	@Column(name = "price", nullable = false, length = 255)
 	@NotNull
 	private double price;
 
-	@Column(name = "supplier", nullable = false, length = 255)
-	@NotNull
-	@Size(min = 2, max = 255)
-	private String supplier;
-	
+
 	@Column(name = "imgLoc", nullable = false, length = 255)
 	@NotNull
 	@Size(min = 2, max = 255)
@@ -52,7 +48,7 @@ public class Product {
 	@Column(name = "spec", nullable = false, length = 255)
 	@NotNull
 	private String specification;
-	
+
 	@Column(name = "stock", nullable = false)
 	@NotNull
 	private int stock;
@@ -61,8 +57,6 @@ public class Product {
 	@NotNull
 	private Double averageRating;
 
-	
-	
 	public int getProductID() {
 		return productID;
 	}
@@ -103,14 +97,6 @@ public class Product {
 		this.stock = stock;
 	}
 
-	public String getSupplier() {
-		return supplier;
-	}
-
-	public void setSupplier(String supplier) {
-		this.supplier = supplier;
-	}
-
 	public String getImageLocation() {
 		return imageLocation;
 	}
@@ -135,12 +121,11 @@ public class Product {
 		this.averageRating = averageRating;
 	}
 
-	public Product(int productID, String name, Double price, String desc, String supplier, String imageLocation, String specification, int stock, Double averageRating) {
+	public Product(int productID, String name, Double price, String desc, String imageLocation,	String specification, int stock, Double averageRating) {
 		this.productID = productID;
 		this.name = name;
 		this.price = price;
 		this.desc = desc;
-		this.supplier = supplier;
 		this.imageLocation = imageLocation;
 		this.specification = specification;
 		this.stock = stock;

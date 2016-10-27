@@ -33,18 +33,6 @@
 					required="true" requiredMessage="Item Price"></h:inputText>
 				<br />
 				<br />
-				<h:outputText value="Stock: " />
-				<br />
-				<h:inputText type="number" value="stock"
-					required="true" requiredMessage="Item Price"></h:inputText>
-				<br />
-				<br />
-				<h:outputText value="Supplier: " />
-				<br />
-				<h:inputText value="#{productAdd.supplier}" required="true"
-					requiredMessage="Tag ID"></h:inputText>
-				<br />
-				<br />
 				<h:outputText value="Image Location: " />
 				<br />
 				<h:inputText value="#{productAdd.imageLocation}" required="true"
@@ -64,7 +52,7 @@
 				<br />
 				<br />
 				<h:commandButton value="Added to IMS"
-					onclick="alert('Product Added');" />
+					alert="alert('Product Added');" />
 				<br />
 				<br />
 			</h:form>

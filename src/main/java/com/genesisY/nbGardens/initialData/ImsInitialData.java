@@ -21,8 +21,8 @@ public class ImsInitialData {
 
 	@PostConstruct
 	public void setupData() {
-		Product product1 = new Product(1, "Game of Gnomes", 9.99, "A GOT gnome", "GnomesWarehouse", "img/gnome.jpg", "Made in China", 500, 4.7);
-		Product product2 = new Product(2, "random gnome", 8.59, "lelelelel", "GnomesWarehouse", "img/gnome.jpg", "Made in China", 180, 3.5);
+		Product product1 = new Product(1, "Game of Gnomes", 9.99, "A GOT gnome", "img/gnome.jpg", "Made in China", 500, 4.7);
+		Product product2 = new Product(2, "random gnome", 8.59, "lelelelel", "img/gnome.jpg", "Made in China", 180, 3.5);
 		Address address1 = new Address("32 Fine Strasse", "", "", "Berlin", "Germany", "54624");
 		Address address2 = new Address("2546 New Road", "Lowry Quay", "Salford Quays", "Paris", "France", "75003");
 		Address address3 = new Address("21 Gnome Street", "", "", "Saariselka", "Finland", "99830");
