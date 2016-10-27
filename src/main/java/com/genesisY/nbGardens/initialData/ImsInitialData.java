@@ -10,7 +10,9 @@ import javax.inject.Singleton;
 import com.genesisY.nbGardens.entities.Address;
 import com.genesisY.nbGardens.entities.Category;
 import com.genesisY.nbGardens.entities.Employee;
+import com.genesisY.nbGardens.entities.EmployeeLogin;
 import com.genesisY.nbGardens.entities.Product;
+import com.genesisY.nbGardens.entities.PurchaseOrder;
 import com.genesisY.nbGardens.entities.Supplier;
 
 @Startup
@@ -20,6 +22,7 @@ public class ImsInitialData {
 	private ArrayList<Product> prodList = new ArrayList<Product>();
 	private ArrayList<Supplier> supplierList = new ArrayList<Supplier>();
 	private ArrayList<Employee> employeeList = new ArrayList<Employee>();
+	private ArrayList<PurchaseOrder> purchaseOrderList = new ArrayList<PurchaseOrder>();
 
 	@PostConstruct
 	public void setupData() {
@@ -56,7 +59,6 @@ public class ImsInitialData {
 		Product product4 = new Product(4, "random gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0, cl4);
 		Product product5 = new Product(5, "random gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0, cl5);
 		Product product6 = new Product(6, "random gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0, cl6);
-		
 		//Product product1 = new Product(1, "Game of Gnomes", 9.99, "A GOT gnome", "GnomesWarehouse", "img/gnome.jpg", "Made in China", 500, 4.7);
 		//Product product2 = new Product(2, "random gnome", 8.59, "lelelelel", "GnomesWarehouse", "img/gnome.jpg", "Made in China", 180, 3.5);
 		Address address1 = new Address("32 Fine Strasse", "", "", "Berlin", "Germany", "54624");
@@ -66,6 +68,12 @@ public class ImsInitialData {
 		Supplier supplier2 = new Supplier("Gnomeo's Gnomes", "12354234723", "gnomeo@gnomeosgnomes.com", address2);
 		Supplier supplier3 = new Supplier("Gnome Adventures", "34252824665", "gnomes@gnomeadventures.com", address3);
 		Employee employee1 = new Employee("AlStock", "Password1");
+	
+		PurchaseOrder po1 = new PurchaseOrder(14503.99, supplier1, prodList); 
+		PurchaseOrder po2 = new PurchaseOrder(146703.99, supplier2, prodList); 
+		PurchaseOrder po3 = new PurchaseOrder(145303.99, supplier3, prodList); 
+		PurchaseOrder po4 = new PurchaseOrder(14547.99, supplier1, prodList); 
+		
 		prodList.add(product1);
 		prodList.add(product2);
 		prodList.add(product3);
@@ -127,5 +135,9 @@ public class ImsInitialData {
 
 	public void addProduct(Product product) {
 		this.prodList.add(product);
+	}
+	
+	public void addPurchaseOrder(PurchaseOrder purchaseOrder) {
+		this.purchaseOrderList.add(purchaseOrder);
 	}
 }

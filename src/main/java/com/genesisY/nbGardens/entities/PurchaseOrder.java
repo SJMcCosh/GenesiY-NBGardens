@@ -1,5 +1,7 @@
 package com.genesisY.nbGardens.entities;
 
+import java.util.List;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -23,10 +25,11 @@ public class PurchaseOrder {
 	@JoinColumn(name = "supplierID_fk", nullable = false)
 	@NotNull
 	private Supplier supplier;
-	@OneToOne
-	@JoinColumn(name = "login_fk", nullable = false)
-	@NotNull
-	private EmployeeLogin employee;
+	@OneToMany
+	@JoinColumn(name = "productID_fk",  nullable = false)
+	@NotNull 
+	private Product product;
+	private List<Product> prodList; 
 
 	/**
 	 * @param purchaseID
@@ -34,10 +37,17 @@ public class PurchaseOrder {
 	 * @param supplier
 	 * @param employee
 	 */
-	public PurchaseOrder(double totalPrice, Supplier supplier, EmployeeLogin employee) {
+	public PurchaseOrder(double totalPrice, Supplier supplier, List<Product> prodList) {
 		this.totalPrice = totalPrice;
 		this.supplier = supplier;
-		this.employee = employee;
+		this.prodList = prodList;
+	}
+	public List<Product> getProdList() {
+		return prodList;
+	}
+
+	public void setProdList(List<Product> prodList) {
+		this.prodList = prodList;
 	}
 
 	public int getPurchaseID() {
@@ -56,19 +66,19 @@ public class PurchaseOrder {
 		this.totalPrice = totalPrice;
 	}
 
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
 	public Supplier getSupplier() {
 		return supplier;
 	}
 
 	public void setSupplier(Supplier supplier) {
 		this.supplier = supplier;
-	}
-
-	public EmployeeLogin getEmployee() {
-		return employee;
-	}
-
-	public void setEmployee(EmployeeLogin employee) {
-		this.employee = employee;
 	}
 }
