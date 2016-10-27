@@ -5,19 +5,23 @@
 	template="templates/template.xhtml">
 	<meta charset="ISO_8859-1" />
 	<ui:define name="content">
-	
+
 		<f:metadata>
-			<f:event type="preRenderView" listener="#{category}">
+			<f:event type="preRenderView" listener="#{categories.onLoad}" />
 		</f:metadata>
-		
+
 		<div class="row">
-		
+
 			<h:form>
-				<ul>
-					<h:commandLink action="#{catergory.viewCategories(category)}">
-				</ul>
+				<ui:repeat var="category" value="#{categories.dataModel}">
+					<ul>
+						<li><h:commandLink value="#{category.name}" /></li>
+
+					</ul>
+
+				</ui:repeat>
 			</h:form>
-		
+
 		</div>
-	
+	</ui:define>
 </ui:composition>

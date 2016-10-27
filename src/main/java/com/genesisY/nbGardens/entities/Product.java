@@ -48,12 +48,14 @@ public class Product {
 	private String specification;
 	
 	private int stockLevel;
+	
+	private List<Category> catList;
 
 	public Product(int productID, String name, Double price, String desc, String category, Integer stock, String supplier, Double size, Double weight, Double averageRating) {
 		
 	}
 
-	public Product(int id, String name, String description, String imageLocation, double price, String specification, int stockLevel) {
+	public Product(int id, String name, String description, String imageLocation, double price, String specification, int stockLevel, List<Category> catList) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
@@ -61,6 +63,7 @@ public class Product {
 		this.price = price;
 		this.specification = specification;
 		this.stockLevel = stockLevel;
+		this.catList = catList;
 	}
 
 	public int getId() {
@@ -125,6 +128,14 @@ public class Product {
 
 	public void setStockLevel(int stockLevel) {
 		this.stockLevel = stockLevel;
+	}
+
+	public List<Category> getCatList() {
+		return catList;
+	}
+
+	public void setCatList(List<Category> catList) {
+		this.catList = catList;
 	}
 
 }
