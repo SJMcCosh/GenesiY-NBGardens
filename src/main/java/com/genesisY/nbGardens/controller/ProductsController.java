@@ -37,7 +37,7 @@ public class ProductsController implements Serializable {
 		System.out.println(">>>>>>>>>>>>>>>>>>> Product Name = " +product.getName()); 
 		setName(product.getName());
 		setPrice(Double.toString(product.getPrice()));
-		setDescription(product.getDescription());
+		setDescription(product.getDesc());
 		setSpecification(product.getSpecification());
 		return "product"; 
 	} 
@@ -52,7 +52,7 @@ public class ProductsController implements Serializable {
 		
 		product.setName(name);
 		//product.setPrice(Double.parseDouble(price));
-		product.setDescription(description);
+		product.setDesc(description);
 		product.setSpecification(specification);
 		System.out.println(">>>>>>>>>>>>" + getPrice());
 		prodService.updateProduct(product);
@@ -87,7 +87,6 @@ public class ProductsController implements Serializable {
 		this.name = name;
 	}
 
-	@SuppressWarnings("unchecked")
 	public String view() {
 
 		return "productpage";

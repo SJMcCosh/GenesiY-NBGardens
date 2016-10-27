@@ -20,52 +20,47 @@
 					requiredMessage="Item Name"></h:inputText>
 				<br />
 				<br />
-				<h:outputText value="Price (GBP): " />
-				<br />
-				<h:inputText type="double" value="#{productAdd.price}" required="true"
-					requiredMessage="Item Price"></h:inputText>
-				<br />
-				<br />
+				
 				<h:outputText value="Description: " />
 				<br />
 				<h:inputText value="#{productAdd.desc}" required="true"
 					requiredMessage="Item Description"></h:inputText>
 				<br />
 				<br />
-				<h:outputText value="Item Category: " />
+				<h:outputText value="Price (GBP): " />
 				<br />
-				<h:inputText value="#{productAdd.category}" required="true"
-					requiredMessage="Category ID"></h:inputText>
+				<h:inputText type="double" value="#{productAdd.price}"
+					required="true" requiredMessage="Item Price"></h:inputText>
 				<br />
 				<br />
-				<h:outputText value="Item Tags: " />
+				<h:outputText value="Stock: " />
 				<br />
-				<h:inputText value="#{productAdd.tags}" required="true"
+				<h:inputText type="number" value="stock"
+					required="true" requiredMessage="Item Price"></h:inputText>
+				<br />
+				<br />
+				<h:outputText value="Supplier: " />
+				<br />
+				<h:inputText value="#{productAdd.supplier}" required="true"
+					requiredMessage="Tag ID"></h:inputText>
+				<br />
+				<br />
+				<h:outputText value="Image Location: " />
+				<br />
+				<h:inputText value="#{productAdd.imageLocation}" required="true"
+					requiredMessage="Tag ID"></h:inputText>
+				<br />
+				<br />				
+				<h:outputText value="Specification: " />
+				<br />
+				<h:inputText value="#{productAdd.specification}" required="true"
 					requiredMessage="Tag ID"></h:inputText>
 				<br />
 				<br />
 				<h:outputText value="Initial Stock: " />
 				<br />
-				<h:inputText type="number" value="#{productAdd.stock}" required="true"
-					requiredMessage="Stock Level"></h:inputText>
-				<br />
-				<br />
-				<h:outputText value="Product Size (m's): " />
-				<br />
-				<h:inputText value="#{productAdd.size}" required="true"
-					requiredMessage="Stock Level"></h:inputText>
-				<br />
-				<br />
-				<h:outputText value="Product Weight (kgs): " />
-				<br />
-				<h:inputText type="double" value="#{productAdd.weight}" required="true"
-					requiredMessage="Stock Level"></h:inputText>
-				<br />
-				<br />
-				<h:outputText value="Item Supplier: " />
-				<br />
-				<h:inputText value="#{productAdd.supplier}" required="true"
-					requiredMessage="Supplier ID"></h:inputText>
+				<h:inputText type="number" value="#{productAdd.stock}"
+					required="true" requiredMessage="Stock Level"></h:inputText>
 				<br />
 				<br />
 				<h:commandButton value="Added to IMS"

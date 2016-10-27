@@ -13,6 +13,13 @@ import com.genesisY.nbGardens.entityManagers.offline.ProductManagerOffline;
 public class AddProductService {
 
 	private String name;
+	private Double price;
+	private String desc;
+	private String supplier;
+	private String imageLocation;
+	private String specification;
+	private Integer stock;
+	private Double averageRating;
 
 	@Inject
 	private ProductManager productManager;
@@ -25,11 +32,9 @@ public class AddProductService {
 
 	}
 
-	public void addProduct(int productID, String name, Double price, String desc, String category, Integer stock, String supplier,
-			Double size, Double weight, Double averageRating){
+	public void addProduct(int productID, String name, Double price, String desc, String supplier, String imageLocation, String specification, int stock, Double averageRating){
 		
-	Product p = new Product(productID, name, price, desc, category, stock, supplier,
-		 size, weight, averageRating); 	
+	Product p = new Product(productID, name, price, desc, supplier, imageLocation, specification, stock, averageRating); 	
 		
 		if (p != null){
 			

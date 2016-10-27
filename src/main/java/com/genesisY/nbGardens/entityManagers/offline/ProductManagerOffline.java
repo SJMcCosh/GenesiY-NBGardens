@@ -15,22 +15,20 @@ import com.genesisY.nbGardens.initialData.ImsInitialData;
 public class ProductManagerOffline implements ProductManager {
 	
 	@Inject
-	ImsInitialData initialData;
+	private ImsInitialData initialData;
 	
 	@Override
 	public void addProduct(Product product) {
 		initialData.addProduct(product);	
 	}
-
-	public void deleteProduct(Product product) {
-		
-	}
-
+	
+	@Override
 	public List<Product> getAllProducts() {
 		List<Product> products = initialData.getProdList();
 		return products; 
 	}
-
+	
+	@Override
 	public Product getProductByName(String name) {
 		for (Product product: initialData.getProdList()){
 			if (name.equals(product.getName())){
@@ -57,14 +55,14 @@ public class ProductManagerOffline implements ProductManager {
 	{
 		for (Product p:initialData.getProdList())
 		{
-			if (p.getId() == product.getId())
+			if (p.getProductID() == product.getProductID())
 			{
 				p.setName(product.getName());
 				System.out.println(">>>>>>>>" + product.getName());
 				p.setPrice(product.getPrice());
 				System.out.println(">>>>>>>>>>>>>>" + product.getPrice());
-				p.setDescription(product.getDescription());
-				System.out.println(">>>>>>>>" + product.getDescription());
+				p.setDesc(product.getDesc());
+				System.out.println(">>>>>>>>" + product.getDesc());
 				p.setSpecification(product.getSpecification());
 				System.out.println(">>>>>>>>" + product.getSpecification());
 			}

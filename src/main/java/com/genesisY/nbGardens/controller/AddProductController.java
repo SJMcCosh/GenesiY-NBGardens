@@ -23,11 +23,10 @@ public class AddProductController implements Serializable {
 	private String name;
 	private Double price;
 	private String desc;
-	private String category;
-	private Integer stock;
 	private String supplier;
-	private Double weight;
-	private Double size;
+	private Integer stock;
+	private String imageLocation;
+	private String specification;
 	private Double averageRating;
 
 	public DataModel<Product> getDataModel() {
@@ -36,6 +35,14 @@ public class AddProductController implements Serializable {
 
 	public void setDataModel(DataModel<Product> dataModel) {
 		this.dataModel = dataModel;
+	}
+
+	public int getProductID() {
+		return productID;
+	}
+
+	public void setProductID(int productID) {
+		this.productID = productID;
 	}
 
 	public String getName() {
@@ -62,22 +69,6 @@ public class AddProductController implements Serializable {
 		this.desc = desc;
 	}
 
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-	public Integer getStock() {
-		return stock;
-	}
-
-	public void setStock(Integer stock) {
-		this.stock = stock;
-	}
-
 	public String getSupplier() {
 		return supplier;
 	}
@@ -86,20 +77,28 @@ public class AddProductController implements Serializable {
 		this.supplier = supplier;
 	}
 
-	public Double getWeight() {
-		return weight;
+	public String getImageLocation() {
+		return imageLocation;
 	}
 
-	public void setWeight(Double weight) {
-		this.weight = weight;
+	public void setImageLocation(String imageLocation) {
+		this.imageLocation = imageLocation;
 	}
 
-	public Double getSize() {
-		return size;
+	public String getSpecification() {
+		return specification;
 	}
 
-	public void setSize(Double size) {
-		this.size = size;
+	public void setSpecification(String specification) {
+		this.specification = specification;
+	}
+
+	public Integer getStock() {
+		return stock;
+	}
+
+	public void setStock(Integer stock) {
+		this.stock = stock;
 	}
 
 	public Double getAverageRating() {
@@ -111,19 +110,17 @@ public class AddProductController implements Serializable {
 	}
 
 	public void createNewProduct() {
-		product  = new Product(productID, name, price, desc, category, stock, supplier, size, weight, averageRating);
+		product = new Product(productID, name, price, desc, supplier, imageLocation, specification, stock,
+				averageRating);
 		productService.addProduct(product);
 		System.out.println(">>>> " + productID);
 		System.out.println(">>>> " + name);
 		System.out.println(">>>> " + price);
 		System.out.println(">>>> " + desc);
-		System.out.println(">>>> " + category);
-		System.out.println(">>>> " + stock);
 		System.out.println(">>>> " + supplier);
-		System.out.println(">>>> " + size);
-		System.out.println(">>>> " + weight);
+		System.out.println(">>>> " + imageLocation);
+		System.out.println(">>>> " + specification);
+		System.out.println(">>>> " + stock);
 		System.out.println(">>>> " + averageRating);
 	}
-	
-	
 }
