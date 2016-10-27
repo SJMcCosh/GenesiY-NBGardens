@@ -13,4 +13,6 @@ public interface ProductManager {
 	public void updateProduct(Product product);
 
 	public List<Product> getAllProducts();
+	
+	public void addProduct(Product product);
 }

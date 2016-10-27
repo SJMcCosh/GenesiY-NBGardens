@@ -19,7 +19,8 @@ public class SupplierService {
 	private String email; 
 	private Address address; 
 	@Inject
-	private SupplierManager supplierManager;
+	private SupplierManager supplierManager; 
+
 	
 	public List<Supplier> viewSuppliers(){
 		List<Supplier> suppliers = supplierManager.getAllSuppliers();

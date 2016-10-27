@@ -1,0 +1,23 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/template.xhtml">
+	<meta charset="ISO_8859-1" />
+	<ui:define name="content">
+	
+		<f:metadata>
+			<f:event type="preRenderView" listener="#{category}">
+		</f:metadata>
+		
+		<div class="row">
+		
+			<h:form>
+				<ul>
+					<h:commandLink action="#{catergory.viewCategories(category)}">
+				</ul>
+			</h:form>
+		
+		</div>
+	
+</ui:composition>
