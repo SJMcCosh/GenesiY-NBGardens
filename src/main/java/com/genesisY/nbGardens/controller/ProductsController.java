@@ -23,20 +23,11 @@ public class ProductsController implements Serializable {
 	private ProductService productService;
 	private Product product;
 	private DataModel<Product> dataModel = null;
-	private DataModel<Product> dataPagModel = null;
 	private DataModel<Tag> tagModel = null;
 	private PaginationHelper pagination;
 	private int selected;
 	private String category = "all";
-	private int numProds;
 
-	public DataModel<Product> getDataModel() {
-		return dataModel;
-	}
-
-	public void setDataPagModel(DataModel<Product> dataPagModel) {
-		this.dataPagModel = dataPagModel;
-	}
 
 	public int getSelected() {
 		return selected;
@@ -69,16 +60,15 @@ public class ProductsController implements Serializable {
 	}
 
 	public String allProducts() {
-		setNumProds(12);
-		dataPagModel = getDataPagModel();
+		dataModel = getDataModel();
 		return "subcategory";
 	}
 
-	public DataModel<Product> getDataPagModel() {
-		if (dataPagModel == null){
-			dataPagModel = getPagination().createPageDataModel();
+	public DataModel<Product> getDataModel() {
+		if (dataModel == null){
+			dataModel = getPagination().createPageDataModel();
 		}
-		return dataPagModel;
+		return dataModel;
 	}
 
 	public void setDataModel(DataModel<Product> dataModel) {
@@ -107,7 +97,7 @@ public class ProductsController implements Serializable {
 	}
 
 	private void recreateModel(){
-		dataPagModel = null;
+		dataModel = null;
 	}
 	
 	public String previous(){
@@ -141,7 +131,7 @@ public class ProductsController implements Serializable {
 	
 	public PaginationHelper getPagination(){
 		if (pagination == null){
-			pagination = new PaginationHelper(numProds){
+			pagination = new PaginationHelper(12){
 				@Override
 				public int getItemsCount(){
 					return productService.getAllProducts(category).size();
@@ -158,38 +148,5 @@ public class ProductsController implements Serializable {
 			};
 		}
 		return pagination;
-	}
-
-	public int getNumProds() {
-		return numProds;
-	}
-
-	public void setNumProds(int numProds) {
-		this.numProds = numProds;
-	}
-	
-	public String difNumProducts(int numProds) {
-		dataPagModel = getDataPagModel();
-		return "subcategory";
-	}
-	
-	public void updateNumber(AjaxBehaviorEvent abe) {
-		int numProds = getNumProds();
-		System.out.println(">>>>>>>>>>> " + numProds);
-		switch(numProds){
-		case 12 :
-			recreateModel();
-			difNumProducts(12);
-			break;
-		case 24 :
-			recreateModel();
-			System.out.println(">>>>>>");
-			difNumProducts(24);
-			break;
-		case 36 :
-			recreateModel();
-			difNumProducts(36);
-			break;
-		}
 	}
 }
