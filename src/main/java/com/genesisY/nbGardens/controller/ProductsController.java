@@ -1,6 +1,7 @@
 package com.genesisY.nbGardens.controller;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.event.AjaxBehaviorEvent;
@@ -27,6 +28,8 @@ public class ProductsController implements Serializable {
 	private PaginationHelper pagination;
 	private int selected;
 	private String category = "all";
+	private Tag[] tagArray;
+	private String[] tagNameArray;
 
 
 	public int getSelected() {
@@ -64,6 +67,7 @@ public class ProductsController implements Serializable {
 		return "subcategory";
 	}
 
+	@SuppressWarnings("unchecked")
 	public DataModel<Product> getDataModel() {
 		if (dataModel == null){
 			dataModel = getPagination().createPageDataModel();
@@ -112,6 +116,7 @@ public class ProductsController implements Serializable {
 		return "subcategory";
 	}
 	
+	@SuppressWarnings("unused")
 	private void updateCurrentItem(){
 		int count = productService.getAllProducts(category).size();
 		if (selected >= count){
@@ -148,5 +153,34 @@ public class ProductsController implements Serializable {
 			};
 		}
 		return pagination;
+	}
+
+	public Tag[] getTagArray() {
+		Tag[] tags = new Tag[tagModel.getRowCount()];
+		int count = 0;
+		for(Tag tag: tagModel){
+			tags[count]=tag;
+			count++;
+		}
+		return tags;
+	}
+
+	public void setTagArray(Tag[] tagArray) {
+		this.tagArray = tagArray;
+	}
+
+	public String[] getTagNameArray() {
+		return tagNameArray;
+	}
+
+	public void setTagNameArray(String[] tagNameArray) {
+		this.tagNameArray = tagNameArray;
+	}
+	
+	public String getTagNameArrayInString(){
+		return Arrays.toString(getTagNameArray());
+	}
+	public DataModel<Product> getDataModel2(){
+		return dataModel;
 	}
 }
