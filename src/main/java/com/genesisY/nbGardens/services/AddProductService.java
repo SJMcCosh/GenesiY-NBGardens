@@ -25,7 +25,7 @@ public class AddProductService {
 
 	}
 
-	public void addProduct(String productID, String name, Double price, String desc, String category, Integer stock, String supplier,
+	public void addProduct(int productID, String name, Double price, String desc, String category, Integer stock, String supplier,
 			Double size, Double weight, Double averageRating){
 		
 	Product p = new Product(productID, name, price, desc, category, stock, supplier,

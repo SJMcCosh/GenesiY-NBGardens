@@ -49,7 +49,7 @@ public class Product {
 	
 	private int stockLevel;
 
-	public Product(String productID, String name, Double price, String desc, String category, Integer stock, String supplier, Double size, Double weight, Double averageRating) {
+	public Product(int productID, String name, Double price, String desc, String category, Integer stock, String supplier, Double size, Double weight, Double averageRating) {
 		
 	}
 

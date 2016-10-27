@@ -38,9 +38,12 @@ public class ProductService {
 		return null;
 	}
 
-	public void addProduct(Integer productID, String name, Double price, String desc, String category, Integer stock,
-			String product, Double size, Double weight, Double averageRating) {
-		// TODO Auto-generated method stub
+	public void addProduct(Product product) {
+		if(product != null){
+			productInt.addProduct(product);
+		}
+		
+		
 		
 	}
 

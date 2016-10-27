@@ -11,4 +11,6 @@ public interface ProductManager {
 	public Product getProduct(long id);
 
 	public List<Product> getAllProducts();
+	
+	public void addProduct(Product product);
 }

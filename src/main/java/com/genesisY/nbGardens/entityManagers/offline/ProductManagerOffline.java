@@ -17,19 +17,9 @@ public class ProductManagerOffline implements ProductManager {
 	@Inject
 	ImsInitialData initialData;
 	
-	
+	@Override
 	public void addProduct(Product product) {
-		
-		for (Product product1 : initialData.getProdList()){
-			if(product1.getName().equals(product.getName())){
-				
-				
-			}
-			
 		initialData.addProduct(product);	
-		}
-		
-		
 	}
 
 	public void updateProduct(Product product) {
