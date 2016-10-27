@@ -11,7 +11,6 @@ import javax.inject.Named;
 import com.genesisY.nbGardens.entities.Address;
 import com.genesisY.nbGardens.entities.PaginationHelper;
 import com.genesisY.nbGardens.entities.Supplier;
-import com.genesisY.nbGardens.entityManagers.SupplierManager;
 import com.genesisY.nbGardens.services.SupplierService;
 
 @SuppressWarnings("serial")
@@ -25,53 +24,44 @@ public class SupplierController implements Serializable {
 	private DataModel<Supplier> dataModel = null;
 	private PaginationHelper pagination;
 	private int selected;
-	private String name; 
-	private String phone; 
-	private String email; 
-	private Address address; 
-	
-	
+	private String name;
+	private String phone;
+	private String email;
+	private Address address;
+
 	/*
-	 * setters and getters for adding supplier 
+	 * setters and getters for adding supplier
 	 */
 	public String getName() {
-		
+
 		return name;
 	}
 
-
 	public void setName(String name) {
-		
-		this.name = name;
-		
-		
-	}
 
+		this.name = name;
+
+	}
 
 	public String getPhone() {
 		return phone;
 	}
 
-
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-
 
 	public String getEmail() {
 		return email;
 	}
 
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
 
 	public Address getAddress() {
 		return address;
 	}
-
 
 	public void setAddress(Address address) {
 		this.address = address;
@@ -84,7 +74,6 @@ public class SupplierController implements Serializable {
 	public void setDataModel(DataModel<Supplier> dataModel) {
 		this.dataModel = dataModel;
 	}
-
 
 	public Supplier getSupplier() {
 		return supplier;
@@ -161,5 +150,5 @@ public class SupplierController implements Serializable {
 	private void recreateModel() {
 		dataModel = null;
 	}
-	
+
 }

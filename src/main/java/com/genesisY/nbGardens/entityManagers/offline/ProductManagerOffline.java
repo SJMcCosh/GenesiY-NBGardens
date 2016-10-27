@@ -31,4 +31,15 @@ public class ProductManagerOffline implements ProductManager{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public void addProduct(Product s) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Product> getAllProducts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
