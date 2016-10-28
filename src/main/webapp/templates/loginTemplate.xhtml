@@ -16,21 +16,24 @@
 		<div class="loginform">
 			<h4>Login</h4>
 			<h:form>
-				<p>Username</p>
+				<h:outputText value="Username: " />
 				<h:inputText value="#{login.username}" required="true"
 					requiredMessage="Enter Username"></h:inputText>
-				<p>
-					<a href="#forgottenusername">Forgotten your username?</a>
-				</p>
-				<p>Password</p>
+				<h:outputLink action="#{index.xhtml}">
+					<h:outputText value="Forgot Username?" />
+				</h:outputLink>
+				<br />
+				<br />
+				<h:outputText value="Password: " />
 				<h:inputSecret value="#{login.password}" required="true"
 					requiredMessage="Enter Password"
 					validatorMessage="Please enter a password">
 					<f:validateLength minimum="8" maximum="35" />
 				</h:inputSecret>
-				<p>
-					<a href="forgottenpassword">Forgotten your password?</a>
-				</p>
+				<h:outputLink action="#{index.xhtml}">
+					<h:outputText value="Forgot Password" />
+				</h:outputLink>
+				<br />
 				<br />
 				<h:commandButton type="submit" name="loginbtn" value="Sign In"
 					action="#{login.login()}" />

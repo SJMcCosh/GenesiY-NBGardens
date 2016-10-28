@@ -70,10 +70,10 @@ public class ImsInitialData {
 		Supplier supplier3 = new Supplier("Gnome Adventures", "34252824665", "gnomes@gnomeadventures.com", address3);
 		Employee employee1 = new Employee("AlStock", "Password1");
 	
-		PurchaseOrder po1 = new PurchaseOrder(14503.99, supplier1, prodList); 
-		PurchaseOrder po2 = new PurchaseOrder(146703.99, supplier2, prodList); 
-		PurchaseOrder po3 = new PurchaseOrder(145303.99, supplier3, prodList); 
-		PurchaseOrder po4 = new PurchaseOrder(14547.99, supplier1, prodList); 
+		PurchaseOrder po1 = new PurchaseOrder(14503.99, supplier1, null, prodList); 
+		PurchaseOrder po2 = new PurchaseOrder(146703.99, supplier2, null, prodList); 
+		PurchaseOrder po3 = new PurchaseOrder(145303.99, supplier3, null, prodList); 
+		PurchaseOrder po4 = new PurchaseOrder(14547.99, supplier1, null, prodList); 
 		
 		prodList.add(product1);
 		prodList.add(product2);

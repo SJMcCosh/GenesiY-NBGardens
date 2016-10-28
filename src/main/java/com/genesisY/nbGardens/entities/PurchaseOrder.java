@@ -35,9 +35,10 @@ public class PurchaseOrder {
 	 * @param purchaseID
 	 * @param totalPrice
 	 * @param supplier
+	 * @param employee 
 	 * @param employee
 	 */
-	public PurchaseOrder(double totalPrice, Supplier supplier, List<Product> prodList) {
+	public PurchaseOrder(double totalPrice, Supplier supplier, EmployeeLogin employee, List<Product> prodList) {
 		this.totalPrice = totalPrice;
 		this.supplier = supplier;
 		this.prodList = prodList;
