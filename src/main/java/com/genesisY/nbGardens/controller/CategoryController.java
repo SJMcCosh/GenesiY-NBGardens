@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.genesisY.nbGardens.entities.Category;
+import com.genesisY.nbGardens.entities.Product;
 import com.genesisY.nbGardens.services.CategoryService;
 
 @Named("categories")
@@ -15,6 +16,9 @@ public class CategoryController {
 	
 	@Inject
 	private CategoryService catService;
+	
+	@Inject
+	private ProductsController prodController;
 	
 	private DataModel<Category> dataModel;
 	
@@ -29,6 +33,13 @@ public class CategoryController {
 
 	public void setDataModel(DataModel<Category> dataModel) {
 		this.dataModel = dataModel;
+	}
+	
+	public String filterByCategory(String catName)
+	{
+		System.out.println("hello");
+		prodController.setDataModel(new ListDataModel<Product>(catService.getProductsByCategory(catName)));
+		return "subcategory";
 	}
 
 }

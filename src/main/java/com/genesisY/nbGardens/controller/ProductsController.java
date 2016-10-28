@@ -42,9 +42,10 @@ public class ProductsController implements Serializable {
 		return "product"; 
 	} 
 	
-	public void onLoad()
+	public String onLoad()
 	{
 		dataModel = new ListDataModel<Product>(prodService.getAllProducts());
+		return "subcategory";
 	}
 	
 	public String updateProduct()
@@ -66,6 +67,9 @@ public class ProductsController implements Serializable {
 	}
 
 	public void setDataModel(DataModel<Product> dataModel) {
+		for(Product p : dataModel){
+			System.out.println(">>>>>>>>>>>" + p.getDesc());
+		}
 		this.dataModel = dataModel;
 	}
 

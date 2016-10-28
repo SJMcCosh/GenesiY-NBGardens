@@ -3,21 +3,26 @@ package com.genesisY.nbGardens.controller;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.genesisY.nbGardens.entities.Product;
 import com.genesisY.nbGardens.entities.Tag;
-import com.genesisY.nbGardens.entityManagers.ProductManager;
+import com.genesisY.nbGardens.services.SearchService;
 
 @SuppressWarnings("serial")
 @Named("search")
-@SessionScoped
-public class SearchController implements Serializable {
+@RequestScoped
+public class SearchController {
 
 	@Inject
-	private ProductManager pm;
+	private SearchService searchService;
+	
+	@Inject
+	private ProductsController prodController;
 
 	private Product product;
 	private String term;
@@ -39,7 +44,18 @@ public class SearchController implements Serializable {
 	}
 
 	public String search() {
-		return "index";
+	
+		if (term != null)
+		{	
+
+			prodController.setDataModel(new ListDataModel<Product>(searchService.prodSearch(term)));
+			return "subcategory";
+			
+		}else{
+			return "category";
+			
+		}
+		
 	}
 
 }

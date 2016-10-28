@@ -14,51 +14,54 @@
 
 </h:head>
 
+
 <body>
-	<div class="header col-12 col-m-12">
-		<a href="index.xhtml"><img src="img/nblogo.png" /></a>
-		<div class="navbar">
-			<div id="dropdownHome">
-				<a href="#"><button class="dropbtn">Home</button></a>
-			</div>
-			<div id="dropdownProducts">
-				<button class="dropbtn">Products</button>
-				<div class="dropdown-content">
-					<a href="subcategory.xhtml">View Products</a> <a href="newproduct.xhtml">Add New Product</a>
+	<h:form>
+		<div class="header col-12 col-m-12">
+			<a href="index.xhtml"><img src="img/nblogo.png" /></a>
+			<div class="navbar">
+				<div id="dropdownHome">
+					<a href="#"><button class="dropbtn">Home</button></a>
 				</div>
-			</div>
-
-			<div id="dropdownSuppliers">
-				<button class="dropbtn">Suppliers</button>
-				<div class="dropdown-content">
-					<h:form>
-						<h:commandLink value="View Suppliers"
-							action="#{suppliers.viewSuppliers()}" />
-						<h:commandLink value="Add New Supplier" action="addsupplier" />
-					</h:form>
+				<div id="dropdownProducts">
+					<button class="dropbtn">Products</button>
+					<div class="dropdown-content">
+						<h:commandLink value="View Products" action="#{products.onLoad}" />
+						<a href="newproduct.xhtml">Add New Product</a>
+					</div>
 				</div>
-			</div>
 
-			<div id="dropdownPurchaseOrders">
-				<button class="dropbtn">Purchase Orders</button>
-				<div class="dropdown-content">
-					<a href="#">All Purchase Orders</a> <a href="#">Completed
-						Purchase Orders</a> <a href="#">Approved Purchase Orders</a> <a
-						href="#">Rejected Purchase Orders</a> <a href="#">Create New
-						Purchase Order</a> <a href="#">Pending Purchase Orders</a>
+				<div id="dropdownSuppliers">
+					<button class="dropbtn">Suppliers</button>
+					<div class="dropdown-content">
+						<h:form>
+							<h:commandLink value="View Suppliers"
+								action="#{suppliers.viewSuppliers()}" />
+							<h:commandLink value="Add New Supplier" action="addsupplier" />
+						</h:form>
+					</div>
 				</div>
-			</div>
 
-			<div id="dropdownStats">
-				<a href="#"><button class="dropbtn">Stats/Trends</button></a>
-			</div>
+				<div id="dropdownPurchaseOrders">
+					<button class="dropbtn">Purchase Orders</button>
+					<div class="dropdown-content">
+						<a href="#">All Purchase Orders</a> <a href="#">Completed
+							Purchase Orders</a> <a href="#">Approved Purchase Orders</a> <a
+							href="#">Rejected Purchase Orders</a> <a href="#">Create New
+							Purchase Order</a> <a href="#">Pending Purchase Orders</a>
+					</div>
+				</div>
 
-			<div id="dropdownStockAlerts">
-				<a href="#"><button class="dropbtn">Stock Alerts</button></a>
+				<div id="dropdownStats">
+					<a href="#"><button class="dropbtn">Stats/Trends</button></a>
+				</div>
+
+				<div id="dropdownStockAlerts">
+					<a href="#"><button class="dropbtn">Stock Alerts</button></a>
+				</div>
 			</div>
 		</div>
-	</div>
-
+	</h:form>
 	<ui:insert name="content">
 
 	</ui:insert>

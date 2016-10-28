@@ -32,7 +32,7 @@ public class ImsInitialData {
 		Category c3 = new Category("Classic");
 		Category c4 = new Category("PFFFfff");
 		Category c5 = new Category("What other kinds of gnomes are there!");
-		Category c6 = new Category("Pop culture");
+		Category c6 = new Category("Something different");
 		
 		List<Category> cl1 = new ArrayList<Category>();
 		cl1.add(c1);
@@ -56,10 +56,10 @@ public class ImsInitialData {
 		
 		Product product1 = new Product(1, "Game of Gnomes", "A GOT gnome", "img/gnome.jpg", 9.99, "Made in China", 12, cl1);
 		Product product2 = new Product(2, "random gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0, cl2);
-		Product product3 = new Product(3, "random gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0, cl3);
-		Product product4 = new Product(4, "random gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0, cl4);
-		Product product5 = new Product(5, "random gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0, cl5);
-		Product product6 = new Product(6, "random gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0, cl6);
+		Product product3 = new Product(3, "other gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0, cl3);
+		Product product4 = new Product(4, "big gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0, cl4);
+		Product product5 = new Product(5, "small gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0, cl5);
+		Product product6 = new Product(6, "mediocre gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0, cl6);
 		//Product product1 = new Product(1, "Game of Gnomes", 9.99, "A GOT gnome", "GnomesWarehouse", "img/gnome.jpg", "Made in China", 500, 4.7);
 		//Product product2 = new Product(2, "random gnome", 8.59, "lelelelel", "GnomesWarehouse", "img/gnome.jpg", "Made in China", 180, 3.5);
 		Address address1 = new Address("32 Fine Strasse", "", "", "Berlin", "Germany", "54624");

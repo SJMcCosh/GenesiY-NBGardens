@@ -31,5 +31,25 @@ public class CategoryService {
 		}
 		return cl1;
 	}
+	
+	public List<Product> getProductsByCategory(String catName)
+	{
+		List<Product> prodList = new ArrayList<Product>();
+		int i = 0;
+		for(Product a:prodInt.getAllProducts())
+		{
+			for (Category c : a.getCatList())
+			{
+				if(c.getName().equals(catName)){
+					prodList.add(a);
+					System.out.println(">>>>>>>>>>>>>>>>>" +prodList.get(i).getName());
+					i++;	
+				}
+				
+			}
+		}
+		
+		return prodList;
+	}
 
 }
