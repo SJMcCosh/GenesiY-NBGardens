@@ -1,8 +1,10 @@
 package com.genesisY.nbGardens.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.faces.model.DataModel;
 import javax.inject.Inject;
 
 import com.genesisY.nbGardens.entities.Address;
@@ -27,7 +29,7 @@ public class PurchaseOrderService {
 	private PurchaseOrderManager purchaseOrderManager; 
 
 
-	public void createPurchaseOrder(double totalPrice, Supplier supplier, EmployeeLogin employee, List<Product> prodList ){
+	public void createPurchaseOrder(double totalPrice, Supplier supplier, DataModel<Product> prodList){
 		
 	PurchaseOrder p = new PurchaseOrder(totalPrice, supplier, prodList);
 	
