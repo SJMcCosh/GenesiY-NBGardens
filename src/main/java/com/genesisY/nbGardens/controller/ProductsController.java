@@ -30,6 +30,8 @@ public class ProductsController implements Serializable {
 	private String category = "all";
 	private Tag[] tagArray;
 	private String[] tagNameArray;
+	private String lowerBound;
+	private String upperBound;
 
 
 	public int getSelected() {
@@ -182,5 +184,21 @@ public class ProductsController implements Serializable {
 	}
 	public DataModel<Product> getDataModel2(){
 		return dataModel;
+	}
+
+	public String getLowerBound() {
+		return lowerBound;
+	}
+
+	public void setLowerBound(String lowerBound) {
+		this.lowerBound = lowerBound;
+	}
+
+	public String getUpperBound() {
+		return upperBound;
+	}
+
+	public void setUpperBound(String upperBound) {
+		this.upperBound = upperBound;
 	}
 }

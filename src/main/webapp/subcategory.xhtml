@@ -16,13 +16,25 @@
 
 			<h:form class="col-3 col-m-6 tagbar">
 				<div class="tagbar">
-				<p><b>Tags</b></p>
+					<p>
+						<b>Tags</b>
+					</p>
 					<h:selectManyCheckbox layout="pageDirection"
 						value="#{products.tagNameArray}">
 						<f:selectItems value="#{products.tagModel}" var="tag"
 							itemLabel="#{tag.name}" itemValue="#{tag.name}" />
 						<f:ajax listener="#{filter.filterProductsByTag}" render="@all" />
 					</h:selectManyCheckbox>
+
+					<p>
+						<b>Prices</b>
+					</p>
+					<h:panelGrid columns="1" style="margin-bottom: 10px">
+						<h:outputText id="displayRange"	value="Between #{products.lowerBound} and #{products.upperBound}" />
+						
+					</h:panelGrid>
+					<h:inputHidden id="txt6" value="#{products.lowerBound}" />
+					<h:inputHidden id="txt7" value="#{products.upperBound}" />
 				</div>
 			</h:form>
 
