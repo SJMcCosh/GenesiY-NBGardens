@@ -57,11 +57,10 @@ public class FilterController {
 		this.filter = filter;
 	}
 
-	public void filterProducts(AjaxBehaviorEvent abe) {
+	public void filterProductsByTag(AjaxBehaviorEvent abe) {
 		String[] arr = productsController.getTagNameArrayInString().split(", ");
 		System.out.println("---------------" + Arrays.toString(arr));
-		productsController.setDataModel(productsController.getDataModel());
-		dataModel = new ListDataModel<Product>(getDataModelAsList(productsController.getDataModel2()));
+		dataModel = productsController.getDataModel2();
 		ArrayList<String> tagList = new ArrayList<String>();
 		for (String l : arr) {
 			if (l.startsWith("[")) {
@@ -72,12 +71,22 @@ public class FilterController {
 			}
 			tagList.add(l);
 		}
-		System.out.println(";;;;;;;;;;;;;;" + tagList.toString() + tagList.size() +tagList.get(0));
+		if (tagList.size() != 0 && tagList.get(0).equals("")) {
+			for (Product p : dataModel) {
+				p.setToRender(true);
+			}
+		}
 		if (tagList.size() != 0 && !tagList.get(0).equals("")) {
-			for (String filt : tagList) {
-				setDataModel(tagService.filterProducts(dataModel, filt));
-				productsController.setDataModel(getDataModel2());
-				dataModel = productsController.getDataModel2();
+			for (Product p : dataModel) {
+				ArrayList<String> tags = new ArrayList<String>();
+				for (Tag t : p.getTagList()) {
+					tags.add(t.getName());
+				}
+				for (String filt : tagList) {
+					if (!tags.contains(filt)) {
+						p.setToRender(false);
+					}
+				}
 			}
 		}
 	}
@@ -94,56 +103,60 @@ public class FilterController {
 	public void setDataModel(DataModel<Product> dataModel) {
 		this.dataModel = dataModel;
 	}
-	
-	private void recreateModel(){
+
+	private void recreateModel() {
 		dataModel = null;
 	}
-	
-	public String previous(){
+
+	public String previous() {
 		getPagination().previousPage();
 		recreateModel();
 		return "subcategory";
 	}
-	
-	public String next(){
+
+	public String next() {
 		getPagination().nextPage();
 		recreateModel();
 		return "subcategory";
 	}
-	
-	public PaginationHelper getPagination(){
-		if (pagination == null){
-			pagination = new PaginationHelper(12){
+
+	public PaginationHelper getPagination() {
+		if (pagination == null) {
+			pagination = new PaginationHelper(12) {
 				@Override
-				public int getItemsCount(){
+				public int getItemsCount() {
 					return productService.getAllProducts(category).size();
 				}
-				
+
 				@Override
-				public DataModel<Product> createPageDataModel(){
-					try{
-						return new ListDataModel<Product>(getDataModelAsList(getDataModel2()).subList(getPageFirstItem(), getPageFirstItem()+ getPageSize()));
-					} catch(Exception e){
-						return new ListDataModel<Product>(getDataModelAsList(getDataModel2()).subList(getPageFirstItem(), getItemsCount()));
+				public DataModel<Product> createPageDataModel() {
+					try {
+						return new ListDataModel<Product>(getDataModelAsList(getDataModel2())
+								.subList(getPageFirstItem(), getPageFirstItem() + getPageSize()));
+					} catch (Exception e) {
+						return new ListDataModel<Product>(
+								getDataModelAsList(getDataModel2()).subList(getPageFirstItem(), getItemsCount()));
 					}
 				}
 			};
 		}
 		return pagination;
 	}
+
 	public void setPagination(PaginationHelper pagination) {
 		this.pagination = pagination;
 	}
+
 	public DataModel<Product> getDataModel() {
-		if (dataModel != null){
+		if (dataModel != null) {
 			dataModel = getPagination().createPageDataModel();
 		}
 		return dataModel;
 	}
-	
-	private List<Product> getDataModelAsList(DataModel<Product> dataModel){
+
+	private List<Product> getDataModelAsList(DataModel<Product> dataModel) {
 		List<Product> products = new ArrayList<Product>();
-		for (Product p: dataModel){
+		for (Product p : dataModel) {
 			products.add(p);
 		}
 		return products;
