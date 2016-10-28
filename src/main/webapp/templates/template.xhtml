@@ -6,29 +6,38 @@
 <h:head>
 	<meta charset="ISO-8859-1" />
 	<link rel="stylesheet" type="text/css" href="css/catalogue.css" />
-	<h:outputStylesheet library="css" name="catalogue.css"  />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<h:outputStylesheet library="css" name="catalogue.css" />
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<title>NB Gardens</title>
 </h:head>
 <f:view>
 	<body>
 		<!-- This is the header -->
 		<div class="header">
-			<div class="searchandlogo">
-				<h:form class="tfnewsearch" method="get">
-					<h:inputText class="tftextinput" value="#{search.term}" />
-					<h:commandButton class="tfbutton" type="submit"
-						action="#{search.search()}" value="Search" />
-					<h:commandLink action="loginpage" value="Log In" />
-				</h:form>
-				<div class="logo">
-					<a href="index.xhtml"> <img src="img/nblogo.png" /></a>
+			<div id="navigation_top_row">
+				<div class="searchandlogo">
+					<h:form class="tfnewsearch" method="get">
+						<h:inputText class="tftextinput" value="#{search.term}" />
+						<h:commandButton class="tfbutton" type="submit"
+							action="#{search.search()}" value="Search" />
+						<h:commandLink action="loginpage" value="Log In" />
+					</h:form>
+					<div class="logo">
+						<a href="index.xhtml"> <img src="img/nblogo.png" /></a>
+					</div>
+				</div>
+
+				<div id="navigation_cart_section">
+				<img src=""/>
+					<h:outputText value="#{basket.basketSize}" />
+					
 				</div>
 			</div>
 			<h:form>
 				<nav>
 					<ul class="topnav">
-						<li ><h:commandLink action="#{category.getAllCategories}"
+						<li><h:commandLink action="#{category.getAllCategories}"
 								value="Outdoor Living" /></li>
 						<li><h:commandLink action="#{category.getAllCategories}"
 								value="Garden Tools" /></li>
@@ -38,8 +47,7 @@
 								value="Outdoor Buildings" /></li>
 						<li><h:commandLink action="#{category.getAllCategories}"
 								value="Seasonal Items" /></li>
-						<li><h:commandLink action="index"
-								value="Home" /></li>
+						<li><h:commandLink action="index" value="Home" /></li>
 					</ul>
 				</nav>
 			</h:form>

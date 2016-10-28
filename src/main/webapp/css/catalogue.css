@@ -549,10 +549,20 @@ ul.topnav li a:hover {
 	background-color: #143516;
 }
 
-.searchandlogo {
-	postion: relative;
-	display: inline-block;
+#navigation_top_row {
+	width:100%;
+	height:140px;
 }
+
+	.searchandlogo {
+		postion: relative;
+		display: inline-block;
+	}
+	
+	#navigation_cart_section{
+		float:right;
+		color:white;
+	}
 
 .tfnewsearch {
 	position: relative;
