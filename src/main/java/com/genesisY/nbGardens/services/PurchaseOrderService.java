@@ -29,7 +29,7 @@ public class PurchaseOrderService {
 
 	public void createPurchaseOrder(double totalPrice, Supplier supplier, EmployeeLogin employee, List<Product> prodList ){
 		
-	PurchaseOrder p = new PurchaseOrder(totalPrice, supplier, employee, prodList);
+	PurchaseOrder p = new PurchaseOrder(totalPrice, supplier, prodList);
 	
 	if (p != null)
 	{    

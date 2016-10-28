@@ -30,23 +30,9 @@ public class NewPurchaseOrderController implements Serializable {
 	private List<Product> prodList; 
 	private double totalPrice; 
 	private EmployeeLogin employee; 
+	private Product product; 
 	
 	
-	
-	
-	public PurchaseOrderService getPurchaseOrderService() {
-		return purchaseOrderService;
-	}
-
-
-
-
-	public void setPurchaseOrderService(PurchaseOrderService purchaseOrderService) {
-		this.purchaseOrderService = purchaseOrderService;
-	}
-
-
-
 
 	public DataModel<Product> getDataModel() {
 		return dataModel;
@@ -74,20 +60,22 @@ public class NewPurchaseOrderController implements Serializable {
 	}
 
 
-
-
 	public int getQuantity() {
 		return quantity;
 	}
 
-
+	public void addToProdList(){
+		int q = this.quantity;
+		for(int i=0; i<q; i++){
+		
+		this.prodList.add(product);
+		}
+	}
 
 
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-
-
 
 
 	public void createNewPurchaseOrder()
