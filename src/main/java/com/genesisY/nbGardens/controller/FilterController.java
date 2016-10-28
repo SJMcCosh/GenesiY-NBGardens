@@ -2,6 +2,7 @@ package com.genesisY.nbGardens.controller;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
 import javax.faces.event.AjaxBehaviorEvent;
@@ -12,6 +13,7 @@ import javax.inject.Named;
 
 import com.genesisY.nbGardens.services.ProductService;
 import com.genesisY.nbGardens.services.TagService;
+import com.genesisY.nbGardensCatalogue.entities.PaginationHelper;
 import com.genesisY.nbGardensCatalogue.entities.Product;
 import com.genesisY.nbGardensCatalogue.entities.Tag;
 
@@ -26,6 +28,26 @@ public class FilterController {
 	private TagService tagService;
 	@Inject
 	private ProductService productService;
+	private DataModel<Product> dataModel;
+	private int selected;
+	private PaginationHelper pagination;
+	private String category = "all";
+
+	public int getSelected() {
+		return selected;
+	}
+
+	public void setSelected(int selected) {
+		this.selected = selected;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
 
 	public String getFilter() {
 		return filter;
@@ -38,8 +60,8 @@ public class FilterController {
 	public void filterProducts(AjaxBehaviorEvent abe) {
 		String[] arr = productsController.getTagNameArrayInString().split(", ");
 		System.out.println("---------------" + Arrays.toString(arr));
-		DataModel<Product> dataModel = new ListDataModel<Product>(productService.getAllProducts("all"));
-		productsController.setDataModel(dataModel);
+		productsController.setDataModel(productsController.getDataModel());
+		dataModel = new ListDataModel<Product>(getDataModelAsList(productsController.getDataModel2()));
 		ArrayList<String> tagList = new ArrayList<String>();
 		for (String l : arr) {
 			if (l.startsWith("[")) {
@@ -53,16 +75,78 @@ public class FilterController {
 		System.out.println(";;;;;;;;;;;;;;" + tagList.toString() + tagList.size() +tagList.get(0));
 		if (tagList.size() != 0 && !tagList.get(0).equals("")) {
 			for (String filt : tagList) {
-				productsController.setDataModel(tagService.filterProducts(dataModel, filt));
+				setDataModel(tagService.filterProducts(dataModel, filt));
+				productsController.setDataModel(getDataModel2());
 				dataModel = productsController.getDataModel2();
 			}
 		}
 	}
 
 	public void load() {
-
 		productsController.setTagModel(new ListDataModel<Tag>(tagService.getAllTags()));
 
+	}
+
+	public DataModel<Product> getDataModel2() {
+		return dataModel;
+	}
+
+	public void setDataModel(DataModel<Product> dataModel) {
+		this.dataModel = dataModel;
+	}
+	
+	private void recreateModel(){
+		dataModel = null;
+	}
+	
+	public String previous(){
+		getPagination().previousPage();
+		recreateModel();
+		return "subcategory";
+	}
+	
+	public String next(){
+		getPagination().nextPage();
+		recreateModel();
+		return "subcategory";
+	}
+	
+	public PaginationHelper getPagination(){
+		if (pagination == null){
+			pagination = new PaginationHelper(12){
+				@Override
+				public int getItemsCount(){
+					return productService.getAllProducts(category).size();
+				}
+				
+				@Override
+				public DataModel<Product> createPageDataModel(){
+					try{
+						return new ListDataModel<Product>(getDataModelAsList(getDataModel2()).subList(getPageFirstItem(), getPageFirstItem()+ getPageSize()));
+					} catch(Exception e){
+						return new ListDataModel<Product>(getDataModelAsList(getDataModel2()).subList(getPageFirstItem(), getItemsCount()));
+					}
+				}
+			};
+		}
+		return pagination;
+	}
+	public void setPagination(PaginationHelper pagination) {
+		this.pagination = pagination;
+	}
+	public DataModel<Product> getDataModel() {
+		if (dataModel != null){
+			dataModel = getPagination().createPageDataModel();
+		}
+		return dataModel;
+	}
+	
+	private List<Product> getDataModelAsList(DataModel<Product> dataModel){
+		List<Product> products = new ArrayList<Product>();
+		for (Product p: dataModel){
+			products.add(p);
+		}
+		return products;
 	}
 
 }
