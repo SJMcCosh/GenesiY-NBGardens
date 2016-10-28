@@ -153,11 +153,11 @@ ul.breadcrumb li a {
 	height: 470px;
 }
 
-.supplierall {
+.supplierall, .productall {
 	width: 100%;
 }
 
-.supplieraddress {
+.supplieraddress, .productaddress {
 	width: 350px;
 	border-style: solid;
 	border-width: thin;
@@ -167,7 +167,7 @@ ul.breadcrumb li a {
 	border-top-style: none;
 }
 
-.suppliername {
+.suppliername, .productname {
 	width: 350px;
 	border-style: solid;
 	border-width: thin;
@@ -183,11 +183,11 @@ ul.breadcrumb li a {
 	list-style: none;
 }
 
-.addsupplink{
+.addsupplink, .addpordlink{
 	float: right;
 }
 
-.addsuppdetails{
+.addsuppdetails, addproddetails{
 	width: 350px;
 	border-style: solid;
 	border-width: thin;
@@ -197,7 +197,7 @@ ul.breadcrumb li a {
 	border-bottom-style: none;
 }
 
-.addsuppaddr{
+.addsuppaddr, .addprodaddr{
 	width: 350px;
 	border-style: solid;
 	border-width: thin;
