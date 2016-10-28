@@ -1006,6 +1006,10 @@ ul.botnav li a {
 		float:right;	
 		right:0;	
 	}
+	
+	#basket_page_totals_container > img{
+		float:right;
+	}
 
 #basket_items_prodInfo{
 	margin-right:300px;
