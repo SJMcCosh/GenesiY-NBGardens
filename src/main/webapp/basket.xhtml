@@ -3,10 +3,28 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/template.xhtml">
-	<meta charset="ISO-8859-1" />
+	<meta charset="ISO-8859-1" />	
 	<ui:define name="maincontent">
+		 
+	 <script type="text/javascript">
+		//<![CDATA[				
+			function performPostAjaxCommands()
+			{
+				$("#basket_item_removed_popup").show();
+			}		
+			
+			function closeRemoveItemPopup()
+			{
+				$("#basket_item_removed_popup").hide();
+			}
+		//]]>
+	</script>
 		
-		<div id="basket_item_removed_popup"><p>Item removed</p></div>
+		
+		<div id="basket_item_removed_popup">
+			<img onclick="closeRemoveItemPopup()" id="item_popup_close_button" src="img/BasketImages/popupclose.png"/>
+			<p>Item Removed</p>
+		</div>
 		
 		<!-- This is the main container which will encompass everything on the page -->
 		<div id="basket_contents_container">				
@@ -69,7 +87,7 @@
 								<div id="basket_page_remove_item_button">
 									<!-- The delete item button which when clicked will delete and item from the array and refresh the form -->
 									<h:commandButton id="basket_page_remove_item_button" actionListener="#{basket.removeBasketItem(basketItem.product.name)}" image="img/BasketImages/removeitembutton.png">
-										 <f:ajax execute="@form" render="@form" />
+										 <f:ajax execute="@form" render="@form" onevent="performPostAjaxCommands()"/>										  
 									</h:commandButton>
 								</div>
 								
