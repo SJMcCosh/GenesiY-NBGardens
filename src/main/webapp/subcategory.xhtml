@@ -15,13 +15,15 @@
 
 
 			<h:form class="col-3 col-m-6 tagbar">
-				<h:selectManyCheckbox layout="pageDirection"
-					value="#{products.tagNameArray}">
-					<f:selectItems value="#{products.tagModel}" var="tag"
-						itemLabel="#{tag.name}" itemValue="#{tag.name}" />
-					<f:ajax listener="#{filter.filterProducts}" render="@all" />
-				</h:selectManyCheckbox>
-
+				<div class="tagbar">
+				<p><b>Tags</b></p>
+					<h:selectManyCheckbox layout="pageDirection"
+						value="#{products.tagNameArray}">
+						<f:selectItems value="#{products.tagModel}" var="tag"
+							itemLabel="#{tag.name}" itemValue="#{tag.name}" />
+						<f:ajax listener="#{filter.filterProductsByTag}" render="@all" />
+					</h:selectManyCheckbox>
+				</div>
 			</h:form>
 
 
@@ -43,49 +45,51 @@
 
 			<!-- Pagination bit -->
 
-			
 
-					<h:form>
-						<h:outputText escape="false" value="No Products Found"
-							rendered="#{products.dataModel.rowCount == 0}" />
-						<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
-							<h:outputText
-								value="Displaying products #{products.pagination.pageFirstItem + 1} to #{products.pagination.pageLastItem + 1} of #{products.pagination.itemsCount}" />
-							<h:commandButton value="Previous #{products.pagination.pageSize}"
-								action="#{products.previous}"
-								rendered="#{products.pagination.hasPreviousPage}" />
-							<h:commandButton value="Next #{products.pagination.pageSize}"
-								action="#{products.next}"
-								rendered="#{products.pagination.hasNextPage}" />
-						</h:panelGroup>
-					</h:form>
+
+			<h:form>
+				<h:outputText escape="false" value="No Products Found"
+					rendered="#{products.dataModel.rowCount == 0}" />
+				<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
+					<h:outputText
+						value="Displaying products #{products.pagination.pageFirstItem + 1} to #{products.pagination.pageLastItem + 1} of #{products.pagination.itemsCount}" />
+					<h:commandButton value="Previous #{products.pagination.pageSize}"
+						action="#{products.previous}"
+						rendered="#{products.pagination.hasPreviousPage}" />
+					<h:commandButton value="Next #{products.pagination.pageSize}"
+						action="#{products.next}"
+						rendered="#{products.pagination.hasNextPage}" />
+				</h:panelGroup>
+			</h:form>
 
 
 			<!-- This is the product grid -->
 
-<!-- This is the product grid -->
+			<!-- This is the product grid -->
 			<h:form>
 
 				<div class="col-9 col-m-6">
 					<ul>
 						<ui:repeat var="product" value="#{products.dataModel}">
+							<h:panelGroup rendered="#{product.toRender}">
+								<h:commandLink action="#{products.viewProduct(product)}"
+									class="col-3 col-m-6">
 
-							<h:commandLink action="#{products.viewProduct(product)}"
-								class="col-3 col-m-6">
-								<div class="listofproducts">
-									<img class="subcat_images"
-										src="#{product.imageLocation}" />
-									<ul>
-										<li><h:outputText value="#{product.name}"
-												class="index_featured_products_product_title" /></li>
-										<li><h:outputText value="#{product.price}"
-												class="index_featured_products_product_price" /></li>
-										<li><h:outputText value="#{product.averageRating}"
-												class="index_featured_products_product_price" /></li>
-									</ul>
+									<div class="listofproducts">
+										<img class="subcat_images" src="#{product.imageLocation}" />
+										<ul>
+											<li><h:outputText value="#{product.name}"
+													class="index_featured_products_product_title" /></li>
+											<li><h:outputText value="#{product.price}"
+													class="index_featured_products_product_price" /></li>
+											<li><h:outputText value="#{product.averageRating}"
+													class="index_featured_products_product_price" /></li>
+										</ul>
 
-								</div>
-							</h:commandLink>
+									</div>
+
+								</h:commandLink>
+							</h:panelGroup>
 						</ui:repeat>
 
 					</ul>
@@ -93,16 +97,22 @@
 				</div>
 
 			</h:form>
-			<div class = "paginatorbutton">
-			<h:form>
-				<h:outputText escape="false" value="No Products Found" rendered="#{products.dataModel.rowCount == 0}" />
-				<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
-					<h:outputText value="Displaying products #{products.pagination.pageFirstItem + 1} to #{products.pagination.pageLastItem + 1} of #{products.pagination.itemsCount}" />
-					<h:commandButton value="Previous #{products.pagination.pageSize}" action="#{products.previous}" rendered="#{products.pagination.hasPreviousPage}" />
-					<h:commandButton value="Next #{products.pagination.pageSize}" action="#{products.next}" rendered="#{products.pagination.hasNextPage}" />
-				</h:panelGroup>
-			</h:form>
+			<div class="paginatorbutton">
+				<h:form>
+					<h:outputText escape="false" value="No Products Found"
+						rendered="#{products.dataModel.rowCount == 0}" />
+					<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
+						<h:outputText
+							value="Displaying products #{products.pagination.pageFirstItem + 1} to #{products.pagination.pageLastItem + 1} of #{products.pagination.itemsCount}" />
+						<h:commandButton value="Previous #{products.pagination.pageSize}"
+							action="#{products.previous}"
+							rendered="#{products.pagination.hasPreviousPage}" />
+						<h:commandButton value="Next #{products.pagination.pageSize}"
+							action="#{products.next}"
+							rendered="#{products.pagination.hasNextPage}" />
+					</h:panelGroup>
+				</h:form>
 			</div>
-			</div>
-		</ui:define>
+		</div>
+	</ui:define>
 </ui:composition>

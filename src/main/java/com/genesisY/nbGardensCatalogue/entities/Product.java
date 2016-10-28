@@ -69,6 +69,11 @@ public class Product implements Comparable<Product> {
 	@NotNull
 	@Size(min = 2, max = 1000)
 	private String imageLocation;
+	
+	/**
+	 * To render it on the screen. Doesn't need to be sent to the database and default is that it renders.
+	 */
+	private boolean toRender = true;
 
 	public Product() {
 
@@ -179,6 +184,14 @@ public class Product implements Comparable<Product> {
 	public int compareTo(Product o) {
 		
 		return ((Double)this.getPrice()).compareTo(o.getPrice());
+	}
+
+	public boolean isToRender() {
+		return toRender;
+	}
+
+	public void setToRender(boolean toRender) {
+		this.toRender = toRender;
 	}
 	
 	

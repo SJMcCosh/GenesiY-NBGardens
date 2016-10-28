@@ -666,6 +666,13 @@ ul.botnav li a {
 	text-align: right;
 }
 
+.tagbar{
+	text-align: center;
+}
+.tagheader{
+	text-decoration:  
+}
+
 
 @media only screen and (min-width: 600px) {
 	/* For tablets: */
