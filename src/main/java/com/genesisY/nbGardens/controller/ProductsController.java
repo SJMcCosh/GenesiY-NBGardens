@@ -8,8 +8,11 @@ import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.genesisY.nbGardens.entities.PaginationHelper;
 import com.genesisY.nbGardens.entities.Product;
+import com.genesisY.nbGardens.entities.Supplier;
 import com.genesisY.nbGardens.services.ProductService;
+import com.genesisY.nbGardens.services.SupplierService;
 
 @SuppressWarnings("serial")
 @Named("products")
@@ -22,18 +25,19 @@ public class ProductsController implements Serializable {
 	private String description = "";
 	private String specification = "";
 	private DataModel<Product> dataModel = null;
-
+	private PaginationHelper pagination;
+	private int selected;
 	@Inject
-	private ProductService prodService;
+	private ProductService productService;
 
 	public String getAllProducts() {
 
-		dataModel = new ListDataModel<Product>(prodService.getAllProducts());
+		dataModel = new ListDataModel<Product>(productService.viewProducts());
 		return "newpurchaseorder";
 	}
 	
 	public String viewProduct(Product p){ 
-		product = prodService.getProductByName(p.getName());
+		product = productService.getProductByName(p.getName());
 		System.out.println(">>>>>>>>>>>>>>>>>>> Product Name = " +product.getName()); 
 		setName(product.getName());
 		setPrice(Double.toString(product.getPrice()));
@@ -44,7 +48,7 @@ public class ProductsController implements Serializable {
 	
 	public String onLoad()
 	{
-		dataModel = new ListDataModel<Product>(prodService.getAllProducts());
+		dataModel = new ListDataModel<Product>(productService.getAllProducts());
 		return "subcategory";
 	}
 	
@@ -56,12 +60,67 @@ public class ProductsController implements Serializable {
 		product.setDesc(description);
 		product.setSpecification(specification);
 		System.out.println(">>>>>>>>>>>>" + getPrice());
-		prodService.updateProduct(product);
+		productService.updateProduct(product);
 		
 		return "product";
 	}
 
+	public PaginationHelper getPagination() {
+		if (pagination == null) {
+			pagination = new PaginationHelper(15) {
+				@Override
+				public int getItemsCount() {
+					return productService.viewProducts().size();
+				}
 
+				@Override
+				public DataModel<Product> createPageDataModel() {
+					try {
+						return new ListDataModel<Product>(productService.viewProducts().subList(getPageFirstItem(),
+								getPageFirstItem() + getPageSize()));
+					} catch (Exception e) {
+						return new ListDataModel<Product>(
+								productService.viewProducts().subList(getPageFirstItem(), getItemsCount()));
+					}
+				}
+			};
+		}
+		return pagination;
+	}
+
+	private void updateCurrentItem() {
+		int count = productService.viewProducts().size();
+		if (selected >= count) {
+			selected = count - 1;
+			if (pagination.getPageFirstItem() >= count) {
+				pagination.previousPage();
+			}
+		}
+		if (selected >= 0) {
+			try {
+				setProduct(productService.viewProducts().subList(selected, selected + 1).get(0));
+			} catch (Exception e) {
+				setProduct(productService.viewProducts().subList(selected, count).get(0));
+			}
+		}
+	}
+
+	public String next() {
+		getPagination().nextPage();
+		recreateModel();
+		return "viewsupplier";
+	}
+
+	public String previous() {
+		getPagination().previousPage();
+		recreateModel();
+		return "viewsupplier";
+	}
+
+	private void recreateModel() {
+		dataModel = null;
+	}
+	
 	public DataModel<Product> getDataModel() {
 		return dataModel;
 	}

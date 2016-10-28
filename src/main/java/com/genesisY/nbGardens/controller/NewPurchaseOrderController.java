@@ -27,7 +27,7 @@ public class NewPurchaseOrderController implements Serializable {
 	private DataModel<Product> dataModel = null;
 	private Supplier supplier; 
 	private int quantity; 
-	private List<Product> prodList; 
+	private DataModel<Product> prodList; 
 	private double totalPrice; 
 	private EmployeeLogin employee; 
 	private Product product; 
@@ -68,7 +68,7 @@ public class NewPurchaseOrderController implements Serializable {
 		int q = this.quantity;
 		for(int i=0; i<q; i++){
 		
-		this.prodList.add(product);
+		//this.prodList.add(product);
 		}
 	}
 
@@ -81,7 +81,7 @@ public class NewPurchaseOrderController implements Serializable {
 	public void createNewPurchaseOrder()
 	{
 	
-		purchaseOrderService.createPurchaseOrder(totalPrice, supplier, employee, prodList);
+		purchaseOrderService.createPurchaseOrder(totalPrice, supplier, prodList);
 	}
 	
 }

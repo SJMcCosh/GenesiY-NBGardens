@@ -1,7 +1,9 @@
 package com.genesisY.nbGardens.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.model.DataModel;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -29,26 +31,27 @@ public class PurchaseOrder {
 	@JoinColumn(name = "productID_fk",  nullable = false)
 	@NotNull 
 	private Product product;
-	private List<Product> prodList; 
+	private DataModel<Product> prodList; 
 
 	/**
 	 * @param purchaseID
 	 * @param totalPrice
 	 * @param supplier
+	 * @param prodList 
 	 * @param employee 
 	 * @param employee
 	 */
-	public PurchaseOrder(double totalPrice, Supplier supplier, EmployeeLogin employee, List<Product> prodList) {
+	public PurchaseOrder(double totalPrice, Supplier supplier, DataModel<Product> prodList) {
 		this.totalPrice = totalPrice;
 		this.supplier = supplier;
 		this.prodList = prodList;
 	}
-	public List<Product> getProdList() {
+	public DataModel<Product> getProdList() {
 		return prodList;
 	}
 
 	public void setProdList(List<Product> prodList) {
-		this.prodList = prodList;
+		this.prodList = (DataModel<Product>) prodList;
 	}
 
 	public int getPurchaseID() {

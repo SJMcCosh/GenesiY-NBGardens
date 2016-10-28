@@ -7,12 +7,16 @@ import javax.inject.Inject;
 
 import com.genesisY.nbGardens.entities.Product;
 import com.genesisY.nbGardens.entityManagers.ProductManager;
+import com.genesisY.nbGardens.entityManagers.offline.ProductManagerOffline;
+
 
 @RequestScoped
 public class ProductService {
 
 	@Inject
 	private ProductManager productInt;
+	@Inject
+	private ProductManager productsManager;
 
 	public List<Product> getAllProducts() {
 		try {
@@ -22,6 +26,13 @@ public class ProductService {
 		}
 
 	}
+	
+	public List<Product> viewProducts(){
+		List<Product> products = productsManager.getAllProducts();
+		return products; 
+		
+	}
+	
 
 	public Product getProductByName(String name) {
 		try {

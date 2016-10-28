@@ -23,6 +23,7 @@ public class ImsInitialData {
 	private ArrayList<Supplier> supplierList = new ArrayList<Supplier>();
 	private ArrayList<Employee> employeeList = new ArrayList<Employee>();
 	private ArrayList<PurchaseOrder> purchaseOrderList = new ArrayList<PurchaseOrder>();
+	private ArrayList<Product> pOprodList = new ArrayList<Product>(); 
 
 	@PostConstruct
 	public void setupData() {
@@ -70,10 +71,10 @@ public class ImsInitialData {
 		Supplier supplier3 = new Supplier("Gnome Adventures", "34252824665", "gnomes@gnomeadventures.com", address3);
 		Employee employee1 = new Employee("AlStock", "Password1");
 	
-		PurchaseOrder po1 = new PurchaseOrder(14503.99, supplier1, null, prodList); 
-		PurchaseOrder po2 = new PurchaseOrder(146703.99, supplier2, null, prodList); 
-		PurchaseOrder po3 = new PurchaseOrder(145303.99, supplier3, null, prodList); 
-		PurchaseOrder po4 = new PurchaseOrder(14547.99, supplier1, null, prodList); 
+		PurchaseOrder po1 = new PurchaseOrder(14503.99, supplier1, null); 
+		PurchaseOrder po2 = new PurchaseOrder(146703.99, supplier2, null); 
+		PurchaseOrder po3 = new PurchaseOrder(145303.99, supplier3, null); 
+		PurchaseOrder po4 = new PurchaseOrder(14547.99, supplier1, null); 
 		
 		prodList.add(product1);
 		prodList.add(product2);
