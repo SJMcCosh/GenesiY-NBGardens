@@ -28,7 +28,7 @@
 				</div>
 
 				<div class="columns_add_button">
-					<h:commandButton value="click" onclick="alert('clicked');" />
+					<h:commandButton value="Add Product" onclick="alert('clicked');" action = "#(newPurchase.addToProdList)" />
 				</div>
 			</div>
 		</div>
@@ -42,7 +42,7 @@
 					</h:selectOneMenu>
 				</div>
 				<div class="columns_add_button">
-					<h:commandButton value="click" onclick="alert('clicked');" action = "#{newPurchase.createNewPurchaseOrder}" />
+					<h:commandButton value="Create New Purchase Order" onclick="alert('clicked');" action = "#{newPurchase.createNewPurchaseOrder}" />
 				</div>
 			</div>
 		</div>
