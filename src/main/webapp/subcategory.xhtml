@@ -2,6 +2,8 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
 	template="templates/template.xhtml">
 	<meta charset="ISO-8859-1" />
 	<ui:define name="maincontent">
@@ -29,12 +31,8 @@
 					<p>
 						<b>Prices</b>
 					</p>
-					<h:panelGrid columns="1" style="margin-bottom: 10px">
-						<h:outputText id="displayRange"	value="Between #{products.lowerBound} and #{products.upperBound}" />
-						
-					</h:panelGrid>
-					<h:inputHidden id="txt6" value="#{products.lowerBound}" />
-					<h:inputHidden id="txt7" value="#{products.upperBound}" />
+					<rich:inputNumberSlider value = "50" />
+					<rich:inputNumberslider value = "50" />
 				</div>
 			</h:form>
 

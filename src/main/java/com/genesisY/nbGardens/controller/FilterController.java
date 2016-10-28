@@ -61,6 +61,9 @@ public class FilterController {
 		String[] arr = productsController.getTagNameArrayInString().split(", ");
 		System.out.println("---------------" + Arrays.toString(arr));
 		dataModel = productsController.getDataModel2();
+		for (Product p: dataModel){
+			p.setToRender(true);
+		}
 		ArrayList<String> tagList = new ArrayList<String>();
 		for (String l : arr) {
 			if (l.startsWith("[")) {
@@ -70,11 +73,6 @@ public class FilterController {
 				l = l.substring(0, l.length() - 1);
 			}
 			tagList.add(l);
-		}
-		if (tagList.size() != 0 && tagList.get(0).equals("")) {
-			for (Product p : dataModel) {
-				p.setToRender(true);
-			}
 		}
 		if (tagList.size() != 0 && !tagList.get(0).equals("")) {
 			for (Product p : dataModel) {
