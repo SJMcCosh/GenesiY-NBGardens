@@ -17,10 +17,10 @@
 
 			<div class="col-3 col-m-3 categoryList">
 				<h:form>
-					<ui:repeat var="category" value="#{categories.dataModel}">
+					<ui:repeat var="category" value="#{categories.getAllCategories()}">
 						<ul>
-							<li><h:commandButton value="#{category.name}" 
-									action="#{categories.hello}" /></li>
+							<li><h:commandButton value="#{categories.name}" type="submit" 
+									action="#{categories.filterByCategory}" /></li>
 
 						</ul>
 

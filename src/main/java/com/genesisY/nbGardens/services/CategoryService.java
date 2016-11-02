@@ -8,6 +8,7 @@ import javax.inject.Inject;
 
 import com.genesisY.nbGardens.entities.Category;
 import com.genesisY.nbGardens.entities.Product;
+import com.genesisY.nbGardens.entityManagers.CategoryManager;
 import com.genesisY.nbGardens.entityManagers.ProductManager;
 
 @Stateless
@@ -16,7 +17,21 @@ public class CategoryService {
 	@Inject
 	private ProductManager prodInt;
 	
-	public List<Category> getAllCategories()
+	@Inject
+	private CategoryManager catManager;
+	
+	public List<Category> getAllCategories() {
+		if (catManager.getAllCategories() != null)
+		{
+			return catManager.getAllCategories();
+		}
+		else
+		{
+			return null;
+		}
+	}
+	
+	public List<Category> getAllCategoryProducts()
 	{
 		List<Category> cl1 = new ArrayList<Category>();
 		for(Product a:prodInt.getAllProducts())

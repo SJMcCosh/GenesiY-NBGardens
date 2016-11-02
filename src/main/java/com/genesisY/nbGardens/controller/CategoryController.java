@@ -22,13 +22,14 @@ public class CategoryController {
 	
 	private DataModel<Category> dataModel;
 	
-    
-	private String hello;
+    private Category category;
+	private String hello = "";
+	private String name = "";
 	
-	
-	public void onLoad()
+	public String onLoad()
 	{
 		dataModel = new ListDataModel<Category>(catService.getAllCategories());
+		return "categories";
 	}
 
 	public DataModel<Category> getDataModel() {
@@ -37,6 +38,11 @@ public class CategoryController {
 
 	public void setDataModel(DataModel<Category> dataModel) {
 		this.dataModel = dataModel;
+	}
+	
+	public String getAllCategories() {
+		dataModel = new ListDataModel<>(catService.getAllCategories());
+		return "subcategory";
 	}
 	
 	public String filterByCategory()
@@ -51,6 +57,22 @@ public class CategoryController {
 	{
 		System.out.println("Test");
 		return "hello";
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	}

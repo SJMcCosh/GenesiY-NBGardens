@@ -15,7 +15,7 @@ public class CategoryManagerOffline implements CategoryManager {
 
 	@Override
 	public List<Category> getAllCategories() {
-		return null;
+		return initialData.getCatList();
 	}
 
 }

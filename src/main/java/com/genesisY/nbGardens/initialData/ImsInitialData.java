@@ -24,6 +24,7 @@ public class ImsInitialData {
 	private ArrayList<Employee> employeeList = new ArrayList<Employee>();
 	private ArrayList<PurchaseOrder> purchaseOrderList = new ArrayList<PurchaseOrder>();
 	private ArrayList<Product> pOprodList = new ArrayList<Product>(); 
+	private ArrayList<Category> catList = new ArrayList<Category>();
 
 	@PostConstruct
 	public void setupData() {
@@ -53,6 +54,13 @@ public class ImsInitialData {
 		List<Category> cl6 = new ArrayList<Category>();
 		cl6.add(c6);
 		cl6.add(c3);
+		
+		catList.add(new Category("Pop Culture"));
+		catList.add(new Category("Seasonal"));
+		catList.add(new Category("Classic"));
+		catList.add(new Category("PFFFfff"));
+		catList.add(new Category("What other kinds of gnomes are there!"));
+		catList.add(new Category("Something different"));
 		
 		
 		Product product1 = new Product(1, "Game of Gnomes", "A GOT gnome", "img/gnome.jpg", 9.99, "Made in China", 12, cl1);
@@ -141,5 +149,13 @@ public class ImsInitialData {
 	
 	public void addPurchaseOrder(PurchaseOrder purchaseOrder) {
 		this.purchaseOrderList.add(purchaseOrder);
+	}
+	
+	public ArrayList<Category> getCatList() {
+		return catList;
+	}
+	
+	public void setCatList(ArrayList<Category> catList) {
+		this.catList = catList;
 	}
 }
