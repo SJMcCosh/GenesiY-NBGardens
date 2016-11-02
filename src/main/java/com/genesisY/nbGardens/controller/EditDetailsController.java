@@ -75,8 +75,8 @@ public class EditDetailsController {
 	}
 
 	public String changeDetails() {
-		System.out.println(">>>>> " + firstName + " " + surname + " " + phoneNumber + " " + email + " " + username + " "
-				+ password);
+		System.out.println(">>>>>  hello" + getFirstName() + " " + getSurname() + " " + getPhoneNumber() + " " + getEmail() + " " + getUsername() + " "
+				+ getPassword());
 		boolean bool = detailEditor.editing(firstName, surname, phoneNumber, email, username, password);
 		System.out.println(bool);
 		if (bool) {

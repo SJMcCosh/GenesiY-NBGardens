@@ -59,7 +59,11 @@ public class LoginService {
 		Customer gnome = getCustomerByUsername(username);
 		if (gnome != null) {
 			String pass = hash(password);
-			if (password.equals(gnome.getPassword())) {
+			for (int x = 0; x<1000; x++){
+				pass = hash(pass);
+			}
+			System.out.println(">>>>>>>>> " + pass);
+			if (pass.equals(gnome.getPassword())) {
 				return true;
 			}
 		}

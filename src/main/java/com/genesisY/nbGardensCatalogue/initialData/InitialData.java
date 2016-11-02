@@ -53,9 +53,9 @@ public class InitialData {
 
 	@PostConstruct
 	public void setupData() {
-		Customer daveSmith = new Customer("Dave", "Smith", "dave@smith.com", "davesmith", "password1", "01478523698");
-		Customer janeSmith = new Customer("Jane", "Smith", "jane@smith.com", "janesmith", "password2", "01478523698");
-		Customer willSmith = new Customer("Will", "Smith", "will@smith.com", "willsmith", "password3", "01478523698");
+		Customer daveSmith = new Customer("Dave", "Smith", "dave@smith.com", "davesmith", "5767ae8832684b68fb15def789461d2ce13236f432961154004e19da68481385", "01478523698");
+		Customer janeSmith = new Customer("Jane", "Smith", "jane@smith.com", "janesmith", "f4db65702a99e3121c736d40ac2089dcb2c2df87c043521c7aafd53e0974520a", "01478523698");
+		Customer willSmith = new Customer("Will", "Smith", "will@smith.com", "willsmith", "833d73142a8b84c001442195843bae2187b83c4ae86cd300d3c1587f4dec8be0", "01478523698");
 		Tag t1 = new Tag("Gnome");
 		Tag t2 = new Tag("Outdoor");
 		Tag t3 = new Tag("Special");
