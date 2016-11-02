@@ -52,9 +52,9 @@ public class LoginController{
 			password = "";
 			return "loginpage";
 		}
-		else if (passcheck.passCheck(username, password) == true) {
+		else if (passcheck.passCheck(username, password)) {
 			userCredentials.setUsername(username);
-			userCredentials.setLoggedin(passcheck.passCheck(username, password));
+			userCredentials.setLoggedin(true);
 			return customerController.viewDetails();
 		} else {
 			error = "Invalid username and password";
@@ -62,5 +62,15 @@ public class LoginController{
 			password = "";
 			return "loginpage";
 		}
+	}
+	
+	public boolean isLoggedIn(){
+		return userCredentials.isLoggedin();
+	}
+	
+	public String logout(){
+		userCredentials.setUsername(null);
+		userCredentials.setLoggedin(false);
+		return "index";
 	}
 }
