@@ -1,0 +1,84 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/template.xhtml">
+	<meta charset="ISO-8859-1" />
+	<ui:define name="maincontent">
+		<h:article class="wholebody">
+			<h:div>
+				<h:h3>View Your Orders</h:h3>
+			</h:div>
+			<h:div>
+				<h:div class="singleorder">
+					<ui:repeat var="address" value="#{address.dataModel}">
+						<h:div class="col-4 col-m-4">
+							<h:div class="resizingorders">
+								<h:div class="orderdetails">
+									<p>
+										<b>Date Placed:</b>
+										<h:outputText value="#{customerorder.orderDate}" />
+									</p>
+									<p>
+										<b>Total: </b>
+										<h:outputText value="#{customerorder.orderTotal}" />
+									</p>
+									<p>
+										<b>Order Number:</b>
+										<h:outputText value="#{customerorder.orderID}" />
+									</p>
+								</h:div>
+							</h:div>
+						</h:div>
+						<h:div class="col-4 col-m-4">
+							<h:div class="resizingorders">
+								<h:div class="orderproducts">
+									<ui:repeat var="product" value="#{products.dataModel}">
+										<h:div class="vieworderproducts">
+											<h:div class="address">
+												<p>
+													<h:outputText value="#{customerorderline.name}" />
+													<h:outputText value="#{customerorderline.price}" />
+													<h:outputText value="#{customerorderline.quantity}" />
+												</p>
+											</h:div>
+										</h:div>
+									</ui:repeat>
+								</h:div>
+							</h:div>
+						</h:div>
+						<h:div class="col-4 col-m-4">
+							<h:div class="resizingorders">
+								<h:div class="orderaddress">
+									<p>
+										<a><b>Delivery Address</b></a>
+									</p>
+									<p>
+										<h:outputText value="#{address.line1}" />
+									</p>
+									<p>
+										<h:outputText value="#{address.line2}" />
+									</p>
+									<p>
+										<h:outputText value="#{address.line3}" />
+									</p>
+									<p>
+										<h:outputText value="#{address.towncity}" />
+									</p>
+									<p>
+										<h:outputText value="#{address.county}" />
+									</p>
+									<p>
+										<h:outputText value="#{address.postcode}" />
+									</p>
+								</h:div>
+							</h:div>
+						</h:div>
+
+					</ui:repeat>
+				</h:div>
+			</h:div>
+		</h:article>
+
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,65 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/template.xhtml">
+	<meta charset="ISO-8859-1" />
+	<ui:define name="maincontent">
+		<h:article class="wholebody">
+			<h:div>
+				<h3>Account Details</h3>
+			</h:div>
+			<h:div class="viewaccount">
+				<h:div class="col-4 col-m-4">
+					<h:div class="billingadd">
+						<p>
+							<a><b>Billing Address</b></a>
+						</p>
+						<p><h:outputText value="#{customer.address.get(0).line1}" /></p>
+						<p><h:outputText value="#{customer.address.get(0).line2}" /></p>
+						<p><h:outputText value="#{customer.address.get(0).line3}" /></p>
+						<p><h:outputText value="#{customer.address.get(0).towncity}" /></p>
+						<p><h:outputText value="#{customer.address.get(0).county}" /></p>
+						<p><h:outputText value="#{customer.address.get(0).postcode}" /></p>
+					</h:div>
+				</h:div>
+				<h:div class="col-4 col-m-4">
+					<h:div class="details">
+						<p>
+							<a><b>Username:</b> <h:outputText value="#{customer.username}" /></a>
+						</p>
+						<p>
+							<a><b>Name:</b> <h:outputText value="#{customer.name}" /></a>
+						</p>
+						<p>
+							<a><b>Phone Number:</b> <h:outputText value="#{customer.phonenumber}" /></a>
+						</p>
+						<p>
+							<a><b>Email:</b> <h:outputText value="#{customer.email}" /></a>
+						</p>
+					</h:div>
+				</h:div>
+				<h:div class="col-4 col-m-4">
+					<h:div class="editing">
+						<p>
+							<h:commandLink value = "View Addresses" action = "viewaddresses" />
+						</p>
+						<p>
+							<h:commandLink value = "View Account Details" action = "viewaccount" />
+						</p>
+						<p>
+							<h:commandLink value = "Edit Account Details" action = "editdetails" />
+						</p>
+						<p>
+							<h:commandLink value = "Change Your Password" action = "changepassword" />
+						</p>
+						<p>
+							<h:commandLink value = "Add Address" action = "addaddress" />
+						</p>
+					</h:div>
+				</h:div>
+			</h:div>
+		</h:article>
+
+	</ui:define>
+</ui:composition>
