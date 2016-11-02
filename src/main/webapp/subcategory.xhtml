@@ -19,8 +19,8 @@
 				<h:form>
 					<ui:repeat var="category" value="#{categories.dataModel}">
 						<ul>
-							<li><h:commandLink value="#{category.name}"
-									action="#{categories.filterByCategory(category.name)}" /></li>
+							<li><h:commandButton value="#{category.name}" 
+									action="#{categories.hello}" /></li>
 
 						</ul>
 
@@ -42,7 +42,7 @@
 
 			<!-- This is the product grid -->
 
-			<h:form>
+			<h:form id="productGrid">
 				<div class="col-9 col-m-12">
 					<ul>
 						<ui:repeat var="product" value="#{products.dataModel}">
