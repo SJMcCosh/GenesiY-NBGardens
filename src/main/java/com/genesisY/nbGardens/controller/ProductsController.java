@@ -12,6 +12,7 @@ import javax.inject.Named;
 import com.genesisY.nbGardens.services.ProductService;
 import com.genesisY.nbGardensCatalogue.entities.PaginationHelper;
 import com.genesisY.nbGardensCatalogue.entities.Product;
+import com.genesisY.nbGardensCatalogue.entities.Review;
 import com.genesisY.nbGardensCatalogue.entities.Tag;
 
 @SuppressWarnings("serial")

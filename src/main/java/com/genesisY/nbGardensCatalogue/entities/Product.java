@@ -2,7 +2,6 @@ package com.genesisY.nbGardensCatalogue.entities;
 
 import java.util.List;
 
-import javax.jws.Oneway;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -70,6 +69,9 @@ public class Product implements Comparable<Product> {
 	@Size(min = 2, max = 1000)
 	private String imageLocation;
 	
+	@OneToMany
+	private List<Review> reviews; 
+	
 	/**
 	 * To render it on the screen. Doesn't need to be sent to the database and default is that it renders.
 	 */
@@ -79,7 +81,7 @@ public class Product implements Comparable<Product> {
 
 	}
 
-	public Product(int id, String name, double averageRating, String description, String size, double weight, double price, List<Tag> tagList, String imageLocation) {
+	public Product(int id, String name, double averageRating, String description, String size, double weight, double price, List<Tag> tagList, String imageLocation, List<Review> reviews) {
 		this.id = id;
 		this.name = name;
 		this.averageRating = averageRating;
@@ -89,6 +91,7 @@ public class Product implements Comparable<Product> {
 		this.price = price;
 		this.tagList = tagList;
 		this.imageLocation = imageLocation;
+		this.reviews = reviews;
 	}
 
 	
@@ -193,6 +196,14 @@ public class Product implements Comparable<Product> {
 
 	public void setToRender(boolean toRender) {
 		this.toRender = toRender;
+	}
+
+	public List<Review> getReviews() {
+		return reviews;
+	}
+
+	public void setReviews(List<Review> reviews) {
+		this.reviews = reviews;
 	}
 	
 	

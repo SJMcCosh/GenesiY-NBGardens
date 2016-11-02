@@ -25,11 +25,15 @@ public class Review {
 
 	@Column(name = "rating", nullable = false)
 	@NotNull
-	private int rating;
+	private double rating;
 
 	@Column(name = "reviewtext", length = 225)
 	@Size(min = 2, max = 225)
 	private String reviewText;
+	
+	@JoinColumn(name = "customer_id", nullable = false)
+	@NotNull
+	private int customerid;
 
 	@ManyToOne
 	@JoinColumn(name = "productid_fk", nullable = false)
@@ -41,10 +45,9 @@ public class Review {
 	 * @param reviewText
 	 * @param fk_ProductID
 	 */
-	public Review(int rating, String reviewText, int fk_ProductID) {
+	public Review(double rating, String reviewText) {
 		this.rating = rating;
 		this.reviewText = reviewText;
-		this.fk_ProductID = fk_ProductID;
 	}
 
 	public int getId() {
@@ -55,11 +58,11 @@ public class Review {
 		this.id = id;
 	}
 
-	public int getRating() {
+	public double getRating() {
 		return rating;
 	}
 
-	public void setRating(int rating) {
+	public void setRating(double rating) {
 		this.rating = rating;
 	}
 
