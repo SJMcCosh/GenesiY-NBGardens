@@ -44,11 +44,15 @@ public class CustomerController implements Serializable {
 		this.customer = customer;
 	}
 
+	/**
+	 * Gets the information about a customer and returns the account page
+	 * @return String : the account page
+	 */
 	public String viewDetails() {
 		String username = userCredentials.getUsername();
 		System.out.println(username);
 		customer = accountDetailsService.getCustomerByUsername(username);
-		dataModel = new ListDataModel(addressService.getAllAddresses(username));
+		dataModel = new ListDataModel<Address>(addressService.getAllAddresses(username));
 		for (Address a:dataModel){
 			if (a.isBillingAddress()){
 				address = a;

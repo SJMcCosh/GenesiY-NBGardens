@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.Arrays;
 
 import javax.enterprise.context.SessionScoped;
-import javax.faces.event.AjaxBehaviorEvent;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.inject.Inject;

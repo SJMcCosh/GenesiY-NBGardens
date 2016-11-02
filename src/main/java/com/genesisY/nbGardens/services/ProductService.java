@@ -17,6 +17,11 @@ public class ProductService {
 	@Inject
 	private ProductManager productManager;
 
+	/**
+	 * Gets the products that a customer wants based on the category they chose
+	 * @param category that the customer wants
+	 * @return List<Product> : the list of products that have been returned from the data store
+	 */
 	@SuppressWarnings("unchecked")
 	public List<Product> getAllProducts(String category) {
 		try {
@@ -31,6 +36,11 @@ public class ProductService {
 		
 	}
 	
+	/**
+	 * Gets a product based on the name that has been sent in
+	 * @param name : String of the product
+	 * @return Product : the product that has been returned
+	 */
 	public Product getProductByName(String name){
 		return productManager.getProductByName(name);
 	}

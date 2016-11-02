@@ -10,8 +10,8 @@ import javax.inject.Named;
 
 import com.genesisY.nbGardens.services.CategoryService;
 import com.genesisY.nbGardensCatalogue.entities.Category;
-import com.genesisY.nbGardensCatalogue.entityManagers.CategoryManager;
 
+@SuppressWarnings("serial")
 @Named("category")
 @SessionScoped
 public class CategoryController implements Serializable {
@@ -19,8 +19,6 @@ public class CategoryController implements Serializable {
 	private DataModel<Category> catModel;
 	@Inject
 	private CategoryService catService;
-	@Inject
-	private CategoryService catManager;
 
 	public DataModel<Category> getCatModel() {
 		return catModel;
@@ -30,8 +28,12 @@ public class CategoryController implements Serializable {
 		this.catModel = catModel;
 	}
 
+	/**
+	 * Gets all the categories that are associated with a product
+	 * @return String : the page department
+	 */
 	public String getAllCategories() {
-		catModel = new ListDataModel<>(catManager.getAllCategories());
+		catModel = new ListDataModel<>(catService.getAllCategories());
 		return "department";
 	}
 

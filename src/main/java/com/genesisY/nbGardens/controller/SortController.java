@@ -1,15 +1,12 @@
 package com.genesisY.nbGardens.controller;
 
-import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
 import javax.faces.event.AjaxBehaviorEvent;
-import javax.faces.model.DataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.genesisY.nbGardens.services.SortingService;
-import com.genesisY.nbGardensCatalogue.entities.Product;
 
 @Named("sort")
 @RequestScoped
@@ -23,8 +20,10 @@ public class SortController {
 	@Inject
 	private SortingService sortingService;
 
-	@SuppressWarnings("unchecked")
-	public void sort(AjaxBehaviorEvent abe) {
+	/**
+	 * Allows a customer to sort the results of products depending on which type of sorting that is going on
+	 */
+	public void sort() {
 		String sort = getSorter();
 		System.out.println(">>>>>>>>>>> " + sort);
 		switch(sort){
@@ -40,11 +39,6 @@ public class SortController {
 		}
 	}
 
-	public String sortByHighToLow() {
-		StringBuilder builder = new StringBuilder();
-		return "subcategory";
-	}
-
 	public void setSorter(String sorter) {
 		this.sorter = sorter;
 	}
@@ -52,7 +46,4 @@ public class SortController {
 	public String getSorter() {
 		return sorter;
 	}
-	
-	
-
 }

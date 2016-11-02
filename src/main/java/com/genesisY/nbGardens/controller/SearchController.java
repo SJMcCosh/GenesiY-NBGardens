@@ -31,6 +31,10 @@ public class SearchController implements Serializable {
 		this.term = term;
 	}
 
+	/**
+	 * Takes the term that the customer searches with and sends it to the service layer to be checked
+	 * @return String : the subcategory page or the index page depending if the term has a value
+	 */
 	public String search() {
 
 		if (term != "") {

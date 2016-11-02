@@ -16,6 +16,11 @@ public class SearchService {
 	@Inject
 	private ProductManager productManager;
 
+	/**
+	 * Checks the term and validates the term and only allows characters a-z and A-Z
+	 * @param term : String the term that has been passed in from the frontend
+	 * @return List<Product> : a list of products that match the term
+	 */
 	@SuppressWarnings("null")
 	public List<Product> getSearchedProducts(String term) {
 		if (term != null) {

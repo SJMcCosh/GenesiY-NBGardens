@@ -5,6 +5,27 @@
 	template="templates/template.xhtml">
 	<meta charset="ISO-8859-1" />
 	<ui:define name="maincontent">
+
+
+		<script type="text/javascript">
+			//<![CDATA[				
+			function performPostAjaxCommands() {
+				$("#basket_item_removed_popup").show();
+			}
+
+			function closeRemoveItemPopup() {
+				$("#basket_item_removed_popup").hide();
+			}
+			//]]>
+		</script>
+
+
+		<div id="basket_item_removed_popup">
+			<img onclick="closeRemoveItemPopup()" id="item_popup_close_button"
+				src="img/BasketImages/popupclose.png" />
+			<p>Added to Basket</p>
+		</div>
+
 		<div class="maincontent">
 			<div class="productcontent">
 
@@ -86,27 +107,52 @@
 						<!-- Cart button -->
 
 						<h:commandButton type="submit" name="addtocart"
-							value="Add To Cart" action="#{addBasket.addToBasket()}" />
+							value="Add To Cart" action="#{addBasket.addToBasket()}">
+							<f:ajax execute="@form" render="@form"
+								onevent="performPostAjaxCommands()" />
+						</h:commandButton>
 					</h:form>
 				</div>
 			</div>
 			<hr />
 			<!-- Related Products -->
-			<div class="related-products ">
-				<h2>Related Products</h2>
+			<h:form>
+				<div class="related-products col-12 col-m-12">
+					<h2>Related Products</h2>
 
-				<div id="index_lower_content_master_wrapper">
+					<div id="index_lower_content_master_wrapper">
+						<div id="index_featured_products_wrapper_outer">
+							<div id="index_featured_products_wrapper_inner">
+								<!-- THE JSF VERSION OF THE FEATURED PRODUCTS -->
+								<ui:repeat var="product" value="#{products.dataModel}">
+									<h:commandLink action="#{products.viewProduct(product)}"
+										class="col-3 col-m-6">
 
-					<div id="index_featured_products_wrapper_outer">
-						<div id="index_featured_products_wrapper_inner"></div>
+										<div class="listofproducts">
+											<img class="subcat_images" src="#{product.imageLocation}" />
+											<ul>
+												<li><h:outputText value="#{product.name}"
+														class="index_featured_products_product_title" /></li>
+												<li><h:outputText value="#{product.price}"
+														class="index_featured_products_product_price" /></li>
+												<li><h:outputText value="#{product.averageRating}"
+														class="index_featured_products_product_price" /></li>
+											</ul>
+
+										</div>
+
+									</h:commandLink>
+								</ui:repeat>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
+			</h:form>
 
 			<hr />
 			<!-- Reviews -->
 			<div class="reviews col-12 col-m-12">
-
+				<h2>Reviews</h2>
 				<ul>
 					<li>
 						<div class="review">
@@ -133,7 +179,6 @@
 					</li>
 				</ul>
 			</div>
-			<hr />
 		</div>
 
 	</ui:define>

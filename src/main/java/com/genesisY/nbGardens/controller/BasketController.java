@@ -1,6 +1,5 @@
 package com.genesisY.nbGardens.controller;
 
-import java.awt.event.ActionEvent;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -12,9 +11,9 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.genesisY.nbGardens.services.BasketService;
-import com.genesisY.nbGardensCatalogue.entities.Basket;
 import com.genesisY.nbGardensCatalogue.entities.BasketItem;
 
+@SuppressWarnings("serial")
 @Named("basket")
 @SessionScoped
 public class BasketController implements Serializable{
@@ -39,7 +38,7 @@ public class BasketController implements Serializable{
 	
 	public DataModel<BasketItem> getDataModel() {
 		
-		dataModel = new ListDataModel(basketService.getBasketItems());
+		dataModel = new ListDataModel<BasketItem>(basketService.getBasketItems());
 		System.out.println("At controller");
 		System.out.println("Datamodel Row count: " + dataModel.getRowCount());
 		

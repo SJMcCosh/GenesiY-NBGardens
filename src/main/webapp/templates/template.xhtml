@@ -38,7 +38,7 @@
 							<h:commandLink action="#{login.logout}" value="Log Out"
 								rendered="#{login.loggedIn}" />
 						</div>
-						<img src="img/BasketImages/checkout.png" />
+						<h:commandLink action="basket" value="#{basket.basketSize}" style="color:white; text-decoration:none"><img src="img/TemplateImages/cart.png" style="PADDING-TOP: 18px"/></h:commandLink>
 					</div>
 				</h:form>
 			</div>

@@ -59,7 +59,7 @@ public class AddressController {
 	public String viewAddress(){
 		String username = userCredentials.getUsername();
 		System.out.println(username);
-		dataModel = new ListDataModel(addressService.getAllAddresses(username));
+		dataModel = new ListDataModel<Address>(addressService.getAllAddresses(username));
 		return "viewaddresses";
 	}
 	

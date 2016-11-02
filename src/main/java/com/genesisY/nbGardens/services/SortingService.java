@@ -15,7 +15,8 @@ import com.genesisY.nbGardensCatalogue.entities.Product;
 public class SortingService {
 
 	/**
-	 * Method sorts products returned by price
+	 * Method sorts products returned by price where the lowest priced product
+	 * is at the top of the list
 	 * 
 	 * @param dataModel
 	 *            list of products to sort
@@ -23,7 +24,7 @@ public class SortingService {
 	@SuppressWarnings("unchecked")
 	public DataModel<Product> sortLowToHigh(DataModel<Product> dataModel) {
 		List<Product> list = new ArrayList<Product>();
-		for (Product p: dataModel){
+		for (Product p : dataModel) {
 			list.add(p);
 		}
 		list.sort(new Comparator<Product>() {
@@ -39,13 +40,19 @@ public class SortingService {
 		return dataModel;
 	}
 
-	
-	
-	
-	
+	/**
+	 * Sorts the product list from high to low based on the price where the
+	 * highest priced product is at the top of the list
+	 * 
+	 * @param dataModel
+	 *            : the product datamodel that needs to be sorted
+	 * @return DataModel<Product> : the sorted datamodel for the frontend to
+	 *         display
+	 */
+
 	public DataModel<Product> sortHighToLow(DataModel<Product> dataModel) {
 		List<Product> list = new ArrayList<Product>();
-		for (Product p: dataModel){
+		for (Product p : dataModel) {
 			list.add(p);
 		}
 		list.sort(new Comparator<Product>() {
@@ -60,17 +67,19 @@ public class SortingService {
 		dataModel = new ListDataModel<>(list);
 		return dataModel;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	public DataModel<Product> sortByRating(DataModel<Product> dataModel){
+
+	/**
+	 * Sorts the product list from based on the rating of the product, the
+	 * highest rated products will be at the top of the list
+	 * 
+	 * @param dataModel
+	 *            : the product datamodel that needs to be sorted
+	 * @return DataModel<Product> : the sorted datamodel for the frontend to
+	 *         display
+	 */
+	public DataModel<Product> sortByRating(DataModel<Product> dataModel) {
 		List<Product> list = new ArrayList<Product>();
-		for (Product p: dataModel){
+		for (Product p : dataModel) {
 			list.add(p);
 		}
 		list.sort(new Comparator<Product>() {
