@@ -14,20 +14,20 @@
 						<h4>Login</h4>
 						<h:form>
 							<h:outputText value="Username: " />
-							<h:inputText value="#{login.username}" required="true"
+							<h:inputText value="#{employee_login.username}" required="true"
 								requiredMessage="Enter Username"></h:inputText>
-							<h:outputLink action="#{index.xhtml}">
+							<h:outputLink action="#{loginpage.xhtml}">
 								<h:outputText value="Forgot Username?" />
 							</h:outputLink>
 							<br />
 							<br />
 							<h:outputText value="Password: " />
-							<h:inputSecret value="#{login.password}" required="true"
+							<h:inputSecret value="#{employee_login.password}" required="true"
 								requiredMessage="Enter Password"
 								validatorMessage="Please enter a password">
 								<f:validateLength minimum="8" maximum="35" />
 							</h:inputSecret>
-							<h:outputLink action="#{index.xhtml}">
+							<h:outputLink action="#{loginpage.xhtml}">
 								<h:outputText value="Forgot Password" />
 							</h:outputLink>
 							<br />

@@ -1,5 +1,5 @@
 	/**
-	 * Interface to be implemented in offline + online CustomerManager classes
+	 * Interface to be implemented in offline + online EmployeeManager classes
 	 * @author Brian McLaughlin
 	 */
 

@@ -10,7 +10,6 @@ import javax.inject.Singleton;
 import com.genesisY.nbGardens.entities.Address;
 import com.genesisY.nbGardens.entities.Category;
 import com.genesisY.nbGardens.entities.Employee;
-import com.genesisY.nbGardens.entities.EmployeeLogin;
 import com.genesisY.nbGardens.entities.Product;
 import com.genesisY.nbGardens.entities.PurchaseOrder;
 import com.genesisY.nbGardens.entities.Supplier;
@@ -29,12 +28,13 @@ public class ImsInitialData {
 	@PostConstruct
 	public void setupData() {
 
-		Category c1 = new Category("Pop culture");
-		Category c2 = new Category("Seasonal");
-		Category c3 = new Category("Classic");
-		Category c4 = new Category("PFFFfff");
-		Category c5 = new Category("What other kinds of gnomes are there!");
-		Category c6 = new Category("Something different");
+
+		Category c1 = new Category("Seasonal");
+		Category c2 = new Category("Classic");
+		Category c3 = new Category("Musical");
+		Category c4 = new Category("Television");
+		Category c5 = new Category("Movies");
+		Category c6 = new Category("Video Games");
 		
 		List<Category> cl1 = new ArrayList<Category>();
 		cl1.add(c1);
@@ -64,20 +64,21 @@ public class ImsInitialData {
 		
 		
 		Product product1 = new Product(1, "Game of Gnomes", "A GOT gnome", "img/gnome.jpg", 9.99, "Made in China", 12, cl1);
-		Product product2 = new Product(2, "random gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0, cl2);
-		Product product3 = new Product(3, "other gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0, cl3);
-		Product product4 = new Product(4, "big gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0, cl4);
-		Product product5 = new Product(5, "small gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0, cl5);
-		Product product6 = new Product(6, "mediocre gnome", "lelelelel", "img/gnome.jpg", 9.99, "Made in China", 0, cl6);
-		//Product product1 = new Product(1, "Game of Gnomes", 9.99, "A GOT gnome", "GnomesWarehouse", "img/gnome.jpg", "Made in China", 500, 4.7);
-		//Product product2 = new Product(2, "random gnome", 8.59, "lelelelel", "GnomesWarehouse", "img/gnome.jpg", "Made in China", 180, 3.5);
+		Product product2 = new Product(2, "random gnome", "lelelelel", "img/gnome.jpg", 15.29, "Made in the UK", 52, cl2);
+		Product product3 = new Product(3, "other gnome", "1234567890", "img/gnome.jpg", 6.50, "Made in the EU", 121, cl3);
+		Product product4 = new Product(4, "big gnome", "B.I.G, big!", "img/gnome.jpg", 12.99, "Made in the UK", 94, cl4);
+		Product product5 = new Product(5, "small gnome", "Rather small gnome", "img/gnome.jpg", 2.50, "Made in Taiwan", 87, cl5);
+		Product product6 = new Product(6, "LED Glowing gnome", "Useful as a Nightlight", "img/gnome.jpg", 4.99, "Made in Japan", 20, cl6);
+
 		Address address1 = new Address("32 Fine Strasse", "", "", "Berlin", "Germany", "54624");
 		Address address2 = new Address("2546 New Road", "Lowry Quay", "Salford Quays", "Paris", "France", "75003");
 		Address address3 = new Address("21 Gnome Street", "", "", "Saariselka", "Finland", "99830");
+		
 		Supplier supplier1 = new Supplier("Gnomes4U", "05853123673", "gnomes4u@gnomes4u.com", address1);
 		Supplier supplier2 = new Supplier("Gnomeo's Gnomes", "12354234723", "gnomeo@gnomeosgnomes.com", address2);
 		Supplier supplier3 = new Supplier("Gnome Adventures", "34252824665", "gnomes@gnomeadventures.com", address3);
-		Employee employee1 = new Employee("AlStock", "Password1");
+		
+		Employee AlStock = new Employee("AlStock", "Password1");
 	
 		PurchaseOrder po1 = new PurchaseOrder(14503.99, supplier1, null); 
 		PurchaseOrder po2 = new PurchaseOrder(146703.99, supplier2, null); 
@@ -90,25 +91,17 @@ public class ImsInitialData {
 		prodList.add(product4);
 		prodList.add(product5);
 		prodList.add(product6);
+		
 		supplierList.add(supplier1);
 		supplierList.add(supplier2);
 		supplierList.add(supplier3);
-		supplierList.add(supplier1);
-		supplierList.add(supplier2);
-		supplierList.add(supplier3);
-		supplierList.add(supplier1);
-		supplierList.add(supplier2);
-		supplierList.add(supplier3);
-		supplierList.add(supplier1);
-		supplierList.add(supplier2);
-		supplierList.add(supplier3);
-		supplierList.add(supplier1);
-		supplierList.add(supplier2);
-		supplierList.add(supplier3);
-		supplierList.add(supplier1);
-		supplierList.add(supplier2);
-		supplierList.add(supplier3);
-		employeeList.add(employee1);
+		
+		employeeList.add(AlStock); //Password = Password1
+		
+		purchaseOrderList.add(po1);
+		purchaseOrderList.add(po2);
+		purchaseOrderList.add(po3);
+		purchaseOrderList.add(po4);
 	}
 
 	public void setEmployeeList(ArrayList<Employee> employeeList) {
@@ -157,5 +150,21 @@ public class ImsInitialData {
 	
 	public void setCatList(ArrayList<Category> catList) {
 		this.catList = catList;
+	}
+
+	public ArrayList<PurchaseOrder> getPurchaseOrderList() {
+		return purchaseOrderList;
+	}
+
+	public void setPurchaseOrderList(ArrayList<PurchaseOrder> purchaseOrderList) {
+		this.purchaseOrderList = purchaseOrderList;
+	}
+
+	public ArrayList<Product> getpOprodList() {
+		return pOprodList;
+	}
+
+	public void setpOprodList(ArrayList<Product> pOprodList) {
+		this.pOprodList = pOprodList;
 	}
 }

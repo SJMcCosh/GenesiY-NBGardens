@@ -55,10 +55,10 @@ public class LoginService {
 	}
 
 	public boolean passCheck(String username, String password) {
-		Employee gnome = getEmployeeByUsername(username);
-		if (gnome != null) {
+		Employee e = getEmployeeByUsername(username);
+		if (e != null) {
 			String pass = hash(password);
-			if (password.equals(gnome.getPassword())) {
+			if (password.equals(e.getPassword())) {
 				return true;
 			}
 		}
