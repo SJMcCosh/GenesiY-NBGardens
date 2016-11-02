@@ -3,67 +3,71 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/template.xhtml">
-	<meta charset="ISO-8859-1" title="IMS SupplierProduct" />
+	<meta charset="ISO-8859-1" title="IMS Products stocked by Supplier" />
 	<ui:define name="content">
 		<div id="pageTitle">
 			<div class="col-12 col-m-12">
-				<h1>Products stocked by Supplier</h1>
+				<h1>Supplier's Products</h1>
 			</div>
 		</div>
 		<div id="viewproducts">
 			<div class="col-12 col-m-12">
 				<div>
 					<h:form>
-						<h:outputText escape="false" value="No Supplier Found"
-							rendered="#{products.dataModel.rowCount == 0}" />
-						<h:panelGroup rendered="#{products.dataModel.rowCount>0}">
+						<h:outputText escape="false" value="No Products Found"
+							rendered="#{product.dataModel.rowCount == 0}" />
+						<h:panelGroup rendered="#{product.dataModel.rowCount>0}">
 							<h:outputText
-								value="#{products.pagination.pageFirstItem +1} to #{products.pagination.pageLastItem+1} of #{products.pagination.itemsCount} " />
+								value="#{product.pagination.pageFirstItem +1} to #{product.pagination.pageLastItem+1} of #{product.pagination.itemsCount} " />
 							<h:outputText value=" " />
-							<h:commandButton action="#{products.previous}"
-								value="Previous #{products.pagination.pageSize}"
-								rendered="#{products.pagination.hasPreviousPage}" />
+							<h:commandButton action="#{product.previous}"
+								value="Previous #{product.pagination.pageSize}"
+								rendered="#{product.pagination.hasPreviousPage}" />
 							<h:outputText value=" " />
-							<h:commandButton action="#{products.next}"
-								value="Next #{products.pagination.pageSize}"
-								rendered="#{products.pagination.hasNextPage}" />
+							<h:commandButton action="#{product.next}"
+								value="Next #{product.pagination.pageSize}"
+								rendered="#{product.pagination.hasNextPage}" />
 						</h:panelGroup>
 					</h:form>
 				</div>
 			</div>
-			<ui:repeat var="products" value="#{products.dataModel}">
+			<ui:repeat var="product" value="#{product.dataModel}">
 				<div class="productall">
 					<ul>
 						<div class="col-6 col-m-6">
-							<div class="productname">
+							<div class="productDetails1">
 								<br />
-								<li><b>Product ID:</b> <h:outputText
-										value="#{products.dataModel.getRowData().id}"></h:outputText></li>
-								<li><b>Product Name:</b> <h:outputText
-										value="#{products.dataModel.getRowData().name}"></h:outputText></li>
-								<li><b>Product Price:</b> <h:outputText
-										value="#{products.dataModel.getRowData().price}"></h:outputText></li>
-								<li><b>Remaining Stock:</b> <h:outputText
-										value="#{products.dataModel.getRowData().stockLevel}"></h:outputText></li>
+								<li><b>ID: </b> <h:outputText
+										value="#{product.dataModel.getRowData().productID}"></h:outputText></li>
+								<li><b>Name: </b> <h:outputText
+										value="#{product.dataModel.getRowData().productName}"></h:outputText></li>
+								<li><b>Price: </b> <h:outputText
+										value="#{product.dataModel.getRowData().price}"></h:outputText></li>
+								<li><b>Image: </b> <h:outputText
+										value="#{product.dataModel.getRowData().imgLoc}"></h:outputText></li>
 							</div>
 						</div>
 						<div class="col-6 col-m-6">
-							<div class="productdetails">
+							<div class="productDetails2">
 								<br />
-								<li><b>Description</b></li>
-								<li><h:outputText
-										value="#{products.dataModel.getRowData()desc}"></h:outputText></li>
-								<li><b>Specification</b></li>
-								<li><h:outputText
-										value="#{products.dataModel.getRowData()specification"></h:outputText></li>
-								<li><b>Starting Stock</b></li>
-								<li><h:outputText
-										value="#{products.dataModel.getRowData()initialStock}"></h:outputText></li>
+								<li><b>Description: </b> <h:outputText
+										value="#{product.dataModel.getRowData().getAddress().desc}"></h:outputText></li>
+								<li><b>Specification: </b> <h:outputText
+										value="#{product.dataModel.getRowData().getAddress().spec}"></h:outputText></li>
+								<li><b>Initial Stock: </b> <h:outputText
+										value="#{product.dataModel.getRowData().getAddress().stockLevel}"></h:outputText></li>
+								<li><b>Average Rating: </b> <h:outputText
+										value="#{product.dataModel.getRowData().getAddress().averageRating}"></h:outputText></li>
 							</div>
 						</div>
 					</ul>
 				</div>
 			</ui:repeat>
+			<div class="addprodlink">
+				<h:form>
+					<h:commandButton action="addproduct" value="Add Product" />
+				</h:form>
+			</div>
 		</div>
 	</ui:define>
 </ui:composition>
