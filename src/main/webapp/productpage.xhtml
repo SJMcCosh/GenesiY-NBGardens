@@ -108,7 +108,7 @@
 
 						<h:commandButton type="submit" name="addtocart"
 							value="Add To Cart" action="#{addBasket.addToBasket()}">
-							<f:ajax execute="@form" render="@form"
+							<f:ajax execute="@form" render="@this basketlink"
 								onevent="performPostAjaxCommands()" />
 						</h:commandButton>
 					</h:form>

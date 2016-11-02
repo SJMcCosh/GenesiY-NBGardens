@@ -16,7 +16,7 @@
 		<!-- This is the header -->
 		<div class="header">
 			<div id="navigation_top_row">
-				<div class="searchandlogo col-6" >
+				<div class="searchandlogo col-6">
 					<h:form class="tfnewsearch" method="get">
 						<h:inputText class="tftextinput" value="#{search.term}" />
 						<h:commandButton class="tfbutton" type="submit"
@@ -28,8 +28,8 @@
 					</div>
 				</div>
 
-				<h:form>
-					<div id="navigation_cart_section" class = "col-6">
+				<h:form id = "basketlink">
+					<div id="navigation_cart_section" class="col-6">
 						<div class="loginheaders">
 							<h:commandLink action="loginpage" value="Log In"
 								rendered="#{!login.loggedIn}" />
@@ -38,7 +38,10 @@
 							<h:commandLink action="#{login.logout}" value="Log Out"
 								rendered="#{login.loggedIn}" />
 						</div>
-						<h:commandLink action="basket" value="#{basket.basketSize}" style="color:white; text-decoration:none"><img src="img/TemplateImages/cart.png" style="PADDING-TOP: 18px"/></h:commandLink>
+						<h:commandLink  action="basket" value="#{basket.basketSize}"
+							style="color:white; text-decoration:none">
+							<img src="img/TemplateImages/cart.png" style="PADDING-TOP: 18px" />
+						</h:commandLink>
 					</div>
 				</h:form>
 			</div>
