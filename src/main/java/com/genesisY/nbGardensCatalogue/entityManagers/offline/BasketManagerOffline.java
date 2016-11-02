@@ -36,8 +36,22 @@ public class BasketManagerOffline implements BasketManager{
 	public void addProductToCart(Product product, int quantity) {
 		
 		BasketItem bi = new BasketItem(product, quantity);
-
-		initialData.addBasketItem(bi);
+		boolean foundProdId = false;
+		
+		for(BasketItem b : initialData.getBasketList())
+		{
+			if (b.getProduct().getId() == product.getId())
+			{
+				b.setQuantity(b.getQuantity() + quantity);
+				foundProdId = true;
+				break;
+			}
+		}
+		
+		if(foundProdId == false)
+		{
+			initialData.addBasketItem(bi);
+		}
 	}
 
 	

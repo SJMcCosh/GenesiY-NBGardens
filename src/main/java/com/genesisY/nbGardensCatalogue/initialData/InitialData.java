@@ -98,72 +98,47 @@ public class InitialData {
 		customerList.add(janeSmith);// Password = password2
 		customerList.add(willSmith);// Password = password3
 		colList.add(new CustomerOrderLine());
-		productList.add(new Product("Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50,
+		productList.add(new Product(1, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50,
 				list1, "img/zombie_gnome_fishing.jpg"));
-		productList.add(new Product("Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0,
+		productList.add(new Product(2, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0,
 				97.99, list2, "img/zombiefeast.jpg"));
-		productList.add(new Product("Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29,
+		productList.add(new Product(3, "Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29,
 				list3, "img/IndexImages/gnome_new.jpg"));
-		productList.add(new Product("Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50,
+		productList.add(new Product(4, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50,
 				list1, "img/zombie_gnome_fishing.jpg"));
-		productList.add(new Product("Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0,
+		productList.add(new Product(5, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0,
 				97.99, list2, "img/zombiefeast.jpg"));
-		productList.add(new Product("Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29,
+		productList.add(new Product(6, "Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29,
 				list3, "img/IndexImages/gnome_new.jpg"));
-		productList.add(new Product("Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50,
+		productList.add(new Product(7, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50,
 				list1, "img/zombie_gnome_fishing.jpg"));
-		productList.add(new Product("Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0,
+		productList.add(new Product(8, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0,
 				97.99, list2, "img/zombiefeast.jpg"));
-		productList.add(new Product("Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29,
+		productList.add(new Product(9, "Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29,
 				list3, "img/IndexImages/gnome_new.jpg"));
-		productList.add(new Product("Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50,
+		productList.add(new Product(10, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50,
 				list1, "img/zombie_gnome_fishing.jpg"));
-		productList.add(new Product("Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0,
+		productList.add(new Product(11, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0,
 				97.99, list2, "img/zombiefeast.jpg"));
-		productList.add(new Product("Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29,
+		productList.add(new Product(12, "Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29,
 				list3, "img/IndexImages/gnome_new.jpg"));
-		productList.add(new Product("Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50,
+		productList.add(new Product(13, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50,
 				list1, "img/zombie_gnome_fishing.jpg"));
-		productList.add(new Product("Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0,
+		productList.add(new Product(14, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0,
 				97.99, list2, "img/zombiefeast.jpg"));
-		productList.add(new Product("Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29,
+		productList.add(new Product(15, "Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29,
 				list3, "img/IndexImages/gnome_new.jpg"));
-		productList.add(new Product("Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50,
+		productList.add(new Product(16, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50,
 				list1, "img/zombie_gnome_fishing.jpg"));
-		productList.add(new Product("Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0,
+		productList.add(new Product(17, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0,
 				97.99, list2, "img/zombiefeast.jpg"));
-		productList.add(new Product("Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29,
+		productList.add(new Product(18, "Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29,
 				list3, "img/IndexImages/gnome_new.jpg"));
-		productList.add(new Product("Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50,
+		productList.add(new Product(19, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50,
 				list1, "img/zombie_gnome_fishing.jpg"));
-		productList.add(new Product("Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0,
+		productList.add(new Product(20, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0,
 				97.99, list2, "img/zombiefeast.jpg"));
-		productList.add(new Product("Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29,
-				list3, "img/IndexImages/gnome_new.jpg"));
-		productList.add(new Product("Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50,
-				list1, "img/zombie_gnome_fishing.jpg"));
-		productList.add(new Product("Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0,
-				97.99, list2, "img/zombiefeast.jpg"));
-		productList.add(new Product("Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29,
-				list3, "img/IndexImages/gnome_new.jpg"));
-		productList.add(new Product("Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50,
-				list1, "img/zombie_gnome_fishing.jpg"));
-		productList.add(new Product("Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0,
-				97.99, list2, "img/zombiefeast.jpg"));
-		productList.add(new Product("Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29,
-				list3, "img/IndexImages/gnome_new.jpg"));
-		productList.add(new Product("Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50,
-				list1, "img/zombie_gnome_fishing.jpg"));
-		productList.add(new Product("Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0,
-				97.99, list2, "img/zombiefeast.jpg"));
-		productList.add(new Product("Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29,
-				list3, "img/IndexImages/gnome_new.jpg"));
-		productList.add(new Product("Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0, 150.50,
-				list1, "img/zombie_gnome_fishing.jpg"));
-		productList.add(new Product("Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care", 17.0,
-				97.99, list2, "img/zombiefeast.jpg"));
-		productList.add(new Product("Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0, 111.29,
-				list3, "img/IndexImages/gnome_new.jpg"));
+	
 		categoryList.add(new Category("cat1"));
 		categoryList.add(new Category("cat2"));
 		categoryList.add(new Category("cat3"));
