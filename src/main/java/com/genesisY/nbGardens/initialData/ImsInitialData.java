@@ -55,17 +55,13 @@ public class ImsInitialData {
 		cl6.add(c6);
 		cl6.add(c3);
 		
-<<<<<<< HEAD
 		catList.add(new Category("Pop Culture"));
 		catList.add(new Category("Seasonal"));
 		catList.add(new Category("Classic"));
 		catList.add(new Category("PFFFfff"));
 		catList.add(new Category("What other kinds of gnomes are there!"));
 		catList.add(new Category("Something different"));
-		
-		
-=======
->>>>>>> 85bb8c13593610d62cf351282bbbbcde783b56cb
+
 		Product product1 = new Product(1, "Game of Gnomes", "A GOT gnome", "img/gnome.jpg", 9.99, "Made in China", 12, cl1);
 		Product product2 = new Product(2, "random gnome", "lelelelel", "img/gnome.jpg", 15.29, "Made in the UK", 52, cl2);
 		Product product3 = new Product(3, "other gnome", "1234567890", "img/gnome.jpg", 6.50, "Made in the EU", 121, cl3);

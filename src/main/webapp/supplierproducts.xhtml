@@ -38,13 +38,13 @@
 							<div class="productname">
 								<br />
 								<li><b>Product ID:</b> <h:outputText
-										value="#{products.dataModel.getRowData().productID}"></h:outputText></li>
+										value="#{products.dataModel.getRowData().id}"></h:outputText></li>
 								<li><b>Product Name:</b> <h:outputText
-										value="#{products.dataModel.getRowData().productName}"></h:outputText></li>
+										value="#{products.dataModel.getRowData().name}"></h:outputText></li>
 								<li><b>Product Price:</b> <h:outputText
 										value="#{products.dataModel.getRowData().price}"></h:outputText></li>
 								<li><b>Remaining Stock:</b> <h:outputText
-										value="#{products.dataModel.getRowData().remainingStock}"></h:outputText></li>
+										value="#{products.dataModel.getRowData().stockLevel}"></h:outputText></li>
 							</div>
 						</div>
 						<div class="col-6 col-m-6">
@@ -52,7 +52,7 @@
 								<br />
 								<li><b>Description</b></li>
 								<li><h:outputText
-										value="#{products.dataModel.getRowData()description}"></h:outputText></li>
+										value="#{products.dataModel.getRowData()desc}"></h:outputText></li>
 								<li><b>Specification</b></li>
 								<li><h:outputText
 										value="#{products.dataModel.getRowData()specification"></h:outputText></li>
