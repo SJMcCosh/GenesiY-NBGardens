@@ -22,6 +22,10 @@ public class CategoryController {
 	
 	private DataModel<Category> dataModel;
 	
+    
+	private String hello;
+	
+	
 	public void onLoad()
 	{
 		dataModel = new ListDataModel<Category>(catService.getAllCategories());
@@ -35,11 +39,19 @@ public class CategoryController {
 		this.dataModel = dataModel;
 	}
 	
-	public String filterByCategory(String catName)
+	public String filterByCategory()
 	{
+		String catName = "Pop culture";
 		System.out.println("hello");
 		prodController.setDataModel(new ListDataModel<Product>(catService.getProductsByCategory(catName)));
 		return "subcategory";
 	}
+	
+	public String getHello()
+	{
+		System.out.println("Test");
+		return "hello";
+	}
+	
+	}
 
-}
