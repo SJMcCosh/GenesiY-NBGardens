@@ -1,5 +1,8 @@
 package com.genesisY.nbGardens.controller;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -40,26 +43,49 @@ public class LoginController{
 		return "signup";
 	}
 	
+	private boolean userValidate(String username) {
+		boolean validate = false;
+		Pattern pattern = Pattern.compile("^[0-9a-zA-Z_]+$");
+		Matcher matcher = pattern.matcher(username);
+		if (username.length() > 7 && username.length() < 45) {
+			if (matcher.find()) {
+				validate = true;
+			}
+		}
+		return validate;
+	}
+	
 	public String login() {
-		
+		if (userCredentials.getAttempts()>2){
+			System.out.println(userCredentials.getAttempts());
+			return "index";
+		};
 		if (username.equals("")) {
 			error = "Please enter a username";
 			password = "";
+			userCredentials.setAttempts(userCredentials.getAttempts()+1);
 			return "loginpage";
 		}
 		else if (password.equals("")) {
 			error = "Please enter a password";
 			password = "";
+			userCredentials.setAttempts(userCredentials.getAttempts()+1);
+			return "loginpage";
+		}
+		else if (!userValidate(username)){
+			userCredentials.setAttempts(userCredentials.getAttempts()+1);
 			return "loginpage";
 		}
 		else if (passcheck.passCheck(username, password)) {
 			userCredentials.setUsername(username);
 			userCredentials.setLoggedin(true);
+			userCredentials.setAttempts(0);
 			return customerController.viewDetails();
 		} else {
 			error = "Invalid username and password";
 			username = "";
 			password = "";
+			userCredentials.setAttempts(userCredentials.getAttempts()+1);
 			return "loginpage";
 		}
 	}

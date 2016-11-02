@@ -11,6 +11,7 @@ public class UserCredentials implements Serializable {
 	private String username = "";
 
 	private boolean loggedin = false;
+	private int attempts = 0;
 	
 	protected String getUsername() {
 		return username;
@@ -23,5 +24,11 @@ public class UserCredentials implements Serializable {
 	}
 	protected void setLoggedin(boolean loggedin) {
 		this.loggedin = loggedin;
+	}
+	public int getAttempts() {
+		return attempts;
+	}
+	public void setAttempts(int attempts) {
+		this.attempts = attempts;
 	}
 }
