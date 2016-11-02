@@ -1,6 +1,9 @@
 package com.genesisY.nbGardens.controller;
 
+import java.io.Serializable;
+
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
@@ -10,9 +13,10 @@ import com.genesisY.nbGardens.entities.Category;
 import com.genesisY.nbGardens.entities.Product;
 import com.genesisY.nbGardens.services.CategoryService;
 
+@SuppressWarnings("serial")
 @Named("categories")
-@RequestScoped
-public class CategoryController {
+@SessionScoped
+public class CategoryController implements Serializable {
 	
 	@Inject
 	private CategoryService catService;
@@ -23,8 +27,7 @@ public class CategoryController {
 	private DataModel<Category> dataModel;
 	
     private Category category;
-	private String hello = "";
-	private String name = "";
+	//private String name = "";
 	
 	public String onLoad()
 	{
@@ -45,18 +48,12 @@ public class CategoryController {
 		return "subcategory";
 	}
 	
-	public String filterByCategory()
+	public String filterByCategory(String catName)
 	{
-		String catName = "Pop culture";
-		System.out.println("hello");
+		//String catName = "Seasonal";
+		System.out.println(catName);
 		prodController.setDataModel(new ListDataModel<Product>(catService.getProductsByCategory(catName)));
 		return "subcategory";
-	}
-	
-	public String getHello()
-	{
-		System.out.println("Test");
-		return "hello";
 	}
 
 	public Category getCategory() {
@@ -66,14 +63,14 @@ public class CategoryController {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-
+/*
 	public String getName() {
-		return name;
+		return category.getName();
 	}
 
 	public void setName(String name) {
 		this.name = name;
-	}
+	}*/
 	
 	}
 
