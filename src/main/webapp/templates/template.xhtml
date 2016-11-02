@@ -21,9 +21,11 @@
 						<h:inputText class="tftextinput" value="#{search.term}" />
 						<h:commandButton class="tfbutton" type="submit"
 							action="#{search.search()}" value="Search" />
+					<div class = "loginheaders">
 						<h:commandLink action="loginpage" value="Log In" rendered="#{!login.loggedIn}"/>
 						<h:commandLink action="#{customer.viewDetails}" value="View Account" rendered="#{login.loggedIn}"/>
 						<h:commandLink action="#{login.logout}" value="Log Out" rendered="#{login.loggedIn}"/>
+						</div>
 					</h:form>
 					<div class="logo">
 						<a href="index.xhtml"> <img src="img/nblogo.png" /></a>
