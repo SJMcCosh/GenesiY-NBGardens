@@ -12,35 +12,7 @@
 	</div>
 	<br />
 	<br />
-	<div class="col-12 col-m-12" align="center">
-		<div class="loginform">
-			<h4>Login</h4>
-			<h:form>
-				<h:outputText value="Username: " />
-				<h:inputText value="#{login.username}" required="true"
-					requiredMessage="Enter Username"></h:inputText>
-				<h:outputLink action="#{index.xhtml}">
-					<h:outputText value="Forgot Username?" />
-				</h:outputLink>
-				<br />
-				<br />
-				<h:outputText value="Password: " />
-				<h:inputSecret value="#{login.password}" required="true"
-					requiredMessage="Enter Password"
-					validatorMessage="Please enter a password">
-					<f:validateLength minimum="8" maximum="35" />
-				</h:inputSecret>
-				<h:outputLink action="#{index.xhtml}">
-					<h:outputText value="Forgot Password" />
-				</h:outputLink>
-				<br />
-				<br />
-				<h:commandButton type="submit" name="loginbtn" value="Sign In"
-					action="#{employee_login.login()}" />
-				<br />
-				<br />
-			</h:form>
-		</div>
-	</div>
+	<ui:insert name = "maincontent">
+	</ui:insert>
 </body>
 </html>

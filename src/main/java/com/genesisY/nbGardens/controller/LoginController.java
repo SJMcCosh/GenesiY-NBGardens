@@ -6,7 +6,7 @@ import javax.inject.Named;
 
 import com.genesisY.nbGardens.services.LoginService;
 
-@Named("login")
+@Named("employee_login")
 @RequestScoped
 public class LoginController {
 
@@ -37,7 +37,6 @@ public class LoginController {
 	}
 
 	public String login() {
-
 		if (username.equals("")) {
 			error = "Please enter a username";
 			password = "";

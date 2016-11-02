@@ -36,7 +36,10 @@ public class AccountManagerOffline implements AccountManager{
 
 	@Override
 	public Employee findByUsername(String username) {
-		// TODO Auto-generated method stub
-		return null;
+		for (Employee e : ImsInitialData.getEmployeeList()){
+			if (e.getUsername().equals(username)){
+				return e;
+			}
+		}		return null;
 	}
 }

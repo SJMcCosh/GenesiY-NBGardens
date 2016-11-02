@@ -25,5 +25,13 @@ public class EmployeeController implements Serializable {
 	public void setEmployee(Employee employee) {
 		this.employee = employee;
 	}
+
+	public UserCredentials getUserCredentials() {
+		return userCredentials;
+	}
+
+	public void setUserCredentials(UserCredentials userCredentials) {
+		this.userCredentials = userCredentials;
+	}
 }
 
