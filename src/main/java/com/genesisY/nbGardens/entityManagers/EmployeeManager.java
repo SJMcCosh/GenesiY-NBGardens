@@ -7,7 +7,6 @@
 
 	import com.genesisY.nbGardens.entities.Employee;
 
-
 	public interface EmployeeManager 
 	{
 		//Read
