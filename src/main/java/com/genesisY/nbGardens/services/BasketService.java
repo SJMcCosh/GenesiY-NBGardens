@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import com.genesisY.nbGardensCatalogue.entities.BasketItem;
+import com.genesisY.nbGardensCatalogue.entities.Product;
 import com.genesisY.nbGardensCatalogue.entityManagers.BasketManager;
 
 @Stateless
@@ -33,7 +34,10 @@ public class BasketService{
 		}
 		
 	}
-	
+
+	public void addProductToBasket(Product product){
+		basketManager.addProductToCart(product);
+	}
 	
 	
 	

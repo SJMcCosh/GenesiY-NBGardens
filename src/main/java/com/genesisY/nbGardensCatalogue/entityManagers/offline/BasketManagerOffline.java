@@ -2,14 +2,17 @@ package com.genesisY.nbGardensCatalogue.entityManagers.offline;
 
 import java.util.List;
 
+import javax.ejb.Stateful;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import com.genesisY.nbGardensCatalogue.entities.BasketItem;
+import com.genesisY.nbGardensCatalogue.entities.Product;
 import com.genesisY.nbGardensCatalogue.entityManagers.BasketManager;
 import com.genesisY.nbGardensCatalogue.initialData.InitialData;
 
 @Default
+@Stateful
 public class BasketManagerOffline implements BasketManager{
 	
 	@Inject
@@ -27,6 +30,14 @@ public class BasketManagerOffline implements BasketManager{
 		// TODO Auto-generated method stub	
 		
 		return initialData.getBasketList();
+	}
+
+	@Override
+	public void addProductToCart(Product product) {
+		
+		BasketItem bi = new BasketItem(product, 2);
+
+		initialData.addBasketItem(bi);
 	}
 
 	

@@ -9,7 +9,7 @@ import javax.enterprise.context.SessionScoped;
 public class UserCredentials implements Serializable {
 	
 	private String username;
-	private boolean loggedin;
+	private boolean loggedin = false;
 	
 	protected String getUsername() {
 		return username;

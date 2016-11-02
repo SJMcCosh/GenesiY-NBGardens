@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import javax.enterprise.context.SessionScoped;
 import javax.faces.event.ValueChangeEvent;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
@@ -15,6 +16,7 @@ import com.genesisY.nbGardensCatalogue.entities.Basket;
 import com.genesisY.nbGardensCatalogue.entities.BasketItem;
 
 @Named("basket")
+@SessionScoped
 public class BasketController implements Serializable{
 
 	
