@@ -199,7 +199,7 @@ ul.breadcrumb li a {
 	width: 100%;
 }
 
-.supplieraddress, .productaddress {
+.supplieraddress, .productdetails {
 	width: 350px;
 	border-style: solid;
 	border-width: thin;

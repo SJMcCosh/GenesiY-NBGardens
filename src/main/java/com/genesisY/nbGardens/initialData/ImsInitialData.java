@@ -54,13 +54,12 @@ public class ImsInitialData {
 		cl6.add(c6);
 		cl6.add(c3);
 		
-		
 		Product product1 = new Product(1, "Game of Gnomes", "A GOT gnome", "img/gnome.jpg", 9.99, "Made in China", 12, cl1);
 		Product product2 = new Product(2, "random gnome", "lelelelel", "img/gnome.jpg", 15.29, "Made in the UK", 52, cl2);
 		Product product3 = new Product(3, "other gnome", "1234567890", "img/gnome.jpg", 6.50, "Made in the EU", 121, cl3);
 		Product product4 = new Product(4, "big gnome", "B.I.G, big!", "img/gnome.jpg", 12.99, "Made in the UK", 94, cl4);
 		Product product5 = new Product(5, "small gnome", "Rather small gnome", "img/gnome.jpg", 2.50, "Made in Taiwan", 87, cl5);
-		Product product6 = new Product(6, "LED Glowing gnome", "Useful as a Nightlight", "img/gnome.jpg", 4.99, "Made in Japan", 20, cl6);
+		Product product6 = new Product(6, "LED Glowing gnome", "Useful as a Night light", "img/gnome.jpg", 4.99, "Made in Japan", 20, cl6);
 
 		Address address1 = new Address("32 Fine Strasse", "", "", "Berlin", "Germany", "54624");
 		Address address2 = new Address("2546 New Road", "Lowry Quay", "Salford Quays", "Paris", "France", "75003");

@@ -3,7 +3,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/template.xhtml">
-	<meta charset="ISO-8859-1" title="IMS" />
+	<meta charset="ISO-8859-1" title="IMS View Supplier" />
 	<ui:define name="content">
 		<div id="pageTitle">
 			<div class="col-12 col-m-12">
@@ -14,7 +14,7 @@
 			<div class="col-12 col-m-12">
 				<div>
 					<h:form>
-						<h:outputText escape="false" value="No Supplier Found"
+						<h:outputText escape="false" value="No Products Found"
 							rendered="#{suppliers.dataModel.rowCount == 0}" />
 						<h:panelGroup rendered="#{suppliers.dataModel.rowCount>0}">
 							<h:outputText
@@ -37,10 +37,9 @@
 				</div>
 			</div>
 			<ui:repeat var="suppliers" value="#{suppliers.dataModel}">
-				<div class="supplierall">
+				<div class="productall">
 					<ul>
 						<div class="col-6 col-m-6">
-
 							<div class="suppliername">
 								<li><b>ID:</b> <h:outputText
 										value="#{suppliers.dataModel.getRowData().supplierID}"></h:outputText></li>
@@ -51,10 +50,8 @@
 								<li><b>Email:</b> <h:outputText
 										value="#{suppliers.dataModel.getRowData().emailAddress}"></h:outputText></li>
 							</div>
-
 						</div>
 						<div class="col-6 col-m-6">
-
 							<div class="supplieraddress">
 								<li><b>Address</b></li>
 								<li><h:outputText
@@ -70,13 +67,10 @@
 								<li><h:outputText
 										value="#{suppliers.dataModel.getRowData().getAddress().postcode}"></h:outputText></li>
 							</div>
-
 						</div>
 					</ul>
 				</div>
-
 			</ui:repeat>
-
 		</div>
 	</ui:define>
 </ui:composition>
