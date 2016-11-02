@@ -37,6 +37,8 @@
 				</div>
 			</div>
 			<ui:repeat var="suppliers" value="#{suppliers.dataModel}">
+			<h:form>
+			<h:commandLink action="#{suppliers.viewProducts(suppliers.dataModel.getRowData().supplierName)}">
 				<div class="productall">
 					<ul>
 						<div class="col-6 col-m-6">
@@ -70,6 +72,8 @@
 						</div>
 					</ul>
 				</div>
+				</h:commandLink>
+				</h:form>
 			</ui:repeat>
 		</div>
 	</ui:define>

@@ -1,11 +1,13 @@
 package com.genesisY.nbGardens.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
 import com.genesisY.nbGardens.entities.Product;
+import com.genesisY.nbGardens.entities.Supplier;
 import com.genesisY.nbGardens.entityManagers.ProductManager;
 import com.genesisY.nbGardens.entityManagers.offline.ProductManagerOffline;
 
@@ -17,6 +19,8 @@ public class ProductService {
 	private ProductManager productInt;
 	@Inject
 	private ProductManager productsManager;
+	@Inject
+	private SupplierService supplierService;
 
 	public List<Product> getAllProducts() {
 		try {
@@ -59,6 +63,17 @@ public class ProductService {
 			productInt.addProduct(product);
 		}
 
+	}
+	
+	public List<Supplier> getSuppliers(Product product){
+		List<Supplier> suppliers = supplierService.viewSuppliers();
+		List<Supplier> finalSupplier = new ArrayList<Supplier>();
+		for (Supplier s: suppliers){
+			if (s.getProducts().contains(product)){
+				finalSupplier.add(s);
+			}
+		}
+		return finalSupplier;
 	}
 
 }

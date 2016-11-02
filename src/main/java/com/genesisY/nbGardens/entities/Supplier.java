@@ -1,5 +1,7 @@
 package com.genesisY.nbGardens.entities;
 
+import java.util.List;
+
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
@@ -30,6 +32,10 @@ public class Supplier {
 	@Size(min = 7, max = 200)
 	private String emailAddress;
 	
+	@ManyToMany
+	@NotNull
+	private List<Product> products;
+	
 	@Column(name = "address")
 	@OneToOne
 	@NotNull
@@ -48,11 +54,12 @@ public class Supplier {
 	 * @param telephoneNumber
 	 * @param emailAddress
 	 */
-	public Supplier(String supplierName, String telephoneNumber, String emailAddress, Address address) {
+	public Supplier(String supplierName, String telephoneNumber, String emailAddress, Address address, List<Product> products) {
 		this.supplierName = supplierName;
 		this.telephoneNumber = telephoneNumber;
 		this.emailAddress = emailAddress;
 		this.address = address;
+		this.products = products;
 	}
 
 	public int getSupplierID() {
@@ -86,6 +93,14 @@ public class Supplier {
 
 	public void setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress;
+	}
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
 	}
 
 	/**

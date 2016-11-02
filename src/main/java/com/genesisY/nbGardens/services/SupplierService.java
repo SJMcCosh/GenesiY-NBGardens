@@ -1,11 +1,13 @@
 package com.genesisY.nbGardens.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import com.genesisY.nbGardens.entities.Address;
+import com.genesisY.nbGardens.entities.Product;
 import com.genesisY.nbGardens.entities.Supplier;
 import com.genesisY.nbGardens.entityManagers.SupplierManager;
 import com.genesisY.nbGardens.entityManagers.offline.SupplierManagerOffline;
@@ -30,13 +32,24 @@ public class SupplierService {
 			String addressLine3, String townCity, String country, String postcode) {
 
 		Supplier s = new Supplier(name, phone, email,
-				new Address(addressLine1, addressLine2, addressLine3, townCity, country, postcode));
+				new Address(addressLine1, addressLine2, addressLine3, townCity, country, postcode), null);
 
 		if (s != null) {
 
 			supplierManager.addSupplier(s);
 
 		}
+	}
+
+	public List<Product> getProducts(Supplier supplier){
+		List<Product> products = new ArrayList<Product>();
+		products = supplier.getProducts();
+		return products;
+	}
+	
+	public Supplier findSupplierByName(String name){
+		supplierManager.getSupplierByName(name);
+		return null;
 	}
 
 }

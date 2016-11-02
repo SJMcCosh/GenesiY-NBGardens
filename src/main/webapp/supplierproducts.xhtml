@@ -31,33 +31,33 @@
 					</h:form>
 				</div>
 			</div>
-			<ui:repeat var="product" value="#{product.dataModel}">
+			<ui:repeat var="product" value="#{suppliers.dataProduct}">
 				<div class="productall">
 					<ul>
 						<div class="col-6 col-m-6">
 							<div class="productDetails1">
 								<br />
 								<li><b>ID: </b> <h:outputText
-										value="#{product.dataModel.getRowData().productID}"></h:outputText></li>
+										value="#{suppliers.dataProduct.getRowData().productID}"></h:outputText></li>
 								<li><b>Name: </b> <h:outputText
-										value="#{product.dataModel.getRowData().productName}"></h:outputText></li>
+										value="#{suppliers.dataProduct.getRowData().productName}"></h:outputText></li>
 								<li><b>Price: </b> <h:outputText
-										value="#{product.dataModel.getRowData().price}"></h:outputText></li>
+										value="#{suppliers.dataProduct.getRowData().price}"></h:outputText></li>
 								<li><b>Image: </b> <h:outputText
-										value="#{product.dataModel.getRowData().imgLoc}"></h:outputText></li>
+										value="#{suppliers.dataProduct.getRowData().imgLoc}"></h:outputText></li>
 							</div>
 						</div>
 						<div class="col-6 col-m-6">
 							<div class="productDetails2">
 								<br />
 								<li><b>Description: </b> <h:outputText
-										value="#{product.dataModel.getRowData().getAddress().desc}"></h:outputText></li>
+										value="#{suppliers.dataProduct.getRowData().getAddress().desc}"></h:outputText></li>
 								<li><b>Specification: </b> <h:outputText
-										value="#{product.dataModel.getRowData().getAddress().spec}"></h:outputText></li>
+										value="#{suppliers.dataProduct.getRowData().getAddress().spec}"></h:outputText></li>
 								<li><b>Initial Stock: </b> <h:outputText
-										value="#{product.dataModel.getRowData().getAddress().stockLevel}"></h:outputText></li>
+										value="#{suppliers.dataProduct.getRowData().getAddress().stockLevel}"></h:outputText></li>
 								<li><b>Average Rating: </b> <h:outputText
-										value="#{product.dataModel.getRowData().getAddress().averageRating}"></h:outputText></li>
+										value="#{suppliers.dataProduct.getRowData().getAddress().averageRating}"></h:outputText></li>
 							</div>
 						</div>
 					</ul>
