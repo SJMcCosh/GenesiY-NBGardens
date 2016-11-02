@@ -14,6 +14,6 @@ public interface BasketManager {
 	 */
 	public List<BasketItem> getBasketItems();
 	
-	public void addProductToCart(Product product);
+	public void addProductToCart(Product product, int quantity);
 
 }

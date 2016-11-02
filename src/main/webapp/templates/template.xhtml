@@ -16,27 +16,31 @@
 		<!-- This is the header -->
 		<div class="header">
 			<div id="navigation_top_row">
-				<div class="searchandlogo">
+				<div class="searchandlogo col-6" >
 					<h:form class="tfnewsearch" method="get">
 						<h:inputText class="tftextinput" value="#{search.term}" />
 						<h:commandButton class="tfbutton" type="submit"
 							action="#{search.search()}" value="Search" />
-					<div class = "loginheaders">
-						<h:commandLink action="loginpage" value="Log In" rendered="#{!login.loggedIn}"/>
-						<h:commandLink action="#{customer.viewDetails}" value="View Account" rendered="#{login.loggedIn}"/>
-						<h:commandLink action="#{login.logout}" value="Log Out" rendered="#{login.loggedIn}"/>
-						</div>
+
 					</h:form>
 					<div class="logo">
 						<a href="index.xhtml"> <img src="img/nblogo.png" /></a>
 					</div>
 				</div>
 
-				<div id="navigation_cart_section">
-				<img src=""/>
-					<h:outputText value="#{basket.basketSize}" />
-					
-				</div>
+				<h:form>
+					<div id="navigation_cart_section" class = "col-6">
+						<div class="loginheaders">
+							<h:commandLink action="loginpage" value="Log In"
+								rendered="#{!login.loggedIn}" />
+							<h:commandLink action="#{customer.viewDetails}"
+								value="View Account" rendered="#{login.loggedIn}" />
+							<h:commandLink action="#{login.logout}" value="Log Out"
+								rendered="#{login.loggedIn}" />
+						</div>
+						<img src="img/BasketImages/checkout.png" />
+					</div>
+				</h:form>
 			</div>
 			<h:form>
 				<nav>

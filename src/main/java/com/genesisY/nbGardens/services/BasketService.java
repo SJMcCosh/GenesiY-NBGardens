@@ -35,8 +35,8 @@ public class BasketService{
 		
 	}
 
-	public void addProductToBasket(Product product){
-		basketManager.addProductToCart(product);
+	public void addProductToBasket(Product product, int quantity){
+		basketManager.addProductToCart(product, quantity);
 	}
 	
 	

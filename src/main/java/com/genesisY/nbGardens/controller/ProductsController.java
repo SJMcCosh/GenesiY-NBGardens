@@ -32,6 +32,7 @@ public class ProductsController implements Serializable {
 	private String[] tagNameArray;
 	private String lowerBound;
 	private String upperBound;
+	private int quantityOfItemsSelected;
 
 
 	public int getSelected() {
@@ -200,5 +201,13 @@ public class ProductsController implements Serializable {
 
 	public void setUpperBound(String upperBound) {
 		this.upperBound = upperBound;
+	}
+
+	public int getQuantityOfItemsSelected() {
+		return quantityOfItemsSelected;
+	}
+
+	public void setQuantityOfItemsSelected(int quantityOfItemsSelected) {
+		this.quantityOfItemsSelected = quantityOfItemsSelected;
 	}
 }

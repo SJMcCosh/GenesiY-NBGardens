@@ -33,9 +33,9 @@ public class BasketManagerOffline implements BasketManager{
 	}
 
 	@Override
-	public void addProductToCart(Product product) {
+	public void addProductToCart(Product product, int quantity) {
 		
-		BasketItem bi = new BasketItem(product, 2);
+		BasketItem bi = new BasketItem(product, quantity);
 
 		initialData.addBasketItem(bi);
 	}
