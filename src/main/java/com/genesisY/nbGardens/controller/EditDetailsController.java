@@ -1,5 +1,8 @@
 package com.genesisY.nbGardens.controller;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
@@ -73,10 +76,25 @@ public class EditDetailsController {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	private boolean userValidate(String username) {
+		boolean validate = false;
+		Pattern pattern = Pattern.compile("^[0-9a-zA-Z_]+$");
+		Matcher matcher = pattern.matcher(username);
+		if (username.length() > 7 && username.length() < 45) {
+			if (matcher.find()) {
+				validate = true;
+			}
+		}
+		return validate;
+	}
 
 	public String changeDetails() {
 		System.out.println(">>>>>  hello" + getFirstName() + " " + getSurname() + " " + getPhoneNumber() + " " + getEmail() + " " + getUsername() + " "
 				+ getPassword());
+		if (!userValidate(username)){
+			return "index";
+		}
 		boolean bool = detailEditor.editing(firstName, surname, phoneNumber, email, username, password);
 		System.out.println(bool);
 		if (bool) {

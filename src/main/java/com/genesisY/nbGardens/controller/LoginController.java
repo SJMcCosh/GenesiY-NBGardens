@@ -22,6 +22,7 @@ public class LoginController{
 	private String username = "";
 	private String password = "";
 	private String error = "";
+	private boolean errorbool = false;
 
 	public String getUsername() {
 		return username;
@@ -61,31 +62,42 @@ public class LoginController{
 			return "index";
 		};
 		if (username.equals("")) {
-			error = "Please enter a username";
+			setError("Please enter a username and password");
 			password = "";
 			userCredentials.setAttempts(userCredentials.getAttempts()+1);
+			errorbool = true;
 			return "loginpage";
 		}
 		else if (password.equals("")) {
-			error = "Please enter a password";
+			setError("Please enter a username and password");
 			password = "";
 			userCredentials.setAttempts(userCredentials.getAttempts()+1);
+			errorbool = true;
 			return "loginpage";
 		}
 		else if (!userValidate(username)){
 			userCredentials.setAttempts(userCredentials.getAttempts()+1);
+			setError("Please enter a valid username");
+			errorbool = true;
+			return "loginpage";
+		}else if(password.length() < 8 || password.length()>35){
+			userCredentials.setAttempts(userCredentials.getAttempts()+1);
+			setError("Please enter a valid password");
+			errorbool = true;
 			return "loginpage";
 		}
 		else if (passcheck.passCheck(username, password)) {
 			userCredentials.setUsername(username);
 			userCredentials.setLoggedin(true);
 			userCredentials.setAttempts(0);
+			errorbool = false;
 			return customerController.viewDetails();
 		} else {
-			error = "Invalid username and password";
+			setError("Invalid username and password");
 			username = "";
 			password = "";
 			userCredentials.setAttempts(userCredentials.getAttempts()+1);
+			errorbool = true;
 			return "loginpage";
 		}
 	}
@@ -98,5 +110,21 @@ public class LoginController{
 		userCredentials.setUsername(null);
 		userCredentials.setLoggedin(false);
 		return "index";
+	}
+
+	public boolean isErrorbool() {
+		return errorbool;
+	}
+
+	public void setErrorbool(boolean errorbool) {
+		this.errorbool = errorbool;
+	}
+
+	public String getError() {
+		return error;
+	}
+
+	public void setError(String error) {
+		this.error = error;
 	}
 }

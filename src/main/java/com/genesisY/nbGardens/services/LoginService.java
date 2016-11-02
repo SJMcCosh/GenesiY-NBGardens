@@ -46,6 +46,14 @@ public class LoginService {
 		return validate;
 	}
 
+	private boolean passValidate(String password) {
+		boolean validate = false;
+		if (password.length() > 8 && password.length() < 35) {
+			validate = true;
+		}
+		return validate;
+	}
+
 	private String hash(String pass) {
 		byte[] digested = null;
 		String passhash;
@@ -72,12 +80,13 @@ public class LoginService {
 	}
 
 	public boolean passCheck(String username, String password) {
-		if (userCredentials.getAttempts()>2){
+		if (userCredentials.getAttempts() > 2) {
 			System.out.println(userCredentials.getAttempts());
 			return false;
-		};
+		}
+		;
 		System.out.println(username + "<><><><>" + password);
-		if (userValidate(username)) {
+		if (userValidate(username) && passValidate(password)) {
 			Customer gnome = getCustomerByUsername(username);
 			if (gnome != null) {
 				String pass = hash(password);

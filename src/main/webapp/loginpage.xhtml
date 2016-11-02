@@ -26,19 +26,21 @@
 					<h4>Login</h4>
 					<h:form>
 						<p>Username</p>
-						<h:inputText value="#{login.username}" required="true"
-							requiredMessage="Enter Username"></h:inputText>
+						<h:inputText value="#{login.username}" required="true" />
 						<p>
 							<a href="#forgottenusername">Forgotten your username?</a>
 						</p>
 						<p>Password</p>
-						<h:inputSecret value="#{login.password}" required="true"
-							requiredMessage="Enter Password" validatorMessage="Please enter a password">
+						<h:inputSecret value="#{login.password}" required="true">
 							<f:validateLength minimum="8" maximum="35" />
 						</h:inputSecret>
 						<p>
 							<a href="forgottenpassword">Forgotten your password?</a>
 						</p>
+						<div class = "errortext">
+							<h:outputText value="#{login.error}"
+								rendered="#{login.errorbool}" style="color:red" />
+						</div>
 						<br />
 						<h:commandButton type="submit" name="loginbtn" value="Sign In"
 							action="#{login.login()}" />
