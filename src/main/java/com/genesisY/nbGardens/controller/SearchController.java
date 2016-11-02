@@ -1,19 +1,13 @@
 package com.genesisY.nbGardens.controller;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-
 import javax.enterprise.context.RequestScoped;
-import javax.enterprise.context.SessionScoped;
 import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.genesisY.nbGardens.entities.Product;
-import com.genesisY.nbGardens.entities.Tag;
 import com.genesisY.nbGardens.services.SearchService;
 
-@SuppressWarnings("serial")
 @Named("search")
 @RequestScoped
 public class SearchController {

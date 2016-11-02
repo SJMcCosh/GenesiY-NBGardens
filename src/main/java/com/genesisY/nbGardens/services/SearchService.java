@@ -1,5 +1,6 @@
 package com.genesisY.nbGardens.services;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,4 +28,5 @@ public class SearchService {
 		}
 		return prodArray;
 	}
+
 }
