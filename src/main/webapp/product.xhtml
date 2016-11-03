@@ -70,7 +70,7 @@
 				</div>
 			</div>
 			<h:commandButton value="Update" action="#{products.updateProduct}" />
-			<h:commandButton value = "Discontinue Product" action = "#{products.deleteProduct()}" onclick="alert('Product Discontinued')" />
+			<h:commandButton value = "Discontinue Product" action = "#{products.setStatus}" onclick="alert('Product Discontinued')" />
 			<div class="prodsupplist">
 				<ui:repeat var="dataSupplier" value="#{products.getDataSupplier()}">
 					<li><h:outputText
