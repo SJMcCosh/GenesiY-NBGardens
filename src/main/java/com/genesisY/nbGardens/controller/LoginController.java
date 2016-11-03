@@ -19,6 +19,8 @@ public class LoginController{
 	private UserCredentials userCredentials;
 	@Inject
 	private CustomerController customerController;
+	@Inject
+	private ErrorController errorController;
 	private String username = "";
 	private String password = "";
 	private String error = "";
@@ -58,8 +60,8 @@ public class LoginController{
 	
 	public String login() {
 		if (userCredentials.getAttempts()>2){
-			System.out.println(userCredentials.getAttempts());
-			return "index";
+			errorController.setErrorMessage("The number of attempts has exceeded the maximum number of attempts");
+			return "error";
 		};
 		if (username.equals("")) {
 			setError("Please enter a username and password");
