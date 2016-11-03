@@ -60,8 +60,13 @@ public class Product {
 	@Column(name = "averageRating", nullable = false)
 	@NotNull
 	private Double averageRating;
+	
+	@Column(name = "status", nullable = false)
+	@NotNull
+	private boolean status;
 
-	public Product(int id, String name, String description, String imageLocation, double price, String specification, int stockLevel, List<Category> catList) {
+
+	public Product(int id, String name, String description, String imageLocation, double price, String specification, int stockLevel, List<Category> catList, boolean status) {
 		this.productID = id;
 		this.name = name;
 		this.desc = description;
@@ -70,6 +75,7 @@ public class Product {
 		this.specification = specification;
 		this.stockLevel = stockLevel;
 		this.catList = catList;
+		this.status = status;
 	}
 
 	public int getProductID() {
@@ -142,6 +148,14 @@ public class Product {
 
 	public void setCatList(List<Category> catList) {
 		this.catList = catList;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 
 }

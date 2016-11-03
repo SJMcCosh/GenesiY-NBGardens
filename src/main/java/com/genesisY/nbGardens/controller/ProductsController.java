@@ -27,6 +27,7 @@ public class ProductsController implements Serializable {
 	private DataModel<Product> dataModel = null;
 	private PaginationHelper pagination;
 	private int selected;
+	private boolean status; 
 	private DataModel<Supplier> dataSupplier = null;
 	@Inject
 	private ProductService productService;
@@ -63,6 +64,11 @@ public class ProductsController implements Serializable {
 		productService.updateProduct(product);
 
 		return "product";
+	}
+	public String discontinueProduct(){ 
+		
+		product.setStatus(false);
+		return "product"; 
 	}
 
 	public PaginationHelper getPagination() {
