@@ -50,9 +50,6 @@ public class Product implements Comparable<Product> {
 	@Column(name = "averageRating", nullable = false)
 	@NotNull
 	private double weight;
-	@Column(name = "tagID", nullable = false)
-	@NotNull
-	private List<Tag> tags;
 	
 	@Column(name = "price", nullable = false)
 	@NotNull
@@ -150,14 +147,6 @@ public class Product implements Comparable<Product> {
 
 	public void setWeight(double weight) {
 		this.weight = weight;
-	}
-	
-	public List<Tag> getTags(){
-		return tags;
-	}
-	
-	public void setTags(List<Tag> tags){
-		this.tags = tags;
 	}
 
 	public List<Category> getCategories() {

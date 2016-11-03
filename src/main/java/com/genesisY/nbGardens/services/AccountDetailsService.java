@@ -20,10 +20,11 @@ public class AccountDetailsService {
 		Pattern pattern = Pattern.compile("^[0-9a-zA-Z_]+$");
 		Matcher matcher = pattern.matcher(username);
 		if (username.length() > 7 && username.length() < 45) {
-			if (matcher.find()) {
-				validate = true;
+			if (!matcher.find()) {
+				return validate;
 			}
 		}
+		validate = true;
 		return validate;
 	}
 

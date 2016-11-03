@@ -24,10 +24,12 @@ public class ProductService {
 		Pattern pattern = Pattern.compile("^[a-zA-Z -']+$");
 		Matcher matcher = pattern.matcher(category);
 		if (category.length() > 7 && category.length() < 45) {
-			if (matcher.find()) {
-				validate = true;
+			if (!matcher.find()) {
+				return validate;
+				
 			}
 		}
+		validate = true;
 		return validate;
 	}
 
@@ -36,10 +38,11 @@ public class ProductService {
 		Pattern pattern = Pattern.compile("^[0-9a-zA-Z ()!',.-]+$");
 		Matcher matcher = pattern.matcher(name);
 		if (name.length() > 7 && name.length() < 45) {
-			if (matcher.find()) {
-				validate = true;
+			if (!matcher.find()) {
+				return validate;
 			}
 		}
+		validate = true;
 		return validate;
 	}
 

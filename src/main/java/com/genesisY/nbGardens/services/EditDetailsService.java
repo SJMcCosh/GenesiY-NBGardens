@@ -23,10 +23,11 @@ public class EditDetailsService {
 		Pattern pattern = Pattern.compile("^[a-zA-Z]+$");
 		Matcher matcher = pattern.matcher(name);
 		if (name.length() < 35) {
-			if (matcher.find()) {
-				validate = true;
+			if (!matcher.find()) {
+				return validate;
 			}
 		}
+		validate = true;
 		return validate;
 	}
 	private boolean authenticateLastName(String name){
@@ -34,10 +35,11 @@ public class EditDetailsService {
 		Pattern pattern = Pattern.compile("^[a-zA-Z-]+$");
 		Matcher matcher = pattern.matcher(name);
 		if (name.length() < 35) {
-			if (matcher.find()) {
-				validate = true;
+			if (!matcher.find()) {
+				return validate;
 			}
 		}
+		validate = true;
 		return validate;
 	}
 	private boolean authenticateUsername(String name){
@@ -45,10 +47,11 @@ public class EditDetailsService {
 		Pattern pattern = Pattern.compile("^[0-9a-zA-Z_]+$");
 		Matcher matcher = pattern.matcher(name);
 		if (name.length() > 7 && name.length() < 45) {
-			if (matcher.find()) {
-				validate = true;
+			if (!matcher.find()) {
+				return validate;
 			}
 		}
+		validate = true;
 		return validate;
 	}
 	private boolean authenticatePhone(String name){
@@ -58,10 +61,11 @@ public class EditDetailsService {
 		Pattern pattern = Pattern.compile("^[0-9]+$");
 		Matcher matcher = pattern.matcher(name);
 		if (name.length() == 11) {
-			if (matcher.find()) {
-				validate = true;
+			if (!matcher.find()) {
+				return validate;
 			}
 		}
+		validate = true;
 		return validate;
 	}
 	private boolean authenticateEmail(String name){
@@ -70,10 +74,11 @@ public class EditDetailsService {
 		Pattern pattern = Pattern.compile("^[a-zA-Z!#$%&'*+-/=?^_`{|}~.-]+$");
 		Matcher matcher = pattern.matcher(name);
 		if (name.length() > 6 && name.length() < 90) {
-			if (matcher.find()) {
-				validate = true;
+			if (!matcher.find()) {
+				return validate;
 			}
 		}
+		validate = true;
 		return validate;
 	}
 	private boolean authenticatePassword(String password){

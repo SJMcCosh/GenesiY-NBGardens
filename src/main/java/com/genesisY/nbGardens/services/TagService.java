@@ -49,10 +49,11 @@ public class TagService {
 		Pattern pattern = Pattern.compile("^[a-zA-Z -]+$");
 		Matcher matcher = pattern.matcher(tag);
 		if (tag.length() > 7 && tag.length() < 45) {
-			if (matcher.find()) {
-				validate = true;
+			if (!matcher.find()) {
+				return validate;
 			}
 		}
+		validate = true;
 		return validate;
 	}
 

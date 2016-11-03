@@ -23,10 +23,11 @@ public class SearchService {
 		Pattern pattern = Pattern.compile("^[a-zA-Z]+$");
 		Matcher matcher = pattern.matcher(search);
 		if (search.length() > 7 && search.length() < 45) {
-			if (matcher.find()) {
-				validate = true;
+			if (!matcher.find()) {
+				return validate;
 			}
 		}
+		validate = true;
 		return validate;
 	}
 
