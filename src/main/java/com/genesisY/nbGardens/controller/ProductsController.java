@@ -65,7 +65,7 @@ public class ProductsController implements Serializable {
 
 		return "product";
 	}
-	public String discontinueProduct(){ 
+	public String deleteProduct(){ 
 		
 		product.setStatus(false);
 		return "product"; 
