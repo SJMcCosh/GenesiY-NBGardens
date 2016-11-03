@@ -36,20 +36,28 @@
 				<div id="dropdownPurchaseOrders">
 					<button class="dropbtn">Purchase Orders</button>
 					<div class="dropdown-content">
-						<a href="viewproductorders.xhtml">All Purchase Orders</a> 
-						<a href="completedproductorders.xhtml">Completed Purchase Orders</a>
-						<a href="approvedproductorders.xhtml">Approved Purchase Orders</a>
-						<a href="rejectedproductorders.xhtml">Rejected Purchase Orders</a>
-						<a href="newpurchaseorder.xhtml">Create New Purchase Order</a> 
-						<a href="pendingproductorders.xhtml">Pending Purchase Orders</a>
+						<h:link value="Create New Purchase Order"
+							outcome="newpurchaseorder.xhtml" />
+						<h:link value="All Purchase Orders"
+							outcome="viewproductorders.xhtml"
+							action="#{purchaseOrders.onLoad}" />
+						<h:link value="Completed Purchase Orders"
+							outcome="completedproductorders.xhtml" />
+						<h:link value="Approved Purchase Orders"
+							outcome="approvedproductorders.xhtml" />
+						<h:link value="Rejected Purchase Orders"
+							outcome="rejectedproductorders.xhtml" />
+						<h:link value="Pending Purchase Orders"
+							outcome="pendingproductorders.xhtml" />
 					</div>
 				</div>
 				<div id="dropdownStats">
-					<a href="statstrends.xhtml"><button class="dropbtn">Statistics/Trends</button></a>
+					<button class="dropbtn">Statistics and Trends</button>
+					<h:commandLink outcome="statstrends.xhtml" />
 				</div>
 				<div id="dropdownStockAlerts">
-					<a href="stockalerts.xhtml"><button class="dropbtn">Stock
-							Alerts</button></a>
+					<button class="dropbtn">Stock Alerts</button>
+					<h:commandLink outcome="stockalerts.xhtml" />
 				</div>
 			</div>
 		</div>

@@ -12,55 +12,36 @@
 					<h1>Product</h1>
 				</div>
 			</div>
-
 			<div class="col-12 col-m-12" align="center">
-
 				<div class="productMainContent">
-
 					<p>Product</p>
 					<h:inputText value="#{products.name}" />
-
 				</div>
-
 				<div class="productMainContent">
 
 					<p>Product ID</p>
 					<h:inputText value="#{products.product.productID}" readonly="true" />
-
 				</div>
-
 				<div class="productMainContent">
-
 					<p>Product Price</p>
 					<h:inputText value="#{products.price}" />
-
 				</div>
-
 				<div class="productMainContent">
-
 					<p>Stock</p>
 					<h:inputText value="#{products.product.stockLevel}" readonly="true" />
 					<br />
-
 				</div>
-
 			</div>
-
 			<div class="col-12 col-m-12" align="center">
 				<div class="productMainContent">
-
 					<p>Description</p>
 					<h:inputText value="#{products.description}" />
-
 				</div>
 			</div>
-
 			<div class="col-12 col-m-12" align="center">
 				<div class="productMainContent">
-
 					<p>Specifications</p>
 					<h:inputText value="#{products.specification}" />
-
 				</div>
 			</div>
 			<h:commandButton value="Update" action="#{products.updateProduct}" />
