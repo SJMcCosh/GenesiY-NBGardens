@@ -16,7 +16,7 @@ import javax.validation.constraints.Size;
  */
 
 @Entity
-@Table(name = "notifications")
+@Table(name = "notification")
 public class Notification {
 	
 	@Id

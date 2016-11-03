@@ -6,29 +6,40 @@
 	<meta charset="ISO-8859-1" title="IMS" />
 	
 	<ui:define name="content">
-		<h:form>
-			<div id="pageTitle">
-				<div class="col-12 col-m-12">
-					<h1>Home</h1>
-				</div>
-			</div>
+	
+		<f:metadata>
+			<f:event type="preRenderView" listener="#{notifications.onLoad}" />
+		</f:metadata>
 			
+		<div id="pageTitle">
 			<div class="col-12 col-m-12">
-				<div class="contentBoxes">
-					<div id="stockAlertBox">
-						<div class="contentBoxHeader">
-							<h3>Stock Alerts</h3>
-						</div>
+				<h1>Home</h1>
+			</div>
+		</div>
+		
+		<div class="col-12 col-m-12">
+			<div class="contentBoxes">
+				<div id="stockAlertBox">
+					<div class="contentBoxHeader">
+						<h3>Stock Alerts</h3>
+					</div>
+				</div>
+				
+				<div id="notificationBox">
+					<div class="contentBoxHeader">
+						<h3>Notifications</h3>
 					</div>
 					
-					<div id="notificationBox">
-						<div class="contentBoxHeader">
-							<h3>Notifications</h3>
-						</div>
-					</div>
+					<h:form>
+						<ui:repeat var="notification" value="#{notifications.dataModel}">
+							<ul>
+								<li><h:commandLink value="#{notification.details}"></h:commandLink></li>
+							</ul>
+						</ui:repeat>
+					</h:form>
 				</div>
 			</div>
-		</h:form>
+		</div>
 	
 	</ui:define>
 </ui:composition>
