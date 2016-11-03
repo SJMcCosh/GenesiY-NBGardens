@@ -10,6 +10,7 @@ import javax.inject.Singleton;
 import com.genesisY.nbGardens.entities.Address;
 import com.genesisY.nbGardens.entities.Category;
 import com.genesisY.nbGardens.entities.Employee;
+import com.genesisY.nbGardens.entities.Notification;
 import com.genesisY.nbGardens.entities.Product;
 import com.genesisY.nbGardens.entities.PurchaseOrder;
 import com.genesisY.nbGardens.entities.Supplier;
@@ -24,6 +25,7 @@ public class ImsInitialData {
 	private ArrayList<PurchaseOrder> purchaseOrderList = new ArrayList<PurchaseOrder>();
 	private ArrayList<Product> pOprodList = new ArrayList<Product>(); 
 	private ArrayList<Category> catList = new ArrayList<Category>();
+	private ArrayList<Notification> notList = new ArrayList<Notification>();
 
 	@PostConstruct
 	public void setupData() {
@@ -117,6 +119,14 @@ public class ImsInitialData {
 		purchaseOrderList.add(po2);
 		purchaseOrderList.add(po3);
 		purchaseOrderList.add(po4);
+		
+		Notification n1 = new Notification(1, "Purchase Order #123456 approved", "03/11/2016");
+		Notification n2 = new Notification(1, "Purchase Order #123457 rejected", "02/11/2016");
+		Notification n3 = new Notification(1, "Purchase Order #123458 delivered", "01/11/2016");
+		
+		notList.add(n1);
+		notList.add(n2);
+		notList.add(n3);
 	}
 
 	public void setEmployeeList(ArrayList<Employee> employeeList) {
@@ -181,5 +191,13 @@ public class ImsInitialData {
 
 	public void setpOprodList(ArrayList<Product> pOprodList) {
 		this.pOprodList = pOprodList;
+	}
+
+	public ArrayList<Notification> getNotList() {
+		return notList;
+	}
+
+	public void setNotList(ArrayList<Notification> notList) {
+		this.notList = notList;
 	}
 }
