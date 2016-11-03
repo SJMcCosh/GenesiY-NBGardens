@@ -66,7 +66,7 @@ public class ProductsController implements Serializable {
 		return "product";
 	}
 	public String discontinueProduct(){ 
-		product.setStatus(status);
+		product.setStatus(false);
 		return "product"; 
 	}
 
@@ -144,19 +144,15 @@ public class ProductsController implements Serializable {
 	public String getPrice() {
 		return price;
 	}
+	
+	
 	public void setStatus(boolean status){
 		this.status = status;  
 	}
-	public String getStatus(){ 
+	
+	public boolean getStatus(){ 
 		
-		if(status){
-			
-			return "Active";
-			
-		}
-		else{
-			return "Discontinued"; 
-		}
+		return status; 
 		}
 
 	public void setPrice(String price) {
