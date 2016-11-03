@@ -12,18 +12,34 @@ import com.genesisY.nbGardensCatalogue.entities.Tag;
 @Stateless
 public class FilterService {
 
-	public DataModel<Product> filterByTag(List<String> tags, DataModel<Product> dataModel) {
-		for (Product p : dataModel) {
-			List<String> tagList = new ArrayList<String>();
-			for(Tag tag: p.getTagList()){
-				tagList.add(tag.getName());
+	public DataModel<Product> filterByTag(List<String> tagList, DataModel<Product> dataModel) {
+		if (tagList.size() != 0 && tagList.get(0).equals("")) {
+			for (Product p : dataModel) {
+				p.setToRender(true);
 			}
-			for (String t : tags) {
-				if (!tagList.contains(t)) {
-					p.setToRender(false);
+		}
+		if (tagList.size() != 0 && !tagList.get(0).equals("")) {
+			for (Product p : dataModel) {
+				List<String> tags = new ArrayList<String>();
+				for (Tag tag : p.getTagList()) {
+					tags.add(tag.getName());
+				}
+				for (String t : tagList) {
+					if (!tags.contains(t)) {
+						p.setToRender(false);
+					}
 				}
 			}
 		}
-		return null;
+		return dataModel;
+	}
+
+	public DataModel<Product> filterByPrice(DataModel<Product> dataModel, short minimum, short maximum) {
+		for (Product p : dataModel) {
+			if (p.getPrice() < minimum || p.getPrice() > maximum) {
+				p.setToRender(false);
+			}
+		}
+		return dataModel;
 	}
 }
