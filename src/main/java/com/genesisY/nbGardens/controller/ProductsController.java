@@ -138,9 +138,24 @@ public class ProductsController implements Serializable {
 		this.dataModel = dataModel;
 	}
 
+	
+	
+	
+	
 	public String getPrice() {
 		return price;
 	}
+	
+	public String getStatus(){ 
+		
+		if(status){
+			
+			return "Active";
+		}
+		else{
+			return "Discontinued"; 
+		}
+		}
 
 	public void setPrice(String price) {
 		product.setPrice(Double.parseDouble(price));

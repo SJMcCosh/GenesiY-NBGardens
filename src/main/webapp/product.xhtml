@@ -62,6 +62,12 @@
 					<h:inputText value="#{products.specification}" />
 
 				</div>
+				<div class="productMainContent">
+
+					<p>Product Status</p>
+					<h:inputText value="#{products.status}" />
+
+				</div>
 			</div>
 			<h:commandButton value="Update" action="#{products.updateProduct}" />
 			<h:commandButton value = "Discontinue Product" action = "#{products.deleteProduct()}" onclick="alert('Product Discontinued')" />
