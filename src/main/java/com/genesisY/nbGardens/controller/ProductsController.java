@@ -27,6 +27,7 @@ public class ProductsController implements Serializable {
 	private DataModel<Product> dataModel = null;
 	private PaginationHelper pagination;
 	private int selected;
+	private boolean status; 
 	private DataModel<Supplier> dataSupplier = null;
 	@Inject
 	private ProductService productService;
@@ -63,6 +64,11 @@ public class ProductsController implements Serializable {
 		productService.updateProduct(product);
 
 		return "product";
+	}
+	public String setStatus(boolean status){ 
+		this.status = false; 
+		product.setStatus(status);
+		return "product"; 
 	}
 
 	public PaginationHelper getPagination() {
@@ -132,9 +138,25 @@ public class ProductsController implements Serializable {
 		this.dataModel = dataModel;
 	}
 
+	
+	
+	
+	
 	public String getPrice() {
 		return price;
 	}
+	
+	public String getStatus(){ 
+		
+		if(status){
+			
+			return "Active";
+			
+		}
+		else{
+			return "Discontinued"; 
+		}
+		}
 
 	public void setPrice(String price) {
 		product.setPrice(Double.parseDouble(price));
