@@ -30,8 +30,9 @@
 						<b>Prices</b>
 					</p>
 					<h:panelGrid columns="1" style="margin-bottom: 10px">
-						<h:outputText id="displayRange"	value="Between #{products.lowerBound} and #{products.upperBound}" />
-						
+						<h:outputText id="displayRange"
+							value="Between #{products.lowerBound} and #{products.upperBound}" />
+
 					</h:panelGrid>
 					<h:inputHidden id="txt6" value="#{products.lowerBound}" />
 					<h:inputHidden id="txt7" value="#{products.upperBound}" />
@@ -93,7 +94,10 @@
 											<li><h:outputText value="#{product.name}"
 													class="index_featured_products_product_title" /></li>
 											<li><h:outputText value="#{product.price}"
-													class="index_featured_products_product_price" /></li>
+													class="index_featured_products_product_price">
+													<f:convertNumber type="currency" currencyCode="GBP" />
+
+												</h:outputText></li>
 											<li><h:outputText value="#{product.averageRating}"
 													class="index_featured_products_product_price" /></li>
 										</ul>
