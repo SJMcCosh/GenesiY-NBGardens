@@ -79,14 +79,17 @@
 		<!-- This is the footer -->
 		<div class="footer">
 			<div>
+			<h:form>
 				<div class="footerlogo">
 					<a href="index.xhtml"> <img src="img/nblogo.png" /></a>
+					
 					<ul class="botnav">
-						<li><a href="#">Contact Us</a></li>
+						<li><h:commandLink action="contact" value="Contact Us" /></li>
 						<li><a href="#">Information</a></li>
-						<li><a href="#">About Us</a></li>
+						<li><h:commandLink action="about" value="About Us" /></li>
 					</ul>
 				</div>
+				</h:form>
 			</div>
 		</div>
 
