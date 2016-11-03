@@ -13,6 +13,7 @@ import com.genesisY.nbGardens.entities.Employee;
 import com.genesisY.nbGardens.entities.Notification;
 import com.genesisY.nbGardens.entities.Product;
 import com.genesisY.nbGardens.entities.PurchaseOrder;
+import com.genesisY.nbGardens.entities.StockAlert;
 import com.genesisY.nbGardens.entities.Supplier;
 
 @Startup
@@ -26,6 +27,7 @@ public class ImsInitialData {
 	private ArrayList<Product> pOprodList = new ArrayList<Product>(); 
 	private ArrayList<Category> catList = new ArrayList<Category>();
 	private ArrayList<Notification> notList = new ArrayList<Notification>();
+	private ArrayList<StockAlert> saList = new ArrayList<StockAlert>();
 
 	@PostConstruct
 	public void setupData() {
@@ -64,7 +66,7 @@ public class ImsInitialData {
 		catList.add(c5);
 		catList.add(c6);
 		
-		Product product1 = new Product(1, "Game of Gnomes", "A GOT gnome", "img/gnome.jpg", 9.99, "Made in China", 12, cl1, true);
+		Product product1 = new Product(1, "Game of Gnomes", "A GOT gnome", "img/gnome.jpg", 9.99, "Made in China", 12, cl1, false);
 		Product product2 = new Product(2, "random gnome", "lelelelel", "img/gnome.jpg", 15.29, "Made in the UK", 52, cl2, true);
 		Product product3 = new Product(3, "other gnome", "1234567890", "img/gnome.jpg", 6.50, "Made in the EU", 121, cl3, true);
 		Product product4 = new Product(4, "big gnome", "B.I.G, big!", "img/gnome.jpg", 12.99, "Made in the UK", 94, cl4, true);
@@ -127,6 +129,10 @@ public class ImsInitialData {
 		notList.add(n1);
 		notList.add(n2);
 		notList.add(n3);
+		
+		StockAlert sa1 = new StockAlert(1, "03/11/2016", "Big Gnome low stock");
+		
+		saList.add(sa1);
 	}
 
 	public void setEmployeeList(ArrayList<Employee> employeeList) {

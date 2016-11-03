@@ -65,6 +65,9 @@ public class ProductManagerOffline implements ProductManager {
 				System.out.println(">>>>>>>>" + product.getDesc());
 				p.setSpecification(product.getSpecification());
 				System.out.println(">>>>>>>>" + product.getSpecification());
+				p.setStatus(product.isStatus());
+				System.out.println(">>>>>>>>" + product.isStatus());
+				
 			}
 		}
 	}

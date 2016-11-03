@@ -6,6 +6,13 @@
 	<meta charset="ISO-8859-1" title="IMS" />
 
 	<ui:define name="content">
+	<script type="text/javascript">
+	function updateStatus(){
+		alert("Product Discontinued!"); 
+		
+		
+	}
+	</script>
 		<h:form>
 			<div id="pageTitle">
 				<div class="col-12 col-m-12">
@@ -43,7 +50,7 @@
 					<p>Specifications</p>
 					<h:inputText value="#{products.specification}" />
 				</div>
-				<div class="productMainContent">
+				<div class="productMainContent" id="status_output">
 
 					<p>Product Status</p>
 					<h:outputText value="#{products.status}" />
@@ -51,10 +58,14 @@
 				</div>
 			</div>
 			<h:commandButton value="Update" action="#{products.updateProduct}" />
-			<h:commandButton value = "Discontinue Product" action = "#{products.discontinueProduct}" onclick="alert('Product Discontinued')" >
+			<h:commandButton value = "Discontinue Product" action = "#{products.discontinueProduct}" >
+			<f:ajax render = "@form" execute = "@form" onevent="updateStatus"/>
+			</h:commandButton>
+			<h:commandButton value = "Reactivate Product" action = "#{products.reactivateProduct}" >
+			<f:ajax render = "@form" execute = "@form" onevent="updateStatus"/>
+			</h:commandButton>
 			
 			
-			<h:commandButton />
 			<div class="prodsupplist">
 				<ui:repeat var="dataSupplier" value="#{products.getDataSupplier()}">
 					<li><h:outputText

@@ -33,7 +33,11 @@
 					<h:form>
 						<ui:repeat var="notification" value="#{notifications.dataModel}">
 							<ul>
-								<li><h:commandLink value="#{notification.details}"></h:commandLink></li>
+								<li>
+									<h:outputText value="#{notification.date}"></h:outputText>
+									<br />
+									<h:outputText value="#{notification.details}"></h:outputText>
+								</li>
 							</ul>
 						</ui:repeat>
 					</h:form>

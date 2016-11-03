@@ -45,6 +45,7 @@ public class ProductsController implements Serializable {
 		setPrice(Double.toString(product.getPrice()));
 		setDescription(product.getDesc());
 		setSpecification(product.getSpecification());
+		setStatus(product.isStatus());
 		getDataSupplier(p);
 		return "product";
 	}
@@ -67,6 +68,14 @@ public class ProductsController implements Serializable {
 	}
 	public String discontinueProduct(){ 
 		product.setStatus(false);
+		System.out.println(product.isStatus());
+		productService.updateProduct(product);
+		return "product"; 
+	}
+	public String reactivateProduct(){ 
+		product.setStatus(true);
+		System.out.println(product.isStatus());
+		productService.updateProduct(product);
 		return "product"; 
 	}
 
@@ -150,9 +159,17 @@ public class ProductsController implements Serializable {
 		this.status = status;  
 	}
 	
-	public boolean getStatus(){ 
-		
-		return status; 
+	public String getStatus(){ 
+		if(status)
+		{
+			
+			return "Active";
+		}
+		else 
+		{
+			
+			return "Discontinued";
+		}
 		}
 
 	public void setPrice(String price) {
