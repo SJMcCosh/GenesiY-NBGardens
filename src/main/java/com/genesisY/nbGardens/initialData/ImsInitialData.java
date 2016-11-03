@@ -68,14 +68,30 @@ public class ImsInitialData {
 		Product product4 = new Product(4, "big gnome", "B.I.G, big!", "img/gnome.jpg", 12.99, "Made in the UK", 94, cl4);
 		Product product5 = new Product(5, "small gnome", "Rather small gnome", "img/gnome.jpg", 2.50, "Made in Taiwan", 87, cl5);
 		Product product6 = new Product(6, "LED Glowing gnome", "Useful as a Night light", "img/gnome.jpg", 4.99, "Made in Japan", 20, cl6);
+		List<Product> products1 = new ArrayList<Product>();
+		List<Product> products2 = new ArrayList<Product>();
+		List<Product> products3= new ArrayList<Product>();
+		
+		products1.add(product1);
+		products1.add(product2);
+		products1.add(product4);
+		products1.add(product6);
+		products2.add(product2);
+		products2.add(product4);
+		products2.add(product5);
+		products3.add(product3);
+		products3.add(product1);
+		products3.add(product5);
+		products3.add(product6);
+		products3.add(product4);
 
 		Address address1 = new Address("32 Fine Strasse", "", "", "Berlin", "Germany", "54624");
 		Address address2 = new Address("2546 New Road", "Lowry Quay", "Salford Quays", "Paris", "France", "75003");
 		Address address3 = new Address("21 Gnome Street", "", "", "Saariselka", "Finland", "99830");
 		
-		Supplier supplier1 = new Supplier("Gnomes4U", "05853123673", "gnomes4u@gnomes4u.com", address1);
-		Supplier supplier2 = new Supplier("Gnomeo's Gnomes", "12354234723", "gnomeo@gnomeosgnomes.com", address2);
-		Supplier supplier3 = new Supplier("Gnome Adventures", "34252824665", "gnomes@gnomeadventures.com", address3);
+		Supplier supplier1 = new Supplier("Gnomes4U", "05853123673", "gnomes4u@gnomes4u.com", address1, products1);
+		Supplier supplier2 = new Supplier("Gnomeo's Gnomes", "12354234723", "gnomeo@gnomeosgnomes.com", address2, products2);
+		Supplier supplier3 = new Supplier("Gnome Adventures", "34252824665", "gnomes@gnomeadventures.com", address3, products3);
 		
 		Employee AlStock = new Employee("AlStock", "Password1");
 	

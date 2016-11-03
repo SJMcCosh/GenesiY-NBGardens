@@ -27,6 +27,7 @@ public class ProductsController implements Serializable {
 	private DataModel<Product> dataModel = null;
 	private PaginationHelper pagination;
 	private int selected;
+	private DataModel<Supplier> dataSupplier = null;
 	@Inject
 	private ProductService productService;
 
@@ -43,6 +44,7 @@ public class ProductsController implements Serializable {
 		setPrice(Double.toString(product.getPrice()));
 		setDescription(product.getDesc());
 		setSpecification(product.getSpecification());
+		getDataSupplier(p);
 		return "product"; 
 	} 
 	
@@ -182,6 +184,19 @@ public class ProductsController implements Serializable {
 
 	public void setSpecification(String specification) {
 		this.specification = specification;
+	}
+	
+	public DataModel<Supplier> getDataSupplier(Product product) {
+		dataSupplier = new ListDataModel<Supplier>(productService.getSuppliers(product));
+		return dataSupplier;
+	}
+
+	public DataModel<Supplier> getDataSupplier() {
+		return dataSupplier;
+	}
+
+	public void setDataSupplier(DataModel<Supplier> dataSupplier) {
+		this.dataSupplier = dataSupplier;
 	}
 
 }

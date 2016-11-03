@@ -39,7 +39,7 @@
 				<div class="productMainContent">
 
 					Stock
-					<h:inputText value="#{products.product.stock}" readonly="true" />
+					<h:inputText value="#{products.product.stockLevel}" readonly="true" />
 					<br />
 
 				</div>
@@ -63,8 +63,13 @@
 
 				</div>
 			</div>
-
 			<h:commandButton value="Update" action="#{products.updateProduct}" />
+			<div class="prodsupplist">
+				<ui:repeat var="dataSupplier" value="#{products.getDataSupplier()}">
+					<li><h:outputText
+							value="#{products.dataSupplier.rowData.supplierName}" /></li>
+				</ui:repeat>
+			</div>
 		</h:form>
 	</ui:define>
 </ui:composition>
