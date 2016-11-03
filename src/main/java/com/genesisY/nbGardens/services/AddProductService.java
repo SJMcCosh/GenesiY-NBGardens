@@ -32,7 +32,7 @@ public class AddProductService {
 	public void addProduct(int productID, String name, Double price, String desc, String supplier, String imageLocation,
 			String specification, int stock, Double averageRating) {
 
-		Product p = new Product(productID, name, desc, null, price, specification, stock, null);
+		Product p = new Product(productID, name, desc, null, price, specification, stock, null, false);
 
 		if (p != null) {
 
