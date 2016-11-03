@@ -27,7 +27,7 @@ public class ProductsController implements Serializable {
 	private DataModel<Product> dataModel = null;
 	private PaginationHelper pagination;
 	private int selected;
-	private boolean status; 
+	private boolean status = true; 
 	private DataModel<Supplier> dataSupplier = null;
 	@Inject
 	private ProductService productService;
