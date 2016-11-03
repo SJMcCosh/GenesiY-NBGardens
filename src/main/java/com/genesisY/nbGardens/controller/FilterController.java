@@ -35,6 +35,11 @@ public class FilterController {
 	private int selected;
 	private PaginationHelper pagination;
 	private String category = "all";
+	private short minimum = 0;
+	private short maximum = 2000;
+	private short lower;
+	private short upper;
+	private List<String> tags;
 
 	public int getSelected() {
 		return selected;
@@ -63,6 +68,7 @@ public class FilterController {
 	public void filterProductsByTag(AjaxBehaviorEvent abe) {
 		String[] arr = productsController.getTagNameArrayInString().split(", ");
 		System.out.println("---------------" + Arrays.toString(arr));
+		System.out.println(minimum + " " + maximum);
 		dataModel = productsController.getDataModel2();
 		ArrayList<String> tagList = new ArrayList<String>();
 		for (String l : arr) {
@@ -74,25 +80,9 @@ public class FilterController {
 			}
 			tagList.add(l);
 		}
-		if (tagList.size() != 0 && tagList.get(0).equals("")) {
-			for (Product p : dataModel) {
-				p.setToRender(true);
-			}
-		}
-		if (tagList.size() != 0 && !tagList.get(0).equals("")) {
-			/*for (Product p : dataModel) {
-				ArrayList<String> tags = new ArrayList<String>();
-				for (Tag t : p.getTagList()) {
-					tags.add(t.getName());
-				}
-				for (String filt : tagList) {
-					if (!tags.contains(filt)) {
-						p.setToRender(false);
-					}
-				}
-			}*/
-			filterService.filterByTag(tagList, dataModel);
-		}
+		setTags(tagList);
+
+		filterService.filterByTag(tagList, dataModel);
 	}
 
 	public void load() {
@@ -164,6 +154,57 @@ public class FilterController {
 			products.add(p);
 		}
 		return products;
+	}
+
+	public short getMinimum() {
+		return minimum;
+	}
+
+	public void setMinimum(short minimum) {
+		this.minimum = minimum;
+	}
+
+	public short getMaximum() {
+		return maximum;
+	}
+
+	public void setMaximum(short maximum) {
+		this.maximum = maximum;
+	}
+
+	public void filterByPrice(AjaxBehaviorEvent abe) {
+		System.out.println(">>>>>>>>>>>>>>>>hi");
+		dataModel = productsController.getDataModel2();
+		setLower(minimum);
+		setUpper(maximum);
+		for (Product p : dataModel) {
+			p.setToRender(true);
+		}
+		filterService.filterByPrice(dataModel, minimum, maximum);
+	}
+
+	private short getLower() {
+		return lower;
+	}
+
+	private void setLower(short lower) {
+		this.lower = lower;
+	}
+
+	private short getUpper() {
+		return upper;
+	}
+
+	private void setUpper(short upper) {
+		this.upper = upper;
+	}
+
+	private List<String> getTags() {
+		return tags;
+	}
+
+	private void setTags(List<String> tags) {
+		this.tags = tags;
 	}
 
 }

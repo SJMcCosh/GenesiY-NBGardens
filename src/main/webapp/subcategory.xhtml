@@ -27,14 +27,11 @@
 					</h:selectManyCheckbox>
 
 					<p>
-						<b>Prices</b>
+						<b>Filter by Price</b>
 					</p>
-					<h:panelGrid columns="1" style="margin-bottom: 10px">
-						<h:outputText id="displayRange"	value="Between #{products.lowerBound} and #{products.upperBound}" />
+						<h:outputText value = "Minimum: "/><h:inputText value = "#{filter.minimum}" style = "width: 30px"/><h:outputText value = " Maximum: "/><h:inputText value = "#{filter.maximum}" style = "width: 30px"/>
+						<f:ajax event = "keyup" listener="#{filter.filterByPrice}" render="@all"/>
 						
-					</h:panelGrid>
-					<h:inputHidden id="txt6" value="#{products.lowerBound}" />
-					<h:inputHidden id="txt7" value="#{products.upperBound}" />
 				</div>
 			</h:form>
 
