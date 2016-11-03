@@ -65,7 +65,7 @@ public class ProductsController implements Serializable {
 
 		return "product";
 	}
-	public String setStatus(){ 
+	public String setStatus(boolean status){ 
 		this.status = false; 
 		product.setStatus(status);
 		return "product"; 
