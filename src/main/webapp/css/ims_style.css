@@ -556,6 +556,42 @@ ul {
 	list-style-type: none;
 }
 
+/* Index */
+
+.contentBoxes {
+	margin: 0 auto;
+	height: 700px;
+}
+
+#stockAlertBox {
+	height: 300px;
+	width: 300px;
+	overflow: scroll;
+	background-color: #FFFFFF;
+	border-style: solid;
+	border-width: medium;
+	border-color: #143516;
+}
+
+#notificationBox {
+	height: 300px;
+	width: 300px;
+	overflow: scroll;
+	background-color: #FFFFFF;
+	border-style: solid;
+	border-width: medium;
+	border-color: #143516;
+}
+
+.contentBoxHeader {
+	width:100%;
+	background-color: #143516;
+	color: #FFFFFF;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: -20px;
+}
+
 
 
 /* 													END IMS CSS						*/
