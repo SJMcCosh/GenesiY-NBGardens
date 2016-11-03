@@ -3,6 +3,8 @@ package com.genesisY.nbGardens.services;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -29,6 +31,26 @@ public class LoginService {
 		return null;
 	}
 
+	private boolean userValidate(String username) {
+		boolean validate = false;
+		Pattern pattern = Pattern.compile("^[0-9a-zA-Z_]+$");
+		Matcher matcher = pattern.matcher(username);
+		if (username.length() > 7 && username.length() < 45) {
+			if (matcher.find()) {
+				validate = true;
+			}
+		}
+		return validate;
+	}
+
+	private boolean passValidate(String password) {
+		boolean validate = false;
+		if (password.length() > 8 && password.length() < 35) {
+			validate = true;
+		}
+		return validate;
+	}
+	
 	private String hash(String pass) {
 		byte[] digested = null;
 		String passhash;
