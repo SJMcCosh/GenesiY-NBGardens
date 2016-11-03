@@ -1,0 +1,16 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/template.xhtml">
+	<meta charset="ISO-8859-1" />
+	<ui:define name="maincontent">
+		<h:form>
+			<div style="text-align:center">
+
+				<h:outputText value="#{error.errorMessage}"  />
+
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>

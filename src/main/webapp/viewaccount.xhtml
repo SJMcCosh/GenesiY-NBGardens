@@ -29,7 +29,7 @@
 							<a><b>Username:</b> <h:outputText value="#{customer.customer.username}" /></a>
 						</p>
 						<p>
-							<a><b>Name:</b> <h:outputText value="#{customer.customer.firstName}" /></a>
+							<a><b>Name:</b> <h:outputText value="#{customer.customer.firstName} #{customer.customer.surname}" /></a>
 						</p>
 						<p>
 							<a><b>Phone Number:</b> <h:outputText value="#{customer.customer.phoneNumber}" /></a>
@@ -49,7 +49,7 @@
 							<h:commandLink value = "View Account Details" action = "#{customer.viewDetails()}" />
 						</p>
 						<p>
-							<h:commandLink value = "Edit Account Details" action = "editdetails" />
+							<h:commandLink value = "Edit Account Details" action = "#{detaileditor.bindAttributes}" />
 						</p>
 						<p>
 							<h:commandLink value = "Change Your Password" action = "changepassword" />
