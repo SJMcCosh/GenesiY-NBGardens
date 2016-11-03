@@ -76,12 +76,6 @@ public class LoginController {
 	public boolean isLoggedIn(){
 		return userCredentials.isLoggedin();
 	}
-	
-	public String logout(){
-		userCredentials.setUsername(null);
-		userCredentials.setLoggedin(false);
-		return "index";
-	}
 
 	public boolean isErrorbool() {
 		return errorbool;
@@ -97,5 +91,11 @@ public class LoginController {
 
 	public void setError(String error) {
 		this.error = error;
+	}
+	
+	public String logout(){
+		userCredentials.setUsername(null);
+		userCredentials.setLoggedin(false);
+		return "loginpage";
 	}
 }
