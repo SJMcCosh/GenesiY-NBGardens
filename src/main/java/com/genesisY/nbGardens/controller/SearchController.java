@@ -20,6 +20,9 @@ public class SearchController implements Serializable {
 	
 	@Inject
 	private ProductsController prodController;
+	
+	@Inject
+	private ErrorController errorController;
 
 	private String term = "";
 
@@ -37,7 +40,13 @@ public class SearchController implements Serializable {
 	 */
 	public String search() {
 
-		if (term != "") {
+		if (term.equals("")) {
+			
+			errorController.setErrorMessage("That search term is invalid, please enter another term.");
+			
+			return "error";
+		} else {
+			
 			if (searchService.getSearchedProducts(term) != null) {
 				prodController.setDataModel(new ListDataModel<Product>(searchService.getSearchedProducts(term)));
 				
@@ -45,8 +54,6 @@ public class SearchController implements Serializable {
 			} else {
 				return "index";
 			}
-		} else {
-			return "index";
 		}
 	}
 }

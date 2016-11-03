@@ -289,7 +289,7 @@ body {
 	width: 100%;
 	height: 100%;
 	background-color: black;
-	opacity: 0.5;
+	opacity: 0.5;	
 }
 
 .index_sections_bottom_banner {
@@ -348,12 +348,23 @@ body {
 #index_center_content_boxes_popular {
 	background-image:
 		url('../../../../../../../../images/IndexImages/popular.jpg');
+		
 }
 
 #index_center_content_boxes_sales {
 	background-image:
 		url('../../../../../../../../images/IndexImages/popular.jpg');
 }
+
+@media only screen and (max-width: 768px){
+	
+	.index_center_content_boxes{
+		width:100%;
+	}
+	
+}
+
+
 
 /*------------------------------------------------------------ FOR THE POROUS BANNER ON HOME PAGE	-----------------------------*/
 #index_bottom_porous_section {
@@ -903,9 +914,10 @@ ul.botnav li a {
 	#index_center_content_right_column {
 		float: right;
 		width: 245px;
+		
 	}
 	#index_center_content_wrapper {
-		width: 560px;
+		width: 600px;
 		padding-bottom: 500px;
 		padding-right: 50px;
 	}

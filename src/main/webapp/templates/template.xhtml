@@ -2,7 +2,8 @@
 <html lang="en" xmlns="https://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 <h:head>
 	<meta charset="ISO-8859-1" />
 	<link rel="stylesheet" type="text/css" href="css/catalogue.css" />
@@ -18,7 +19,7 @@
 			<div id="navigation_top_row">
 				<div class="searchandlogo col-6">
 					<h:form class="tfnewsearch" method="get">
-						<h:inputText class="tftextinput" value="#{search.term}" />
+						<h:inputText class="tftextinput" value="#{search.term}" pt:placeholder="Search for an item..."/>
 						<h:commandButton class="tfbutton" type="submit"
 							action="#{search.search()}" value="Search" />
 
@@ -38,10 +39,12 @@
 							<h:commandLink action="#{login.logout}" value="Log Out"
 								rendered="#{login.loggedIn}" />
 						</div>
-						<h:commandLink  action="basket" value="#{basket.basketSize}"
-							style="color:white; text-decoration:none">
-							<img src="img/TemplateImages/cart.png" style="PADDING-TOP: 18px" />
-						</h:commandLink>
+						<div id="">
+							<h:commandLink  action="basket" value="#{basket.basketSize}"
+								style="color:white; text-decoration:none">
+								<img src="img/TemplateImages/cart.png" style="PADDING-TOP: 18px" />
+							</h:commandLink>
+						</div>
 					</div>
 				</h:form>
 			</div>

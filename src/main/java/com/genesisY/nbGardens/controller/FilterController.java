@@ -11,6 +11,7 @@ import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.genesisY.nbGardens.services.FilterService;
 import com.genesisY.nbGardens.services.ProductService;
 import com.genesisY.nbGardens.services.TagService;
 import com.genesisY.nbGardensCatalogue.entities.PaginationHelper;
@@ -28,6 +29,8 @@ public class FilterController {
 	private TagService tagService;
 	@Inject
 	private ProductService productService;
+	@Inject
+	private FilterService filterService;
 	private DataModel<Product> dataModel;
 	private int selected;
 	private PaginationHelper pagination;
@@ -77,7 +80,7 @@ public class FilterController {
 			}
 		}
 		if (tagList.size() != 0 && !tagList.get(0).equals("")) {
-			for (Product p : dataModel) {
+			/*for (Product p : dataModel) {
 				ArrayList<String> tags = new ArrayList<String>();
 				for (Tag t : p.getTagList()) {
 					tags.add(t.getName());
@@ -87,7 +90,8 @@ public class FilterController {
 						p.setToRender(false);
 					}
 				}
-			}
+			}*/
+			filterService.filterByTag(tagList, dataModel);
 		}
 	}
 

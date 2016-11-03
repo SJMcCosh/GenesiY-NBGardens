@@ -2,6 +2,8 @@ package com.genesisY.nbGardens.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -15,6 +17,19 @@ public class SearchService {
 
 	@Inject
 	private ProductManager productManager;
+	
+	private boolean searchValidate(String search) {
+		boolean validate = false;
+		Pattern pattern = Pattern.compile("^[a-zA-Z]+$");
+		Matcher matcher = pattern.matcher(search);
+		if (search.length() > 7 && search.length() < 45) {
+			if (!matcher.find()) {
+				return validate;
+			}
+		}
+		validate = true;
+		return validate;
+	}
 
 	/**
 	 * Checks the term and validates the term and only allows characters a-z and A-Z
@@ -23,7 +38,7 @@ public class SearchService {
 	 */
 	@SuppressWarnings("null")
 	public List<Product> getSearchedProducts(String term) {
-		if (term != null) {
+		if (term != null && searchValidate(term)) {
 			try{
 				ArrayList<Product> tempList = new ArrayList<Product>();
 				for(Product p : productManager.getProducts()){

@@ -11,7 +11,7 @@ import com.genesisY.nbGardens.services.LoginService;
 
 @Named("login")
 @RequestScoped
-public class LoginController{
+public class LoginController {
 
 	@Inject
 	private LoginService passcheck;
@@ -19,6 +19,8 @@ public class LoginController{
 	private UserCredentials userCredentials;
 	@Inject
 	private CustomerController customerController;
+	@Inject
+	private ErrorController errorController;
 	private String username = "";
 	private String password = "";
 	private String error = "";
@@ -43,50 +45,47 @@ public class LoginController{
 	public String gotoSignUp() {
 		return "signup";
 	}
-	
+
 	private boolean userValidate(String username) {
 		boolean validate = false;
 		Pattern pattern = Pattern.compile("^[0-9a-zA-Z_]+$");
 		Matcher matcher = pattern.matcher(username);
-		if (username.length() > 7 && username.length() < 45) {
-			if (matcher.find()) {
-				validate = true;
-			}
+		if (!matcher.find()) {
+			return validate;
 		}
+		validate = true;
 		return validate;
 	}
-	
+
 	public String login() {
-		if (userCredentials.getAttempts()>2){
-			System.out.println(userCredentials.getAttempts());
-			return "index";
-		};
+		if (userCredentials.getAttempts() > 2) {
+			errorController.setErrorMessage("The number of attempts has exceeded the maximum number of attempts");
+			return "error";
+		}
+		;
 		if (username.equals("")) {
 			setError("Please enter a username and password");
 			password = "";
-			userCredentials.setAttempts(userCredentials.getAttempts()+1);
+			userCredentials.setAttempts(userCredentials.getAttempts() + 1);
 			errorbool = true;
 			return "loginpage";
-		}
-		else if (password.equals("")) {
+		} else if (password.equals("")) {
 			setError("Please enter a username and password");
 			password = "";
-			userCredentials.setAttempts(userCredentials.getAttempts()+1);
+			userCredentials.setAttempts(userCredentials.getAttempts() + 1);
 			errorbool = true;
 			return "loginpage";
-		}
-		else if (!userValidate(username)){
-			userCredentials.setAttempts(userCredentials.getAttempts()+1);
+		} else if (!userValidate(username)) {
+			userCredentials.setAttempts(userCredentials.getAttempts() + 1);
 			setError("Please enter a valid username");
 			errorbool = true;
 			return "loginpage";
-		}else if(password.length() < 8 || password.length()>35){
-			userCredentials.setAttempts(userCredentials.getAttempts()+1);
+		} else if (password.length() < 8 || password.length() > 35) {
+			userCredentials.setAttempts(userCredentials.getAttempts() + 1);
 			setError("Please enter a valid password");
 			errorbool = true;
 			return "loginpage";
-		}
-		else if (passcheck.passCheck(username, password)) {
+		} else if (passcheck.passCheck(username, password)) {
 			userCredentials.setUsername(username);
 			userCredentials.setLoggedin(true);
 			userCredentials.setAttempts(0);
@@ -96,17 +95,17 @@ public class LoginController{
 			setError("Invalid username and password");
 			username = "";
 			password = "";
-			userCredentials.setAttempts(userCredentials.getAttempts()+1);
+			userCredentials.setAttempts(userCredentials.getAttempts() + 1);
 			errorbool = true;
 			return "loginpage";
 		}
 	}
-	
-	public boolean isLoggedIn(){
+
+	public boolean isLoggedIn() {
 		return userCredentials.isLoggedin();
 	}
-	
-	public String logout(){
+
+	public String logout() {
 		userCredentials.setUsername(null);
 		userCredentials.setLoggedin(false);
 		return "index";
