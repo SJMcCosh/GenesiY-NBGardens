@@ -3,7 +3,6 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
-
 	<meta charset="ISO-8859-1" />
 
 	<!-- <link href="/css/templatestyle.css" rel="stylesheet" type="text/css" />
@@ -11,10 +10,7 @@
 	<link rel="stylesheet" href="css/ims_style.css" type="text/css" />
 
 	<title>Inventory Management System</title>
-
 </h:head>
-
-
 <body>
 	<h:form>
 		<div class="header col-12 col-m-12">
@@ -30,42 +26,35 @@
 						<a href="newproduct.xhtml">Add New Product</a>
 					</div>
 				</div>
-
 				<div id="dropdownSuppliers">
 					<button class="dropbtn">Suppliers</button>
 					<div class="dropdown-content">
-						<h:form>
-							<h:commandLink value="View Suppliers"
-								action="#{suppliers.viewSuppliers()}" />
-							<h:commandLink value="Add New Supplier" action="addsupplier" />
-						</h:form>
+						<h:commandLink value="View Suppliers" action="#{suppliers.onLoad}" />
+						<a href="newsupplier.xhtml">Add New Supplier</a>
 					</div>
 				</div>
-
 				<div id="dropdownPurchaseOrders">
 					<button class="dropbtn">Purchase Orders</button>
 					<div class="dropdown-content">
-						<a href="viewproductorders.xhtml">All Purchase Orders</a> <a href="completedproductorders.xhtml">Completed
-							Purchase Orders</a> <a href="approvedproductorders.xhtml">Approved Purchase Orders</a> <a
-							href="rejectedproductorders.xhtml">Rejected Purchase Orders</a> <a href="newpurchaseorder.xhtml">Create New
-							Purchase Order</a> <a href="pendingproductorders.xhtml">Pending Purchase Orders</a>
+						<a href="viewproductorders.xhtml">All Purchase Orders</a> 
+						<a href="completedproductorders.xhtml">Completed Purchase Orders</a>
+						<a href="approvedproductorders.xhtml">Approved Purchase Orders</a>
+						<a href="rejectedproductorders.xhtml">Rejected Purchase Orders</a>
+						<a href="newpurchaseorder.xhtml">Create New Purchase Order</a> 
+						<a href="pendingproductorders.xhtml">Pending Purchase Orders</a>
 					</div>
 				</div>
-
 				<div id="dropdownStats">
 					<a href="statstrends.xhtml"><button class="dropbtn">Statistics/Trends</button></a>
 				</div>
-
 				<div id="dropdownStockAlerts">
-					<a href="stockalerts.xhtml"><button class="dropbtn">Stock Alerts</button></a>
+					<a href="stockalerts.xhtml"><button class="dropbtn">Stock
+							Alerts</button></a>
 				</div>
 			</div>
 		</div>
 	</h:form>
 	<ui:insert name="content">
-
 	</ui:insert>
-
 </body>
-
 </html>
