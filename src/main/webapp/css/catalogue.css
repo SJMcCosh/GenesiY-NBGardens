@@ -288,7 +288,7 @@ body {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: black;
+	
 	opacity: 0.5;	
 }
 
@@ -308,27 +308,36 @@ body {
 }
 
 #index_content_wrapper {
-	/*background-color:#FFF5EE;
-	width:900px;
-	margin:0 auto;*/
-	
+	background-color:#EDEDED;
+	margin-top:-20px;
 }
 
 /*------------------------------------------------------------ FOR THE PROMO SECTION 	-----------------------------*/
 #index_top_promo_section {
-	max-width: 850px;
-	height: 374px;
-	background-image:
-		url('../../../../../../../../images/IndexImages/gardenBanner.jpg');
+	max-width:100%;
+	height: 390px;
+	/*background-image: url('../../../nbgardens/img/IndexImages/fence02.jpg');*/
 	background-size: 100% 100%;
 	/*background-repeat: no-repeat;*/
 	position: relative;
 	margin: 0 auto;
+	margin-top:-18px;
 }
+
+	#index_top_promo_section_inner{
+		width:70%;
+		height:100%;
+		margin:0 auto;
+		background-color:blue;
+	}
+		#index_top_promo_section_inner > h2{
+			color:#3C3C3C;
+		}
+
 
 /*------------------------------------------------------------ FOR THE CONTENT BOXES IN CENTER OF HOME PAGE	-----------------------------*/
 #index_center_content_wrapper {
-	margin: 0 auto;
+	margin: 0 auto;	
 }
 
 .index_center_content_boxes {
@@ -340,20 +349,16 @@ body {
 	background-size: 100% 100%;
 }
 
-#index_content_boxes_new {
-	background-image:
-		url('../../../../../../../../images/IndexImages/gnome_new_01.jpg');
+#index_content_boxes_new {	
+	background-image:url('../../../nbgardens/img/IndexImages/gnome_new_01.jpg');
 }
 
 #index_center_content_boxes_popular {
-	background-image:
-		url('../../../../../../../../images/IndexImages/popular.jpg');
-		
+	background-image:url('../../../nbgardens/img/IndexImages/popular.jpg');
 }
 
 #index_center_content_boxes_sales {
-	background-image:
-		url('../../../../../../../../images/IndexImages/popular.jpg');
+	background-image:url('../../../nbgardens/img/IndexImages/popular.jpg');
 }
 
 @media only screen and (max-width: 768px){
@@ -374,7 +379,7 @@ body {
 	position: relative;
 	margin: 0 auto;
 	background-image:
-		url('../../../../../../../../images/IndexImages/rain.jpg');
+		url('img/IndexImages/rain.jpg');
 }
 
 /*------------------------------------------------------------ FOR THE FEATURED PRODUCTS IN THE HOME PAGE	-----------------------------*/
