@@ -128,6 +128,12 @@ ul.breadcrumb li a {
 	background-color: #62c945;
 }
 
+.logout{
+	float: right;
+	padding-top: 10px;
+	padding-right: 10px;
+}
+
 .maincontent {
 	background-color: #ffffff;
 	border-style: solid;
