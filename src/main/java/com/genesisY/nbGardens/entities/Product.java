@@ -65,8 +65,11 @@ public class Product {
 	@NotNull
 	private boolean status;
 
+	@Column(name = "status", nullable = false)
+	@NotNull
+	private boolean valid;
 
-	public Product(int id, String name, String description, String imageLocation, double price, String specification, int stockLevel, List<Category> catList, boolean status) {
+	public Product(int id, String name, String description, String imageLocation, double price, String specification, int stockLevel, List<Category> catList, boolean status, boolean valid) {
 		this.productID = id;
 		this.name = name;
 		this.desc = description;
@@ -76,6 +79,7 @@ public class Product {
 		this.stockLevel = stockLevel;
 		this.catList = catList;
 		this.status = status;
+		this.valid = valid; 
 	}
 
 	public int getProductID() {
@@ -156,6 +160,14 @@ public class Product {
 
 	public void setStatus(boolean status) {
 		this.status = status;
+	}
+
+	public boolean isValid() {
+		return valid;
+	}
+
+	public void setValid(boolean valid) {
+		this.valid = valid;
 	}
 
 }

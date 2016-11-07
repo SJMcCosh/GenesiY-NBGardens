@@ -64,6 +64,8 @@
 			<h:commandButton value = "Reactivate Product" action = "#{products.reactivateProduct}" >
 			<f:ajax render = "@form" execute = "@form" onevent="updateStatus"/>
 			</h:commandButton>
+			<h:commandButton value = "Delete Product" action = "#{products.invalidateProduct}" >
+			</h:commandButton>
 			
 			<div class="prodsupplist">
 				<ui:repeat var="dataSupplier" value="#{products.getDataSupplier()}">

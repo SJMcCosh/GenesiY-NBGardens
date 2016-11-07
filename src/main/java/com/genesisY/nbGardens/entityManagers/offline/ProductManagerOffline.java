@@ -1,5 +1,6 @@
 package com.genesisY.nbGardens.entityManagers.offline;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -24,7 +25,13 @@ public class ProductManagerOffline implements ProductManager {
 	
 	@Override
 	public List<Product> getAllProducts() {
-		List<Product> products = initialData.getProdList();
+	
+		List<Product> products = new ArrayList<Product>(); 
+		for (Product p: initialData.getProdList()){
+			if (p.isValid()){
+				products.add(p); 
+			}
+		}
 		return products; 
 	}
 	
@@ -67,6 +74,8 @@ public class ProductManagerOffline implements ProductManager {
 				System.out.println(">>>>>>>>" + product.getSpecification());
 				p.setStatus(product.isStatus());
 				System.out.println(">>>>>>>>" + product.isStatus());
+				p.setValid(product.isValid());
+				System.out.println(">>>>>>>>" + product.isValid());
 				
 			}
 		}

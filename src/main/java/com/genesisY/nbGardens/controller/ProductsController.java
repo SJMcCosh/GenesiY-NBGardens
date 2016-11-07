@@ -29,6 +29,7 @@ public class ProductsController implements Serializable {
 	private int selected;
 	private boolean status = true; 
 	private DataModel<Supplier> dataSupplier = null;
+	private boolean valid; 
 	@Inject
 	private ProductService productService;
 
@@ -69,6 +70,12 @@ public class ProductsController implements Serializable {
 	public String discontinueProduct(){ 
 		product.setStatus(false);
 		System.out.println(product.isStatus());
+		productService.updateProduct(product);
+		return "product"; 
+	}
+	public String invalidateProduct(){ 
+		product.setValid(false);
+		System.out.println(product.isValid());
 		productService.updateProduct(product);
 		return "product"; 
 	}
@@ -231,6 +238,14 @@ public class ProductsController implements Serializable {
 
 	public void setDataSupplier(DataModel<Supplier> dataSupplier) {
 		this.dataSupplier = dataSupplier;
+	}
+
+	public boolean isValid() {
+		return valid;
+	}
+
+	public void setValid(boolean valid) {
+		this.valid = valid;
 	}
 
 }
