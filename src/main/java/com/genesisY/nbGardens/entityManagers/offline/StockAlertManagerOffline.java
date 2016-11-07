@@ -2,20 +2,29 @@ package com.genesisY.nbGardens.entityManagers.offline;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import com.genesisY.nbGardens.entities.Notification;
+import com.genesisY.nbGardens.entities.StockAlert;
 import com.genesisY.nbGardens.entityManagers.NotificationManager;
+import com.genesisY.nbGardens.entityManagers.StockAlertManager;
 import com.genesisY.nbGardens.initialData.ImsInitialData;
 
-public class StockAlertManagerOffline implements NotificationManager {
+@Default
+@Stateless
+public class StockAlertManagerOffline implements StockAlertManager {
 	
 	@Inject
 	private ImsInitialData intialData;
 
 	@Override
-	public List<Notification> getAllNotifications() {
+	public List<StockAlert> getAllStockAlerts() {
+		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 
 }
