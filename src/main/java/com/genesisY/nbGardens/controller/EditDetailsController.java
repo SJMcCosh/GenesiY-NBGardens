@@ -32,6 +32,7 @@ public class EditDetailsController {
 	private String password = "";
 	
 	private boolean userValidate(String username) {
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>> validate");
 		boolean validate = false;
 		Pattern pattern = Pattern.compile("^[0-9a-zA-Z_]+$");
 		Matcher matcher = pattern.matcher(username);
@@ -40,6 +41,7 @@ public class EditDetailsController {
 				validate = true;
 			}
 		}
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>> <"+validate);
 		return validate;
 	}
 
@@ -49,6 +51,7 @@ public class EditDetailsController {
 		if (!userValidate(username)){
 			return "index";
 		}
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>> checking user validation");
 		boolean bool = detailEditor.editing(firstName, surname, phoneNumber, email, username, password);
 		System.out.println(bool);
 		if (bool) {
