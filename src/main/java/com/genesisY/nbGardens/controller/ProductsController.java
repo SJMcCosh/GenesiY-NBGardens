@@ -47,6 +47,7 @@ public class ProductsController implements Serializable {
 		setDescription(product.getDesc());
 		setSpecification(product.getSpecification());
 		setStatus(product.isStatus());
+		setValid(product.isValid()); 
 		getDataSupplier(p);
 		return "product";
 	}

@@ -31,7 +31,7 @@ public class ProductManagerOffline implements ProductManager {
 		for (Product p: initialData.getProdList()){
 			if (p.isValid() == true){
 				products.add(p); 
-				System.out.println(p.getName());
+				System.out.println(">>>>>>"+ p.getName());
 			}
 		}
 		return products; 
