@@ -107,12 +107,12 @@ public class InitialData {
 		Review r2 = new Review(4, "Its a really good gnome");
 		Review r3 = new Review(2, "Its a nice gnome");
 		Review r4 = new Review(5, "Its a fantastic gnome");
-		Review r5 = new Review(1, "It wasn't the gnome I was expecting");
+		Review r5 = new Review(1, "It was an adequate gnome");
 		Review r6 = new Review(5, "Its a fantastic gnome");
 		Review r7 = new Review(2, "Its a nice gnome");
 		Review r8 = new Review(4, "Its a really good gnome");
 		Review r9 = new Review(3, "Its a good gnome");
-		Review r10 = new Review(1, "It wasn't the gnome I was expecting");
+		Review r10 = new Review(1, "It was an adequate gnome");
 		
 		reviewList.add(r1);
 		reviewList.add(r2);
