@@ -18,40 +18,47 @@
 
 				<h2>Customer Services</h2>
 
-				<br />
+				<br/>
 
 				<p>
 					<a href="#">Orders</a>
 				</p>
-				<br />
+				<br/>
 				<p>
 					<a href="#">Payment</a>
 				</p>
-				<br />
+				<br/>
 				<p>
 					<a href="#">Delivery</a>
 				</p>
-				<br />
+				<br/>
 				<p>
 					<a href="#">Support and Aftersales</a>
 				</p>
-				<br />
+				<br/>
 			</div>
 
 			<div id="contact_master_content_container_right_col">
 				<div id="contact_master_content_container_right_col_inner">
-					<h3>Frequently Asked Questions</h3>
+					<h2>Frequently Asked Questions</h2>
 					<p>Search our FAQs for information on orders, home delivery, porousware treatment
 					and more.</p>
 
-					<br />
+					<br/>
+					
+					<h3>What is Porousware treatment?</h3>
+					
+					<p>A weather-proof seal that can be applied to certain items 
+					to increase the lifetime of the product.</p>
+					
+					<br/>
 
 					<h:form>
 					<h3>Where's my order?</h3>
 					
-						<p>You can check the status of any orders in your <a href="#">Account</a></p>
+						<p>You can check the status of any orders in your <h:commandLink action="loginpage" value="Account"/></p>
 						
-						<p>If you still have questions, please 
+						<p>If you still have questions regarding orders placed, please 
 							<h:commandLink action="contact" value="Contact Us" /></p>
 											
 						<br/>
@@ -63,14 +70,15 @@
 						<p>We aim to have your items with you within 7 days.</p>
 						
 						<p>Orders are dispatched every Monday, Wednesday, and Friday.</p>
-						<br/>
-						
+												
 						<p>If after 7 days, since placing your order, you have still not received 
 						your order then please <h:commandLink action="contact" value="Contact Us" /></p>
+						
+						<br/>
 					</h:form>	
 						
 					<h:form>
-					<h3>How can I return unwanted items?</h3>
+					<h3>How do I return unwanted items?</h3>
 					
 						<p>Every order contains a freepost box that you can use to 
 						return any unwanted/damaged items.</p>
@@ -83,25 +91,28 @@
 
 						<h3>Where do you dispatch to?</h3>
 						
-						<p>We deliver to all UK addresses, including Northern Ireland.</p>
+						<p>We deliver to all addresses in the United Kingdom, including Northern Ireland.</p>
+											
+						<p>At present, we do not offer international delivery.</p>
+						
 						<br/>
 						
-						<p>At present, we cannot offer international delivery. Sorry.</p>
+					<h:form>	
 
 						<h3>How does the "buy now, pay if satisfied" policy work?</h3>
 						
-						<p>It's all in the name. Once you receive you order, you have
+						<p>It's all in the name; once you have received your order, you have up to
 							28 days to decide if you're happy with it.</p>
 							
-						<p>If it doesn't meet your needs, return it with the provided
-							freepost box and you won't be charged.</p>
-						<br />
+						<p>If you are unsatisfied, you can return it with the provided
+							freepost box and you pay a thing.</p>
+						<br/>
 
 						<h3>Your question not answered here?</h3>
 						
-						<p><a href="#">Contact Us</a></p>
-						<br />
-
+						<p><h:commandLink action="contact" value="Contact Us" /></p>
+						<br/>
+					</h:form>
 
 				</div>
 		
