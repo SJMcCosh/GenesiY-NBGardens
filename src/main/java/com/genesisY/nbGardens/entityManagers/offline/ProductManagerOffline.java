@@ -52,7 +52,15 @@ public class ProductManagerOffline implements ProductManager {
 	}
 
 	public List<Product> getProducts() {
-		return initialData.getProdList();
+		List<Product> products = new ArrayList<Product>(); 
+		for (Product p : initialData.getProdList()){
+			
+			if(p.isValid()){
+				products.add(p);
+			}
+			
+		}
+		return products; 
 	}
 
 	public Product getProduct(long id) {
