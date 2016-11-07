@@ -27,7 +27,7 @@ public class ProductsController implements Serializable {
 	private DataModel<Tag> tagModel = null;
 	private PaginationHelper pagination;
 	private int selected;
-	private String category = "all";
+	private String category = "All";
 	private Tag[] tagArray;
 	private String[] tagNameArray;
 	private String lowerBound;
@@ -153,6 +153,13 @@ public class ProductsController implements Serializable {
 						return new ListDataModel<Product>(productService.getAllProducts(category).subList(getPageFirstItem(), getItemsCount()));
 					}
 				}
+				public DataModel<Product> createPageDataModel(String category){
+					try{
+						return new ListDataModel<Product>(productService.getCategoryProducts(category).subList(getPageFirstItem(), getPageFirstItem()+ getPageSize()));
+					} catch(Exception e){
+						return new ListDataModel<Product>(productService.getCategoryProducts(category).subList(getPageFirstItem(), getItemsCount()));
+					}
+				}
 			};
 		}
 		return pagination;
@@ -209,5 +216,17 @@ public class ProductsController implements Serializable {
 
 	public void setQuantityOfItemsSelected(int quantityOfItemsSelected) {
 		this.quantityOfItemsSelected = quantityOfItemsSelected;
+	}
+	public DataModel<Product> getDataModel(String category){
+		if (dataModel == null){
+			dataModel = getPagination().createPageDataModel(category);
+		}
+		return dataModel;
+	}
+	
+	public String getCategoryProducts(String category){
+		setCategory(category);
+		dataModel = getDataModel(category);
+		return "subcategory";
 	}
 }

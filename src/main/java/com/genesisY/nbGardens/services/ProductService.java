@@ -65,7 +65,6 @@ public class ProductService {
 		} catch (NullPointerException npe) {
 			return null;
 		}
-
 	}
 
 	/**
@@ -80,6 +79,18 @@ public class ProductService {
 			return productManager.getProductByName(name);
 		}
 		return null;
+	}
+	
+	public List<Product> getCategoryProducts(String category) {
+		try {
+			if (category != null && categoryValidate(category)) {
+				return productManager.getProductsByCategory(category);
+			} else {
+				return null;
+			}
+		} catch (NullPointerException npe) {
+			return null;
+		}
 	}
 
 }

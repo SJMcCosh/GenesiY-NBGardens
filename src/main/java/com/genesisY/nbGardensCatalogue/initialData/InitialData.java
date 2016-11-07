@@ -129,7 +129,7 @@ public class InitialData {
 		categoryList.add(new Category("Popular Culture", "Gnomes", "img/olympicGnomes.jpg"));
 		categoryList.add(new Category("Romance", "Gnomes", "img/valentineGnome.jpg"));
 		categoryList.add(new Category("Sci-Fi", "Gnomes", "img/starTrekGnome.jpg"));
-		categoryList.add(new Category("Fantasy", "Gnomes", "img/zombieGnome.jpg"));
+		categoryList.add(new Category("Fantasy", "Gnomes", "img/zombieGnome.jpeg"));
 		categoryList.add(new Category("All", "Outdoor Living", "img/newJobGnome.jpg"));
 		categoryList.add(new Category("All", "Garden Tools", "img/stPatrickGnome.jpg"));
 		categoryList.add(new Category("All", "Outdoor Buildings", "img/xmasGnome.jpg"));
@@ -147,7 +147,7 @@ public class InitialData {
 		c2.add(new Category("Romance", "Gnomes", "img/valentineGnome.jpg"));
 		c3.add(new Category("All", "Gnomes", "img/easterGnome.png"));
 		c3.add(new Category("Popular Culture", "Gnomes", "img/olympicGnomes.jpg"));
-		c3.add(new Category("Fantasy", "Gnomes", "img/zombieGnome.jpg"));	
+		c3.add(new Category("Fantasy", "Gnomes", "img/zombieGnome.jpeg"));	
 		
 		productList.add(new Product(1, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0,
 				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList, c1));
