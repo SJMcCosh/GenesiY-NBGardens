@@ -522,7 +522,7 @@ ul {
 
 #stockAlertBox {
 	height: 300px;
-	width: 300px;
+	width: 100%;
 	overflow: scroll;
 	background-color: #FFFFFF;
 	border-style: solid;
@@ -532,7 +532,7 @@ ul {
 
 #notificationBox {
 	height: 300px;
-	width: 300px;
+	width: 100%;
 	overflow: scroll;
 	background-color: #FFFFFF;
 	border-style: solid;

@@ -74,14 +74,6 @@ public class ImsInitialData {
 		Product product5 = new Product(5, "small gnome", "Rather small gnome", "img/gnome.jpg", 2.50, "Made in Taiwan", 87, cl5, true, true);
 		Product product6 = new Product(6, "LED Glowing gnome", "Useful as a Night light", "img/gnome.jpg", 4.99, "Made in Japan", 20, cl6, true, true);
 
-
-		catList.add(new Category("Pop Culture"));
-		catList.add(new Category("Seasonal"));
-		catList.add(new Category("Classic"));
-		catList.add(new Category("PFFFfff"));
-		catList.add(new Category("What other kinds of gnomes are there!"));
-		catList.add(new Category("Something different"));
-
 		List<Product> products1 = new ArrayList<Product>();
 		List<Product> products2 = new ArrayList<Product>();
 		List<Product> products3= new ArrayList<Product>();
