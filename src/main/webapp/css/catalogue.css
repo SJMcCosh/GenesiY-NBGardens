@@ -284,8 +284,7 @@ body {
 
 .index_content_boxes_overlay {	
 	top: 0;
-	left: 0;
-	
+	left: 0;	
 	height: 100%;
 	margin:0 auto;
 	opacity: 0.5;	
@@ -399,13 +398,13 @@ body {
 
 /*------------------------------------------------------------ FOR THE POROUS BANNER ON HOME PAGE	-----------------------------*/
 #index_bottom_porous_section {
-	width: 610px;
+	width: 800px;	
 	height: 374px;
 	background-color: red;
 	position: relative;
 	margin: 0 auto;
 	background-image:
-		url('img/IndexImages/rain.jpg');
+		url('../../../nbgardens/img/IndexImages/rain.jpg');
 }
 
 /*------------------------------------------------------------ FOR THE FEATURED PRODUCTS IN THE HOME PAGE	-----------------------------*/
@@ -783,9 +782,7 @@ ul.botnav li a {
 		background-color: #bcf9a6;
 		position: fixed;
 	}
-	#index_bottom_porous_section {
-		width: 100%;
-	}
+	
 	.subcat_images {
 		width: 100px;
 		height: 100px;
