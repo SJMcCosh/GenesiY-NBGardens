@@ -6,64 +6,65 @@
 	<meta charset="ISO-8859-1" title="IMS" />
 
 	<ui:define name="content">
+	<script type="text/javascript">
+	function updateStatus(){
+		alert("Product Discontinued!"); 
+		
+		
+	}
+	</script>
 		<h:form>
 			<div id="pageTitle">
 				<div class="col-12 col-m-12">
 					<h1>Product</h1>
 				</div>
 			</div>
-
 			<div class="col-12 col-m-12" align="center">
-
 				<div class="productMainContent">
-
-					Product
+					<p>Product</p>
 					<h:inputText value="#{products.name}" />
-
 				</div>
-
 				<div class="productMainContent">
 
-					Product ID
+					<p>Product ID</p>
 					<h:inputText value="#{products.product.productID}" readonly="true" />
-
 				</div>
-
 				<div class="productMainContent">
-
-					Product Price
+					<p>Product Price</p>
 					<h:inputText value="#{products.price}" />
-
 				</div>
-
 				<div class="productMainContent">
-
-					Stock
+					<p>Stock</p>
 					<h:inputText value="#{products.product.stockLevel}" readonly="true" />
 					<br />
-
 				</div>
-
 			</div>
-
 			<div class="col-12 col-m-12" align="center">
 				<div class="productMainContent">
-
-					Description
+					<p>Description</p>
 					<h:inputText value="#{products.description}" />
-
 				</div>
 			</div>
-
 			<div class="col-12 col-m-12" align="center">
 				<div class="productMainContent">
-
-					Specifications
+					<p>Specifications</p>
 					<h:inputText value="#{products.specification}" />
+				</div>
+				<div class="productMainContent" id="status_output">
+
+					<p>Product Status</p>
+					<h:outputText value="#{products.status}" />
 
 				</div>
 			</div>
 			<h:commandButton value="Update" action="#{products.updateProduct}" />
+			<h:commandButton value = "Discontinue Product" action = "#{products.discontinueProduct}" >
+			<f:ajax render = "@form" execute = "@form" onevent="updateStatus"/>
+			</h:commandButton>
+			<h:commandButton value = "Reactivate Product" action = "#{products.reactivateProduct}" >
+			<f:ajax render = "@form" execute = "@form" onevent="updateStatus"/>
+			</h:commandButton>
+			
 			<div class="prodsupplist">
 				<ui:repeat var="dataSupplier" value="#{products.getDataSupplier()}">
 					<li><h:outputText

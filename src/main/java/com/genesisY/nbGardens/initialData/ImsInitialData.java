@@ -10,8 +10,10 @@ import javax.inject.Singleton;
 import com.genesisY.nbGardens.entities.Address;
 import com.genesisY.nbGardens.entities.Category;
 import com.genesisY.nbGardens.entities.Employee;
+import com.genesisY.nbGardens.entities.Notification;
 import com.genesisY.nbGardens.entities.Product;
 import com.genesisY.nbGardens.entities.PurchaseOrder;
+import com.genesisY.nbGardens.entities.StockAlert;
 import com.genesisY.nbGardens.entities.Supplier;
 
 @Startup
@@ -24,6 +26,8 @@ public class ImsInitialData {
 	private ArrayList<PurchaseOrder> purchaseOrderList = new ArrayList<PurchaseOrder>();
 	private ArrayList<Product> pOprodList = new ArrayList<Product>(); 
 	private ArrayList<Category> catList = new ArrayList<Category>();
+	private ArrayList<Notification> notList = new ArrayList<Notification>();
+	private ArrayList<StockAlert> saList = new ArrayList<StockAlert>();
 
 	@PostConstruct
 	public void setupData() {
@@ -70,12 +74,12 @@ public class ImsInitialData {
 		catList.add(new Category("What other kinds of gnomes are there!"));
 		catList.add(new Category("Something different"));
 
-		Product product1 = new Product(1, "Game of Gnomes", "A GOT gnome", "img/gnome.jpg", 9.99, "Made in China", 12, cl1);
-		Product product2 = new Product(2, "random gnome", "lelelelel", "img/gnome.jpg", 15.29, "Made in the UK", 52, cl2);
-		Product product3 = new Product(3, "other gnome", "1234567890", "img/gnome.jpg", 6.50, "Made in the EU", 121, cl3);
-		Product product4 = new Product(4, "big gnome", "B.I.G, big!", "img/gnome.jpg", 12.99, "Made in the UK", 94, cl4);
-		Product product5 = new Product(5, "small gnome", "Rather small gnome", "img/gnome.jpg", 2.50, "Made in Taiwan", 87, cl5);
-		Product product6 = new Product(6, "LED Glowing gnome", "Useful as a Night light", "img/gnome.jpg", 4.99, "Made in Japan", 20, cl6);
+		Product product1 = new Product(1, "Game of Gnomes", "A GOT gnome", "img/gnome.jpg", 9.99, "Made in China", 12, cl1, false);
+		Product product2 = new Product(2, "random gnome", "lelelelel", "img/gnome.jpg", 15.29, "Made in the UK", 52, cl2, true);
+		Product product3 = new Product(3, "other gnome", "1234567890", "img/gnome.jpg", 6.50, "Made in the EU", 121, cl3, true);
+		Product product4 = new Product(4, "big gnome", "B.I.G, big!", "img/gnome.jpg", 12.99, "Made in the UK", 94, cl4, true);
+		Product product5 = new Product(5, "small gnome", "Rather small gnome", "img/gnome.jpg", 2.50, "Made in Taiwan", 87, cl5, true);
+		Product product6 = new Product(6, "LED Glowing gnome", "Useful as a Night light", "img/gnome.jpg", 4.99, "Made in Japan", 20, cl6, true);
 		List<Product> products1 = new ArrayList<Product>();
 		List<Product> products2 = new ArrayList<Product>();
 		List<Product> products3= new ArrayList<Product>();
@@ -92,7 +96,6 @@ public class ImsInitialData {
 		products3.add(product5);
 		products3.add(product6);
 		products3.add(product4);
-
 
 		Address address1 = new Address("32 Fine Strasse", "", "", "Berlin", "Germany", "54624");
 		Address address2 = new Address("2546 New Road", "Lowry Quay", "Salford Quays", "Paris", "France", "75003");
@@ -126,6 +129,18 @@ public class ImsInitialData {
 		purchaseOrderList.add(po2);
 		purchaseOrderList.add(po3);
 		purchaseOrderList.add(po4);
+		
+		Notification n1 = new Notification(1, "Purchase Order #123456 approved", "03/11/2016");
+		Notification n2 = new Notification(1, "Purchase Order #123457 rejected", "02/11/2016");
+		Notification n3 = new Notification(1, "Purchase Order #123458 delivered", "01/11/2016");
+		
+		notList.add(n1);
+		notList.add(n2);
+		notList.add(n3);
+		
+		StockAlert sa1 = new StockAlert(1, "03/11/2016", "Big Gnome low stock");
+		
+		saList.add(sa1);
 	}
 
 	public void setEmployeeList(ArrayList<Employee> employeeList) {
@@ -190,5 +205,13 @@ public class ImsInitialData {
 
 	public void setpOprodList(ArrayList<Product> pOprodList) {
 		this.pOprodList = pOprodList;
+	}
+
+	public ArrayList<Notification> getNotList() {
+		return notList;
+	}
+
+	public void setNotList(ArrayList<Notification> notList) {
+		this.notList = notList;
 	}
 }

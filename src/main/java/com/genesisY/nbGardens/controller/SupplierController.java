@@ -31,7 +31,6 @@ public class SupplierController implements Serializable {
 	private Address address;
 	private DataModel<Product> dataProduct = null;
 
-
 	/*
 	 * setters and getters for adding supplier
 	 */
@@ -85,7 +84,7 @@ public class SupplierController implements Serializable {
 	public void setSupplier(Supplier supplier) {
 		this.supplier = supplier;
 	}
-	
+
 	public DataModel<Product> getDataProduct() {
 		return dataProduct;
 	}
@@ -98,8 +97,8 @@ public class SupplierController implements Serializable {
 		dataModel = getDataModel();
 		return "viewsupplier";
 	}
-	
-	public String viewProducts(String s){
+
+	public String viewProducts(String s) {
 		System.out.println(s);
 		dataProduct = new ListDataModel<Product>(supplierService.getProducts(supplierService.findSupplierByName(s)));
 		return "supplierproducts";
@@ -168,4 +167,9 @@ public class SupplierController implements Serializable {
 		dataModel = null;
 	}
 
+	public String onLoad() {
+		dataModel = new ListDataModel<Supplier>(supplierService.viewSuppliers());
+		return "viewsupplier";
+	}
+	
 }

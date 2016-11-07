@@ -27,6 +27,7 @@ public class ProductsController implements Serializable {
 	private DataModel<Product> dataModel = null;
 	private PaginationHelper pagination;
 	private int selected;
+	private boolean status = true; 
 	private DataModel<Supplier> dataSupplier = null;
 	@Inject
 	private ProductService productService;
@@ -36,35 +37,46 @@ public class ProductsController implements Serializable {
 		dataModel = new ListDataModel<Product>(productService.viewProducts());
 		return "newpurchaseorder";
 	}
-	
-	public String viewProduct(Product p){ 
+
+	public String viewProduct(Product p) {
 		product = productService.getProductByName(p.getName());
-		System.out.println(">>>>>>>>>>>>>>>>>>> Product Name = " +product.getName()); 
+		System.out.println(">>>>>>>>>>>>>>>>>>> Product Name = " + product.getName());
 		setName(product.getName());
 		setPrice(Double.toString(product.getPrice()));
 		setDescription(product.getDesc());
 		setSpecification(product.getSpecification());
+		setStatus(product.isStatus());
 		getDataSupplier(p);
-		return "product"; 
-	} 
-	
-	public String onLoad()
-	{
+		return "product";
+	}
+
+	public String onLoad() {
 		dataModel = new ListDataModel<Product>(productService.getAllProducts());
 		return "subcategory";
 	}
-	
-	public String updateProduct()
-	{
-		
+
+	public String updateProduct() {
+
 		product.setName(name);
-		//product.setPrice(Double.parseDouble(price));
+		// product.setPrice(Double.parseDouble(price));
 		product.setDesc(description);
 		product.setSpecification(specification);
 		System.out.println(">>>>>>>>>>>>" + getPrice());
 		productService.updateProduct(product);
-		
+
 		return "product";
+	}
+	public String discontinueProduct(){ 
+		product.setStatus(false);
+		System.out.println(product.isStatus());
+		productService.updateProduct(product);
+		return "product"; 
+	}
+	public String reactivateProduct(){ 
+		product.setStatus(true);
+		System.out.println(product.isStatus());
+		productService.updateProduct(product);
+		return "product"; 
 	}
 
 	public PaginationHelper getPagination() {
@@ -122,21 +134,43 @@ public class ProductsController implements Serializable {
 	private void recreateModel() {
 		dataModel = null;
 	}
-	
+
 	public DataModel<Product> getDataModel() {
 		return dataModel;
 	}
 
 	public void setDataModel(DataModel<Product> dataModel) {
-		for(Product p : dataModel){
+		for (Product p : dataModel) {
 			System.out.println(">>>>>>>>>>>" + p.getDesc());
 		}
 		this.dataModel = dataModel;
 	}
 
+	
+	
+	
+	
 	public String getPrice() {
 		return price;
 	}
+	
+	
+	public void setStatus(boolean status){
+		this.status = status;  
+	}
+	
+	public String getStatus(){ 
+		if(status)
+		{
+			
+			return "Active";
+		}
+		else 
+		{
+			
+			return "Discontinued";
+		}
+		}
 
 	public void setPrice(String price) {
 		product.setPrice(Double.parseDouble(price));
@@ -148,7 +182,7 @@ public class ProductsController implements Serializable {
 	}
 
 	public void setName(String name) {
-		
+
 		this.name = name;
 	}
 
@@ -185,7 +219,7 @@ public class ProductsController implements Serializable {
 	public void setSpecification(String specification) {
 		this.specification = specification;
 	}
-	
+
 	public DataModel<Supplier> getDataSupplier(Product product) {
 		dataSupplier = new ListDataModel<Supplier>(productService.getSuppliers(product));
 		return dataSupplier;
