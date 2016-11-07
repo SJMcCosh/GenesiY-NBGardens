@@ -72,19 +72,19 @@ public class ProductsController implements Serializable {
 		product.setStatus(false);
 		System.out.println(product.isStatus());
 		productService.updateProduct(product);
-		return "product"; 
+		return "subcategory"; 
 	}
 	public String invalidateProduct(){ 
 		product.setValid(false);
 		System.out.println(">>>>"+product.isValid());
 		productService.updateProduct(product);
-		return "product"; 
+		return "subcategory"; 
 	}
 	public String reactivateProduct(){ 
 		product.setStatus(true);
 		System.out.println(product.isStatus());
 		productService.updateProduct(product);
-		return "product"; 
+		return "subcategory"; 
 	}
 
 	public PaginationHelper getPagination() {
