@@ -24,6 +24,8 @@ public class EditDetailsController {
 	private AccountDetailsService accountDetailService;
 	@Inject
 	private CustomerController customerController;
+	
+	
 	private String firstName;
 	private String surname;
 	private String phoneNumber;
@@ -65,14 +67,15 @@ public class EditDetailsController {
 	}
 	
 	public String bindAttributes(){
-		setFirstName(customerController.getCustomer().getFirstName());
-		setSurname(customerController.getCustomer().getSurname());
-		setPhoneNumber(customerController.getCustomer().getPhoneNumber());
-		setEmail(customerController.getCustomer().getEmail());
+		firstName = customerController.getCustomer().getFirstName();
+		surname = customerController.getCustomer().getSurname();
+		phoneNumber = customerController.getCustomer().getPhoneNumber();
+		email = customerController.getCustomer().getEmail();
 		return "editdetails";
 	}
 
 	public String getFirstName() {
+		//firstName = customerController.getCustomer().getFirstName();
 		return firstName;
 	}
 
@@ -81,6 +84,7 @@ public class EditDetailsController {
 	}
 
 	public String getSurname() {
+		//surname = customerController.getCustomer().getSurname();
 		return surname;
 	}
 
@@ -89,6 +93,7 @@ public class EditDetailsController {
 	}
 
 	public String getPhoneNumber() {
+		//phoneNumber = customerController.getCustomer().getPhoneNumber();
 		return phoneNumber;
 	}
 
@@ -97,6 +102,7 @@ public class EditDetailsController {
 	}
 
 	public String getEmail() {
+		//email = customerController.getCustomer().getEmail();
 		return email;
 	}
 
