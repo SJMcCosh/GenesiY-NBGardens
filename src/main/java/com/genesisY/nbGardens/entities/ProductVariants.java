@@ -25,7 +25,7 @@ public class ProductVariants {
 	@NotNull
 	private int stockLevel;
 
-	@Column(name = "stock_levels", nullable = false)
+	@Column(name = "price", nullable = false)
 	@NotNull
 	private double price;
 

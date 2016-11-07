@@ -33,6 +33,9 @@ public class ProductService {
 	
 	public List<Product> viewProducts(){
 		List<Product> products = productsManager.getAllProducts();
+		
+		
+		
 		return products; 
 		
 	}
