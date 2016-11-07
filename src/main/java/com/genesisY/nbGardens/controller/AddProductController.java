@@ -1,12 +1,14 @@
 package com.genesisY.nbGardens.controller;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.genesisY.nbGardens.entities.Category;
 import com.genesisY.nbGardens.entities.Product;
 import com.genesisY.nbGardens.services.ProductService;
 
@@ -20,13 +22,13 @@ public class AddProductController implements Serializable {
 	private Product product;
 	private int productID;
 	private String name;
-	private Double price;
 	private String desc;
-	private Integer stock;
+	private Double price;
 	private String imageLocation;
-	private String specification; 
+	private String specification;
+	private Integer stock; 
+	private List<Category> catList;
 
-	
 
 	public int getProductID() {
 		return productID;
@@ -85,7 +87,7 @@ public class AddProductController implements Serializable {
 	}
 
 	public void createNewProduct() {
-		product = new Product(productID, name, desc, imageLocation, price, specification, stock, null, true);
+		product = new Product(productID, name, imageLocation, desc, price, specification, stock, catList, true, true);
 		System.out.println(">>>> " + productID);
 		System.out.println(">>>> " + name);
 		System.out.println(">>>> " + price);
@@ -93,6 +95,7 @@ public class AddProductController implements Serializable {
 		System.out.println(">>>> " + imageLocation);
 		System.out.println(">>>> " + specification);
 		System.out.println(">>>> " + stock);
+		System.out.println(">>>> " + catList);
 		productService.addProduct(product);	
 	}
 }
