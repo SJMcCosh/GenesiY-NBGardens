@@ -54,4 +54,8 @@ public abstract class PaginationHelper {
 	public void setPageSize(int pageSize) {
 		this.pageSize = pageSize;
 	}
+
+	public abstract DataModel<Product> createPageDataModel(String category);
+
+	public abstract int getItemsCount(String category);
 }
