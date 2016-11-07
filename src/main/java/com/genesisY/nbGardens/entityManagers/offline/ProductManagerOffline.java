@@ -26,9 +26,10 @@ public class ProductManagerOffline implements ProductManager {
 	@Override
 	public List<Product> getAllProducts() {
 	
-		List<Product> products = new ArrayList<Product>(); 
+		List<Product> products = new ArrayList<Product>();
+						 
 		for (Product p: initialData.getProdList()){
-			if (p.isValid()){
+			if (p.isValid() == true){
 				products.add(p); 
 			}
 		}
