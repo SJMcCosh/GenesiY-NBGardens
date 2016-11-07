@@ -18,5 +18,7 @@ public interface CategoryManager {
 	public void archiveCategory(Category x);
 	
 	public List<Category> getAllCategories();
+	
+	public List<Category> getCategoryByDepartment(String department);
 
 }
