@@ -328,7 +328,8 @@ body {
 		width:70%;
 		height:100%;
 		margin:0 auto;
-		background-color:blue;
+		background-color:red;
+		background-image:url('../../../nbgardens/img/IndexImages/gnome_new.jpg');
 	}
 		#index_top_promo_section_inner > h2{
 			color:#3C3C3C;
