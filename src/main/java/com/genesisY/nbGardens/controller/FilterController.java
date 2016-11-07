@@ -66,7 +66,11 @@ public class FilterController {
 		String[] arr = productsController.getTagNameArrayInString().split(", ");
 		System.out.println("---------------" + Arrays.toString(arr));
 		System.out.println(minimum + " " + maximum);
-		dataModel = productsController.getDataModel2();
+		if (productsController.getProductModel2() != null) {
+			dataModel = productsController.getProductModel2();
+		} else {
+			productsController.getDataModel2();
+		}
 		ArrayList<String> tagList = new ArrayList<String>();
 		for (String l : arr) {
 			if (l.startsWith("[")) {

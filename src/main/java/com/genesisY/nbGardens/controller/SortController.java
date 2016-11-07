@@ -28,6 +28,21 @@ public class SortController {
 		System.out.println(">>>>>>>>>>> " + sort);
 		switch(sort){
 		case "Price High to Low" :
+			productsController.setProductModel(sortingService.sortHighToLow(productsController.getProductModel2()));
+			break;
+		case "Price Low to High" :
+			productsController.setProductModel(sortingService.sortLowToHigh(productsController.getProductModel2()));
+			break;
+		case "Rating" :
+			productsController.setProductModel(sortingService.sortByRating(productsController.getProductModel2()));
+			break;
+		}
+	}
+	public void searchSort() {
+		String sort = getSorter();
+		System.out.println(">>>>>>>>>>> " + sort);
+		switch(sort){
+		case "Price High to Low" :
 			productsController.setDataModel(sortingService.sortHighToLow(productsController.getDataModel2()));
 			break;
 		case "Price Low to High" :

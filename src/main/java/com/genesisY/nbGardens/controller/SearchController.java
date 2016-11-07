@@ -50,7 +50,7 @@ public class SearchController implements Serializable {
 			if (searchService.getSearchedProducts(term) != null) {
 				prodController.setDataModel(new ListDataModel<Product>(searchService.getSearchedProducts(term)));
 				
-				return "subcategory";
+				return "searchresult";
 			} else {
 				return "index";
 			}

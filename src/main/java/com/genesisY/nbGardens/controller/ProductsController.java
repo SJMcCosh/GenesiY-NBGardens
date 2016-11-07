@@ -33,7 +33,7 @@ public class ProductsController implements Serializable {
 	private String lowerBound;
 	private String upperBound;
 	private int quantityOfItemsSelected;
-
+	private DataModel<Product> productModel = null;
 
 	public int getSelected() {
 		return selected;
@@ -72,7 +72,7 @@ public class ProductsController implements Serializable {
 
 	@SuppressWarnings("unchecked")
 	public DataModel<Product> getDataModel() {
-		if (dataModel == null){
+		if (dataModel == null) {
 			dataModel = getPagination().createPageDataModel();
 		}
 		return dataModel;
@@ -103,61 +103,71 @@ public class ProductsController implements Serializable {
 		this.product = product;
 	}
 
-	private void recreateModel(){
+	private void recreateModel() {
 		dataModel = null;
+		productModel = null;
 	}
-	
-	public String previous(){
+
+	public String previous() {
 		getPagination().previousPage();
 		recreateModel();
 		return "subcategory";
 	}
-	
-	public String next(){
+
+	public String next() {
 		getPagination().nextPage();
 		recreateModel();
 		return "subcategory";
 	}
-	
+
 	@SuppressWarnings("unused")
-	private void updateCurrentItem(){
+	private void updateCurrentItem() {
 		int count = productService.getAllProducts(category).size();
-		if (selected >= count){
+		if (selected >= count) {
 			selected = count - 1;
-			if (pagination.getPageFirstItem() >= count){
+			if (pagination.getPageFirstItem() >= count) {
 				pagination.previousPage();
 			}
 		}
-		if (selected >= 0){
-			try{
+		if (selected >= 0) {
+			try {
 				setProduct(productService.getAllProducts(category).subList(selected, count).get(0));
-			} catch (Exception e){
+			} catch (Exception e) {
 				setProduct(productService.getAllProducts(category).subList(selected, count).get(0));
 			}
 		}
 	}
-	
-	public PaginationHelper getPagination(){
-		if (pagination == null){
-			pagination = new PaginationHelper(12){
+
+	public PaginationHelper getPagination() {
+		if (pagination == null) {
+			pagination = new PaginationHelper(12) {
 				@Override
-				public int getItemsCount(){
+				public int getItemsCount() {
 					return productService.getAllProducts(category).size();
 				}
-				
 				@Override
-				public DataModel<Product> createPageDataModel(){
-					try{
-						return new ListDataModel<Product>(productService.getAllProducts(category).subList(getPageFirstItem(), getPageFirstItem()+ getPageSize()));
-					} catch(Exception e){
-						return new ListDataModel<Product>(productService.getAllProducts(category).subList(getPageFirstItem(), getItemsCount()));
+				public int getItemsCount(String category) {
+					return productService.getCategoryProducts(category).size();
+				}
+
+				@Override
+				public DataModel<Product> createPageDataModel() {
+					try {
+						return new ListDataModel<Product>(productService.getAllProducts(category)
+								.subList(getPageFirstItem(), getPageFirstItem() + getPageSize()));
+					} catch (Exception e) {
+						return new ListDataModel<Product>(
+								productService.getAllProducts(category).subList(getPageFirstItem(), getItemsCount()));
 					}
 				}
-				public DataModel<Product> createPageDataModel(String category){
-					try{
-						return new ListDataModel<Product>(productService.getCategoryProducts(category).subList(getPageFirstItem(), getPageFirstItem()+ getPageSize()));
-					} catch(Exception e){
-						return new ListDataModel<Product>(productService.getCategoryProducts(category).subList(getPageFirstItem(), getItemsCount()));
+				@Override
+				public DataModel<Product> createPageDataModel(String category) {
+					try {
+						return new ListDataModel<Product>(productService.getCategoryProducts(category)
+								.subList(getPageFirstItem(), getPageFirstItem() + getPageSize()));
+					} catch (Exception e) {
+						return new ListDataModel<Product>(productService.getCategoryProducts(category)
+								.subList(getPageFirstItem(), getItemsCount(category)));
 					}
 				}
 			};
@@ -168,8 +178,8 @@ public class ProductsController implements Serializable {
 	public Tag[] getTagArray() {
 		Tag[] tags = new Tag[tagModel.getRowCount()];
 		int count = 0;
-		for(Tag tag: tagModel){
-			tags[count]=tag;
+		for (Tag tag : tagModel) {
+			tags[count] = tag;
 			count++;
 		}
 		return tags;
@@ -186,12 +196,16 @@ public class ProductsController implements Serializable {
 	public void setTagNameArray(String[] tagNameArray) {
 		this.tagNameArray = tagNameArray;
 	}
-	
-	public String getTagNameArrayInString(){
+
+	public String getTagNameArrayInString() {
 		return Arrays.toString(getTagNameArray());
 	}
-	public DataModel<Product> getDataModel2(){
+
+	public DataModel<Product> getDataModel2() {
 		return dataModel;
+	}
+	public DataModel<Product> getProductModel2() {
+		return productModel;
 	}
 
 	public String getLowerBound() {
@@ -217,16 +231,23 @@ public class ProductsController implements Serializable {
 	public void setQuantityOfItemsSelected(int quantityOfItemsSelected) {
 		this.quantityOfItemsSelected = quantityOfItemsSelected;
 	}
-	public DataModel<Product> getDataModel(String category){
-		if (dataModel == null){
-			dataModel = getPagination().createPageDataModel(category);
-		}
-		return dataModel;
-	}
-	
-	public String getCategoryProducts(String category){
+
+	public String getCategoryProducts(String category) {
 		setCategory(category);
-		dataModel = getDataModel(category);
+		productModel = null;
+		productModel = getProductModel();
+		setCategory("All");
 		return "subcategory";
+	}
+
+	public DataModel<Product> getProductModel() {
+		if (productModel == null) {
+			productModel = getPagination().createPageDataModel(category);
+		}
+		return productModel;
+	}
+
+	public void setProductModel(DataModel<Product> productModel) {
+		this.productModel = productModel;
 	}
 }

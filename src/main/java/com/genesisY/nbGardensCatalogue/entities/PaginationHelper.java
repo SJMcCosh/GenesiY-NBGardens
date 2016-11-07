@@ -56,4 +56,6 @@ public abstract class PaginationHelper {
 	}
 
 	public abstract DataModel<Product> createPageDataModel(String category);
+
+	public abstract int getItemsCount(String category);
 }
