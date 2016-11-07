@@ -2,6 +2,7 @@ package com.genesisY.nbGardens.entityManagers.offline;
 
 import java.util.List;
 
+
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
