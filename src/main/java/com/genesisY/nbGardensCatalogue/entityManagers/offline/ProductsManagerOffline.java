@@ -1,5 +1,6 @@
 package com.genesisY.nbGardensCatalogue.entityManagers.offline;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -41,6 +42,17 @@ public class ProductsManagerOffline implements ProductManager {
 			}
 		} catch (NullPointerException npe) {
 			return null;
+		}
+		return null;
+	}
+
+	@Override
+	public List<Product> getProductsByCategory(String category) {
+		List<Product> products = new ArrayList<Product>();
+		for (Product p: initialData.getProductList()){
+			if (p.getCategories().contains(category)){
+				products.add(p);
+			}
 		}
 		return null;
 	}

@@ -18,7 +18,6 @@ public class ProductService {
 
 	@Inject
 	private ProductManager productManager;
-	private String category;
 
 	private boolean categoryValidate(String category) {
 		boolean validate = false;
@@ -66,7 +65,6 @@ public class ProductService {
 		} catch (NullPointerException npe) {
 			return null;
 		}
-
 	}
 
 	/**
@@ -83,11 +81,16 @@ public class ProductService {
 		return null;
 	}
 	
-	public String getCategory(){
-		return this.category;
-	}
-	public void setCategory(String category){
-		this.category = category;
+	public List<Product> getCategoryProducts(String category) {
+		try {
+			if (category != null && categoryValidate(category)) {
+				return productManager.getProductsByCategory(category);
+			} else {
+				return null;
+			}
+		} catch (NullPointerException npe) {
+			return null;
+		}
 	}
 
 }
