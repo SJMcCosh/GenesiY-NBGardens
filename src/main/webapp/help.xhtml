@@ -5,143 +5,108 @@
 	template="templates/template.xhtml">
 	<meta charset="ISO-8859-1" />
 	<ui:define name="maincontent">
-		<div class="pageContent">
 
-			<div class="col-3 col-m-3 menu">
+		<div id="contact_master_content_container">
 
-				<div class="navigation">
-					<div class="pageText">
-						<h2>Navigation</h2>
-						<br />
+			<div id="contact_master_content_container_header">
+				<h2>Help!</h2>
 
-						<p>
-							<a href="#">Contact</a>
-						</p>
-						<br />
-						<p>
-							<a href="#">Frequently Asked Questions</a>
-						</p>
-						<br />
-						<p>
-							<a href="#">What is Porousware?</a>
-						</p>
-						<br />
-					</div>
-				</div>
 			</div>
 
-			<div class="col-6 col-m-9">
-
-				<div class="title">
-					<div id="pageText">
-						<h1>Help Page</h1>
-						<br />
-					</div>
-				</div>
+			<div id="contact_master_content_container_left_col">
 
 
-				<div class="contact">
-					<div class="pageText">
-						<h2>Contact</h2>
-						<br />
+				<h2>Customer Services</h2>
 
-						<h3>Customer Helpline</h3>
-						<p>07123456789</p>
-						<p>Lines open 9am-8pm</p>
-						<p>Monday to Friday</p>
-						<br />
-
-						<h3>Email</h3>
-						<p>help@nbgardens.co.uk</p>
-						<br />
-
-						<h3>Address</h3>
-						<p>NB Gardens</p>
-						<p>123 Gnome Lane</p>
-						<p>Stockport</p>
-						<p>M99 9ZZ</p>
-					</div>
-				</div>
 				<br />
 
-				<div class="faq">
-					<div class="pageText">
-						<h2>Frequently Asked Questions</h2>
-						<br />
+				<p>
+					<a href="#">Orders</a>
+				</p>
+				<br />
+				<p>
+					<a href="#">Payment</a>
+				</p>
+				<br />
+				<p>
+					<a href="#">Delivery</a>
+				</p>
+				<br />
+				<p>
+					<a href="#">Support and Aftersales</a>
+				</p>
+				<br />
+			</div>
 
-						<h3>Where's my order?</h3>
-						<p>
-							You can check the status of any orders in your <a href="#">Account</a>.
-						</p>
-						<p>
-							If you still have questions, please <a href="#">Contact Us</a>.
-						</p>
-						<br />
+			<div id="contact_master_content_container_right_col">
+				<div id="contact_master_content_container_right_col_inner">
+					<h3>Frequently Asked Questions</h3>
+					<p>Search our FAQs for information on orders, home delivery, porousware treatment
+					and more.</p>
 
-						<h3>How can I return unwanted items?</h3>
-						<p>Every order contains a freepost box that you can return
-							unwanted/damaged items.</p>
-						<p>
-							If yours is missing, please <a href="#">Contact Us</a>.
-						</p>
-						<br />
+					<br />
 
-						<h3>How long will my order take?</h3>
+					<h:form>
+					<h3>Where's my order?</h3>
+					
+						<p>You can check the status of any orders in your <a href="#">Account</a></p>
+						
+						<p>If you still have questions, please 
+							<h:commandLink action="contact" value="Contact Us" /></p>
+											
+						<br/>
+					</h:form>	
+					
+					<h:form>
+					<h3>How long will my order take to be dispatched?</h3>
+						
 						<p>We aim to have your items with you within 7 days.</p>
+						
 						<p>Orders are dispatched every Monday, Wednesday, and Friday.</p>
-						<br />
-						<p>
-							If after 7 days you have still not received your order, please <a
-								href="#">Contact Us</a>.
-						</p>
+						<br/>
+						
+						<p>If after 7 days, since placing your order, you have still not received 
+						your order then please <h:commandLink action="contact" value="Contact Us" /></p>
+					</h:form>	
+						
+					<h:form>
+					<h3>How can I return unwanted items?</h3>
+					
+						<p>Every order contains a freepost box that you can use to 
+						return any unwanted/damaged items.</p>
+							
+						<p>If your order did not contain a freepost box, 
+						please <h:commandLink action="contact" value="Contact Us" /></p>
+						
+						<br/>
+					</h:form>
 
 						<h3>Where do you dispatch to?</h3>
+						
 						<p>We deliver to all UK addresses, including Northern Ireland.</p>
-						<br />
+						<br/>
+						
 						<p>At present, we cannot offer international delivery. Sorry.</p>
 
-						<h3>How does "buy now, pay when satisfied" work?</h3>
+						<h3>How does the "buy now, pay if satisfied" policy work?</h3>
+						
 						<p>It's all in the name. Once you receive you order, you have
 							28 days to decide if you're happy with it.</p>
+							
 						<p>If it doesn't meet your needs, return it with the provided
 							freepost box and you won't be charged.</p>
 						<br />
 
 						<h3>Your question not answered here?</h3>
-						<p>
-							<a href="#">Contact Us</a>
-						</p>
-						<br />
-					</div>
-
-				</div>
-				<br />
-
-				<div class="porous">
-					<div class="pageText">
-						<h2>What is Porousware?</h2>
+						
+						<p><a href="#">Contact Us</a></p>
 						<br />
 
-						<p>A weather-proof seal that can be applied to certain items</p>
-					</div>
 
 				</div>
+		
 			</div>
 
-			<div class="col-3 col-m-9">
-				<div class="rightBox">
-					<h2>Intae Gnomes?</h2>
-					<p>
-						Check out our <a href="#">Gnome of the Week</a>
-					</p>
-					<br />
-
-					<h2>No Intae Gnomes?</h2>
-					<p>
-						Ye pure love <a href="#">sheds</a> though, eh?
-					</p>
-				</div>
-			</div>
 		</div>
 
 	</ui:define>
