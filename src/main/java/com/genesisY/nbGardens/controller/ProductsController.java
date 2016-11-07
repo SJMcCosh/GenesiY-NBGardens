@@ -75,7 +75,7 @@ public class ProductsController implements Serializable {
 	}
 	public String invalidateProduct(){ 
 		product.setValid(false);
-		System.out.println(product.isValid());
+		System.out.println(">>>>"+product.isValid());
 		productService.updateProduct(product);
 		return "product"; 
 	}
