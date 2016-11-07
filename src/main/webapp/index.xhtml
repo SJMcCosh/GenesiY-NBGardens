@@ -9,6 +9,7 @@
 	
 		<f:metadata>
 			<f:event type="preRenderView" listener="#{notifications.onLoad}" />
+			<f:event type="preRenderView" listener="#{stockAlerts.onLoad}" />
 		</f:metadata>
 			
 		<div id="pageTitle">
@@ -23,6 +24,18 @@
 					<div class="contentBoxHeader">
 						<h3>Stock Alerts</h3>
 					</div>
+					
+					<h:form>
+						<ui:repeat var="StockAlert" value="#{stockAlerts.dataModel}">
+							<ul>
+								<li>
+									<h:outputText value="#{StockAlert.date}"></h:outputText>
+									<br />
+									<h:outputText value="#{StockAlert.details}"></h:outputText>
+								</li>
+							</ul>
+						</ui:repeat>
+					</h:form>
 				</div>
 				
 				<div id="notificationBox">

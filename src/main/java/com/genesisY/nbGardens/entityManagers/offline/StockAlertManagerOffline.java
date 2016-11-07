@@ -19,7 +19,6 @@ public class StockAlertManagerOffline implements StockAlertManager {
 
 	@Override
 	public List<StockAlert> getAllStockAlerts() {
-
 		return intialData.getSaList();
 	}
 
