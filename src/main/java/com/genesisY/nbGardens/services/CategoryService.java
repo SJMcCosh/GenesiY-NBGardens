@@ -24,4 +24,13 @@ public class CategoryService {
 			return null;
 		}
 	}
+	
+	public List<Category> getCategoryByDepartment(String department) {
+
+		if (catManager.getCategoryByDepartment(department) != null) {
+			return catManager.getCategoryByDepartment(department);
+		} else {
+			return null;
+		}
+	}
 }

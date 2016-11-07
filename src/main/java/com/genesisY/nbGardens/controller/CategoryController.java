@@ -19,6 +19,7 @@ public class CategoryController implements Serializable {
 	private DataModel<Category> catModel;
 	@Inject
 	private CategoryService catService;
+	private String department;
 
 	public DataModel<Category> getCatModel() {
 		return catModel;
@@ -36,5 +37,35 @@ public class CategoryController implements Serializable {
 		catModel = new ListDataModel<>(catService.getAllCategories());
 		return "department";
 	}
+
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+	
+	public String getCategoriesByDepartment(){
+		catModel = new ListDataModel<Category>(catService.getCategoryByDepartment(department));
+		return "department";
+	}
+	public String getOutLivingCategories(){
+		catModel = new ListDataModel<Category>(catService.getCategoryByDepartment("Outdoor Living"));
+		return "department";
+	}
+	public String getToolsCategories(){
+		catModel = new ListDataModel<Category>(catService.getCategoryByDepartment("Garden tools"));
+		return "department";
+	}
+	public String getGnomeCategories(){
+		catModel = new ListDataModel<Category>(catService.getCategoryByDepartment("Gnomes"));
+		return "department";
+	}
+	public String getOutBuildsCategories(){
+		catModel = new ListDataModel<Category>(catService.getCategoryByDepartment("Outdoor Buildings"));
+		return "department";
+	}
+	
 
 }

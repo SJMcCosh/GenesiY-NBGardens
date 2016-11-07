@@ -78,7 +78,7 @@ public class Product implements Comparable<Product> {
 
 	}
 
-	public Product(int id, String name, double averageRating, String description, String size, double weight, double price, List<Tag> tagList, String imageLocation, List<Review> reviews) {
+	public Product(int id, String name, double averageRating, String description, String size, double weight, double price, List<Tag> tagList, String imageLocation, List<Review> reviews, List<Category> categories) {
 		this.id = id;
 		this.name = name;
 		this.averageRating = averageRating;
@@ -89,6 +89,7 @@ public class Product implements Comparable<Product> {
 		this.tagList = tagList;
 		this.imageLocation = imageLocation;
 		this.reviews = reviews;
+		this.categories = categories;
 	}
 
 	

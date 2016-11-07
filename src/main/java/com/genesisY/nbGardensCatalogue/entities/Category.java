@@ -25,13 +25,23 @@ public class Category {
 	@NotNull
 	@Size(min = 2, max = 225)
 	private String name;
+	
+	@Column(name = "department", nullable = false)
+	@NotNull
+	private String department;
+	
+	@Column(name = "image")
+	@NotNull
+	private String image;
 
 	public Category() {
 
 	}
 
-	public Category(String name) {
+	public Category(String name, String department, String image) {
 		this.name = name;
+		this.department = department;
+		this.image = image;
 	}
 
 	public int getId() {
@@ -48,5 +58,20 @@ public class Category {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public String getDepartment() {
+		return this.department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 }

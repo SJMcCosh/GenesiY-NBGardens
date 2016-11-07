@@ -1,5 +1,6 @@
 package com.genesisY.nbGardensCatalogue.entityManagers.offline;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -42,6 +43,16 @@ public class CategoryManagerOffline implements CategoryManager {
 	@Override
 	public List<Category> getAllCategories() {
 		return initialData.getCategoryList();
+	}
+	
+	public List<Category> getCategoryByDepartment(String department){
+		List<Category>cats = new ArrayList<Category>();
+		for(Category c: getAllCategories()){
+			if (c.getDepartment().equals(department)){
+				cats.add(c);
+			}
+		}
+		return cats;
 	}
 
 }

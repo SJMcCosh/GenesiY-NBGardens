@@ -9,13 +9,14 @@
 			<!-- This is the sidebar -->
 			<h:form>
 				<div class="col-3 col-m-6 tagbar">
-				
+
 					<ul class="col-3 col-m-6 tagbar">
 
-						<ui:repeat var="categorys" value="#{category.catModel}">
-							<li><h:commandLink action="#{products.allProducts()}"
-								value="#{categorys.name}" /></li>
-							
+						<ui:repeat var="categories" value="#{category.catModel}">
+							<h:form>
+								<li><h:commandLink action="#{products.allProducts()}"
+										value="#{categories.name}" /></li>
+							</h:form>
 						</ui:repeat>
 					</ul>
 
@@ -38,9 +39,9 @@
 				<br />
 			</div>
 			<br />
-			
-			
-			
+
+
+
 			<div id="departments_grid">
 				<div class="departments_grid_department"></div>
 				<div class="departments_grid_department"></div>
@@ -48,12 +49,23 @@
 				<div class="departments_grid_department"></div>
 				<div class="departments_grid_department"></div>
 				<div class="departments_grid_department"></div>
-			
+
 			</div>
-			
-			
-			
-			
+			<div class="subCategoriesGrid col-10 col-m-12">
+				<br />
+				<div class="columnFirst ">
+					<ui:repeat var="categories" value="#{category.catModel}">
+						<h:form>
+							<h:commandLink action="#{products.allProducts()}">
+								<img src="#{categories.image}" alt="#{categories.name}"
+									height="200" width="200"></img>
+							</h:commandLink>
+						</h:form>
+					</ui:repeat>
+				</div>
+			</div>
+
+
 			<!-- This is the grid of subclass -->
 			<div class="subCategoriesGrid col-10 col-m-12">
 				<br />

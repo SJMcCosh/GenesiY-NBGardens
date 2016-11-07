@@ -103,16 +103,16 @@ public class InitialData {
 		colList.add(new CustomerOrderLine());
 		
 		
-		Review r1 = new Review(4.2, "Its a good gnome");
-		Review r2 = new Review(4.2, "Its a good gnome");
-		Review r3 = new Review(4.2, "Its a good gnome");
-		Review r4 = new Review(4.2, "Its a good gnome");
-		Review r5 = new Review(4.2, "Its a good gnome");
-		Review r6 = new Review(4.2, "Its a good gnome");
-		Review r7 = new Review(4.2, "Its a good gnome");
-		Review r8 = new Review(4.2, "Its a good gnome");
-		Review r9 = new Review(4.2, "Its a good gnome");
-		Review r10 = new Review(4.2, "Its a good gnome");
+		Review r1 = new Review(3, "Its a good gnome");
+		Review r2 = new Review(4, "Its a really good gnome");
+		Review r3 = new Review(2, "Its a nice gnome");
+		Review r4 = new Review(5, "Its a fantastic gnome");
+		Review r5 = new Review(1, "It was an adequate gnome");
+		Review r6 = new Review(5, "Its a fantastic gnome");
+		Review r7 = new Review(2, "Its a nice gnome");
+		Review r8 = new Review(4, "Its a really good gnome");
+		Review r9 = new Review(3, "Its a good gnome");
+		Review r10 = new Review(1, "It was an adequate gnome");
 		
 		reviewList.add(r1);
 		reviewList.add(r2);
@@ -125,55 +125,73 @@ public class InitialData {
 		reviewList.add(r9);
 		reviewList.add(r10);
 		
+		categoryList.add(new Category("All", "Gnomes", "img/easterGnome.png"));
+		categoryList.add(new Category("Popular Culture", "Gnomes", "img/olympicGnomes.jpg"));
+		categoryList.add(new Category("Romance", "Gnomes", "img/valentineGnome.jpg"));
+		categoryList.add(new Category("Sci-Fi", "Gnomes", "img/starTrekGnome.jpg"));
+		categoryList.add(new Category("Fantasy", "Gnomes", "img/zombieGnome.jpg"));
+		categoryList.add(new Category("All", "Outdoor Living", "img/newJobGnome.jpg"));
+		categoryList.add(new Category("All", "Garden Tools", "img/stPatrickGnome.jpg"));
+		categoryList.add(new Category("All", "Outdoor Buildings", "img/xmasGnome.jpg"));
+		categoryList.add(new Category("Seating", "Outdoor Living", "img/royalGnome.jpg"));
+		categoryList.add(new Category("Lawncare", "Garden Tools", "img/summerGnome.jpg"));
+		categoryList.add(new Category("Digging", "Garden Tools", "img/weddingGnome.jpg"));
+		categoryList.add(new Category("Sheds", "Outdoor Buildings", "img/easterGnome.png"));
+		List<Category> c1 = new ArrayList<Category>();
+		List<Category> c2 = new ArrayList<Category>();
+		List<Category> c3 = new ArrayList<Category>();
+		c1.add(new Category("All", "Gnomes", "img/easterGnome.png"));
+		c1.add(new Category("Popular Culture", "Gnomes", "img/olympicGnomes.jpg"));
+		c1.add(new Category("Sci-Fi", "Gnomes", "img/starTrekGnome.jpg"));
+		c2.add(new Category("All", "Gnomes", "img/easterGnome.png"));
+		c2.add(new Category("Romance", "Gnomes", "img/valentineGnome.jpg"));
+		c3.add(new Category("All", "Gnomes", "img/easterGnome.png"));
+		c3.add(new Category("Popular Culture", "Gnomes", "img/olympicGnomes.jpg"));
+		c3.add(new Category("Fantasy", "Gnomes", "img/zombieGnome.jpg"));	
 		
 		productList.add(new Product(1, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0,
-				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList));
+				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList, c1));
 		productList.add(new Product(2, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care",
-				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList));
+				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList, c2));
 		productList.add(new Product(3, "Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0,
-				111.29, list3, "img/IndexImages/gnome_new.jpg", reviewList));
+				111.29, list3, "img/IndexImages/gnome_new.jpg", reviewList, c3));
 		productList.add(new Product(4, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0,
-				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList));
+				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList, c1));
 		productList.add(new Product(5, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care",
-				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList));
+				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList, c2));
 		productList.add(new Product(6, "Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0,
-				111.29, list3, "img/IndexImages/gnome_new.jpg", reviewList));
+				111.29, list3, "img/IndexImages/gnome_new.jpg", reviewList, c3));
 		productList.add(new Product(7, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0,
-				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList));
+				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList, c1));
 		productList.add(new Product(8, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care",
-				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList));
+				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList, c2));
 		productList.add(new Product(9, "Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0,
-				111.29, list3, "img/IndexImages/gnome_new.jpg", reviewList));
+				111.29, list3, "img/IndexImages/gnome_new.jpg", reviewList, c3));
 		productList.add(new Product(10, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0,
-				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList));
+				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList, c1));
 		productList.add(new Product(11, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care",
-				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList));
+				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList, c2));
 		productList.add(new Product(12, "Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0,
-				111.29, list3, "img/IndexImages/gnome_new.jpg", reviewList));
+				111.29, list3, "img/IndexImages/gnome_new.jpg", reviewList, c3));
 		productList.add(new Product(13, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0,
-				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList));
+				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList, c1));
 		productList.add(new Product(14, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care",
-				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList));
+				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList, c2));
 		productList.add(new Product(15, "Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0,
-				111.29, list3, "img/IndexImages/gnome_new.jpg", reviewList));
+				111.29, list3, "img/IndexImages/gnome_new.jpg", reviewList, c3));
 		productList.add(new Product(16, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0,
-				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList));
+				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList, c1));
 		productList.add(new Product(17, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care",
-				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList));
+				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList, c2));
 		productList.add(new Product(18, "Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0,
-				111.29, list3, "img/IndexImages/gnome_new.jpg", reviewList));
+				111.29, list3, "img/IndexImages/gnome_new.jpg", reviewList, c3));
 		productList.add(new Product(19, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0,
-				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList));
+				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList, c1));
 		productList.add(new Product(20, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care",
-				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList));
+				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList, c2));
 
-		categoryList.add(new Category("cat1"));
-		categoryList.add(new Category("cat2"));
-		categoryList.add(new Category("cat3"));
-		categoryList.add(new Category("cat4"));
-		categoryList.add(new Category("cat5"));
-		categoryList.add(new Category("cat6"));
 
+		
 		
 
 		/*
