@@ -103,16 +103,16 @@ public class InitialData {
 		colList.add(new CustomerOrderLine());
 		
 		
-		Review r1 = new Review(4.5, "Its a good gnome");
-		Review r2 = new Review(4.7, "Its a really good gnome");
-		Review r3 = new Review(4.0, "Its a nice gnome");
-		Review r4 = new Review(5.0, "Its a fantastic gnome");
-		Review r5 = new Review(3.5, "It wasn't the gnome I was expecting");
-		Review r6 = new Review(5.0, "Its a fantastic gnome");
-		Review r7 = new Review(4.0, "Its a nice gnome");
-		Review r8 = new Review(4.7, "Its a really good gnome");
-		Review r9 = new Review(4.5, "Its a good gnome");
-		Review r10 = new Review(3.5, "It wasn't the gnome I was expecting");
+		Review r1 = new Review(3, "Its a good gnome");
+		Review r2 = new Review(4, "Its a really good gnome");
+		Review r3 = new Review(2, "Its a nice gnome");
+		Review r4 = new Review(5, "Its a fantastic gnome");
+		Review r5 = new Review(1, "It wasn't the gnome I was expecting");
+		Review r6 = new Review(5, "Its a fantastic gnome");
+		Review r7 = new Review(2, "Its a nice gnome");
+		Review r8 = new Review(4, "Its a really good gnome");
+		Review r9 = new Review(3, "Its a good gnome");
+		Review r10 = new Review(1, "It wasn't the gnome I was expecting");
 		
 		reviewList.add(r1);
 		reviewList.add(r2);
