@@ -71,26 +71,46 @@
 			<p id="index_featured_products_section_header">We thought you
 				might like...</p>
 			<h:form>
+			
+			<div id="index_featured_products_scroll_section_outer">				
+				<div id="index_featured_products_scroll_section_inner">
+					<ui:repeat var="product" value="#{products.dataModel}">
+						<h:commandLink action="#{products.viewProduct(product)}">
+							<div class="index_featured_products_product">
+								<img class="index_featured_products_product_image" src="#{product.imageLocation}" />
+								<div class="index_featured_products_product_title">
+									<h:outputText value="#{product.name}" />
+								</div>
+								 <!--<p><h:outputText value="#{product.name}"
+											class="index_featured_products_product_title" /></p>
+									<p><h:outputText value="#{product.price}"
+											class="index_featured_products_product_price" /></p>
+									<p><h:outputText value="#{product.averageRating}"
+											class="index_featured_products_product_price" /></p>-->
+								
+								
+						<!-- <ul>
+									<li><h:outputText value="#{product.name}"
+											class="index_featured_products_product_title" /></li>
+									<li><h:outputText value="#{product.price}"
+											class="index_featured_products_product_price" /></li>
+									<li><h:outputText value="#{product.averageRating}"
+											class="index_featured_products_product_price" /></li>
+								</ul>-->
+							</div>
+							
+						</h:commandLink>
+					</ui:repeat>
+				</div>
+				
+			</div>
+			
 				<div id="index_lower_content_master_wrapper">
 					<div id="index_featured_products_wrapper_outer">
 						<div id="index_featured_products_wrapper_inner">
 							<!-- THE JSF VERSION OF THE FEATURED PRODUCTS -->
-							<ui:repeat var="product" value="#{products.dataModel}">
-								<h:commandLink action="#{products.viewProduct(product)}"
-									class="col-3 col-m-6">
-									<div class="index_featured_products_product">
-										<img class="subcat_images" src="#{product.imageLocation}" />
-										<ul>
-											<li><h:outputText value="#{product.name}"
-													class="index_featured_products_product_title" /></li>
-											<li><h:outputText value="#{product.price}"
-													class="index_featured_products_product_price" /></li>
-											<li><h:outputText value="#{product.averageRating}"
-													class="index_featured_products_product_price" /></li>
-										</ul>
-									</div>
-								</h:commandLink>
-							</ui:repeat>
+							
+							
 						</div>
 					</div>
 				</div>
