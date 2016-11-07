@@ -85,7 +85,7 @@ public class AddProductController implements Serializable {
 	}
 
 	public void createNewProduct() {
-		product = new Product(productID, name, desc, imageLocation, price, specification, stock, null, true);
+		product = new Product(productID, name, desc, imageLocation, price, specification, stock, null, true, true);
 		System.out.println(">>>> " + productID);
 		System.out.println(">>>> " + name);
 		System.out.println(">>>> " + price);
