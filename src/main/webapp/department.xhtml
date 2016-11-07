@@ -8,13 +8,13 @@
 		<div class="row">
 			<!-- This is the sidebar -->
 			<h:form>
-				<div class="col-3 col-m-6 tagbar">
+				<div class="col-1 col-m-6 tagbar">
 
-					<ul class="col-3 col-m-6 tagbar">
+					<ul>
 
 						<ui:repeat var="categories" value="#{category.catModel}">
 							<h:form>
-								<li><h:commandLink action="#{products.allProducts()}"
+								<li><h:commandLink action="#{products.getCategoryProducts(categories.name)}"
 										value="#{categories.name}" /></li>
 							</h:form>
 						</ui:repeat>
@@ -42,95 +42,26 @@
 
 
 
-			<div id="departments_grid">
-				<div class="departments_grid_department"></div>
-				<div class="departments_grid_department"></div>
-				<div class="departments_grid_department"></div>
-				<div class="departments_grid_department"></div>
-				<div class="departments_grid_department"></div>
-				<div class="departments_grid_department"></div>
-
-			</div>
 			<div class="subCategoriesGrid col-10 col-m-12">
 				<br />
-				<div class="columnFirst ">
-					<ui:repeat var="categories" value="#{category.catModel}">
-						<h:form>
-							<h:commandLink action="#{products.allProducts()}">
-								<img src="#{categories.image}" alt="#{categories.name}"
-									height="200" width="200"></img>
-							</h:commandLink>
-						</h:form>
-					</ui:repeat>
-				</div>
-			</div>
 
-
-			<!-- This is the grid of subclass -->
-			<div class="subCategoriesGrid col-10 col-m-12">
-				<br />
-				<div class="columnFirst ">
-					<div class="SubCategory" align="center">
-						<a href="categoryoutlive.html"><img
-							src="../../../../../../../../images/CategoryPictures/outdoorLiving.jpg"
-							alt="Outdoor Living" height="200" width="200"></img></a>
+				<ui:repeat var="categories" value="#{category.catModel}">
+					<div class="col-6">
+						<div class="columnFirst ">
+							<h:form>
+								<h:commandLink action="#{products.getCategoryProducts(categories.name)}"
+									value="#{categories.name}" />
+								<br />
+								<h:commandLink action="#{products.getCategoryProducts(categories.name)}">
+									<img src="#{categories.image}" alt="#{categories.name}"
+										height="200" width="200"></img>
+								</h:commandLink>
+							</h:form>
+						</div>
 					</div>
-					<br />
-					<div class="SubCategoryBlank" align="center">
-						<img
-							src="../../../../../../../../images/CategoryPictures/empty.png"
-							height="50" width="200"></img>
-					</div>
-					<br />
-					<div class="SubCategory" align="center">
-						<a href="categorygardtools.html"><img
-							src="../../../../../../../../images/CategoryPictures/gardenTools.jpg"
-							alt="Garden Tools" height="200" width="200"></img></a>
-					</div>
-					<br />
-				</div>
-				<div class="columnSecond ">
-					<div class="SubCategoryBlank" align="center">
-						<img
-							src="../../../../../../../../images/CategoryPictures/empty.png"
-							height="75" width="200"></img>
-					</div>
-					<br />
-					<div class="SubCategory" align="center">
-						<a href="categorygnome.html"><img
-							src="../../../../../../../../images/CategoryPictures/gnome.png"
-							alt="Gnome Products" height="200" width="200"></img></a>
-					</div>
-					<br />
-					<div class="SubCategoryBlank" align="center">
-						<img
-							src="../../../../../../../../images/CategoryPictures/empty.png"
-							height="75" width="200"></img>
-					</div>
-					<br />
-				</div>
-				<div class="columnThird">
-					<div class="SubCategory" align="center">
-						<a href="categoryoutbuild.html"><img
-							src="../../../../../../../../images/CategoryPictures/outdoorBuilding.jpg"
-							alt="Outdoor Buildings" height="200" width="200"></img></a>
-					</div>
-					<br />
-					<div class="SubCategoryBlank" align="center">
-						<img
-							src="../../../../../../../../images/CategoryPictures/empty.png"
-							height="50" width="200"></img>
-					</div>
-					<br />
-					<div class="SubCategory" align="center">
-						<a href="categoryseasonal.html"><img
-							src="../../../../../../../../images/CategoryPictures/season.jpg"
-							alt="Seasonal Products" height="200" width="200"></img></a>
-					</div>
-					<br />
-				</div>
-				<br />
+				</ui:repeat>
 			</div>
 		</div>
+
 	</ui:define>
 </ui:composition>

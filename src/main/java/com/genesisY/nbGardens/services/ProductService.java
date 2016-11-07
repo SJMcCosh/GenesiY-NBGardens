@@ -18,6 +18,7 @@ public class ProductService {
 
 	@Inject
 	private ProductManager productManager;
+	private String category;
 
 	private boolean categoryValidate(String category) {
 		boolean validate = false;
@@ -80,6 +81,13 @@ public class ProductService {
 			return productManager.getProductByName(name);
 		}
 		return null;
+	}
+	
+	public String getCategory(){
+		return this.category;
+	}
+	public void setCategory(String category){
+		this.category = category;
 	}
 
 }

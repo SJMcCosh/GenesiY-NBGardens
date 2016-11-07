@@ -28,12 +28,9 @@ public class FilterController {
 	@Inject
 	private TagService tagService;
 	@Inject
-	private ProductService productService;
-	@Inject
 	private FilterService filterService;
 	private DataModel<Product> dataModel;
 	private int selected;
-	private PaginationHelper pagination;
 	private String category = "all";
 	private short minimum = 0;
 	private short maximum = 2000;
@@ -96,64 +93,6 @@ public class FilterController {
 
 	public void setDataModel(DataModel<Product> dataModel) {
 		this.dataModel = dataModel;
-	}
-
-	private void recreateModel() {
-		dataModel = null;
-	}
-
-	public String previous() {
-		getPagination().previousPage();
-		recreateModel();
-		return "subcategory";
-	}
-
-	public String next() {
-		getPagination().nextPage();
-		recreateModel();
-		return "subcategory";
-	}
-
-	public PaginationHelper getPagination() {
-		if (pagination == null) {
-			pagination = new PaginationHelper(12) {
-				@Override
-				public int getItemsCount() {
-					return productService.getAllProducts(category).size();
-				}
-
-				@Override
-				public DataModel<Product> createPageDataModel() {
-					try {
-						return new ListDataModel<Product>(getDataModelAsList(getDataModel2())
-								.subList(getPageFirstItem(), getPageFirstItem() + getPageSize()));
-					} catch (Exception e) {
-						return new ListDataModel<Product>(
-								getDataModelAsList(getDataModel2()).subList(getPageFirstItem(), getItemsCount()));
-					}
-				}
-			};
-		}
-		return pagination;
-	}
-
-	public void setPagination(PaginationHelper pagination) {
-		this.pagination = pagination;
-	}
-
-	public DataModel<Product> getDataModel() {
-		if (dataModel != null) {
-			dataModel = getPagination().createPageDataModel();
-		}
-		return dataModel;
-	}
-
-	private List<Product> getDataModelAsList(DataModel<Product> dataModel) {
-		List<Product> products = new ArrayList<Product>();
-		for (Product p : dataModel) {
-			products.add(p);
-		}
-		return products;
 	}
 
 	public short getMinimum() {
