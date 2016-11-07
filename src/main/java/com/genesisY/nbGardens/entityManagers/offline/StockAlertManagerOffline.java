@@ -6,9 +6,7 @@ import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
-import com.genesisY.nbGardens.entities.Notification;
 import com.genesisY.nbGardens.entities.StockAlert;
-import com.genesisY.nbGardens.entityManagers.NotificationManager;
 import com.genesisY.nbGardens.entityManagers.StockAlertManager;
 import com.genesisY.nbGardens.initialData.ImsInitialData;
 
@@ -21,8 +19,7 @@ public class StockAlertManagerOffline implements StockAlertManager {
 
 	@Override
 	public List<StockAlert> getAllStockAlerts() {
-		// TODO Auto-generated method stub
-		return null;
+		return intialData.getSaList();
 	}
 
 	

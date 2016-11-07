@@ -145,6 +145,14 @@ public class ImsInitialData {
 		saList.add(sa1);
 	}
 
+	public ArrayList<StockAlert> getSaList() {
+		return saList;
+	}
+
+	public void setSaList(ArrayList<StockAlert> saList) {
+		this.saList = saList;
+	}
+
 	public void setEmployeeList(ArrayList<Employee> employeeList) {
 		this.employeeList = employeeList;
 	}
