@@ -24,12 +24,12 @@ public class EditDetailsController {
 	private AccountDetailsService accountDetailService;
 	@Inject
 	private CustomerController customerController;
-	private String firstName = "";
-	private String surname = "";
-	private String phoneNumber = "";
-	private String email = "";
-	private String username = "";
-	private String password = "";
+	private String firstName;
+	private String surname;
+	private String phoneNumber;
+	private String email;
+	private String username;
+	private String password;
 	
 	private boolean userValidate(String username) {
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>> validate");
