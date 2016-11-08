@@ -16,9 +16,9 @@ public interface AddressManager {
 	
 	public List<Address> getAddresses();
 
-	public void editAddress(Address a);
+	public void editAddress(Address address);
 	
-	public void deleteAddress(Address a);
+	public void deleteAddress(Address address);
 	
 	public List<Address> getAddressByUsername(String username);
 }

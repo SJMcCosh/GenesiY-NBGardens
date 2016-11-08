@@ -17,36 +17,40 @@
 								<br />
 								<h:outputText value="#{addresses.addressLine1}" />
 								<br />
-
+								<br />
 								<h:outputText value="#{addresses.addressLine2}" />
 								<br />
-
+								<br />
 								<h:outputText value="#{addresses.addressLine3}" />
 								<br />
-
+								<br />
 								<h:outputText value="#{addresses.townCity}" />
-
+								<br />
 								<br />
 								<h:outputText value="#{addresses.county}" />
-
+								<br />
 								<br />
 								<h:outputText value="#{addresses.postcode}" />
-
+								<br />
+								<br />
+								<h:outputText value="#{addresses.active}" />
+								<hr />
+								<br />
 
 								<br />
-								<h:commandLink value="Remove Address">
-									<f:ajax render="@form" />
-								</h:commandLink>
-
 								<br />
 								<h:commandLink value="Edit Address"
-									action="#{address.editAddress(addresses.addressID)}" >
-									
-								</h:commandLink>
+									action="#{editaddress.assignValues}"
+									actionListener="#{address.editAddress(addresses.addressID)}" />
 
 								<br />
-								<h:commandLink value="Set as Billing Address" />
+								<h:commandLink value="Delete Address"
+									action="#{address.deleteAddress(addresses.addressID)}" />
 
+								<br />
+								<br />
+
+								<br />
 							</h:form>
 						</div>
 					</div>

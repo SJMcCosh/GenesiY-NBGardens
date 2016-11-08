@@ -40,14 +40,28 @@ public class AddressManagerOffline implements AddressManager {
 
 
 	@Override
-	public void deleteAddress(Address a) {
+	public void deleteAddress(Address address) {
 		// TODO Auto-generated method stub
+		for(Address a : initialData.getAddressList()){
+			if(a.getAddressID() == address.getAddressID()){
+				a.setActive(address.isActive());
+			}
+		}
 		
 	}
 
 	@Override
-	public void editAddress(Address a) {
-		// TODO Auto-generated method stub
+	public void editAddress(Address address) {
+		for(Address a : initialData.getAddressList()){
+			if(a.getAddressID() == address.getAddressID()){
+				a.setAddressLine1(address.getAddressLine1());
+				a.setAddressLine2(address.getAddressLine2());
+				a.setAddressLine3(address.getAddressLine3());
+				a.setCounty(address.getCounty());
+				a.setPostcode(address.getPostcode());
+				a.setTownCity(address.getTownCity());
+			}
+		}
 		
 	}
 

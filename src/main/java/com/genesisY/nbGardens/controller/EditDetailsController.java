@@ -95,7 +95,7 @@ public class EditDetailsController {
 	}
 
 	public String updateCustomer() {
-
+		System.out.println(">>>>>>>>>>>>>" + username);
 		if (userValidate(username)) {
 			if (editDetailsService.authenticatePassword(password)) {
 				customerController.getCustomer().setFirstName(firstname);
