@@ -37,6 +37,10 @@ public class FilterController {
 	private short lower;
 	private short upper;
 	private List<String> tags;
+	private double minrat = 0;
+	private double maxrat = 5;
+	private double least;
+	private double most;
 
 	public int getSelected() {
 		return selected;
@@ -124,33 +128,17 @@ public class FilterController {
 	 */
 	public void filterByPrice(AjaxBehaviorEvent abe) {
 		System.out.println(">>>>>>>>>>>>>>>>hi");
+		setLower(minimum);
+		setUpper(maximum);
 		if (productsController.getProductModel2() != null) {		//Checks if it's on a list of products in a category or from a search
 			dataModel = productsController.getProductModel2();
 		} else {
 			dataModel = productsController.getDataModel2();
 		}
-		setLower(minimum);
-		setUpper(maximum);
 		for (Product p : dataModel) {
 			p.setToRender(true);
 		}
 		filterService.filterByPrice(dataModel, minimum, maximum);
-	}
-
-	private short getLower() {
-		return lower;
-	}
-
-	private void setLower(short lower) {
-		this.lower = lower;
-	}
-
-	private short getUpper() {
-		return upper;
-	}
-
-	private void setUpper(short upper) {
-		this.upper = upper;
 	}
 
 	private List<String> getTags() {
@@ -164,5 +152,75 @@ public class FilterController {
 	public void load() {
 		productsController.setTagModel(new ListDataModel<Tag>(tagService.getAllTags()));
 	}
+
+	public double getMinrat() {
+		return minrat;
+	}
+
+	public void setMinrat(double minrat) {
+		this.minrat = minrat;
+	}
+
+	public double getMaxrat() {
+		return maxrat;
+	}
+
+	public void setMaxrat(double maxrat) {
+		this.maxrat = maxrat;
+	}
+	
+	/**
+	 * 
+	 * @param abe
+	 * Method to filter by rating
+	 */
+	public void filterByRating(AjaxBehaviorEvent abe) {
+		System.out.println(">>>>>>>>>>>>>>>>hi");
+		setLeast(minrat);
+		setMost(maxrat);
+		if (productsController.getProductModel2() != null) {		//Checks if it's on a list of products in a category or from a search
+			dataModel = productsController.getProductModel2();
+		} else {
+			dataModel = productsController.getDataModel2();
+		}
+		for (Product p : dataModel) {
+			p.setToRender(true);
+		}
+		filterService.filterByRating(dataModel, minrat, maxrat);
+	}
+
+	public short getLower() {
+		return lower;
+	}
+
+	public void setLower(short lower) {
+		this.lower = lower;
+	}
+
+	public short getUpper() {
+		return upper;
+	}
+
+	public void setUpper(short upper) {
+		this.upper = upper;
+	}
+
+	public double getLeast() {
+		return least;
+	}
+
+	public void setLeast(double least) {
+		this.least = least;
+	}
+
+	public double getMost() {
+		return most;
+	}
+
+	public void setMost(double most) {
+		this.most = most;
+	}
+	
+	
 
 }

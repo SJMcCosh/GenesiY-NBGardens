@@ -55,4 +55,20 @@ public class FilterService {
 		}
 		return dataModel;
 	}
+	
+	/**
+	 * Sets whether or not to render a product based on whether or not it is within the specified rating range.
+	 * @param dataModel - takes in a Data Model of Product
+	 * @param minimum - the smallest value. A short.
+	 * @param maximum - the largest value. A short.
+	 * @return dataModel - returns a DataModel
+	 */
+	public DataModel<Product> filterByRating(DataModel<Product> dataModel, double lower, double upper) {
+		for (Product p : dataModel) {
+			if (p.getAverageRating() < lower || p.getAverageRating() > upper) {
+				p.setToRender(false);
+			}
+		}
+		return dataModel;
+	}
 }

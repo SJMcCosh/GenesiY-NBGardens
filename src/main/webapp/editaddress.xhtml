@@ -1,0 +1,60 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://java.sun.com/jsf/passthrough"
+	template="templates/template.xhtml">
+	<meta charset="ISO-8859-1" />
+	<ui:define name="maincontent">
+		<article class="wholebody">
+
+			<div class="editdetails">
+				<h4>Edit Your Details</h4>
+
+				<div class="col-12 col-m-9">
+					<div class="changedetails">
+						<h:form>
+
+							<br />
+							<h:outputText value="Address line 1: " />
+							<br />
+							<h:inputText value="#{editaddress.addressLine1}" required="true" />
+							<br />
+							<br />
+
+							<h:outputText value="Address line 2: " />
+							<br />
+							<h:inputText value="#{editaddress.addressLine2}" required="true" />
+							<br />
+							<br />
+							<h:outputText value="Address line 3: " />
+							<br />
+							<h:inputText value="#{editaddress.addressLine3}" required="true" />
+							<br />
+							<br />
+							<h:outputText value="Town/City: " />
+							<br />
+							<h:inputText value="#{editaddress.towncity}" required="true" />
+							<br />
+							<br />
+							<h:outputText value="County: " />
+							<br />
+							<h:inputText value="#{editaddress.county}" required="true" />
+							<br />
+							<br />
+							<h:outputText value="Postcode: " />
+							<br />
+							<h:inputText value="#{editaddress.postcode}" required="true" />
+							<br />
+							<br />
+
+							<h:commandButton type="submit" name="editdetails" value="Submit"
+								action="#{editaddress.editAddressDetails}"/>
+						</h:form>
+					</div>
+				</div>
+			</div>
+		</article>
+
+	</ui:define>
+</ui:composition>

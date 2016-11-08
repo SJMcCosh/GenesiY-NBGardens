@@ -30,8 +30,19 @@
 						<b>Filter by Price</b>
 					</p>
 
-						<h:outputText value = "Minimum: "/><h:inputText value = "#{filter.minimum}" style = "width: 30px"/><h:outputText value = " Maximum: "/><h:inputText value = "#{filter.maximum}" style = "width: 30px"/>
+						<h:outputText value = "Minimum Price: "/><h:inputText value = "#{filter.minimum}" style = "width: 30px"/>
+						<br />
+						<h:outputText value = " Maximum Price: "/><h:inputText value = "#{filter.maximum}" style = "width: 30px"/>
 						<f:ajax event = "keyup" listener="#{filter.filterByPrice}" render="@all"/>
+						
+					<p>
+						<b>Filter by Rating</b>
+					</p>
+
+						<h:outputText value = "Minimum Rating: "/><h:inputText value = "#{filter.minrat}" style = "width: 30px"/>
+						<br />
+						<h:outputText value = " Maximum Rating: "/><h:inputText value = "#{filter.maxrat}" style = "width: 30px"/>
+						<f:ajax event = "keyup" listener="#{filter.filterByRating}" render="@all"/>
 
 				</div>
 			</h:form>

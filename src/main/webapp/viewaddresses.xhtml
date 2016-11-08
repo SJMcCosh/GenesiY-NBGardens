@@ -9,48 +9,48 @@
 			<div>
 				<h3>View Your Addresses</h3>
 			</div>
-			<ui:repeat var="address" value="#{address.dataModel}">
+			<ui:repeat var="addresses" value="#{address.dataModel}">
 				<div class="col-4 col-m-4">
 					<div class="resizingaddress">
 						<div class="address">
 							<h:form>
-								<p>
-									<h:outputText
-										value="#{address.dataModel.getRowData().addressLine1}" />
-								</p>
-								<p>
-									<h:outputText
-										value="#{address.dataModel.getRowData().addressLine2}" />
-								</p>
-								<p>
-									<h:outputText
-										value="#{address.dataModel.getRowData().addressLine3}" />
-								</p>
-								<p>
-									<h:outputText
-										value="#{address.dataModel.getRowData().townCity}" />
-								</p>
-								<p>
-									<h:outputText value="#{address.dataModel.getRowData().county}" />
-								</p>
-								<p>
-									<h:outputText
-										value="#{address.dataModel.getRowData().postcode}" />
-								</p>
-							</h:form>
-							<h:form>
-								<p>
-									<h:commandLink value="Remove Address"
-										action="#{address.removeAddress()}"></h:commandLink>
-								</p>
-								<p>
-									<h:commandLink value="Edit Address"
-										action="#{address.editAddress()}"></h:commandLink>
-								</p>
-								<p>
-									<h:commandLink value="Set as Billing Address"
-										action="#{address.reassignBillingAddress()}"></h:commandLink>
-								</p>
+								<br />
+								<h:outputText value="#{addresses.addressLine1}" />
+								<br />
+								<br />
+								<h:outputText value="#{addresses.addressLine2}" />
+								<br />
+								<br />
+								<h:outputText value="#{addresses.addressLine3}" />
+								<br />
+								<br />
+								<h:outputText value="#{addresses.townCity}" />
+								<br />
+								<br />
+								<h:outputText value="#{addresses.county}" />
+								<br />
+								<br />
+								<h:outputText value="#{addresses.postcode}" />
+								<br />
+								<br />
+								<h:outputText value="#{addresses.active}" />
+								<hr />
+								<br />
+
+								<br />
+								<br />
+								<h:commandLink value="Edit Address"
+									action="#{editaddress.assignValues}"
+									actionListener="#{address.editAddress(addresses.addressID)}" />
+
+								<br />
+								<h:commandButton value="Delete Address"
+									action="#{address.deleteAddress(addresses.addressID)}" />
+
+								<br />
+								<br />
+
+								<br />
 							</h:form>
 						</div>
 					</div>
