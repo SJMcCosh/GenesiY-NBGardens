@@ -160,5 +160,9 @@ public class FilterController {
 	private void setTags(List<String> tags) {
 		this.tags = tags;
 	}
+	
+	public void load() {
+		productsController.setTagModel(new ListDataModel<Tag>(tagService.getAllTags()));
+	}
 
 }

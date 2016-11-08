@@ -85,7 +85,6 @@ public class LoginService {
 			System.out.println(userCredentials.getAttempts());
 			return false;
 		}
-		;
 		System.out.println(username + "<><><><>" + password);
 		if (userValidate(username) && passValidate(password)) {
 			Customer gnome = getCustomerByUsername(username);
