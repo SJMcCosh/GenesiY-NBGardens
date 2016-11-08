@@ -29,8 +29,6 @@ public class AddressController {
 	private String townCity; 
 	private String county; 
 	private String postcode; 
-	private boolean billingAddress; 
-	
 	
 
 	public AddressService getAddressService() {
@@ -148,18 +146,14 @@ public class AddressController {
 		this.postcode = postcode;
 	}
 
-	public boolean isBillingAddress() {
-		return billingAddress;
-	}
-
-	public void setBillingAddress(boolean billingAddress) {
-		this.billingAddress = billingAddress;
-	}
 	
-	public String addNewAddress(String addressLine1, String addressLine2, String addressLine3, String townCity, String postcode, boolean billingAddress){
+
+	
+	
+	public String addAddress(String addressLine1, String addressLine2, String addressLine3, String townCity,String county, String postcode, Customer customer){
 		
 		
-		addressService.addAddress(addressLine1, addressLine2, addressLine3, townCity, postcode, billingAddress);
+		addressService.addAddress(addressLine1, addressLine2, addressLine3, townCity, county, postcode, false, customer);
 		
 		
 		

@@ -9,6 +9,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import com.genesisY.nbGardensCatalogue.entities.Address;
+import com.genesisY.nbGardensCatalogue.entities.Customer;
 import com.genesisY.nbGardensCatalogue.entityManagers.AddressManager;
 
 @Stateless
@@ -50,12 +51,14 @@ public class AddressService {
 			
 		}
 	
-	public void addAddress(String addressLine1, String addressLine2, String addressLine3, String townCity, String postcode, boolean billingAddress){
+	public void addAddress(String addressLine1, String addressLine2, String addressLine3, String townCity, String county, String postcode, boolean billingAddress, Customer customer){
 	
+		Address a = new Address(addressLine1, addressLine2, addressLine3, townCity, county, postcode, billingAddress, customer); 
 		
-		
+		if( a != null){
 		
 		addressManager.addAddress(a);
+		}
 	}
 	}
 	
