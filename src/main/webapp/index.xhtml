@@ -18,7 +18,10 @@
 			</div>
 		</div>
 		
-		<div class="col-12 col-m-12">
+		<div class="empty col-3 col-m-12">
+		</div>
+		
+		<div class="col-6 col-m-12">
 			<div class="contentBoxes">
 				<div id="stockAlertBox">
 					<div class="contentBoxHeader">
@@ -31,7 +34,7 @@
 								<li>
 									<h:outputText value="#{StockAlert.date}"></h:outputText>
 									<br />
-									<h:commandLink value="#{StockAlert.details}"  action="stockalerts.xhtml"></h:commandLink>
+									<h:commandLink value="#{StockAlert.details}"  action="#{stockAlerts.onLoad}" style="text-decoration:bold;color:red"></h:commandLink>
 								</li>
 							</ul>
 						</ui:repeat>
@@ -49,13 +52,16 @@
 								<li>
 									<h:outputText value="#{notification.date}"></h:outputText>
 									<br />
-									<h:outputText value="#{notification.details}"></h:outputText>
+									<h:commandLink value="#{notification.details}" action="viewproductorders.xhtml"></h:commandLink>
 								</li>
 							</ul>
 						</ui:repeat>
 					</h:form>
 				</div>
 			</div>
+		</div>
+		
+		<div class="empty1 col-3 col-m-12">
 		</div>
 	
 	</ui:define>

@@ -23,8 +23,9 @@ public class StockAlertController implements Serializable {
 	
 	public String onLoad()
 	{
-		setDataModel(new ListDataModel<StockAlert>(saService.getAllStockAlerts()));
-		return "index";
+		dataModel = new ListDataModel<StockAlert>(saService.getAllStockAlerts());
+		System.out.println(">>>>> Controller");
+		return "stockalerts";
 	}
 
 	public DataModel<StockAlert> getDataModel() {
