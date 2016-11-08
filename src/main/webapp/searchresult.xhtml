@@ -29,10 +29,9 @@
 					<p>
 						<b>Filter by Price</b>
 					</p>
-
 						<h:outputText value = "Minimum: "/><h:inputText value = "#{filter.minimum}" style = "width: 30px"/><h:outputText value = " Maximum: "/><h:inputText value = "#{filter.maximum}" style = "width: 30px"/>
 						<f:ajax event = "keyup" listener="#{filter.filterByPrice}" render="@all"/>
-
+						
 				</div>
 			</h:form>
 
@@ -46,7 +45,7 @@
 							itemValue="Price Low to High" />
 						<f:selectItem itemLabel="Price High to Low"
 							itemValue="Price High to Low" />
-						<f:ajax listener="#{sort.sort}" render="@all" />
+						<f:ajax listener="#{sort.searchSort}" render="@all" />
 					</h:selectOneMenu>
 				</div>
 
@@ -60,7 +59,7 @@
 			<h:form>
 				<h:outputText escape="false" value="No Products Found"
 					rendered="#{products.dataModel.rowCount == 0}" />
-				<h:panelGroup rendered="#{products.productModel.rowCount > 0}">
+				<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
 					<h:outputText
 						value="Displaying products #{products.pagination.pageFirstItem + 1} to #{products.pagination.pageLastItem + 1} of #{products.pagination.itemsCount}" />
 					<h:commandButton value="Previous #{products.pagination.pageSize}"
@@ -80,7 +79,7 @@
 
 				<div class="col-9 col-m-6">
 					<ul>
-						<ui:repeat var="product" value="#{products.productModel}">
+						<ui:repeat var="product" value="#{products.dataModel}">
 							<h:panelGroup rendered="#{product.toRender}">
 								<h:commandLink action="#{products.viewProduct(product)}"
 									class="col-3 col-m-6">
@@ -91,10 +90,7 @@
 											<li><h:outputText value="#{product.name}"
 													class="index_featured_products_product_title" /></li>
 											<li><h:outputText value="#{product.price}"
-													class="index_featured_products_product_price">
-													<f:convertNumber type="currency" currencyCode="GBP" />
-
-												</h:outputText></li>
+													class="index_featured_products_product_price" /></li>
 											<li><h:outputText value="#{product.averageRating}"
 													class="index_featured_products_product_price" /></li>
 										</ul>
@@ -113,8 +109,8 @@
 			<div class="paginatorbutton">
 				<h:form>
 					<h:outputText escape="false" value="No Products Found"
-						rendered="#{products.productModel.rowCount == 0}" />
-					<h:panelGroup rendered="#{products.productModel.rowCount > 0}">
+						rendered="#{products.dataModel.rowCount == 0}" />
+					<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
 						<h:outputText
 							value="Displaying products #{products.pagination.pageFirstItem + 1} to #{products.pagination.pageLastItem + 1} of #{products.pagination.itemsCount}" />
 						<h:commandButton value="Previous #{products.pagination.pageSize}"

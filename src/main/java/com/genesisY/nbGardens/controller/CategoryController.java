@@ -55,7 +55,7 @@ public class CategoryController implements Serializable {
 		return "department";
 	}
 	public String getToolsCategories(){
-		catModel = new ListDataModel<Category>(catService.getCategoryByDepartment("Garden tools"));
+		catModel = new ListDataModel<Category>(catService.getCategoryByDepartment("Garden Tools"));
 		return "department";
 	}
 	public String getGnomeCategories(){

@@ -21,4 +21,6 @@ public interface ProductManager {
 	 * @return the product with the id
 	 */
 	public Product getProductByName(String name);
+	
+	public List<Product> getProductsByCategory(String category);
 }
