@@ -1383,6 +1383,9 @@ ul.botnav li a {
 	
 @media only screen and (max-width: 1120px){
 	
+	#department_page_content_container{
+		
+	}
 	
 	#department_page_right_container{
 		width:50%;
