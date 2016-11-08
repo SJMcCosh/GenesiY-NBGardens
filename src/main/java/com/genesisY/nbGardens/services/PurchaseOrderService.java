@@ -37,6 +37,12 @@ public class PurchaseOrderService {
 	{    
 		purchaseOrderManager.addPurchaseOrder(p);
 	}
-	
+
 }
+	
+	public List<PurchaseOrder> viewPurchaseOrders(){ 
+		List<PurchaseOrder> purchaseOrders = purchaseOrderManager.getAllPurchaseOrders();
+		return purchaseOrders; 
+		
+	}
 }

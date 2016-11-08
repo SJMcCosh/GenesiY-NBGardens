@@ -1,5 +1,7 @@
 package com.genesisY.nbGardens.entityManagers.offline;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
@@ -26,6 +28,15 @@ public class PurchaseOrderManagerOffline implements PurchaseOrderManager {
 		
 		
 	}
+
+
+
+	@Override
+	public List<PurchaseOrder> getAllPurchaseOrders() {
+		List<PurchaseOrder> purchaseOrders = initialData.getPurchaseOrderList();
+		return purchaseOrders; 
+	}
+	
 
 	
 	
