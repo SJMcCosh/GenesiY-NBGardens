@@ -47,6 +47,10 @@ public class Address {
 	@Column(name = "billingAddress", nullable = false)
 	@NotNull
 	private boolean billingAddress;
+	
+	@Column(name = "active", nullable = false)
+	@NotNull
+	private boolean active;
 
 	@OneToMany
 	@JoinColumn(name = "customer_fk", nullable = false)
@@ -56,8 +60,9 @@ public class Address {
 	public Address() {
 
 	}
-
-	public Address(String addressLine1, String addressLine2, String addressLine3, String townCity, String county, String postcode, boolean billingAddress, Customer customer) {
+	
+	public Address( String addressLine1, String addressLine2, String addressLine3, String townCity, String county, String postcode, boolean billingAddress, Customer customer) {
+		
 		this.addressLine1 = addressLine1;
 		this.addressLine2 = addressLine2;
 		this.addressLine3 = addressLine3;
@@ -65,6 +70,19 @@ public class Address {
 		this.county = county;
 		this.postcode = postcode;
 		this.billingAddress = billingAddress;
+		this.customer = customer;
+	}
+
+	public Address(int addressID, String addressLine1, String addressLine2, String addressLine3, String townCity, String county, String postcode, boolean billingAddress, boolean active, Customer customer) {
+		this.addressID = addressID;
+		this.addressLine1 = addressLine1;
+		this.addressLine2 = addressLine2;
+		this.addressLine3 = addressLine3;
+		this.townCity = townCity;
+		this.county = county;
+		this.postcode = postcode;
+		this.billingAddress = billingAddress;
+		this.active = active;
 		this.customer = customer;
 	}
 
@@ -139,6 +157,20 @@ public class Address {
 		this.billingAddress = billingAddress;
 	}
 
+	public void setAddressLine1(String addressLine1) {
+		this.addressLine1 = addressLine1;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
+	
+	
 	/**
 	 * Add code to pull from database
 	 */
