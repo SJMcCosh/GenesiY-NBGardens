@@ -3,88 +3,42 @@ package com.genesisY.nbGardens.controller;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.genesisY.nbGardens.services.EditDetailsService;
-import com.genesisY.nbGardens.services.AccountDetailsService;
 
-import com.genesisY.nbGardensCatalogue.entities.Customer;
-
-@Named("detaileditor")
-@ManagedBean
+@Named("editdetails")
 @RequestScoped
 public class EditDetailsController {
 
-	@Inject
-	private EditDetailsService detailEditor;
-	@Inject
-	private AccountDetailsService accountDetailService;
-	@Inject
-	private CustomerController customerController;
-	
-	
-	private String firstName;
+	private String firstname;
 	private String surname;
 	private String phoneNumber;
 	private String email;
 	private String username;
 	private String password;
-	
-	private boolean userValidate(String username) {
-		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>> validate");
-		boolean validate = false;
-		Pattern pattern = Pattern.compile("^[0-9a-zA-Z_]+$");
-		Matcher matcher = pattern.matcher(username);
-		if (username.length() > 7 && username.length() < 45) {
-			if (matcher.find()) {
-				validate = true;
-			}
-		}
-		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>> <"+validate);
-		return validate;
+	private String error = "";
+
+	@Inject
+	private CustomerController customerController;
+
+	@Inject
+	private EditDetailsService editDetailsService;
+
+	@Inject
+	private ErrorController errorController;
+
+	public String getFirstname() {
+		return firstname;
 	}
 
-	public String changeDetails() {
-		System.out.println(">>>>>  hello" + getFirstName() + " " + getSurname() + " " + getPhoneNumber() + " " + getEmail() + " " + getUsername() + " "
-				+ getPassword());
-		if (!userValidate(username)){
-			return "index";
-		}
-		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>> checking user validation");
-		boolean bool = detailEditor.editing(firstName, surname, phoneNumber, email, username, password);
-		System.out.println(bool);
-		if (bool) {
-			System.out.println(">>>DETAILS CHANGED<<<");
-			Customer person = accountDetailService.getCustomerByUsername(username);
-			System.out.println(">>>>> " + person.getUsername() + person.getFirstName() + person.getSurname());
-			return "viewaccount";
-		} else {
-			return "index";
-		}
-	}
-	
-	public String bindAttributes(){
-		firstName = customerController.getCustomer().getFirstName();
-		surname = customerController.getCustomer().getSurname();
-		phoneNumber = customerController.getCustomer().getPhoneNumber();
-		email = customerController.getCustomer().getEmail();
-		return "editdetails";
-	}
-
-	public String getFirstName() {
-		//firstName = customerController.getCustomer().getFirstName();
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
 
 	public String getSurname() {
-		//surname = customerController.getCustomer().getSurname();
 		return surname;
 	}
 
@@ -93,7 +47,6 @@ public class EditDetailsController {
 	}
 
 	public String getPhoneNumber() {
-		//phoneNumber = customerController.getCustomer().getPhoneNumber();
 		return phoneNumber;
 	}
 
@@ -102,7 +55,6 @@ public class EditDetailsController {
 	}
 
 	public String getEmail() {
-		//email = customerController.getCustomer().getEmail();
 		return email;
 	}
 
@@ -125,6 +77,54 @@ public class EditDetailsController {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
+
+	public String getError() {
+		return error;
+	}
+
+	public void setError(String error) {
+		this.error = error;
+	}
+
+	public String bindAttributes() {
+		firstname = customerController.getCustomer().getFirstName();
+		surname = customerController.getCustomer().getSurname();
+		email = customerController.getCustomer().getEmail();
+		phoneNumber = customerController.getCustomer().getPhoneNumber();
+		return "editdetails";
+	}
+
+	public String updateCustomer() {
+
+		if (userValidate(username)) {
+			if (editDetailsService.authenticatePassword(password)) {
+				customerController.getCustomer().setFirstName(firstname);
+				customerController.getCustomer().setSurname(surname);
+				customerController.getCustomer().setEmail(email);
+				customerController.getCustomer().setPhoneNumber(phoneNumber);
+				editDetailsService.updateCustomerDetails(customerController.getCustomer());
+
+				return "editdetails";
+
+			}
+			return "editdetails";
+		} else {
+			error = "Username or password is incorrect";
+			return "editdetails";
+		}
+
+	}
+
+	private boolean userValidate(String username) {
+		boolean validate = false;
+		Pattern pattern = Pattern.compile("^[0-9a-zA-Z_]+$");
+		Matcher matcher = pattern.matcher(username);
+		if (username.length() > 7 && username.length() < 45) {
+			if (matcher.find()) {
+				validate = true;
+			}
+		}
+		return validate;
+	}
+
 }

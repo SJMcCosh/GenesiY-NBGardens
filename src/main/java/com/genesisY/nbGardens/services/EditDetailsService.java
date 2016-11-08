@@ -6,23 +6,24 @@ import java.util.regex.Pattern;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
-import com.genesisY.nbGardens.services.LoginService;
+import com.genesisY.nbGardensCatalogue.entities.Customer;
 import com.genesisY.nbGardensCatalogue.entityManagers.AccountManager;
 
 @Stateless
-
 public class EditDetailsService {
 
 	@Inject
 	private AccountManager accountManager;
-	@Inject
-	private LoginService passing;
-	
-	private boolean authenticateFirstName(String name){
+
+	public void updateCustomerDetails(Customer customer) {
+		accountManager.updateCustomerDetails(customer);
+	}
+
+	public boolean authenticateFirstName(String firstname) {
 		boolean validate = false;
 		Pattern pattern = Pattern.compile("^[a-zA-Z]+$");
-		Matcher matcher = pattern.matcher(name);
-		if (name.length() < 35) {
+		Matcher matcher = pattern.matcher(firstname);
+		if (firstname.length() < 35) {
 			if (!matcher.find()) {
 				return validate;
 			}
@@ -30,11 +31,12 @@ public class EditDetailsService {
 		validate = true;
 		return validate;
 	}
-	private boolean authenticateLastName(String name){
+
+	public boolean authenticateLastName(String surname) {
 		boolean validate = false;
 		Pattern pattern = Pattern.compile("^[a-zA-Z-]+$");
-		Matcher matcher = pattern.matcher(name);
-		if (name.length() < 35) {
+		Matcher matcher = pattern.matcher(surname);
+		if (surname.length() < 35) {
 			if (!matcher.find()) {
 				return validate;
 			}
@@ -42,11 +44,12 @@ public class EditDetailsService {
 		validate = true;
 		return validate;
 	}
-	private boolean authenticateUsername(String name){
+
+	public boolean authenticateUsername(String username) {
 		boolean validate = false;
 		Pattern pattern = Pattern.compile("^[0-9a-zA-Z_]+$");
-		Matcher matcher = pattern.matcher(name);
-		if (name.length() > 7 && name.length() < 45) {
+		Matcher matcher = pattern.matcher(username);
+		if (username.length() > 7 && username.length() < 45) {
 			if (!matcher.find()) {
 				return validate;
 			}
@@ -54,13 +57,14 @@ public class EditDetailsService {
 		validate = true;
 		return validate;
 	}
-	private boolean authenticatePhone(String name){
+
+	public boolean authenticatePhone(String phoneNumber) {
 		boolean validate = false;
-		String[] string = name.split("^[ -]+&");
-		name = String.join("", string);
+		String[] string = phoneNumber.split("^[ -]+&");
+		phoneNumber = String.join("", string);
 		Pattern pattern = Pattern.compile("^[0-9]+$");
-		Matcher matcher = pattern.matcher(name);
-		if (name.length() == 11) {
+		Matcher matcher = pattern.matcher(phoneNumber);
+		if (phoneNumber.length() == 11) {
 			if (!matcher.find()) {
 				return validate;
 			}
@@ -68,12 +72,14 @@ public class EditDetailsService {
 		validate = true;
 		return validate;
 	}
-	private boolean authenticateEmail(String name){
+
+	public boolean authenticateEmail(String email) {
 		boolean validate = false;
-		if (!name.contains("@")) return validate;
+		if (!email.contains("@"))
+			return validate;
 		Pattern pattern = Pattern.compile("^[a-zA-Z!#$%&'*+-/=?^_`{|}~.-]+$");
-		Matcher matcher = pattern.matcher(name);
-		if (name.length() > 6 && name.length() < 90) {
+		Matcher matcher = pattern.matcher(email);
+		if (email.length() > 6 && email.length() < 90) {
 			if (!matcher.find()) {
 				return validate;
 			}
@@ -81,28 +87,13 @@ public class EditDetailsService {
 		validate = true;
 		return validate;
 	}
-	private boolean authenticatePassword(String password){
+
+	public boolean authenticatePassword(String password) {
 		boolean validate = false;
 		if (password.length() > 8 && password.length() < 35) {
-				validate = true;
+			validate = true;
 		}
 		return validate;
 	}
 
-
-	public boolean editing(String firstName, String surname, String phoneNumber, String email, String username, String password) {
-//		Return a boolean and when authenticate = true;
-		boolean auth = passing.passCheck(username, password);
-		System.out.println("Deets " + auth);
-		if (auth){
-			accountManager.updateFirstName(firstName, username);
-			accountManager.updateLastName(surname, username);
-			accountManager.updatePhoneNum(phoneNumber, username);
-			accountManager.updateEmail(email, username);
-			return true;
-		}
-		else{
-			return false;
-		}
-	}
 }
