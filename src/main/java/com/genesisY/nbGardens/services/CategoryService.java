@@ -16,6 +16,10 @@ public class CategoryService {
 	@Inject
 	private CategoryManager catManager;
 
+	/**
+	 * 
+	 * @return A list of all categories.
+	 */
 	public List<Category> getAllCategories() {
 
 		if (catManager.getAllCategories() != null) {
@@ -24,7 +28,11 @@ public class CategoryService {
 			return null;
 		}
 	}
-	
+	/**
+	 * 
+	 * @param department
+	 * @return A list of all categories in a department 
+	 */
 	public List<Category> getCategoryByDepartment(String department) {
 
 		if (catManager.getCategoryByDepartment(department) != null) {

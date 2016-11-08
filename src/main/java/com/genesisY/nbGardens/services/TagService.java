@@ -43,34 +43,4 @@ public class TagService {
 			return null;
 		}
 	}
-
-	private boolean tagValidate(String tag) {
-		boolean validate = false;
-		Pattern pattern = Pattern.compile("^[a-zA-Z -]+$");
-		Matcher matcher = pattern.matcher(tag);
-		if (tag.length() > 7 && tag.length() < 45) {
-			if (!matcher.find()) {
-				return validate;
-			}
-		}
-		validate = true;
-		return validate;
-	}
-
-	public DataModel<Product> filterProducts(DataModel<Product> dataModel, String tag) {
-		if (tagValidate(tag)) {
-			List<Product> list = new ArrayList<Product>();
-			for (Product p : dataModel) {
-				for (Tag filters : p.getTagList()) {
-					if (tag.equals(filters.getName())) {
-						list.add(p);
-					}
-				}
-			}
-			dataModel = new ListDataModel<Product>(list);
-			return dataModel;
-		}
-		return null;
-	}
-
 }

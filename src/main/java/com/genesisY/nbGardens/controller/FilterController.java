@@ -62,16 +62,21 @@ public class FilterController {
 		this.filter = filter;
 	}
 
+	/**
+	 * 
+	 * @param abe
+	 * Method to filter a product by tags.
+	 */
 	public void filterProductsByTag(AjaxBehaviorEvent abe) {
 		String[] arr = productsController.getTagNameArrayInString().split(", ");
 		System.out.println("---------------" + Arrays.toString(arr));
 		System.out.println(minimum + " " + maximum);
-		if (productsController.getProductModel2() != null) {
+		if (productsController.getProductModel2() != null) {		//Checks if it's on a list of products in a category or from a search
 			dataModel = productsController.getProductModel2();
 		} else {
-			productsController.getDataModel2();
+			dataModel = productsController.getDataModel2();
 		}
-		ArrayList<String> tagList = new ArrayList<String>();
+		ArrayList<String> tagList = new ArrayList<String>();		//Creates a list of tags based on the ones checked
 		for (String l : arr) {
 			if (l.startsWith("[")) {
 				l = l.substring(1);
@@ -83,13 +88,10 @@ public class FilterController {
 		}
 		setTags(tagList);
 
-		filterService.filterByTag(tagList, dataModel);
+		filterService.filterByTag(tagList, dataModel);				//Calls method to filter by tags
 	}
 
-	public void load() {
-		productsController.setTagModel(new ListDataModel<Tag>(tagService.getAllTags()));
 
-	}
 
 	public DataModel<Product> getDataModel2() {
 		return dataModel;
@@ -115,9 +117,18 @@ public class FilterController {
 		this.maximum = maximum;
 	}
 
+	/**
+	 * 
+	 * @param abe
+	 * Method to filter by price
+	 */
 	public void filterByPrice(AjaxBehaviorEvent abe) {
 		System.out.println(">>>>>>>>>>>>>>>>hi");
-		dataModel = productsController.getDataModel2();
+		if (productsController.getProductModel2() != null) {		//Checks if it's on a list of products in a category or from a search
+			dataModel = productsController.getProductModel2();
+		} else {
+			dataModel = productsController.getDataModel2();
+		}
 		setLower(minimum);
 		setUpper(maximum);
 		for (Product p : dataModel) {
