@@ -34,7 +34,7 @@
 								<li>
 									<h:outputText value="#{StockAlert.date}"></h:outputText>
 									<br />
-									<h:commandLink value="#{StockAlert.details}"  action="stockalerts.xhtml" style="text-decoration:none;color:red"></h:commandLink>
+									<h:commandLink value="#{StockAlert.details}"  action="#{stockAlerts.onLoad}" style="text-decoration:bold;color:red"></h:commandLink>
 								</li>
 							</ul>
 						</ui:repeat>
@@ -52,7 +52,7 @@
 								<li>
 									<h:outputText value="#{notification.date}"></h:outputText>
 									<br />
-									<h:commandLink value="#{notification.details}" action="viewproductorders.xhtml" style="text-decoration:none;color:blue"></h:commandLink>
+									<h:commandLink value="#{notification.details}" action="viewproductorders.xhtml"></h:commandLink>
 								</li>
 							</ul>
 						</ui:repeat>

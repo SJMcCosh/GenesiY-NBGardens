@@ -67,7 +67,7 @@ public class ImsInitialData {
 		catList.add(c6);
 		
 
-		Product product1 = new Product(1, "Game of Gnomes", "A GOT gnome", "img/gnome.jpg", 9.99, "Made in China", 12, cl1, false, true);
+		Product product1 = new Product(1, "Game of Gnomes", "A GOT gnome", "img/gnome.jpg", 9.99, "Made in China", 12, cl1, false, false);
 		Product product2 = new Product(2, "random gnome", "lelelelel", "img/gnome.jpg", 15.29, "Made in the UK", 52, cl2, true, true);
 		Product product3 = new Product(3, "other gnome", "1234567890", "img/gnome.jpg", 6.50, "Made in the EU", 121, cl3, true, true);
 		Product product4 = new Product(4, "big gnome", "B.I.G, big!", "img/gnome.jpg", 12.99, "Made in the UK", 94, cl4, true, true);
@@ -133,11 +133,23 @@ public class ImsInitialData {
 		notList.add(n3);
 		
 		StockAlert sa1 = new StockAlert(1, "03/11/2016", "Big Gnome low stock");
+		StockAlert sa2 = new StockAlert(2, "02/11/2016", "Game of Gnomes low stock");
+		StockAlert sa3 = new StockAlert(2, "02/11/2016", "Test");
+		StockAlert sa4 = new StockAlert(2, "02/11/2016", "Please");
+		StockAlert sa5 = new StockAlert(2, "02/11/2016", "Work");
+		StockAlert sa6 = new StockAlert(2, "02/11/2016", "Now");
+		
 		
 		saList.add(sa1);
+		saList.add(sa2);
+		saList.add(sa3);
+		saList.add(sa4);
+		saList.add(sa5);
+		saList.add(sa6);
 	}
 
 	public ArrayList<StockAlert> getSaList() {
+		System.out.println(">>>>>Initial Data");
 		return saList;
 	}
 

@@ -18,6 +18,8 @@ public class StockAlertService {
 	{
 		if (saManager.getAllStockAlerts() != null)
 		{
+
+			System.out.println(">>>>>>>>>>>>>>>>>>> Service");
 			return saManager.getAllStockAlerts();
 		}
 		else

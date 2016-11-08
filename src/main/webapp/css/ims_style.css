@@ -518,20 +518,22 @@ ul {
 .contentBoxes {
 	margin: 0 auto;
 	height: 700px;
+	width:100%;
 }
 
 #stockAlertBox {
-	height: 300px;
+	height: 50%;
 	width: 100%;
 	overflow: scroll;
 	background-color: #FFFFFF;
 	border-style: solid;
 	border-width: medium;
 	border-color: #143516;
+	font-weight: bold;
 }
 
 #notificationBox {
-	height: 300px;
+	height: 50%;
 	width: 100%;
 	overflow: scroll;
 	background-color: #FFFFFF;
@@ -547,6 +549,10 @@ ul {
 	text-align: center;
 	margin: 0 auto;
 	margin-top: -20px;
+}
+
+#stockAlertContent {
+	text-align: center;
 }
 
 /* 													END IMS CSS						*/
