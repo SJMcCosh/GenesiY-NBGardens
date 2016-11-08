@@ -220,4 +220,33 @@ public class ProductsController implements Serializable {
 	public void setProductModel(DataModel<Product> productModel) {
 		this.productModel = productModel;
 	}
+	
+	
+	
+	public String averageRatingImg(Double rating)
+	{
+		String imageURI = "";
+		Integer starRating = rating.intValue();
+		switch(starRating)
+		{
+			case(0) : imageURI = "img/Ratings/0.png";
+						break;
+			case(1) : imageURI = "img/Ratings/1.png";
+						break;
+			case(2) : imageURI = "img/Ratings/2.png";
+						break;
+			case(3) : imageURI = "img/Ratings/3.png";
+						break;	
+			case(4) : imageURI = "img/Ratings/4.png";
+						break;			
+			case(5) : imageURI = "img/Ratings/5.png";
+						break;
+		}
+		
+		return imageURI;
+	}
+	
+	
+	
+	
 }
