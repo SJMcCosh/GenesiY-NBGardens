@@ -134,10 +134,10 @@ public class ImsInitialData {
 		
 		StockAlert sa1 = new StockAlert(1, "03/11/2016", "Big Gnome low stock");
 		StockAlert sa2 = new StockAlert(2, "02/11/2016", "Game of Gnomes low stock");
-		StockAlert sa3 = new StockAlert(2, "02/11/2016", "Test");
-		StockAlert sa4 = new StockAlert(2, "02/11/2016", "Please");
-		StockAlert sa5 = new StockAlert(2, "02/11/2016", "Work");
-		StockAlert sa6 = new StockAlert(2, "02/11/2016", "Now");
+		StockAlert sa3 = new StockAlert(3, "02/11/2016", "Test");
+		StockAlert sa4 = new StockAlert(4, "02/11/2016", "Please");
+		StockAlert sa5 = new StockAlert(5, "02/11/2016", "Work");
+		StockAlert sa6 = new StockAlert(6, "02/11/2016", "Now");
 		
 		
 		saList.add(sa1);
