@@ -33,7 +33,8 @@ public class PurchaseOrderController implements Serializable {
 	private String email;
 	private Address address;
 	private PurchaseOrder purchaseOrder;
-	
+	private DataModel<Product> purchaseProdList; 
+	 
 
 	public PurchaseOrder getPurchaseOrder() {
 		return purchaseOrder;
