@@ -1264,5 +1264,87 @@ ul.botnav li a {
 		width: 100%;
 		padding-left: 30px;
 		}
+
+
+
+/*----------------------------------------------------------- DEPARTMENT CSS ---------------------------------------*/
+#department_page_left_container{
+	float:left;
+	width:200px;
+	height:700px;	
+	background-color:yellow;
+}
+	#department_page_top_container{
+		width:100%;
+		min-height:70px;
+		height:auto;
+		background-color:#3B7F3F;
+		display:none;
+		padding:0;
+		margin:0;
+		margin-top:-20px;
+	}
+
+#department_page_right_container{
+	margin:0 auto;
+	width:900px;
+	height:700px;
+
+}
+	#department_page_top_advert{
+		width:100%;
+		height:120px;
+		background-color:blue;
+
+	}
+		#departments_items_container{
+			width:100%;
+			height:100%;
+		}
+			.departments_item{
+				width:200px;
+				height:150px;
+				background-color:red;
+				display:inline-block;
+			}
+	
+	.side_menu{
+		width:100%;
+		height:100%;	
+	}
+		.side_menu > h2{
+			color:white;
+			padding-left:20px;	
+			float:left;
+		}
 		
+		.side_menu > img{
+			right:0;	
+			float:right;	
+			padding-top:10px;	
+			padding-right:10px
+		}
+
+		#side_menu_lower{
+			height:300px;
+			width:100%;
+			background-color:#3B7F3F;
+			display:none;
+		}
+	
+@media only screen and (max-width: 1308px){
+	
+	#department_page_left_container{
+		display:none;
+	}
+	
+	#department_page_top_container{
+		display:block;
+	}
+	
+}
+
+
+
+
 		
