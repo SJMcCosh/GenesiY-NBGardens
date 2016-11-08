@@ -1301,7 +1301,6 @@ ul.botnav li a {
 	margin:0 auto;
 	width:900px;
 	height:700px;
-
 }
 	#department_page_top_advert{
 		width:100%;
@@ -1386,7 +1385,7 @@ ul.botnav li a {
 	
 	
 	#department_page_right_container{
-		width:600px;
+		width:50%;
 		margin:0 auto;
 	}
 	#department_page_left_container{

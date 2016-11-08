@@ -125,23 +125,9 @@
 
 </div>
 
-<br/><br/><br/><br/>
 
-	<ui:repeat var="categories" value="#{category.catModel}">
-					<div class="col-6">
-						<div class="columnFirst ">
-							<h:form>
-								<h:commandLink action="#{products.getCategoryProducts(categories.name)}"
-									value="#{categories.name}" />
-								<br />
-								<h:commandLink action="#{products.getCategoryProducts(categories.name)}">
-									<img src="#{categories.image}" alt="#{categories.name}"
-										height="200" width="200"></img>
-								</h:commandLink>
-							</h:form>
-						</div>
-					</div>
-				</ui:repeat>
+
+
 
 
 	</ui:define>
