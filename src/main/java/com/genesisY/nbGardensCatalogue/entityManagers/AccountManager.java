@@ -18,4 +18,6 @@ public interface AccountManager {
 	public void updatePassword(String password, String username);
 	
 	public void updateCustomerDetails(Customer customer);
+	
+	public void addCustomer(Customer customer);
 }
