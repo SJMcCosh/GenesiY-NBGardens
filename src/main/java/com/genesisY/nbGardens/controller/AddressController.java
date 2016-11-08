@@ -62,13 +62,30 @@ public class AddressController {
 		dataModel = new ListDataModel<Address>(addressService.getAllAddresses(username));
 		return "viewaddresses";
 	}
+
 	
-	public String removeAddress(){
-		return viewAddress();
-	}
-	
-	public String editAddress(){
-		return viewAddress();
+	/**
+	 * Gets the address a user wants to edit and redirects them to the edit address page
+	 * @param id : of the address they want to edit
+	 * @return String : either the edit deiails page if the id matches or does nothing
+	 */
+	public String editAddress(String id){
+		System.out.println(">>>>>>>>>>>> edit address");
+		try{
+			int addid = Integer.parseInt(id);
+			for(Address a : addressService.getAllAddresses(userCredentials.getUsername())){
+				if(a.getAddressID() == addid){
+					address = a;
+					
+				}
+			}
+			System.out.println(">>>>>>>>>>>>" + address.getAddressLine1());
+			return "editaddress";	
+		}catch(ClassCastException cce){
+			return "viewaddresses";
+		}
+			
+		
 	}
 	
 	public String reassignBillingAddress(){
