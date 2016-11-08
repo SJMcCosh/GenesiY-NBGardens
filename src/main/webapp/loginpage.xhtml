@@ -3,43 +3,69 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://java.sun.com/jsf/passthrough"
-	template="templates/loginTemplate.xhtml">
+	template="templates/template.xhtml">
 	<meta charset="ISO-8859-1" />
-	<body>
-		<ui:define name="maincontent">
-			<article class="wholebody">
-				<br /> <br />
-				<div class="col-12 col-m-12" align="center">
-					<div class="loginform">
-						<h4>Login</h4>
-						<h:form>
-							<h:outputText value="Username: " />
-							<h:inputText value="#{employee_login.username}" required="true"
-								requiredMessage="Enter Username"></h:inputText>
-							<h:outputLink action="#{loginpage.xhtml}">
-								<h:outputText value="Forgot Username?" />
-							</h:outputLink>
-							<br />
-							<br />
-							<h:outputText value="Password: " />
-							<h:inputSecret value="#{employee_login.password}" required="true"
-								requiredMessage="Enter Password"
-								validatorMessage="Please enter a password">
-								<f:validateLength minimum="8" maximum="35" />
-							</h:inputSecret>
-							<h:outputLink action="#{loginpage.xhtml}">
-								<h:outputText value="Forgot Password" />
-							</h:outputLink>
-							<br />
-							<br />
-							<h:commandButton type="submit" name="loginbtn" value="Sign In"
-								action="#{employee_login.login()}" />
-							<br />
-							<br />
-						</h:form>
-					</div>
+	<ui:define name="maincontent">
+		<article class="wholebody">
+			<br /> <br />
+			<div class="col-3 col-m-3 leftpic">
+				<picture> <h:graphicImage library="images"
+					name="img/gnome-06.jpg" media="(max-width: 720px)" /> <h:graphicImage
+					library="images" name="img/zombiefeast.jpg"
+					media="(max-width: 767px)" /> <h:graphicImage library="images"
+					name="img/gnome-06.jpg" media="(max-width: 920px)" /> <h:graphicImage
+					library="images" name="img/zombiefeast.jpg" /> <h:graphicImage
+					library="images" name="img/zombiefeast.jpg" style="width: auto" />
+				</picture>
+				<p>
+					<a href="help.xhtml">Contact NB Gardens</a>
+				</p>
+			</div>
+			<div class="col-6 col-m-9">
+				<div class="loginform">
+					<h4>Login</h4>
+					<h:form>
+						<p>Username</p>
+						<h:inputText value="#{login.username}" required="true"
+							requiredMessage="Enter Username"></h:inputText>
+						<p>
+							<a href="#forgottenusername">Forgotten your username?</a>
+						</p>
+						<p>Password</p>
+						<h:inputSecret value="#{login.password}" required="true"
+							requiredMessage="Enter Password" validatorMessage="Please enter a password">
+							<f:validateLength minimum="8" maximum="35" />
+						</h:inputSecret>
+						<p>
+							<a href="forgottenpassword">Forgotten your password?</a>
+						</p>
+						<br />
+						<h:commandButton type="submit" name="loginbtn" value="Sign In"
+							action="#{login.login()}" />
+						<br />
+						<br />
+					</h:form>
+					<h:form action="signup.xhtml">
+						<hr />
+						<p>Are you a new user?</p>
+						<h:commandButton type="submit" name="signup" value="Sign-Up"
+							action="signup" />
+					</h:form>
 				</div>
-			</article>
-		</ui:define>
-	</body>
+			</div>
+			<div class="col-3 col-m-12 rightpic">
+				<picture> <h:graphicImage library="images"
+					name="img/gnome-07.jpg" media="(max-width: 720px)" /> <h:graphicImage
+					library="images" name="img/zombie_gnome_fishing.jpg"
+					media="(max-width: 767px)" /> <h:graphicImage library="images"
+					name="img/gnome-07.jpg" media="(max-width: 920px)" /> <h:graphicImage
+					library="images" name="img/zombie_gnome_fishing.jpg" /> <h:graphicImage
+					library="images" name="img/zombie_gnome_fishing.jpg"
+					style="width: auto" /> </picture>
+				<p>
+					<a href="help.xhtml">Terms of Agreement</a>
+				</p>
+			</div>
+		</article>
+	</ui:define>
 </ui:composition>

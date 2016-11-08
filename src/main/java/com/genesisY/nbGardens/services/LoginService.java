@@ -3,14 +3,12 @@ package com.genesisY.nbGardens.services;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
-import com.genesisY.nbGardens.entities.Employee;
-import com.genesisY.nbGardens.entityManagers.AccountManager;
+import com.genesisY.nbGardensCatalogue.entities.Customer;
+import com.genesisY.nbGardensCatalogue.entityManagers.AccountManager;
 
 @Stateless
 
@@ -19,7 +17,7 @@ public class LoginService {
 	@Inject
 	private AccountManager accountManager;
 
-	private Employee getEmployeeByUsername(String username) {
+	private Customer getCustomerByUsername(String username) {
 		try {
 			if (username != null) {
 				return accountManager.findByUsername(username);
@@ -31,26 +29,6 @@ public class LoginService {
 		return null;
 	}
 
-	private boolean userValidate(String username) {
-		boolean validate = false;
-		Pattern pattern = Pattern.compile("^[0-9a-zA-Z_]+$");
-		Matcher matcher = pattern.matcher(username);
-		if (username.length() > 7 && username.length() < 45) {
-			if (matcher.find()) {
-				validate = true;
-			}
-		}
-		return validate;
-	}
-
-	private boolean passValidate(String password) {
-		boolean validate = false;
-		if (password.length() > 8 && password.length() < 35) {
-			validate = true;
-		}
-		return validate;
-	}
-	
 	private String hash(String pass) {
 		byte[] digested = null;
 		String passhash;
@@ -77,10 +55,15 @@ public class LoginService {
 	}
 
 	public boolean passCheck(String username, String password) {
-		Employee e = getEmployeeByUsername(username);
-		if (e != null) {
+		System.out.println(username+ "<><><><>"+ password);
+		Customer gnome = getCustomerByUsername(username);
+		if (gnome != null) {
 			String pass = hash(password);
-			if (password.equals(e.getPassword())) {
+			for (int x = 0; x<1000; x++){
+				pass = hash(pass);
+			}
+			System.out.println(">>>>>>>>> " + pass);
+			if (pass.equals(gnome.getPassword())) {
 				return true;
 			}
 		}

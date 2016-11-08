@@ -6,10 +6,11 @@ import javax.enterprise.context.SessionScoped;
 
 @SuppressWarnings("serial")
 @SessionScoped
-public class UserCredentials implements Serializable{
-	
-	private String username;
-	private boolean loggedin;
+public class UserCredentials implements Serializable {
+
+	private String username = "";
+
+	private boolean loggedin = false;
 	
 	protected String getUsername() {
 		return username;

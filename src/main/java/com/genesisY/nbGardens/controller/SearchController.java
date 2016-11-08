@@ -1,16 +1,19 @@
 package com.genesisY.nbGardens.controller;
 
-import javax.enterprise.context.RequestScoped;
+import java.io.Serializable;
+
+import javax.enterprise.context.SessionScoped;
 import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.genesisY.nbGardens.entities.Product;
 import com.genesisY.nbGardens.services.SearchService;
+import com.genesisY.nbGardensCatalogue.entities.Product;
 
+@SuppressWarnings("serial")
 @Named("search")
-@RequestScoped
-public class SearchController {
+@SessionScoped
+public class SearchController implements Serializable {
 
 	@Inject
 	private SearchService searchService;
@@ -18,8 +21,7 @@ public class SearchController {
 	@Inject
 	private ProductsController prodController;
 
-	private Product product;
-	private String term;
+	private String term = "";
 
 	public String getTerm() {
 		return term;
@@ -29,27 +31,22 @@ public class SearchController {
 		this.term = term;
 	}
 
-	public Product getProduct() {
-		return product;
-	}
-
-	public void setProduct(Product product) {
-		this.product = product;
-	}
-
+	/**
+	 * Takes the term that the customer searches with and sends it to the service layer to be checked
+	 * @return String : the subcategory page or the index page depending if the term has a value
+	 */
 	public String search() {
-	
-		if (term != null)
-		{	
 
-			prodController.setDataModel(new ListDataModel<Product>(searchService.prodSearch(term)));
-			return "subcategory";
-			
-		}else{
-			return "category";
-			
+		if (term != "") {
+			if (searchService.getSearchedProducts(term) != null) {
+				prodController.setDataModel(new ListDataModel<Product>(searchService.getSearchedProducts(term)));
+				
+				return "subcategory";
+			} else {
+				return "index";
+			}
+		} else {
+			return "index";
 		}
-		
 	}
-
 }

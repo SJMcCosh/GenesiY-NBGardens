@@ -1,6 +1,7 @@
 package com.genesisY.nbGardens.controller;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.model.DataModel;
@@ -8,175 +9,89 @@ import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.genesisY.nbGardens.entities.PaginationHelper;
-import com.genesisY.nbGardens.entities.Product;
-import com.genesisY.nbGardens.entities.Supplier;
 import com.genesisY.nbGardens.services.ProductService;
-import com.genesisY.nbGardens.services.SupplierService;
+import com.genesisY.nbGardensCatalogue.entities.PaginationHelper;
+import com.genesisY.nbGardensCatalogue.entities.Product;
+import com.genesisY.nbGardensCatalogue.entities.Tag;
 
 @SuppressWarnings("serial")
 @Named("products")
 @SessionScoped
 public class ProductsController implements Serializable {
 
-	private Product product;
-	private String price = "";
-	private String name = "";
-	private String description = "";
-	private String specification = "";
-	private DataModel<Product> dataModel = null;
-	private PaginationHelper pagination;
-	private int selected;
-	private boolean status; 
-	private DataModel<Supplier> dataSupplier = null;
 	@Inject
 	private ProductService productService;
+	private Product product;
+	private DataModel<Product> dataModel = null;
+	private DataModel<Tag> tagModel = null;
+	private PaginationHelper pagination;
+	private int selected;
+	private String category = "all";
+	private Tag[] tagArray;
+	private String[] tagNameArray;
+	private String lowerBound;
+	private String upperBound;
+	private int quantityOfItemsSelected;
 
-	public String getAllProducts() {
 
-		dataModel = new ListDataModel<Product>(productService.viewProducts());
-		return "newpurchaseorder";
+	public int getSelected() {
+		return selected;
+	}
+
+	public void setSelected(int selected) {
+		this.selected = selected;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public DataModel<Tag> getTagModel() {
+		return tagModel;
+	}
+
+	public void setTagModel(DataModel<Tag> tagModel) {
+		this.tagModel = tagModel;
 	}
 
 	public String viewProduct(Product p) {
 		product = productService.getProductByName(p.getName());
 		System.out.println(">>>>>>>>>>>>>>>>>>> Product Name = " + product.getName());
-		setName(product.getName());
-		setPrice(Double.toString(product.getPrice()));
-		setDescription(product.getDesc());
-		setSpecification(product.getSpecification());
-		getDataSupplier(p);
-		return "product";
+		return "productpage";
 	}
 
-	public String onLoad() {
-		dataModel = new ListDataModel<Product>(productService.getAllProducts());
+	public String allProducts() {
+		dataModel = getDataModel();
 		return "subcategory";
 	}
 
-	public String updateProduct() {
-
-		product.setName(name);
-		// product.setPrice(Double.parseDouble(price));
-		product.setDesc(description);
-		product.setSpecification(specification);
-		System.out.println(">>>>>>>>>>>>" + getPrice());
-		productService.updateProduct(product);
-
-		return "product";
-	}
-	public String discontinueProduct(){ 
-		product.setStatus(false);
-		return "product"; 
-	}
-
-	public PaginationHelper getPagination() {
-		if (pagination == null) {
-			pagination = new PaginationHelper(15) {
-				@Override
-				public int getItemsCount() {
-					return productService.viewProducts().size();
-				}
-
-				@Override
-				public DataModel<Product> createPageDataModel() {
-					try {
-						return new ListDataModel<Product>(productService.viewProducts().subList(getPageFirstItem(),
-								getPageFirstItem() + getPageSize()));
-					} catch (Exception e) {
-						return new ListDataModel<Product>(
-								productService.viewProducts().subList(getPageFirstItem(), getItemsCount()));
-					}
-				}
-			};
-		}
-		return pagination;
-	}
-
-	private void updateCurrentItem() {
-		int count = productService.viewProducts().size();
-		if (selected >= count) {
-			selected = count - 1;
-			if (pagination.getPageFirstItem() >= count) {
-				pagination.previousPage();
-			}
-		}
-		if (selected >= 0) {
-			try {
-				setProduct(productService.viewProducts().subList(selected, selected + 1).get(0));
-			} catch (Exception e) {
-				setProduct(productService.viewProducts().subList(selected, count).get(0));
-			}
-		}
-	}
-
-	public String next() {
-		getPagination().nextPage();
-		recreateModel();
-		return "viewsupplier";
-	}
-
-	public String previous() {
-		getPagination().previousPage();
-		recreateModel();
-		return "viewsupplier";
-	}
-
-	private void recreateModel() {
-		dataModel = null;
-	}
-
+	@SuppressWarnings("unchecked")
 	public DataModel<Product> getDataModel() {
+		if (dataModel == null){
+			dataModel = getPagination().createPageDataModel();
+		}
 		return dataModel;
 	}
 
 	public void setDataModel(DataModel<Product> dataModel) {
-		for (Product p : dataModel) {
-			System.out.println(">>>>>>>>>>>" + p.getDesc());
-		}
 		this.dataModel = dataModel;
 	}
 
-	
-	
-	
-	
-	public String getPrice() {
-		return price;
-	}
-	
-	
-	public void setStatus(boolean status){
-		this.status = status;  
-	}
-	
-	public boolean getStatus(){ 
-		
-		return status; 
-		}
-
-	public void setPrice(String price) {
-		product.setPrice(Double.parseDouble(price));
-		this.price = price;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-
-		this.name = name;
-	}
-
 	public String view() {
-
 		return "productpage";
 	}
 
 	public String view(long id) {
 
 		return "productpage";
+	}
+
+	public void setPagination(PaginationHelper pagination) {
+		this.pagination = pagination;
 	}
 
 	public Product getProduct() {
@@ -187,33 +102,111 @@ public class ProductsController implements Serializable {
 		this.product = product;
 	}
 
-	public String getDescription() {
-		return description;
+	private void recreateModel(){
+		dataModel = null;
+	}
+	
+	public String previous(){
+		getPagination().previousPage();
+		recreateModel();
+		return "subcategory";
+	}
+	
+	public String next(){
+		getPagination().nextPage();
+		recreateModel();
+		return "subcategory";
+	}
+	
+	@SuppressWarnings("unused")
+	private void updateCurrentItem(){
+		int count = productService.getAllProducts(category).size();
+		if (selected >= count){
+			selected = count - 1;
+			if (pagination.getPageFirstItem() >= count){
+				pagination.previousPage();
+			}
+		}
+		if (selected >= 0){
+			try{
+				setProduct(productService.getAllProducts(category).subList(selected, count).get(0));
+			} catch (Exception e){
+				setProduct(productService.getAllProducts(category).subList(selected, count).get(0));
+			}
+		}
+	}
+	
+	public PaginationHelper getPagination(){
+		if (pagination == null){
+			pagination = new PaginationHelper(12){
+				@Override
+				public int getItemsCount(){
+					return productService.getAllProducts(category).size();
+				}
+				
+				@Override
+				public DataModel<Product> createPageDataModel(){
+					try{
+						return new ListDataModel<Product>(productService.getAllProducts(category).subList(getPageFirstItem(), getPageFirstItem()+ getPageSize()));
+					} catch(Exception e){
+						return new ListDataModel<Product>(productService.getAllProducts(category).subList(getPageFirstItem(), getItemsCount()));
+					}
+				}
+			};
+		}
+		return pagination;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public Tag[] getTagArray() {
+		Tag[] tags = new Tag[tagModel.getRowCount()];
+		int count = 0;
+		for(Tag tag: tagModel){
+			tags[count]=tag;
+			count++;
+		}
+		return tags;
 	}
 
-	public String getSpecification() {
-		return specification;
+	public void setTagArray(Tag[] tagArray) {
+		this.tagArray = tagArray;
 	}
 
-	public void setSpecification(String specification) {
-		this.specification = specification;
+	public String[] getTagNameArray() {
+		return tagNameArray;
 	}
 
-	public DataModel<Supplier> getDataSupplier(Product product) {
-		dataSupplier = new ListDataModel<Supplier>(productService.getSuppliers(product));
-		return dataSupplier;
+	public void setTagNameArray(String[] tagNameArray) {
+		this.tagNameArray = tagNameArray;
+	}
+	
+	public String getTagNameArrayInString(){
+		return Arrays.toString(getTagNameArray());
+	}
+	public DataModel<Product> getDataModel2(){
+		return dataModel;
 	}
 
-	public DataModel<Supplier> getDataSupplier() {
-		return dataSupplier;
+	public String getLowerBound() {
+		return lowerBound;
 	}
 
-	public void setDataSupplier(DataModel<Supplier> dataSupplier) {
-		this.dataSupplier = dataSupplier;
+	public void setLowerBound(String lowerBound) {
+		this.lowerBound = lowerBound;
 	}
 
+	public String getUpperBound() {
+		return upperBound;
+	}
+
+	public void setUpperBound(String upperBound) {
+		this.upperBound = upperBound;
+	}
+
+	public int getQuantityOfItemsSelected() {
+		return quantityOfItemsSelected;
+	}
+
+	public void setQuantityOfItemsSelected(int quantityOfItemsSelected) {
+		this.quantityOfItemsSelected = quantityOfItemsSelected;
+	}
 }

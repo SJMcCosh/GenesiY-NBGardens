@@ -1,0 +1,66 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/template.xhtml">
+	<meta charset="ISO-8859-1" />
+	<ui:define name="maincontent">
+		<article class="wholebody">
+			<div>
+				<h3>Account Details</h3>
+			</div>
+			<div class="viewaccount">
+				<div class="col-4 col-m-4">
+					<div class="billingadd">
+						<p>
+							<a><b>Billing Address</b></a>
+						</p>
+						<p><h:outputText value="#{customer.address.addressLine1}" /></p>
+						<p><h:outputText value="#{customer.address.addressLine2}" /></p>
+						<p><h:outputText value="#{customer.address.addressLine3}" /></p>
+						<p><h:outputText value="#{customer.address.townCity}" /></p>
+						<p><h:outputText value="#{customer.address.county}" /></p>
+						<p><h:outputText value="#{customer.address.postcode}" /></p>
+					</div>
+				</div>
+				<div class="col-4 col-m-4">
+					<div class="details">
+						<p>
+							<a><b>Username:</b> <h:outputText value="#{customer.customer.username}" /></a>
+						</p>
+						<p>
+							<a><b>Name:</b> <h:outputText value="#{customer.customer.firstName}" /></a>
+						</p>
+						<p>
+							<a><b>Phone Number:</b> <h:outputText value="#{customer.customer.phoneNumber}" /></a>
+						</p>
+						<p>
+						
+							<a><b>Email:</b> <h:outputText value="#{customer.customer.email}" /></a>
+						</p>
+					</div>
+				</div>
+				<div class="col-4 col-m-4">
+					<h:form class="editing">
+						<p>
+							<h:commandLink value = "View Addresses" action = "#{address.viewAddress()}" />
+						</p>
+						<p>
+							<h:commandLink value = "View Account Details" action = "#{customer.viewDetails()}" />
+						</p>
+						<p>
+							<h:commandLink value = "Edit Account Details" action = "editdetails" />
+						</p>
+						<p>
+							<h:commandLink value = "Change Your Password" action = "changepassword" />
+						</p>
+						<p>
+							<h:commandLink value = "Add Address" action = "addaddress" />
+						</p>
+					</h:form>
+				</div>
+			</div>
+		</article>
+
+	</ui:define>
+</ui:composition>

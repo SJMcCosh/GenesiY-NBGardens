@@ -4,49 +4,127 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/template.xhtml">
 	<meta charset="ISO-8859-1" />
-	<ui:define name="content">
-		<h1>SubCategory</h1>
+	<ui:define name="maincontent">
+
 		<f:metadata>
-			<f:event type="preRenderView" listener="#{categories.onLoad}" />
+			<f:event type="preRenderView" listener="#{filter.load}" />
 		</f:metadata>
+
 		<div class="row">
-			<div class="col-3 col-m-3 categoryList">
-				<h:form>
-					<ui:repeat var="category" value="#{categories.dataModel}">
-						<ul>
-							<li><h:commandButton value="#{category.name}"
-									actionListener="#{categories.filterByCategory(category.name)}" /></li>
-						</ul>
-					</ui:repeat>
-				</h:form>
-			</div>
 			<!-- Main content for the page -->
-			<div class="col-9 col-m-12">
-				<h:form class="tfnewsearch" method="get">
-					<h:inputText class="tftextinput" value="#{search.term}" />
-					<h:commandButton class="tfbutton" type="submit"
-						action="#{search.search}" value="Search" />
-				</h:form>
-			</div>
-			<!-- This is the product grid -->
-			<h:form id="productGrid">
-				<div class="col-9 col-m-12">
-					<ul>
-						<ui:repeat var="product" value="#{products.dataModel}">
-							<h:commandLink action="#{products.viewProduct(product)}">
-								<div class="index_featured_products_product">
-									<img class="index_featured_products_product_image"
-										src="#{product.imageLocation}" />
-									<ul>
-										<li><h:outputText value="#{product.name}"
-												class="index_featured_products_product_title" /></li>
-									</ul>
-								</div>
-							</h:commandLink>
-						</ui:repeat>
-					</ul>
+
+
+			<h:form class="col-3 col-m-6 tagbar">
+				<div class="tagbar">
+					<p>
+						<b>Tags</b>
+					</p>
+					<h:selectManyCheckbox layout="pageDirection"
+						value="#{products.tagNameArray}">
+						<f:selectItems value="#{products.tagModel}" var="tag"
+							itemLabel="#{tag.name}" itemValue="#{tag.name}" />
+						<f:ajax listener="#{filter.filterProductsByTag}" render="@all" />
+					</h:selectManyCheckbox>
+
+					<p>
+						<b>Prices</b>
+					</p>
+					<h:panelGrid columns="1" style="margin-bottom: 10px">
+						<h:outputText id="displayRange"	value="Between #{products.lowerBound} and #{products.upperBound}" />
+						
+					</h:panelGrid>
+					<h:inputHidden id="txt6" value="#{products.lowerBound}" />
+					<h:inputHidden id="txt7" value="#{products.upperBound}" />
 				</div>
 			</h:form>
+
+
+
+			<h:form>
+				<div class="col-9 col-m-6">
+					<h:selectOneMenu value="#{sort.sorter}">
+						<f:selectItem itemLabel="Rating" itemValue="Rating" />
+						<f:selectItem itemLabel="Price Low to High"
+							itemValue="Price Low to High" />
+						<f:selectItem itemLabel="Price High to Low"
+							itemValue="Price High to Low" />
+						<f:ajax listener="#{sort.sort}" render="@all" />
+					</h:selectOneMenu>
+				</div>
+
+
+			</h:form>
+
+			<!-- Pagination bit -->
+
+
+
+			<h:form>
+				<h:outputText escape="false" value="No Products Found"
+					rendered="#{products.dataModel.rowCount == 0}" />
+				<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
+					<h:outputText
+						value="Displaying products #{products.pagination.pageFirstItem + 1} to #{products.pagination.pageLastItem + 1} of #{products.pagination.itemsCount}" />
+					<h:commandButton value="Previous #{products.pagination.pageSize}"
+						action="#{products.previous}"
+						rendered="#{products.pagination.hasPreviousPage}" />
+					<h:commandButton value="Next #{products.pagination.pageSize}"
+						action="#{products.next}"
+						rendered="#{products.pagination.hasNextPage}" />
+				</h:panelGroup>
+			</h:form>
+
+
+			<!-- This is the product grid -->
+
+			<!-- This is the product grid -->
+			<h:form>
+
+				<div class="col-9 col-m-6">
+					<ul>
+						<ui:repeat var="product" value="#{products.dataModel}">
+							<h:panelGroup rendered="#{product.toRender}">
+								<h:commandLink action="#{products.viewProduct(product)}"
+									class="col-3 col-m-6">
+
+									<div class="listofproducts">
+										<img class="subcat_images" src="#{product.imageLocation}" />
+										<ul>
+											<li><h:outputText value="#{product.name}"
+													class="index_featured_products_product_title" /></li>
+											<li><h:outputText value="#{product.price}"
+													class="index_featured_products_product_price" /></li>
+											<li><h:outputText value="#{product.averageRating}"
+													class="index_featured_products_product_price" /></li>
+										</ul>
+
+									</div>
+
+								</h:commandLink>
+							</h:panelGroup>
+						</ui:repeat>
+
+					</ul>
+
+				</div>
+
+			</h:form>
+			<div class="paginatorbutton">
+				<h:form>
+					<h:outputText escape="false" value="No Products Found"
+						rendered="#{products.dataModel.rowCount == 0}" />
+					<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
+						<h:outputText
+							value="Displaying products #{products.pagination.pageFirstItem + 1} to #{products.pagination.pageLastItem + 1} of #{products.pagination.itemsCount}" />
+						<h:commandButton value="Previous #{products.pagination.pageSize}"
+							action="#{products.previous}"
+							rendered="#{products.pagination.hasPreviousPage}" />
+						<h:commandButton value="Next #{products.pagination.pageSize}"
+							action="#{products.next}"
+							rendered="#{products.pagination.hasNextPage}" />
+					</h:panelGroup>
+				</h:form>
+			</div>
 		</div>
 	</ui:define>
 </ui:composition>

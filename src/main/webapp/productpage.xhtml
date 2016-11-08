@@ -1,0 +1,185 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/template.xhtml">
+	<meta charset="ISO-8859-1" />
+	<ui:define name="maincontent">
+
+
+		<script type="text/javascript">
+			//<![CDATA[				
+			function performPostAjaxCommands() {
+				$("#basket_item_removed_popup").show();
+			}
+
+			function closeRemoveItemPopup() {
+				$("#basket_item_removed_popup").hide();
+			}
+			//]]>
+		</script>
+
+
+		<div id="basket_item_removed_popup">
+			<img onclick="closeRemoveItemPopup()" id="item_popup_close_button"
+				src="img/BasketImages/popupclose.png" />
+			<p>Added to Basket</p>
+		</div>
+
+		<div class="maincontent">
+			<div class="productcontent">
+
+
+				<!-- Images for the content -->
+				<div class=" productimages col-4 col-m-4">
+					<picture>
+					<source srcset="img/gnome.jpg" media="(max-width: 600px)" />
+					<img src="#{products.product.imageLocation}" style="width: auto;" /></picture>
+				</div>
+
+				<div class="productinformation col-8 col-m-8">
+					<h:form>
+						<div>
+							<h:outputText value="#{products.product.name}" />
+						</div>
+						<!-- Description for the product -->
+						<div>
+							<ul>
+								<li><h:outputText value="#{products.product.description}" /></li>
+								<li><h:outputText value="#{products.product.weight}" /></li>
+								<li><h:outputText value="#{products.product.size}" /></li>
+
+							</ul>
+						</div>
+
+
+
+						<!-- Star Rating -->
+						<!-- <div>
+						<form action="">
+							<input class="star star-5" id="star-5" type="radio" name="star" ></input>
+							<label class="star star-5" for="star-5"></label> 
+							<input class="star star-4" id="star-4" type="radio" name="star" ></input> 
+							<label class="star star-4" for="star-4"></label> 
+							<input class="star star-3" id="star-3" type="radio" name="star" ></input> 
+							<label class="star star-3" for="star-3"></label> 
+							<input class="star star-2" id="star-2" type="radio" name="star" ></input> 
+							<label class="star star-2" for="star-2"></label> 
+							<input class="star star-1" id="star-1" type="radio" name="star" ></input> 
+							<label class="star star-1" for="star-1"></label>
+						</form>
+					</div>  -->
+
+						<!-- Price -->
+						<div>
+							<h:outputText value="#{products.product.price}" />
+						</div>
+
+						<!-- Amount -->
+						<!-- This is the dropdown for selecting different quantities -->
+						<h:selectOneMenu value="#{products.quantityOfItemsSelected}"
+							onchange="submit()">
+							<f:selectItem itemValue="1" itemLabel="1" />
+							<f:selectItem itemValue="2" itemLabel="2" />
+							<f:selectItem itemValue="3" itemLabel="3" />
+							<f:selectItem itemValue="4" itemLabel="4" />
+							<f:selectItem itemValue="5" itemLabel="5" />
+							<f:selectItem itemValue="6" itemLabel="6" />
+							<f:selectItem itemValue="7" itemLabel="7" />
+							<f:selectItem itemValue="8" itemLabel="8" />
+							<f:selectItem itemValue="9" itemLabel="9" />
+							<f:selectItem itemValue="10" itemLabel="10" />
+						</h:selectOneMenu>
+
+						<!-- Porous check box -->
+						<!-- <div>
+						<form>
+							<input type="checkbox" name="porous" value="Porous"><a
+								href="help.html"> What is porous?</a>
+						</form>
+					</div>  -->
+
+						<!-- Stock -->
+						<div>
+							<p>Stock alert</p>
+						</div>
+
+						<!-- Cart button -->
+
+						<h:commandButton type="submit" name="addtocart"
+							value="Add To Cart" action="#{addBasket.addToBasket()}">
+							<f:ajax execute="@form" render="@form"
+								onevent="performPostAjaxCommands()" />
+						</h:commandButton>
+					</h:form>
+				</div>
+			</div>
+			<hr />
+			<!-- Related Products -->
+			<h:form>
+				<div class="related-products col-12 col-m-12">
+					<h2>Related Products</h2>
+
+					<div id="index_lower_content_master_wrapper">
+						<div id="index_featured_products_wrapper_outer">
+							<div id="index_featured_products_wrapper_inner">
+								<!-- THE JSF VERSION OF THE FEATURED PRODUCTS -->
+								<ui:repeat var="product" value="#{products.dataModel}">
+									<h:commandLink action="#{products.viewProduct(product)}"
+										class="col-3 col-m-6">
+
+										<div class="listofproducts">
+											<img class="subcat_images" src="#{product.imageLocation}" />
+											<ul>
+												<li><h:outputText value="#{product.name}"
+														class="index_featured_products_product_title" /></li>
+												<li><h:outputText value="#{product.price}"
+														class="index_featured_products_product_price" /></li>
+												<li><h:outputText value="#{product.averageRating}"
+														class="index_featured_products_product_price" /></li>
+											</ul>
+
+										</div>
+
+									</h:commandLink>
+								</ui:repeat>
+							</div>
+						</div>
+					</div>
+				</div>
+			</h:form>
+
+			<hr />
+			<!-- Reviews -->
+			<div class="reviews col-12 col-m-12">
+				<h2>Reviews</h2>
+				<ul>
+					<li>
+						<div class="review">
+							<h3 class="col-10 col-m-10">Person</h3>
+							<!-- Star Rating -->
+							<div class="col-2 col-m-2">
+								<form action="">
+									<input class="star star-5" id="star-5" type="radio" name="star" />
+									<label class="star star-5" for="star-5"></label> <input
+										class="star star-4" id="star-4" type="radio" name="star" /> <label
+										class="star star-4" for="star-4"></label> <input
+										class="star star-3" id="star-3" type="radio" name="star" /> <label
+										class="star star-3" for="star-3"></label> <input
+										class="star star-2" id="star-2" type="radio" name="star" /> <label
+										class="star star-2" for="star-2"></label> <input
+										class="star star-1" id="star-1" type="radio" name="star" /> <label
+										class="star star-1" for="star-1"></label>
+								</form>
+							</div>
+
+							<p class="col-12 col-m-12">The review</p>
+
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</ui:define>
+</ui:composition>

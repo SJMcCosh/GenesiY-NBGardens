@@ -1,0 +1,44 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/template.xhtml">
+	<meta charset="ISO-8859-1" />
+	<ui:define name="maincontent">
+		<article class="wholebody">
+
+			<div class="addanaddress">
+				<h4>Add an Address</h4>
+				<div class="col-12 col-m-9">
+					<div class="newaddress">
+						<div id="addresstext">
+							<h:form>
+								<p>Address line 1</p>
+								<h:inputText value="#{address.line1}" id="addressline1"
+									title="Address Line 1"></h:inputText>
+								<p>Address line 2</p>
+								<h:inputText value="#{address.line2}"></h:inputText>
+								<p>Address line 3</p>
+								<h:inputText value="#{address.line3}"></h:inputText>
+								<p>Town/City</p>
+								<h:inputText value="#{address.towncity}"></h:inputText>
+								<p>County</p>
+								<h:inputText value="#{address.county}"></h:inputText>
+								<p>Postcode</p>
+								<h:inputText value="#{address.postcode}"></h:inputText>
+								<br />
+								<br />
+								<h:commandButton id="addaddress" value="Add Address"
+									action="#{customer.addaddress(address)}" />
+								<br />
+								<br />
+							</h:form>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</article>
+
+	</ui:define>
+</ui:composition>

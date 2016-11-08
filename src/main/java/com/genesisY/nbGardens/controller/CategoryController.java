@@ -2,75 +2,39 @@ package com.genesisY.nbGardens.controller;
 
 import java.io.Serializable;
 
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.genesisY.nbGardens.entities.Category;
-import com.genesisY.nbGardens.entities.Product;
 import com.genesisY.nbGardens.services.CategoryService;
+import com.genesisY.nbGardensCatalogue.entities.Category;
 
 @SuppressWarnings("serial")
-@Named("categories")
+@Named("category")
 @SessionScoped
 public class CategoryController implements Serializable {
-	
+
+	private DataModel<Category> catModel;
 	@Inject
 	private CategoryService catService;
-	
-	@Inject
-	private ProductsController prodController;
-	
-	private DataModel<Category> dataModel;
-	
-    private Category category;
-	//private String name = "";
-	
-	public String onLoad()
-	{
-		dataModel = new ListDataModel<Category>(catService.getAllCategories());
-		return "categories";
+
+	public DataModel<Category> getCatModel() {
+		return catModel;
 	}
 
-	public DataModel<Category> getDataModel() {
-		return dataModel;
+	public void setCatModel(DataModel<Category> catModel) {
+		this.catModel = catModel;
 	}
 
-	public void setDataModel(DataModel<Category> dataModel) {
-		this.dataModel = dataModel;
-	}
-	
+	/**
+	 * Gets all the categories that are associated with a product
+	 * @return String : the page department
+	 */
 	public String getAllCategories() {
-		dataModel = new ListDataModel<>(catService.getAllCategories());
-		return "subcategory";
-	}
-	
-	public String filterByCategory(String catName)
-	{
-		//String catName = "Seasonal";
-		System.out.println(catName);
-		prodController.setDataModel(new ListDataModel<Product>(catService.getProductsByCategory(catName)));
-		return "subcategory";
+		catModel = new ListDataModel<>(catService.getAllCategories());
+		return "department";
 	}
 
-	public Category getCategory() {
-		return category;
-	}
-
-	public void setCategory(Category category) {
-		this.category = category;
-	}
-/*
-	public String getName() {
-		return category.getName();
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}*/
-	
-	}
-
+}
