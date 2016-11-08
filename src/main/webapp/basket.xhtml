@@ -87,7 +87,7 @@
 								<div id="basket_page_remove_item_button">
 									<!-- The delete item button which when clicked will delete and item from the array and refresh the form -->
 									<h:commandButton id="basket_page_remove_item_button" actionListener="#{basket.removeBasketItem(basketItem.product.name)}" image="img/BasketImages/removeitembutton.png">
-										 <f:ajax execute="@form" render="@form" onevent="performPostAjaxCommands()"/>										  
+										 <f:ajax execute="@form" render="@all" onevent="performPostAjaxCommands()"/>										  
 									</h:commandButton>
 								</div>									
 							</div>													

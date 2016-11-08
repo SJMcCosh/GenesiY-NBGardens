@@ -14,14 +14,14 @@
 						<div id="addresstext">
 							<h:form>
 								<p>Address line 1</p>
-								<h:inputText value="#{address.line1}" id="addressline1"
+								<h:inputText value="#{address.addressLine1}" id="addressline1"
 									title="Address Line 1"></h:inputText>
 								<p>Address line 2</p>
-								<h:inputText value="#{address.line2}"></h:inputText>
+								<h:inputText value="#{address.addressLine2}"></h:inputText>
 								<p>Address line 3</p>
-								<h:inputText value="#{address.line3}"></h:inputText>
+								<h:inputText value="#{address.addressLine3}"></h:inputText>
 								<p>Town/City</p>
-								<h:inputText value="#{address.towncity}"></h:inputText>
+								<h:inputText value="#{address.townCity}"></h:inputText>
 								<p>County</p>
 								<h:inputText value="#{address.county}"></h:inputText>
 								<p>Postcode</p>
@@ -29,7 +29,7 @@
 								<br />
 								<br />
 								<h:commandButton id="addaddress" value="Add Address"
-									action="#{customer.addaddress(address)}" />
+									action="#{address.addAddress}" />
 								<br />
 								<br />
 							</h:form>

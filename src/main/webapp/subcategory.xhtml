@@ -29,9 +29,10 @@
 					<p>
 						<b>Filter by Price</b>
 					</p>
+
 						<h:outputText value = "Minimum: "/><h:inputText value = "#{filter.minimum}" style = "width: 30px"/><h:outputText value = " Maximum: "/><h:inputText value = "#{filter.maximum}" style = "width: 30px"/>
 						<f:ajax event = "keyup" listener="#{filter.filterByPrice}" render="@all"/>
-						
+
 				</div>
 			</h:form>
 
@@ -90,7 +91,10 @@
 											<li><h:outputText value="#{product.name}"
 													class="index_featured_products_product_title" /></li>
 											<li><h:outputText value="#{product.price}"
-													class="index_featured_products_product_price" /></li>
+													class="index_featured_products_product_price">
+													<f:convertNumber type="currency" currencyCode="GBP" />
+
+												</h:outputText></li>
 											<li><h:outputText value="#{product.averageRating}"
 													class="index_featured_products_product_price" /></li>
 										</ul>

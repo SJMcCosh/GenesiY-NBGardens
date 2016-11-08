@@ -31,25 +31,12 @@ public class BasketService {
 		if (!matcher2.find()) {
 			return validate;
 		}
-		Pattern pattern3 = Pattern.compile("^[0-9a-zA-Z]+&");
+		Pattern pattern3 = Pattern.compile("^[0-9a-zA-Z/._-]+&");
 		Matcher matcher3 = pattern3.matcher(product.getImageLocation());
 		if (!matcher3.find()) {
 			return validate;
 		}
-		for (Review r : product.getReviews()) {
-			Pattern pattern4 = Pattern.compile("^[0-9a-zA-Z .!\"£$%^&*()':;,+-]+&");
-			Matcher matcher4 = pattern4.matcher(r.getReviewtext());
-			if (!matcher4.find()) {
-				return validate;
-			}
-		}
-		for (Tag t : product.getTagList()) {
-			Pattern pattern5 = Pattern.compile("^[a-zA-Z -]+&");
-			Matcher matcher5 = pattern5.matcher(t.getName());
-			if (!matcher5.find()) {
-				return validate;
-			}
-		}
+		
 		validate = true;
 		return validate;
 	}
@@ -75,9 +62,9 @@ public class BasketService {
 	}
 
 	public void addProductToBasket(Product product, int quantity) {
-		if (validateProduct(product)) {
+		
 			basketManager.addProductToCart(product, quantity);
-		}
+		
 	}
 
 }

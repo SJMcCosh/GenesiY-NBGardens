@@ -14,26 +14,59 @@
 				<div class="col-12 col-m-9">
 					<div class="changedetails">
 						<h:form>
-							<p>First Name</p>
-							<h:inputText value="#{detaileditor.firstName}"/>
-							<p>Surname</p>
-							<h:inputText value="#{detaileditor.surname}"/>
-							<p>Phone Number</p>
-							<h:inputText value="#{detaileditor.phoneNumber}"/>
-							<p>Email Address</p>
-							<h:inputText value="#{detaileditor.email}" p:type="email"
-								validatorMessage="Invalid email format"/>
-							<p>Please enter your username and password to confirm changes</p>
-							<p>Username</p>
-							<h:inputText value="#{detaileditor.username}" required="true" requiredMessage="Enter Username"/>
-							<p>Password</p>
-							<h:inputSecret value="#{detaileditor.password}" required="true"
-								requiredMessage="Enter Password"/>
-								
+
+							<br />
+							<h:outputText value="First Name: " />
+							<br />
+							<h:inputText value="#{editdetails.firstname}" required="true"
+								requiredMessage="First Name" />
 							<br />
 							<br />
+
+							<h:outputText value="Surname: " />
+							<br />
+							<h:inputText value="#{editdetails.surname}" required="true"
+								requiredMessage="Surname" />
+							<br />
+							<br />
+							<h:outputText value="Phone number: " />
+							<br />
+							<h:inputText value="#{editdetails.phoneNumber}" required="true"
+								requiredMessage="Phone number" />
+							<br />
+							<br />
+							<h:outputText value="Email: " />
+							<br />
+							<h:inputText value="#{editdetails.email}" required="true"
+								requiredMessage="Email" p:type="email"
+								validatorMessage="Invalid email format" />
+							<br />
+							<br />
+							<h:outputText
+								value="Please enter your username and password to confirm changes" />
+							<br />
+							<h:outputText value="Username: " />
+							<br />
+							<h:inputText value="#{editdetails.username}" required="true"
+								requiredMessage="Username" />
+							<br />
+							<br />
+							<h:outputText value="Password: " />
+							<br />
+							<h:inputSecret value="#{editdetails.password}" required="true"
+								requiredMessage="Password" />
+							<br />
+							<br />
+							<div class="errortext">
+								<h:outputText value="#{editdetails.error}"
+									 style="color:red" />
+							</div>
+
+
 							<h:commandButton type="submit" name="editdetails" value="Submit"
-								action="#{detaileditor.changeDetails()}" />
+								action="#{editdetails.updateCustomer}" > 
+								<f:ajax render="@form"/>
+								</h:commandButton>
 
 						</h:form>
 					</div>
