@@ -53,7 +53,7 @@ public class AddCustomerService {
 		for (int x = 0; x < 1000; x++) {
 			pass = hash(pass);
 		}
-		Customer c = new Customer(firstname, surname, email, username, password, phoneNumber);
+		Customer c = new Customer(firstname, surname, email, username, pass, phoneNumber);
 		accountManager.addCustomer(c);
 		Address a = new Address(addressLine1, addressLine2, addressLine3, townCity, county, postcode, true, c);
 		addressManager.addAddress(a);
