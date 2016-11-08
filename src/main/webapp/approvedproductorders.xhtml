@@ -3,9 +3,78 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/template.xhtml">
-	<meta charset="ISO-8859-1" title="IMS" />
-
+	<meta charset="ISO-8859-1" title="IMS View Supplier" />
 	<ui:define name="content">
-		<h1>Approved Product Orders</h1>
+		<div id="pageTitle">
+			<div class="col-12 col-m-12">
+				<h1>Suppliers</h1>
+			</div>
+		</div>
+		<div id="viewsuppliers">
+			<div class="col-12 col-m-12">
+				<div>
+					<h:form>
+						<h:outputText escape="false" value="No Supplier Found"
+							rendered="#{purchase.dataModel.rowCount == 0}" />
+						<h:panelGroup rendered="#{purchase.dataModel.rowCount>0}">
+							<h:outputText
+								value="#{purchase.pagination.pageFirstItem +1} to #{suppliers.pagination.pageLastItem+1} of #{suppliers.pagination.itemsCount} " />
+							<h:outputText value=" " />
+							<h:commandButton action="#{purchase.previous}"
+								value="Previous #{purchase.pagination.pageSize}"
+								rendered="#{purchase.pagination.hasPreviousPage}" />
+							<h:outputText value=" " />
+							<h:commandButton action="#{purchase.next}"
+								value="Next #{purchase.pagination.pageSize}"
+								rendered="#{purchase.pagination.hasNextPage}" />
+						</h:panelGroup>
+					</h:form>
+				</div>
+				<div class="addsupplink">
+					<h:form>
+						<h:commandButton action="addsupplier" value="Add Supplier" />
+					</h:form>
+				</div>
+			</div>
+			<ui:repeat var="suppliers" value="#{purchase.dataModel}">
+			<h:form>
+			<h:commandLink action="#{purchase.viewProducts(suppliers.dataModel.getRowData().supplierName)}">
+				<div class="productall">
+					<ul>
+						<div class="col-6 col-m-6">
+							<div class="suppliername">
+								<li><b>ID:</b> <h:outputText
+										value="#{purchase.dataModel.getRowData().supplierID}"></h:outputText></li>
+								<li><b>Name:</b> <h:outputText
+										value="#{purchase.dataModel.getRowData().supplierName}"></h:outputText></li>
+								<li><b>Phone Number:</b> <h:outputText
+										value="#{purchase.dataModel.getRowData().telephoneNumber}"></h:outputText></li>
+								<li><b>Email:</b> <h:outputText
+										value="#{purchase.dataModel.getRowData().emailAddress}"></h:outputText></li>
+							</div>
+						</div>
+						<div class="col-6 col-m-6">
+							<div class="supplieraddress">
+								<li><b>Address</b></li>
+								<li><h:outputText
+										value="#{purchase.dataModel.getRowData().getAddress().addressLine1}"></h:outputText></li>
+								<li><h:outputText
+										value="#{purcahse.dataModel.getRowData().getAddress().addressLine2}"></h:outputText></li>
+								<li><h:outputText
+										value="#{purchase.dataModel.getRowData().getAddress().addressLine3}"></h:outputText></li>
+								<li><h:outputText
+										value="#{purchase.dataModel.getRowData().getAddress().townCity}"></h:outputText></li>
+								<li><h:outputText
+										value="#{purchase.dataModel.getRowData().getAddress().country}"></h:outputText></li>
+								<li><h:outputText
+										value="#{purchase.dataModel.getRowData().getAddress().postcode}"></h:outputText></li>
+							</div>
+						</div>
+					</ul>
+				</div>
+				</h:commandLink>
+				</h:form>
+			</ui:repeat>
+		</div>
 	</ui:define>
 </ui:composition>
