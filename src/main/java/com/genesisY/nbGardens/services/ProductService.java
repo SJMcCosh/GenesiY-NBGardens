@@ -1,12 +1,10 @@
 package com.genesisY.nbGardens.services;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.ejb.Stateless;
-import javax.faces.model.DataModel;
 import javax.inject.Inject;
 
 import com.genesisY.nbGardensCatalogue.entities.Product;
@@ -54,7 +52,6 @@ public class ProductService {
 	 * @return List<Product> : the list of products that have been returned from
 	 *         the data store
 	 */
-	@SuppressWarnings("unchecked")
 	public List<Product> getAllProducts(String category) {
 		try {
 			if (category != null && categoryValidate(category)) {
@@ -81,6 +78,11 @@ public class ProductService {
 		return null;
 	}
 	
+	/**
+	 * Returns a list of products based on an input of a category.	
+	 * @param category: String - determines category to look at
+	 * @return List<Product> returns a list of products based on a category
+	 */
 	public List<Product> getCategoryProducts(String category) {
 		try {
 			if (category != null && categoryValidate(category)) {

@@ -21,7 +21,7 @@ public class SortController {
 	private SortingService sortingService;
 
 	/**
-	 * Allows a customer to sort the results of products depending on which type of sorting that is going on
+	 * Allows a customer to sort the results of products depending on which type of sorting that is going on - specifically for navigating through a department
 	 */
 	public void sort() {
 		String sort = getSorter();
@@ -38,6 +38,9 @@ public class SortController {
 			break;
 		}
 	}
+	/**
+	 * Method for sorting a search
+	 */
 	public void searchSort() {
 		String sort = getSorter();
 		System.out.println(">>>>>>>>>>> " + sort);
