@@ -71,7 +71,6 @@ public class ProductsController implements Serializable {
 	 * Sets dataModel to one generated through pagination
 	 * @return dataModel
 	 */
-	@SuppressWarnings("unchecked")
 	public DataModel<Product> getDataModel() {
 		if (dataModel == null) {
 			dataModel = getPagination().createPageDataModel();
@@ -202,6 +201,11 @@ public class ProductsController implements Serializable {
 		this.quantityOfItemsSelected = quantityOfItemsSelected;
 	}
 
+	/**
+	 * Gets a list of products in a category based on input category
+	 * @param String: category
+	 * @return String: page of products in the category
+	 */
 	public String getCategoryProducts(String category) {
 		setCategory(category);
 		productModel = null;
@@ -210,6 +214,10 @@ public class ProductsController implements Serializable {
 		return "subcategory";
 	}
 
+	/**
+	 * Generates a DataModel<Product> and assigns it to productModel
+	 * @return productModel
+	 */
 	public DataModel<Product> getProductModel() {
 		if (productModel == null) {
 			productModel = getPagination().createPageDataModel(category);
@@ -220,7 +228,6 @@ public class ProductsController implements Serializable {
 	public void setProductModel(DataModel<Product> productModel) {
 		this.productModel = productModel;
 	}
-	
 	
 	
 	public String averageRatingImg(Double rating)
@@ -245,8 +252,5 @@ public class ProductsController implements Serializable {
 		
 		return imageURI;
 	}
-	
-	
-	
 	
 }
