@@ -73,9 +73,15 @@
 						</form>
 					</div>  -->
 
+						<div>
+							<h:outputText value="#{products.product.averageRating}" />
+
+						</div>
 						<!-- Price -->
 						<div>
-							<h:outputText value="#{products.product.price}" />
+							<h:outputText value="#{products.product.price}">
+								<f:convertNumber type="currency" currencyCode="GBP" />
+							</h:outputText>
 						</div>
 
 						<!-- Amount -->
@@ -99,8 +105,7 @@
 						<form>
 							<input type="checkbox" name="porous" value="Porous"><a
 								href="help.html"> What is porous?</a>
-						</form>
-					</div>  -->
+						</form>-->
 
 						<!-- Stock -->
 						<div>
@@ -110,7 +115,7 @@
 						<!-- Cart button -->
 
 						<h:commandButton type="submit" name="addtocart"
-							value="Add To Cart" action="#{addBasket.addToBasket()}">
+							value="Add To Cart" action="#{addBasket.addToBasket}">
 							<f:ajax execute="@form" render="@this basketlink"
 								onevent="performPostAjaxCommands()" />
 						</h:commandButton>
@@ -174,7 +179,7 @@
 						</li>
 					</ul>
 				</ui:repeat>
-				</h:form>
+			</h:form>
 		</div>
 
 	</ui:define>
