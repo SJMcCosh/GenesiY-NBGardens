@@ -12,8 +12,6 @@ import javax.inject.Named;
 import com.genesisY.nbGardens.services.ProductService;
 import com.genesisY.nbGardensCatalogue.entities.PaginationHelper;
 import com.genesisY.nbGardensCatalogue.entities.Product;
-import com.genesisY.nbGardensCatalogue.entities.Review;
-import com.genesisY.nbGardensCatalogue.entities.Tag;
 
 @SuppressWarnings("serial")
 @Named("products")
@@ -23,16 +21,18 @@ public class ProductsController implements Serializable {
 	@Inject
 	private ProductService productService;
 	private Product product;
+	/**
+	 * DataModel<Product>: Used for searches and on the home page
+	 */
 	private DataModel<Product> dataModel = null;
-	private DataModel<Tag> tagModel = null;
 	private PaginationHelper pagination;
 	private int selected;
 	private String category = "All";
-	private Tag[] tagArray;
 	private String[] tagNameArray;
-	private String lowerBound;
-	private String upperBound;
 	private int quantityOfItemsSelected;
+	/**
+	 * DataModel<Product>: Used for navigation through categories
+	 */
 	private DataModel<Product> productModel = null;
 
 	public int getSelected() {
@@ -51,14 +51,11 @@ public class ProductsController implements Serializable {
 		this.category = category;
 	}
 
-	public DataModel<Tag> getTagModel() {
-		return tagModel;
-	}
-
-	public void setTagModel(DataModel<Tag> tagModel) {
-		this.tagModel = tagModel;
-	}
-
+	/**
+	 * Views a specific product based on click
+	 * @param p
+	 * @return String: Opens the productpage for a specific product
+	 */
 	public String viewProduct(Product p) {
 		product = productService.getProductByName(p.getName());
 		System.out.println(">>>>>>>>>>>>>>>>>>> Product Name = " + product.getName());
@@ -70,7 +67,10 @@ public class ProductsController implements Serializable {
 		return "subcategory";
 	}
 
-	@SuppressWarnings("unchecked")
+	/**
+	 * Sets dataModel to one generated through pagination
+	 * @return dataModel
+	 */
 	public DataModel<Product> getDataModel() {
 		if (dataModel == null) {
 			dataModel = getPagination().createPageDataModel();
@@ -80,15 +80,6 @@ public class ProductsController implements Serializable {
 
 	public void setDataModel(DataModel<Product> dataModel) {
 		this.dataModel = dataModel;
-	}
-
-	public String view() {
-		return "productpage";
-	}
-
-	public String view(long id) {
-
-		return "productpage";
 	}
 
 	public void setPagination(PaginationHelper pagination) {
@@ -103,41 +94,38 @@ public class ProductsController implements Serializable {
 		this.product = product;
 	}
 
+	/**
+	 * Sets the models to null
+	 */
 	private void recreateModel() {
 		dataModel = null;
 		productModel = null;
 	}
 
+	/**
+	 * Generates the previous page of products
+	 * @return String: page listing products
+	 */
 	public String previous() {
 		getPagination().previousPage();
 		recreateModel();
 		return "subcategory";
 	}
 
+	/**
+	 * Generates the next page of products
+	 * @return String: page listing products
+	 */
 	public String next() {
 		getPagination().nextPage();
 		recreateModel();
 		return "subcategory";
 	}
 
-	@SuppressWarnings("unused")
-	private void updateCurrentItem() {
-		int count = productService.getAllProducts(category).size();
-		if (selected >= count) {
-			selected = count - 1;
-			if (pagination.getPageFirstItem() >= count) {
-				pagination.previousPage();
-			}
-		}
-		if (selected >= 0) {
-			try {
-				setProduct(productService.getAllProducts(category).subList(selected, count).get(0));
-			} catch (Exception e) {
-				setProduct(productService.getAllProducts(category).subList(selected, count).get(0));
-			}
-		}
-	}
-
+	/**
+	 * Gets a pagination
+	 * @return PaginationHelper: for pagination
+	 */
 	public PaginationHelper getPagination() {
 		if (pagination == null) {
 			pagination = new PaginationHelper(12) {
@@ -160,6 +148,7 @@ public class ProductsController implements Serializable {
 								productService.getAllProducts(category).subList(getPageFirstItem(), getItemsCount()));
 					}
 				}
+
 				@Override
 				public DataModel<Product> createPageDataModel(String category) {
 					try {
@@ -175,20 +164,6 @@ public class ProductsController implements Serializable {
 		return pagination;
 	}
 
-	public Tag[] getTagArray() {
-		Tag[] tags = new Tag[tagModel.getRowCount()];
-		int count = 0;
-		for (Tag tag : tagModel) {
-			tags[count] = tag;
-			count++;
-		}
-		return tags;
-	}
-
-	public void setTagArray(Tag[] tagArray) {
-		this.tagArray = tagArray;
-	}
-
 	public String[] getTagNameArray() {
 		return tagNameArray;
 	}
@@ -197,31 +172,25 @@ public class ProductsController implements Serializable {
 		this.tagNameArray = tagNameArray;
 	}
 
+	/**
+	 * Returns a string of the TagNameArray
+	 * @return String
+	 */
 	public String getTagNameArrayInString() {
 		return Arrays.toString(getTagNameArray());
 	}
 
+	/**
+	 * Gets dataModel without changing it
+	 */
 	public DataModel<Product> getDataModel2() {
 		return dataModel;
 	}
+	/**
+	 * Gets productModel without changing it
+	 */
 	public DataModel<Product> getProductModel2() {
 		return productModel;
-	}
-
-	public String getLowerBound() {
-		return lowerBound;
-	}
-
-	public void setLowerBound(String lowerBound) {
-		this.lowerBound = lowerBound;
-	}
-
-	public String getUpperBound() {
-		return upperBound;
-	}
-
-	public void setUpperBound(String upperBound) {
-		this.upperBound = upperBound;
 	}
 
 	public int getQuantityOfItemsSelected() {
@@ -232,6 +201,11 @@ public class ProductsController implements Serializable {
 		this.quantityOfItemsSelected = quantityOfItemsSelected;
 	}
 
+	/**
+	 * Gets a list of products in a category based on input category
+	 * @param String: category
+	 * @return String: page of products in the category
+	 */
 	public String getCategoryProducts(String category) {
 		setCategory(category);
 		productModel = null;
@@ -240,6 +214,10 @@ public class ProductsController implements Serializable {
 		return "subcategory";
 	}
 
+	/**
+	 * Generates a DataModel<Product> and assigns it to productModel
+	 * @return productModel
+	 */
 	public DataModel<Product> getProductModel() {
 		if (productModel == null) {
 			productModel = getPagination().createPageDataModel(category);
@@ -250,4 +228,29 @@ public class ProductsController implements Serializable {
 	public void setProductModel(DataModel<Product> productModel) {
 		this.productModel = productModel;
 	}
+	
+	
+	public String averageRatingImg(Double rating)
+	{
+		String imageURI = "";
+		Integer starRating = rating.intValue();
+		switch(starRating)
+		{
+			case(0) : imageURI = "img/Ratings/0.png";
+						break;
+			case(1) : imageURI = "img/Ratings/1.png";
+						break;
+			case(2) : imageURI = "img/Ratings/2.png";
+						break;
+			case(3) : imageURI = "img/Ratings/3.png";
+						break;	
+			case(4) : imageURI = "img/Ratings/4.png";
+						break;			
+			case(5) : imageURI = "img/Ratings/5.png";
+						break;
+		}
+		
+		return imageURI;
+	}
+	
 }

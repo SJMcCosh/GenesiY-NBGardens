@@ -11,7 +11,13 @@ import com.genesisY.nbGardensCatalogue.entities.Tag;
 
 @Stateless
 public class FilterService {
-
+	
+	/**
+	 * Sets whether or not a product should render to true or false based on whether or not it contains the selected tags
+	 * @param tagList - Takes in a list of String
+	 * @param dataModel - takes in a Data Model of Product
+	 * @return dataModel: returns a DataModel.
+	 */
 	public DataModel<Product> filterByTag(List<String> tagList, DataModel<Product> dataModel) {
 		if (tagList.size() != 0 && tagList.get(0).equals("")) {
 			for (Product p : dataModel) {
@@ -34,6 +40,13 @@ public class FilterService {
 		return dataModel;
 	}
 
+	/**
+	 * Sets whether or not to render a product based on whether or not it is within the specified price range.
+	 * @param dataModel - takes in a Data Model of Product
+	 * @param minimum - the smallest value. A short.
+	 * @param maximum - the largest value. A short.
+	 * @return dataModel - returns a DataModel
+	 */
 	public DataModel<Product> filterByPrice(DataModel<Product> dataModel, short minimum, short maximum) {
 		for (Product p : dataModel) {
 			if (p.getPrice() < minimum || p.getPrice() > maximum) {

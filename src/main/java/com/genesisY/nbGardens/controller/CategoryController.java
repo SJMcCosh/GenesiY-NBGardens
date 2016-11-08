@@ -30,7 +30,7 @@ public class CategoryController implements Serializable {
 	}
 
 	/**
-	 * Gets all the categories that are associated with a product
+	 * Gets all the categories
 	 * @return String : the page department
 	 */
 	public String getAllCategories() {
@@ -45,23 +45,34 @@ public class CategoryController implements Serializable {
 	public void setDepartment(String department) {
 		this.department = department;
 	}
-	
-	public String getCategoriesByDepartment(){
-		catModel = new ListDataModel<Category>(catService.getCategoryByDepartment(department));
-		return "department";
-	}
+	/**
+	 * 
+	 * @return String: The outdoor living department
+	 */
 	public String getOutLivingCategories(){
 		catModel = new ListDataModel<Category>(catService.getCategoryByDepartment("Outdoor Living"));
 		return "department";
 	}
+	/**
+	 * 
+	 * @return String: The garden tools department
+	 */
 	public String getToolsCategories(){
 		catModel = new ListDataModel<Category>(catService.getCategoryByDepartment("Garden Tools"));
 		return "department";
 	}
+	/**
+	 * 
+	 * @return String: The Gnomes department
+	 */
 	public String getGnomeCategories(){
 		catModel = new ListDataModel<Category>(catService.getCategoryByDepartment("Gnomes"));
 		return "department";
 	}
+	/**
+	 * 
+	 * @return String: The outdoor buildings department
+	 */
 	public String getOutBuildsCategories(){
 		catModel = new ListDataModel<Category>(catService.getCategoryByDepartment("Outdoor Buildings"));
 		return "department";
