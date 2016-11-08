@@ -58,6 +58,7 @@
 				</div>
 			</div>
 			<div class="col-3 col-m-12 rightpic">
+				<h:form>
 				<picture> <h:graphicImage library="images"
 					name="img/gnome-07.jpg" media="(max-width: 720px)" /> <h:graphicImage
 					library="images" name="img/zombie_gnome_fishing.jpg"
@@ -67,8 +68,9 @@
 					library="images" name="img/zombie_gnome_fishing.jpg"
 					style="width: auto" /> </picture>
 				<p>
-					<a href="help.xhtml">Terms &amp; Conditions</a>
+					<h:commandLink action="terms" value="Terms &amp; Conditions" />
 				</p>
+				</h:form>
 			</div>
 		</article>
 	</ui:define>

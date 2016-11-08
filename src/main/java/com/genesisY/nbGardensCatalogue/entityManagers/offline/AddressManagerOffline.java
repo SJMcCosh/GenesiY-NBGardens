@@ -29,7 +29,6 @@ public class AddressManagerOffline implements AddressManager {
 
 	@Override
 	public void addAddress(Address a) {
-		// TODO Auto-generated method stub
 		initialData.addAddress(a);
 	}
 

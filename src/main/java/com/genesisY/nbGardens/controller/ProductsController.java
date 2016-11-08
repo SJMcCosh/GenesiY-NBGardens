@@ -12,6 +12,7 @@ import javax.inject.Named;
 import com.genesisY.nbGardens.services.ProductService;
 import com.genesisY.nbGardensCatalogue.entities.PaginationHelper;
 import com.genesisY.nbGardensCatalogue.entities.Product;
+import com.genesisY.nbGardensCatalogue.entities.Tag;
 
 @SuppressWarnings("serial")
 @Named("products")
@@ -25,15 +26,17 @@ public class ProductsController implements Serializable {
 	 * DataModel<Product>: Used for searches and on the home page
 	 */
 	private DataModel<Product> dataModel = null;
+	/**
+	 * DataModel<Product>: Used for navigation through categories
+	 */
+	private DataModel<Product> productModel = null;
 	private PaginationHelper pagination;
 	private int selected;
 	private String category = "All";
 	private String[] tagNameArray;
 	private int quantityOfItemsSelected;
-	/**
-	 * DataModel<Product>: Used for navigation through categories
-	 */
-	private DataModel<Product> productModel = null;
+	private DataModel<Tag> tagModel = null;
+	
 
 	public int getSelected() {
 		return selected;
@@ -251,6 +254,14 @@ public class ProductsController implements Serializable {
 		}
 		
 		return imageURI;
+	}
+
+	public DataModel<Tag> getTagModel() {
+		return tagModel;
+	}
+
+	public void setTagModel(DataModel<Tag> tagModel) {
+		this.tagModel = tagModel;
 	}
 	
 }

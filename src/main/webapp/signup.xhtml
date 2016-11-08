@@ -6,57 +6,62 @@
 	template="templates/template.xhtml">
 	<meta charset="ISO-8859-1" />
 	<ui:define name="maincontent">
-		<h:article class="wholebody">
+		<article class="wholebody">
 
-			<h:div class="signupform">
+			<div class="signupform">
 				<h4>Sign Up</h4>
 				<h:form>
-					<h:div class="col-6 col-m-9">
-						<h:div class="signupdetails">
+					<div class="col-6 col-m-9">
+						<div class="signupdetails">
 							<p>Username</p>
-							<h:inputText value="#{customer.username}"></h:inputText>
+							<h:inputText value="#{addcustomer.username}" />
 							<p>Password</p>
-							<h:inputType type="password" maxlength="45">
+							<h:inputSecret value="#{addcustomer.password}" maxlength="45" />
 							<p>Please Verify your Password</p>
-							<input type="password" maxlength="45"><br />
+							<h:inputSecret value="#{addcustomer.password2}" maxlength="45" />
+							<br />
 							<p>First Name</p>
-							<h:inputText value="#{customer.firstname}"></h:inputText>
+							<h:inputText value="#{addcustomer.firstname}" />
 							<p>Surname</p>
-							<h:inputText value="#{customer.surname}"></h:inputText>
+							<h:inputText value="#{addcustomer.surname}" />
 							<p>Phone Number</p>
-							<h:inputText value="#{customer.phonenumber}"></h:inputText>
+							<h:inputText value="#{addcustomer.phoneNumber}" />
 							<p>Email Address</p>
-							<h:inputText value="#{customer.email}" p: type="email"></h:inputText>
-						</h:div>
-					</h:div>
-					<h:div class="col-6 col-m-9">
-						<h:div class="signupaddress">
-							<h:div id="signupaddresstext">
+							<h:inputText value="#{addcustomer.email}" />
+						</div>
+					</div>
+					<div class="col-6 col-m-9">
+						<div class="signupaddress">
+							<div id="signupaddresstext">
 								<p>Address line 1</p>
-								<input type="text">
+								<h:inputText value="#{addcustomer.addressLine1}" />
 								<p>Address line 2</p>
-								<input type="text">
+								<h:inputText value="#{addcustomer.addressLine2}" />
 								<p>Address line 3</p>
-								<input type="text">
+								<h:inputText value="#{addcustomer.addressLine3}" />
 								<p>Town/City</p>
-								<input type="text">
+								<h:inputText value="#{addcustomer.townCity}" />
 								<p>County</p>
-								<input type="text">
+								<h:inputText value="#{addcustomer.county}" />
 								<p>Postcode</p>
-								<input type="text"><br /> <br /> <input type="submit"
-									name="signup" value="Sign Up"><br /> <br />
-							</h:div>
-						</h:div>
-					</h:div>
+								<h:inputText value="#{addcustomer.postcode}" />
+								<br /> <br />
+								<h:commandButton action="#{addcustomer.signUp}" value="Sign Up" />
+								<br /> <br />
+							</div>
+						</div>
+					</div>
 				</h:form>
-				<h:div class="col-12 tandc">
-					<p>
-						<a href="#T&Cs">Please read our terms and conditions before
-							signing up</a>
-					</p>
-				</h:div>
-			</h:div>
-		</h:article>
+				<div class="col-12 tandc">
+					<h:form>
+						<p>
+							<h:commandLink action="terms">Please read our terms and conditions before
+							signing up</h:commandLink>
+						</p>
+					</h:form>
+				</div>
+			</div>
+		</article>
 
 	</ui:define>
 </ui:composition>
