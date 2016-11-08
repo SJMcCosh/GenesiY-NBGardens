@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
  * @author Brian McLaughlin
  */
 @Entity
-@Table(name = "category")
+@Table(name = "Tag")
 public class Tag {
 	@Id
 	@Column(name = "id")
