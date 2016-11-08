@@ -45,7 +45,7 @@ public class PurchaseOrder {
 		this.totalPrice = totalPrice;
 		this.supplier = supplier;
 		this.prodList = prodList;
-	}
+	
 	public DataModel<Product> getProdList() {
 		return prodList;
 	}
