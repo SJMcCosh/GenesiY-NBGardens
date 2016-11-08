@@ -5,8 +5,6 @@
 
 package com.genesisY.nbGardensCatalogue.entityManagers;
 
-import javax.ejb.Stateless;
-
 import com.genesisY.nbGardensCatalogue.entities.Customer;
 
 

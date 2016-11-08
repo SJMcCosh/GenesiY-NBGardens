@@ -66,5 +66,11 @@ public class AccountManagerOffline implements AccountManager{
 		}
 		
 	}
+
+	@Override
+	public void addCustomer(Customer customer) {
+		initialData.addCustomer(customer);
+		
+	}
 	
 }

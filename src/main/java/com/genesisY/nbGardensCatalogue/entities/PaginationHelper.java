@@ -11,9 +11,17 @@ public abstract class PaginationHelper {
 		this.pageSize = pageSize;
 	}
 
+	/**
+	 * Gets the count of all products
+	 * @return int: Count of all products
+	 */
 	public abstract int getItemsCount();
 
-	public abstract DataModel createPageDataModel();
+	/**
+	 * Creates a data model of products
+	 * @return DataModel<Product>
+	 */
+	public abstract DataModel<Product> createPageDataModel();
 
 	public int getPageFirstItem() {
 		return page * pageSize;
@@ -55,7 +63,17 @@ public abstract class PaginationHelper {
 		this.pageSize = pageSize;
 	}
 
+	/**
+	 * Creates a data model of products based on a particular category
+	 * @param String: category
+	 * @return DataModel<Product>
+	 */
 	public abstract DataModel<Product> createPageDataModel(String category);
 
+	/**
+	 * Gets the count of all products in a particular category
+	 * @param String: category
+	 * @return int: count of items in a category
+	 */
 	public abstract int getItemsCount(String category);
 }
