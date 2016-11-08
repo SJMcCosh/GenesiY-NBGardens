@@ -43,5 +43,23 @@ public class AddressService {
 		} else {
 			return null;
 		}
+		
+		
+			
+			
+			
+		}
+	
+	public void addAddress(String addressLine1, String addressLine2, String addressLine3, String townCity, String postcode, boolean billingAddress){
+	
+		
+		
+		
+		addressManager.addAddress(a);
 	}
-}
+	}
+	
+	
+	
+	
+
