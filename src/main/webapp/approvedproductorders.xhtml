@@ -7,7 +7,7 @@
 	<ui:define name="content">
 		<div id="pageTitle">
 			<div class="col-12 col-m-12">
-				<h1>Suppliers</h1>
+				<h1>Purchase Orders</h1>
 			</div>
 		</div>
 		<div id="viewsuppliers">
@@ -46,7 +46,7 @@
 								<li><b>ID:</b> <h:outputText
 										value="#{purchase.dataModel.getRowData().getSupplier().supplierID}"></h:outputText></li>
 								<li><b>Name:</b> <h:outputText
-										value="#{purchase.dataModel.getRowData().getSupplier().supplirName}"></h:outputText></li>
+										value="#{purchase.dataModel.getRowData().getSupplier().supplierName}"></h:outputText></li>
 								<li><b>Phone Number:</b> <h:outputText
 										value="#{purchase.dataModel.getRowData().getSupplier().emailAddress}"></h:outputText></li>
 								<li><b>Email:</b> <h:outputText
@@ -55,13 +55,11 @@
 						</div>
 						<div class="col-6 col-m-6">
 							<div class="supplieraddress">
-								<li><b>Address</b></li>
+								<li><b></b></li>
 								<li><h:outputText
-										value="#{purchase.dataModel.getRowData().purchaseID}"></h:outputText></li>
+										value="#{purchase.dataModel.getRowData().totalPrice}"></h:outputText></li>
 								<li><h:outputText
-										value="#{purcahse.dataModel.getRowData().totalPrice}"></h:outputText></li>
-								<li><h:outputText
-										value="#{purchase.dataModel.getRowData().getProdList().}"></h:outputText></li>
+										value="#{purchase.dataModel.getRowData().prodList}"></h:outputText></li>
 							</div>
 						</div>
 					</ul>

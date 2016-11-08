@@ -31,7 +31,7 @@ public class PurchaseOrder {
 	@JoinColumn(name = "productID_fk",  nullable = false)
 	@NotNull 
 	private Product product;
-	private DataModel<Product> prodList; 
+	private List<Product> prodList; 
 
 	/**
 	 * @param purchaseID
@@ -41,17 +41,18 @@ public class PurchaseOrder {
 	 * @param employee 
 	 * @param employee
 	 */
-	public PurchaseOrder(double totalPrice, Supplier supplier, DataModel<Product> prodList) {
+	public PurchaseOrder(double totalPrice, Supplier supplier, List<Product> prodList) {
 		this.totalPrice = totalPrice;
 		this.supplier = supplier;
 		this.prodList = prodList;
+	}
 	
-	public DataModel<Product> getProdList() {
+	public List<Product> getProdList() {
 		return prodList;
 	}
 
 	public void setProdList(List<Product> prodList) {
-		this.prodList = (DataModel<Product>) prodList;
+		this.prodList = (List<Product>) prodList;
 	}
 
 	public int getPurchaseID() {

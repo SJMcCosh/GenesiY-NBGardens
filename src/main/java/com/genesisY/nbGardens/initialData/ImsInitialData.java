@@ -101,10 +101,11 @@ public class ImsInitialData {
 		
 		Employee AlStock = new Employee("AlStock", "Password1");
 	
-		PurchaseOrder po1 = new PurchaseOrder(14503.99, supplier1, null); 
-		PurchaseOrder po2 = new PurchaseOrder(146703.99, supplier2, null); 
-		PurchaseOrder po3 = new PurchaseOrder(145303.99, supplier3, null); 
-		PurchaseOrder po4 = new PurchaseOrder(14547.99, supplier1, null); 
+		PurchaseOrder po1 = new PurchaseOrder(14503.99, supplier1, products1); 
+		PurchaseOrder po2 = new PurchaseOrder(146703.99, supplier2, products2); 
+		PurchaseOrder po3 = new PurchaseOrder(145303.99, supplier3, products3); 
+		PurchaseOrder po4 = new PurchaseOrder(14547.99, supplier1, products1); 
+		
 		
 		prodList.add(product1);
 		prodList.add(product2);
@@ -132,12 +133,12 @@ public class ImsInitialData {
 		notList.add(n2);
 		notList.add(n3);
 		
-		StockAlert sa1 = new StockAlert(1, "03/11/2016", "Big Gnome low stock");
-		StockAlert sa2 = new StockAlert(2, "02/11/2016", "Game of Gnomes low stock");
-		StockAlert sa3 = new StockAlert(3, "02/11/2016", "Test");
-		StockAlert sa4 = new StockAlert(4, "02/11/2016", "Please");
-		StockAlert sa5 = new StockAlert(5, "02/11/2016", "Work");
-		StockAlert sa6 = new StockAlert(6, "02/11/2016", "Now");
+		StockAlert sa1 = new StockAlert(1, "03/11/2016", "Big Gnome low stock", 1);
+		StockAlert sa2 = new StockAlert(2, "02/11/2016", "Game of Gnomes low stock", 2);
+		StockAlert sa3 = new StockAlert(3, "02/11/2016", "Test", 3);
+		StockAlert sa4 = new StockAlert(4, "02/11/2016", "Please", 4);
+		StockAlert sa5 = new StockAlert(5, "02/11/2016", "Work", 5);
+		StockAlert sa6 = new StockAlert(6, "02/11/2016", "Now", 6);
 		
 		
 		saList.add(sa1);

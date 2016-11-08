@@ -13,6 +13,7 @@ import com.genesisY.nbGardens.entities.PaginationHelper;
 import com.genesisY.nbGardens.entities.Product;
 import com.genesisY.nbGardens.entities.PurchaseOrder;
 import com.genesisY.nbGardens.entities.Supplier;
+import com.genesisY.nbGardens.entityManagers.offline.PurchaseOrderManagerOffline;
 import com.genesisY.nbGardens.services.PurchaseOrderService;
 import com.genesisY.nbGardens.services.SupplierService;
 

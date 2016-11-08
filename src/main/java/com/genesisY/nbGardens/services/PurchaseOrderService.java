@@ -31,7 +31,12 @@ public class PurchaseOrderService {
 
 	public void createPurchaseOrder(double totalPrice, Supplier supplier, DataModel<Product> prodList){
 		
-	PurchaseOrder p = new PurchaseOrder(totalPrice, supplier, prodList);
+		List purchaseProdList = null;    
+		for(Product p: prodList){
+			purchaseProdList.add(p);
+		}
+		
+	PurchaseOrder p = new PurchaseOrder(totalPrice, supplier, purchaseProdList);
 	
 	if (p != null)
 	{    
