@@ -1,6 +1,6 @@
 package com.genesisY.nbGardens.services;
 
-import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -34,11 +34,13 @@ public class AddressService {
 	public List<Address> getAllAddresses(String username) {
 		if (userValidate(username)) {
 			List<Address> addresses = addressManager.getAddressByUsername(username);
-			for (Address a : addresses) {
-				if (a.getAddressLine1().equals("1 Street") && a.getTownCity().equals("TownCity")
-						&& a.getPostcode().equals("A1 1AA")) {
-					addresses.remove(a);
-				}
+			Iterator<Address> iter = addresses.iterator();
+
+			while (iter.hasNext()) {
+			    Address str = iter.next();
+
+			    if (str.isActive() == false)
+			        iter.remove();
 			}
 			return addresses;
 		} else {
