@@ -10,12 +10,13 @@ import com.genesisY.nbGardens.services.SortingService;
 
 @Named("sort")
 @RequestScoped
-
 public class SortController {
 
 	private String sorter;
 	@Inject
 	private ProductsController productsController;
+	@Inject
+	private CategoryPageController categoryPageController;
 
 	@Inject
 	private SortingService sortingService;
@@ -28,13 +29,13 @@ public class SortController {
 		System.out.println(">>>>>>>>>>> " + sort);
 		switch(sort){
 		case "Price High to Low" :
-			productsController.setProductModel(sortingService.sortHighToLow(productsController.getProductModel2()));
+			categoryPageController.setAllProductModel(sortingService.sortHighToLow(categoryPageController.getAllProductModel()));
 			break;
 		case "Price Low to High" :
-			productsController.setProductModel(sortingService.sortLowToHigh(productsController.getProductModel2()));
+			categoryPageController.setAllProductModel(sortingService.sortLowToHigh(categoryPageController.getAllProductModel()));
 			break;
 		case "Rating" :
-			productsController.setProductModel(sortingService.sortByRating(productsController.getProductModel2()));
+			categoryPageController.setAllProductModel(sortingService.sortByRating(categoryPageController.getAllProductModel()));
 			break;
 		}
 	}
@@ -46,13 +47,13 @@ public class SortController {
 		System.out.println(">>>>>>>>>>> " + sort);
 		switch(sort){
 		case "Price High to Low" :
-			productsController.setDataModel(sortingService.sortHighToLow(productsController.getDataModel2()));
+			categoryPageController.setDataModel(sortingService.sortHighToLow(categoryPageController.getDataModel2()));
 			break;
 		case "Price Low to High" :
-			productsController.setDataModel(sortingService.sortLowToHigh(productsController.getDataModel2()));
+			categoryPageController.setDataModel(sortingService.sortLowToHigh(categoryPageController.getDataModel2()));
 			break;
 		case "Rating" :
-			productsController.setDataModel(sortingService.sortByRating(productsController.getDataModel2()));
+			categoryPageController.setDataModel(sortingService.sortByRating(categoryPageController.getDataModel2()));
 			break;
 		}
 	}

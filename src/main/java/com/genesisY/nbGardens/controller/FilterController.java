@@ -24,7 +24,7 @@ public class FilterController {
 
 	private String filter;
 	@Inject
-	private ProductsController productsController;
+	private CategoryPageController categoryPageController;
 	@Inject
 	private TagService tagService;
 	@Inject
@@ -72,14 +72,12 @@ public class FilterController {
 	 * Method to filter a product by tags.
 	 */
 	public void filterProductsByTag(AjaxBehaviorEvent abe) {
-		String[] arr = productsController.getTagNameArrayInString().split(", ");
+		String[] arr = categoryPageController.getTagNameArrayInString().split(", ");
 		System.out.println("---------------" + Arrays.toString(arr));
 		System.out.println(minimum + " " + maximum);
-		if (productsController.getProductModel2() != null) {		//Checks if it's on a list of products in a category or from a search
-			dataModel = productsController.getProductModel2();
-		} else {
-			dataModel = productsController.getDataModel2();
-		}
+			//Checks if it's on a list of products in a category or from a search
+			dataModel = categoryPageController.getProductModel();
+		
 		ArrayList<String> tagList = new ArrayList<String>();		//Creates a list of tags based on the ones checked
 		for (String l : arr) {
 			if (l.startsWith("[")) {
@@ -130,10 +128,10 @@ public class FilterController {
 		System.out.println(">>>>>>>>>>>>>>>>hi");
 		setLower(minimum);
 		setUpper(maximum);
-		if (productsController.getProductModel2() != null) {		//Checks if it's on a list of products in a category or from a search
-			dataModel = productsController.getProductModel2();
+		if (categoryPageController.getProductModel() != null) {		//Checks if it's on a list of products in a category or from a search
+			dataModel = categoryPageController.getProductModel();
 		} else {
-			dataModel = productsController.getDataModel2();
+			dataModel = categoryPageController.getDataModel2();
 		}
 		for (Product p : dataModel) {
 			p.setToRender(true);
@@ -150,7 +148,7 @@ public class FilterController {
 	}
 	
 	public void load() {
-		productsController.setTagModel(new ListDataModel<Tag>(tagService.getAllTags()));
+		categoryPageController.setTagModel(new ListDataModel<Tag>(tagService.getAllTags()));
 	}
 
 	public double getMinrat() {
@@ -178,10 +176,10 @@ public class FilterController {
 		System.out.println(">>>>>>>>>>>>>>>>hi");
 		setLeast(minrat);
 		setMost(maxrat);
-		if (productsController.getProductModel2() != null) {		//Checks if it's on a list of products in a category or from a search
-			dataModel = productsController.getProductModel2();
+		if (categoryPageController.getProductModel() != null) {		//Checks if it's on a list of products in a category or from a search
+			dataModel = categoryPageController.getProductModel();
 		} else {
-			dataModel = productsController.getDataModel2();
+			dataModel = categoryPageController.getDataModel2();
 		}
 		for (Product p : dataModel) {
 			p.setToRender(true);

@@ -57,7 +57,7 @@
 							itemValue="Price Low to High" />
 						<f:selectItem itemLabel="Price High to Low"
 							itemValue="Price High to Low" />
-						<f:ajax listener="#{sort.sort}" render="@all" />
+						<f:ajax listener="#{sort.sort}" render="@this prodliststuff" />
 					</h:selectOneMenu>
 				</div>
 
@@ -87,9 +87,9 @@
 			<!-- This is the product grid -->
 
 			<!-- This is the product grid -->
-			<h:form>
+			<h:form id = "prodliststuff">
 
-				<div class="col-9 col-m-6">
+				<div class="col-9 col-m-6" >
 					<ul>
 						<ui:repeat var="product" value="#{catpage.dataModel}">
 							<h:panelGroup rendered="#{product.toRender}">

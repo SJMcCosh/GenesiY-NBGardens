@@ -138,10 +138,6 @@ public class ProductsController implements Serializable {
 				public int getItemsCount() {
 					return productService.getAllProducts(category).size();
 				}
-				@Override
-				public int getItemsCount(String category) {
-					return productService.getCategoryProducts(category).size();
-				}
 
 				@Override
 				public DataModel<Product> createPageDataModel() {
@@ -152,17 +148,6 @@ public class ProductsController implements Serializable {
 					} catch (Exception e) {
 						return new ListDataModel<Product>(
 								productService.getAllProducts(category).subList(getPageFirstItem(), getItemsCount()));
-					}
-				}
-
-				@Override
-				public DataModel<Product> createPageDataModel(String category) {
-					try {
-						return new ListDataModel<Product>(productService.getCategoryProducts(category)
-								.subList(getPageFirstItem(), getPageFirstItem() + getPageSize()));
-					} catch (Exception e) {
-						return new ListDataModel<Product>(productService.getCategoryProducts(category)
-								.subList(getPageFirstItem(), getItemsCount(category)));
 					}
 				}
 			};
@@ -215,21 +200,11 @@ public class ProductsController implements Serializable {
 	public String getCategoryProducts(String category) {
 		setCategory(category);
 		productModel = null;
-		productModel = getProductModel();
+		productModel = getProductModel2();
 		setCategory("All");
 		return "subcategory";
 	}
 
-	/**
-	 * Generates a DataModel<Product> and assigns it to productModel
-	 * @return productModel
-	 */
-	public DataModel<Product> getProductModel() {
-		if (productModel == null) {
-			productModel = getPagination().createPageDataModel(category);
-		}
-		return productModel;
-	}
 
 	public void setProductModel(DataModel<Product> productModel) {
 		this.productModel = productModel;

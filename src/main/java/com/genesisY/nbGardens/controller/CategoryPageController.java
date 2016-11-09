@@ -1,7 +1,9 @@
 package com.genesisY.nbGardens.controller;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
@@ -39,7 +41,7 @@ public class CategoryPageController implements Serializable {
 	private String[] tagNameArray;
 	private int quantityOfItemsSelected;
 	private DataModel<Tag> tagModel = null;
-	
+	private DataModel<Product> allProductModel = null;
 
 	public int getSelected() {
 		return selected;
@@ -59,6 +61,7 @@ public class CategoryPageController implements Serializable {
 
 	/**
 	 * Views a specific product based on click
+	 * 
 	 * @param p
 	 * @return String: Opens the productpage for a specific product
 	 */
@@ -69,22 +72,29 @@ public class CategoryPageController implements Serializable {
 
 	public String allProducts(String category) {
 		setCategory(category);
+		allProductModel = new ListDataModel<Product>(productService.getAllProducts(getCategory()));
+		for (Product p: allProductModel){
+		System.out.println(p);
+		}
 		dataModel = getDataModel();
+		setProductModel(dataModel);
 		return "subcategory";
 	}
 
 	/**
 	 * Sets dataModel to one generated through pagination
+	 * 
 	 * @return dataModel
 	 */
 	public DataModel<Product> getDataModel() {
-			dataModel = getPagination().createPageDataModel();
-		
+		dataModel = getPagination().createPageDataModel();
+
 		return dataModel;
 	}
 
 	public void setDataModel(DataModel<Product> dataModel) {
 		this.dataModel = dataModel;
+		setProductModel(this.dataModel);
 	}
 
 	public void setPagination(PaginationHelper pagination) {
@@ -104,10 +114,12 @@ public class CategoryPageController implements Serializable {
 	 */
 	private void recreateModel() {
 		dataModel = null;
+		productModel = null;
 	}
 
 	/**
 	 * Generates the previous page of products
+	 * 
 	 * @return String: page listing products
 	 */
 	public String previous() {
@@ -118,6 +130,7 @@ public class CategoryPageController implements Serializable {
 
 	/**
 	 * Generates the next page of products
+	 * 
 	 * @return String: page listing products
 	 */
 	public String next() {
@@ -128,6 +141,7 @@ public class CategoryPageController implements Serializable {
 
 	/**
 	 * Gets a pagination
+	 * 
 	 * @return PaginationHelper: for pagination
 	 */
 	public PaginationHelper getPagination() {
@@ -137,32 +151,26 @@ public class CategoryPageController implements Serializable {
 				public int getItemsCount() {
 					return productService.getAllProducts(category).size();
 				}
-				@Override
-				public int getItemsCount(String category) {
-					return productService.getCategoryProducts(category).size();
-				}
 
 				@Override
 				public DataModel<Product> createPageDataModel() {
 					try {
-						return new ListDataModel<Product>(productService.getAllProducts(category)
-								.subList(getPageFirstItem(), getPageFirstItem() + getPageSize()));
+						List<Product> products = new ArrayList<Product>();
+						for (Product p : getAllProductModel()) {
+							products.add(p);
+						}
+						return new ListDataModel<Product>(
+								products.subList(getPageFirstItem(), getPageFirstItem() + getPageSize()));
 					} catch (Exception e) {
+						List<Product> products = new ArrayList<Product>();
+						for (Product p : getAllProductModel()) {
+							products.add(p);
+						}
 						return new ListDataModel<Product>(
 								productService.getAllProducts(category).subList(getPageFirstItem(), getItemsCount()));
 					}
 				}
 
-				@Override
-				public DataModel<Product> createPageDataModel(String category) {
-					try {
-						return new ListDataModel<Product>(productService.getCategoryProducts(category)
-								.subList(getPageFirstItem(), getPageFirstItem() + getPageSize()));
-					} catch (Exception e) {
-						return new ListDataModel<Product>(productService.getCategoryProducts(category)
-								.subList(getPageFirstItem(), getItemsCount(category)));
-					}
-				}
 			};
 		}
 		return pagination;
@@ -178,6 +186,7 @@ public class CategoryPageController implements Serializable {
 
 	/**
 	 * Returns a string of the TagNameArray
+	 * 
 	 * @return String
 	 */
 	public String getTagNameArrayInString() {
@@ -190,10 +199,12 @@ public class CategoryPageController implements Serializable {
 	public DataModel<Product> getDataModel2() {
 		return dataModel;
 	}
+
 	/**
 	 * Gets productModel without changing it
 	 */
-	public DataModel<Product> getProductModel2() {
+	public DataModel<Product> getProductModel() {
+		System.out.println("gettingmodel " + productModel);
 		return productModel;
 	}
 
@@ -207,7 +218,9 @@ public class CategoryPageController implements Serializable {
 
 	/**
 	 * Gets a list of products in a category based on input category
-	 * @param String: category
+	 * 
+	 * @param String:
+	 *            category
 	 * @return String: page of products in the category
 	 */
 	public String getCategoryProducts(String category) {
@@ -220,40 +233,39 @@ public class CategoryPageController implements Serializable {
 
 	/**
 	 * Generates a DataModel<Product> and assigns it to productModel
+	 * 
 	 * @return productModel
 	 */
-	public DataModel<Product> getProductModel() {
-		if (productModel == null) {
-			productModel = getPagination().createPageDataModel(category);
-		}
-		return productModel;
-	}
+
 
 	public void setProductModel(DataModel<Product> productModel) {
 		this.productModel = productModel;
 	}
-	
-	
-	public String averageRatingImg(Double rating)
-	{
+
+	public String averageRatingImg(Double rating) {
 		String imageURI = "";
 		Integer starRating = rating.intValue();
-		switch(starRating)
-		{
-			case(0) : imageURI = "img/Ratings/0.png";
-						break;
-			case(1) : imageURI = "img/Ratings/1.png";
-						break;
-			case(2) : imageURI = "img/Ratings/2.png";
-						break;
-			case(3) : imageURI = "img/Ratings/3.png";
-						break;	
-			case(4) : imageURI = "img/Ratings/4.png";
-						break;			
-			case(5) : imageURI = "img/Ratings/5.png";
-						break;
+		switch (starRating) {
+		case (0):
+			imageURI = "img/Ratings/0.png";
+			break;
+		case (1):
+			imageURI = "img/Ratings/1.png";
+			break;
+		case (2):
+			imageURI = "img/Ratings/2.png";
+			break;
+		case (3):
+			imageURI = "img/Ratings/3.png";
+			break;
+		case (4):
+			imageURI = "img/Ratings/4.png";
+			break;
+		case (5):
+			imageURI = "img/Ratings/5.png";
+			break;
 		}
-		
+
 		return imageURI;
 	}
 
@@ -264,5 +276,14 @@ public class CategoryPageController implements Serializable {
 	public void setTagModel(DataModel<Tag> tagModel) {
 		this.tagModel = tagModel;
 	}
-	
+
+	public DataModel<Product> getAllProductModel() {
+		return allProductModel;
+	}
+
+	public void setAllProductModel(DataModel<Product> allProductModel) {
+		this.allProductModel = allProductModel;
+		setDataModel(pagination.createPageDataModel());
+	}
+
 }
