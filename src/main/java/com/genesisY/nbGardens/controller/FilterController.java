@@ -34,13 +34,13 @@ public class FilterController {
 	private String category = "all";
 	private short minimum = 0;
 	private short maximum = 2000;
-	private short lower;
-	private short upper;
-	private List<String> tags;
+	private short lower = 0;
+	private short upper = 2000;
+	private List<String> tags = new ArrayList<String>();
 	private double minrat = 0;
 	private double maxrat = 5;
-	private double least;
-	private double most;
+	private double least = 0;
+	private double most = 5;
 
 	public int getSelected() {
 		return selected;
@@ -69,16 +69,13 @@ public class FilterController {
 	/**
 	 * 
 	 * @param abe
-	 * Method to filter a product by tags.
+	 *            Method to filter a product by tags.
 	 */
 	public void filterProductsByTag(AjaxBehaviorEvent abe) {
 		String[] arr = categoryPageController.getTagNameArrayInString().split(", ");
-		System.out.println("---------------" + Arrays.toString(arr));
-		System.out.println(minimum + " " + maximum);
-			//Checks if it's on a list of products in a category or from a search
-			dataModel = categoryPageController.getProductModel();
-		
-		ArrayList<String> tagList = new ArrayList<String>();		//Creates a list of tags based on the ones checked
+		categoryPageController.setWholeProductModel(categoryPageController.getAllProductModel());
+		dataModel = categoryPageController.getWholeProductModel();
+		ArrayList<String> tagList = new ArrayList<String>();			 // Creates a list of tags based on the ones checked
 		for (String l : arr) {
 			if (l.startsWith("[")) {
 				l = l.substring(1);
@@ -89,11 +86,13 @@ public class FilterController {
 			tagList.add(l);
 		}
 		setTags(tagList);
-
-		filterService.filterByTag(tagList, dataModel);				//Calls method to filter by tags
+		for (Product p: dataModel){
+			p.setToRender(true);
+		}
+		filterService.filterByTag(tagList, dataModel);					 // Calls method to filter by tags
+		filterService.filterByRating(dataModel, least, most);
+		filterService.filterByPrice(dataModel, lower, upper);
 	}
-
-
 
 	public DataModel<Product> getDataModel2() {
 		return dataModel;
@@ -122,21 +121,19 @@ public class FilterController {
 	/**
 	 * 
 	 * @param abe
-	 * Method to filter by price
+	 *            Method to filter by price
 	 */
 	public void filterByPrice(AjaxBehaviorEvent abe) {
-		System.out.println(">>>>>>>>>>>>>>>>hi");
-		setLower(minimum);
-		setUpper(maximum);
-		if (categoryPageController.getProductModel() != null) {		//Checks if it's on a list of products in a category or from a search
-			dataModel = categoryPageController.getProductModel();
-		} else {
-			dataModel = categoryPageController.getDataModel2();
-		}
+		categoryPageController.setWholeProductModel(categoryPageController.getAllProductModel());
+		dataModel = categoryPageController.getWholeProductModel();
 		for (Product p : dataModel) {
 			p.setToRender(true);
 		}
+		setLower(minimum);
+		setUpper(maximum);
 		filterService.filterByPrice(dataModel, minimum, maximum);
+		filterService.filterByTag(tags, dataModel);	
+		filterService.filterByRating(dataModel, least, most);
 	}
 
 	private List<String> getTags() {
@@ -146,7 +143,7 @@ public class FilterController {
 	private void setTags(List<String> tags) {
 		this.tags = tags;
 	}
-	
+
 	public void load() {
 		categoryPageController.setTagModel(new ListDataModel<Tag>(tagService.getAllTags()));
 	}
@@ -166,25 +163,20 @@ public class FilterController {
 	public void setMaxrat(double maxrat) {
 		this.maxrat = maxrat;
 	}
-	
+
 	/**
 	 * 
 	 * @param abe
-	 * Method to filter by rating
+	 *            Method to filter by rating
 	 */
 	public void filterByRating(AjaxBehaviorEvent abe) {
-		System.out.println(">>>>>>>>>>>>>>>>hi");
+		categoryPageController.setWholeProductModel(categoryPageController.getAllProductModel());
+		dataModel = categoryPageController.getWholeProductModel();
 		setLeast(minrat);
 		setMost(maxrat);
-		if (categoryPageController.getProductModel() != null) {		//Checks if it's on a list of products in a category or from a search
-			dataModel = categoryPageController.getProductModel();
-		} else {
-			dataModel = categoryPageController.getDataModel2();
-		}
-		for (Product p : dataModel) {
-			p.setToRender(true);
-		}
 		filterService.filterByRating(dataModel, minrat, maxrat);
+		filterService.filterByTag(tags, dataModel);	
+		filterService.filterByPrice(dataModel, lower, upper);
 	}
 
 	public short getLower() {
@@ -218,7 +210,5 @@ public class FilterController {
 	public void setMost(double most) {
 		this.most = most;
 	}
-	
-	
 
 }
