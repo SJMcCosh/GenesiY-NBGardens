@@ -28,6 +28,8 @@ public class ImsInitialData {
 	private ArrayList<Category> catList = new ArrayList<Category>();
 	private ArrayList<Notification> notList = new ArrayList<Notification>();
 	private ArrayList<StockAlert> saList = new ArrayList<StockAlert>();
+	
+	private ArrayList<Product> selectedProdList = new ArrayList<Product>();
 
 	@PostConstruct
 	public void setupData() {
@@ -228,5 +230,16 @@ public class ImsInitialData {
 
 	public void setNotList(ArrayList<Notification> notList) {
 		this.notList = notList;
+	}
+
+	public List<Product> getSelectedProduct(int id) {
+		for(Product p : prodList)
+		{
+			if(id == p.getProductID())
+			{
+				selectedProdList.add(p);
+			}
+		}
+		return selectedProdList;
 	}
 }

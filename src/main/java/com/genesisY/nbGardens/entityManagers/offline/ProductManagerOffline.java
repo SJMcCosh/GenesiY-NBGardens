@@ -63,10 +63,6 @@ public class ProductManagerOffline implements ProductManager {
 		return products; 
 	}
 
-	public Product getProduct(long id) {
-		return null;
-	}
-
 	@Override
 	public void updateProduct(Product product) 
 	{
@@ -89,5 +85,15 @@ public class ProductManagerOffline implements ProductManager {
 				
 			}
 		}
+	}
+
+	@Override
+	public Product getProduct(long id) {
+		return null;
+	}
+
+	@Override
+	public List<Product> getProductById(int id) {
+		return initialData.getSelectedProduct(id);
 	}
 }

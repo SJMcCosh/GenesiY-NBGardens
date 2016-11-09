@@ -169,5 +169,12 @@ public class Product {
 	public void setValid(boolean valid) {
 		this.valid = valid;
 	}
+	
+	
+	public String toString(){
+		
+		
+		return this.name;
+	}
 
 }

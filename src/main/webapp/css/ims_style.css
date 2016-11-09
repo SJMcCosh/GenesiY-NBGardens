@@ -551,8 +551,14 @@ ul {
 	margin-top: -20px;
 }
 
-#stockAlertContent {
-	text-align: center;
+#stockAlertDetailsBox {
+	height: 50%;
+	width: 100%;
+	background-color: #FFFFFF;
+	border-style: solid;
+	border-width: medium;
+	border-color: #143516;
+	font-weight: bold;
+	overflow-y: scroll;
 }
-
 /* 													END IMS CSS						*/

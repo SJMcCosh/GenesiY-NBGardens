@@ -32,43 +32,48 @@
 				</div>
 				<div class="addsupplink">
 					<h:form>
-						<h:commandButton action="addsupplier" value="Add Supplier" />
+						<h:commandButton action="newpurchaseorder"
+							value="Create New Purchase Order" />
 					</h:form>
 				</div>
 			</div>
 			<ui:repeat var="suppliers" value="#{purchase.dataModel}">
-			<h:form>
-			<h:commandLink action="#{purchase.viewProducts(suppliers.dataModel.getRowData().supplierName)}">
-				<div class="productall">
-					<ul>
-						<div class="col-6 col-m-6">
-							<div class="suppliername">
-								<li><b>ID:</b> <h:outputText
-										value="#{purchase.dataModel.getRowData().getSupplier().supplierID}"></h:outputText></li>
-								<li><b>Name:</b> <h:outputText
-										value="#{purchase.dataModel.getRowData().getSupplier().supplierName}"></h:outputText></li>
-								<li><b>Phone Number:</b> <h:outputText
-										value="#{purchase.dataModel.getRowData().getSupplier().emailAddress}"></h:outputText></li>
-								<li><b>Email:</b> <h:outputText
-										value="#{purchase.dataModel.getRowData().getSupplier().telephoneNumber}"></h:outputText></li>
-							</div>
+				<h:form>
+					<h:commandLink
+						action="#{purchase.viewProducts(suppliers.dataModel.getRowData().supplierName)}">
+						<div class="productall">
+							<ul>
+								<div class="col-6 col-m-6">
+									<div class="suppliername">
+										<li><b>Name:</b> <h:outputText
+												value="#{purchase.dataModel.getRowData().getSupplier().supplierName}"></h:outputText></li>
+										<li><b>Email:</b> <h:outputText
+												value="#{purchase.dataModel.getRowData().getSupplier().emailAddress}"></h:outputText></li>
+										<li><b>Phone Number:</b> <h:outputText
+												value="#{purchase.dataModel.getRowData().getSupplier().telephoneNumber}"></h:outputText></li>
+									</div>
+								</div>
+								<div class="col-6 col-m-6">
+									<div class="supplieraddress">
+										<li><b></b></li>
+										<li><h:outputText
+												value="#{purchase.dataModel.getRowData().totalPrice}">
+												<f:convertNumber type="currency" currencyCode="GBP" />
+											</h:outputText></li>
+
+										<li><h:outputText
+												value="#{purchase.dataModel.getRowData().prodList}"></h:outputText></li>
+									</div>
+
+								</div>
+							</ul>
 						</div>
-						<div class="col-6 col-m-6">
-							<div class="supplieraddress">
-								<li><b></b></li>
-								<li><h:outputText
-										value="#{purchase.dataModel.getRowData().totalPrice}"></h:outputText></li>
-								<ui:repeat var="" value="">
-								<li><h:outputText
-										value="#{purchase.dataModel.getRowData().prodList}"></h:outputText></li>
-								</ui:repeat>
-							</div>
-						</div>
-					</ul>
-				</div>
-				</h:commandLink>
+					</h:commandLink>
 				</h:form>
 			</ui:repeat>
 		</div>
+
+
+
 	</ui:define>
 </ui:composition>
