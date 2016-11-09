@@ -6,13 +6,12 @@
 	<meta charset="ISO-8859-1" title="IMS" />
 
 	<ui:define name="content">
-	<script type="text/javascript">
-	function updateStatus(){
-		alert("Product Discontinued!"); 
-		
-		
-	}
-	</script>
+		<script type="text/javascript">
+			function updateStatus() {
+				alert("Product Discontinued!");
+
+			}
+		</script>
 		<h:form>
 			<div id="pageTitle">
 				<div class="col-12 col-m-12">
@@ -21,52 +20,62 @@
 			</div>
 			<div class="col-12 col-m-12" align="center">
 				<div class="productMainContent">
-					<p>Product</p>
-					<h:inputText value="#{products.name}" />
-				</div>
-				<div class="productMainContent">
 
-					<p>Product ID</p>
+					<h:outputText value="Product ID"></h:outputText>
 					<h:inputText value="#{products.product.productID}" readonly="true" />
 				</div>
 				<div class="productMainContent">
-					<p>Product Price</p>
+					<h:outputText value="Product" />
+					<h:inputText value="#{products.name}" />
+				</div>
+				<div class="productMainContent">
+					<h:outputText value="Product Price" />
 					<h:inputText value="#{products.price}" />
 				</div>
 				<div class="productMainContent">
-					<p>Stock</p>
+					<h:outputText value="Stock" />
 					<h:inputText value="#{products.product.stockLevel}" readonly="true" />
-					<br />
 				</div>
+				<br /> <br />
 			</div>
 			<div class="col-12 col-m-12" align="center">
 				<div class="productMainContent">
-					<p>Description</p>
+					<h:outputText value="Low Stock Alert" />
+					<h:inputText value="#{products.product.lowStock}" />
+				</div>
+				<div class="productMainContent">
+					<h:outputText value="Description" />
 					<h:inputText value="#{products.description}" />
 				</div>
 			</div>
+			<br />
+			<br />
 			<div class="col-12 col-m-12" align="center">
 				<div class="productMainContent">
-					<p>Specifications</p>
+					<h:outputText value="Specifications" />
 					<h:inputText value="#{products.specification}" />
 				</div>
 				<div class="productMainContent" id="status_output">
 
-					<p>Product Status</p>
+					<h:outputText value="Product Status" />
 					<h:outputText value="#{products.status}" />
 
 				</div>
+			</div>	
+			<div class="col-12 col-m-12" align="left">
+				<h:commandButton value="Update" action="#{products.updateProduct}" />
+				<h:commandButton value="Discontinue Product"
+					action="#{products.discontinueProduct}">
+					<f:ajax render="@form" execute="@form" onevent="updateStatus" />
+				</h:commandButton>
+				<h:commandButton value="Reactivate Product"
+					action="#{products.reactivateProduct}">
+					<f:ajax render="@form" execute="@form" onevent="updateStatus" />
+				</h:commandButton>
+				<h:commandButton value="Delete Product"
+					action="#{products.invalidateProduct}">
+				</h:commandButton>
 			</div>
-			<h:commandButton value="Update" action="#{products.updateProduct}" />
-			<h:commandButton value = "Discontinue Product" action = "#{products.discontinueProduct}" >
-			<f:ajax render = "@form" execute = "@form" onevent="updateStatus"/>
-			</h:commandButton>
-			<h:commandButton value = "Reactivate Product" action = "#{products.reactivateProduct}" >
-			<f:ajax render = "@form" execute = "@form" onevent="updateStatus"/>
-			</h:commandButton>
-			<h:commandButton value = "Delete Product" action = "#{products.invalidateProduct}" >
-			</h:commandButton>
-			
 			<div class="prodsupplist">
 				<ui:repeat var="dataSupplier" value="#{products.getDataSupplier()}">
 					<li><h:outputText

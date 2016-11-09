@@ -66,13 +66,14 @@ public class ImsInitialData {
 		catList.add(c5);
 		catList.add(c6);
 		
+		Product product1 = new Product(1, "Game of Gnomes", "A GOT gnome", "img/gnome.jpg", 9.99, "Made in Westeros", 12, 20, cl1, false, false);
+		Product product2 = new Product(2, "random gnome", "lelelelel", "img/gnome-06.jpg", 15.29, "Made in the UK", 52, 40, cl2, true, true);
+		Product product3 = new Product(3, "other gnome", "1234567890", "img/gnome-07.jpg", 6.50, "Made in the EU", 121, 35, cl3, true, true);
+		Product product4 = new Product(4, "big gnome", "B.I.G, big!", "img/gnome.jpg", 12.99, "Made in the UK", 94, 15, cl4, true, true);
+		Product product5 = new Product(5, "small gnome", "Rather small gnome", "img/gnome.jpg", 2.50, "Made in Taiwan", 87, 50, cl5, true, true);
+		Product product6 = new Product(6, "LED Glowing gnome", "Useful as a Night light", "img/gnome.jpg", 4.99, "Made in Japan", 20, 30, cl6, true, true);
+		Product product7 = new Product(7, "Trump Gnome", "Make your Garden Great Again", "img/gnomeTrump.jpg", 911.00, "Made in China", 1000000, 100, cl1, true, true);
 
-		Product product1 = new Product(1, "Game of Gnomes", "A GOT gnome", "img/gnome.jpg", 9.99, "Made in China", 12, cl1, false, false);
-		Product product2 = new Product(2, "random gnome", "lelelelel", "img/gnome.jpg", 15.29, "Made in the UK", 52, cl2, true, true);
-		Product product3 = new Product(3, "other gnome", "1234567890", "img/gnome.jpg", 6.50, "Made in the EU", 121, cl3, true, true);
-		Product product4 = new Product(4, "big gnome", "B.I.G, big!", "img/gnome.jpg", 12.99, "Made in the UK", 94, cl4, true, true);
-		Product product5 = new Product(5, "small gnome", "Rather small gnome", "img/gnome.jpg", 2.50, "Made in Taiwan", 87, cl5, true, true);
-		Product product6 = new Product(6, "LED Glowing gnome", "Useful as a Night light", "img/gnome.jpg", 4.99, "Made in Japan", 20, cl6, true, true);
 
 		List<Product> products1 = new ArrayList<Product>();
 		List<Product> products2 = new ArrayList<Product>();
@@ -82,14 +83,17 @@ public class ImsInitialData {
 		products1.add(product2);
 		products1.add(product4);
 		products1.add(product6);
+		products1.add(product7);
 		products2.add(product2);
 		products2.add(product4);
 		products2.add(product5);
+		products2.add(product7);
 		products3.add(product3);
 		products3.add(product1);
 		products3.add(product5);
 		products3.add(product6);
 		products3.add(product4);
+		products3.add(product7);
 
 		Address address1 = new Address("32 Fine Strasse", "", "", "Berlin", "Germany", "54624");
 		Address address2 = new Address("2546 New Road", "Lowry Quay", "Salford Quays", "Paris", "France", "75003");
@@ -113,6 +117,7 @@ public class ImsInitialData {
 		prodList.add(product4);
 		prodList.add(product5);
 		prodList.add(product6);
+		prodList.add(product7);
 		
 		supplierList.add(supplier1);
 		supplierList.add(supplier2);

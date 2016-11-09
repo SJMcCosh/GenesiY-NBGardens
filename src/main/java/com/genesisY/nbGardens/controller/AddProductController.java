@@ -25,7 +25,8 @@ public class AddProductController implements Serializable {
 	private Double price;
 	private String imageLocation;
 	private String specification;
-	private Integer stock; 
+	private Integer stock;
+	private Integer lowStock;
 	private List<Category> catList;
 
 
@@ -84,9 +85,17 @@ public class AddProductController implements Serializable {
 	public void setStock(Integer stock) {
 		this.stock = stock;
 	}
+	
+	public Integer getLowStock() {
+		return lowStock;
+	}
+
+	public void setLowStock(Integer lowStock) {
+		this.lowStock = lowStock;
+	}
 
 	public void createNewProduct() {
-		product = new Product(productID, name, imageLocation, desc, price, specification, stock, catList, true, true);
+		product = new Product(productID, name, imageLocation, desc, price, specification, stock, lowStock, catList, true, true);
 		System.out.println(">>>> " + productID);
 		System.out.println(">>>> " + name);
 		System.out.println(">>>> " + price);
@@ -95,6 +104,7 @@ public class AddProductController implements Serializable {
 		System.out.println(">>>> " + specification);
 		System.out.println(">>>> " + stock);
 		System.out.println(">>>> " + catList);
+		System.out.println(">>>> " + lowStock);
 		productService.addProduct(product);	
 	}
 }

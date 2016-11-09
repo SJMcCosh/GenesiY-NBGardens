@@ -56,6 +56,9 @@ public class Product {
 	@Column(name = "stockLevel", nullable = false)
 	@NotNull
 	private int stockLevel;
+	
+	@Column(name = "lowStock", nullable = false)
+	private int lowStock;
 
 	@Column(name = "averageRating", nullable = false)
 	@NotNull
@@ -69,7 +72,7 @@ public class Product {
 	@NotNull
 	private boolean valid;
 
-	public Product(int id, String name, String description, String imageLocation, double price, String specification, int stockLevel, List<Category> catList, boolean status, boolean valid) {
+	public Product(int id, String name, String description, String imageLocation, double price, String specification, int stockLevel, int lowStock, List<Category> catList, boolean status, boolean valid) {
 		this.productID = id;
 		this.name = name;
 		this.desc = description;
@@ -77,6 +80,7 @@ public class Product {
 		this.price = price;
 		this.specification = specification;
 		this.stockLevel = stockLevel;
+		this.lowStock = lowStock;
 		this.catList = catList;
 		this.status = status;
 		this.valid = valid; 
@@ -120,6 +124,14 @@ public class Product {
 
 	public void setStockLevel(int stockLevel) {
 		this.stockLevel = stockLevel;
+	}
+	
+	public int getLowStock() {
+		return lowStock;
+	}
+
+	public void setLowStock(int lowStock) {
+		this.lowStock = lowStock;
 	}
 
 	public String getImageLocation() {
@@ -169,5 +181,4 @@ public class Product {
 	public void setValid(boolean valid) {
 		this.valid = valid;
 	}
-
 }

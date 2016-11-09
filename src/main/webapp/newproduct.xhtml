@@ -27,16 +27,16 @@
 					requiredMessage="Item Description"></h:inputText>
 				<br />
 				<br />
-				<h:outputText value="Price (GBP): " />
-				<br />
-				<h:inputText type="double" value="#{productAdd.price}"
-					required="true" requiredMessage="Item Price"></h:inputText>
-				<br />
-				<br />
 				<h:outputText value="Image Location: " />
 				<br />
 				<h:inputText value="#{productAdd.imageLocation}" required="true"
 					requiredMessage="Tag ID"></h:inputText>
+				<br />
+				<br />
+				<h:outputText value="Price (GBP): " />
+				<br />
+				<h:inputText type="double" value="#{productAdd.price}"
+					required="true" requiredMessage="Item Price"></h:inputText>
 				<br />
 				<br />
 				<h:outputText value="Specification: " />
@@ -49,6 +49,12 @@
 				<br />
 				<h:inputText type="number" value="#{productAdd.stock}"
 					required="true" requiredMessage="Stock Level"></h:inputText>
+				<br />
+				<br />
+				<h:outputText value="Set Stock Alert Level: " />
+				<br />
+				<h:inputText type="number" value="#{productAdd.lowStock}"
+					required="true" requiredMessage="Set Stock Alert Level"></h:inputText>
 				<br />
 				<br />
 				<h:commandButton value="Add Product to IMS"

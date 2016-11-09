@@ -18,6 +18,7 @@ public class AddProductService {
 	private String imageLocation;
 	private String specification;
 	private Integer stock;
+	private Integer lowStock;
 	private Double averageRating;
 
 	@Inject
@@ -30,9 +31,9 @@ public class AddProductService {
 	}
 
 	public void addProduct(int productID, String name, Double price, String desc, String supplier, String imageLocation,
-			String specification, int stock, Double averageRating) {
+			String specification, int stock, int lowStock, Double averageRating) {
 
-		Product p = new Product(productID, name, desc, null, price, specification, stock, null, false, true);
+		Product p = new Product(productID, name, desc, null, price, specification, stock, lowStock, null, false, true);
 
 		if (p != null) {
 
