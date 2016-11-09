@@ -136,18 +136,18 @@ public class ProductsController implements Serializable {
 			pagination = new PaginationHelper(12) {
 				@Override
 				public int getItemsCount() {
-					return productService.getAllProducts(category).size();
+					return productService.getProducts(category).size();
 				}
 
 				@Override
 				public DataModel<Product> createPageDataModel() {
 					System.out.println(category);
 					try {
-						return new ListDataModel<Product>(productService.getAllProducts(category)
+						return new ListDataModel<Product>(productService.getProducts(category)
 								.subList(getPageFirstItem(), getPageFirstItem() + getPageSize()));
 					} catch (Exception e) {
 						return new ListDataModel<Product>(
-								productService.getAllProducts(category).subList(getPageFirstItem(), getItemsCount()));
+								productService.getProducts(category).subList(getPageFirstItem(), getItemsCount()));
 					}
 				}
 			};

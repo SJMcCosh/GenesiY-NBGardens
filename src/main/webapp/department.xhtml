@@ -5,119 +5,119 @@
 	template="templates/template.xhtml">
 	<meta charset="ISO-8859-1" />
 	<ui:define name="maincontent">
-	
-	 <script type="text/javascript">
-	 	
-		//<![CDATA[				
-			
+
+		<script type="text/javascript">
+			//<![CDATA[				
+
 			var menuOpen = false;
-			function openTopMenu()
-			{		
-				
-				if(menuOpen == true){
+			function openTopMenu() {
+
+				if (menuOpen == true) {
 					$("#side_menu_lower").hide();
-					$("#side_menu_openclose_icon").attr("src" , "img/DepartmentImages/top_menu_open.png");
+					$("#side_menu_openclose_icon").attr("src",
+							"img/DepartmentImages/top_menu_open.png");
 					menuOpen = false;
-				}else{				
+				} else {
 					$("#side_menu_lower").show();
-					$("#side_menu_openclose_icon").attr("src" , "img/DepartmentImages/top_menu_close.png");
+					$("#side_menu_openclose_icon").attr("src",
+							"img/DepartmentImages/top_menu_close.png");
 					menuOpen = true;
 				}
 			}
-		//]]>
-	</script>
-	
-	
-	
-	<div id="department_page_top_container">
-		<div class="side_menu">
-			
-			<h2>Categories</h2>
-			<img id="side_menu_openclose_icon" onclick="openTopMenu()" src="img/DepartmentImages/top_menu_open.png" />
-			
-			<div id="side_menu_lower">
-			<br/><br/><br/>
-				<ui:repeat var="categories" value="#{category.catModel}">
-					<h:form>						
-						<p><h:commandLink action="#{products.getCategoryProducts(categories.name)}"
-								value="#{categories.name}" /></p>
-								<hr class="side_menu_lower_item"/>	
-					</h:form>
-				</ui:repeat>
-				
-				
-				
-			</div>
-			
-		</div>
-		
-	</div>
-	
-	<div id="department_page_content_container">
-	
-	<div id="department_page_left_container">
-		<div class="side_menu">
-			<p id="dept_title">Outdoor Living</p>
-			
-			<p>Outdoor Structures</p>
-			<hr class="dept_side_menu_hr_tag"/>
-			<p>Storage Solutions</p>
-			<hr class="dept_side_menu_hr_tag"/>
-			<p>Decking</p>
-			<hr class="dept_side_menu_hr_tag"/>
-			<p>Outdoor Tools</p>
-			<hr class="dept_side_menu_hr_tag"/>
-			<p>Fences</p>
-		</div>
-	</div>
-	
-	
-	<div id="department_page_right_container">
-		<div id="department_page_top_advert">
-			
-		</div>		
-		<br/>
-		<br/>
-		<div id="departments_items_container">
-		
-			<div id="departments_items_container_inner">
-			
-			
-				
-				<ui:repeat var="categories" value="#{category.catModel}">
-					
-						<div class="departments_item">
+			//]]>
+		</script>
+
+
+
+		<div id="department_page_top_container">
+			<div class="side_menu">
+
+				<h2>Categories</h2>
+				<img id="side_menu_openclose_icon" onclick="openTopMenu()"
+					src="img/DepartmentImages/top_menu_open.png" />
+
+				<div id="side_menu_lower">
+					<br />
+					<br />
+					<br />
+					<ui:repeat var="categories" value="#{category.catModel}">
 						<h:form>
-							<h:commandLink action="#{catpage.allProducts(categories.name)}"	>
-								<img class="departments_item_image" src="img/DepartmentImages/shed.jpg" />				
-
-							
-							<div class="departments_item_lower_bar">
-								<p><h:outputText value="#{categories.name}"/></p>
-							</div>
-							</h:commandLink>
+							<p>
+								<h:commandLink
+									action="#{products.getCategoryProducts(categories.name)}"
+									value="#{categories.name}" />
+							</p>
+							<hr class="side_menu_lower_item" />
 						</h:form>
-						</div>
+					</ui:repeat>
 
-				
-				
-				</ui:repeat>
-			
-			
-			
-			
+
+
+				</div>
+
 			</div>
-			
+
 		</div>
-	</div>
 
-</div>
+		<div id="department_page_content_container">
+
+			<div id="department_page_left_container">
+				<div class="side_menu">
+					<p id="dept_title">Outdoor Living</p>
+
+					<p>Outdoor Structures</p>
+					<hr class="dept_side_menu_hr_tag" />
+					<p>Storage Solutions</p>
+					<hr class="dept_side_menu_hr_tag" />
+					<p>Decking</p>
+					<hr class="dept_side_menu_hr_tag" />
+					<p>Outdoor Tools</p>
+					<hr class="dept_side_menu_hr_tag" />
+					<p>Fences</p>
+				</div>
+			</div>
+
+
+			<div id="department_page_right_container">
+				<div id="department_page_top_advert"></div>
+				<br /> <br />
+				<div id="departments_items_container">
+
+					<div id="departments_items_container_inner">
 
 
 
-	
+						<ui:repeat var="categories" value="#{category.catModel}">
+
+							<div class="departments_item">
+								<h:form>
+									<h:commandLink
+										action="#{catpage.allProducts(categories.name)}">
+										<img class="departments_item_image"
+											src="img/DepartmentImages/shed.jpg" />
+
+
+										<div class="departments_item_lower_bar">
+											<p>
+												<h:outputText value="#{categories.name}" />
+											</p>
+										</div>
+									</h:commandLink>
+								</h:form>
+							</div>
 
 
 
+						</ui:repeat>
+
+
+
+
+					</div>
+
+				</div>
+			</div>
+
+		</div>
 	</ui:define>
 </ui:composition>

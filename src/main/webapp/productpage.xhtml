@@ -128,30 +128,30 @@
 				<div class="related-products col-12 col-m-12">
 					<h2>Related Products</h2>
 
-					<div id="index_lower_content_master_wrapper">
-						<div id="index_featured_products_wrapper_outer">
-							<div id="index_featured_products_wrapper_inner">
-								<!-- THE JSF VERSION OF THE FEATURED PRODUCTS -->
-								<ui:repeat var="product" value="#{products.dataModel}">
-									<h:commandLink action="#{products.viewProduct(product)}"
-										class="col-3 col-m-6">
+					<div id="index_featured_products_scroll_section_outer">
+						<div id="index_featured_products_scroll_section_inner">
+							<ui:repeat var="product" value="#{products.dataModel}">
 
-										<div class="listofproducts">
-											<img class="subcat_images" src="#{product.imageLocation}" />
-											<ul>
-												<li><h:outputText value="#{product.name}"
-														class="index_featured_products_product_title" /></li>
-												<li><h:outputText value="#{product.price}"
-														class="index_featured_products_product_price" /></li>
-												<li><h:outputText value="#{product.averageRating}"
-														class="index_featured_products_product_price" /></li>
-											</ul>
-
+								<div class="index_featured_products_product">
+									<h:commandLink action="#{products.viewProduct(product)}">
+										<img class="index_featured_products_product_image"
+											src="#{product.imageLocation}" />
+										<div class="index_featured_products_product_title">
+											<h:outputText value="#{product.name}" />
 										</div>
-
 									</h:commandLink>
-								</ui:repeat>
-							</div>
+									<p>
+										<h:outputText value="#{product.averageRating}"
+											class="index_featured_products_product_price">
+											<f:convertNumber type="currency" currencyCode="GBP" />
+										</h:outputText>
+									</p>
+									<img src="#{products.averageRatingImg(product.averageRating)}" />
+
+								</div>
+
+								<div id="featured_items_padding"></div>
+							</ui:repeat>
 						</div>
 					</div>
 				</div>
