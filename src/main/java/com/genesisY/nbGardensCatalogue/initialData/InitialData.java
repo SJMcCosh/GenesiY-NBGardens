@@ -122,8 +122,8 @@ public class InitialData {
 		c3.add(new Category("Fantasy", "Gnomes", "img/zombieGnome.jpeg"));
 
 		//Products
-		productList.add(new Product(1, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0,
-				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList, c1));
+		productList.add(new Product(1, "Chelsea FC Gnome", 4.5, "Football Gnome", "Dont care", 15.0,
+				150.50, list1, "img/chelseagnome.jpg", reviewList, c1));
 		productList.add(new Product(2, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care",
 				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList, c2));
 		productList.add(new Product(3, "Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0,
