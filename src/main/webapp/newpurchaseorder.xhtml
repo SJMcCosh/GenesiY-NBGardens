@@ -11,27 +11,37 @@
 			</div>
 		</div>
 		<div class="empty col-1 col-m-1"></div>
+		
+		
 		<div class="productBox col-5 col-m-10">
+		<ui:repeat var="products" value="#{products.dataModel}">
+		<h:form>
+		<ul>
+			
 			<div id="allProducts">
-				<p>All products list</p>
-				<ul>
-					<ui:repeat onload="#{products.getAllProducts}" var="product"
-						value="#{products.dataModel}">
-						<li><h:outputText value="#{product.name}"></h:outputText></li>
-					</ui:repeat>
-				</ul>
-				<div class="columns_dropdowns">
-					<h:selectOneMenu>
-						<f:selectItem itemValue="1" itemLabel="Item 1" />
-						<f:selectItem itemValue="2" itemLabel="Item 2" />
-					</h:selectOneMenu>
-				</div>
-
-				<div class="columns_add_button">
+								<li><b>Product Name:</b> <h:outputText
+										value="#{products.dataModel.getRowData().name}"></h:outputText></li>
+								<li><b>Price:</b> <h:outputText
+										value="#{products.dataModel.getRowData().price}"></h:outputText></li>
+								<li><b>Specification:</b> <h:outputText
+										value="#{products.dataModel.getRowData().specification}"></h:outputText></li>
+								<div class="columns_add_button">
 					<h:commandButton value="Add Product" onclick="alert('clicked');" action = "#{newPurchase.addToProdList}" />
+					<div class="columns_dropdowns">
+					<ui:repeat var="suppliers_dropdown" value="#{products.getDataSupplier()}">
+					<h:selectOneMenu>
+						<f:selectItems value="#{products.dataSupplier.getRowData().supplierName}" />
+					</h:selectOneMenu>
+					</ui:repeat>
 				</div>
+				
 			</div>
 		</div>
+		</ul>
+		</h:form>
+		</ui:repeat>
+		</div>
+		
 		<div class="productBox col-5 col-m-10">
 			<div id="savedProducts">
 				<p>Saved products list</p>
@@ -47,23 +57,5 @@
 			</div>
 		</div>
 		<div class="empty col-1 col-m-1"></div>
-		<!-- <div id="tab_container">
-			<div class="col-12 col-m-12">
-				<section>
-					<div tabindex="0">
-						<button>Tab 1</button>
-						<p>Tab Content #1</p>
-					</div>
-					<div tabindex="0">
-						<button>Tab 2</button>
-						<p>Content for Tab #2</p>
-					</div>
-					<div tabindex="0">
-						<button>Tab 3</button>
-						<p>#3 Tab Content</p>
-					</div>
-				</section>
-			</div>
-		</div> -->
 	</ui:define>
 </ui:composition>
