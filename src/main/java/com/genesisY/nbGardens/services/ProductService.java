@@ -55,7 +55,7 @@ public class ProductService {
 	 * @return List<Product> : the list of products that have been returned from
 	 *         the data store
 	 */
-	public List<Product> getAllProducts(String category) {
+	public List<Product> getAllProducts(String category, String department) {
 		List<Product> products = productManager.getProducts();
 		List<Product> moreprods = new ArrayList<Product>();
 		for (Product p: products){
@@ -78,6 +78,12 @@ public class ProductService {
 					if (!stringy.contains(category)){
 						iter.remove();
 					}
+					for (Category c: categories){
+						if (!c.getDepartment().equals(department)){
+							iter.remove();
+						}
+					}
+					
 				}
 				return moreprods;
 			} else {
@@ -102,15 +108,31 @@ public class ProductService {
 		return null;
 	}
 	
-	/**
-	 * Returns a list of products based on an input of a category.	
-	 * @param category: String - determines category to look at
-	 * @return List<Product> returns a list of products based on a category
-	 */
-	public List<Product> getCategoryProducts(String category) {
+	public List<Product> getProducts(String category) {
+		List<Product> products = productManager.getProducts();
+		List<Product> moreprods = new ArrayList<Product>();
+		for (Product p: products){
+			moreprods.add(p);
+		}
 		try {
 			if (category != null && categoryValidate(category)) {
-				return productManager.getProductsByCategory(category);
+				Iterator<Product> iter = moreprods.iterator();
+				while(iter.hasNext()){
+					Product prod = iter.next();
+					List<Category> categories = prod.getCategories();
+					String cats = categories.toString();
+					String[] strings = cats.split(", ");
+					strings[0] = strings[0].replace("[", "");
+					strings[strings.length - 1]= strings[strings.length - 1].replace("]", "");
+					List<String> stringy = new ArrayList<String>();
+					for (String string: strings){
+						stringy.add(string);
+					}
+					if (!stringy.contains(category)){
+						iter.remove();
+					}
+				}
+				return moreprods;
 			} else {
 				return null;
 			}
