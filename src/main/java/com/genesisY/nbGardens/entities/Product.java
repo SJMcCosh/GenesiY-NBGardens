@@ -67,7 +67,7 @@ public class Product {
 	@NotNull
 	private boolean status;
 
-	@Column(name = "status", nullable = false)
+	@Column(name = "valid", nullable = false)
 	@NotNull
 	private boolean valid;
 
