@@ -42,6 +42,7 @@ public class CategoryPageController implements Serializable {
 	private int quantityOfItemsSelected;
 	private DataModel<Tag> tagModel = null;
 	private DataModel<Product> allProductModel = null;
+	private DataModel<Product> wholeProductModel = null;
 
 	public int getSelected() {
 		return selected;
@@ -67,17 +68,25 @@ public class CategoryPageController implements Serializable {
 	 */
 	public String viewProduct(Product p) {
 		productController.viewProduct(p);
+		for (Product prod: allProductModel){
+			prod.setToRender(true);
+		}
 		return "productpage";
 	}
 
 	public String allProducts(String category) {
 		setCategory(category);
 		allProductModel = new ListDataModel<Product>(productService.getAllProducts(getCategory()));
-		for (Product p: allProductModel){
-		System.out.println(p);
+		List<Product> products = new ArrayList<Product>();
+		for (Product p : allProductModel) {
+			products.add(p);
 		}
+		wholeProductModel = new ListDataModel<Product>(products);
 		dataModel = getDataModel();
 		setProductModel(dataModel);
+		for (Product p: wholeProductModel){
+			p.setToRender(true);
+		}
 		return "subcategory";
 	}
 
@@ -156,18 +165,17 @@ public class CategoryPageController implements Serializable {
 				public DataModel<Product> createPageDataModel() {
 					try {
 						List<Product> products = new ArrayList<Product>();
-						for (Product p : getAllProductModel()) {
+						for (Product p : getWholeProductModel()) {
 							products.add(p);
 						}
 						return new ListDataModel<Product>(
 								products.subList(getPageFirstItem(), getPageFirstItem() + getPageSize()));
 					} catch (Exception e) {
 						List<Product> products = new ArrayList<Product>();
-						for (Product p : getAllProductModel()) {
+						for (Product p : getWholeProductModel()) {
 							products.add(p);
 						}
-						return new ListDataModel<Product>(
-								productService.getAllProducts(category).subList(getPageFirstItem(), getItemsCount()));
+						return new ListDataModel<Product>(products.subList(getPageFirstItem(), getItemsCount()));
 					}
 				}
 
@@ -237,7 +245,6 @@ public class CategoryPageController implements Serializable {
 	 * @return productModel
 	 */
 
-
 	public void setProductModel(DataModel<Product> productModel) {
 		this.productModel = productModel;
 	}
@@ -284,6 +291,14 @@ public class CategoryPageController implements Serializable {
 	public void setAllProductModel(DataModel<Product> allProductModel) {
 		this.allProductModel = allProductModel;
 		setDataModel(pagination.createPageDataModel());
+	}
+
+	public DataModel<Product> getWholeProductModel() {
+		return wholeProductModel;
+	}
+
+	public void setWholeProductModel(DataModel<Product> wholeProductModel) {
+		this.wholeProductModel = wholeProductModel;
 	}
 
 }

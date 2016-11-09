@@ -1,7 +1,13 @@
 package com.genesisY.nbGardensCatalogue.entities;
 
-import javax.persistence.*;
-import javax.validation.constraints.*;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * customer class, setting/getting customer passwords and usernames
@@ -43,6 +49,8 @@ public class Customer {
 	@Size(min = 5, max = 225)
 	@NotNull
 	private String phoneNumber;
+	
+	private List<CustomerOrder> customerOrders;
 
 	public Customer() {
 
@@ -60,6 +68,16 @@ public class Customer {
 		this.firstName = firstName;
 		this.surname = surname;
 		this.phoneNumber = phoneNumber;
+	}
+	
+	public Customer(String firstName, String surname, String email, String username, String password, String phoneNumber, List<CustomerOrder> customerOrders){
+		this.username = username;
+		this.password = password;
+		this.email = email;
+		this.firstName = firstName;
+		this.surname = surname;
+		this.phoneNumber = phoneNumber;
+		this.customerOrders = customerOrders;
 	}
 
 	public String getUsername() {
@@ -108,4 +126,13 @@ public class Customer {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+
+	public List<CustomerOrder> getCustomerOrders() {
+		return customerOrders;
+	}
+
+	public void setCustomerOrders(List<CustomerOrder> customerOrders) {
+		this.customerOrders = customerOrders;
+	}
+	
 }

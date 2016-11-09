@@ -29,13 +29,13 @@ public class SortController {
 		System.out.println(">>>>>>>>>>> " + sort);
 		switch(sort){
 		case "Price High to Low" :
-			categoryPageController.setAllProductModel(sortingService.sortHighToLow(categoryPageController.getAllProductModel()));
+			categoryPageController.setWholeProductModel(sortingService.sortHighToLow(categoryPageController.getWholeProductModel()));
 			break;
 		case "Price Low to High" :
-			categoryPageController.setAllProductModel(sortingService.sortLowToHigh(categoryPageController.getAllProductModel()));
+			categoryPageController.setWholeProductModel(sortingService.sortLowToHigh(categoryPageController.getWholeProductModel()));
 			break;
 		case "Rating" :
-			categoryPageController.setAllProductModel(sortingService.sortByRating(categoryPageController.getAllProductModel()));
+			categoryPageController.setWholeProductModel(sortingService.sortByRating(categoryPageController.getWholeProductModel()));
 			break;
 		}
 	}

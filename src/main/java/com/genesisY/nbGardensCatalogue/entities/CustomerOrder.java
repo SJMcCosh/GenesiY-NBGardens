@@ -1,5 +1,7 @@
 package com.genesisY.nbGardensCatalogue.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,6 +34,9 @@ public class CustomerOrder {
 	@Column(name = "total_price", nullable = false)
 	@NotNull
 	private double totalPrice;
+	
+	private List<Product> prodList;
+	
 
 	public CustomerOrder() {
 
@@ -40,6 +45,13 @@ public class CustomerOrder {
 	public CustomerOrder(int fk_customerID, double totalPrice) {
 		this.fk_customerID = fk_customerID;
 		this.totalPrice = totalPrice;
+	}
+	
+	public CustomerOrder(List<Product> prodList){
+		this.prodList = prodList;
+		for (Product p : prodList){
+			totalPrice += p.getPrice();
+		}
 	}
 
 	public int getCustomerOrderID() {
@@ -66,4 +78,12 @@ public class CustomerOrder {
 		this.totalPrice = totalPrice;
 	}
 
+	public List<Product> getProdList() {
+		return prodList;
+	}
+
+	public void setProdList(List<Product> prodList) {
+		this.prodList = prodList;
+	}
+	
 }

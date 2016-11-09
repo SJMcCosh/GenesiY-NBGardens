@@ -19,11 +19,6 @@ public class FilterService {
 	 * @return dataModel: returns a DataModel.
 	 */
 	public DataModel<Product> filterByTag(List<String> tagList, DataModel<Product> dataModel) {
-		if (tagList.size() != 0 && tagList.get(0).equals("")) {
-			for (Product p : dataModel) {
-				p.setToRender(true);
-			}
-		}
 		if (tagList.size() != 0 && !tagList.get(0).equals("")) {
 			for (Product p : dataModel) {
 				List<String> tags = new ArrayList<String>();

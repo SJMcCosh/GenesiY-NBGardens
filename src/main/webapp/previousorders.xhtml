@@ -1,0 +1,83 @@
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/template.xhtml">
+	<meta charset="ISO-8859-1" />
+	<ui:define name="maincontent">
+
+
+		<h:form>
+			<!-- This is the main container which will encompass everything on the page -->
+			<div id="basket_contents_container">
+				<!-- This will contain the header information for the basket such as the title, price and quantity -->
+				<div id="basket_header">
+					<!-- These two divs will be float right in the main div -->
+					<div id="basket_header_title">
+						<h2>Previous Orders</h2>
+					</div>
+					<div id="basket_header_right_column">
+						<p class="basket_page_price">Price</p>
+						<p>Quantity</p>
+					</div>
+				</div>
+				<hr />
+
+
+				<!-- This form will hold all of the basket items and the cart total -->
+				<h:form>
+					<!-- This will repeat for each basket item -->
+					<ui:repeat var="customerorders"
+						value="#{customerorder.prodDataModel}">
+						<!-- The basket_item_container is split up into three divs:
+						 Left: This holds the product image
+						 Middle: This holds the product title and description
+						 Right: This holds the product price, quantity and the delete item button
+					 -->
+						<div id="basket_item_container">
+							<!-- Holds the product image -->
+							<div id="basket_items_container_left_column">
+								<img class="index_featured_products_product_image"
+									id="index_featured_products_product_image_basket_page"
+									src="#{customerorders.imageLocation}" />
+							</div>
+
+							<!-- Holds the product info(description/title) -->
+							<div id="basket_items_container_middle_column">
+								<h2 id="basket_items_container_middle_column_item_title">
+									<h:outputText value="#{customerorders.name}" />
+								</h2>
+								<br />
+								<h:outputText
+									id="basket_items_container_middle_column_item_description"
+									value="#{customerorders.description}" />
+							</div>
+
+							<!-- Holds the price, quantity and delete button -->
+							<div id="basket_items_container_right_column">
+								<div style="float: right">
+									<!-- This will hold the product price -->
+									<h:outputText class="basket_page_price_priceInfo"
+										value="#{customerorders.price}">
+										<f:convertNumber type="currency" currencyCode="GBP" />
+									</h:outputText>
+
+
+								</div>
+							</div>
+							<hr />
+						</div>
+					</ui:repeat>
+
+
+				</h:form>
+
+
+
+
+			</div>
+		</h:form>
+
+
+	</ui:define>
+</ui:composition>
