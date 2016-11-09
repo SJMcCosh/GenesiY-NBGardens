@@ -11,7 +11,10 @@ import com.genesisY.nbGardensCatalogue.entities.Review;
 @RequestScoped
 public class ReviewController {
 
-	@Inject private ProductsController productsController;
+	@Inject
+	private ProductsController productsController;
+	@Inject
+	private CategoryPageController categoryPageController;
 	private DataModel<Review> dataModel = null;
 	
 	

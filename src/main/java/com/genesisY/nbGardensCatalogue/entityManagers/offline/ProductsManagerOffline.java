@@ -50,7 +50,6 @@ public class ProductsManagerOffline implements ProductManager {
 	@Override
 	public List<Product> getProductsByCategory(String category) {
 		List<Product> products = new ArrayList<Product>();
-		System.out.println(category);
 		for (Product p : initialData.getProductList()) {
 			List<String> cats = new ArrayList<String>();
 			for (Category c : p.getCategories()) {
@@ -61,9 +60,6 @@ public class ProductsManagerOffline implements ProductManager {
 			}
 		}
 		products.size();
-		for (Product p : products) {
-			System.out.println(p.getName());
-		}
 		return products;
 	}
 

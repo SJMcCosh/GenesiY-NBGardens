@@ -612,7 +612,7 @@ ul.topnav {
 	margin: 0;
 	padding: 0;
 	text-align: center;
-	overflow: hidden;
+
 	background-color: #143516;
 	list-style: none;
 	margin: 0;
@@ -1020,6 +1020,7 @@ ul.botnav li a {
 	color: white;
 	padding-right: 5px;
 	padding-left: 10px;
+	float: right;
 }
 
 /*------------------------------------------------------------ FOR THE BASKET PAGE	-----------------------------*/
@@ -1301,7 +1302,6 @@ ul.botnav li a {
 	margin:0 auto;
 	width:900px;
 	height:700px;
-
 }
 	#department_page_top_advert{
 		width:100%;
@@ -1384,22 +1384,28 @@ ul.botnav li a {
 	
 @media only screen and (max-width: 1120px){
 	
+	#department_page_content_container{
+		
+	}
 	
 	#department_page_right_container{
-		width:600px;
+		width:50%;
 		margin:0 auto;
 	}
-	#department_page_left_container{
-		display:none;
-	}
-	
-	#department_page_top_container{
-		display:block;
-	}
+
+
 	
 }
 
-
+@media only screen and (max-width: 768px){
+		
+	#department_page_top_container{
+		display:block;
+	}
+		#department_page_left_container{
+		display:none;
+	}
+}
 
 
 		

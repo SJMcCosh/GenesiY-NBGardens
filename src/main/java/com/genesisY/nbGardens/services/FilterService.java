@@ -48,8 +48,25 @@ public class FilterService {
 	 * @return dataModel - returns a DataModel
 	 */
 	public DataModel<Product> filterByPrice(DataModel<Product> dataModel, short minimum, short maximum) {
+		System.out.println("-----------------bye" + maximum);
 		for (Product p : dataModel) {
 			if (p.getPrice() < minimum || p.getPrice() > maximum) {
+				p.setToRender(false);
+			}
+		}
+		return dataModel;
+	}
+	
+	/**
+	 * Sets whether or not to render a product based on whether or not it is within the specified rating range.
+	 * @param dataModel - takes in a Data Model of Product
+	 * @param minimum - the smallest value. A short.
+	 * @param maximum - the largest value. A short.
+	 * @return dataModel - returns a DataModel
+	 */
+	public DataModel<Product> filterByRating(DataModel<Product> dataModel, double lower, double upper) {
+		for (Product p : dataModel) {
+			if (p.getAverageRating() < lower || p.getAverageRating() > upper) {
 				p.setToRender(false);
 			}
 		}

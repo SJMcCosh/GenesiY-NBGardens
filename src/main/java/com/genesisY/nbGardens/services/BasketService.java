@@ -44,7 +44,6 @@ public class BasketService {
 	@SuppressWarnings("unchecked")
 	public List<BasketItem> getBasketItems() {
 		try {
-			System.out.println("At service");
 			return basketManager.getBasketItems();
 			/*
 			 * if (basketManager.getProducts().size() != 0) {

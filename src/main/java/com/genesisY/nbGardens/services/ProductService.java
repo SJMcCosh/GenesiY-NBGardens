@@ -1,5 +1,7 @@
 package com.genesisY.nbGardens.services;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -7,11 +9,12 @@ import java.util.regex.Pattern;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import com.genesisY.nbGardensCatalogue.entities.Category;
 import com.genesisY.nbGardensCatalogue.entities.Product;
+import com.genesisY.nbGardensCatalogue.entities.Tag;
 import com.genesisY.nbGardensCatalogue.entityManagers.ProductManager;
 
 @Stateless
-
 public class ProductService {
 
 	@Inject
@@ -53,9 +56,30 @@ public class ProductService {
 	 *         the data store
 	 */
 	public List<Product> getAllProducts(String category) {
+		List<Product> products = productManager.getProducts();
+		List<Product> moreprods = new ArrayList<Product>();
+		for (Product p: products){
+			moreprods.add(p);
+		}
 		try {
 			if (category != null && categoryValidate(category)) {
-				return productManager.getProducts();
+				Iterator<Product> iter = moreprods.iterator();
+				while(iter.hasNext()){
+					Product prod = iter.next();
+					List<Category> categories = prod.getCategories();
+					String cats = categories.toString();
+					String[] strings = cats.split(", ");
+					strings[0] = strings[0].replace("[", "");
+					strings[strings.length - 1]= strings[strings.length - 1].replace("]", "");
+					List<String> stringy = new ArrayList<String>();
+					for (String string: strings){
+						stringy.add(string);
+					}
+					if (!stringy.contains(category)){
+						iter.remove();
+					}
+				}
+				return moreprods;
 			} else {
 				return null;
 			}
