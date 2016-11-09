@@ -28,6 +28,14 @@ public class AddressController implements Serializable {
 	private Customer customer;
 	private Address address;
 	private DataModel<Address> dataModel = null;
+	private String addressLine1;
+	private String addressLine2;
+	private String addressLine3;
+	private String townCity;
+	private String county;
+	private String postcode;
+
+	
 
 	public AddressService getAddressService() {
 		return addressService;
@@ -35,6 +43,54 @@ public class AddressController implements Serializable {
 
 	public void setAddressService(AddressService addressService) {
 		this.addressService = addressService;
+	}
+
+	public String getAddressLine1() {
+		return addressLine1;
+	}
+
+	public void setAddressLine1(String addressLine1) {
+		this.addressLine1 = addressLine1;
+	}
+
+	public String getAddressLine2() {
+		return addressLine2;
+	}
+
+	public void setAddressLine2(String addressLine2) {
+		this.addressLine2 = addressLine2;
+	}
+
+	public String getAddressLine3() {
+		return addressLine3;
+	}
+
+	public void setAddressLine3(String addressLine3) {
+		this.addressLine3 = addressLine3;
+	}
+
+	public String getTownCity() {
+		return townCity;
+	}
+
+	public void setTownCity(String townCity) {
+		this.townCity = townCity;
+	}
+
+	public String getCounty() {
+		return county;
+	}
+
+	public void setCounty(String county) {
+		this.county = county;
+	}
+
+	public String getPostcode() {
+		return postcode;
+	}
+
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
 	}
 
 	public Address getAddress() {
@@ -118,14 +174,6 @@ public class AddressController implements Serializable {
 		return customerController.viewDetails();
 	}
 
-	public UserCredentials getUserCredentials() {
-		return userCredentials;
-	}
-
-	public void setUserCredentials(UserCredentials userCredentials) {
-		this.userCredentials = userCredentials;
-	}
-
 	public CustomerController getCustomerController() {
 		return customerController;
 	}
@@ -134,8 +182,7 @@ public class AddressController implements Serializable {
 		this.customerController = customerController;
 	}
 
-	public String addAddress(String addressLine1, String addressLine2, String addressLine3, String townCity,
-			String county, String postcode, Customer customer) {
+	public String addAddress() {
 
 		addressService.addAddress(addressLine1, addressLine2, addressLine3, townCity, county, postcode, false,
 				customer);
