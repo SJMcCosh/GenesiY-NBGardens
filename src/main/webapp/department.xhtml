@@ -37,16 +37,14 @@
 			
 			<div id="side_menu_lower">
 			<br/><br/><br/>
+				<ui:repeat var="categories" value="#{category.catModel}">
+					<h:form>						
+						<p><h:commandLink action="#{products.getCategoryProducts(categories.name)}"
+								value="#{categories.name}" /></p>
+								<hr class="side_menu_lower_item"/>	
+					</h:form>
+				</ui:repeat>
 				
-				<p>Test one</p>
-				<hr class="side_menu_lower_item"/>							
-				<p>Test one</p>
-				<hr class="side_menu_lower_item"/>		
-				<p>Test one</p>
-				<hr class="side_menu_lower_item"/>		
-				<p>Test one</p>
-				<hr class="side_menu_lower_item"/>		
-				<p>Test one</p>
 				
 				
 			</div>
@@ -81,44 +79,34 @@
 		<br/>
 		<br/>
 		<div id="departments_items_container">
-			<div class="departments_item">
-				<img class="departments_item_image" src="img/DepartmentImages/shed.jpg" />				
-				<div class="departments_item_lower_bar">
-					<p>Outdoor Structures</p>
-				</div>
-			</div>
-				<div class="departments_item">
-				<img class="departments_item_image" src="img/DepartmentImages/shed.jpg" />				
-				<div class="departments_item_lower_bar">
-					<p>Outdoor Structures</p>
-				</div>
-			</div>
-				<div class="departments_item">
-				<img class="departments_item_image" src="img/DepartmentImages/shed.jpg" />				
-				<div class="departments_item_lower_bar">
-					<p>Outdoor Structures</p>
-				</div>
-			</div>
-				<div class="departments_item">
-				<img class="departments_item_image" src="img/DepartmentImages/shed.jpg" />				
-				<div class="departments_item_lower_bar">
-					<p>Outdoor Structures</p>
-				</div>
-			</div>
-				<div class="departments_item">
-				<img class="departments_item_image" src="img/DepartmentImages/shed.jpg" />				
-				<div class="departments_item_lower_bar">
-					<p>Outdoor Structures</p>
-				</div>
-			</div>
-				<div class="departments_item">
-				<img class="departments_item_image" src="img/DepartmentImages/shed.jpg" />				
-				<div class="departments_item_lower_bar">
-					<p>Outdoor Structures</p>
-				</div>
-			</div>
+		
+			<div id="departments_items_container_inner">
 			
 			
+				
+				<ui:repeat var="categories" value="#{category.catModel}">
+					
+						<div class="departments_item">
+						<h:form>
+							<h:commandLink action="#{catpage.allProducts(categories.name)}"	>
+								<img class="departments_item_image" src="img/DepartmentImages/shed.jpg" />				
+
+							
+							<div class="departments_item_lower_bar">
+								<p><h:outputText value="#{categories.name}"/></p>
+							</div>
+							</h:commandLink>
+						</h:form>
+						</div>
+
+				
+				
+				</ui:repeat>
+			
+			
+			
+			
+			</div>
 			
 		</div>
 	</div>
@@ -127,21 +115,7 @@
 
 
 
-	<ui:repeat var="categories" value="#{category.catModel}">
-					<div class="col-6">
-						<div class="columnFirst ">
-							<h:form>
-								<h:commandLink action="#{catpage.allProducts(categories.name)}"
-									value="#{categories.name}" />
-								<br />
-								<h:commandLink action="#{catpage.allProducts(categories.name)}">
-									<img src="#{categories.image}" alt="#{categories.name}"
-										height="200" width="200"></img>
-								</h:commandLink>
-							</h:form>
-						</div>
-					</div>
-				</ui:repeat>
+	
 
 
 

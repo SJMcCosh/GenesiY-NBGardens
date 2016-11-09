@@ -13,13 +13,13 @@
 	width: 100%;
 }
 
-.wholebody::after {
+.maincontent::after {
 	content: "";
 	clear: both;
 	display: block;
 }
 
-.wholebody {
+.maincontent {
 	text-align: center;
 	padding-bottom: 20px;
 }
@@ -1307,12 +1307,16 @@ ul.botnav li a {
 		width:100%;
 		height:120px;
 		background-color:blue;
+		background-image:url('../../../nbgardens/img/DepartmentImages/dept_page_advert.jpg');
 
 	}
 		#departments_items_container{
-			width:100%;
-			height:100%;
+			height:100%;			
 		}
+			#departments_items_container_inner{
+				width:auto;
+				margin:0 auto;
+			}
 			.departments_item{
 				width:220px;
 				height:280px;
@@ -1335,6 +1339,9 @@ ul.botnav li a {
 					bottom:0;
 					text-align:center;
 				}
+					.departments_item_lower_bar > p:hover{
+						text-decoration:underline;
+					}
 	
 	.side_menu{
 		width:100%;
@@ -1385,15 +1392,18 @@ ul.botnav li a {
 @media only screen and (max-width: 1120px){
 	
 	#department_page_content_container{
-		
+		width:100%;
 	}
 	
 	#department_page_right_container{
-		width:50%;
+		width:100%;
 		margin:0 auto;
 	}
 
-
+	#departments_item{
+		margin:0 auto;
+	}
+	
 	
 }
 
@@ -1404,6 +1414,19 @@ ul.botnav li a {
 	}
 		#department_page_left_container{
 		display:none;
+	}
+	#departments_items_container{
+		width:auto;
+	}
+	#departments_items_container_inner{
+		width:450px;
+	}
+}
+
+@media only screen and (max-width: 466px){
+	
+	#departments_items_container_inner{
+		width:220px;
 	}
 }
 
