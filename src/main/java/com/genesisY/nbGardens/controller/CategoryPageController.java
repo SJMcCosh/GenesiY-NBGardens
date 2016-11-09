@@ -16,12 +16,14 @@ import com.genesisY.nbGardensCatalogue.entities.Product;
 import com.genesisY.nbGardensCatalogue.entities.Tag;
 
 @SuppressWarnings("serial")
-@Named("products")
+@Named("catpage")
 @SessionScoped
-public class ProductsController implements Serializable {
+public class CategoryPageController implements Serializable {
 
 	@Inject
 	private ProductService productService;
+	@Inject
+	private ProductsController productController;
 	private Product product;
 	/**
 	 * DataModel<Product>: Used for searches and on the home page
@@ -61,14 +63,12 @@ public class ProductsController implements Serializable {
 	 * @return String: Opens the productpage for a specific product
 	 */
 	public String viewProduct(Product p) {
-		product = productService.getProductByName(p.getName());
-		System.out.println(">>>>>>>>>>>>>>>>>>> Product Name = " + product.getName());
+		productController.viewProduct(p);
 		return "productpage";
 	}
 
 	public String allProducts(String category) {
 		setCategory(category);
-		System.out.println(category);
 		dataModel = getDataModel();
 		return "subcategory";
 	}
@@ -78,9 +78,8 @@ public class ProductsController implements Serializable {
 	 * @return dataModel
 	 */
 	public DataModel<Product> getDataModel() {
-		if (dataModel == null) {
 			dataModel = getPagination().createPageDataModel();
-		}
+		
 		return dataModel;
 	}
 
@@ -145,7 +144,6 @@ public class ProductsController implements Serializable {
 
 				@Override
 				public DataModel<Product> createPageDataModel() {
-					System.out.println(category);
 					try {
 						return new ListDataModel<Product>(productService.getAllProducts(category)
 								.subList(getPageFirstItem(), getPageFirstItem() + getPageSize()));
