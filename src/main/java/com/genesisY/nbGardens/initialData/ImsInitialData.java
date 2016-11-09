@@ -68,7 +68,7 @@ public class ImsInitialData {
 		catList.add(c5);
 		catList.add(c6);
 		
-		Product product1 = new Product(1, "Game of Gnomes", "A GOT gnome", "img/gnome.jpg", 9.99, "Made in Westeros", 12, 20, cl1, false, false);
+		Product product1 = new Product(1, "Game of Gnomes", "A GOT gnome", "img/gnomeGOT.jpg", 9.99, "Made in Westeros", 12, 20, cl1, false, false);
 		Product product2 = new Product(2, "random gnome", "lelelelel", "img/gnome-06.jpg", 15.29, "Made in the UK", 52, 40, cl2, true, true);
 		Product product3 = new Product(3, "other gnome", "1234567890", "img/gnome-07.jpg", 6.50, "Made in the EU", 121, 35, cl3, true, true);
 		Product product4 = new Product(4, "big gnome", "B.I.G, big!", "img/gnome.jpg", 12.99, "Made in the UK", 94, 15, cl4, true, true);
