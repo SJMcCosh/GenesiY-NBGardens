@@ -34,11 +34,14 @@ public class StockAlert {
 	@Size(min = 2, max = 255)
 	private String details;
 	
-	public StockAlert (int id, String date, String details)
+	private int productId;
+	
+	public StockAlert (int id, String date, String details, int productId)
 	{
 		this.setId(id);
 		this.setDate(date);
 		this.setDetails(details);
+		this.setProductId(productId);
 	}
 
 	public int getId() {
@@ -63,6 +66,14 @@ public class StockAlert {
 
 	public void setDetails(String details) {
 		this.details = details;
+	}
+
+	public int getProductId() {
+		return productId;
+	}
+
+	public void setProductId(int productId) {
+		this.productId = productId;
 	}
 	
 }

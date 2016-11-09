@@ -9,7 +9,7 @@ import javax.inject.Inject;
 
 import com.genesisY.nbGardens.entities.Address;
 import com.genesisY.nbGardens.entities.Employee;
-import com.genesisY.nbGardens.entities.EmployeeLogin;
+
 import com.genesisY.nbGardens.entities.Product;
 import com.genesisY.nbGardens.entities.PurchaseOrder;
 import com.genesisY.nbGardens.entities.Supplier;
@@ -31,7 +31,12 @@ public class PurchaseOrderService {
 
 	public void createPurchaseOrder(double totalPrice, Supplier supplier, DataModel<Product> prodList){
 		
-	PurchaseOrder p = new PurchaseOrder(totalPrice, supplier, prodList);
+		List purchaseProdList = null;    
+		for(Product p: prodList){
+			purchaseProdList.add(p);
+		}
+		
+	PurchaseOrder p = new PurchaseOrder(totalPrice, supplier, purchaseProdList);
 	
 	if (p != null)
 	{    

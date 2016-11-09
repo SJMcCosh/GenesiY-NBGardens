@@ -7,7 +7,7 @@
 	<ui:define name="content">
 		<div id="pageTitle">
 			<div class="col-12 col-m-12">
-				<h1>Suppliers</h1>
+				<h1>Purchase Orders</h1>
 			</div>
 		</div>
 		<div id="viewsuppliers">
@@ -44,30 +44,24 @@
 						<div class="col-6 col-m-6">
 							<div class="suppliername">
 								<li><b>ID:</b> <h:outputText
-										value="#{purchase.dataModel.getRowData().supplierID}"></h:outputText></li>
+										value="#{purchase.dataModel.getRowData().getSupplier().supplierID}"></h:outputText></li>
 								<li><b>Name:</b> <h:outputText
-										value="#{purchase.dataModel.getRowData().supplierName}"></h:outputText></li>
+										value="#{purchase.dataModel.getRowData().getSupplier().supplierName}"></h:outputText></li>
 								<li><b>Phone Number:</b> <h:outputText
-										value="#{purchase.dataModel.getRowData().telephoneNumber}"></h:outputText></li>
+										value="#{purchase.dataModel.getRowData().getSupplier().emailAddress}"></h:outputText></li>
 								<li><b>Email:</b> <h:outputText
-										value="#{purchase.dataModel.getRowData().emailAddress}"></h:outputText></li>
+										value="#{purchase.dataModel.getRowData().getSupplier().telephoneNumber}"></h:outputText></li>
 							</div>
 						</div>
 						<div class="col-6 col-m-6">
 							<div class="supplieraddress">
-								<li><b>Address</b></li>
+								<li><b></b></li>
 								<li><h:outputText
-										value="#{purchase.dataModel.getRowData().getAddress().addressLine1}"></h:outputText></li>
+										value="#{purchase.dataModel.getRowData().totalPrice}"></h:outputText></li>
+								<ui:repeat var="" value="">
 								<li><h:outputText
-										value="#{purcahse.dataModel.getRowData().getAddress().addressLine2}"></h:outputText></li>
-								<li><h:outputText
-										value="#{purchase.dataModel.getRowData().getAddress().addressLine3}"></h:outputText></li>
-								<li><h:outputText
-										value="#{purchase.dataModel.getRowData().getAddress().townCity}"></h:outputText></li>
-								<li><h:outputText
-										value="#{purchase.dataModel.getRowData().getAddress().country}"></h:outputText></li>
-								<li><h:outputText
-										value="#{purchase.dataModel.getRowData().getAddress().postcode}"></h:outputText></li>
+										value="#{purchase.dataModel.getRowData().prodList}"></h:outputText></li>
+								</ui:repeat>
 							</div>
 						</div>
 					</ul>
