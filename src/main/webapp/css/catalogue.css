@@ -168,11 +168,20 @@
 .resizingaddress {
 	padding-bottom: 20px;
 }
-
+.productcontent{
+	width:1000px;
+	height:auto;
+	margin:0 auto;
+	
+}
+	#product_page_product_title{
+		font-size:24px;
+		float:left;
+	}
 .pageContent::after {
 	content: "";
 	clear: both;
-	display: block;
+	display: block;	
 }
 
 body {
