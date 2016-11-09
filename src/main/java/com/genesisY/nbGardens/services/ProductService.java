@@ -53,6 +53,18 @@ public class ProductService {
 		}
 		return null;
 	}
+	
+	public List<Product> getProductById(int id)
+	{
+		if(productsManager.getProductById(id) != null)
+		{
+			return productsManager.getProductById(id);
+		}
+		else
+		{
+			return null;
+		}
+	}
 
 	public void updateProduct(Product product) {
 		if (product != null) {

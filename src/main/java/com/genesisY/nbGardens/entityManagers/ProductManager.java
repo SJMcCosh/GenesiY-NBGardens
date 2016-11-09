@@ -17,4 +17,6 @@ public interface ProductManager {
 	public void addProduct(Product product);
 
 	Product getProductByName(String name);
+	
+	public List<Product> getProductById(int id);
 }

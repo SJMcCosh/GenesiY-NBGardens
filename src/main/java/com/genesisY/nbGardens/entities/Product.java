@@ -40,9 +40,8 @@ public class Product {
 	@Column(name = "price", nullable = false, length = 255)
 	@NotNull
 	private double price;
-	
-	private List<Category> catList;
 
+	private List<Category> catList;
 
 	@Column(name = "imgLoc", nullable = false, length = 255)
 	@NotNull
@@ -52,18 +51,18 @@ public class Product {
 	@Column(name = "spec", nullable = false, length = 255)
 	@NotNull
 	private String specification;
-	
+
 	@Column(name = "stockLevel", nullable = false)
 	@NotNull
 	private int stockLevel;
-	
+
 	@Column(name = "lowStock", nullable = false)
 	private int lowStock;
 
 	@Column(name = "averageRating", nullable = false)
 	@NotNull
 	private Double averageRating;
-	
+
 	@Column(name = "status", nullable = false)
 	@NotNull
 	private boolean status;
@@ -72,7 +71,8 @@ public class Product {
 	@NotNull
 	private boolean valid;
 
-	public Product(int id, String name, String description, String imageLocation, double price, String specification, int stockLevel, int lowStock, List<Category> catList, boolean status, boolean valid) {
+	public Product(int id, String name, String description, String imageLocation, double price, String specification,
+			int stockLevel, int lowStock, List<Category> catList, boolean status, boolean valid) {
 		this.productID = id;
 		this.name = name;
 		this.desc = description;
@@ -83,7 +83,7 @@ public class Product {
 		this.lowStock = lowStock;
 		this.catList = catList;
 		this.status = status;
-		this.valid = valid; 
+		this.valid = valid;
 	}
 
 	public int getProductID() {
@@ -125,7 +125,7 @@ public class Product {
 	public void setStockLevel(int stockLevel) {
 		this.stockLevel = stockLevel;
 	}
-	
+
 	public int getLowStock() {
 		return lowStock;
 	}
@@ -180,5 +180,9 @@ public class Product {
 
 	public void setValid(boolean valid) {
 		this.valid = valid;
+	}
+
+	public String toString() {
+		return this.name;
 	}
 }

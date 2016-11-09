@@ -9,7 +9,6 @@
 	
 		<f:metadata>
 			<f:event type="preRenderView" listener="#{stockAlerts.onLoad}" />
-			<f:event type="preRenderView" listener="#{products.onLoad}" />
 		</f:metadata>
 	
 		<div id="pageTitle">
@@ -34,9 +33,15 @@
 			</h:form>
 		</div>
 		
-		<div id="stockAlertContent">
-			<div class="col-6 col-m-12">
-				<h1>Insert Values pls</h1>
+		<div class="col-6 col-m-12">
+			<br />
+			<br />
+			<div id="stockAlertDetailsBox">
+				<div class="contentBoxHeader">
+					<h3><h:outputText value="#{StockAlert.details}" /></h3>
+				</div>
+				
+				<h:outputText value="#{stockAlerts.productDataModel(StockAlert.productId)}" />
 			</div>
 		</div>
 		

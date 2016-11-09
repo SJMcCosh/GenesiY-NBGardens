@@ -36,6 +36,15 @@ public class PurchaseOrderController implements Serializable {
 	private DataModel<Product> purchaseProdList; 
 	 
 
+	public DataModel<Product> getPurchaseProdList() {
+		purchaseProdList = new ListDataModel(purchaseOrderService.viewPurchaseOrders());
+		return purchaseProdList;
+	}
+
+	public void setPurchaseProdList(DataModel<Product> purchaseProdList) {
+		this.purchaseProdList = purchaseProdList;
+	}
+
 	public PurchaseOrder getPurchaseOrder() {
 		return purchaseOrder;
 	}
@@ -133,6 +142,7 @@ public class PurchaseOrderController implements Serializable {
 			dataModel = getPagination().createPageDataModel();
 		}
 		return dataModel;
+		
 	}
 
 	private void updateCurrentItem() {
