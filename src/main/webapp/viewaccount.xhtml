@@ -15,45 +15,67 @@
 						<p>
 							<a><b>Billing Address</b></a>
 						</p>
-						<p><h:outputText value="#{customer.address.addressLine1}" /></p>
-						<p><h:outputText value="#{customer.address.addressLine2}" /></p>
-						<p><h:outputText value="#{customer.address.addressLine3}" /></p>
-						<p><h:outputText value="#{customer.address.townCity}" /></p>
-						<p><h:outputText value="#{customer.address.county}" /></p>
-						<p><h:outputText value="#{customer.address.postcode}" /></p>
+						<p>
+							<h:outputText value="#{customer.address.addressLine1}" />
+						</p>
+						<p>
+							<h:outputText value="#{customer.address.addressLine2}" />
+						</p>
+						<p>
+							<h:outputText value="#{customer.address.addressLine3}" />
+						</p>
+						<p>
+							<h:outputText value="#{customer.address.townCity}" />
+						</p>
+						<p>
+							<h:outputText value="#{customer.address.county}" />
+						</p>
+						<p>
+							<h:outputText value="#{customer.address.postcode}" />
+						</p>
 					</div>
 				</div>
 				<div class="col-4 col-m-4">
 					<div class="details">
 						<p>
-							<a><b>Username:</b> <h:outputText value="#{customer.customer.username}" /></a>
+							<a><b>Username:</b> <h:outputText
+									value="#{customer.customer.username}" /></a>
 						</p>
 						<p>
-							<a><b>Name:</b> <h:outputText value="#{customer.customer.firstName} #{customer.customer.surname}" /></a>
+							<a><b>Name:</b> <h:outputText
+									value="#{customer.customer.firstName} #{customer.customer.surname}" /></a>
 						</p>
 						<p>
-							<a><b>Phone Number:</b> <h:outputText value="#{customer.customer.phoneNumber}" /></a>
+							<a><b>Phone Number:</b> <h:outputText
+									value="#{customer.customer.phoneNumber}" /></a>
 						</p>
 						<p>
-						
-							<a><b>Email:</b> <h:outputText value="#{customer.customer.email}" /></a>
+
+							<a><b>Email:</b> <h:outputText
+									value="#{customer.customer.email}" /></a>
 						</p>
 					</div>
 				</div>
 				<div class="col-4 col-m-4">
 					<h:form class="editing">
-						<p>
-							<h:commandLink value = "View Addresses" action = "#{address.viewAddress()}" />
-						</p>
-						<p>
-							<h:commandLink value = "Edit Account Details" action = "#{editdetails.bindAttributes}" />
-						</p>
-						<p>
-							<h:commandLink value = "Change Your Password" action = "changepassword" />
-						</p>
-						<p>
-							<h:commandLink value = "Add Address" action = "addaddress" />
-						</p>
+						<br />
+						<h:commandLink value="View Addresses"
+							action="#{address.viewAddress()}" />
+						<br />
+						<br />
+						<h:commandLink value="Edit Account Details"
+							action="#{editdetails.bindAttributes}" />
+						<br />
+						<br />
+						<h:commandLink value="Change Your Password"
+							action="changepassword" />
+						<br />
+						<br />
+						<h:commandLink value="Add Address" action="addaddress" />
+						<br />
+						<br />
+						<h:commandLink value="See previous orders" action = "#{customerorder.getProductList}" />
+						<br />
 					</h:form>
 				</div>
 			</div>
