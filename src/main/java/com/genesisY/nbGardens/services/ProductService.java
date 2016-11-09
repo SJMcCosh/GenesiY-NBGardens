@@ -1,5 +1,7 @@
 package com.genesisY.nbGardens.services;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -8,6 +10,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import com.genesisY.nbGardensCatalogue.entities.Product;
+import com.genesisY.nbGardensCatalogue.entities.Tag;
 import com.genesisY.nbGardensCatalogue.entityManagers.ProductManager;
 
 @Stateless
@@ -53,9 +56,22 @@ public class ProductService {
 	 *         the data store
 	 */
 	public List<Product> getAllProducts(String category) {
+		List<Product> products = productManager.getProducts();
 		try {
 			if (category != null && categoryValidate(category)) {
-				return productManager.getProducts();
+				Iterator<Product> iter = products.iterator();
+				while(iter.hasNext()){
+					Product prod = iter.next();
+					List<Tag> tags = prod.getTagList();
+					List<String> strings = new ArrayList<String>();
+					for(Tag tag: tags){
+						strings.add(tag.getName());
+					}
+					if (!strings.contains(category)){
+						iter.remove();
+					}
+				}
+				return products;
 			} else {
 				return null;
 			}

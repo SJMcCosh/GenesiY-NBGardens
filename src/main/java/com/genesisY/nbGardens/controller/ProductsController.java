@@ -65,7 +65,8 @@ public class ProductsController implements Serializable {
 		return "productpage";
 	}
 
-	public String allProducts() {
+	public String allProducts(String category) {
+		setCategory(category);
 		dataModel = getDataModel();
 		return "subcategory";
 	}

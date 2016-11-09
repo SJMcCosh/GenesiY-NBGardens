@@ -48,6 +48,7 @@ public class FilterService {
 	 * @return dataModel - returns a DataModel
 	 */
 	public DataModel<Product> filterByPrice(DataModel<Product> dataModel, short minimum, short maximum) {
+		System.out.println("-----------------bye" + maximum);
 		for (Product p : dataModel) {
 			if (p.getPrice() < minimum || p.getPrice() > maximum) {
 				p.setToRender(false);

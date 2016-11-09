@@ -131,10 +131,10 @@
 					<div class="col-6">
 						<div class="columnFirst ">
 							<h:form>
-								<h:commandLink action="#{products.getCategoryProducts(categories.name)}"
+								<h:commandLink action="#{products.allProducts(categories.name)}"
 									value="#{categories.name}" />
 								<br />
-								<h:commandLink action="#{products.getCategoryProducts(categories.name)}">
+								<h:commandLink action="#{products.allProducts(categories.name)}">
 									<img src="#{categories.image}" alt="#{categories.name}"
 										height="200" width="200"></img>
 								</h:commandLink>
