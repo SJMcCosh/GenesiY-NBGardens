@@ -27,7 +27,7 @@ public class ProductService {
 		if (category.length() > 7 && category.length() < 45) {
 			if (!matcher.find()) {
 				return validate;
-				
+
 			}
 		}
 		validate = true;
@@ -55,35 +55,30 @@ public class ProductService {
 	 * @return List<Product> : the list of products that have been returned from
 	 *         the data store
 	 */
-	public List<Product> getAllProducts(String category, String department) {
+	public List<Product> getAllProducts(String category) {
 		List<Product> products = productManager.getProducts();
 		List<Product> moreprods = new ArrayList<Product>();
-		for (Product p: products){
+		for (Product p : products) {
 			moreprods.add(p);
 		}
 		try {
 			if (category != null && categoryValidate(category)) {
 				Iterator<Product> iter = moreprods.iterator();
-				while(iter.hasNext()){
+				while (iter.hasNext()) {
 					Product prod = iter.next();
 					List<Category> categories = prod.getCategories();
+					List<String> deps = new ArrayList<String>();
 					String cats = categories.toString();
 					String[] strings = cats.split(", ");
 					strings[0] = strings[0].replace("[", "");
-					strings[strings.length - 1]= strings[strings.length - 1].replace("]", "");
+					strings[strings.length - 1] = strings[strings.length - 1].replace("]", "");
 					List<String> stringy = new ArrayList<String>();
-					for (String string: strings){
+					for (String string : strings) {
 						stringy.add(string);
 					}
-					if (!stringy.contains(category)){
+					if (!stringy.contains(category)) {
 						iter.remove();
 					}
-					for (Category c: categories){
-						if (!c.getDepartment().equals(department)){
-							iter.remove();
-						}
-					}
-					
 				}
 				return moreprods;
 			} else {
@@ -107,28 +102,28 @@ public class ProductService {
 		}
 		return null;
 	}
-	
+
 	public List<Product> getProducts(String category) {
 		List<Product> products = productManager.getProducts();
 		List<Product> moreprods = new ArrayList<Product>();
-		for (Product p: products){
+		for (Product p : products) {
 			moreprods.add(p);
 		}
 		try {
 			if (category != null && categoryValidate(category)) {
 				Iterator<Product> iter = moreprods.iterator();
-				while(iter.hasNext()){
+				while (iter.hasNext()) {
 					Product prod = iter.next();
 					List<Category> categories = prod.getCategories();
 					String cats = categories.toString();
 					String[] strings = cats.split(", ");
 					strings[0] = strings[0].replace("[", "");
-					strings[strings.length - 1]= strings[strings.length - 1].replace("]", "");
+					strings[strings.length - 1] = strings[strings.length - 1].replace("]", "");
 					List<String> stringy = new ArrayList<String>();
-					for (String string: strings){
+					for (String string : strings) {
 						stringy.add(string);
 					}
-					if (!stringy.contains(category)){
+					if (!stringy.contains(category)) {
 						iter.remove();
 					}
 				}
@@ -140,5 +135,5 @@ public class ProductService {
 			return null;
 		}
 	}
-	
+
 }

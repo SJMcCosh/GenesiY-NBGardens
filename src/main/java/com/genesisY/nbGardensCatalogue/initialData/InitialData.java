@@ -104,8 +104,17 @@ public class InitialData {
 		categoryList.add(new Category("Fantasy", "Gnomes", "img/zombieGnome.jpeg"));
 		categoryList.add(new Category("All", "Outdoor Living", "img/newJobGnome.jpg"));
 		categoryList.add(new Category("All", "Garden Tools", "img/stPatrickGnome.jpg"));
+		//Outdoor Living		
 		categoryList.add(new Category("All", "Outdoor Buildings", "img/xmasGnome.jpg"));
 		categoryList.add(new Category("Seating", "Outdoor Living", "img/royalGnome.jpg"));
+		categoryList.add(new Category("Outdoor Structures", "Outdoor Living", "img/royalGnome.jpg"));
+		categoryList.add(new Category("Gardening Tools", "Outdoor Living", "img/royalGnome.jpg"));
+		categoryList.add(new Category("Storage Solutions", "Outdoor Living", "img/royalGnome.jpg"));
+		categoryList.add(new Category("Decking", "Outdoor Living", "img/royalGnome.jpg"));
+		categoryList.add(new Category("Pressure Washers", "Outdoor Living", "img/royalGnome.jpg"));
+		categoryList.add(new Category("Power Tools", "Outdoor Living", "img/royalGnome.jpg"));
+		
+		
 		categoryList.add(new Category("Lawncare", "Garden Tools", "img/summerGnome.jpg"));
 		categoryList.add(new Category("Digging", "Garden Tools", "img/weddingGnome.jpg"));
 		categoryList.add(new Category("Sheds", "Outdoor Buildings", "img/easterGnome.png"));

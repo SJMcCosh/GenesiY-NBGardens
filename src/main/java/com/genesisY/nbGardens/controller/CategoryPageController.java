@@ -43,7 +43,6 @@ public class CategoryPageController implements Serializable {
 	private DataModel<Tag> tagModel = null;
 	private DataModel<Product> allProductModel = null;
 	private DataModel<Product> wholeProductModel = null;
-	private String department;
 
 	public int getSelected() {
 		return selected;
@@ -75,10 +74,9 @@ public class CategoryPageController implements Serializable {
 		return "productpage";
 	}
 
-	public String allProducts(String category, String department) {
+	public String allProducts(String category) {
 		setCategory(category);
-		setDepartment(department);
-		allProductModel = new ListDataModel<Product>(productService.getAllProducts(getCategory(), getDepartment()));
+		allProductModel = new ListDataModel<Product>(productService.getAllProducts(getCategory()));
 		List<Product> products = new ArrayList<Product>();
 		for (Product p : allProductModel) {
 			products.add(p);
@@ -160,7 +158,7 @@ public class CategoryPageController implements Serializable {
 			pagination = new PaginationHelper(12) {
 				@Override
 				public int getItemsCount() {
-					return productService.getAllProducts(category, department).size();
+					return productService.getAllProducts(category).size();
 				}
 
 				@Override
@@ -301,14 +299,6 @@ public class CategoryPageController implements Serializable {
 
 	public void setWholeProductModel(DataModel<Product> wholeProductModel) {
 		this.wholeProductModel = wholeProductModel;
-	}
-
-	public String getDepartment() {
-		return department;
-	}
-
-	public void setDepartment(String department) {
-		this.department = department;
 	}
 
 }
