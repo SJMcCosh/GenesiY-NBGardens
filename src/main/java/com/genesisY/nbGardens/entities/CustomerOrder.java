@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -24,7 +24,7 @@ public class CustomerOrder {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int customerOrderID;
 
-	@OneToMany
+	@ManyToOne
 	@Column(name = "customerid_fk", nullable = false)
 	@NotNull
 	private int fk_customerID;
@@ -65,5 +65,4 @@ public class CustomerOrder {
 	public void setTotalPrice(double totalPrice) {
 		this.totalPrice = totalPrice;
 	}
-
 }

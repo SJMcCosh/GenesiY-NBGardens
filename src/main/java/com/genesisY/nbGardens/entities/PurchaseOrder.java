@@ -1,6 +1,5 @@
 package com.genesisY.nbGardens.entities;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.model.DataModel;

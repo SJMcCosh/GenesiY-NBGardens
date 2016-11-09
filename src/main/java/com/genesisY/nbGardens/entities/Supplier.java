@@ -16,7 +16,7 @@ import javax.validation.constraints.*;
 public class Supplier {
 
 	@Id
-	@Column(name = "aid")
+	@Column(name = "sid")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int supplierID;
 
@@ -102,9 +102,7 @@ public class Supplier {
 	public void setProducts(List<Product> products) {
 		this.products = products;
 	}
-
 	/**
 	 * Add code to pull from database
 	 */
-
 }
