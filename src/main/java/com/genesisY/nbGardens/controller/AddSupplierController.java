@@ -21,15 +21,15 @@ public class AddSupplierController implements Serializable {
 	@Inject
 	private SupplierService supplierService;
 	private DataModel<Supplier> dataModel = null;
-	private String name = "s"; 
-	private String phone= "s"; 
-	private String email= "s"; 
-	private String addressLine1= "s";
-	private String addressLine2= "s";
-	private String addressLine3= "s";
-	private String townCity= "s";
-	private String country= "s";
-	private String postcode= "s"; 
+	private String name = "name"; 
+	private String phone= "phone number"; 
+	private String email= "example@nb.com"; 
+	private String addressLine1= "line 1";
+	private String addressLine2= "line 2";
+	private String addressLine3= "line 3";
+	private String townCity= "town";
+	private String country= "country";
+	private String postcode= "postcode"; 
 	private Supplier supplier; 
 	private Address address; 
 	
