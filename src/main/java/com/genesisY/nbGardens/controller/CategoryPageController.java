@@ -68,6 +68,9 @@ public class CategoryPageController implements Serializable {
 	 */
 	public String viewProduct(Product p) {
 		productController.viewProduct(p);
+		for (Product prod: allProductModel){
+			prod.setToRender(true);
+		}
 		return "productpage";
 	}
 
@@ -81,6 +84,9 @@ public class CategoryPageController implements Serializable {
 		wholeProductModel = new ListDataModel<Product>(products);
 		dataModel = getDataModel();
 		setProductModel(dataModel);
+		for (Product p: wholeProductModel){
+			p.setToRender(true);
+		}
 		return "subcategory";
 	}
 
