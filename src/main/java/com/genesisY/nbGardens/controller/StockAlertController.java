@@ -38,12 +38,11 @@ public class StockAlertController implements Serializable {
 		return dataModel;
 	}
 	
-	public String loadSelectedProduct(int id) {
+	public void setSelectedProduct(int id) {
 		productDataModel = new ListDataModel<Product>(prodService.getProductById(id));
-		return "productDataModel";
 	}
 	
-	public DataModel<Product> getProductDataModel() {
+	public DataModel<Product> getSelectedProduct() {
 		return productDataModel;
 	}
 

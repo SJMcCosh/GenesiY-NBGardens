@@ -24,7 +24,9 @@
 						<li>
 							<h:outputText value="#{StockAlert.date}"></h:outputText>
 							<br />
-							<h:commandLink value="#{StockAlert.details}"  action="#{stockAlerts.onLoad}" style="text-decoration:bold;color:red"></h:commandLink>
+							<h:commandLink value="#{StockAlert.details}"  action="#{stockAlerts.onLoad}" style="text-decoration:bold;color:red">
+								<f:actionListener binding="#{stockAlerts.setSelectedProduct(StockAlert.productId)}" />
+							</h:commandLink>
 							<br />
 							<br />
 						</li>
@@ -37,11 +39,13 @@
 			<br />
 			<br />
 			<div id="stockAlertDetailsBox">
+				<h:form>
 				<div class="contentBoxHeader">
 					<h3><h:outputText value="#{StockAlert.details}" /></h3>
 				</div>
 				
-				<h:outputText value="#{stockAlerts.loadSelectedProduct(StockAlert.productId)}" />
+				<h:commandLink value="#{stockAlerts.selectedProduct.getRowData().name}" />
+				</h:form>
 			</div>
 		</div>
 		

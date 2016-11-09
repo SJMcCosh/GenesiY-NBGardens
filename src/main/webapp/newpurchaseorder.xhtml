@@ -5,6 +5,11 @@
 	template="templates/template.xhtml">
 	<meta charset="ISO-8859-1" title="IMS" />
 	<ui:define name="content">
+	
+		<f:metadata>
+			<f:event type="preRenderView" listener="#{products.onLoad}" />
+		</f:metadata>
+		
 		<div id="pageTitle">
 			<div class="col-12 col-m-12">
 				<h1>Create New Purchase Order</h1>
@@ -28,11 +33,11 @@
 								<div class="columns_add_button">
 					<h:commandButton value="Add Product" onclick="alert('clicked');" action = "#{newPurchase.addToProdList}" />
 					<div class="columns_dropdowns">
-					<ui:repeat var="suppliers_dropdown" value="#{products.getDataSupplier()}">
-					<h:selectOneMenu>
-						<f:selectItems value="#{products.dataSupplier.getRowData().supplierName}" />
+					<ui:repeat var="suppliers_dropdown" value="#{products.getDataSupplier()}"></ui:repeat>
+					<h:selectOneMenu value="#{products.getDataSupplier()}" >
+						<f:selectItems value="#{products.dataSupplier.getRowData.supplierName}" />
 					</h:selectOneMenu>
-					</ui:repeat>
+					
 				</div>
 				
 			</div>
