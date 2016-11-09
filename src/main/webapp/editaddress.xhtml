@@ -6,7 +6,26 @@
 	template="templates/template.xhtml">
 	<meta charset="ISO-8859-1" />
 	<ui:define name="maincontent">
+		<script type="text/javascript">
+				//<![CDATA[				
+				function performPostAjaxCommands() {
+					$("#basket_item_removed_popup").show();
+				}
+
+				function closeRemoveItemPopup() {
+					$("#basket_item_removed_popup").hide();
+				}
+				//]]>
+			</script>
+
+
+		<div id="basket_item_removed_popup">
+			<img onclick="closeRemoveItemPopup()" id="item_popup_close_button"
+				src="img/BasketImages/popupclose.png" />
+			<p>Address Changed</p>
+		</div>
 		<article class="wholebody">
+
 
 			<div class="editdetails">
 				<h4>Edit Your Details</h4>
@@ -49,7 +68,10 @@
 							<br />
 
 							<h:commandButton type="submit" name="editdetails" value="Submit"
-								action="#{editaddress.editAddressDetails}"/>
+								action="#{editaddress.editAddressDetails}">
+								<f:ajax execute="@form" render="@all"
+									onevent="performPostAjaxCommands()" />
+							</h:commandButton>
 						</h:form>
 					</div>
 				</div>
