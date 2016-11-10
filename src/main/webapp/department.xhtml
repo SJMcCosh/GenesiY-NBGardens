@@ -65,15 +65,28 @@
 				<div class="side_menu">
 					<p id="dept_title">Outdoor Living</p>
 
-					<p>Outdoor Structures</p>
-					<hr class="dept_side_menu_hr_tag" />
-					<p>Storage Solutions</p>
-					<hr class="dept_side_menu_hr_tag" />
-					<p>Decking</p>
-					<hr class="dept_side_menu_hr_tag" />
-					<p>Outdoor Tools</p>
-					<hr class="dept_side_menu_hr_tag" />
-					<p>Fences</p>
+					<ui:repeat var="categories" value="#{category.catModel}">
+
+							<div>
+								<h:form>
+									<h:commandLink
+										action="#{catpage.allProducts(categories.name)}">
+								
+
+
+										<div>
+											<p>
+												<h:outputText value="#{categories.name}" />
+											</p>
+										</div>
+									</h:commandLink>
+								</h:form>
+							</div>
+
+
+
+						</ui:repeat>
+
 				</div>
 			</div>
 
