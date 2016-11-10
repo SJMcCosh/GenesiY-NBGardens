@@ -1270,6 +1270,7 @@ ul.botnav li a {
 	#about_master_content_container_header {
 		width: 100%;
 		height: 60px;
+		text-align: left;
 	}
 
 	#about_master_content_container_left_col {
@@ -1283,6 +1284,8 @@ ul.botnav li a {
 		float: right;
 		width: 75%;
 		height: 90%;
+		text-align: left;
+		
 	}
 	
 		#about_master_content_container_right_col_inner {
@@ -1301,6 +1304,7 @@ ul.botnav li a {
 	#contact_master_content_container_header {
 		width: 100%;
 		height: 60px;
+		text-align: left;
 	}
 
 	#contact_master_content_container_left_col {
@@ -1314,6 +1318,7 @@ ul.botnav li a {
 		float: right;
 		width: 75%;
 		height: 90%;
+		text-align: left;
 	}
 	
 		#contact_master_content_container_right_col_inner {
@@ -1332,6 +1337,7 @@ ul.botnav li a {
 	#help_master_content_container_header {
 		width: 100%;
 		height: 60px;
+		text-align: left;
 	}
 
 	#help_master_content_container_left_col {
@@ -1345,6 +1351,7 @@ ul.botnav li a {
 		float: right;
 		width: 75%;
 		height: 90%;
+		text-align: left;
 	}
 	
 		#help_master_content_container_right_col_inner {

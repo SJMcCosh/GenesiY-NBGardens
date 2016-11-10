@@ -50,7 +50,6 @@ public class CustomerController implements Serializable {
 	 */
 	public String viewDetails() {
 		String username = userCredentials.getUsername();
-		System.out.println(username);
 		customer = accountDetailsService.getCustomerByUsername(username);
 		dataModel = new ListDataModel<Address>(addressService.getAllAddresses(username));
 		for (Address a:dataModel){

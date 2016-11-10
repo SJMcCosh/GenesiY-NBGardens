@@ -82,10 +82,8 @@ public class LoginService {
 
 	public boolean passCheck(String username, String password) {
 		if (userCredentials.getAttempts() > 2) {
-			System.out.println(userCredentials.getAttempts());
 			return false;
 		}
-		System.out.println(username + "<><><><>" + password);
 		if (userValidate(username) && passValidate(password)) {
 			Customer gnome = getCustomerByUsername(username);
 			if (gnome != null) {
@@ -93,13 +91,11 @@ public class LoginService {
 				for (int x = 0; x < 1000; x++) {
 					pass = hash(pass);
 				}
-				System.out.println(">>>>>>>>> " + pass);
 				if (pass.equals(gnome.getPassword())) {
 					return true;
 				}
 			}
 		}
-		System.out.println("invalid password");
 		return false;
 	}
 }

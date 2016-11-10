@@ -51,7 +51,6 @@ public class SortingService {
 	 */
 
 	public DataModel<Product> sortHighToLow(DataModel<Product> dataModel) {
-		System.out.println("-------- sorting");
 		List<Product> list = new ArrayList<Product>();
 		for (Product p : dataModel) {
 			list.add(p);
@@ -66,7 +65,6 @@ public class SortingService {
 
 		});
 		dataModel = new ListDataModel<>(list);
-		System.out.println("finishedsorting");
 		return dataModel;
 	}
 

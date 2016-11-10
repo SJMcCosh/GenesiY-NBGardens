@@ -3,10 +3,10 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/template.xhtml">
-	<meta charset="ISO-8859-1" />	
+	<meta charset="ISO-8859-1" />
 	<ui:define name="maincontent">
-		 
-	 <script type="text/javascript">
+
+		<script type="text/javascript">
 		//<![CDATA[				
 			function performPostAjaxCommands()
 			{
@@ -19,15 +19,16 @@
 			}
 		//]]>
 	</script>
-		
-		
+
+
 		<div id="basket_item_removed_popup">
-			<img onclick="closeRemoveItemPopup()" id="item_popup_close_button" src="img/BasketImages/popupclose.png"/>
+			<img onclick="closeRemoveItemPopup()" id="item_popup_close_button"
+				src="img/BasketImages/popupclose.png" />
 			<p>Item Removed</p>
 		</div>
-		
+
 		<!-- This is the main container which will encompass everything on the page -->
-		<div id="basket_contents_container">				
+		<div id="basket_contents_container">
 			<!-- This will contain the header information for the basket such as the title, price and quantity -->
 			<div id="basket_header">
 				<!-- These two divs will be float right in the main div -->
@@ -39,81 +40,99 @@
 					<p>Quantity</p>
 				</div>
 			</div>
-			<hr/>
+			<hr />
 			<!-- This form will hold all of the basket items and the cart total -->
 			<h:form>
 				<!-- This will repeat for each basket item -->
-				<ui:repeat var="basketItem" value="#{basket.dataModel}">	
+				<ui:repeat var="basketItem" value="#{basket.dataModel}">
 					<!-- The basket_item_container is split up into three divs:
 						 Left: This holds the product image
 						 Middle: This holds the product title and description
 						 Right: This holds the product price, quantity and the delete item button
 					 -->
-					<div id="basket_item_container">	
+					<div id="basket_item_container">
 						<!-- Holds the product image -->
-						<div id="basket_items_container_left_column">		
-							<img class="index_featured_products_product_image" id="index_featured_products_product_image_basket_page" src="#{basketItem.product.imageLocation}" />
-						</div>		
-						
-						<!-- Holds the product info(description/title) -->
-						<div id="basket_items_container_middle_column">					
-							<h2 id="basket_items_container_middle_column_item_title"><h:outputText value="#{basketItem.product.name}"/></h2>
-							<br/>												
-							<h:outputText id="basket_items_container_middle_column_item_description" value="#{basketItem.product.description}"/>					
+						<div id="basket_items_container_left_column">
+							<img class="index_featured_products_product_image"
+								id="index_featured_products_product_image_basket_page"
+								src="#{basketItem.product.imageLocation}" />
 						</div>
-						
+
+						<!-- Holds the product info(description/title) -->
+						<div id="basket_items_container_middle_column">
+							<h2 id="basket_items_container_middle_column_item_title">
+								<h:outputText value="#{basketItem.product.name}" />
+							</h2>
+							<br />
+							<h:outputText
+								id="basket_items_container_middle_column_item_description"
+								value="#{basketItem.product.description}" />
+						</div>
+
 						<!-- Holds the price, quantity and delete button -->
-						<div id="basket_items_container_right_column">	
-							<div style="float:right">									
+						<div id="basket_items_container_right_column">
+							<div style="float: right">
 								<!-- This will hold the product price -->
-								<h:outputText class="basket_page_price_priceInfo" value="#{basketItem.product.price}">
+								<h:outputText class="basket_page_price_priceInfo"
+									value="#{basketItem.product.price}">
 									<f:convertNumber type="currency" currencyCode="GBP" />
-								</h:outputText>			
-								<!-- This is the dropdown for selecting different quantities -->	
-								<h:selectOneMenu value="#{basketItem.quantity}"  onchange="submit()" valueChangeListener="#{basket.itemQuantityChanged}" >
-								   <f:selectItem itemValue="1" itemLabel="1" />
-								   <f:selectItem itemValue="2" itemLabel="2" />
-								   <f:selectItem itemValue="3" itemLabel="3" />		
-								   <f:selectItem itemValue="4" itemLabel="4" />
-								   <f:selectItem itemValue="5" itemLabel="5" />
-								   <f:selectItem itemValue="6" itemLabel="6" />	
-								   <f:selectItem itemValue="7" itemLabel="7" />
-								   <f:selectItem itemValue="8" itemLabel="8" />
-								   <f:selectItem itemValue="9" itemLabel="9" />
-								   <f:selectItem itemValue="10" itemLabel="10" />		   	
-								</h:selectOneMenu>		
-								
-								<!-- This holds the delete item button -->		
+								</h:outputText>
+								<!-- This is the dropdown for selecting different quantities -->
+								<h:selectOneMenu value="#{basketItem.quantity}"
+									onchange="submit()"
+									valueChangeListener="#{basket.itemQuantityChanged}">
+									<f:selectItem itemValue="1" itemLabel="1" />
+									<f:selectItem itemValue="2" itemLabel="2" />
+									<f:selectItem itemValue="3" itemLabel="3" />
+									<f:selectItem itemValue="4" itemLabel="4" />
+									<f:selectItem itemValue="5" itemLabel="5" />
+									<f:selectItem itemValue="6" itemLabel="6" />
+									<f:selectItem itemValue="7" itemLabel="7" />
+									<f:selectItem itemValue="8" itemLabel="8" />
+									<f:selectItem itemValue="9" itemLabel="9" />
+									<f:selectItem itemValue="10" itemLabel="10" />
+								</h:selectOneMenu>
+
+								<!-- This holds the delete item button -->
 								<div id="basket_page_remove_item_button">
 									<!-- The delete item button which when clicked will delete and item from the array and refresh the form -->
-									<h:commandButton id="basket_page_remove_item_button" actionListener="#{basket.removeBasketItem(basketItem.product.name)}" image="img/BasketImages/removeitembutton.png">
-										 <f:ajax execute="@form" render="@all" onevent="performPostAjaxCommands()"/>										  
+									<h:commandButton id="basket_page_remove_item_button"
+										actionListener="#{basket.removeBasketItem(basketItem.product.name)}"
+										image="img/BasketImages/removeitembutton.png">
+										<f:ajax execute="@form" render="@all"
+											onevent="performPostAjaxCommands()" />
 									</h:commandButton>
-								</div>									
-							</div>													
+								</div>
+							</div>
 						</div>
-						<hr/>
+						<hr />
 					</div>
-				</ui:repeat>				
-				
+				</ui:repeat>
+
 				<!-- This holds the cart total and the proceed to checkout button -->
-				<div id="basket_page_totals_container">				
-					<h2>Total (<h:outputText value="#{basket.basketSize}"/> items): 
+				<div id="basket_page_totals_container">
+					<h2>
+						Total (
+						<h:outputText value="#{basket.basketSize}" />
+						items):
 						<h:outputText value="#{basket.basketSubTotal}">
 							<f:convertNumber type="currency" currencyCode="GBP" />
-						</h:outputText>				
-					</h2>						
-					<br/>
-					<img src="img/BasketImages/checkout.png" />			
-				</div>					
-			</h:form>	
-		
-		
-		
-		
-		</div>	
-		
-		
-				
+						</h:outputText>
+					</h2>
+					<br />
+					<h:commandLink action = "#{address.checkoutAddress}">
+						<img src="img/BasketImages/checkout.png" />
+					</h:commandLink>
+
+				</div>
+			</h:form>
+
+
+
+
+		</div>
+
+
+
 	</ui:define>
 </ui:composition>

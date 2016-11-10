@@ -109,9 +109,12 @@
 									</div>
 							</h:commandLink>
 								<p>
-									<h:outputText value="#{product.averageRating}" class="index_featured_products_product_price" >
+									<h:outputText value="#{product.price}" class="index_featured_products_product_price" >
 										<f:convertNumber type="currency" currencyCode="GBP" />
 									</h:outputText>								
+								</p>
+								<p>
+									<h:outputText value="#{product.averageRating}" />							
 								</p>
 								<img src="#{products.averageRatingImg(product.averageRating)}" />
 							

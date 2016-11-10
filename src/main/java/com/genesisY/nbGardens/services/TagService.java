@@ -25,21 +25,18 @@ public class TagService {
 	private ProductManager pm;
 
 	@SuppressWarnings("null")
-	public List<Tag> getAllTags() {
+	public List<Tag> getAllTags(String category) {
 		List<Tag> tList = new ArrayList<Tag>();
 		try {
-			for (Product p : pm.getProducts()) {
+			for (Product p : pm.getProductsByCategory(category)) {
 				for (Tag t : p.getTagList()) {
 					if (!tList.contains(t)) {
 						tList.add(t);
 					}
 				}
 			}
-			System.out.println(">>>>>>>>>>>>>> Got tags");
 			return tList;
 		} catch (NullPointerException npe) {
-			System.out.println(">>>>>>>>>>>>>> Not Got tags");
-
 			return null;
 		}
 	}

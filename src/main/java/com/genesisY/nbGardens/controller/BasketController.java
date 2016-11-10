@@ -19,29 +19,15 @@ import com.genesisY.nbGardensCatalogue.entities.BasketItem;
 public class BasketController implements Serializable{
 
 	
-	//private Basket basket;
 	private DataModel<BasketItem> dataModel = null;
 	@Inject
 	private BasketService basketService;
 	
 	
-//	@SuppressWarnings("unchecked")
-//	public String allProducts()
-//	{
-//		
-//		dataModel = new ListDataModel(basketService.getBasketItems());
-//		System.out.println("At controller");
-//		System.out.println("Datamodel Row count: " + dataModel.getRowCount());
-//		//System.out.println("Datamodel Row count: " + dataModel.);
-//		return "basket";
-//	}
-	
 	public DataModel<BasketItem> getDataModel() {
 		
 		dataModel = new ListDataModel<BasketItem>(basketService.getBasketItems());
-		System.out.println("At controller");
-		System.out.println("Datamodel Row count: " + dataModel.getRowCount());
-		
+	
 		return dataModel;
 	}
 
@@ -95,26 +81,7 @@ public class BasketController implements Serializable{
 	{
 		String selectedQuantity = e.getNewValue().toString();
 		
-		System.out.println("SELECTED QUANTITY>>>>>>>>>>>>>>>>: " + selectedQuantity);
 	}
-	
-	/*public void removeBasketItem(String itemName) 
-	{
-		ArrayList<BasketItem>basketItems = (ArrayList<BasketItem>) basketService.getBasketItems();
-		System.out.println(">>>>>>>>>>>>>> Item clicked: " + itemName);
-		
-//		for(int i = 0; i<basketService.getBasketItems().size(); i++)
-		for(int i = 0; i<basketItems.size(); i++)
-		{
-			//check for each item name = name passed.
-			if(basketItems.get(i).getProduct().getName().equals(itemName))
-			{
-				System.out.println(">>>>>>>> Found name: " + basketService.getBasketItems().get(i).getProduct().getName());
-				basketService.getBasketItems().remove(i);
-				break;
-			}
-		}		
-	}*/
 	
 	/**
 	 * Created: 27/10/2026
@@ -125,14 +92,12 @@ public class BasketController implements Serializable{
 	public String removeBasketItem(String itemName) 
 	{
 		ArrayList<BasketItem>basketItems = (ArrayList<BasketItem>) basketService.getBasketItems();
-		System.out.println(">>>>>>>>>>>>>> Item clicked: " + itemName);
 		for(int i = 0; i<basketItems.size(); i++)
 		{
 			//check for each item name = name passed.
 			if(basketItems.get(i).getProduct().getName().equals(itemName))
 			{
-				//For debugging.
-					System.out.println(">>>>>>>> Found name: " + basketService.getBasketItems().get(i).getProduct().getName());
+
 				//Remove the current item from the array list.
 				basketService.getBasketItems().remove(i);
 				break;
