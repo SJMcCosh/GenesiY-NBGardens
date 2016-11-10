@@ -26,11 +26,18 @@ public class StockAlertController implements Serializable {
 
 	private DataModel<StockAlert> dataModel;
 	private DataModel<Product> productDataModel;
+	private Product selectedProduct;
 
+	public String onLoad(Product p)
+	{
+		dataModel = new ListDataModel<StockAlert>(saService.getAllStockAlerts());
+		setSelectedProduct(p);
+		System.out.println(selectedProduct.getName());
+		return "stockalerts";
+	}
 	public String onLoad()
 	{
 		dataModel = new ListDataModel<StockAlert>(saService.getAllStockAlerts());
-		System.out.println(">>>>> Controller");
 		return "stockalerts";
 	}
 
@@ -39,11 +46,12 @@ public class StockAlertController implements Serializable {
 	}
 
 	public void setSelectedProduct(Product p) {
-		productDataModel = new ListDataModel<Product>(prodService.viewProduct(p));
+		System.out.println(p.getName());
+		this.selectedProduct = p;
 	}
 
-	public DataModel<Product> getSelectedProduct() {
-		return productDataModel;
+	public Product getSelectedProduct() {
+		return this.selectedProduct;
 	}
 
 	public void setDataModel(DataModel<StockAlert> dataModel) {

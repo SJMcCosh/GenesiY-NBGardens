@@ -481,6 +481,11 @@ addproduct {
 }
 
 /* subcategory */
+
+.categoryList {
+	width: 25%;
+}
+
 .index_featured_products_product {
 	width: 161px;
 	height: 241px;

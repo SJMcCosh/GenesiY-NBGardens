@@ -11,7 +11,6 @@ import com.genesisY.nbGardens.entities.Supplier;
 import com.genesisY.nbGardens.entityManagers.ProductManager;
 import com.genesisY.nbGardens.entityManagers.offline.ProductManagerOffline;
 
-
 @RequestScoped
 public class ProductService {
 
@@ -30,16 +29,13 @@ public class ProductService {
 		}
 
 	}
-	
-	public List<Product> viewProducts(){
+
+	public List<Product> viewProducts() {
 		List<Product> products = productsManager.getAllProducts();
-		
-		
-		
-		return products; 
-		
+
+		return products;
+
 	}
-	
 
 	public Product getProductByName(String name) {
 		try {
@@ -53,15 +49,11 @@ public class ProductService {
 		}
 		return null;
 	}
-	
-	public List<Product> getProductById(int id)
-	{
-		if(productsManager.getProductById(id) != null)
-		{
+
+	public List<Product> getProductById(int id) {
+		if (productsManager.getProductById(id) != null) {
 			return productsManager.getProductById(id);
-		}
-		else
-		{
+		} else {
 			return null;
 		}
 	}
@@ -79,30 +71,29 @@ public class ProductService {
 		}
 
 	}
-	
-	public List<Supplier> getSuppliers(Product product){
+
+	public List<Supplier> getSuppliers(Product product) {
 		List<Supplier> suppliers = supplierService.viewSuppliers();
 		List<Supplier> finalSupplier = new ArrayList<Supplier>();
-		for (Supplier s: suppliers){
-			if (s.getProducts().contains(product)){
+		for (Supplier s : suppliers) {
+			if (s.getProducts().contains(product)) {
 				finalSupplier.add(s);
 			}
 		}
 		return finalSupplier;
 	}
 
-	public List<Product> viewProduct(Product p) {
+	public Product viewProduct(Product p) {
 		List<Product> selectedProduct = productsManager.getAllProducts();
 		List<Product> foundProduct = null;
-		
-		for(Product p1: selectedProduct)
-		{
-			if (p1.equals(p))
-			{
-				foundProduct.add(p1);
+
+		for (Product p1 : selectedProduct) {
+			if (p1.getName().equals(p.getName())) {
+
+				return p;
 			}
 		}
-		return foundProduct;
+		return null;
 	}
 
 }

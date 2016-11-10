@@ -140,12 +140,11 @@ public class ImsInitialData {
 		notList.add(n2);
 		notList.add(n3);
 		
-		StockAlert sa1 = new StockAlert(1, "03/11/2016", "Big Gnome low stock", product1);
-		StockAlert sa2 = new StockAlert(2, "02/11/2016", "Game of Gnomes low stock", product2);
-		StockAlert sa3 = new StockAlert(3, "02/11/2016", "Test", product3);
-		StockAlert sa4 = new StockAlert(4, "02/11/2016", "Please", product4);
-		StockAlert sa5 = new StockAlert(5, "02/11/2016", "Work", product5);
-		StockAlert sa6 = new StockAlert(6, "02/11/2016", "Now", product6);
+		StockAlert sa1 = new StockAlert(1, "03/11/2016", "Game of Gnomes low stock", product1);
+		StockAlert sa2 = new StockAlert(2, "02/11/2016", "Random gnome low stock", product2);
+		StockAlert sa3 = new StockAlert(3, "02/11/2016", "Other Gnome low stock", product3);
+		StockAlert sa4 = new StockAlert(4, "02/11/2016", "Big Gnome low stock", product4);
+		StockAlert sa5 = new StockAlert(5, "02/11/2016", "Trump Gnome low stock", product7);
 		
 		
 		saList.add(sa1);
@@ -153,7 +152,6 @@ public class ImsInitialData {
 		saList.add(sa3);
 		saList.add(sa4);
 		saList.add(sa5);
-		saList.add(sa6);
 	}
 
 	public ArrayList<StockAlert> getSaList() {

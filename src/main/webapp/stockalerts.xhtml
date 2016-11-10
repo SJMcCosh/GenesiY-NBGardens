@@ -21,35 +21,36 @@
 			<h:form>
 				<ui:repeat var="StockAlert" value="#{stockAlerts.dataModel}">
 					<ul>
-						<li>
-							<h:outputText value="#{StockAlert.date}"></h:outputText>
-							<br />
-							<h:commandLink value="#{StockAlert.details}"  action="#{stockAlerts.onLoad}" style="text-decoration:bold;color:red">
-							</h:commandLink>
-							<br />
-							<br />
-						</li>
+						<li><h:outputText value="#{StockAlert.date}"></h:outputText>
+							<br /> <h:commandLink value="#{StockAlert.details}"
+								action="#{stockAlerts.onLoad(StockAlert.getProduct())}"
+								style="text-decoration:bold;color:red">
+							</h:commandLink> <br /> <br /></li>
 					</ul>
 				</ui:repeat>
 			</h:form>
 		</div>
 
 		<div class="col-6 col-m-12">
-			<br />
-			<br />
+			<br /> <br />
 			<div id="stockAlertDetailsBox">
 				<h:form>
-				<div class="contentBoxHeader">
-					<h3><h:outputText value="#{StockAlert.details}" /></h3>
-				</div>
-				
-				<h:commandLink value="#{stockAlerts.selectedProduct.getRowData().name}" />
+					<div class="contentBoxHeader">
+						<h3>
+							<h:outputText value="#{StockAlert.details}" />
+						</h3>
+					</div>
+					<div>
+						<br />
+						<h:outputText value="#{stockAlerts.selectedProduct.name}" />
+						<br /> <br /> <br />
+						<h:outputText value="#{stockAlerts.selectedProduct.stockLevel}" />
+					</div>
 				</h:form>
 			</div>
 		</div>
-		
-		<div class="empty1 col-3 col-m-12">
-		</div>
-		
+
+		<div class="empty1 col-3 col-m-12"></div>
+
 	</ui:define>
 </ui:composition>

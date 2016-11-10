@@ -5,28 +5,37 @@
 	template="templates/template.xhtml">
 	<meta charset="ISO-8859-1" />
 	<ui:define name="content">
-		<h1>SubCategory</h1>
+		<div id="pageTitle">
+			<div class="col-12 col-m-12">
+				<h1>SubCategory</h1>
+			</div>
+		</div>
+		
 		<f:metadata>
 			<f:event type="preRenderView" listener="#{categories.onLoad}" />
 		</f:metadata>
+		
 		<div class="row">
-			<div class="col-3 col-m-3 categoryList">
+			<div class="col-3 col-m-12 categoryList">
 				<h:form>
 					<ui:repeat var="category" value="#{categories.dataModel}">
 						<ul>
-							<li><h:commandButton value="#{category.name}"
+							<li><h:commandLink value="#{category.name}"
 									actionListener="#{categories.filterByCategory(category.name)}" /></li>
 						</ul>
 					</ui:repeat>
 				</h:form>
 			</div>
+			
 			<!-- Main content for the page -->
 			<div class="col-9 col-m-12">
-				<h:form class="tfnewsearch" method="get">
-					<h:inputText class="tftextinput" value="#{search.term}" />
-					<h:commandButton class="tfbutton" type="submit"
-						action="#{search.search}" value="Search" />
-				</h:form>
+				<div id="subCategorySearch">
+					<h:form class="tfnewsearch" method="get">
+						<h:inputText class="tftextinput" value="#{search.term}" />
+						<h:commandButton class="tfbutton" type="submit"
+							action="#{search.search}" value="Search" />
+					</h:form>
+				</div>
 			</div>
 			<!-- This is the product grid -->
 			<h:form id="productGrid">
