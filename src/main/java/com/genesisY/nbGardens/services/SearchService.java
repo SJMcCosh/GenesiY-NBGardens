@@ -46,6 +46,7 @@ public class SearchService {
 						tempList.add(p);
 					}
 				}
+				
 				return tempList;
 			} catch(NullPointerException npe){
 				return null;

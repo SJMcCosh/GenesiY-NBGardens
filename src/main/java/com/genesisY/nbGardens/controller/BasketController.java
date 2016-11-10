@@ -108,6 +108,10 @@ public class BasketController implements Serializable{
 		
 	}
 	
+	public void setModelToNull(){
+		dataModel = null;
+	}
+	
 	
 //	public Basket getProduct() {
 //		return basket;

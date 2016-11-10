@@ -12,5 +12,7 @@ public interface CustomerOrderManager {
 	
 	public List<Product> getProductsFromOrder(Customer customer, CustomerOrder customerOrder);
 	
+	public void addCustomerOrder(List<Product> prodList, double price, String customerID);
+	
 
 }
