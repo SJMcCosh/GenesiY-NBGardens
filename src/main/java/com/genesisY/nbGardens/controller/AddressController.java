@@ -124,9 +124,14 @@ public class AddressController implements Serializable {
 	}
 	
 	public String checkoutAddress(){
-		String username = userCredentials.getUsername();
-		dataModel = new ListDataModel<Address>(addressService.getAllAddresses(username));
-		return "checkoutaddress";
+		System.out.println(userCredentials.isLoggedin());
+		if(userCredentials.isLoggedin() == true){
+			String username = userCredentials.getUsername();
+			dataModel = new ListDataModel<Address>(addressService.getAllAddresses(username));
+			return "checkoutaddress";	
+		}
+		return "loginpage";
+		
 	}
 
 	/**

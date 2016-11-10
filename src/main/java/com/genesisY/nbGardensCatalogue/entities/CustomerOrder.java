@@ -29,7 +29,7 @@ public class CustomerOrder {
 	@OneToMany
 	@Column(name = "customerid_fk", nullable = false)
 	@NotNull
-	private int fk_customerID;
+	private String fk_customerID;
 
 	@Column(name = "total_price", nullable = false)
 	@NotNull
@@ -42,12 +42,21 @@ public class CustomerOrder {
 
 	}
 
-	public CustomerOrder(int fk_customerID, double totalPrice) {
+	public CustomerOrder(String fk_customerID, double totalPrice) {
 		this.fk_customerID = fk_customerID;
 		this.totalPrice = totalPrice;
 	}
 	
 	public CustomerOrder(List<Product> prodList){
+		this.prodList = prodList;
+		for (Product p : prodList){
+			totalPrice += p.getPrice();
+		}
+	}
+	
+	public CustomerOrder(String fk_customerID, double totalPrice, List<Product> prodList){
+		this.fk_customerID = fk_customerID;
+		this.totalPrice = totalPrice;
 		this.prodList = prodList;
 		for (Product p : prodList){
 			totalPrice += p.getPrice();
@@ -62,11 +71,11 @@ public class CustomerOrder {
 		this.customerOrderID = customerOrderID;
 	}
 
-	public int getFk_customerID() {
+	public String getFk_customerID() {
 		return fk_customerID;
 	}
 
-	public void setFk_customerID(int fk_customerID) {
+	public void setFk_customerID(String fk_customerID) {
 		this.fk_customerID = fk_customerID;
 	}
 
