@@ -156,7 +156,7 @@ public class InitialData {
 		productList.add(new Product(12, "Star Wars Gnome", 4.2, "This gnome is taking you back in time", "Small", 3.0,
 				111.29, list3, "img/starWarsGnome.jpg", reviewList, c3, 10));
 		productList.add(new Product(13, "St Patricks Gnome", 4.5, "This gnome is green and full of luck", "Medium", 7.0,
-				150.50, list1, "img/stPatrickGnome.jpg", reviewList, c1, 20));
+				150.50, list1, "img/paddyGnome.jpg", reviewList, c1, 20));
 		productList.add(new Product(14, "Hey There Trio", 3.9, "Welcoming gnomes, good for the doorstep", "Large",
 				13.0, 97.99, list2, "img/welcomeGnome.jpg", reviewList, c2, 25));
 		productList.add(new Product(15, "Wizard Gnome", 4.2, "Careful, this gnome casts spells!", "Small", 3.0,
