@@ -32,95 +32,87 @@
 		<div class="maincontent">
 			<div class="productcontent">
 
+				<div id="productpage_upper_column">
+					<p id="product_page_product_title"><h:outputText value="#{products.product.name}" /></p>
+					<div id="product_page_product_price">
+						<h:outputText value="#{products.product.price}">
+							<f:convertNumber type="currency" currencyCode="GBP" />
+						</h:outputText>
+					</div>
+				</div>
 
-				<!-- Images for the content -->
-				<div class=" productimages col-4 col-m-4">
+				<div id="productpage_left_column">
 					<picture>
 					<source srcset="img/gnome.jpg" media="(max-width: 600px)" />
 					<img src="#{products.product.imageLocation}" style="width: auto;" /></picture>
 				</div>
-
-				<div class="productinformation col-8 col-m-8">
+								
+				<div id="productpage_right_column">
+					<div id="productpage_right_column_inner">
 					<h:form>
-						<div>
-							<p id="product_page_product_title"><h:outputText value="#{products.product.name}" /></p>
-						</div>
+						
 						<!-- Description for the product -->
-						<div>
-							<ul>
-								<li><h:outputText value="#{products.product.description}" /></li>
-								<li><h:outputText value="#{products.product.weight}" /></li>
-								<li><h:outputText value="#{products.product.size}" /></li>
-
-							</ul>
+						<div id="product_page_product_description_container">						
+							<h:outputText value="#{products.product.description}" />							
 						</div>
-
-
-
-						<!-- Star Rating -->
-						<!-- <div>
-						<form action="">
-							<input class="star star-5" id="star-5" type="radio" name="star" ></input>
-							<label class="star star-5" for="star-5"></label> 
-							<input class="star star-4" id="star-4" type="radio" name="star" ></input> 
-							<label class="star star-4" for="star-4"></label> 
-							<input class="star star-3" id="star-3" type="radio" name="star" ></input> 
-							<label class="star star-3" for="star-3"></label> 
-							<input class="star star-2" id="star-2" type="radio" name="star" ></input> 
-							<label class="star star-2" for="star-2"></label> 
-							<input class="star star-1" id="star-1" type="radio" name="star" ></input> 
-							<label class="star star-1" for="star-1"></label>
-						</form>
-					</div>  -->
-
-						<div>
-							<h:outputText value="#{products.product.averageRating}" />
-
+						<br/>
+						<br/>
+						<br/>
+						<div id="product_page_product_qty_container">			
+							<div id="product_page_product_qty_container_qty">
+								<p>Qty:</p>	
+							</div>		
+							<div id="product_page_product_qty_container_dropdown">
+								<h:selectOneMenu value="#{products.quantityOfItemsSelected}"
+									onchange="submit()" id="product_qty_dropdown" style="height:60px">
+									<f:selectItem itemValue="1" itemLabel="1" />
+									<f:selectItem itemValue="2" itemLabel="2" />
+									<f:selectItem itemValue="3" itemLabel="3" />
+									<f:selectItem itemValue="4" itemLabel="4" />
+									<f:selectItem itemValue="5" itemLabel="5" />
+									<f:selectItem itemValue="6" itemLabel="6" />
+									<f:selectItem itemValue="7" itemLabel="7" />
+									<f:selectItem itemValue="8" itemLabel="8" />
+									<f:selectItem itemValue="9" itemLabel="9" />
+									<f:selectItem itemValue="10" itemLabel="10" />
+								</h:selectOneMenu>	
+							</div>
 						</div>
-						<!-- Price -->
-						<div>
-							<h:outputText value="#{products.product.price}">
-								<f:convertNumber type="currency" currencyCode="GBP" />
-							</h:outputText>
+											
+						
+						<div id="product_page_product_btn_container">
+							<div id="product_page_product_btn">
+								<p>Add to basket</p>
+								<h:commandButton type="submit" name="addtocart"
+									value="Add To Cart" action="#{addBasket.addToBasket}">
+									<f:ajax execute="@form" render="@this basketlink"
+										onevent="performPostAjaxCommands()" />
+								</h:commandButton>
+								
+								
+							</div>
 						</div>
-
-						<!-- Amount -->
-						<!-- This is the dropdown for selecting different quantities -->
-						<h:selectOneMenu value="#{products.quantityOfItemsSelected}"
-							onchange="submit()">
-							<f:selectItem itemValue="1" itemLabel="1" />
-							<f:selectItem itemValue="2" itemLabel="2" />
-							<f:selectItem itemValue="3" itemLabel="3" />
-							<f:selectItem itemValue="4" itemLabel="4" />
-							<f:selectItem itemValue="5" itemLabel="5" />
-							<f:selectItem itemValue="6" itemLabel="6" />
-							<f:selectItem itemValue="7" itemLabel="7" />
-							<f:selectItem itemValue="8" itemLabel="8" />
-							<f:selectItem itemValue="9" itemLabel="9" />
-							<f:selectItem itemValue="10" itemLabel="10" />
-						</h:selectOneMenu>
-
-						<!-- Porous check box -->
-						<!-- <div>
-						<form>
-							<input type="checkbox" name="porous" value="Porous"><a
-								href="help.html"> What is porous?</a>
-						</form>-->
-
+						
+						
+						<div id="product_page_product_stock_container">
+							<img src="img/ProductPage/tick.png" />
+							<div style="float:right;padding-left:20px">
+								<p>In stock!</p>
+							</div>
+						</div>
+						
 						<!-- Stock -->
 						<div>
-							<p>Stock alert</p>
+
 						</div>
 
 						<!-- Cart button -->
 
-						<h:commandButton type="submit" name="addtocart"
-							value="Add To Cart" action="#{addBasket.addToBasket}">
-							<f:ajax execute="@form" render="@this basketlink"
-								onevent="performPostAjaxCommands()" />
-						</h:commandButton>
+						
 					</h:form>
+					</div>
 				</div>
+
 			</div>
 			<hr />
 			<!-- Related Products -->
