@@ -34,13 +34,8 @@ public class FilterController {
 	private String category = "all";
 	private short minimum = 0;
 	private short maximum = 2000;
-	private short lower = 0;
-	private short upper = 2000;
-	private List<String> tags = new ArrayList<String>();
 	private double minrat = 0;
 	private double maxrat = 5;
-	private double least = 0;
-	private double most = 5;
 
 	public int getSelected() {
 		return selected;
@@ -85,13 +80,10 @@ public class FilterController {
 			}
 			tagList.add(l);
 		}
-		setTags(tagList);
 		for (Product p: dataModel){
 			p.setToRender(true);
 		}
 		filterService.filterByTag(tagList, dataModel);					 // Calls method to filter by tags
-		filterService.filterByRating(dataModel, least, most);
-		filterService.filterByPrice(dataModel, lower, upper);
 	}
 
 	public DataModel<Product> getDataModel2() {
@@ -129,19 +121,7 @@ public class FilterController {
 		for (Product p : dataModel) {
 			p.setToRender(true);
 		}
-		setLower(minimum);
-		setUpper(maximum);
 		filterService.filterByPrice(dataModel, minimum, maximum);
-		filterService.filterByTag(tags, dataModel);	
-		filterService.filterByRating(dataModel, least, most);
-	}
-
-	private List<String> getTags() {
-		return tags;
-	}
-
-	private void setTags(List<String> tags) {
-		this.tags = tags;
 	}
 
 	public void load() {
@@ -173,43 +153,12 @@ public class FilterController {
 	public void filterByRating(AjaxBehaviorEvent abe) {
 		categoryPageController.setWholeProductModel(categoryPageController.getAllProductModel());
 		dataModel = categoryPageController.getWholeProductModel();
-		setLeast(minrat);
-		setMost(maxrat);
 		filterService.filterByRating(dataModel, minrat, maxrat);
-		filterService.filterByTag(tags, dataModel);	
-		filterService.filterByPrice(dataModel, lower, upper);
 	}
-
-	public short getLower() {
-		return lower;
-	}
-
-	public void setLower(short lower) {
-		this.lower = lower;
-	}
-
-	public short getUpper() {
-		return upper;
-	}
-
-	public void setUpper(short upper) {
-		this.upper = upper;
-	}
-
-	public double getLeast() {
-		return least;
-	}
-
-	public void setLeast(double least) {
-		this.least = least;
-	}
-
-	public double getMost() {
-		return most;
-	}
-
-	public void setMost(double most) {
-		this.most = most;
+	
+	public void searchLoad() {
+		String cat = categoryPageController.getCategory();
+		categoryPageController.setTagModel(new ListDataModel<Tag>(tagService.getAllTags(cat)));
 	}
 
 }
