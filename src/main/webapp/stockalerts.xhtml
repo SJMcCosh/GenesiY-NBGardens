@@ -4,19 +4,19 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="templates/template.xhtml">
 	<meta charset="ISO-8859-1" title="IMS" />
-	
+
 	<ui:define name="content">
-	
+
 		<f:metadata>
 			<f:event type="preRenderView" listener="#{stockAlerts.onLoad}" />
 		</f:metadata>
-	
+
 		<div id="pageTitle">
 			<div class="col-12 col-m-12">
 				<h1>Stock Alerts</h1>
 			</div>
 		</div>
-		
+
 		<div class="col-3 col-m-12 stockAlertList">
 			<h:form>
 				<ui:repeat var="StockAlert" value="#{stockAlerts.dataModel}">
@@ -25,7 +25,6 @@
 							<h:outputText value="#{StockAlert.date}"></h:outputText>
 							<br />
 							<h:commandLink value="#{StockAlert.details}"  action="#{stockAlerts.onLoad}" style="text-decoration:bold;color:red">
-								<f:actionListener binding="#{stockAlerts.setSelectedProduct(StockAlert.productId)}" />
 							</h:commandLink>
 							<br />
 							<br />
@@ -34,7 +33,7 @@
 				</ui:repeat>
 			</h:form>
 		</div>
-		
+
 		<div class="col-6 col-m-12">
 			<br />
 			<br />

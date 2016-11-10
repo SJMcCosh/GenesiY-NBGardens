@@ -38,6 +38,17 @@
 				</div>
 				<br /> <br />
 			</div>
+			
+			<div class="col-12 col-m-12" align="center">
+				<div class="prodsupplist">
+					<ui:repeat var="dataSupplier" value="#{products.getDataSupplier()}">
+						<li><h:outputText
+								value="#{products.dataSupplier.rowData.supplierName}" /></li>
+					</ui:repeat>
+				</div>
+				<br /> <br />
+			</div>
+			
 			<div class="col-12 col-m-12" align="center">
 				<div class="productMainContent">
 					<h:outputText value="Low Stock Alert" />
@@ -62,7 +73,8 @@
 
 				</div>
 			</div>	
-			<div class="col-12 col-m-12" align="left">
+			<div class="col-12 col-m-12" align="center">
+				<br /> <br />
 				<h:commandButton value="Update" action="#{products.updateProduct}" />
 				<h:commandButton value="Discontinue Product"
 					action="#{products.discontinueProduct}">
@@ -75,12 +87,6 @@
 				<h:commandButton value="Delete Product"
 					action="#{products.invalidateProduct}">
 				</h:commandButton>
-			</div>
-			<div class="prodsupplist">
-				<ui:repeat var="dataSupplier" value="#{products.getDataSupplier()}">
-					<li><h:outputText
-							value="#{products.dataSupplier.rowData.supplierName}" /></li>
-				</ui:repeat>
 			</div>
 		</h:form>
 	</ui:define>

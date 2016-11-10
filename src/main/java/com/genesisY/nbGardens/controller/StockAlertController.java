@@ -17,16 +17,16 @@ import com.genesisY.nbGardens.services.StockAlertService;
 @Named("stockAlerts")
 @SessionScoped
 public class StockAlertController implements Serializable {
-	
+
 	@Inject
 	private StockAlertService saService;
-	
+
 	@Inject
 	private ProductService prodService;
-	
+
 	private DataModel<StockAlert> dataModel;
 	private DataModel<Product> productDataModel;
-	
+
 	public String onLoad()
 	{
 		dataModel = new ListDataModel<StockAlert>(saService.getAllStockAlerts());
@@ -37,11 +37,11 @@ public class StockAlertController implements Serializable {
 	public DataModel<StockAlert> getDataModel() {
 		return dataModel;
 	}
-	
-	public void setSelectedProduct(int id) {
-		productDataModel = new ListDataModel<Product>(prodService.getProductById(id));
+
+	public void setSelectedProduct(Product p) {
+		productDataModel = new ListDataModel<Product>(prodService.viewProduct(p));
 	}
-	
+
 	public DataModel<Product> getSelectedProduct() {
 		return productDataModel;
 	}
@@ -49,4 +49,5 @@ public class StockAlertController implements Serializable {
 	public void setDataModel(DataModel<StockAlert> dataModel) {
 		this.dataModel = dataModel;
 	}
+
 }

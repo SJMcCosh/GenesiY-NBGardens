@@ -91,4 +91,18 @@ public class ProductService {
 		return finalSupplier;
 	}
 
+	public List<Product> viewProduct(Product p) {
+		List<Product> selectedProduct = productsManager.getAllProducts();
+		List<Product> foundProduct = null;
+		
+		for(Product p1: selectedProduct)
+		{
+			if (p1.equals(p))
+			{
+				foundProduct.add(p1);
+			}
+		}
+		return foundProduct;
+	}
+
 }
