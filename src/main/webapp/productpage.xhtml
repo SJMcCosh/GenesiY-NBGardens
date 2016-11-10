@@ -97,16 +97,10 @@
 						<div id="product_page_product_stock_container">
 							<img src="img/ProductPage/tick.png" />
 							<div style="float:right;padding-left:20px">
-								<p>In stock!</p>
+								<p><h:outputText value = "#{products.stock}"/></p>
 							</div>
 						</div>
 						
-						<!-- Stock -->
-						<div>
-
-							<h:outputText value = "#{products.stock}"/>
-
-						</div>
 
 						<!-- Cart button -->
 
@@ -116,7 +110,7 @@
 				</div>
 
 			</div>
-
+		
 			<!-- Related Products -->
 			<h:form>
 				<div class="related-products col-12 col-m-12">
@@ -127,21 +121,24 @@
 							<ui:repeat var="product" value="#{products.dataModel}">
 
 								<div class="index_featured_products_product">
-									<h:commandLink action="#{products.viewProduct(product)}">
-										<img class="index_featured_products_product_image"
-											src="#{product.imageLocation}" />
-										<div class="index_featured_products_product_title">
-											<h:outputText value="#{product.name}" />
-										</div>
-									</h:commandLink>
-									<p>
-										<h:outputText value="#{product.averageRating}"
-											class="index_featured_products_product_price">
-											<f:convertNumber type="currency" currencyCode="GBP" />
-										</h:outputText>
-									</p>
-									<img src="#{products.averageRatingImg(product.averageRating)}" />
-
+									<div id="index_featured_products_product_left">
+										<h:commandLink action="#{products.viewProduct(product)}">
+											<img class="index_featured_products_product_image"
+												src="#{product.imageLocation}" />
+											<div class="index_featured_products_product_title">
+												<h:outputText value="#{product.name}" />
+											</div>
+										</h:commandLink>
+									</div>
+									<div id="index_featured_products_product_right">
+										<p>
+											<h:outputText value="#{product.averageRating}"
+												class="index_featured_products_product_price">
+												<f:convertNumber type="currency" currencyCode="GBP" />
+											</h:outputText>
+										</p>
+										<img src="#{products.averageRatingImg(product.averageRating)}" />
+									</div>
 								</div>
 
 								<div id="featured_items_padding"></div>
