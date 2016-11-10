@@ -12,9 +12,5 @@ public class CheckoutController {
 	
 	@Inject private AddressController addressController;
 
-	public String checkout(){
-		addressController.getAddresses();
-		return "checkoutaddress";
-	}
 	
 }

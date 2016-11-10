@@ -35,7 +35,7 @@ public class ProductsController implements Serializable {
 	private int selected;
 	private String category = "All";
 	private String[] tagNameArray;
-	private String stock;
+	private String stock = "";
 	private int quantityOfItemsSelected;
 	private DataModel<Tag> tagModel = null;
 
@@ -175,6 +175,13 @@ public class ProductsController implements Serializable {
 	}
 
 	public String getStock() {
+		if (product.getStockLevel() == 0) {
+			setStock("No items in stock");
+		} else if (product.getStockLevel() > 10) {
+			setStock("There are 10+ items in stock");
+		} else if (product.getStockLevel() < 10) {
+			setStock("Low in stock");
+		}
 		return stock;
 	}
 
@@ -259,12 +266,6 @@ public class ProductsController implements Serializable {
 	}
 
 	public void stockLevel() {
-		if (product.getStockLevel() > 10) {
-			setStock("There are 10+ items in stock");
-		} else if (product.getStockLevel() < 10) {
-			setStock("Low in stock");
-		} else if (product.getStockLevel() == 0) {
-			setStock("No items in stock");
-		}
+
 	}
 }

@@ -123,9 +123,10 @@ public class AddressController implements Serializable {
 		return "viewaddresses";
 	}
 	
-	public void getAddresses(){
+	public String checkoutAddress(){
 		String username = userCredentials.getUsername();
 		dataModel = new ListDataModel<Address>(addressService.getAllAddresses(username));
+		return "checkoutaddress";
 	}
 
 	/**
