@@ -22,13 +22,15 @@ import com.genesisY.nbGardensCatalogue.entities.Tag;
 @RequestScoped
 public class FilterController {
 
-	private String filter;
+
 	@Inject
 	private CategoryPageController categoryPageController;
 	@Inject
 	private TagService tagService;
 	@Inject
 	private FilterService filterService;
+	@Inject
+	private SearchController searchController;
 	private DataModel<Product> dataModel;
 	private int selected;
 	private String category = "all";
@@ -53,13 +55,7 @@ public class FilterController {
 		this.category = category;
 	}
 
-	public String getFilter() {
-		return filter;
-	}
 
-	public void setFilter(String filter) {
-		this.filter = filter;
-	}
 
 	/**
 	 * 
@@ -157,8 +153,8 @@ public class FilterController {
 	}
 	
 	public void searchLoad() {
-		String cat = categoryPageController.getCategory();
-		categoryPageController.setTagModel(new ListDataModel<Tag>(tagService.getAllTags(cat)));
+		String term = searchController.getTerm();
+		categoryPageController.setTagModel(new ListDataModel<Tag>(tagService.getSearchTags(term)));
 	}
 
 }

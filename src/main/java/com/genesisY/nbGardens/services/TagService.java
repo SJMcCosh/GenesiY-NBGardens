@@ -23,12 +23,31 @@ public class TagService {
 	private TagManager tmo;
 	@Inject
 	private ProductManager pm;
+	@Inject
+	private SearchService searchService;
 
 	@SuppressWarnings("null")
 	public List<Tag> getAllTags(String category) {
 		List<Tag> tList = new ArrayList<Tag>();
 		try {
 			for (Product p : pm.getProductsByCategory(category)) {
+				for (Tag t : p.getTagList()) {
+					if (!tList.contains(t)) {
+						tList.add(t);
+					}
+				}
+			}
+			return tList;
+		} catch (NullPointerException npe) {
+			return null;
+		}
+	}
+	
+	@SuppressWarnings("null")
+	public List<Tag> getSearchTags(String term) {
+		List<Tag> tList = new ArrayList<Tag>();
+		try {
+			for (Product p : searchService.getSearchedProducts(term)) {
 				for (Tag t : p.getTagList()) {
 					if (!tList.contains(t)) {
 						tList.add(t);

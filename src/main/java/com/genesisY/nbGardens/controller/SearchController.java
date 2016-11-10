@@ -23,6 +23,9 @@ public class SearchController implements Serializable {
 	
 	@Inject
 	private ErrorController errorController;
+	
+	@Inject
+	private CategoryPageController categoryPageController;
 
 	private String term = "";
 
@@ -48,8 +51,7 @@ public class SearchController implements Serializable {
 		} else {
 			
 			if (searchService.getSearchedProducts(term) != null) {
-				prodController.setDataModel(new ListDataModel<Product>(searchService.getSearchedProducts(term)));
-				
+				categoryPageController.setAllProductModel(new ListDataModel<Product>(searchService.getSearchedProducts(term)));
 				return "searchresult";
 			} else {
 				return "index";
