@@ -59,7 +59,7 @@ public class InitialData {
 		Tag t2 = new Tag("Outdoor");
 		Tag t3 = new Tag("Special");
 		Tag t4 = new Tag("Cult");
-		Tag t5 = new Tag("Tag5");
+		Tag t5 = new Tag("Romantic");
 		List<Tag> list1 = new ArrayList<Tag>();
 		list1.add(t1);
 		list1.add(t3);
@@ -131,48 +131,47 @@ public class InitialData {
 		c3.add(new Category("Fantasy", "Gnomes", "img/zombieGnome.jpeg"));
 
 		//Products
-		productList.add(new Product(1, "Chelsea FC Gnome", 4.5, "Football Gnome", "Dont care", 15.0,
-				150.50, list1, "img/chelseaGnome.jpg", reviewList, c1, 25));
-		productList.add(new Product(2, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care",
-				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList, c2, 10));
-		productList.add(new Product(3, "Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0,
-				111.29, list3, "img/IndexImages/gnome_new.jpg", reviewList, c3, 5));
-		productList.add(new Product(4, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0,
-				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList, c1, 15));
-		productList.add(new Product(5, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care",
-				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList, c2, 60));
-		productList.add(new Product(6, "Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0,
-				111.29, list3, "img/IndexImages/gnome_new.jpg", reviewList, c3, 80));
-		productList.add(new Product(7, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0,
-				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList, c1, 40));
-		productList.add(new Product(8, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care",
-				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList, c2, 95));
-		productList.add(new Product(9, "Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0,
-				111.29, list3, "img/IndexImages/gnome_new.jpg", reviewList, c3, 40));
-		productList.add(new Product(10, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0,
-				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList, c1, 0));
-		productList.add(new Product(11, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care",
-				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList, c2, 5));
-		productList.add(new Product(12, "Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0,
-				111.29, list3, "img/IndexImages/gnome_new.jpg", reviewList, c3, 10));
-		productList.add(new Product(13, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0,
-				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList, c1, 20));
-		productList.add(new Product(14, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care",
-				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList, c2, 25));
-		productList.add(new Product(15, "Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0,
-				111.29, list3, "img/IndexImages/gnome_new.jpg", reviewList, c3, 35));
-		productList.add(new Product(16, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0,
+		productList.add(new Product(1, "Chelsea FC Gnome", 4.5, "Gnome wearing the glorious Chelsea FC shirt", "Small", 
+				3.0, 150.50, list1, "img/chelseaGnome.jpg", reviewList, c1, 25));
+		productList.add(new Product(2, "Mr and Mrs Gnome", 3.9, "A pair of gnomes who are clearly blinded by love", "Large",
+				13.0, 97.99, list2, "img/coupleGnome.jpg", reviewList, c2, 10));
+		productList.add(new Product(3, "Mickey and Minnie Mouse Gnome", 4.2, "The world's most favourite couple", "Large", 13.0,
+				111.29, list3, "img/disneyGnome.jpg", reviewList, c3, 5));
+		productList.add(new Product(4, "Happy Gnome", 4.5, "Welcoming gnome, good for the doorstep", "Medium", 7.0,
+				150.50, list1, "img/happyGnome.jpg", reviewList, c1, 15));
+		productList.add(new Product(5, "Arsenal FC Gnome", 3.9, "Gnome wearing the glorious Arsenal FC Shirt", "Small",
+				3.0, 97.99, list2, "img/footballGnome.jpg", reviewList, c2, 60));
+		productList.add(new Product(6, "Grumpy Gnome", 4.2, "Welcoming gnome, good for the doorstep", "Medium", 7.0,
+				111.29, list3, "img/grumpyGnome.jpg", reviewList, c3, 80));
+		productList.add(new Product(7, "Ninja Gnome", 4.5, "Don't mess with this gnome!", "Small", 3.0,
+				150.50, list1, "img/ninjaGnome.jpg", reviewList, c1, 40));
+		productList.add(new Product(8, "Pulp Fiction Gnome", 3.9, "Don't mess with this gnome!", "Medium",
+				7.0, 97.99, list2, "img/pulpFictionGnome.jpg", reviewList, c2, 95));
+		productList.add(new Product(9, "Rebel Gnome", 4.2, "The thug life chose him", "Large", 13.0,
+				111.29, list3, "img/rebelGnome.jpg", reviewList, c3, 40));
+		productList.add(new Product(10, "Santa Gnome", 4.5, "Santa's on his way!", "Medium", 7.0,
+				150.50, list1, "img/santaGnome.jpg", reviewList, c1, 0));
+		productList.add(new Product(11, "Bouncer Gnome", 3.9, "There's no getting around this gnome", "Small",
+				3.0, 97.99, list2, "img/securityGnome.jpg", reviewList, c2, 5));
+		productList.add(new Product(12, "Star Wars Gnome", 4.2, "This gnome is taking you back in time", "Small", 3.0,
+				111.29, list3, "img/starWarsGnome.jpg", reviewList, c3, 10));
+		productList.add(new Product(13, "St Patricks Gnome", 4.5, "This gnome is green and full of luck", "Medium", 7.0,
+				150.50, list1, "img/stPatrickGnome.jpg", reviewList, c1, 20));
+		productList.add(new Product(14, "Hey There Trio", 3.9, "Welcoming gnomes, good for the doorstep", "Large",
+				13.0, 97.99, list2, "img/welcomeGnome.jpg", reviewList, c2, 25));
+		productList.add(new Product(15, "Wizard Gnome", 4.2, "Careful, this gnome casts spells!", "Small", 3.0,
+				111.29, list3, "img/wizardGnome.jpg", reviewList, c3, 35));
+		productList.add(new Product(16, "Murder Suspect Gnome", 4.5, "This gnome was born to be violent", "Large", 13.0,
 				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList, c1, 60));
-		productList.add(new Product(17, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care",
-				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList, c2, 75));
-		productList.add(new Product(18, "Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0,
-				111.29, list3, "img/IndexImages/gnome_new.jpg", reviewList, c3, 70));
-		productList.add(new Product(19, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0,
-				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList, c1, 45));
-		productList.add(new Product(20, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care",
-				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList, c2, 40));
-
-
+		productList.add(new Product(17, "Grattan Bench", 3.9, "Lovely bench suitable for the outdoors", "Large",
+				26.0, 97.99, list2, "img/Bench.jpg", reviewList, c2, 75));
+		productList.add(new Product(18, "Spade", 4.2, "Garden spade", "Large", 17.0,
+				111.29, list3, "img/Spade.jpg", reviewList, c3, 70));
+		productList.add(new Product(19, "Garden Playhouse", 4.5, "Wooden playhouse, perfect for a medium to large sized garden", 
+				"Large", 25.0, 150.50, list1, "img/Playhouse.jpg", reviewList, c1, 45));
+		productList.add(new Product(20, "BBQ", 3.9, "BBQ grill (person not included)", "Large",
+				20.0, 97.99, list2, "img/BBQ.jpg", reviewList, c2, 40));
+		
 		//Customer orders
 		List<Product> cop1 = new ArrayList<Product>();
 		cop1.add(productList.get(0));
