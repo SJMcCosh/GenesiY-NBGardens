@@ -74,7 +74,7 @@ public class ImsInitialData {
 		Product product4 = new Product(4, "big gnome", "B.I.G, big!", "img/gnome.jpg", 12.99, "Made in the UK", 94, 15, cl4, true, true);
 		Product product5 = new Product(5, "small gnome", "Rather small gnome", "img/gnome.jpg", 2.50, "Made in Taiwan", 87, 50, cl5, true, true);
 		Product product6 = new Product(6, "LED Glowing gnome", "Useful as a Night light", "img/gnome.jpg", 4.99, "Made in Japan", 20, 30, cl6, true, true);
-		Product product7 = new Product(7, "Trump Gnome", "Make your Garden Great Again", "img/gnomeTrump.jpg", 911.00, "Made in China", 1000000, 100, cl1, true, true);
+		Product product7 = new Product(7, "Trump Gnome", "Make your Garden Great Again", "img/gnomeTrump.jpg", 370.00, "Made in China", 1000000, 100, cl1, true, true);
 
 
 		List<Product> products1 = new ArrayList<Product>();
