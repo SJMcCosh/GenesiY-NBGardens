@@ -45,16 +45,7 @@ public class BasketService {
 	public List<BasketItem> getBasketItems() {
 		try {
 			return basketManager.getBasketItems();
-			/*
-			 * if (basketManager.getProducts().size() != 0) {
-			 * 
-			 * System.out.println("Service Row Count: " +
-			 * basketManager.getProducts().size()); //return
-			 * basketManager.getProducts(); }else{ System.out.println(); return
-			 * null; }
-			 */
 		} catch (NullPointerException npe) {
-			System.out.println("Exception: " + npe.getStackTrace());
 			return null;
 		}
 

@@ -212,7 +212,6 @@ public class CategoryPageController implements Serializable {
 	 * Gets productModel without changing it
 	 */
 	public DataModel<Product> getProductModel() {
-		System.out.println("gettingmodel " + productModel);
 		return productModel;
 	}
 

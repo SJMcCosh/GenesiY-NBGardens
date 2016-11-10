@@ -32,9 +32,7 @@ public class ProductsManagerOffline implements ProductManager {
 		try {
 			for (Product p : initialData.getProductList()) {
 				try {
-					System.out.println(p.getName().toLowerCase().contains(name.toLowerCase()));
 					if (p.getName().toLowerCase().contains(name.toLowerCase())) {
-						System.out.println(">>>>>>>>>>>>>>>>> ProductName = " + p.getName());
 						return p;
 					}
 				} catch (NullPointerException npe) {

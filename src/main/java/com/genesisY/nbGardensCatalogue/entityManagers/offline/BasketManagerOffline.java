@@ -18,12 +18,7 @@ public class BasketManagerOffline implements BasketManager{
 	@Inject
 	private InitialData initialData;
 
-//	@Override
-//	public Basket getBasket() {
-//		// TODO Auto-generated method stub
-//		System.out.println("Initial Data Array: " + initialData.getBasketList().get(0).getName());
-//		return initialData.getBasketList();
-//	}
+
 
 	@Override
 	public List<BasketItem> getBasketItems() {

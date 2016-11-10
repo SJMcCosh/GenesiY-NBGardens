@@ -145,7 +145,8 @@ public class FilterController {
 	}
 
 	public void load() {
-		categoryPageController.setTagModel(new ListDataModel<Tag>(tagService.getAllTags()));
+		String cat = categoryPageController.getCategory();
+		categoryPageController.setTagModel(new ListDataModel<Tag>(tagService.getAllTags(cat)));
 	}
 
 	public double getMinrat() {

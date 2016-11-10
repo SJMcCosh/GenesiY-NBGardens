@@ -131,7 +131,6 @@ public class AddCustomerController {
 	}
 
 	public String signUp() {
-		System.out.println(">>>>>>> adding" + firstname);
 		if (password.equals(password2)) {
 			addCustomerService.addCustomer(firstname, surname, phoneNumber, email, username, password, addressLine1,
 					addressLine2, addressLine3, townCity, county, postcode);

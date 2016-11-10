@@ -119,7 +119,6 @@ public class AddressController implements Serializable {
 
 	public String viewAddress() {
 		String username = userCredentials.getUsername();
-		System.out.println(username);
 		dataModel = new ListDataModel<Address>(addressService.getAllAddresses(username));
 		return "viewaddresses";
 	}
@@ -135,11 +134,8 @@ public class AddressController implements Serializable {
 	 */
 	public void editAddress(String id) {
 		try {
-			System.out.println(">>>>>>>>>>>> " + id);
 			int addid = Integer.parseInt(id);
-			System.out.println(">>>>>>>>>>>> check fine");
 			for (Address a : dataModel) {
-				System.out.println(">>>>>>>>>>>> " + a.getAddressID());
 				if (a.getAddressID() == addid) {
 					address = a;
 				}

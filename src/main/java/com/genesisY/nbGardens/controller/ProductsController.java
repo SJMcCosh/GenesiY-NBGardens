@@ -62,13 +62,11 @@ public class ProductsController implements Serializable {
 	 */
 	public String viewProduct(Product p) {
 		product = productService.getProductByName(p.getName());
-		System.out.println(">>>>>>>>>>>>>>>>>>> Product Name = " + product.getName());
 		return "productpage";
 	}
 
 	public String allProducts(String category) {
 		setCategory(category);
-		System.out.println(category);
 		dataModel = getDataModel();
 		return "subcategory";
 	}
@@ -141,7 +139,6 @@ public class ProductsController implements Serializable {
 
 				@Override
 				public DataModel<Product> createPageDataModel() {
-					System.out.println(category);
 					try {
 						return new ListDataModel<Product>(productService.getProducts(category)
 								.subList(getPageFirstItem(), getPageFirstItem() + getPageSize()));

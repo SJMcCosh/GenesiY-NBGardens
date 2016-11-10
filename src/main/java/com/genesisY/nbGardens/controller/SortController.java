@@ -26,7 +26,6 @@ public class SortController {
 	 */
 	public void sort() {
 		String sort = getSorter();
-		System.out.println(">>>>>>>>>>> " + sort);
 		switch(sort){
 		case "Price High to Low" :
 			categoryPageController.setWholeProductModel(sortingService.sortHighToLow(categoryPageController.getWholeProductModel()));
@@ -44,7 +43,6 @@ public class SortController {
 	 */
 	public void searchSort() {
 		String sort = getSorter();
-		System.out.println(">>>>>>>>>>> " + sort);
 		switch(sort){
 		case "Price High to Low" :
 			categoryPageController.setDataModel(sortingService.sortHighToLow(categoryPageController.getDataModel2()));
