@@ -122,6 +122,11 @@ public class AddressController implements Serializable {
 		dataModel = new ListDataModel<Address>(addressService.getAllAddresses(username));
 		return "viewaddresses";
 	}
+	
+	public void getAddresses(){
+		String username = userCredentials.getUsername();
+		dataModel = new ListDataModel<Address>(addressService.getAllAddresses(username));
+	}
 
 	/**
 	 * Gets the address a user wants to edit and redirects them to the edit
