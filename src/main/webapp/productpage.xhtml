@@ -44,7 +44,7 @@
 				<div id="productpage_left_column">
 					<picture>
 					<source srcset="img/gnome.jpg" media="(max-width: 600px)" />
-					<img src="#{products.product.imageLocation}" style="width: auto;" /></picture>
+					<img src="#{products.product.imageLocation}" style="width: 300px;" /></picture>
 				</div>
 								
 				<div id="productpage_right_column">
@@ -81,16 +81,16 @@
 											
 						
 						<div id="product_page_product_btn_container">
-							<div id="product_page_product_btn">
-								<p>Add to basket</p>
-								<h:commandButton type="submit" name="addtocart"
-									value="Add To Cart" action="#{addBasket.addToBasket}">
+							<h:commandLink id="product_page_product_btn" type="submit" name="addtocart"
+										 action="#{addBasket.addToBasket}">
+								<div id="product_page_product_btn">
+									<p>Add to basket</p>
 									<f:ajax execute="@form" render="@this basketlink"
-										onevent="performPostAjaxCommands()" />
-								</h:commandButton>
-								
-								
-							</div>
+											onevent="performPostAjaxCommands()" />
+									
+									
+								</div>
+							</h:commandLink>
 						</div>
 						
 						
@@ -116,7 +116,7 @@
 				</div>
 
 			</div>
-			<hr />
+
 			<!-- Related Products -->
 			<h:form>
 				<div class="related-products col-12 col-m-12">
@@ -151,29 +151,31 @@
 				</div>
 			</h:form>
 
-			<hr />
+
 			<!-- Reviews -->
-			<h:form class="reviews col-12 col-m-12">
-				<h2>Reviews</h2>
-				<ui:repeat var="reviews" value="#{reviewcon.dataModel}">
-					<ul>
-						<li>
-							<div class="review">
-								<h3 class="col-10 col-m-10">Person</h3>
-								<!-- Star Rating -->
-								<div class="col-2 col-m-2">
-									<h:outputText value="#{reviews.rating}" />
+			<div id="reviews_section">
+				<h:form id="reviews_section_inner" class="reviews col-12 col-m-12">
+					<h2>Reviews</h2>
+					<ui:repeat var="reviews" value="#{reviewcon.dataModel}">
+						<ul>
+							<li>
+								<div class="review">
+									<h3 class="col-10 col-m-10">Person</h3>
+									<!-- Star Rating -->
+									<div class="col-2 col-m-2">
+										<h:outputText value="#{reviews.rating}" />
+									</div>
+	
+									<div class="col-12 col-m-12">
+										<h:outputText value="#{reviews.reviewtext}" />
+									</div>
+	
 								</div>
-
-								<div class="col-12 col-m-12">
-									<h:outputText value="#{reviews.reviewtext}" />
-								</div>
-
-							</div>
-						</li>
-					</ul>
-				</ui:repeat>
-			</h:form>
+							</li>
+						</ul>
+					</ui:repeat>
+				</h:form>
+			</div>
 		</div>
 
 	</ui:define>
