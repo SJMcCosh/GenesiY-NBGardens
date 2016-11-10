@@ -32,6 +32,7 @@ public class ProductsController implements Serializable {
 	private boolean valid; 
 	@Inject
 	private ProductService productService;
+	private Supplier supplier;
 
 	public String getAllProducts() {
 
@@ -247,6 +248,14 @@ public class ProductsController implements Serializable {
 
 	public void setValid(boolean valid) {
 		this.valid = valid;
+	}
+
+	public Supplier getSupplier() {
+		return supplier;
+	}
+
+	public void setSupplier(Supplier supplier) {
+		this.supplier = supplier;
 	}
 
 }

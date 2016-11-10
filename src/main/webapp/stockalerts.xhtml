@@ -45,6 +45,14 @@
 						<h:outputText value="#{stockAlerts.selectedProduct.name}" />
 						<br /> <br /> <br />
 						<h:outputText value="#{stockAlerts.selectedProduct.stockLevel}" />
+						<br />
+						<ui:repeat var="supplier" value="{stockAlerts.supplierModel}">
+							<div>
+								<h:outputText
+									value="#{stockAlerts.supplierModel.rowData.supplierName}" />
+								<br />
+							</div>
+						</ui:repeat>
 					</div>
 				</h:form>
 			</div>

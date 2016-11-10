@@ -10,6 +10,7 @@ import javax.inject.Named;
 
 import com.genesisY.nbGardens.entities.Product;
 import com.genesisY.nbGardens.entities.StockAlert;
+import com.genesisY.nbGardens.entities.Supplier;
 import com.genesisY.nbGardens.services.ProductService;
 import com.genesisY.nbGardens.services.StockAlertService;
 
@@ -27,12 +28,14 @@ public class StockAlertController implements Serializable {
 	private DataModel<StockAlert> dataModel;
 	private DataModel<Product> productDataModel;
 	private Product selectedProduct;
+	private DataModel<Supplier> supplierModel = null;
 
 	public String onLoad(Product p)
 	{
 		dataModel = new ListDataModel<StockAlert>(saService.getAllStockAlerts());
 		setSelectedProduct(p);
 		System.out.println(selectedProduct.getName());
+		setSupplierModel(new ListDataModel<Supplier>(prodService.getSuppliers(p)));
 		return "stockalerts";
 	}
 	public String onLoad()
@@ -56,6 +59,12 @@ public class StockAlertController implements Serializable {
 
 	public void setDataModel(DataModel<StockAlert> dataModel) {
 		this.dataModel = dataModel;
+	}
+	public DataModel<Supplier> getSupplierModel() {
+		return supplierModel;
+	}
+	public void setSupplierModel(DataModel<Supplier> supplierModel) {
+		this.supplierModel = supplierModel;
 	}
 
 }
