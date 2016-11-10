@@ -132,45 +132,45 @@ public class InitialData {
 
 		//Products
 		productList.add(new Product(1, "Chelsea FC Gnome", 4.5, "Gnome wearing the glorious Chelsea FC shirt", "Small", 
-				3.0, 150.50, list1, "img/chelseaGnome.jpg", reviewList, c1, 25));
+				3.0, 25.00, list1, "img/chelseaGnome.jpg", reviewList, c1, 25));
 		productList.add(new Product(2, "Mr and Mrs Gnome", 3.9, "A pair of gnomes who are clearly blinded by love", "Large",
-				13.0, 97.99, list2, "img/coupleGnome.jpg", reviewList, c2, 10));
+				13.0, 12.50, list2, "img/coupleGnome.jpg", reviewList, c2, 10));
 		productList.add(new Product(3, "Mickey and Minnie Mouse Gnome", 4.2, "The world's most favourite couple", "Large", 13.0,
-				111.29, list3, "img/disneyGnome.jpg", reviewList, c3, 5));
+				30.00, list3, "img/disneyGnome.jpg", reviewList, c3, 5));
 		productList.add(new Product(4, "Happy Gnome", 4.5, "Welcoming gnome, good for the doorstep", "Medium", 7.0,
-				150.50, list1, "img/happyGnome.jpg", reviewList, c1, 15));
+				13.50, list1, "img/happyGnome.jpg", reviewList, c1, 15));
 		productList.add(new Product(5, "Arsenal FC Gnome", 3.9, "Gnome wearing the glorious Arsenal FC Shirt", "Small",
-				3.0, 97.99, list2, "img/footballGnome.jpg", reviewList, c2, 60));
+				3.0, 25.00, list2, "img/footballGnome.jpg", reviewList, c2, 60));
 		productList.add(new Product(6, "Grumpy Gnome", 4.2, "Welcoming gnome, good for the doorstep", "Medium", 7.0,
-				111.29, list3, "img/grumpyGnome.jpg", reviewList, c3, 80));
+				13.50, list3, "img/grumpyGnome.jpg", reviewList, c3, 80));
 		productList.add(new Product(7, "Ninja Gnome", 4.5, "Don't mess with this gnome!", "Small", 3.0,
-				150.50, list1, "img/ninjaGnome.jpg", reviewList, c1, 40));
+				17.50, list1, "img/ninjaGnome.jpg", reviewList, c1, 40));
 		productList.add(new Product(8, "Pulp Fiction Gnome", 3.9, "Don't mess with this gnome!", "Medium",
-				7.0, 97.99, list2, "img/pulpFictionGnome.jpg", reviewList, c2, 95));
+				7.0, 17.50, list2, "img/pulpFictionGnome.jpg", reviewList, c2, 95));
 		productList.add(new Product(9, "Rebel Gnome", 4.2, "The thug life chose him", "Large", 13.0,
-				111.29, list3, "img/rebelGnome.jpg", reviewList, c3, 40));
+				13.50, list3, "img/rebelGnome.jpg", reviewList, c3, 40));
 		productList.add(new Product(10, "Santa Gnome", 4.5, "Santa's on his way!", "Medium", 7.0,
 				150.50, list1, "img/santaGnome.jpg", reviewList, c1, 0));
 		productList.add(new Product(11, "Bouncer Gnome", 3.9, "There's no getting around this gnome", "Small",
-				3.0, 97.99, list2, "img/securityGnome.jpg", reviewList, c2, 5));
+				3.0, 19.99, list2, "img/securityGnome.jpg", reviewList, c2, 5));
 		productList.add(new Product(12, "Star Wars Gnome", 4.2, "This gnome is taking you back in time", "Small", 3.0,
-				111.29, list3, "img/starWarsGnome.jpg", reviewList, c3, 10));
+				34.99, list3, "img/starWarsGnome.jpg", reviewList, c3, 10));
 		productList.add(new Product(13, "St Patricks Gnome", 4.5, "This gnome is green and full of luck", "Medium", 7.0,
-				150.50, list1, "img/paddyGnome.jpg", reviewList, c1, 20));
+				15.00, list1, "img/paddyGnome.jpg", reviewList, c1, 20));
 		productList.add(new Product(14, "Hey There Trio", 3.9, "Welcoming gnomes, good for the doorstep", "Large",
-				13.0, 97.99, list2, "img/welcomeGnome.jpg", reviewList, c2, 25));
+				13.0, 19.99, list2, "img/welcomeGnome.jpg", reviewList, c2, 25));
 		productList.add(new Product(15, "Wizard Gnome", 4.2, "Careful, this gnome casts spells!", "Small", 3.0,
-				111.29, list3, "img/wizardGnome.jpg", reviewList, c3, 35));
+				11.99, list3, "img/wizardGnome.jpg", reviewList, c3, 35));
 		productList.add(new Product(16, "Murder Suspect Gnome", 4.5, "This gnome was born to be violent", "Large", 13.0,
-				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList, c1, 60));
+				17.99, list1, "img/zombie_gnome_fishing.jpg", reviewList, c1, 60));
 		productList.add(new Product(17, "Grattan Bench", 3.9, "Lovely bench suitable for the outdoors", "Large",
-				26.0, 97.99, list2, "img/Bench.jpg", reviewList, c2, 75));
+				26.0, 44.99, list2, "img/Bench.jpg", reviewList, c2, 75));
 		productList.add(new Product(18, "Spade", 4.2, "Garden spade", "Large", 17.0,
-				111.29, list3, "img/Spade.jpg", reviewList, c3, 70));
+				11.00, list3, "img/Spade.jpg", reviewList, c3, 70));
 		productList.add(new Product(19, "Garden Playhouse", 4.5, "Wooden playhouse, perfect for a medium to large sized garden", 
-				"Large", 25.0, 150.50, list1, "img/Playhouse.jpg", reviewList, c1, 45));
+				"Large", 25.0, 275.00, list1, "img/Playhouse.jpg", reviewList, c1, 45));
 		productList.add(new Product(20, "BBQ", 3.9, "BBQ grill (person not included)", "Large",
-				20.0, 97.99, list2, "img/BBQ.jpg", reviewList, c2, 40));
+				20.0, 99.99, list2, "img/BBQ.jpg", reviewList, c2, 40));
 		
 		//Customer orders
 		List<Product> cop1 = new ArrayList<Product>();
