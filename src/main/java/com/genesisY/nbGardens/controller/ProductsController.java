@@ -35,9 +35,9 @@ public class ProductsController implements Serializable {
 	private int selected;
 	private String category = "All";
 	private String[] tagNameArray;
+	private String stock;
 	private int quantityOfItemsSelected;
 	private DataModel<Tag> tagModel = null;
-	
 
 	public int getSelected() {
 		return selected;
@@ -57,6 +57,7 @@ public class ProductsController implements Serializable {
 
 	/**
 	 * Views a specific product based on click
+	 * 
 	 * @param p
 	 * @return String: Opens the productpage for a specific product
 	 */
@@ -73,6 +74,7 @@ public class ProductsController implements Serializable {
 
 	/**
 	 * Sets dataModel to one generated through pagination
+	 * 
 	 * @return dataModel
 	 */
 	public DataModel<Product> getDataModel() {
@@ -107,6 +109,7 @@ public class ProductsController implements Serializable {
 
 	/**
 	 * Generates the previous page of products
+	 * 
 	 * @return String: page listing products
 	 */
 	public String previous() {
@@ -117,6 +120,7 @@ public class ProductsController implements Serializable {
 
 	/**
 	 * Generates the next page of products
+	 * 
 	 * @return String: page listing products
 	 */
 	public String next() {
@@ -127,6 +131,7 @@ public class ProductsController implements Serializable {
 
 	/**
 	 * Gets a pagination
+	 * 
 	 * @return PaginationHelper: for pagination
 	 */
 	public PaginationHelper getPagination() {
@@ -162,10 +167,19 @@ public class ProductsController implements Serializable {
 
 	/**
 	 * Returns a string of the TagNameArray
+	 * 
 	 * @return String
 	 */
 	public String getTagNameArrayInString() {
 		return Arrays.toString(getTagNameArray());
+	}
+
+	public String getStock() {
+		return stock;
+	}
+
+	public void setStock(String stock) {
+		this.stock = stock;
 	}
 
 	/**
@@ -174,6 +188,7 @@ public class ProductsController implements Serializable {
 	public DataModel<Product> getDataModel2() {
 		return dataModel;
 	}
+
 	/**
 	 * Gets productModel without changing it
 	 */
@@ -191,7 +206,9 @@ public class ProductsController implements Serializable {
 
 	/**
 	 * Gets a list of products in a category based on input category
-	 * @param String: category
+	 * 
+	 * @param String:
+	 *            category
 	 * @return String: page of products in the category
 	 */
 	public String getCategoryProducts(String category) {
@@ -202,32 +219,34 @@ public class ProductsController implements Serializable {
 		return "subcategory";
 	}
 
-
 	public void setProductModel(DataModel<Product> productModel) {
 		this.productModel = productModel;
 	}
-	
-	
-	public String averageRatingImg(Double rating)
-	{
+
+	public String averageRatingImg(Double rating) {
 		String imageURI = "";
 		Integer starRating = rating.intValue();
-		switch(starRating)
-		{
-			case(0) : imageURI = "img/Ratings/0.png";
-						break;
-			case(1) : imageURI = "img/Ratings/1.png";
-						break;
-			case(2) : imageURI = "img/Ratings/2.png";
-						break;
-			case(3) : imageURI = "img/Ratings/3.png";
-						break;	
-			case(4) : imageURI = "img/Ratings/4.png";
-						break;			
-			case(5) : imageURI = "img/Ratings/5.png";
-						break;
+		switch (starRating) {
+		case (0):
+			imageURI = "img/Ratings/0.png";
+			break;
+		case (1):
+			imageURI = "img/Ratings/1.png";
+			break;
+		case (2):
+			imageURI = "img/Ratings/2.png";
+			break;
+		case (3):
+			imageURI = "img/Ratings/3.png";
+			break;
+		case (4):
+			imageURI = "img/Ratings/4.png";
+			break;
+		case (5):
+			imageURI = "img/Ratings/5.png";
+			break;
 		}
-		
+
 		return imageURI;
 	}
 
@@ -238,5 +257,14 @@ public class ProductsController implements Serializable {
 	public void setTagModel(DataModel<Tag> tagModel) {
 		this.tagModel = tagModel;
 	}
-	
+
+	public void stockLevel() {
+		if (product.getStockLevel() > 10) {
+			setStock("There are 10+ items in stock");
+		} else if (product.getStockLevel() < 10) {
+			setStock("Low in stock");
+		} else if (product.getStockLevel() == 0) {
+			setStock("No items in stock");
+		}
+	}
 }

@@ -69,6 +69,8 @@ public class Product implements Comparable<Product> {
 	@OneToMany
 	private List<Review> reviews; 
 	
+	private int stockLevel;
+	
 	/**
 	 * To render it on the screen. Doesn't need to be sent to the database and default is that it renders.
 	 */
@@ -78,7 +80,7 @@ public class Product implements Comparable<Product> {
 
 	}
 
-	public Product(int id, String name, double averageRating, String description, String size, double weight, double price, List<Tag> tagList, String imageLocation, List<Review> reviews, List<Category> categories) {
+	public Product(int id, String name, double averageRating, String description, String size, double weight, double price, List<Tag> tagList, String imageLocation, List<Review> reviews, List<Category> categories, int stockLevel) {
 		this.id = id;
 		this.name = name;
 		this.averageRating = averageRating;
@@ -90,6 +92,7 @@ public class Product implements Comparable<Product> {
 		this.imageLocation = imageLocation;
 		this.reviews = reviews;
 		this.categories = categories;
+		this.stockLevel = stockLevel;
 	}
 
 	
@@ -194,6 +197,14 @@ public class Product implements Comparable<Product> {
 
 	public void setReviews(List<Review> reviews) {
 		this.reviews = reviews;
+	}
+
+	public int getStockLevel() {
+		return stockLevel;
+	}
+
+	public void setStockLevel(int stockLevel) {
+		this.stockLevel = stockLevel;
 	}
 	
 	
