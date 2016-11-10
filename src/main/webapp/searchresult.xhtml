@@ -20,8 +20,8 @@
 						<b>Tags</b>
 					</p>
 					<h:selectManyCheckbox layout="pageDirection"
-						value="#{products.tagNameArray}">
-						<f:selectItems value="#{products.tagModel}" var="tag"
+						value="#{catpage.tagNameArray}">
+						<f:selectItems value="#{catpage.tagModel}" var="tag"
 							itemLabel="#{tag.name}" itemValue="#{tag.name}" />
 						<f:ajax listener="#{filter.filterProductsByTag}" render="@all" />
 					</h:selectManyCheckbox>
@@ -31,7 +31,17 @@
 					</p>
 						<h:outputText value = "Minimum: "/><h:inputText value = "#{filter.minimum}" style = "width: 30px"/><h:outputText value = " Maximum: "/><h:inputText value = "#{filter.maximum}" style = "width: 30px"/>
 						<f:ajax event = "keyup" listener="#{filter.filterByPrice}" render="@all"/>
-						
+
+				
+				<p>
+						<b>Filter by Rating</b>
+					</p>
+
+						<h:outputText value = "Minimum Rating: "/><h:inputText value = "#{filter.minrat}" style = "width: 30px"/>
+						<br />
+						<h:outputText value = " Maximum Rating: "/><h:inputText value = "#{filter.maxrat}" style = "width: 30px"/>
+						<f:ajax event = "keyup" listener="#{filter.filterByRating}" render="@all"/>
+
 				</div>
 			</h:form>
 
@@ -45,7 +55,7 @@
 							itemValue="Price Low to High" />
 						<f:selectItem itemLabel="Price High to Low"
 							itemValue="Price High to Low" />
-						<f:ajax listener="#{sort.searchSort}" render="@all" />
+						<f:ajax listener="#{sort.sort}" render="@all" />
 					</h:selectOneMenu>
 				</div>
 
@@ -58,16 +68,16 @@
 
 			<h:form>
 				<h:outputText escape="false" value="No Products Found"
-					rendered="#{products.dataModel.rowCount == 0}" />
-				<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
+					rendered="#{catpage.dataModel.rowCount == 0}" />
+				<h:panelGroup rendered="#{catpage.dataModel.rowCount > 0}">
 					<h:outputText
-						value="Displaying products #{products.pagination.pageFirstItem + 1} to #{products.pagination.pageLastItem + 1} of #{products.pagination.itemsCount}" />
-					<h:commandButton value="Previous #{products.pagination.pageSize}"
-						action="#{products.previous}"
-						rendered="#{products.pagination.hasPreviousPage}" />
-					<h:commandButton value="Next #{products.pagination.pageSize}"
-						action="#{products.next}"
-						rendered="#{products.pagination.hasNextPage}" />
+						value="Displaying products #{catpage.pagination.pageFirstItem + 1} to #{catpage.pagination.pageLastItem + 1} of #{catpage.pagination.itemsCount}" />
+					<h:commandButton value="Previous #{catpage.pagination.pageSize}"
+						action="#{catpage.previous}"
+						rendered="#{catpage.pagination.hasPreviousPage}" />
+					<h:commandButton value="Next #{catpage.pagination.pageSize}"
+						action="#{catpage.next}"
+						rendered="#{catpage.pagination.hasNextPage}" />
 				</h:panelGroup>
 			</h:form>
 
@@ -79,9 +89,9 @@
 
 				<div class="col-9 col-m-6">
 					<ul>
-						<ui:repeat var="product" value="#{products.dataModel}">
+						<ui:repeat var="product" value="#{catpage.dataModel}">
 							<h:panelGroup rendered="#{product.toRender}">
-								<h:commandLink action="#{products.viewProduct(product)}"
+								<h:commandLink action="#{catpage.viewProduct(product)}"
 									class="col-3 col-m-6">
 
 									<div class="listofproducts">
@@ -111,16 +121,16 @@
 			<div class="paginatorbutton">
 				<h:form>
 					<h:outputText escape="false" value="No Products Found"
-						rendered="#{products.dataModel.rowCount == 0}" />
-					<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
+						rendered="#{catpage.dataModel.rowCount == 0}" />
+					<h:panelGroup rendered="#{catpage.dataModel.rowCount > 0}">
 						<h:outputText
-							value="Displaying products #{products.pagination.pageFirstItem + 1} to #{products.pagination.pageLastItem + 1} of #{products.pagination.itemsCount}" />
-						<h:commandButton value="Previous #{products.pagination.pageSize}"
-							action="#{products.previous}"
-							rendered="#{products.pagination.hasPreviousPage}" />
-						<h:commandButton value="Next #{products.pagination.pageSize}"
-							action="#{products.next}"
-							rendered="#{products.pagination.hasNextPage}" />
+							value="Displaying products #{catpage.pagination.pageFirstItem + 1} to #{catpage.pagination.pageLastItem + 1} of #{catpage.pagination.itemsCount}" />
+						<h:commandButton value="Previous #{catpage.pagination.pageSize}"
+							action="#{catpage.previous}"
+							rendered="#{catpage.pagination.hasPreviousPage}" />
+						<h:commandButton value="Next #{catpage.pagination.pageSize}"
+							action="#{catpage.next}"
+							rendered="#{catpage.pagination.hasNextPage}" />
 					</h:panelGroup>
 				</h:form>
 			</div>
