@@ -104,8 +104,17 @@ public class InitialData {
 		categoryList.add(new Category("Fantasy", "Gnomes", "img/zombieGnome.jpeg"));
 		categoryList.add(new Category("All", "Outdoor Living", "img/newJobGnome.jpg"));
 		categoryList.add(new Category("All", "Garden Tools", "img/stPatrickGnome.jpg"));
+		//Outdoor Living		
 		categoryList.add(new Category("All", "Outdoor Buildings", "img/xmasGnome.jpg"));
 		categoryList.add(new Category("Seating", "Outdoor Living", "img/royalGnome.jpg"));
+		categoryList.add(new Category("Outdoor Structures", "Outdoor Living", "img/royalGnome.jpg"));
+		categoryList.add(new Category("Gardening Tools", "Outdoor Living", "img/royalGnome.jpg"));
+		categoryList.add(new Category("Storage Solutions", "Outdoor Living", "img/royalGnome.jpg"));
+		categoryList.add(new Category("Decking", "Outdoor Living", "img/royalGnome.jpg"));
+		categoryList.add(new Category("Pressure Washers", "Outdoor Living", "img/royalGnome.jpg"));
+		categoryList.add(new Category("Power Tools", "Outdoor Living", "img/royalGnome.jpg"));
+		
+		
 		categoryList.add(new Category("Lawncare", "Garden Tools", "img/summerGnome.jpg"));
 		categoryList.add(new Category("Digging", "Garden Tools", "img/weddingGnome.jpg"));
 		categoryList.add(new Category("Sheds", "Outdoor Buildings", "img/easterGnome.png"));
@@ -122,8 +131,8 @@ public class InitialData {
 		c3.add(new Category("Fantasy", "Gnomes", "img/zombieGnome.jpeg"));
 
 		//Products
-		productList.add(new Product(1, "Gnome Trek", 4.5, "Gnome from the Star Trek franchise", "Dont care", 15.0,
-				150.50, list1, "img/zombie_gnome_fishing.jpg", reviewList, c1));
+		productList.add(new Product(1, "Chelsea FC Gnome", 4.5, "Football Gnome", "Dont care", 15.0,
+				150.50, list1, "img/chelseagnome.jpg", reviewList, c1));
 		productList.add(new Product(2, "Gnomeo and Gnomiet", 3.9, "Gnomes from the Shakespeare classic", "Dont care",
 				17.0, 97.99, list2, "img/zombiefeast.jpg", reviewList, c2));
 		productList.add(new Product(3, "Game of Gnomes", 4.2, "Gnome based on the GOT Series", "Dont care", 12.0,
@@ -181,7 +190,7 @@ public class InitialData {
 		CustomerOrder co1 = new CustomerOrder(cop1);
 		CustomerOrder co2 = new CustomerOrder(cop2);
 		CustomerOrder co3 = new CustomerOrder(cop3);
-
+		
 		customerOrderList.add(co1);
 		customerOrderList.add(co2);
 		customerOrderList.add(co3);
