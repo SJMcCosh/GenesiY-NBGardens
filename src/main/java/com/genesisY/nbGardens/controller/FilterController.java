@@ -65,7 +65,7 @@ public class FilterController {
 	public void filterProductsByTag(AjaxBehaviorEvent abe) {
 		String[] arr = categoryPageController.getTagNameArrayInString().split(", ");
 		categoryPageController.setWholeProductModel(categoryPageController.getAllProductModel());
-		dataModel = categoryPageController.getWholeProductModel();
+		dataModel = categoryPageController.getAllProductModel();
 		ArrayList<String> tagList = new ArrayList<String>();			 // Creates a list of tags based on the ones checked
 		for (String l : arr) {
 			if (l.startsWith("[")) {
@@ -79,7 +79,9 @@ public class FilterController {
 		for (Product p: dataModel){
 			p.setToRender(true);
 		}
-		filterService.filterByTag(tagList, dataModel);					 // Calls method to filter by tags
+		dataModel = filterService.filterByTag(tagList, dataModel);					 // Calls method to filter by tags
+		
+		categoryPageController.setAllProductModel(dataModel);
 	}
 
 	public DataModel<Product> getDataModel2() {

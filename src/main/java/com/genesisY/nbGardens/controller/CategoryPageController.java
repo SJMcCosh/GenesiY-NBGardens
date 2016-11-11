@@ -163,9 +163,7 @@ public class CategoryPageController implements Serializable {
 
 				@Override
 				public DataModel<Product> createPageDataModel() {
-					System.out.println("Making");
 					try {
-						System.out.println("creating");
 						List<Product> products = new ArrayList<Product>();
 						for (Product p : getWholeProductModel()) {
 							products.add(p);
@@ -173,7 +171,6 @@ public class CategoryPageController implements Serializable {
 						return new ListDataModel<Product>(
 								products.subList(getPageFirstItem(), getPageFirstItem() + getPageSize()));
 					} catch (Exception e) {
-						System.out.println("creating");
 						List<Product> products = new ArrayList<Product>();
 						for (Product p : getWholeProductModel()) {
 							products.add(p);
@@ -294,7 +291,6 @@ public class CategoryPageController implements Serializable {
 		this.allProductModel = allProductModel;
 		setWholeProductModel(allProductModel);
 		setDataModel(getPagination().createPageDataModel());
-		System.out.println("setting");
 	}
 
 	public DataModel<Product> getWholeProductModel() {

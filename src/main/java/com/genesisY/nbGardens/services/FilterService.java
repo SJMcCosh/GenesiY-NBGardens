@@ -1,10 +1,13 @@
 package com.genesisY.nbGardens.services;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.faces.model.DataModel;
+import javax.faces.model.ListDataModel;
 
 import com.genesisY.nbGardensCatalogue.entities.Product;
 import com.genesisY.nbGardensCatalogue.entities.Tag;
@@ -32,6 +35,20 @@ public class FilterService {
 				}
 			}
 		}
+		List<Product> list = new ArrayList<Product>();
+		for (Product p : dataModel){
+			list.add(p);
+		}
+		list.sort(new Comparator<Product>() {
+
+			@Override
+			public int compare(Product arg0, Product arg1) {
+				// TODO Auto-generated method stub
+				return Boolean.compare(arg1.isToRender(), arg0.isToRender());
+			}
+
+		});
+		dataModel = new ListDataModel<>(list);
 		return dataModel;
 	}
 
